@@ -2,7 +2,9 @@
 <?php
 $tags=['%','\\','!'];
 $filename=$argv[1];
-$rows=file($filename);
+if (substr($filename,-4)=='.mkd'){$filename=substr($filename,0,-4);}
+
+$rows=file($filename.'.mkd');
 $tagId=1;
 foreach($rows as $i=>$row){
   if (in_array(substr($row,0,1),$tags)) {
@@ -11,8 +13,7 @@ foreach($rows as $i=>$row){
     $tagId++;
   }
 }
-file_put_contents('tags_'.$filename.'.tag',implode("\r\n",$tagsFile));
-
+file_put_contents($filename.'.tag',implode("\r\n",$tagsFile));
 
 $snippetId=1;
 $snippetFounds='not-found';
@@ -42,7 +43,6 @@ foreach($rows as $i=>$row){
     $newText[]=$row;
   }
 }
-
 
 foreach($newText as $i=>$row){
   if(($i+2)<sizeof($newText)){
