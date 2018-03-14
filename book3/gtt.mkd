@@ -1,5 +1,5 @@
-[01-intro]()
-[02-variables](https://translate.google.com/toolkit/workbench?did=006zejv01uxlqsa3wy68 )
+- [01-intro]()
+- [02-variables](https://translate.google.com/toolkit/workbench?did=006zejv01uxlqsa3wy68 )
 [03-conditional](https://translate.google.com/toolkit/workbench?did=00e99s001v0sphiycbnk)
 [04-functions](https://translate.google.com/toolkit/workbench?did=002jemw01v1ikm70wi68)
 [05-iterations]()
