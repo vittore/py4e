@@ -369,8 +369,7 @@ Careless use of lists (and other mutable objects) can lead to long hours of debu
 
 4.  Lists, `split`, and files
 
-    When we read and parse files, there are many opportunities to encounter input that can crash our program so it is a good idea to
-    revisit the *guardian* pattern when it comes writing programs that read through a file and look for a "needle in the haystack".
+    When we read and parse files, there are many opportunities to encounter input that can crash our program so it is a good idea to revisit the *guardian* pattern when it comes writing programs that read through a file and look for a "needle in the haystack".
 
     Let's revisit our program that is looking for the day of the week on the from lines of our file:
 
@@ -452,9 +451,7 @@ Careless use of lists (and other mutable objects) can lead to long hours of debu
 
     First we commented out the debug print statement instead of removing it, in case our modification fails and we need to debug again. Then we added a guardian statement that checks to see if we have zero words, and if so, we use `continue` to skip to the next line in the file.
 
-    We can think of the two `continue` statements as helping us refine the set of lines which are "interesting" to us and which
-    we want to process some more. A line which has no words is "uninteresting" to us so we skip to the next line. A line which does
-    not have "From" as its first word is uninteresting to us so we skip it.
+    We can think of the two `continue` statements as helping us refine the set of lines which are "interesting" to us and which we want to process some more. A line which has no words is "uninteresting" to us so we skip to the next line. A line which does not have "From" as its first word is uninteresting to us so we skip it.
 
     The program as modified runs successfully, so perhaps it is correct.
     Our guardian statement does make sure that the `words[0]` will never fail, but perhaps it is not enough. When we are programming, we must always be thinking, "What might go wrong?"
