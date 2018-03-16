@@ -1,10 +1,16 @@
 Regular expressions
 ===================
- So far we have been reading through files, looking for patterns and extracting various bits of lines that we find interesting. We have been  using string methods like `split` and `find` and using lists and string slicing to extract portions of the lines. 
+ So far we have been reading through files, looking for patterns and extracting various bits of lines that we find interesting. We have been
+ 
+ using string methods like `split` and `find` and using lists and string slicing to extract portions of the lines. 
 ######1
 ######2
 ######3
- This task of searching and extracting is so common that Python has a very powerful library called *regular expressions* that handles many of these tasks quite elegantly. The reason we have not introduced regular expressions earlier in the book is because while they are very powerful, they are a little complicated and their syntax takes some getting used to.  Regular expressions are almost their own little programming language for searching and parsing strings. As a matter of fact, entire books have been written on the topic of regular expressions. In this chapter, we will only cover the basics of regular expressions. For more detail on regular expressions, see:  <http://en.wikipedia.org/wiki/Regular_expression>  <https://docs.python.org/3.5/library/re.html>  The regular expression library `re` must be imported into your program before you can use it. The simplest use of the regular expression library is the `search()` function. The following program demonstrates a trivial use of the search function. 
+ This task of searching and extracting is so common that Python has a very powerful library called *regular expressions* that handles many of these tasks quite elegantly. The reason we have not introduced regular expressions earlier in the book is because while they are very powerful, they are a little complicated and their syntax takes some getting used to.
+ Regular expressions are almost their own little programming language for searching and parsing strings. As a matter of fact, entire books have been written on the topic of regular expressions. In this chapter, we will only cover the basics of regular expressions. For more detail on regular expressions, see:
+ <http://en.wikipedia.org/wiki/Regular_expression>
+ <https://docs.python.org/3.5/library/re.html>
+ The regular expression library `re` must be imported into your program before you can use it. The simplest use of the regular expression library is the `search()` function. The following program demonstrates a trivial use of the search function. 
 ######4
 
 ######5
@@ -69,7 +75,9 @@ Regular expressions
 ######33
 
 ~~~~5
- Notice that on the "source@collab.sakaiproject.org" lines, our regular expression eliminated two letters at the end of the string ("`>`;"). This is because when we append "[a-zA-Z]" to the end of our regular expression, we are demanding that whatever string the regular expression parser finds must end with a letter. So when it sees the "`>`" after "sakaiproject.org`>`;" it simply stops at the last "matching" letter it found (i.e., the "g" was the last good match).  Also note that the output of the program is a Python list that has a string as the single element in the list.  Combining searching and extracting
+ Notice that on the "source@collab.sakaiproject.org" lines, our regular expression eliminated two letters at the end of the string ("`>`;"). This is because when we append "[a-zA-Z]" to the end of our regular expression, we are demanding that whatever string the regular expression parser finds must end with a letter. So when it sees the "`>`" after "sakaiproject.org`>`;" it simply stops at the last "matching" letter it found (i.e., the "g" was the last good match).  Also note that the output of the program is a Python list that has a string as the single element in the list.
+
+Combining searching and extracting
 ----------------------------------
  If we want to find numbers on lines that start with the string "X-" such as: 
 ~~~~6
@@ -118,15 +126,38 @@ Regular expressions
 ----------------
  Since we use special characters in regular expressions to match the beginning or end of a line or specify wild cards, we need a way to indicate that these characters are "normal" and we want to match the actual character such as a dollar sign or caret.  We can indicate that we want to simply match a character by prefixing that character with a backslash. For example, we can find money amounts with the following regular expression. 
 ~~~~15
- Since we prefix the dollar sign with a backslash, it actually matches the dollar sign in the input string instead of matching the "end of line", and the rest of the regular expression matches one or more digits or the period character. *Note:* Inside square brackets, characters are not "special". So when we say "[0-9.]", it really means digits or a period. Outside of square brackets, a period is the "wild-card" character and matches any character. Inside square brackets, the period is a period.  Summary
+ Since we prefix the dollar sign with a backslash, it actually matches the dollar sign in the input string instead of matching the "end of line", and the rest of the regular expression matches one or more digits or the period character. *Note:* Inside square brackets, characters are not "special". So when we say "[0-9.]", it really means digits or a period. Outside of square brackets, a period is the "wild-card" character and matches any character. Inside square brackets, the period is a period.
+ 
+ Summary
 -------
- While this only scratched the surface of regular expressions, we have learned a bit about the language of regular expressions. They are search strings with special characters in them that communicate your wishes to the regular expression system as to what defines "matching" and what is extracted from the matched strings. Here are some of those special characters and character sequences:  `^` Matches the beginning of the line.  `$` Matches the end of the line.  . Matches any character (a wildcard).  `\`s Matches a whitespace character.  `\`S Matches a non-whitespace character (opposite of `\`s).  `*` Applies to the immediately preceding character and indicates to match zero or more of the preceding character(s).  `*?` Applies to the immediately preceding character and indicates to match zero or more of the preceding character(s) in "non-greedy mode".  `+` Applies to the immediately preceding character and indicates to match one or more of the preceding character(s).  `+?` Applies to the immediately preceding character and indicates to match one or more of the preceding character(s) in "non-greedy mode".  [aeiou] Matches a single character as long as that character is in the specified set. In this example, it would match "a", "e", "i", "o", or "u", but no other characters.  [a-z0-9] You can specify ranges of characters using the minus sign. This example is a single character that must be a lowercase letter or a digit.  [`^`A-Za-z] When the first character in the set notation is a caret, it inverts the logic. This example matches a single character that is anything *other than* an uppercase or lowercase letter.  ( ) When parentheses are added to a regular expression, they are ignored for the purpose of matching, but allow you to extract a particular subset of the matched string rather than the whole string when using `findall()`.  `\`b Matches the empty string, but only at the start or end of a word.  `\`B Matches the empty string, but not at the start or end of a word.  `\`d Matches any decimal digit; equivalent to the set [0-9].  `\`D Matches any non-digit character; equivalent to the set [`^`0-9].  Bonus section for Unix / Linux users
+ While this only scratched the surface of regular expressions, we have learned a bit about the language of regular expressions. They are search strings with special characters in them that communicate your wishes to the regular expression system as to what defines "matching" and what is extracted from the matched strings. Here are some of those special characters and character sequences:
+ `^` Matches the beginning of the line.
+ `$` Matches the end of the line.
+ . Matches any character (a wildcard).
+ `\`s Matches a whitespace character.
+ `\`S Matches a non-whitespace character (opposite of `\`s).
+ `*` Applies to the immediately preceding character and indicates to match zero or more of the preceding character(s).
+ `*?` Applies to the immediately preceding character and indicates to match zero or more of the preceding character(s) in "non-greedy mode".
+ `+` Applies to the immediately preceding character and indicates to match one or more of the preceding character(s).
+ `+?` Applies to the immediately preceding character and indicates to match one or more of the preceding character(s) in "non-greedy mode".
+ [aeiou] Matches a single character as long as that character is in the specified set. In this example, it would match "a", "e", "i", "o", or "u", but no other characters.
+ [a-z0-9] You can specify ranges of characters using the minus sign. This example is a single character that must be a lowercase letter or a digit.
+ [`^`A-Za-z] When the first character in the set notation is a caret, it inverts the logic. This example matches a single character that is anything *other than* an uppercase or lowercase letter.
+ ( ) When parentheses are added to a regular expression, they are ignored for the purpose of matching, but allow you to extract a particular subset of the matched string rather than the whole string when using `findall()`.
+ `\`b Matches the empty string, but only at the start or end of a word.
+ `\`B Matches the empty string, but not at the start or end of a word.
+ `\`d Matches any decimal digit; equivalent to the set [0-9].
+ `\`D Matches any non-digit character; equivalent to the set [`^`0-9].  
+ 
+ Bonus section for Unix / Linux users
 ------------------------------------
  Support for searching files using regular expressions was built into the Unix operating system since the 1960s and it is available in nearly all programming languages in one form or another. 
 ######49
  As a matter of fact, there is a command-line program built into Unix called *grep* (Generalized Regular Expression Parser) that does pretty much the same as the `search()` examples in this chapter. So if you have a Macintosh or Linux system, you can try the following commands in your command-line window. 
 ~~~~16
- This tells `grep` to show you lines that start with the string "From:" in the file `mbox-short.txt`. If you experiment with the `grep` command a bit and read the documentation for `grep`, you will find some subtle differences between the regular expression support in Python and the regular expression support in `grep`. As an example, `grep` does not support the non-blank character "`\`S" so you will need to use the slightly more complex set notation "[`^` ]", which simply means match a character that is anything other than a space.  Debugging
+ This tells `grep` to show you lines that start with the string "From:" in the file `mbox-short.txt`. If you experiment with the `grep` command a bit and read the documentation for `grep`, you will find some subtle differences between the regular expression support in Python and the regular expression support in `grep`. As an example, `grep` does not support the non-blank character "`\`S" so you will need to use the slightly more complex set notation "[`^` ]", which simply means match a character that is anything other than a space.  
+
+Debugging
 ---------
  Python has some simple and rudimentary built-in documentation that can be quite helpful if you need a quick refresher to trigger your memory about the exact name of a particular method. This documentation can be viewed in the Python interpreter in interactive mode.  You can bring up an interactive help system using `help()`. 
 ~~~~17
@@ -134,14 +165,17 @@ Regular expressions
 ~~~~18
  You can also get a small amount of documentation on a particular method using the dir command. 
 ~~~~19
- The built-in documentation is not very extensive, but it can be helpful when you are in a hurry or don't have access to a web browser or search engine.  Glossary
+ The built-in documentation is not very extensive, but it can be helpful when you are in a hurry or don't have access to a web browser or search engine.
+ Glossary
 --------
- brittle code :   Code that works when the input data is in a particular format but is     prone to breakage if there is some deviation from the correct     format. We call this "brittle code" because it is easily broken.  greedy matching :   The notion that the "+" and "\*" characters in a regular expression     expand outward to match the largest possible string.
+ brittle code :   Code that works when the input data is in a particular format but is prone to breakage if there is some deviation from the correct format. We call this "brittle code" because it is easily broken.
+ greedy matching :   The notion that the "+" and "\*" characters in a regular expression expand outward to match the largest possible string.
 ######50
 ######51
- grep :   A command available in most Unix systems that searches through text     files looking for lines that match regular expressions. The command     name stands for "Generalized Regular Expression Parser".
+ grep :   A command available in most Unix systems that searches through text files looking for lines that match regular expressions. The command name stands for "Generalized Regular Expression Parser".
 ######52
- regular expression :   A language for expressing more complex search strings. A regular     expression may contain special characters that indicate that a     search only matches at the beginning or end of a line or many other     similar capabilities.  wild card :   A special character that matches any character. In regular     expressions the wild-card character is the period.
+ regular expression : A language for expressing more complex search strings. A regular expression may contain special characters that indicate that a search only matches at the beginning or end of a line or many other similar capabilities.
+ wild card :   A special character that matches any character. In regular expressions the wild-card character is the period.
 ######53
  Exercises
 ---------
