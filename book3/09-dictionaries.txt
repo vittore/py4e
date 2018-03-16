@@ -55,7 +55,12 @@ Dictionaries
 -------------------------------
 
 ######24
- Suppose you are given a string and you want to count how many times each letter appears. There are several ways you could do it:  1.  You could create 26 variables, one for each letter of the alphabet.     Then you could traverse the string and, for each character,     increment the corresponding counter, probably using a chained     conditional.  2.  You could create a list with 26 elements. Then you could convert     each character to a number (using the built-in function     `ord`), use the number as an index into the list, and     increment the appropriate counter.  3.  You could create a dictionary with characters as keys and counters     as the corresponding values. The first time you see a character, you     would add an item to the dictionary. After that you would increment     the value of an existing item.  Each of these options performs the same computation, but each of them implements that computation in a different way. 
+ Suppose you are given a string and you want to count how many times each letter appears. There are several ways you could do it:
+ 1.  You could create 26 variables, one for each letter of the alphabet. Then you could traverse the string and, for each character,     increment the corresponding counter, probably using a chained conditional.
+ 2.  You could create a list with 26 elements. Then you could convert each character to a number (using the built-in function     `ord`), use the number as an index into the list, and increment the appropriate counter.
+ 3.  You could create a dictionary with characters as keys and counters as the corresponding values. The first time you see a character, you would add an item to the dictionary. After that you would increment the value of an existing item.
+ 
+ Each of these options performs the same computation, but each of them implements that computation in a different way. 
 ######25
  An *implementation* is a way of performing a computation; some implementations are better than others. For example, an advantage of the dictionary implementation is that we don't have to know ahead of time which letters appear in the string and we only have to make room for the letters that do appear.  Here is what the code might look like: 
 ~~~~10
@@ -78,7 +83,16 @@ Dictionaries
 ######32
  Dictionaries and files
 ----------------------
- One of the common uses of a dictionary is to count the occurrence of words in a file with some written text. Let's start with a very simple file of words taken from the text of *Romeo and Juliet*.  For the first set of examples, we will use a shortened and simplified version of the text with no punctuation. Later we will work with the text of the scene with punctuation included.      But soft what light through yonder window breaks     It is the east and Juliet is the sun     Arise fair sun and kill the envious moon     Who is already sick and pale with grief  We will write a Python program to read through the lines of the file, break each line into a list of words, and then loop through each of the words in the line and count each word using a dictionary. 
+ One of the common uses of a dictionary is to count the occurrence of words in a file with some written text. Let's start with a very simple file of words taken from the text of *Romeo and Juliet*.
+ 
+ For the first set of examples, we will use a shortened and simplified version of the text with no punctuation. Later we will work with the text of the scene with punctuation included.
+ 
+ But soft what light through yonder window breaks
+ It is the east and Juliet is the sun
+ Arise fair sun and kill the envious moon
+ Who is already sick and pale with grief
+ 
+ We will write a Python program to read through the lines of the file, break each line into a list of words, and then loop through each of the words in the line and count each word using a dictionary. 
 ######33
 ######34
  You will see that we have two `for` loops. The outer loop is reading the lines of the file and the inner loop is iterating through each of the words on that particular line. This is an example of a pattern called *nested loops* because one of the loops is the *outer* loop and the other loop is the *inner* loop.  Because the inner loop executes all of its iterations each time the outer loop makes a single iteration, we think of the inner loop as iterating "more quickly" and the outer loop as iterating more slowly. 
@@ -132,10 +146,21 @@ Dictionaries
 ---------
 
 ######49
- As you work with bigger datasets it can become unwieldy to debug by printing and checking data by hand. Here are some suggestions for debugging large datasets:  Scale down the input :   If possible, reduce the size of the dataset. For example if the     program reads a text file, start with just the first 10 lines, or     with the smallest example you can find. You can either edit the     files themselves, or (better) modify the program so it reads only     the first `n` lines.      If there is an error, you can reduce `n` to the smallest     value that manifests the error, and then increase it gradually as     you find and correct errors.  Check summaries and types :   Instead of printing and checking the entire dataset, consider     printing summaries of the data: for example, the number of items in     a dictionary or the total of a list of numbers.      A common cause of runtime errors is a value that is not the right     type. For debugging this kind of error, it is often enough to print     the type of a value.  Write self-checks :   Sometimes you can write code to check for errors automatically. For     example, if you are computing the average of a list of numbers, you     could check that the result is not greater than the largest element     in the list or less than the smallest. This is called a "sanity     check" because it detects results that are "completely illogical".
+ As you work with bigger datasets it can become unwieldy to debug by printing and checking data by hand. Here are some suggestions for debugging large datasets:
+ Scale down the input : If possible, reduce the size of the dataset. For example if the program reads a text file, start with just the first 10 lines, or with the smallest example you can find. You can either edit the files themselves, or (better) modify the program so it reads only the first `n` lines.
+ 
+ If there is an error, you can reduce `n` to the smallest value that manifests the error, and then increase it gradually as you find and correct errors.
+ 
+ Check summaries and types: Instead of printing and checking the entire dataset, consider printing summaries of the data: for example, the number of items in a dictionary or the total of a list of numbers.
+ 
+ A common cause of runtime errors is a value that is not the right type. For debugging this kind of error, it is often enough to print     the type of a value.
+ 
+ Write self-checks: Sometimes you can write code to check for errors automatically. For example, if you are computing the average of a list of numbers, you could check that the result is not greater than the largest element in the list or less than the smallest. This is called a "sanity check" because it detects results that are "completely illogical".
 ######50
 ######51
-     Another kind of check compares the results of two different     computations to see if they are consistent. This is called a     "consistency check".  Pretty print the output :   Formatting debugging output can make it easier to spot an error.  Again, time you spend building scaffolding can reduce the time you spend debugging.
+     Another kind of check compares the results of two different computations to see if they are consistent. This is called a "consistency check".
+     Pretty print the output: Formatting debugging output can make it easier to spot an error. 
+     Again, time you spend building scaffolding can reduce the time you spend debugging.
 ######52
  Glossary
 --------
@@ -151,16 +176,16 @@ Dictionaries
 ######57
  item :   Another name for a key-value pair.
 ######58
- key :   An object that appears in a dictionary as the first part of a     key-value pair.
+ key :   An object that appears in a dictionary as the first part of a key-value pair.
 ######59
  key-value pair :   The representation of the mapping from a key to a value.
 ######60
- lookup :   A dictionary operation that takes a key and finds the corresponding     value.
+ lookup :   A dictionary operation that takes a key and finds the corresponding value.
 ######61
- nested loops :   When there are one or more loops "inside" of another loop. The inner     loop runs to completion each time the outer loop runs once.
+ nested loops :   When there are one or more loops "inside" of another loop. The inner loop runs to completion each time the outer loop runs once.
 ######62
 ######63
- value :   An object that appears in a dictionary as the second part of a     key-value pair. This is more specific than our previous use of the     word "value".
+ value :   An object that appears in a dictionary as the second part of a key-value pair. This is more specific than our previous use of the word "value".
 ######64
  Exercises
 ---------
@@ -170,6 +195,9 @@ Dictionaries
 ~~~~25
  **Exercise 3:** Write a program to read through a mail log, build a histogram using a dictionary to count how many messages have come from each email address, and print the dictionary. 
 ~~~~26
- **Exercise 4:** Add code to the above program to figure out who has the most messages in the file.  After all the data has been read and the dictionary has been created, look through the dictionary using a maximum loop (see Section [maximumloop]) to find who has the most messages and print how many messages the person has. 
+ **Exercise 4:** Add code to the above program to figure out who has the most messages in the file.
+ 
+ After all the data has been read and the dictionary has been created, look through the dictionary using a maximum loop (see Section [maximumloop]) to find who has the most messages and print how many messages the person has. 
 ~~~~27
- **Exercise 5:** This program records the domain name (instead of the address) where the message was sent from instead of who the mail came from (i.e., the whole email address). At the end of the program, print out the contents of your dictionary.  ~~~~28 
+ **Exercise 5:** This program records the domain name (instead of the address) where the message was sent from instead of who the mail came from (i.e., the whole email address). At the end of the program, print out the contents of your dictionary.
+ ~~~~28 
