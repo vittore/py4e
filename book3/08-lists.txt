@@ -125,6 +125,7 @@ Un operatore di slicing sul lato sinistro di un'assegnazione permette di aggiorn
 
 ~~~~15
 
+
 Metodi degli elenchi
 ------------
 
