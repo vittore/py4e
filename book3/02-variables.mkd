@@ -1,4 +1,3 @@
-﻿%
 
 Variabili, espressioni ed istruzioni
 ======================================
@@ -70,7 +69,9 @@ Beh, non è per niente quello che ci aspettavamo! Python interpreta `1,000,000` 
 \index{semantic error}
 \index{error!semantic}
 \index{error message}
-Questo è il primo esempio che vediamo di errore semantico: il codice viene eseguito senza visualizzare un messaggio di errore, ma non fa l'operazione per la quale pensavamo di averlo progettato.  Variabili
+Questo è il primo esempio che vediamo di errore semantico: il codice viene eseguito senza visualizzare un messaggio di errore, ma non fa l'operazione per la quale pensavamo di averlo progettato.  
+
+Variabili
 ---------
 
 \index{variable}
@@ -140,8 +141,11 @@ def       for       lambda    return
 ~~~~
 
 
-E' consigliabile tenere questo elenco a portata di mano. Se l'interprete segnala di uno dei nomi delle variabili e non ne capite il motivo, controllate se questa sia presente nella lista precedente.  Istruzioni.
+E' consigliabile tenere questo elenco a portata di mano. Se l'interprete segnala di uno dei nomi delle variabili e non ne capite il motivo, controllate se questa sia presente nella lista precedente.  
+
+Istruzioni.
 ----------
+
 Una *istruzione* è un'unità di codice che può essere eseguita dall'interprete di Python. Abbiamo visto due tipi di istruzioni: la Print è istruzione espressione e assegnazione.
 \index{statement}
 \index{interactive mode}
@@ -211,8 +215,10 @@ In Python 3.0 la divisione integer funziona molto di più come ci si aspetterebb
 \index{Python 2.0}
 \index{floating-point division}
 \index{division!floating-point}
+
 Espressioni
 -----------
+
 Un'*espressione* è una combinazione di valori, variabili e operatori. Un valore da solo è considerato un'espressione, come lo è una variabile, pertanto le seguenti sono tutte espressioni corrette (posto che sia stato assegnato un valore alla variabile `x`)
 \index{expression}
 \index{evaluate}
@@ -233,7 +239,9 @@ Se si digita un'espressione in modalità interattiva, l'interprete la *calcola* 
 ~~~~
 
 
-Ma in uno script, un'espressione da sola non fa nulla! Questa è una frequente fonte di confusione per i principianti.   **Esercizio 1: Digitare le seguenti istruzioni nell'interprete Python per osservare il loro comportamento:**
+Ma in uno script, un'espressione da sola non fa nulla! Questa è una frequente fonte di confusione per i principianti.  
+
+**Esercizio 1: Digitare le seguenti istruzioni nell'interprete Python per osservare il loro comportamento:**
 
 ~~~~ {.python}
 5
@@ -258,7 +266,9 @@ Quando in un'espressione appare più di un operatore, l'ordine di calcolo dipend
 - Le *M*oltiplicazioni e le *D*ivisioni hanno
     la stessa precedenza, superiore alle *A*ddizioni e alle *S*ottrazioni, che hanno lo stesso livello di precedenza. Quindi `2 * 3-1` è 5, non 4, e` 6 + 4 / 2` è 8.0, non 5.
 - Gli operatori con la stessa precedenza vengono calcolati da sinistra a destra.
-    Quindi l'espressione `5-3-1` da 1 e non 3, perché `5-3` viene svolto per primo mentre viene sottratto `1` da `2` dopo.  In caso di dubbio, mettete sempre le parentesi nelle vostre espressioni per essere sicuri che i calcoli siano eseguiti nell'ordine voluto.  Operatore modulo
+    Quindi l'espressione `5-3-1` da 1 e non 3, perché `5-3` viene svolto per primo mentre viene sottratto `1` da `2` dopo.  In caso di dubbio, mettete sempre le parentesi nelle vostre espressioni per essere sicuri che i calcoli siano eseguiti nell'ordine voluto.  
+
+Operatore modulo
 ----------------
 
 \index{modulus operator}
@@ -277,7 +287,9 @@ L'operatore *modulo* viene applicato a numeri interi e produce il resto quando i
 
 Quindi 7 diviso per 3 fa 2 con il resto di 1.  L'operatore modulo si può rivelare sorprendentemente utile. Per esempio, è possibile verificare se un numero è divisibile per un altro: se `x%y` fa zero, allora `x` è divisibile per `y`.
 \index{divisibility}
-È inoltre possibile ricavare da un numero quale sia il valore della cifra o delle cifre più a destra. Per esempio, `x % 10` restituisce la cifra più a destra di `x` (in base 10). in modo simile, `x% 100` restituisce le ultime due cifre.  Operazioni con le stringhe
+È inoltre possibile ricavare da un numero quale sia il valore della cifra o delle cifre più a destra. Per esempio, `x % 10` restituisce la cifra più a destra di `x` (in base 10). in modo simile, `x% 100` restituisce le ultime due cifre.  
+
+Operazioni con le stringhe
 -----------------
 
 \index{string!operation}
@@ -367,6 +379,7 @@ ValueError: invalid literal for int() with base 10:
 Vedremo in seguito come gestire questo tipo di errore.
 \index{ValueError}
 \index{exception!ValueError}
+
 Commenti
 --------
 
@@ -400,7 +413,9 @@ v = 5     # velocity in meters/second.
 ~~~~
 
 
-Assegnare nomi adeguati alle variabili può ridurre la necessità di commenti, ma i nomi lunghi possono rendere difficili da leggere le espressioni complesse, pertanto esiste un compromesso.  Scegliere nomi mnemonici delle variabili
+Assegnare nomi adeguati alle variabili può ridurre la necessità di commenti, ma i nomi lunghi possono rendere difficili da leggere le espressioni complesse, pertanto esiste un compromesso.  
+
+Scegliere nomi mnemonici delle variabili
 --------------------------------
 
 \index{mnemonic}
@@ -506,8 +521,10 @@ A questo punto, la causa più probabile di un errore semantico è l'ordine delle
 
 Ma la divisione avviene prima, quindi otterreste $\pi / 2$, il che non è la stessa cosa! Python non ha modo di sapere cosa intendeste scrivere, quindi in questo caso non riceverete un messaggio di errore; avete appena ottenuto la risposta sbagliata.
 \index{order of operations}
+
 Glossario
 --------
+
 Istruzione: Istruzione che assegna un valore a una variabile.
 \index{assignment}
 concatenare: Unire due operandi tra di loro.
@@ -544,9 +561,11 @@ valore: una delle unità di base dei dati, come un numero o una stringa, che pos
 \index{value}
 Varibile: Un nome riferito ad un valore.
 \index{variable}
+
 Esercizi
 ---------
-** Esercizio 2: Scrivete un programma che usi `input` per chiedere agli utenti il proprio nome e poi date loro il benvenuto.**
+
+**Esercizio 2: Scrivete un programma che usi `input` per chiedere agli utenti il proprio nome e poi date loro il benvenuto.**
 
 ~~~~
 Enter your name: Chuck
@@ -554,7 +573,7 @@ Hello Chuck
 ~~~~
 
 
-** Esercizio 3: scrivete un programma per richiedere all'utente ore e tariffe orarie per calcolare la retribuzione lorda.**
+**Esercizio 3: scrivete un programma per richiedere all'utente ore e tariffe orarie per calcolare la retribuzione lorda.**
 
 ~~~~
 Enter Hours: 35
@@ -563,7 +582,9 @@ Pay: 96.25
 ~~~~
 
 
-Per ora non ci preoccuperemo di assicurarci che la nostra paga abbia esattamente due cifre dopo la virgola. Se volete, potete giocare con la funzione `round` integrata in Python per arrotondare correttamente la retribuzione risultante a due cifre decimali.   ** Esercizio 4: supponiamo di eseguire le seguenti istruzioni di assegnazione: **
+Per ora non ci preoccuperemo di assicurarci che la nostra paga abbia esattamente due cifre dopo la virgola. Se volete, potete giocare con la funzione `round` integrata in Python per arrotondare correttamente la retribuzione risultante a due cifre decimali.   
+
+**Esercizio 4: supponiamo di eseguire le seguenti istruzioni di assegnazione:**
 
 ~~~~
 width = 17
@@ -575,7 +596,7 @@ Per ciascuna delle seguenti espressioni, scrivete il valore dell'espressione e i
 1.  `width//2`
 2.  `width/2.0`
 3.  `height/3`
-~~~~4  
+
 ~~~~ {.python .trinket height="120"}
 >>> print(1,000,000)
 1 0 0
@@ -583,4 +604,5 @@ Per ciascuna delle seguenti espressioni, scrivete il valore dell'espressione e i
 
 
 Usate l'interprete Python per verificare le vostre risposte.
-** Esercizio 5: scrivete un programma che richieda all'utente una temperatura in gradi Celsius, la converta in Fahrenheit e poi la stampi.**
+
+**Esercizio 5: scrivete un programma che richieda all'utente una temperatura in gradi Celsius, la converta in Fahrenheit e poi la stampi.**
