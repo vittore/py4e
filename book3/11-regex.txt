@@ -1,47 +1,54 @@
-Regular expressions
+﻿
+Espressioni regolari
 ===================
- So far we have been reading through files, looking for patterns and extracting various bits of lines that we find interesting. We have been  using string methods like `split` and `find` and using lists and string slicing to extract portions of the lines. 
+Finora abbiamo letto i file, cercato modelli ed estrapolati vari pezzi di linee che riteniamo interessanti. Siamo stati
+
+usando metodi di stringa come `split` e` find` e usando liste e slicing delle stringhe per estrarre parti delle linee. 
 ######1
 ######2
 ######3
- This task of searching and extracting is so common that Python has a very powerful library called *regular expressions* that handles many of these tasks quite elegantly. The reason we have not introduced regular expressions earlier in the book is because while they are very powerful, they are a little complicated and their syntax takes some getting used to.  Regular expressions are almost their own little programming language for searching and parsing strings. As a matter of fact, entire books have been written on the topic of regular expressions. In this chapter, we will only cover the basics of regular expressions. For more detail on regular expressions, see:  <http://en.wikipedia.org/wiki/Regular_expression>  <https://docs.python.org/3.5/library/re.html>  The regular expression library `re` must be imported into your program before you can use it. The simplest use of the regular expression library is the `search()` function. The following program demonstrates a trivial use of the search function. 
+Questo compito di ricerca ed estrazione è così comune che Python ha una libreria molto potente chiamata * regular expressions * che gestisce molte di queste attività in modo abbastanza elegante. La ragione per cui non abbiamo introdotto le espressioni regolari in precedenza nel libro è perché, sebbene siano molto potenti, sono un po 'complicate e la loro sintassi richiede un po' di tempo per abituarsi.
+Le espressioni regolari sono quasi il loro piccolo linguaggio di programmazione per la ricerca e l'analisi delle stringhe. In effetti, sono stati scritti interi libri sul tema delle espressioni regolari. In questo capitolo, tratteremo solo le basi delle espressioni regolari. Per maggiori dettagli sulle espressioni regolari, vedi:
+<Http://en.wikipedia.org/wiki/Regular_expression>
+<Https://docs.python.org/3.5/library/re.html>
+La libreria di espressioni regolari `re` deve essere importata nel tuo programma prima che tu possa usarla. L'uso più semplice della libreria di espressioni regolari è la funzione `search ()`. Il seguente programma dimostra un uso banale della funzione di ricerca. 
 ######4
 
 ######5
 ######6
 ../code3/mbox-short.txt
 ######7
- We open the file, loop through each line, and use the regular expression `search()` to only print out lines that contain the string "From:". This program does not use the real power of regular expressions, since we could have just as easily used `line.find()` to accomplish the same result. 
+Apriamo il file, passiamo in loop su ogni riga e usiamo l'espressione regolare `search ()` per stampare solo le righe che contengono la stringa "From:". Questo programma non usa il vero potere delle espressioni regolari, dal momento che avremmo potuto usare altrettanto facilmente `line.find ()` per ottenere lo stesso risultato. 
 ######8
- The power of the regular expressions comes when we add special characters to the search string that allow us to more precisely control which lines match the string. Adding these special characters to our regular expression allow us to do sophisticated matching and extraction while writing very little code.  For example, the caret character is used in regular expressions to match "the beginning" of a line. We could change our program to only match lines where "From:" was at the beginning of the line as follows: 
+La potenza delle espressioni regolari arriva quando aggiungiamo caratteri speciali alla stringa di ricerca che ci consente di controllare più precisamente le linee che corrispondono alla stringa. L'aggiunta di questi caratteri speciali alla nostra espressione regolare ci consente di eseguire abbinamenti ed estrazioni sofisticati durante la scrittura di un codice molto piccolo.  Ad esempio, il carattere di accento viene utilizzato nelle espressioni regolari per corrispondere "all'inizio" di una linea. Potremmo cambiare il nostro programma per abbinare solo le righe in cui "From:" era all'inizio della riga come segue: 
 ######9
 ######10
 ../code3/mbox-short.txt
 ######11
- Now we will only match lines that *start with* the string "From:". This is still a very simple example that we could have done equivalently with the `startswith()` method from the string library. But it serves to introduce the notion that regular expressions contain special action characters that give us more control as to what will match the regular expression. 
+Ora abbineremo solo le righe che * iniziano con * la stringa "From:". Questo è ancora un esempio molto semplice che avremmo potuto fare in modo equivalente con il metodo `startswith ()` dalla libreria di stringhe. Ma serve a introdurre la nozione che le espressioni regolari contengono caratteri di azioni speciali che ci danno più controllo su ciò che corrisponderà all'espressione regolare. 
 ######12
- Character matching in regular expressions
+Corrispondenza di caratteri nelle espressioni regolari
 -----------------------------------------
- There are a number of other special characters that let us build even more powerful regular expressions. The most commonly used special character is the period or full stop, which matches any character. 
+Ci sono un certo numero di altri personaggi speciali che ci permettono di costruire espressioni regolari ancora più potenti. Il carattere speciale più comunemente usato è il punto o punto, che corrisponde a qualsiasi carattere. 
 ######13
 ######14
- In the following example, the regular expression "F..m:" would match any of the strings "From:", "Fxxm:", "F12m:", or "F!@m:" since the period characters in the regular expression match any character. 
+Nell'esempio seguente, l'espressione regolare "F..m:" corrisponderebbe a qualsiasi stringa "From:", "Fxxm:", "F12m:" o "F!@m: "poiché i caratteri del periodo nell'espressione regolare corrispondono a qualsiasi carattere. 
 ######15
 ######16
 ../code3/mbox-short.txt
 ######17
- This is particularly powerful when combined with the ability to indicate that a character can be repeated any number of times using the "\*" or "+" characters in your regular expression. These special characters mean that instead of matching a single character in the search string, they match zero-or-more characters (in the case of the asterisk) or one-or-more of the characters (in the case of the plus sign).  We can further narrow down the lines that we match using a repeated *wild card* character in the following example: 
+Questo è particolarmente potente se combinato con la capacità di indicare che un personaggio può essere ripetuto un numero qualsiasi di volte usando i caratteri "\ *" o "+" nell'espressione regolare. Questi caratteri speciali significano che invece di trovare un singolo carattere nella stringa di ricerca, corrispondono a zero o più caratteri (nel caso dell'asterisco) o uno o più caratteri (nel caso del segno più) .  Possiamo restringere ulteriormente le linee che corrispondono usando un carattere * wild card * ripetuto nel seguente esempio: 
 ######18
 ######19
 ../code3/mbox-short.txt
 ######20
- The search string "`^`From:.+@" will successfully match lines that start with "From:", followed by one or more characters (".+"), followed by an at-sign. So this will match the following line:  *` From: stephen.marquard@`*`uct.ac.za`  You can think of the ".+" wildcard as expanding to match all the characters between the colon character and the at-sign.  *` From:.+@`*  It is good to think of the plus and asterisk characters as "pushy". For example, the following string would match the last at-sign in the string as the ".+" pushes outwards, as shown below:  *` From: stephen.marquard@uct.ac.za, csev@umich.edu, and cwen @`*`iupui.edu`  It is possible to tell an asterisk or plus sign not to be so "greedy" by adding another character. See the detailed documentation for information on turning off the greedy behavior. 
+La stringa di ricerca "` ^ `Da:. + @" Corrisponderà correttamente alle righe che iniziano con "Da:", seguite da uno o più caratteri (". +"), Seguiti da un simbolo di destinazione. Quindi questo corrisponderà alla seguente riga: * `Da: stephen.marquard @` * `uct.ac.za` Puoi pensare al carattere". + "Come espandibile per far combaciare tutti i caratteri tra il carattere del colon e l'at- cartello.  * `Da :.+ @ `* È bene pensare ai caratteri più e asterisco come" invadenti ". Ad esempio, la stringa seguente corrisponderebbe all'ultimo segno nella stringa mentre ". +" Si spinge verso l'esterno, come mostrato di seguito: * `Da: stephen.marquard@uct.ac.za, csev@umich.edu, e cwen @ `*` iupui.edu` È possibile indicare un asterisco o un segno più per non essere così "goloso" aggiungendo un altro carattere. Vedere la documentazione dettagliata per informazioni su come disattivare il comportamento avido. 
 ######21
- Extracting data using regular expressions
+Estrazione dei dati utilizzando le espressioni regolari
 -----------------------------------------
- If we want to extract data from a string in Python we can use the `findall()` method to extract all of the substrings which match a regular expression. Let's use the example of wanting to extract anything that looks like an email address from any line regardless of format. For example, we want to pull the email addresses from each of the following lines: 
+Se vogliamo estrarre dati da una stringa in Python possiamo usare il metodo `findall ()` per estrarre tutte le sottostringhe che corrispondono a un'espressione regolare. Usiamo l'esempio di voler estrarre qualsiasi cosa che assomigli ad un indirizzo email da qualsiasi riga indipendentemente dal formato. Ad esempio, vogliamo estrarre gli indirizzi email da ognuna delle seguenti righe: 
 ~~~~1
- We don't want to write code for each of the types of lines, splitting and slicing differently for each line. This following program uses `findall()` to find the lines with email addresses in them and extract one or more addresses from each of those lines. 
+Non vogliamo scrivere codice per ciascuno dei tipi di linee, suddivisione e divisione in modo diverso per ogni riga. Questo programma seguente usa `findall ()` per trovare le linee con indirizzi e-mail al loro interno ed estrarre uno o più indirizzi da ognuna di quelle linee. 
 ######22
 ######23
 
@@ -49,104 +56,132 @@ Regular expressions
 ######25
 ../code3/mbox-short.txt
 ######26
- The `findall()` method searches the string in the second argument and returns a list of all of the strings that look like email addresses. We are using a two-character sequence that matches a non-whitespace character (`\`S).  The output of the program would be: 
+Il metodo `findall ()` ricerca la stringa nel secondo argomento e restituisce un elenco di tutte le stringhe che assomigliano a indirizzi email. Stiamo usando una sequenza di due caratteri che corrisponde a un carattere non di uno spazio (`\` S).  L'output del programma sarebbe: 
 ~~~~2
- Translating the regular expression, we are looking for substrings that have at least one non-whitespace character, followed by an at-sign, followed by at least one more non-whitespace character. The "`\`S+" matches as many non-whitespace characters as possible.  The regular expression would match twice (csev@umich.edu and cwen@iupui.edu), but it would not match the string "@2PM" because there are no non-blank characters *before* the at-sign. We can use this regular expression in a program to read all the lines in a file and print out anything that looks like an email address as follows: 
+Traducendo l'espressione regolare, cerchiamo sottostringhe con almeno un carattere non di uno spazio bianco, seguito da un segno di at, seguito da almeno un altro carattere di spazi non di uno spazio. "" \ "S +" corrisponde a quanti più caratteri non spazi bianchi possibile.  L'espressione regolare corrisponderebbe due volte (csev@umich.edu e cwen@iupui.edu), ma non corrisponderebbe alla stringa "@ 2PM" perché non ci sono caratteri non vuoti * prima * di at-sign. Possiamo usare questa espressione regolare in un programma per leggere tutte le righe in un file e stampare qualsiasi cosa che assomigli ad un indirizzo email come segue: 
 ######27
 ######28
 ../code3/mbox-short.txt
 ######29
- We read each line and then extract all the substrings that match our regular expression. Since `findall()` returns a list, we simply check if the number of elements in our returned list is more than zero to print only lines where we found at least one substring that looks like an email address.  If we run the program on `mbox.txt` we get the following output: 
+Leggiamo ogni riga e quindi estrapiamo tutte le sottostringhe che corrispondono alla nostra espressione regolare. Poiché `findall ()` restituisce una lista, controlliamo semplicemente se il numero di elementi nella nostra lista restituita è maggiore di zero per stampare solo le righe in cui abbiamo trovato almeno una sottostringa che assomiglia ad un indirizzo email.  Se eseguiamo il programma su `mbox.txt` otteniamo il seguente risultato: 
 ~~~~3
- Some of our email addresses have incorrect characters like "`<`" or ";" at the beginning or end. Let's declare that we are only interested in the portion of the string that starts and ends with a letter or a number.  To do this, we use another feature of regular expressions. Square brackets are used to indicate a set of multiple acceptable characters we are willing to consider matching. In a sense, the "`\`S" is asking to match the set of "non-whitespace characters". Now we will be a little more explicit in terms of the characters we will match.  Here is our new regular expression: 
+Alcuni dei nostri indirizzi email hanno caratteri non corretti come "` <`" o ";" all'inizio o alla fine. Diciamo che siamo interessati solo alla parte della stringa che inizia e finisce con una lettera o un numero.  Per fare ciò, usiamo un'altra caratteristica delle espressioni regolari. Le parentesi quadre sono utilizzate per indicare un insieme di più caratteri accettabili che siamo disposti a considerare l'abbinamento. In un certo senso, "" \ "S" sta chiedendo di abbinare il set di "caratteri non di uno spazio bianco". Ora saremo un po 'più espliciti in termini di personaggi che abbineremo.  Ecco la nostra nuova espressione regolare: 
 ~~~~4
- This is getting a little complicated and you can begin to see why regular expressions are their own little language unto themselves. Translating this regular expression, we are looking for substrings that start with a *single* lowercase letter, uppercase letter, or number "[a-zA-Z0-9]", followed by zero or more non-blank characters ("`\`S\*"), followed by an at-sign, followed by zero or more non-blank characters ("`\`S\*"), followed by an uppercase or lowercase letter. Note that we switched from "+" to "\*" to indicate zero or more non-blank characters since "[a-zA-Z0-9]" is already one non-blank character. Remember that the "\*" or "+" applies to the single character immediately to the left of the plus or asterisk. 
+Questo sta diventando un po 'complicato e puoi cominciare a capire perché le espressioni regolari sono la loro piccola lingua per se stesse. Traducendo questa espressione regolare, cerchiamo sottostringhe che iniziano con una * lettera maiuscola * singola, una lettera maiuscola o un numero "[a-zA-Z0-9]", seguita da zero o più caratteri non vuoti ("` \ `S \ *"), seguito da un segno at, seguito da zero o più caratteri non vuoti ("` \ \ S \ * "), seguito da una lettera maiuscola o minuscola. Si noti che siamo passati da "+" a "\ *" per indicare zero o più caratteri non vuoti poiché "[a-zA-Z0-9]" è già un carattere non vuoto. Ricorda che "\ *" o "+" si applica al singolo carattere immediatamente a sinistra del segno più o dell'asterisco. 
 ######30
- If we use this expression in our program, our data is much cleaner: 
+Se usiamo questa espressione nel nostro programma, i nostri dati sono molto più puliti: 
 ######31
 ######32
 ../code3/mbox-short.txt
 ######33
 
 ~~~~5
- Notice that on the "source@collab.sakaiproject.org" lines, our regular expression eliminated two letters at the end of the string ("`>`;"). This is because when we append "[a-zA-Z]" to the end of our regular expression, we are demanding that whatever string the regular expression parser finds must end with a letter. So when it sees the "`>`" after "sakaiproject.org`>`;" it simply stops at the last "matching" letter it found (i.e., the "g" was the last good match).  Also note that the output of the program is a Python list that has a string as the single element in the list.  Combining searching and extracting
+Si noti che sulle linee "source@collab.sakaiproject.org", la nostra espressione regolare ha eliminato due lettere alla fine della stringa ("`> `;"). Questo perché quando appendiamo "[a-zA-Z]" alla fine della nostra espressione regolare, chiediamo che qualsiasi stringa trovata dal parser di espressioni regolari debba terminare con una lettera. Quindi, quando vede ""> "" dopo "sakaiproject.org`>`; " si ferma semplicemente sull'ultima lettera "corrispondente" trovata (cioè, la "g" era l'ultima corrispondenza valida).  Si noti inoltre che l'output del programma è un elenco Python che ha una stringa come singolo elemento nell'elenco.
+
+Combinare la ricerca e l'estrazione
 ----------------------------------
- If we want to find numbers on lines that start with the string "X-" such as: 
+Se vogliamo trovare numeri su linee che iniziano con la stringa "X-" come: 
 ~~~~6
- we don't just want any floating-point numbers from any lines. We only want to extract numbers from lines that have the above syntax.  We can construct the following regular expression to select the lines: 
+non vogliamo solo numeri in virgola mobile da nessuna riga. Vogliamo solo estrarre numeri da linee che hanno la sintassi sopra.  Possiamo costruire la seguente espressione regolare per selezionare le linee: 
 ~~~~7
- Translating this, we are saying, we want lines that start with "X-", followed by zero or more characters (".\*"), followed by a colon (":") and then a space. After the space we are looking for one or more characters that are either a digit (0-9) or a period "[0-9.]+". Note that inside the square brackets, the period matches an actual period (i.e., it is not a wildcard between the square brackets).  This is a very tight expression that will pretty much match only the lines we are interested in as follows: 
+Traducendo questo, stiamo dicendo, vogliamo linee che iniziano con "X-", seguite da zero o più caratteri (". \ *"), Seguiti da due punti (":") e quindi da uno spazio. Dopo lo spazio, cerchiamo uno o più caratteri che siano una cifra (0-9) o un punto "[0-9.] +". Si noti che all'interno delle parentesi quadre, il periodo corrisponde a un periodo effettivo (cioè, non è un carattere jolly tra parentesi quadre).  Questa è un'espressione molto stretta che corrisponderà quasi solo alle linee che ci interessano come segue: 
 ######34
 ######35
 ../code3/mbox-short.txt
 ######36
- When we run the program, we see the data nicely filtered to show only the lines we are looking for. 
+Quando eseguiamo il programma, vediamo i dati filtrati per mostrare solo le linee che stiamo cercando. 
 ~~~~8
- But now we have to solve the problem of extracting the numbers. While it would be simple enough to use `split`, we can use another feature of regular expressions to both search and parse the line at the same time. 
+Ma ora dobbiamo risolvere il problema dell'estrazione dei numeri. Mentre sarebbe abbastanza semplice usare `split`, possiamo usare un'altra caratteristica delle espressioni regolari per cercare e analizzare la linea allo stesso tempo. 
 ######37
- Parentheses are another special character in regular expressions. When you add parentheses to a regular expression, they are ignored when matching the string. But when you are using `findall()`, parentheses indicate that while you want the whole expression to match, you only are interested in extracting a portion of the substring that matches the regular expression. 
+Le parentesi sono un altro carattere speciale nelle espressioni regolari. Quando aggiungi le parentesi a un'espressione regolare, vengono ignorate quando si abbina la stringa. Ma quando stai usando `findall ()`, le parentesi indicano che mentre vuoi che l'intera espressione corrisponda, ti interessa solo estrarre una porzione della sottostringa che corrisponda all'espressione regolare. 
 ######38
 ######39
- So we make the following change to our program: 
+Quindi apportiamo la seguente modifica al nostro programma: 
 ######40
 ######41
 ../code3/mbox-short.txt
 ######42
- Instead of calling `search()`, we add parentheses around the part of the regular expression that represents the floating-point number to indicate we only want `findall()` to give us back the floating-point number portion of the matching string.  The output from this program is as follows: 
+Invece di chiamare `search ()`, aggiungiamo parentesi attorno alla parte dell'espressione regolare che rappresenta il numero in virgola mobile per indicare che vogliamo solo `findall ()` per restituirci la parte in virgola mobile della stringa corrispondente .  L'output di questo programma è il seguente: 
 ~~~~9
- The numbers are still in a list and need to be converted from strings to floating point, but we have used the power of regular expressions to both search and extract the information we found interesting.  As another example of this technique, if you look at the file there are a number of lines of the form:      Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772  If we wanted to extract all of the revision numbers (the integer number at the end of these lines) using the same technique as above, we could write the following program: 
+I numeri sono ancora in una lista e devono essere convertiti da stringhe a virgola mobile, ma abbiamo usato il potere delle espressioni regolari per cercare ed estrarre le informazioni che abbiamo trovato interessanti.  Come un altro esempio di questa tecnica, se si guarda il file ci sono un certo numero di linee del modulo: Dettagli: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772 Se volessimo estrarre tutto i numeri di revisione (il numero intero alla fine di queste righe) utilizzando la stessa tecnica di cui sopra, potremmo scrivere il seguente programma: 
 ######43
 ######44
 ../code3/mbox-short.txt
 ######45
- Translating our regular expression, we are looking for lines that start with "Details:", followed by any number of characters (".\*"), followed by "rev=", and then by one or more digits. We want to find lines that match the entire expression but we only want to extract the integer number at the end of the line, so we surround "[0-9]+" with parentheses.  When we run the program, we get the following output: 
+Traducendo la nostra espressione regolare, stiamo cercando le righe che iniziano con "Dettagli:", seguito da un numero qualsiasi di caratteri (". \ *"), Seguito da "rev =", e quindi da una o più cifre. Vogliamo trovare linee che combacino con l'intera espressione ma vogliamo solo estrarre il numero intero alla fine della riga, quindi circondiamo "[0-9] +" con parentesi.  Quando eseguiamo il programma, otteniamo il seguente risultato: 
 ~~~~10
- Remember that the "[0-9]+" is "greedy" and it tries to make as large a string of digits as possible before extracting those digits. This "greedy" behavior is why we get all five digits for each number. The regular expression library expands in both directions until it encounters a non-digit, or the beginning or the end of a line.  Now we can use regular expressions to redo an exercise from earlier in the book where we were interested in the time of day of each mail message. We looked for lines of the form: 
+Ricorda che "[0-9] +" è "goloso" e tenta di creare una stringa di cifre il più ampia possibile prima di estrarre tali cifre. Questo comportamento "avido" è il motivo per cui otteniamo tutte e cinque le cifre per ogni numero. La libreria di espressioni regolari si espande in entrambe le direzioni fino a quando non incontra un numero non numerico o l'inizio o la fine di una riga.  Ora possiamo usare le espressioni regolari per ripetere un esercizio da prima nel libro in cui eravamo interessati all'ora del giorno di ciascun messaggio. Abbiamo cercato le linee del modulo: 
 ~~~~11
- and wanted to extract the hour of the day for each line. Previously we did this with two calls to `split`. First the line was split into words and then we pulled out the fifth word and split it again on the colon character to pull out the two characters we were interested in.  While this worked, it actually results in pretty brittle code that is assuming the lines are nicely formatted. If you were to add enough error checking (or a big try/except block) to insure that your program never failed when presented with incorrectly formatted lines, the code would balloon to 10-15 lines of code that was pretty hard to read.  We can do this in a far simpler way with the following regular expression: 
+e volevo estrarre l'ora del giorno per ogni linea. In precedenza lo abbiamo fatto con due chiamate a `split`. Prima la linea è stata divisa in parole e poi abbiamo estratto la quinta parola e l'abbiamo divisa nuovamente sul personaggio del colon per tirare fuori i due personaggi a cui eravamo interessati.  Mentre questo ha funzionato, in realtà si traduce in un codice piuttosto fragile che presuppone che le linee siano ben formattate. Se dovessi aggiungere abbastanza controllo degli errori (o un grosso tentativo / eccetto il blocco) per assicurare che il tuo programma non abbia mai fallito quando presentato con linee formattate in modo errato, il codice si espanderebbe a 10-15 righe di codice che era piuttosto difficile da leggere.  Possiamo farlo in un modo molto più semplice con la seguente espressione regolare: 
 ~~~~12
- The translation of this regular expression is that we are looking for lines that start with "From " (note the space), followed by any number of characters (".\*"), followed by a space, followed by two digits "[0-9][0-9]", followed by a colon character. This is the definition of the kinds of lines we are looking for.  In order to pull out only the hour using `findall()`, we add parentheses around the two digits as follows: 
+La traduzione di questa espressione regolare è che stiamo cercando linee che iniziano con "From" (notare lo spazio), seguito da un numero qualsiasi di caratteri (". \ *"), Seguito da uno spazio, seguito da due cifre "[ 0-9] [0-9] ", seguito da un carattere di due punti. Questa è la definizione dei tipi di linee che stiamo cercando.  Per estrarre solo l'ora usando `findall ()`, aggiungiamo parentesi attorno alle due cifre come segue: 
 ~~~~13
- This results in the following program: 
+Ciò risulta nel seguente programma: 
 ######46
 ######47
 ../code3/mbox-short.txt
 ######48
- When the program runs, it produces the following output: 
+Quando il programma viene eseguito, produce il seguente output: 
 ~~~~14
- Escape character
+Carattere di fuga
 ----------------
- Since we use special characters in regular expressions to match the beginning or end of a line or specify wild cards, we need a way to indicate that these characters are "normal" and we want to match the actual character such as a dollar sign or caret.  We can indicate that we want to simply match a character by prefixing that character with a backslash. For example, we can find money amounts with the following regular expression. 
+Poiché utilizziamo caratteri speciali nelle espressioni regolari per abbinare l'inizio o la fine di una riga o specificare i caratteri jolly, abbiamo bisogno di un modo per indicare che questi caratteri sono "normali" e vogliamo abbinare il carattere reale come un segno di dollaro o un segno di omissione .  Possiamo indicare che vogliamo semplicemente abbinare un carattere prefiggendo quel carattere con una barra rovesciata. Ad esempio, possiamo trovare importi in denaro con la seguente espressione regolare. 
 ~~~~15
- Since we prefix the dollar sign with a backslash, it actually matches the dollar sign in the input string instead of matching the "end of line", and the rest of the regular expression matches one or more digits or the period character. *Note:* Inside square brackets, characters are not "special". So when we say "[0-9.]", it really means digits or a period. Outside of square brackets, a period is the "wild-card" character and matches any character. Inside square brackets, the period is a period.  Summary
+Dal momento che prefissiamo il simbolo del dollaro con una barra rovesciata, esso corrisponde effettivamente al simbolo del dollaro nella stringa di input anziché corrispondere alla "fine della riga" e il resto dell'espressione regolare corrisponde a una o più cifre o al carattere del periodo. * Nota: * All'interno di parentesi quadre, i caratteri non sono "speciali". Quindi quando diciamo "[0-9.]", Significa davvero cifre o un punto. Al di fuori delle parentesi quadre, un punto è il carattere "wild-card" e corrisponde a qualsiasi carattere. All'interno di parentesi quadre, il periodo è un periodo.
+
+Sommario
 -------
- While this only scratched the surface of regular expressions, we have learned a bit about the language of regular expressions. They are search strings with special characters in them that communicate your wishes to the regular expression system as to what defines "matching" and what is extracted from the matched strings. Here are some of those special characters and character sequences:  `^` Matches the beginning of the line.  `$` Matches the end of the line.  . Matches any character (a wildcard).  `\`s Matches a whitespace character.  `\`S Matches a non-whitespace character (opposite of `\`s).  `*` Applies to the immediately preceding character and indicates to match zero or more of the preceding character(s).  `*?` Applies to the immediately preceding character and indicates to match zero or more of the preceding character(s) in "non-greedy mode".  `+` Applies to the immediately preceding character and indicates to match one or more of the preceding character(s).  `+?` Applies to the immediately preceding character and indicates to match one or more of the preceding character(s) in "non-greedy mode".  [aeiou] Matches a single character as long as that character is in the specified set. In this example, it would match "a", "e", "i", "o", or "u", but no other characters.  [a-z0-9] You can specify ranges of characters using the minus sign. This example is a single character that must be a lowercase letter or a digit.  [`^`A-Za-z] When the first character in the set notation is a caret, it inverts the logic. This example matches a single character that is anything *other than* an uppercase or lowercase letter.  ( ) When parentheses are added to a regular expression, they are ignored for the purpose of matching, but allow you to extract a particular subset of the matched string rather than the whole string when using `findall()`.  `\`b Matches the empty string, but only at the start or end of a word.  `\`B Matches the empty string, but not at the start or end of a word.  `\`d Matches any decimal digit; equivalent to the set [0-9].  `\`D Matches any non-digit character; equivalent to the set [`^`0-9].  Bonus section for Unix / Linux users
+Mentre questo ha solo graffiato la superficie delle espressioni regolari, abbiamo imparato un po 'il linguaggio delle espressioni regolari. Sono stringhe di ricerca con caratteri speciali in esse che comunicano i tuoi desideri al sistema di espressioni regolari su cosa definisce "matching" e cosa viene estratto dalle stringhe corrispondenti. Ecco alcuni di quei personaggi speciali e sequenze di personaggi:
+`^` Corrisponde all'inizio della linea.
+`$` Corrisponde alla fine della riga.
+. Corrisponde a qualsiasi carattere (un carattere jolly).
+`\ s corrisponde a un carattere di spazio bianco.
+`\ S corrisponde a un carattere non di spazi bianchi (opposto a` \ `s).
+`*` Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti.
+`*?`Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti in" modalità non greedy ".
+`+` Si applica al carattere immediatamente precedente e indica di abbinare uno o più dei caratteri precedenti.
+`+?`Si applica al carattere immediatamente precedente e indica di abbinare uno o più dei caratteri precedenti in" modalità non greedy ".
+[aeiou] Corrisponde a un singolo carattere fintanto che quel personaggio si trova nel set specificato. In questo esempio, corrisponderebbe "a", "e", "i", "o" o "u", ma nessun altro carattere.
+[a-z0-9] È possibile specificare intervalli di caratteri utilizzando il segno meno. Questo esempio è un singolo carattere che deve essere una lettera minuscola o una cifra.
+[`^` A-Za-z] Quando il primo carattere nella notazione impostata è un segno di omissione, inverte la logica. Questo esempio corrisponde a un singolo carattere che è qualsiasi * diverso da * una lettera maiuscola o minuscola.
+() Quando le parentesi vengono aggiunte a un'espressione regolare, vengono ignorate ai fini della corrispondenza, ma consentono di estrarre un particolare sottoinsieme della stringa con corrispondenza piuttosto che l'intera stringa quando si utilizza `findall ()`.
+`\` b Trova la stringa vuota, ma solo all'inizio o alla fine di una parola.
+`\` B Trova la stringa vuota, ma non all'inizio o alla fine di una parola.
+`\` d corrisponde a qualsiasi cifra decimale; equivalente all'insieme [0-9].
+`\` D corrisponde a qualsiasi carattere non numerico; equivalente al set [`^` 0-9].  
+
+Sezione bonus per utenti Unix / Linux
 ------------------------------------
- Support for searching files using regular expressions was built into the Unix operating system since the 1960s and it is available in nearly all programming languages in one form or another. 
+Il supporto per la ricerca di file tramite espressioni regolari è stato incorporato nel sistema operativo Unix sin dagli anni '60 ed è disponibile in quasi tutti i linguaggi di programmazione in una forma o nell'altra. 
 ######49
- As a matter of fact, there is a command-line program built into Unix called *grep* (Generalized Regular Expression Parser) that does pretty much the same as the `search()` examples in this chapter. So if you have a Macintosh or Linux system, you can try the following commands in your command-line window. 
+Di fatto, esiste un programma da riga di comando incorporato in Unix chiamato * grep * (Generalized Expression Parser Regular) che funziona più o meno come gli esempi di `search ()` in questo capitolo. Quindi se hai un sistema Macintosh o Linux, puoi provare i seguenti comandi nella finestra della riga di comando. 
 ~~~~16
- This tells `grep` to show you lines that start with the string "From:" in the file `mbox-short.txt`. If you experiment with the `grep` command a bit and read the documentation for `grep`, you will find some subtle differences between the regular expression support in Python and the regular expression support in `grep`. As an example, `grep` does not support the non-blank character "`\`S" so you will need to use the slightly more complex set notation "[`^` ]", which simply means match a character that is anything other than a space.  Debugging
+Questo dice a `grep` di mostrare le linee che iniziano con la stringa" From: "nel file` mbox-short.txt`. Se sperimentate un po 'il comando `grep` e leggete la documentazione di` grep`, troverete alcune sottili differenze tra il supporto delle espressioni regolari in Python e il supporto delle espressioni regolari in `grep`. Ad esempio, `grep` non supporta il carattere non vuoto" `\` S ", quindi dovrai usare la notazione set leggermente più complessa" [`^`] ", che significa semplicemente abbinare un carattere che è qualcosa diverso da uno spazio.  
+
+Debug
 ---------
- Python has some simple and rudimentary built-in documentation that can be quite helpful if you need a quick refresher to trigger your memory about the exact name of a particular method. This documentation can be viewed in the Python interpreter in interactive mode.  You can bring up an interactive help system using `help()`. 
+Python ha una documentazione integrata semplice e rudimentale che può essere molto utile se hai bisogno di un rapido aggiornamento per attivare la tua memoria sul nome esatto di un particolare metodo. Questa documentazione può essere visualizzata nell'interprete Python in modalità interattiva.  È possibile visualizzare un sistema di guida interattivo usando `help ()`. 
 ~~~~17
- If you know what module you want to use, you can use the `dir()` command to find the methods in the module as follows: 
+Se sai quale modulo vuoi usare, puoi usare il comando `dir ()` per trovare i metodi nel modulo come segue: 
 ~~~~18
- You can also get a small amount of documentation on a particular method using the dir command. 
+È inoltre possibile ottenere una piccola quantità di documentazione su un particolare metodo utilizzando il comando dir. 
 ~~~~19
- The built-in documentation is not very extensive, but it can be helpful when you are in a hurry or don't have access to a web browser or search engine.  Glossary
+La documentazione integrata non è molto ampia, ma può essere utile quando si è di fretta o non si ha accesso a un browser Web o motore di ricerca.
+Glossario
 --------
- brittle code :   Code that works when the input data is in a particular format but is     prone to breakage if there is some deviation from the correct     format. We call this "brittle code" because it is easily broken.  greedy matching :   The notion that the "+" and "\*" characters in a regular expression     expand outward to match the largest possible string.
+codice fragile: codice che funziona quando i dati di input sono in un formato particolare ma è soggetto a rotture se c'è qualche deviazione dal formato corretto. Chiamiamo questo "codice fragile" perché è facilmente rotto.
+corrispondenza avida: la nozione che i caratteri "+" e "\ *" in un'espressione regolare si espandono verso l'esterno per corrispondere alla stringa più grande possibile.
 ######50
 ######51
- grep :   A command available in most Unix systems that searches through text     files looking for lines that match regular expressions. The command     name stands for "Generalized Regular Expression Parser".
+grep: un comando disponibile nella maggior parte dei sistemi Unix che cerca tra i file di testo alla ricerca di linee che soddisfino le espressioni regolari. Il nome del comando sta per "parser di espressioni regolari generalizzate".
 ######52
- regular expression :   A language for expressing more complex search strings. A regular     expression may contain special characters that indicate that a     search only matches at the beginning or end of a line or many other     similar capabilities.  wild card :   A special character that matches any character. In regular     expressions the wild-card character is the period.
+espressione regolare: una lingua per esprimere stringhe di ricerca più complesse. Un'espressione regolare può contenere caratteri speciali che indicano che una ricerca corrisponde solo all'inizio o alla fine di una riga o molte altre funzionalità simili.
+jolly: un personaggio speciale che corrisponde a qualsiasi personaggio. Nelle espressioni regolari il carattere jolly è il periodo.
 ######53
- Exercises
+Esercizi
 ---------
- **Exercise 1:** Write a simple program to simulate the operation of the `grep` command on Unix. Ask the user to enter a regular expression and count the number of lines that matched the regular expression: 
+** Esercizio 1: ** Scrivi un semplice programma per simulare l'operazione del comando `grep` su Unix. Chiedi all'utente di immettere un'espressione regolare e di contare il numero di righe che corrispondono all'espressione regolare: 
 ~~~~20
- **Exercise 2:** Write a program to look for lines of the form 
+** Esercizio 2: ** Scrivi un programma per cercare le linee del modulo 
 ~~~~21
- and extract the number from each of the lines using a regular expression and the `findall()` method. Compute the average of the numbers and print out the average.  ~~~~22 
+ed estrae il numero da ciascuna delle linee usando un'espressione regolare e il metodo `findall ()`. Calcola la media dei numeri e stampa la media.  ~~~~22

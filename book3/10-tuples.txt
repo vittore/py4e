@@ -1,208 +1,261 @@
- Tuples
+﻿
+Le tuple
 ======
- Tuples are immutable
+Le tuple sono immutabili
 --------------------
 
 ######1
 ######2
 ######3
- A tuple^[Fun fact: The word "tuple" comes from the names given to sequences of numbers of varying lengths: single, double, triple, quadruple, quituple, sextuple, septuple, etc.] is a sequence of values much like a list. The values stored in a tuple can be any type, and they are indexed by integers. The important difference is that tuples are *immutable*. Tuples are also *comparable* and *hashable* so we can sort lists of them and use tuples as key values in Python dictionaries. 
+Una tupla ^ [Fun fact: la parola "tuple" deriva dai nomi dati a sequenze di numeri di lunghezza variabile: singola, doppia, tripla, quadrupla, quituple, sextuple, septuple, ecc.] È una sequenza di valori molto simile a una elenco. I valori memorizzati in una tupla possono essere di qualsiasi tipo e sono indicizzati da numeri interi. L'importante differenza è che le tuple sono * immutabili *. Anche le tuple sono * paragonabili * e * lavabili *, in modo tale da poterne ordinare gli elenchi e utilizzare le tuple come valori chiave nei dizionari Python. 
 ######4
 ######5
 ######6
 ######7
- Syntactically, a tuple is a comma-separated list of values: 
+Sintatticamente, una tupla è un elenco di valori separati da virgole: 
 ~~~~1
- Although it is not necessary, it is common to enclose tuples in parentheses to help us quickly identify tuples when we look at Python code: 
+Sebbene non sia necessario, è comune racchiudere tuple tra parentesi per aiutarci a identificare rapidamente le tuple quando guardiamo al codice Python: 
 ######8
 
 ~~~~2
- To create a tuple with a single element, you have to include the final comma: 
+Per creare una tupla con un singolo elemento, devi includere la virgola finale: 
 ######9
 ######10
 
 ~~~~3
- Without the comma Python treats `('a')` as an expression with a string in parentheses that evaluates to a string: 
+Senza la virgola Python considera `('a')` come un'espressione con una stringa tra parentesi che valuta una stringa: 
 ~~~~4
- Another way to construct a tuple is the built-in function `tuple`. With no argument, it creates an empty tuple: 
+Un altro modo per costruire una tupla è la funzione incorporata `tuple`. Senza argomenti, crea una tupla vuota: 
 ######11
 ######12
 
 ~~~~5
- If the argument is a sequence (string, list, or tuple), the result of the call to `tuple` is a tuple with the elements of the sequence: 
+Se l'argomento è una sequenza (stringa, lista o tupla), il risultato della chiamata a `tuple` è una tupla con gli elementi della sequenza: 
 ~~~~6
- Because `tuple` is the name of a constructor, you should avoid using it as a variable name.  Most list operators also work on tuples. The bracket operator indexes an element: 
+Poiché `tuple` è il nome di un costruttore, dovresti evitare di usarlo come nome di variabile.  La maggior parte degli operatori di elenchi lavora anche su tuple. L'operatore della parentesi indica un elemento: 
 ######13
 ######14
 
 ~~~~7
- And the slice operator selects a range of elements. 
+E l'operatore della sezione seleziona una serie di elementi. 
 ######15
 ######16
 ######17
 ######18
 
 ~~~~8
- But if you try to modify one of the elements of the tuple, you get an error: 
+Ma se provi a modificare uno degli elementi della tupla, ottieni un errore: 
 ######19
 ######20
 ######21
 ######22
 
 ~~~~9
- You can't modify the elements of a tuple, but you can replace one tuple with another: 
+Non è possibile modificare gli elementi di una tupla, ma è possibile sostituire una tupla con un'altra: 
 ~~~~10
- Comparing tuples
+Confronto tra le tuple
 ----------------
 
 ######23
 ######24
 ######25
 ######26
- The comparison operators work with tuples and other sequences. Python starts by comparing the first element from each sequence. If they are equal, it goes on to the next element, and so on, until it finds elements that differ. Subsequent elements are not considered (even if they are really big). 
+Gli operatori di confronto lavorano con tuple e altre sequenze. Python inizia confrontando il primo elemento di ogni sequenza. Se sono uguali, passano all'elemento successivo, e così via, finché non trova elementi diversi. Gli elementi successivi non sono considerati (anche se sono veramente grandi). 
 ~~~~11
- The `sort` function works the same way. It sorts primarily by first element, but in the case of a tie, it sorts by second element, and so on.  This feature lends itself to a pattern called *DSU* for  Decorate :   a sequence by building a list of tuples with one or more sort keys     preceding the elements from the sequence,  Sort :   the list of tuples using the Python built-in `sort`, and  Undecorate :   by extracting the sorted elements of the sequence.  [DSU]
+La funzione `sort` funziona allo stesso modo. Ordina principalmente dal primo elemento, ma nel caso di un pareggio, ordina secondo elemento, e così via.
+Questa caratteristica si presta a un modello chiamato * DSU * per
+Decora: una sequenza costruendo un elenco di tuple con una o più chiavi di ordinamento che precedono gli elementi dalla sequenza,
+Ordina: la lista di tuple usando il `ordinamento` di Python incorporato, e
+Undecorate: estraendo gli elementi ordinati della sequenza.
+[DSU]
 ######27
 ######28
 ######29
 ######30
 ######31
- For example, suppose you have a list of words and you want to sort them from longest to shortest: 
+Ad esempio, supponiamo di avere un elenco di parole e di ordinarle dal più lungo al più breve: 
 ######32
- The first loop builds a list of tuples, where each tuple is a word preceded by its length.  `sort` compares the first element, length, first, and only considers the second element to break ties. The keyword argument `reverse=True` tells `sort` to go in decreasing order. 
+Il primo ciclo crea un elenco di tuple, in cui ogni tupla è una parola preceduta dalla sua lunghezza. `sort` confronta il primo elemento, length, first, e considera solo il secondo elemento per rompere i legami. L'argomento della parola chiave `reverse = True` dice` sort` in ordine decrescente. 
 ######33
 ######34
 ######35
- The second loop traverses the list of tuples and builds a list of words in descending order of length. The four-character words are sorted in *reverse* alphabetical order, so "what" appears before "soft" in the following list.  The output of the program is as follows: 
+Il secondo ciclo attraversa l'elenco di tuple e crea un elenco di parole in ordine decrescente di lunghezza. Le parole di quattro caratteri sono ordinate in ordine alfabetico * inverso *, quindi "cosa" appare prima di "soft" nell'elenco seguente.  L'output del programma è il seguente: 
 ~~~~12
- Of course the line loses much of its poetic impact when turned into a Python list and sorted in descending word length order.  Tuple assignment
+Ovviamente la linea perde molto del suo impatto poetico quando viene trasformata in una lista Python e ordinata in ordine decrescente di lunghezza delle parole.
+
+Assegnazione della tupla
 ----------------
 
 ######36
 ######37
 ######38
 ######39
- One of the unique syntactic features of the Python language is the ability to have a tuple on the left side of an assignment statement. This allows you to assign more than one variable at a time when the left side is a sequence.  In this example we have a two-element list (which is a sequence) and assign the first and second elements of the sequence to the variables `x` and `y` in a single statement. 
+Una delle caratteristiche sintattiche uniche del linguaggio Python è la possibilità di avere una tupla sul lato sinistro di un'istruzione di assegnazione. Ciò consente di assegnare più di una variabile alla volta quando il lato sinistro è una sequenza.  In questo esempio abbiamo una lista di due elementi (che è una sequenza) e assegniamo il primo e il secondo elemento della sequenza alle variabili `x` e` y` in una singola istruzione. 
 ~~~~13
- It is not magic, Python *roughly* translates the tuple assignment syntax to be the following:^[Python does not translate the syntax literally. For example, if you try this with a dictionary, it will not work as might expect.] 
+Non è magico, Python * approssimativamente * traduce la sintassi dell'assegnazione della tupla come la seguente: ^ [Python non traduce la sintassi alla lettera. Ad esempio, se provi questo con un dizionario, non funzionerà come previsto.] 
 ~~~~14
- Stylistically when we use a tuple on the left side of the assignment statement, we omit the parentheses, but the following is an equally valid syntax: 
+Stilisticamente quando usiamo una tupla sul lato sinistro dell'istruzione di assegnazione, omettiamo le parentesi, ma la seguente è una sintassi altrettanto valida: 
 ~~~~15
- A particularly clever application of tuple assignment allows us to *swap* the values of two variables in a single statement: 
+Un'applicazione particolarmente intelligente dell'assegnazione di tuple ci consente di scambiare * i valori di due variabili in una singola istruzione: 
 ~~~~16
- Both sides of this statement are tuples, but the left side is a tuple of variables; the right side is a tuple of expressions. Each value on the right side is assigned to its respective variable on the left side. All the expressions on the right side are evaluated before any of the assignments.  The number of variables on the left and the number of values on the right must be the same: 
+Entrambi i lati di questa affermazione sono tuple, ma il lato sinistro è una tupla di variabili; il lato destro è una tupla di espressioni. Ogni valore sul lato destro è assegnato alla rispettiva variabile sul lato sinistro. Tutte le espressioni sul lato destro sono valutate prima di qualsiasi incarico.  Il numero di variabili a sinistra e il numero di valori a destra devono essere uguali: 
 ######40
 ######41
 
 ~~~~17
- More generally, the right side can be any kind of sequence (string, list, or tuple). For example, to split an email address into a user name and a domain, you could write: 
+Più in generale, il lato destro può essere qualsiasi tipo di sequenza (stringa, elenco o tupla). Ad esempio, per dividere un indirizzo email in un nome utente e un dominio, è possibile scrivere: 
 ######42
 ######43
 ######44
 
 ~~~~18
- The return value from `split` is a list with two elements; the first element is assigned to `uname`, the second to `domain`. 
+Il valore di ritorno da `split` è una lista con due elementi; il primo elemento è assegnato a `uname`, il secondo a` dominio`. 
 ~~~~19
- Dictionaries and tuples
+Dizionari e tuple
 -----------------------
 
 ######45
 ######46
 ######47
 ######48
- Dictionaries have a method called `items` that returns a list of tuples, where each tuple is a key-value pair: 
+I dizionari hanno un metodo chiamato `items` che restituisce un elenco di tuple, in cui ogni tupla è una coppia chiave-valore: 
 ~~~~20
- As you should expect from a dictionary, the items are in no particular order.  However, since the list of tuples is a list, and tuples are comparable, we can now sort the list of tuples. Converting a dictionary to a list of tuples is a way for us to output the contents of a dictionary sorted by key: 
+Come dovresti aspettarti da un dizionario, gli articoli non sono in ordine particolare.
+
+Tuttavia, poiché la lista delle tuple è una lista e le tuple sono comparabili, ora possiamo ordinare l'elenco delle tuple. Convertire un dizionario in un elenco di tuple è un modo per noi di produrre il contenuto di un dizionario ordinato per chiave: 
 ~~~~21
- The new list is sorted in ascending alphabetical order by the key value.  Multiple assignment with dictionaries
+Il nuovo elenco viene ordinato in ordine alfabetico crescente per il valore della chiave.
+
+Assegnazione multipla con dizionari
 -------------------------------------
 
 ######49
 ######50
- Combining `items`, tuple assignment, and `for`, you can see a nice code pattern for traversing the keys and values of a dictionary in a single loop: 
+Combinando `items`, tuple assignment e` for`, puoi vedere un bel pattern di codice per attraversare le chiavi e i valori di un dizionario in un singolo loop: 
 ~~~~22
- This loop has two *iteration variables* because `items` returns a list of tuples and `key, val` is a tuple assignment that successively iterates through each of the key-value pairs in the dictionary.  For each iteration through the loop, both `key` and `value` are advanced to the next key-value pair in the dictionary (still in hash order).  The output of this loop is: 
+Questo ciclo ha due * variabili di iterazione * perché `items` restituisce una lista di tuple e` key, val` è un'assegnazione di tupla che successivamente itera attraverso ciascuna delle coppie chiave-valore nel dizionario.
+
+Per ogni iterazione attraverso il ciclo, sia `key` che` value` sono avanzati alla successiva coppia chiave-valore nel dizionario (sempre in ordine hash).
+L'output di questo ciclo è: 
 ~~~~23
- Again, it is in hash key order (i.e., no particular order).  If we combine these two techniques, we can print out the contents of a dictionary sorted by the *value* stored in each key-value pair.  To do this, we first make a list of tuples where each tuple is `(value, key)`. The `items` method would give us a list of `(key, value)` tuples, but this time we want to sort by value, not key. Once we have constructed the list with the value-key tuples, it is a simple matter to sort the list in reverse order and print out the new, sorted list. 
+Di nuovo, è in ordine di hash key (cioè, nessun ordine particolare).
+Se combiniamo queste due tecniche, possiamo stampare il contenuto di un dizionario ordinato per il * valore * memorizzato in ciascuna coppia chiave-valore.
+Per fare questo, prima creiamo una lista di tuple in cui ogni tupla è `(valore, chiave)`. Il metodo `items` ci fornisce una lista di tuple` (chiave, valore) `, ma questa volta vogliamo ordinare per valore, non per chiave. Una volta creato l'elenco con le tuple chiave-valore, è semplice ordinare l'elenco in ordine inverso e stampare la nuova lista ordinata. 
 ~~~~24
- By carefully constructing the list of tuples to have the value as the first element of each tuple, we can sort the list of tuples and get our dictionary contents sorted by value.  The most common words
+Costruendo attentamente la lista di tuple per avere il valore come primo elemento di ogni tupla, possiamo ordinare l'elenco di tuple e ottenere i contenuti del nostro dizionario ordinati per valore.
+
+Le parole più comuni
 ---------------------
 
 ######51
- Coming back to our running example of the text from *Romeo and Juliet* Act 2, Scene 2, we can augment our program to use this technique to print the ten most common words in the text as follows: 
+Tornando all'esempio in esecuzione del testo di * Romeo and Juliet * Act 2, Scene 2, possiamo aumentare il nostro programma per utilizzare questa tecnica per stampare le dieci parole più comuni nel testo come segue: 
 ######52
 ######53
 ../code3/romeo-full.txt
 ######54
- The first part of the program which reads the file and computes the dictionary that maps each word to the count of words in the document is unchanged. But instead of simply printing out `counts` and ending the program, we construct a list of `(val, key)` tuples and then sort the list in reverse order.  Since the value is first, it will be used for the comparisons. If there is more than one tuple with the same value, it will look at the second element (the key), so tuples where the value is the same will be further sorted by the alphabetical order of the key.  At the end we write a nice `for` loop which does a multiple assignment iteration and prints out the ten most common words by iterating through a slice of the list (`lst[:10]`).  So now the output finally looks like what we want for our word frequency analysis. 
+La prima parte del programma che legge il file e calcola il dizionario che associa ogni parola al conteggio delle parole nel documento rimane invariato. Ma invece di stampare semplicemente "conteggi" e terminare il programma, costruiamo un elenco di tuple "(val, key)" e poi ordiniamo la lista in ordine inverso.
+Poiché il valore è il primo, verrà utilizzato per i confronti. Se è presente più di una tupla con lo stesso valore, verrà esaminato il secondo elemento (la chiave), quindi le tuple in cui il valore è lo stesso verranno ulteriormente ordinate in base all'ordine alfabetico della chiave.
+Alla fine scriviamo un bel ciclo `for` che esegue un'iterazione di assegnazione multipla e stampa le dieci parole più comuni ripetendo una porzione della lista (` lst [: 10] `).
+Così ora l'output sembra finalmente quello che vogliamo per la nostra analisi di frequenza delle parole. 
 ~~~~25
- The fact that this complex data parsing and analysis can be done with an easy-to-understand 19-line Python program is one reason why Python is a good choice as a language for exploring information.  Using tuples as keys in dictionaries
+Il fatto che questa complessa analisi e analisi dei dati possa essere eseguita con un programma Python a 19 linee di facile comprensione è una delle ragioni per cui Python è una buona scelta come linguaggio per l'esplorazione delle informazioni.
+
+Usare tuple come chiavi nei dizionari
 ------------------------------------
 
 ######55
 ######56
- Because tuples are *hashable* and lists are not, if we want to create a *composite* key to use in a dictionary we must use a tuple as the key.  We would encounter a composite key if we wanted to create a telephone directory that maps from last-name, first-name pairs to telephone numbers. Assuming that we have defined the variables `last`, `first`, and `number`, we could write a dictionary assignment statement as follows: 
+Poiché le tuple sono * hashable * e le liste non lo sono, se vogliamo creare una chiave * composite * da usare in un dizionario dobbiamo usare una tupla come chiave.
+Incontreremo una chiave composta se volessimo creare una rubrica telefonica che mappa da coppie di cognome, nome a numeri di telefono. Supponendo di aver definito le variabili `last`,` first` e `number`, potremmo scrivere un'istruzione di assegnazione del dizionario come segue: 
 ~~~~26
- The expression in brackets is a tuple. We could use tuple assignment in a `for` loop to traverse this dictionary. 
+L'espressione tra parentesi è una tupla. Potremmo usare l'assegnazione della tupla in un ciclo `for` per attraversare questo dizionario. 
 ######57
 
 ~~~~27
- This loop traverses the keys in `directory`, which are tuples. It assigns the elements of each tuple to `last` and `first`, then prints the name and corresponding telephone number.  Sequences: strings, lists, and tuples - Oh My!
+Questo ciclo attraversa le chiavi in ​​`directory`, che sono tuple. Assegna gli elementi di ciascuna tupla a `last` e` first`, quindi stampa il nome e il numero di telefono corrispondente.
+
+Sequenze: archi, elenchi e tuple - Oh mio!
 --------------------------------------------
 
 ######58
- I have focused on lists of tuples, but almost all of the examples in this chapter also work with lists of lists, tuples of tuples, and tuples of lists. To avoid enumerating the possible combinations, it is sometimes easier to talk about sequences of sequences.  In many contexts, the different kinds of sequences (strings, lists, and tuples) can be used interchangeably. So how and why do you choose one over the others? 
+Mi sono concentrato su elenchi di tuple, ma quasi tutti gli esempi in questo capitolo funzionano anche con elenchi di elenchi, tuple di tuple e tuple di elenchi. Per evitare di enumerare le possibili combinazioni, a volte è più semplice parlare di sequenze di sequenze.
+
+In molti contesti, i diversi tipi di sequenze (stringhe, elenchi e tuple) possono essere utilizzati in modo intercambiabile. Quindi come e perché sceglierne uno rispetto agli altri? 
 ######59
 ######60
 ######61
 ######62
 ######63
- To start with the obvious, strings are more limited than other sequences because the elements have to be characters. They are also immutable. If you need the ability to change the characters in a string (as opposed to creating a new string), you might want to use a list of characters instead.  Lists are more common than tuples, mostly because they are mutable. But there are a few cases where you might prefer tuples:  1.  In some contexts, like a `return` statement, it is     syntactically simpler to create a tuple than a list. In other     contexts, you might prefer a list.  2.  If you want to use a sequence as a dictionary key, you have to use     an immutable type like a tuple or string.  3.  If you are passing a sequence as an argument to a function, using     tuples reduces the potential for unexpected behavior due to     aliasing.  Because tuples are immutable, they don't provide methods like `sort` and `reverse`, which modify existing lists. However Python provides the built-in functions `sorted` and `reversed`, which take any sequence as a parameter and return a new sequence with the same elements in a different order. 
+Per iniziare con l'ovvio, le stringhe sono più limitate di altre sequenze perché gli elementi devono essere caratteri. Sono anche immutabili. Se hai bisogno della possibilità di cambiare i caratteri in una stringa (invece di creare una nuova stringa), potresti invece usare un elenco di caratteri.
+Le liste sono più comuni delle tuple, soprattutto perché sono mutabili. Ma ci sono alcuni casi in cui potresti preferire le tuple:
+######1  In alcuni contesti, come un'istruzione `return`, è sintatticamente più semplice creare una tupla di una lista. In altri contesti, potresti preferire una lista.
+2.   Se si desidera utilizzare una sequenza come chiave del dizionario, è necessario utilizzare un tipo immutabile come una tupla o una stringa.
+3.   Se si passa una sequenza come argomento a una funzione, l'utilizzo di tuple riduce il potenziale di comportamento imprevisto dovuto all'aliasing.
+Poiché le tuple sono immutabili, non forniscono metodi come `sort` e` reverse`, che modificano gli elenchi esistenti. Comunque Python fornisce le funzioni built-in `sorted` e` reverseed`, che prendono qualsiasi sequenza come parametro e restituiscono una nuova sequenza con gli stessi elementi in un ordine diverso. 
 ######64
 ######65
 ######66
 ######67
- Debugging
+Debug
 ---------
 
 ######68
 ######69
 ######70
 ######71
- Lists, dictionaries and tuples are known generically as *data structures*; in this chapter we are starting to see compound data structures, like lists of tuples, and dictionaries that contain tuples as keys and lists as values. Compound data structures are useful, but they are prone to what I call *shape errors*; that is, errors caused when a data structure has the wrong type, size, or composition, or perhaps you write some code and forget the shape of your data and introduce an error.  For example, if you are expecting a list with one integer and I give you a plain old integer (not in a list), it won't work.  When you are debugging a program, and especially if you are working on a hard bug, there are four things to try:  reading :   Examine your code, read it back to yourself, and check that it says     what you meant to say.  running :   Experiment by making changes and running different versions. Often     if you display the right thing at the right place in the program,     the problem becomes obvious, but sometimes you have to spend some     time to build scaffolding.  ruminating :   Take some time to think! What kind of error is it: syntax, runtime,     semantic? What information can you get from the error messages, or     from the output of the program? What kind of error could cause the     problem you're seeing? What did you change last, before the problem     appeared?  retreating :   At some point, the best thing to do is back off, undoing recent     changes, until you get back to a program that works and that you     understand. Then you can start rebuilding.  Beginning programmers sometimes get stuck on one of these activities and forget the others. Each activity comes with its own failure mode.
+Elenchi, dizionari e tuple sono noti genericamente come * strutture dati *; in questo capitolo stiamo iniziando a vedere strutture dati composte, come liste di tuple e dizionari che contengono tuple come chiavi e liste come valori. Le strutture dati composte sono utili, ma sono soggette a ciò che io chiamo * errori di forma *; cioè, errori causati quando una struttura dati ha il tipo, la dimensione o la composizione sbagliati, o forse si scrive del codice e si dimentica la forma dei dati e si introduce un errore.
+Ad esempio, se ti aspetti una lista con un intero e ti do un vecchio intero semplice (non in una lista), non funzionerà.
+Quando esegui il debug di un programma, e specialmente se stai lavorando su un bug difficile, ci sono quattro cose da provare:
+lettura: esamina il tuo codice, rileggilo a te stesso e controlla che indichi cosa intendevi dire.
+in esecuzione: sperimenta apportando modifiche e eseguendo versioni diverse. Spesso se mostri la cosa giusta nel posto giusto nel programma, il problema diventa ovvio, ma a volte devi passare un po 'di tempo per costruire un'impalcatura.
+ruminando: prenditi un po 'di tempo per pensare! Che tipo di errore è: sintassi, runtime, semantica? Quali informazioni puoi ottenere dai messaggi di errore o dall'output del programma? Che tipo di errore potrebbe causare il problema che stai vedendo? Che cosa hai cambiato per ultimo, prima che il problema apparisse?
+Ritirarsi: ad un certo punto, la cosa migliore da fare è di tornare indietro, annullare le modifiche recenti, fino a quando non si torna a un programma che funziona e che si capisce. Quindi puoi iniziare la ricostruzione.
+I programmatori principianti a volte rimangono bloccati in una di queste attività e dimenticano gli altri. Ogni attività ha una sua modalità di errore.
 ######72
- For example, reading your code might help if the problem is a typographical error, but not if the problem is a conceptual misunderstanding. If you don't understand what your program does, you can read it 100 times and never see the error, because the error is in your head. 
+Ad esempio, leggere il codice potrebbe essere d'aiuto se il problema è un errore tipografico, ma non se il problema è un malinteso concettuale. Se non capisci cosa fa il tuo programma, puoi leggerlo 100 volte e non vedere mai l'errore, perché l'errore è nella tua testa. 
 ######73
- Running experiments can help, especially if you run small, simple tests. But if you run experiments without thinking or reading your code, you might fall into a pattern I call "random walk programming", which is the process of making random changes until the program does the right thing. Needless to say, random walk programming can take a long time. 
+Esecuzione di esperimenti può essere d'aiuto, specialmente se si eseguono test piccoli e semplici. Ma se esegui esperimenti senza pensare o leggere il tuo codice, potresti cadere in uno schema che chiamo "programmazione random walk", che è il processo di apportare modifiche casuali fino a quando il programma non fa la cosa giusta. Inutile dire che la programmazione random walk può richiedere molto tempo. 
 ######74
 ######75
- You have to take time to think. Debugging is like an experimental science. You should have at least one hypothesis about what the problem is. If there are two or more possibilities, try to think of a test that would eliminate one of them.  Taking a break helps with the thinking. So does talking. If you explain the problem to someone else (or even to yourself), you will sometimes find the answer before you finish asking the question.  But even the best debugging techniques will fail if there are too many errors, or if the code you are trying to fix is too big and complicated. Sometimes the best option is to retreat, simplifying the program until you get to something that works and that you understand.  Beginning programmers are often reluctant to retreat because they can't stand to delete a line of code (even if it's wrong). If it makes you feel better, copy your program into another file before you start stripping it down. Then you can paste the pieces back in a little bit at a time.  Finding a hard bug requires reading, running, ruminating, and sometimes retreating. If you get stuck on one of these activities, try the others.  Glossary
+Devi prendere tempo per pensare. Il debug è come una scienza sperimentale. Dovresti avere almeno un'ipotesi su quale sia il problema. Se ci sono due o più possibilità, prova a pensare a un test che eliminerebbe uno di essi.
+Prendersi una pausa aiuta a pensare. Così parla. Se spieghi il problema a qualcun altro (o anche a te stesso), a volte troverai la risposta prima di finire la domanda.
+Ma anche le migliori tecniche di debug falliranno se ci sono troppi errori o se il codice che stai cercando di risolvere è troppo grande e complicato. A volte l'opzione migliore è ritirarsi, semplificando il programma fino ad arrivare a qualcosa che funziona e che capisci.
+I programmatori principianti sono spesso riluttanti a ritirarsi perché non sopportano di cancellare una riga di codice (anche se è sbagliata). Se ti fa sentire meglio, copia il tuo programma in un altro file prima di iniziare a ridurlo. Quindi è possibile incollare i pezzi di nuovo in un po 'alla volta.
+Trovare un insetto duro richiede leggere, correre, rimuginare e talvolta ritirarsi. Se rimani bloccato in una di queste attività, prova gli altri.
+
+Glossario
 --------
- comparable :   A type where one value can be checked to see if it is greater than,     less than, or equal to another value of the same type. Types which     are comparable can be put in a list and sorted.
+comparabile: un tipo in cui è possibile verificare un valore per vedere se è maggiore di, minore o uguale a un altro valore dello stesso tipo. I tipi che sono comparabili possono essere messi in un elenco e ordinati.
 ######76
- data structure :   A collection of related values, often organized in lists,     dictionaries, tuples, etc.
+struttura dati: una raccolta di valori correlati, spesso organizzati in elenchi, dizionari, tuple, ecc.
 ######77
- DSU :   Abbreviation of "decorate-sort-undecorate", a pattern that involves     building a list of tuples, sorting, and extracting part of the     result.
+DSU: abbreviazione di "decorare-ordina-non decorare", un modello che comporta la creazione di un elenco di tuple, l'ordinamento e l'estrazione di parte del risultato.
 ######78
- gather :   The operation of assembling a variable-length argument tuple.
+gather: l'operazione di assemblaggio di una tupla di argomenti a lunghezza variabile.
 ######79
- hashable :   A type that has a hash function. Immutable types like integers,     floats, and strings are hashable; mutable types like lists and     dictionaries are not.
+hashable: un tipo con una funzione hash. I tipi immutabili come interi, float e stringhe sono lavabili; tipi mutabili come liste e dizionari non lo sono.
 ######80
- scatter :   The operation of treating a sequence as a list of arguments.
+scatter: l'operazione di trattare una sequenza come una lista di argomenti.
 ######81
- shape (of a data structure) :   A summary of the type, size, and composition of a data structure.
+forma (di una struttura dati): un riepilogo del tipo, delle dimensioni e della composizione di una struttura dati.
 ######82
- singleton :   A list (or other sequence) with a single element.
+singleton: una lista (o altra sequenza) con un singolo elemento.
 ######83
- tuple :   An immutable sequence of elements.
-######84
- tuple assignment :   An assignment with a sequence on the right side and a tuple of     variables on the left. The right side is evaluated and then its     elements are assigned to the variables on the left.
-######85
-######86
- Exercises
+tupla: una sequenza immutabile di elementi.
+###### 84
+assegnazione tupla: un compito con una sequenza sul lato destro e una tupla di variabili sulla sinistra. Il lato destro viene valutato e quindi i suoi elementi vengono assegnati alle variabili a sinistra.
+###### 85
+###### 86
+Esercizi
 ---------
- **Exercise 1:** Revise a previous program as follows: Read and parse the "From" lines and pull out the addresses from the line. Count the number of messages from each person using a dictionary.  After all the data has been read, print the person with the most commits by creating a list of (count, email) tuples from the dictionary. Then sort the list in reverse order and print out the person who has the most commits.      Sample Line:     From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008      Enter a file name: mbox-short.txt     cwen@iupui.edu 5      Enter a file name: mbox.txt     zqian@umich.edu 195  **Exercise 2:** This program counts the distribution of the hour of the day for each of the messages. You can pull the hour from the "From" line by finding the time string and then splitting that string into parts using the colon character. Once you have accumulated the counts for each hour, print out the counts, one per line, sorted by hour as shown below.  Sample Execution: 
+** Esercizio 1: ** Rivedi un programma precedente come segue: leggi e analizza le righe "Da" ed estrai gli indirizzi dalla linea. Conta il numero di messaggi di ogni persona usando un dizionario.
+Dopo aver letto tutti i dati, stampare la persona con il maggior numero di commit creando un elenco di tuple (count, email) dal dizionario. Quindi ordina l'elenco in ordine inverso e stampa la persona che ha il maggior numero di commit.
+Esempio di linea: da stephen.marquard@uct.ac.za sab 5 gen 09:14:16 2008
+Inserisci un nome per il file: mbox-short.txt cwen@iupui.edu 5
+Immettere un nome file: mbox.txt zqian@umich.edu 195
+** Esercizio 2: ** Questo programma conta la distribuzione dell'ora del giorno per ciascuno dei messaggi. Puoi tirare l'ora dalla riga "Da" trovando la stringa del tempo e quindi suddividendo quella stringa in parti usando il carattere dei due punti. Dopo aver accumulato i conteggi per ogni ora, stampare i conteggi, uno per riga, ordinati per ora come mostrato di seguito.
+Esempio di esecuzione: 
 ~~~~28
- **Exercise 3:** Write a program that reads a file and prints the *letters* in decreasing order of frequency. Your program should convert all the input to lower case and only count the letters a-z. Your program should not count spaces, digits, punctuation, or anything other than the letters a-z. Find text samples from several different languages and see how letter frequency varies between languages. Compare your results with the tables at [wikipedia.org/wiki/Letter\_frequencies](wikipedia.org/wiki/Letter_frequencies). 
-######87
-######88  
+** Esercizio 3: ** Scrivi un programma che legge un file e stampa * le lettere * in ordine decrescente di frequenza. Il tuo programma dovrebbe convertire tutti gli input in lettere minuscole e contare solo le lettere az. Il tuo programma non dovrebbe contare spazi, cifre, segni di punteggiatura o altro oltre alle lettere az. Trova esempi di testo da diverse lingue e scopri come varia la frequenza delle lettere tra le lingue. Confronta i risultati con le tabelle in [wikipedia.org/wiki/Letter\_frequencies](wikipedia.org/wiki/Letter_frequencies). 
+###### 87
+###### 88

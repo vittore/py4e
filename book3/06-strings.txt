@@ -1,52 +1,53 @@
-Strings
+﻿
+Stringhe
 =======
- A string is a sequence
+Una stringa è una sequenza
 ----------------------
 
 ######1
 ######2
 ######3
 ######4
- A string is a *sequence* of characters. You can access the characters one at a time with the bracket operator: 
+Una stringa è una *sequenza* di caratteri. Potete accedere ai caratteri uno alla volta con l'operatore parentesi quadre: 
 ~~~~1
 
 ######5
 ######6
- The second statement extracts the character at index position 1 from the `fruit` variable and assigns it to the `letter` variable.  The expression in brackets is called an *index*. The index indicates which character in the sequence you want (hence the name).  But you might not get what you expect: 
+La seconda istruzione estrae il carattere nella posizione di indice 1 dalla variabile `fruit` e la assegna alla variabile `letter`.  L'espressione tra parentesi è denominata *indice*. L'indice indica quale carattere della sequenza vogliamo (da cui il nome).  Ma potreste non ottenere ciò che vi aspettate: 
 ~~~~2
- For most people, the first letter of "banana" is `b`, not `a`. But in Python, the index is an offset from the beginning of the string, and the offset of the first letter is zero. 
+Per la maggior parte delle persone, la prima lettera di "banana" è `b`, non` a`. Ma in Python, l'indice indica una posizione dall'inizio della stringa e la posizione della prima lettera è zero. 
 ~~~~3
- So `b` is the 0th letter ("zero-th") of "banana", `a` is the 1th letter ("one-th"), and `n` is the 2th ("two-th") letter. 
+Quindi `b` è la lettera 0 ("zero") di "banana", `a` è la 1^ lettera ("prima"), e `n` è la 2^ lettera ("seconda") . 
 ######7
 
 ######8
 ######9
- You can use any expression, including variables and operators, as an index, but the value of the index has to be an integer. Otherwise you get: 
+Potete utilizzare qualsiasi espressione, comprese variabili e operatori, come indice, ma il valore dell'indice deve essere un numero intero. Altrimenti otterrete: 
 ######10
 ######11
 ######12
 ######13
 
 ~~~~4
- Getting the length of a string using `len`
+Ottenere la lunghezza di una stringa usando `len`
 -----------------------------------------------------
 
 ######14
 ######15
- `len` is a built-in function that returns the number of characters in a string: 
+`len` è una funzione integrata che restituisce il numero di caratteri in una stringa: 
 ~~~~5
- To get the last letter of a string, you might be tempted to try something like this: 
+Per ottenere l'ultima lettera di una stringa, potreste essere tentati di provare qualcosa del genere: 
 ######16
 ######17
 
 ~~~~6
- The reason for the `IndexError` is that there is no letter in `'banana'` with the index 6. Since we started counting at zero, the six letters are numbered 0 to 5. To get the last character, you have to subtract 1 from `length`: 
+Il motivo del messaggio "IndexError" è che non vi è alcuna lettera in "banana" con l'indice 6. Considerato che abbiamo iniziato a contare da zero, le sei lettere sono numerate da 0 a 5. Per ottenere l'ultimo carattere, dovete sottrarre 1 da `length`: 
 ~~~~7
- Alternatively, you can use negative indices, which count backward from the end of the string. The expression `fruit[-1]` yields the last letter, `fruit[-2]` yields the second to last, and so on. 
+In alternativa, potete usare indici negativi, che contano all'indietro dalla fine della stringa. L'espressione `fruit [-1]` ci darà l'ultima lettera, `fruit [-2]` ci darà la penultima, e così via. 
 ######18
 ######19
- Traversal through a string with a loop
---------------------------------------
+Scorrere una stringa con un ciclo
+---------------------------------------
 
 ######20
 ######21
@@ -54,11 +55,13 @@ Strings
 ######23
 ######24
 ######25
- A lot of computations involve processing a string one character at a time. Often they start at the beginning, select each character in turn, do something to it, and continue until the end. This pattern of processing is called a *traversal*. One way to write a traversal is with a `while` loop: 
+Molti calcoli comportano l'elaborazione di una stringa un carattere alla volta. Spesso cominciano dall'inizio, selezionano ciascun carattere a turno, fanno qualcosa e continuano fino alla fine. Questo modello di elaborazione è chiamato *traversale*. Un modo per codificare uno scorrimento consiste nell'utilizzare un ciclo `while`: 
 ~~~~8
- This loop traverses the string and displays each letter on a line by itself. The loop condition is `index < len(fruit)`, so when `index` is equal to the length of the string, the condition is false, and the body of the loop is not executed. The last character accessed is the one with the index `len(fruit)-1`, which is the last character in the string.  **Exercise 1: Write a `while` loop that starts at the last character in the string and works its way backwards to the first character in the string, printing each letter on a separate line, except backwards.**  Another way to write a traversal is with a `for` loop: 
+Questo ciclo scorre la stringa e mostra ogni lettera su una riga da sola. La condizione del ciclo è `index <len (fruit)`, quindi quando `index` è uguale alla lunghezza della stringa, la condizione è falsa e il corpo del ciclo non viene eseguito. L'ultimo carattere a cui si accede è quello con l'indice uguale a `len (fruit) -1`, che è l'ultimo carattere nella stringa.  ** Esercizio 1: Scrivete un ciclo `while` che inizi dall'ultimo carattere della stringa e proceda all'indietro fino al primo carattere della stringa, visualizzando ogni lettera su una riga separata, tranne che all'indietro.** Un altro modo per scrivere uno scorrimento è con un ciclo `for`: 
 ~~~~9
- Each time through the loop, the next character in the string is assigned to the variable `char`. The loop continues until no characters are left.  String slices
+Ogni volta che viene eseguito il ciclo, il carattere successivo nella stringa viene assegnato alla variabile `char`. Il ciclo continua fino a quando non rimane alcun carattere.
+
+Segmenti di stringhe
 -------------
 
 ######26
@@ -66,180 +69,190 @@ Strings
 ######28
 ######29
 ######30
- A segment of a string is called a *slice*. Selecting a slice is similar to selecting a character: 
+Un segmento di una stringa è chiamato *slice*. La selezione di un segmento è simile alla selezione di un carattere: 
 ~~~~10
- The operator returns the part of the string from the "n-th" character to the "m-th" character, including the first but excluding the last.  If you omit the first index (before the colon), the slice starts at the beginning of the string. If you omit the second index, the slice goes to the end of the string: 
+L'operatore restituisce la parte della stringa dal carattere con indice "n" al carattere con indice "m", includendo il primo ma escludendo l'ultimo.  Se si omette il primo indice (prima dei due punti), il segmento comincia dall'inizio della stringa. Se omettete il ​​secondo indice, il segmento arriva alla fine della stringa: 
 ~~~~11
- If the first index is greater than or equal to the second the result is an *empty string*, represented by two quotation marks: 
+Se il primo indice è maggiore o uguale al secondo, il risultato è una *stringa vuota*, rappresentata da due virgolette: 
 ######31
 
 ~~~~12
- An empty string contains no characters and has length 0, but other than that, it is the same as any other string.  **Exercise 2: Given that `fruit` is a string, what does `fruit[:]` mean?** 
+Una stringa vuota non contiene caratteri e ha lunghezza 0, ma a parte questo è uguale a qualsiasi altra stringa.  **Esercizio 2: Dato che `fruit` è una stringa, cosa significa` fruit [:] `?** 
 ######32
 ######33
- Strings are immutable
+Le stringhe sono immutabili
 ---------------------
 
 ######34
 ######35
 ######36
- It is tempting to use the operator on the left side of an assignment, with the intention of changing a character in a string. For example: 
+Si potrebbe essere tentati di utilizzare l'operatore sul lato sinistro di un'assegnazione, con l'intenzione di cambiare un carattere in una stringa. Per esempio: 
 ######37
 ######38
 
 ~~~~13
- The "object" in this case is the string and the "item" is the character you tried to assign. For now, an *object* is the same thing as a value, but we will refine that definition later. An *item* is one of the values in a sequence. 
+L'"oggetto" in questione è la stringa e l'"elemento" è il carattere che avete provato ad assegnare. Per ora, un *oggetto* coincide con un valore, ma perfezioneremo questa definizione più avanti. Un *elemento* è uno dei valori di una sequenza. 
 ######39
 ######40
 ######41
 ######42
- The reason for the error is that strings are *immutable*, which means you can't change an existing string. The best you can do is create a new string that is a variation on the original: 
+Il motivo dell'errore è che le stringhe sono *immutabili*, quindi non è possibile modificare una stringa esistente. La cosa migliore che potete fare è creare una nuova stringa che sia una variante dell'originale: 
 ~~~~14
- This example concatenates a new first letter onto a slice of `greeting`. It has no effect on the original string. 
+Questo esempio concatena una nuova prima lettera su un segmento di `greeting`. Non ha alcun effetto sulla stringa originale. 
 ######43
- Looping and counting
+Cicli e conteggi
 --------------------
 
 ######44
 ######45
 ######46
 ######47
- The following program counts the number of times the letter `a` appears in a string: 
+Il seguente programma conta il numero di volte in cui la lettera `a` è contenuta in una stringa: 
 ~~~~15
- This program demonstrates another pattern of computation called a *counter*. The variable `count` is initialized to 0 and then incremented each time an `a` is found. When the loop exits, `count` contains the result: the total number of `a`'s. 
+Questo programma dimostra un altro schema di computazione chiamato *contatore*. La variabile `count` è inizializzata a 0 e poi viene incrementata ogni volta che viene trovata una `a`. Quando il ciclo termina, `count` conterrà il risultato: il numero totale di` a`. 
 ######48
- **Exercise 3: Encapsulate this code in a function named `count`, and generalize it so that it accepts the string and the letter as arguments.**  The `in` operator
+** Esercizio 3: Incorpora questo codice in una funzione chiamata "count" e generalizzala in modo che accetti stringhe e lettere come argomenti.**
+
+L'operatore `in`
 ----------------------------
 
 ######49
 ######50
 ######51
 ######52
- The word `in` is a boolean operator that takes two strings and returns `True` if the first appears as a substring in the second: 
+La parola `in` è un operatore booleano che prende due stringhe e restituisce` True` se la prima è contenuta come sottostringa nella seconda: 
 ~~~~16
- String comparison
+Comparazione di stringhe
 -----------------
 
 ######53
 ######54
- The comparison operators work on strings. To see if two strings are equal: 
+Gli operatori di comparazione funzionano anche sulle stringhe. Per vedere se due stringhe sono uguali: 
 ~~~~17
- Other comparison operations are useful for putting words in alphabetical order: 
+Altre operazioni di comparazione sono utili per mettere le parole in ordine alfabetico: 
 ~~~~18
- Python does not handle uppercase and lowercase letters the same way that people do. All the uppercase letters come before all the lowercase letters, so: 
+Python non gestisce le lettere maiuscole e minuscole nello stesso modo in cui fanno le persone. Tutte le lettere maiuscole vengono prima delle lettere minuscole, quindi: 
 ~~~~19
- A common way to address this problem is to convert strings to a standard format, such as all lowercase, before performing the comparison. Keep that in mind in case you have to defend yourself against a man armed with a Pineapple.  `string` methods
+Un modo comune per risolvere questo problema è convertire le stringhe in un formato standard, ad esempio tutto in minuscolo, prima di eseguire la comparazione. Tenetelo a mente se dovete difendervi da un uomo armato di Ananas. 
+
+Metodi delle `stringhe`
 ---------------------------
- Strings are an example of Python *objects*. An object contains both data (the actual string itself) and *methods*, which are effectively functions that are built into the object and are available to any *instance* of the object.  Python has a function called `dir` which lists the methods available for an object. The `type` function shows the type of an object and the `dir` function shows the available methods. 
+Le stringhe sono un esempio di *oggetti* Python. Un oggetto contiene sia i dati (la stringa vera e propria) che i *metodi*, che sono essenzialmente funzioni incorporate nell'oggetto e sono disponibili per qualsiasi *istanza* dell'oggetto.  Python ha una funzione chiamata `dir` che elenca i metodi disponibili per un oggetto. La funzione `type` mostra il tipo di un oggetto e la funzione `dir` mostra i metodi disponibili. 
 ~~~~20
- While the `dir` function lists the methods, and you can use `help` to get some simple documentation on a method, a better source of documentation for string methods would be <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.  Calling a *method* is similar to calling a function (it takes arguments and returns a value) but the syntax is different. We call a method by appending the method name to the variable name using the period as a delimiter.  For example, the method `upper` takes a string and returns a new string with all uppercase letters: 
+Mentre la funzione `dir` elenca i metodi, e potete usare `help` per ottenere una semplice documentazione su un metodo, una migliore fonte di documentazione per i metodi delle stringhe potrebbe essere <https://docs.python.org/3.5/library /stdtypes.html#string-methods>.  Chiamare un *metodo* è simile a chiamare una funzione (riceve argomenti e restituisce un valore) ma la sintassi è diversa. Chiamiamo un metodo aggiungendo il nome del metodo al nome della variabile usando un punto come delimitatore.  Ad esempio, il metodo `upper` prende una stringa e restituisce una nuova stringa con tutte le lettere maiuscole: 
 ######55
 ######56
- Instead of the function syntax `upper(word)`, it uses the method syntax `word.upper()`. 
+Invece della sintassi della funzione `upper(word)`, usate la sintassi del metodo `word.upper()`. 
 ######57
 
 ~~~~21
- This form of dot notation specifies the name of the method, `upper`, and the name of the string to apply the method to, `word`. The empty parentheses indicate that this method takes no argument. 
+Questa forma di notazione con il punto specifica il nome del metodo, `upper`, e il nome della stringa `word` a cui applicare il metodo. Le parentesi vuote indicano che questo metodo non accetta argomenti. 
 ######58
- A method call is called an *invocation*; in this case, we would say that we are invoking `upper` on the `word`. 
+Una chiamata al metodo è chiamata *invocazione*; in questo caso, diremo che stiamo invocando `upper` sulla stringa ` word`. 
 ######59
- For example, there is a string method named `find` that searches for the position of one string within another: 
+Ad esempio, esiste un metodo per le stringhe chiamato "find" che cerca la posizione di una stringa all'interno di un'altra: 
 ~~~~22
- In this example, we invoke `find` on `word` and pass the letter we are looking for as a parameter.  The `find` method can find substrings as well as characters: 
+In questo esempio, invochiamo `find` su` word` e passiamo come parametro la lettera che stiamo cercando.  Il metodo `find` può cercare sottostringhe e caratteri: 
 ~~~~23
- It can take as a second argument the index where it should start: 
+Può ricevere come secondo argomento l'indice da cui dovrebbe iniziare: 
 ######60
 ######61
 
 ~~~~24
- One common task is to remove white space (spaces, tabs, or newlines) from the beginning and end of a string using the `strip` method: 
+Un'operazione comune è rimuovere lo spazio bianco (spazi, tabulazioni o newline) dall'inizio e dalla fine di una stringa usando il metodo `strip`: 
 ~~~~25
- Some methods such as *startswith* return boolean values. 
+Alcuni metodi come *startswith* restituiscono valori booleani. 
 ~~~~26
- You will note that `startswith` requires case to match, so sometimes we take a line and map it all to lowercase before we do any checking using the `lower` method. 
+Noterete che `startswith` richiede tutte lettere maiuscole o tutte lettere minuscole, quindi a volte prendiamo una riga e la convertiamo tutta in minuscolo prima di fare qualsiasi controllo usando il metodo `lower`. 
 ~~~~27
- In the last example, the method `lower` is called and then we use `startswith` to see if the resulting lowercase string starts with the letter "h". As long as we are careful with the order, we can make multiple method calls in a single expression. 
+Nell'ultimo esempio, viene chiamato il metodo `lower` e quindi usiamo `startswith` per vedere se la risultante stringa in minuscolo inizia con la lettera "h". Finché stiamo attenti con l'ordine, possiamo effettuare più chiamate di metodo in una singola espressione. 
 ######62
 ######63
- **Exercise 4: There is a string method called `count` that is similar to the function in the previous exercise. Read the documentation of this method at <https://docs.python.org/3.5/library/stdtypes.html#string-methods> and write an invocation that counts the number of times the letter a occurs in "banana".**  Parsing strings
+** Esercizio 4: esiste un metodo per le stringhe chiamato `count` che è simile alla funzione dell'esercizio precedente. Leggete la documentazione di questo metodo su <https://docs.python.org/3.5/library/stdtypes.html#string-methods> e scrivete un'invocazione che conta il numero di volte in cui la lettera a appare nella stringa "banana".**
+
+Analisi delle stringhe
 ---------------
- Often, we want to look into a string and find a substring. For example if we were presented a series of lines formatted as follows:  `From stephen.marquard@`*` uct.ac.za`*` Sat Jan  5 09:14:16 2008`  and we wanted to pull out only the second half of the address (i.e., `uct.ac.za`) from each line, we can do this by using the `find` method and string slicing.  First, we will find the position of the at-sign in the string. Then we will find the position of the first space *after* the at-sign. And then we will use string slicing to extract the portion of the string which we are looking for. 
+Spesso, vogliamo esaminare una stringa e trovare una sottostringa. Per esempio, se ci venisse presentata una serie di linee formattate come segue: `From stephen.marquard@`*` uct.ac.za`*` Sat Jan 5 09:14:16 2008` e volessimo estrarre solo la seconda metà dell'indirizzo (ad es., `uct.ac.za`) da ogni riga, possiamo farlo usando il metodo `find` e la segmentazione delle stringhe.  In primo luogo, troveremo la posizione del simbolo chiocciola nella stringa. Quindi individuiamo la posizione del primo spazio *dopo* il simbolo chiocciola. Poi usiamo la segmentazione delle stringhe per estrarre la porzione della stringa che stiamo cercando. 
 ~~~~28
- We use a version of the `find` method which allows us to specify a position in the string where we want `find` to start looking. When we slice, we extract the characters from "one beyond the at-sign through up to *but not including* the space character".  The documentation for the `find` method is available at  <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.  Format operator
+Usiamo una versione del metodo `find` che ci permette di specificare una posizione nella stringa in cui vogliamo che ` find` inizi a guardare. Quando dividiamo, estraiamo i caratteri da "uno oltre il simbolo chiocciola fino al carattere spazio, * ma senza includerlo *.  La documentazione per il metodo `find` è disponibile su <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.
+
+Operatore di formato
 ---------------
 
 ######64
 ######65
- The *format operator*, `%` allows us to construct strings, replacing parts of the strings with the data stored in variables. When applied to integers, `%` is the modulus operator. But when the first operand is a string, `%` is the format operator. 
+L'operatore di *formato*, `%` ci consente di costruire stringhe, sostituendo parti di esse con i dati memorizzati nelle variabili. Se applicato a numeri interi, `%` rappresenta l'operatore modulo. Ma quando il primo operando è una stringa, `%` rappresenta l'operatore di formato. 
 ######66
- The first operand is the *format string*, which contains one or more *format sequences* that specify how the second operand is formatted. The result is a string. 
+Il primo operando è detto *stringa di formato*, che contiene una o più *sequenze di formato* che specificano il formato del secondo operando. Il risultato è una stringa. 
 ######67
- For example, the format sequence "%d" means that the second operand should be formatted as an integer (`d` stands for "decimal"): 
+Ad esempio, la sequenza di formato "% d" significa che il secondo operando dovrebbe essere nel formato di numero intero (`d` significa "in base decimale"): 
 ~~~~29
- The result is the string "42", which is not to be confused with the integer value `42`.  A format sequence can appear anywhere in the string, so you can embed a value in a sentence: 
+Il risultato è la stringa "42", che non deve essere confusa con il numero intero `42`.  Una sequenza di formato può comparire in qualsiasi punto della stringa, pertanto è possibile incorporare un valore in una frase: 
 ~~~~30
- If there is more than one format sequence in the string, the second argument has to be a tuple^[A tuple is a sequence of comma-separated  values inside a pair of parenthesis. We will cover tuples in Chapter 10]. Each format sequence is matched with an element of the tuple, in order.  The following example uses "%d" to format an integer, "%g" to format a floating-point number (don't ask why), and "%s" to format a string: 
+Se in una stringa c'è più di una sequenza di formato, il secondo operando deve essere una tupla ^ [Una tupla è una sequenza di valori separati da virgole all'interno di una coppia di parentesi. Tratteremo le tuple nel Capitolo 10]. Ogni sequenza di formato corrisponde a un elemento della tupla, nell'ordine.  Nell'esempio seguente viene utilizzato "%d" per formattare un numero intero, "%g" per formattare un decimale a virgola mobile (non chiedetemi perché) e "% s" per formattare una stringa: 
 ~~~~31
- The number of elements in the tuple must match the number of format sequences in the string. The types of the elements also must match the format sequences: 
+Il numero di elementi nella tupla deve corrispondere al numero di sequenze di formato nella stringa. Anche i tipi di elementi devono corrispondere alle sequenze di formato: 
 ######68
 ######69
 
 ~~~~32
- In the first example, there aren't enough elements; in the second, the element is the wrong type.  The format operator is powerful, but it can be difficult to use. You can read more about it at  <https://docs.python.org/3.5/library/stdtypes.html#printf-style-string-formatting>.  Debugging
+Nel primo esempio, non ci sono abbastanza elementi; nel secondo, l'elemento è di tipo sbagliato.  L'operatore di formattazione è potente, ma può essere difficile da usare. Potete leggere ulteriori informazioni su <https://docs.python.org/3.5/library/stdtypes.html#printf-style-string-formatting>.
+
+Debug
 ---------
 
 ######70
- A skill that you should cultivate as you program is always asking yourself, "What could go wrong here?" or alternatively, "What crazy thing might our user do to crash our (seemingly) perfect program?"  For example, look at the program which we used to demonstrate the `while` loop in the chapter on iteration: 
+Un talento che dovreste coltivare mentre programmate è chiedervi sempre: "Cosa potrebbe andare storto qui?"o in alternativa, "Quale pazza cosa potrebbe fare il nostro utente per mandare in crash il nostro programma (apparentemente) perfetto?"Ad esempio, guardate il programma che abbiamo usato per dimostrare il ciclo` while` nel capitolo sull'iterazione: 
 ######71
- Look what happens when the user enters an empty line of input: 
+Guardate cosa succede quando l'utente inserisce una riga vuota di input: 
 ~~~~33
- The code works fine until it is presented an empty line. Then there is no zero-th character, so we get a traceback. There are two solutions to this to make line three "safe" even if the line is empty.  One possibility is to simply use the `startswith` method which returns `False` if the string is empty. 
+Il codice funziona bene finché non viene presentata una riga vuota. Quindi non è presente il carattere alla posizione zero e otteniamo un traceback. Ci sono due soluzioni per rendere la riga tre "sicura" anche se la riga è vuota.  Una possibilità è semplicemente usare il metodo `startswith` che restituisce` False` se la stringa è vuota. 
 ~~~~34
 
 ######72
 ######73
- Another way is to safely write the `if` statement using the *guardian* pattern and make sure the second logical expression is evaluated only where there is at least one character in the string.: 
+Un altro modo è scrivere in modo sicuro l'istruzione `if` usando lo schema del *guardiano* e assicurarsi che la seconda espressione logica sia valutata solo dove c'è almeno un carattere nella stringa .: 
 ~~~~35
- Glossary
+Glossario
 --------
- counter :   A variable used to count something, usually initialized to zero and     then incremented.
+contatore: una variabile utilizzata per contare qualcosa, di solito inizializzata a zero e poi incrementata.
 ######74
- empty string :   A string with no characters and length 0, represented by two     quotation marks.
+stringa vuota: una stringa senza caratteri e con lunghezza pari a 0, rappresentata da due virgolette.
 ######75
- format operator :   An operator, `%`, that takes a format string and a tuple     and generates a string that includes the elements of the tuple     formatted as specified by the format string.
+operatore di formato: un operatore, `%`, che riceve una stringa di formato e una tupla e genera una stringa che include gli elementi della tupla formattata come specificato dalla stringa di formato.
 ######76
 ######77
- format sequence :   A sequence of characters in a format string, like `%d`,     that specifies how a value should be formatted.
+sequenza di formato: una sequenza di caratteri in una stringa di formato, come `%d`, che specifica come deve essere formattato un valore.
 ######78
- format string :   A string, used with the format operator, that contains format     sequences.
+stringa di formato: una stringa, utilizzata con l'operatore di formattazione, che contiene sequenze di formato.
 ######79
- flag :   A boolean variable used to indicate whether a condition is true or false.
+flag: una variabile booleana utilizzata per indicare se una condizione è vera o falsa.
 ######80
- invocation :   A statement that calls a method.
+invocazione: un'istruzione che serve per chiamare un metodo.
 ######81
- immutable :   The property of a sequence whose items cannot be assigned.
+immutabile: la proprietà di una sequenza i cui elementi non possono essere assegnati.
 ######82
- index :   An integer value used to select an item in a sequence, such as a     character in a string.
+indice: un valore intero utilizzato per selezionare un elemento in una sequenza, ad esempio un carattere in una stringa.
 ######83
-######84
- item :   One of the values in a sequence.
-######85
- method :   A function that is associated with an object and called using dot     notation.
-######86
- object :   Something a variable can refer to. For now, you can use "object" and     "value" interchangeably.
-######87
- search :   A pattern of traversal that stops when it finds what it is looking     for.
-######88
-######89
- sequence :   An ordered set; that is, a set of values where each value is     identified by an integer index.
-######90
- slice :   A part of a string specified by a range of indices.
-######91
- traverse :   To iterate through the items in a sequence, performing a similar     operation on each.
-######92
- Exercises
+###### 84
+item: uno dei valori in una sequenza.
+###### 85
+metodo: una funzione associata a un oggetto e chiamata utilizzando la notazione punto.
+###### 86
+oggetto: Qualcosa a cui una variabile può riferirsi. Per ora, potete usare "oggetto" e "valore" in modo intercambiabile.
+###### 87
+ricerca: uno sistema di scorrimento che si ferma quando trova ciò che sta cercando.
+###### 88
+###### 89
+sequenza: un insieme ordinato; ovvero, un insieme di valori in cui ogni valore è identificato da un indice intero.
+###### 90
+segmento: una parte di una stringa specificata da un intervallo di indici.
+###### 91
+traverse: per scorrere gli elementi di una sequenza, eseguendo un'operazione simile su ognuno.
+###### 92
+Esercizi
 ---------
- **Exercise 5: Take the following Python code that stores a string:**  `str = 'X-DSPAM-Confidence: `**`0.8475`**`'`  **Use `find` and string slicing to extract the portion of the string after the colon character and then use the `float` function to convert the extracted string into a floating point number.** 
-######93
-######94
- **Exercise 6: Read the documentation of the string methods at <https://docs.python.org/3.5/library/stdtypes.html#string-methods> You might want to experiment with some of them to make sure you understand how they work. `strip` and `replace` are particularly useful.**  **The documentation uses a syntax that might be confusing. For example, in `find(sub[, start[, end]])`, the brackets indicate optional arguments. So `sub` is required, but `start` is optional, and if you include `start`, then `end` is optional.**  
+** Esercizio 5: prendete il seguente codice Python che memorizza una stringa:** `str = 'X-DSPAM-Confidence:`**`0.8475`**`'` ** Usate `find` e la segmentazione delle stringhe per estrarre la porzione di stringa dopo il carattere dei due punti e quindi utilizzare la funzione `float` per convertire la stringa estratta in un numero a virgola mobile.** 
+###### 93
+###### 94
+** Esercizio 6: leggete la documentazione dei metodi di stringa su <https://docs.python.org/3.5/library/stdtypes.html#string-methods> Potreste voler fare degli esperimenti con alcuni di essi per assicurarvi di aver capito come funzionano. `strip` e `replace` sono particolarmente utili.****La documentazione utilizza una sintassi che potrebbe essere fonte di confusione. Ad esempio, in `find(sub[, start[, end]])`, le parentesi indicano argomenti opzionali. Quindi `sub` è richiesto, ma `start` è opzionale e se si include `start`, allora `end` è opzionale.**

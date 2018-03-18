@@ -1,105 +1,146 @@
-Using Web Services
+﻿
+Utilizzo dei servizi Web
 ==================
- Once it became easy to retrieve documents and parse documents over HTTP using programs, it did not take long to develop an approach where we  started producing documents that were specifically designed to be consumed by other programs (i.e., not HTML to be displayed in a browser).  There are two common formats that we use when exchanging data across the web. The "eXtensible Markup Language" or XML has been in use for a very long time and is best suited for exchanging document-style data. When programs just want to exchange dictionaries, lists, or other internal information with each other, they use JavaScript Object Notation or JSON (see [www.json.org](http://www.json.org)). We will look at both formats.  eXtensible Markup Language - XML
+Una volta che è stato facile recuperare i documenti e analizzare i documenti su HTTP utilizzando i programmi, non è stato necessario molto tempo per sviluppare un approccio in cui abbiamo iniziato a produrre documenti progettati specificamente per essere utilizzati da altri programmi (ad esempio, non HTML da visualizzare in un browser ).
+Esistono due formati comuni che utilizziamo per lo scambio di dati sul Web. Il "eXtensible Markup Language" o XML è in uso da molto tempo ed è più adatto per lo scambio di dati in stile documento. Quando i programmi vogliono solo scambiare dizionari, elenchi o altre informazioni interne tra loro, usano JavaScript Object Notation o JSON (si veda [www.json.org] (http://www.json.org)). Analizzeremo entrambi i formati.
+eXtensible Markup Language - XML
 --------------------------------
- XML looks very similar to HTML, but XML is more structured than HTML. Here is a sample of an XML document: 
+XML sembra molto simile all'HTML, ma XML è più strutturato di HTML. Ecco un esempio di un documento XML: 
 ~~~~1
- Often it is helpful to think of an XML document as a tree structure where there is a top tag `person` and other tags such as `phone` are drawn as *children* of their parent nodes. 
+Spesso è utile pensare a un documento XML come una struttura ad albero in cui è presente un tag 'person` in alto e altri tag come `phone` sono disegnati come * child * dei loro nodi parent. 
 ######1
- Parsing XML
+Analisi XML
 -----------
 
 ######2
 ######3
 ######4
- Here is a simple application that parses some XML and extracts some data elements from the XML: 
+Ecco una semplice applicazione che analizza alcuni XML ed estrae alcuni elementi di dati dall'XML: 
 ######5
- Calling `fromstring` converts the string representation of the XML into a "tree" of XML nodes. When the XML is in a tree, we have a series of methods we can call to extract portions of data from the XML.  The `find` function searches through the XML tree and retrieves a *node* that matches the specified tag. Each node can have some text, some attributes (like hide), and some "child" nodes. Each node can be the top of a tree of nodes. 
+Chiamando `fromstring` converte la rappresentazione di stringa dell'XML in un" albero "di nodi XML. Quando l'XML è in una struttura, abbiamo una serie di metodi che possiamo chiamare per estrarre parti di dati dall'XML.  La funzione `find` cerca attraverso l'albero XML e recupera un * nodo * che corrisponde al tag specificato. Ogni nodo può avere un testo, alcuni attributi (come hide) e alcuni nodi "figli". Ogni nodo può essere la cima di un albero di nodi. 
 ~~~~2
- Using an XML parser such as `ElementTree` has the advantage that while the XML in this example is quite simple, it turns out there are many rules regarding valid XML and using `ElementTree` allows us to extract data from XML without worrying about the rules of XML syntax.  Looping through nodes
+L'utilizzo di un parser XML come `ElementTree` ha il vantaggio che mentre l'XML in questo esempio è piuttosto semplice, risulta che ci sono molte regole riguardanti XML valido e l'uso di` ElementTree` ci consente di estrarre dati da XML senza preoccuparci delle regole della sintassi XML.
+
+Looping attraverso i nodi
 ---------------------
 
 ######6
 ######7
- Often the XML has multiple nodes and we need to write a loop to process all of the nodes. In the following program, we loop through all of the `user` nodes: 
+Spesso l'XML ha più nodi e abbiamo bisogno di scrivere un ciclo per elaborare tutti i nodi. Nel seguente programma, passiamo in rassegna tutti i nodi `utente`: 
 ######8
- The `findall` method retrieves a Python list of subtrees that represent the `user` structures in the XML tree. Then we can write a `for` loop that looks at each of the user nodes, and prints the `name` and `id` text elements as well as the `x` attribute from the `user` node. 
+Il metodo `findall` recupera una lista Python di sottoalberi che rappresentano le strutture` utente` nell'albero XML. Quindi possiamo scrivere un ciclo `for` che guarda ciascuno dei nodi utente, e stampa gli elementi di testo` name` e `id` come pure l'attributo` x` dal nodo `utente`. 
 ~~~~3
- JavaScript Object Notation - JSON
+Notazione oggetto JavaScript - JSON
 ---------------------------------
 
 ######9
 ######10
- The JSON format was inspired by the object and array format used in the JavaScript language. But since Python was invented before JavaScript, Python's syntax for dictionaries and lists influenced the syntax of JSON. So the format of JSON is nearly identical to a combination of Python lists and dictionaries.  Here is a JSON encoding that is roughly equivalent to the simple XML from above: 
+Il formato JSON è stato ispirato dal formato oggetto e array utilizzato nel linguaggio JavaScript. Ma poiché Python è stato inventato prima di JavaScript, la sintassi di Python per dizionari e liste ha influenzato la sintassi di JSON. Quindi il formato di JSON è quasi identico a una combinazione di elenchi e dizionari Python.
+Ecco una codifica JSON che è approssimativamente equivalente al semplice XML di cui sopra: 
 ~~~~4
- You will notice some differences. First, in XML, we can add attributes like "intl" to the "phone" tag. In JSON, we simply have key-value pairs. Also the XML "person" tag is gone, replaced by a set of outer curly braces.  In general, JSON structures are simpler than XML because JSON has fewer capabilities than XML. But JSON has the advantage that it maps *directly* to some combination of dictionaries and lists. And since nearly all programming languages have something equivalent to Python's dictionaries and lists, JSON is a very natural format to have two cooperating programs exchange data.  JSON is quickly becoming the format of choice for nearly all data exchange between applications because of its relative simplicity compared to XML.  Parsing JSON
+Noterai alcune differenze. Innanzitutto, in XML, possiamo aggiungere attributi come "intl" al tag "phone". In JSON, abbiamo semplicemente coppie chiave-valore. Anche il tag XML "persona" è scomparso, sostituito da una serie di parentesi graffe esterne.
+In generale, le strutture JSON sono più semplici di XML perché JSON ha meno funzionalità di XML. Ma JSON ha il vantaggio di mappare * direttamente * con alcune combinazioni di dizionari ed elenchi. E poiché quasi tutti i linguaggi di programmazione hanno qualcosa di equivalente ai dizionari e agli elenchi di Python, JSON è un formato molto naturale in cui due programmi cooperativi scambiano dati.
+JSON sta rapidamente diventando il formato di scelta per quasi tutti gli scambi di dati tra le applicazioni a causa della relativa semplicità rispetto a XML.
+Parsing JSON
 ------------
- We construct our JSON by nesting dictionaries (objects) and lists as needed. In this example, we represent a list of users where each user is a set of key-value pairs (i.e., a dictionary). So we have a list of dictionaries.  In the following program, we use the built-in *json* library to parse the JSON and read through the data. Compare this closely to the equivalent XML data and code above. The JSON has less detail, so we must know in advance that we are getting a list and that the list is of users and each user is a set of key-value pairs. The JSON is more succinct (an advantage) but also is less self-describing (a disadvantage). 
+Costruiamo il nostro JSON annidando dizionari (oggetti) ed elenchi secondo necessità. In questo esempio, rappresentiamo un elenco di utenti in cui ogni utente è un insieme di coppie chiave-valore (cioè un dizionario). Quindi abbiamo una lista di dizionari.
+Nel seguente programma, usiamo la libreria incorporata * json * per analizzare il JSON e leggere i dati. Confronta questo strettamente con i dati XML equivalenti e il codice sopra. Il JSON ha meno dettagli, quindi dobbiamo sapere in anticipo che stiamo ottenendo una lista e che la lista è di utenti e ogni utente è un insieme di coppie chiave-valore. Il JSON è più succinto (un vantaggio) ma è anche meno descrittivo (uno svantaggio). 
 ######11
- If you compare the code to extract data from the parsed JSON and XML you will see that what we get from *json.loads()* is a Python list which we traverse with a `for` loop, and each item within that list is a Python dictionary. Once the JSON has been parsed, we can use the Python index operator to extract the various bits of data for each user. We don't have to use the JSON library to dig through the parsed JSON, since the returned data is simply native Python structures.  The output of this program is exactly the same as the XML version above. 
+Se si confronta il codice per estrarre i dati dal JSON e dall'XML analizzati, si vedrà che ciò che otteniamo da * json.loads () * è una lista Python che attraversiamo con un ciclo `for`, e ogni elemento all'interno di tale elenco è un dizionario Python. Una volta analizzato il JSON, possiamo usare l'operatore dell'indice Python per estrarre i vari bit di dati per ciascun utente. Non dobbiamo usare la libreria JSON per scavare nel JSON analizzato, dato che i dati restituiti sono semplicemente strutture native Python.
+L'output di questo programma è esattamente lo stesso della versione XML di cui sopra. 
 ~~~~5
- In general, there is an industry trend away from XML and towards JSON for web services. Because the JSON is simpler and more directly maps to native data structures we already have in programming languages, the parsing and data extraction code is usually simpler and more direct when using JSON. But XML is more self-descriptive than JSON and so there are some applications where XML retains an advantage. For example, most word processors store documents internally using XML rather than JSON.  Application Programming Interfaces
+In generale, c'è una tendenza del settore lontano da XML e verso JSON per i servizi web. Poiché il JSON è più semplice e più direttamente associabile a strutture di dati nativi già presenti nei linguaggi di programmazione, il codice di analisi e di estrazione dei dati è in genere più semplice e diretto quando si utilizza JSON. Ma XML è più auto-descrittivo di JSON e quindi ci sono alcune applicazioni in cui XML mantiene un vantaggio. Ad esempio, la maggior parte dei word processor memorizza i documenti internamente utilizzando XML piuttosto che JSON.
+
+Interfacce di programmazione dell'applicazione
 ----------------------------------
- We now have the ability to exchange data between applications using HyperText Transport Protocol (HTTP) and a way to represent complex data that we are sending back and forth between these applications using eXtensible Markup Language (XML) or JavaScript Object Notation (JSON).  The next step is to begin to define and document "contracts" between applications using these techniques. The general name for these application-to-application contracts is *Application Program Interfaces* or APIs. When we use an API, generally one program makes a set of *services* available for use by other applications and publishes the APIs (i.e., the "rules") that must be followed to access the services provided by the program.  When we begin to build our programs where the functionality of our program includes access to services provided by other programs, we call the approach a *Service-Oriented Architecture* or SOA. A SOA approach is one where our overall application makes use of the services of other applications. A non-SOA approach is where the application is a single standalone application which contains all of the code necessary to implement the application.  We see many examples of SOA when we use the web. We can go to a single web site and book air travel, hotels, and automobiles all from a single site. The data for hotels is not stored on the airline computers. Instead, the airline computers contact the services on the hotel computers and retrieve the hotel data and present it to the user. When the user agrees to make a hotel reservation using the airline site, the airline site uses another web service on the hotel systems to actually make the reservation. And when it comes time to charge your credit card for the whole transaction, still other computers become involved in the process. 
+Ora abbiamo la possibilità di scambiare dati tra le applicazioni utilizzando HyperText Transport Protocol (HTTP) e un modo per rappresentare dati complessi che stiamo inviando avanti e indietro tra queste applicazioni utilizzando eXtensible Markup Language (XML) o JavaScript Object Notation (JSON).
+Il prossimo passo è iniziare a definire e documentare "contratti" tra le applicazioni che utilizzano queste tecniche. Il nome generico per questi contratti applicazione-applicazione è * Interfacce del programma applicativo * o API. Quando usiamo un'API, generalmente un programma rende disponibile un insieme di * servizi * utilizzabili da altre applicazioni e pubblica le API (cioè le "regole") che devono essere seguite per accedere ai servizi forniti dal programma.
+Quando iniziamo a costruire i nostri programmi in cui la funzionalità del nostro programma include l'accesso ai servizi forniti da altri programmi, chiamiamo l'approccio a * Service-Oriented Architecture * o SOA. Un approccio SOA è quello in cui la nostra applicazione generale si avvale dei servizi di altre applicazioni. Un approccio non SOA è dove l'applicazione è una singola applicazione standalone che contiene tutto il codice necessario per implementare l'applicazione.
+Vediamo molti esempi di SOA quando usiamo il web. Possiamo andare su un singolo sito web e prenotare viaggi aerei, hotel e automobili da un unico sito. I dati per gli hotel non sono memorizzati nei computer delle compagnie aeree. Invece, i computer delle compagnie aeree contattano i servizi sui computer dell'hotel e recuperano i dati dell'hotel e li presentano all'utente. Quando l'utente accetta di effettuare una prenotazione alberghiera utilizzando il sito della compagnia aerea, il sito della compagnia aerea utilizza un altro servizio Web sui sistemi dell'hotel per effettuare effettivamente la prenotazione. E quando arriva il momento di addebitare la tua carta di credito per l'intera transazione, altri computer vengono coinvolti nel processo. 
 ######12
- A Service-Oriented Architecture has many advantages including: (1) we always maintain only one copy of data (this is particularly important for things like hotel reservations where we do not want to over-commit) and (2) the owners of the data can set the rules about the use of their data. With these advantages, an SOA system must be carefully designed to have good performance and meet the user's needs.  When an application makes a set of services in its API available over the web, we call these *web services*.  Google geocoding web service
+Un'architettura orientata ai servizi presenta molti vantaggi, tra cui: (1) conserviamo sempre una sola copia di dati (questo è particolarmente importante per cose come prenotazioni di hotel in cui non vogliamo sovra-commit) e (2) i proprietari dei dati può impostare le regole sull'uso dei propri dati. Con questi vantaggi, un sistema SOA deve essere attentamente progettato per avere buone prestazioni e soddisfare le esigenze dell'utente.
+Quando un'applicazione mette a disposizione sul web una serie di servizi nella sua API, li chiamiamo * servizi web *.
+
+Servizio web di geocodifica di Google
 ----------------------------
 
 ######13
 ######14
 ######15
- Google has an excellent web service that allows us to make use of their large database of geographic information. We can submit a geographical search string like "Ann Arbor, MI" to their geocoding API and have Google return its best guess as to where on a map we might find our search string and tell us about the landmarks nearby.  The geocoding service is free but rate limited so you cannot make unlimited use of the API in a commercial application. But if you have some survey data where an end user has entered a location in a free-format input box, you can use this API to clean up your data quite nicely.  *When you are using a free API like Google's geocoding API, you need to be respectful in your use of these resources. If too many people abuse the service, Google might drop or significantly curtail its free service.* 
+Google ha un eccellente servizio web che ci consente di utilizzare il loro ampio database di informazioni geografiche. Possiamo inviare una stringa di ricerca geografica come "Ann Arbor, MI" alla loro API di geocoding e fare in modo che Google restituisca la migliore ipotesi su dove su una mappa potremmo trovare la nostra stringa di ricerca e comunicarci i punti di riferimento nelle vicinanze.
+Il servizio di geocodifica è gratuito ma a tariffa limitata, quindi non è possibile utilizzare l'API in modo illimitato in un'applicazione commerciale. Tuttavia, se si dispone di dati di sondaggi in cui un utente finale ha inserito una posizione in una casella di immissione in formato libero, è possibile utilizzare questa API per pulire i dati in modo abbastanza gradevole.
+* Quando si utilizza un'API gratuita come l'API di geocodifica di Google, è necessario essere rispettosi nell'uso di queste risorse. Se troppe persone abusano del servizio, Google potrebbe abbandonare o ridurre significativamente il suo servizio gratuito.* 
 ######16
- You can read the online documentation for this service, but it is quite simple and you can even test it using a browser by typing the following URL into your browser:  [http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI](http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI)  Make sure to unwrap the URL and remove any spaces from the URL before pasting it into your browser.  The following is a simple application to prompt the user for a search string, call the Google geocoding API, and extract information from the returned JSON. 
+Puoi leggere la documentazione online per questo servizio, ma è abbastanza semplice e puoi persino testarlo usando un browser digitando il seguente URL nel tuo browser:
+[http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI](http://maps.googleapis.com/maps/api/geocode/json?address= Ann + Arbor% 2C + MI) Assicurati di scartare l'URL e rimuovere gli spazi dall'URL prima di incollarlo nel tuo browser.
+La seguente è una semplice applicazione per richiedere all'utente una stringa di ricerca, chiamare l'API di geocoding di Google ed estrarre informazioni dal JSON restituito. 
 ######17
- The program takes the search string and constructs a URL with the search string as a properly encoded parameter and then uses *urllib* to retrieve the text from the Google geocoding API. Unlike a fixed web page, the data we get depends on the parameters we send and the geographical data stored in Google's servers.  Once we retrieve the JSON data, we parse it with the *json* library and do a few checks to make sure that we received good data, then extract the information that we are looking for.  The output of the program is as follows (some of the returned JSON has been removed): 
+Il programma prende la stringa di ricerca e costruisce un URL con la stringa di ricerca come parametro correttamente codificato e quindi utilizza * urllib * per recuperare il testo dall'API di geocoding di Google. A differenza di una pagina web fissa, i dati che otteniamo dipendono dai parametri che inviamo e dai dati geografici memorizzati nei server di Google.
+Una volta recuperati i dati JSON, li analizziamo con la libreria * json * e facciamo alcuni controlli per assicurarci di aver ricevuto buoni dati, quindi estrarre le informazioni che stiamo cercando.
+L'output del programma è il seguente (alcuni dei JSON restituiti sono stati rimossi): 
 ~~~~6
 
 ~~~~7
 
 ~~~~8
- You can download [www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) to explore the XML variant of the Google geocoding API.  Security and API usage
+Puoi scaricare [www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) per esplorare la variante XML dell'API di geocoding di Google.
+
+Sicurezza e utilizzo dell'API
 ----------------------
 
 ######18
 ######19
- It is quite common that you need some kind of "API key" to make use of a vendor's API. The general idea is that they want to know who is using their services and how much each user is using. Perhaps they have free and pay tiers of their services or have a policy that limits the number of requests that a single individual can make during a particular time period.  Sometimes once you get your API key, you simply include the key as part of POST data or perhaps as a parameter on the URL when calling the API.  Other times, the vendor wants increased assurance of the source of the requests and so they add expect you to send cryptographically signed messages using shared keys and secrets. A very common technology that is used to sign requests over the Internet is called *OAuth*. You can read more about the OAuth protocol at [www.oauth.net](http://www.oauth.net).  As the Twitter API became increasingly valuable, Twitter went from an open and public API to an API that required the use of OAuth signatures on each API request. Thankfully there are still a number of convenient and free OAuth libraries so you can avoid writing an OAuth implementation from scratch by reading the specification. These libraries are of varying complexity and have varying degrees of richness. The OAuth web site has information about various OAuth libraries.  For this next sample program we will download the files *twurl.py*, *hidden.py*, *oauth.py*, and *twitter1.py* from [www.py4e.com/code](http://www.py4e.com/code3) and put them all in a folder on your computer.  To make use of these programs you will need to have a Twitter account, and authorize your Python code as an application, set up a key, secret, token and token secret. You will edit the file *hidden.py* and put these four strings into the appropriate variables in the file: 
+È abbastanza comune che sia necessario un qualche tipo di "chiave API" per utilizzare l'API di un fornitore. L'idea generale è che vogliono sapere chi sta usando i loro servizi e quanto ogni utente sta usando. Forse hanno dei livelli gratuiti e pagati dei loro servizi o hanno una politica che limita il numero di richieste che un singolo individuo può effettuare durante un particolare periodo di tempo.
+A volte, una volta ottenuta la chiave API, è sufficiente includere la chiave come parte dei dati POST o forse come parametro sull'URL quando si chiama l'API.
+Altre volte, il fornitore desidera una maggiore garanzia della fonte delle richieste e quindi aggiungono che si aspetta di inviare messaggi firmati crittograficamente utilizzando chiavi e segreti condivisi. Una tecnologia molto comune che viene utilizzata per firmare le richieste su Internet si chiama * OAuth *. Puoi leggere ulteriori informazioni sul protocollo OAuth su [www.oauth.net] (http://www.oauth.net).
+Man mano che l'API di Twitter diventava sempre più preziosa, Twitter passava da un'API pubblica e aperta a un'API che richiedeva l'uso delle firme OAuth su ogni richiesta API. Per fortuna ci sono ancora un certo numero di librerie OAuth convenienti e gratuite, così puoi evitare di scrivere un'implementazione OAuth da zero leggendo le specifiche. Queste librerie sono di varia complessità e hanno vari gradi di ricchezza. Il sito Web OAuth contiene informazioni su varie librerie OAuth.
+Per questo prossimo programma di esempio verranno scaricati i file * twurl.py *, * hidden.py *, * oauth.py * e * twitter1.py * da [www.py4e.com/code](http://www .py4e.com / code3) e metterli tutti in una cartella sul tuo computer.
+Per utilizzare questi programmi è necessario disporre di un account Twitter e autorizzare il codice Python come applicazione, impostare una chiave, un segreto, un token e un token secret. Modificare il file * hidden.py * e inserire queste quattro stringhe nelle variabili appropriate nel file: 
 ######20
- The Twitter web service are accessed using a URL like this:  <https://api.twitter.com/1.1/statuses/user_timeline.json>  But once all of the security information has been added, the URL will look more like: 
+Il servizio web di Twitter è accessibile tramite un URL come questo:
+<Https://api.twitter.com/1.1/statuses/user_timeline.json>
+Ma una volta che tutte le informazioni sulla sicurezza sono state aggiunte, l'URL sarà più simile a: 
 ~~~~9
- You can read the OAuth specification if you want to know more about the meaning of the various parameters that are added to meet the security requirements of OAuth.  For the programs we run with Twitter, we hide all the complexity in the files *oauth.py* and *twurl.py*. We simply set the secrets in *hidden.py* and then send the desired URL to the *twurl.augment()* function and the library code adds all the necessary parameters to the URL for us.  This program retrieves the timeline for a particular Twitter user and returns it to us in JSON format in a string. We simply print the first 250 characters of the string: 
+Puoi leggere le specifiche OAuth se vuoi sapere di più sul significato dei vari parametri che vengono aggiunti per soddisfare i requisiti di sicurezza di OAuth.
+Per i programmi che eseguiamo con Twitter, nascondiamo tutta la complessità nei file * oauth.py * e * twurl.py *. Semplicemente impostiamo i segreti in * hidden.py * e poi inviamo l'URL desiderato alla funzione * twurl.augment () * e il codice della libreria aggiunge tutti i parametri necessari all'URL per noi.
+Questo programma recupera la cronologia per un particolare utente Twitter e ci restituisce in formato JSON in una stringa. Stampiamo semplicemente i primi 250 caratteri della stringa: 
 ######21
 ######22
 ../code3/twurl.py
 ######23
- When the program runs it produces the following output: 
+Quando viene eseguito il programma, produce il seguente output: 
 ~~~~10
- Along with the returned timeline data, Twitter also returns metadata about the request in the HTTP response headers. One header in particular, *x-rate-limit-remaining*, informs us how many more requests we can make before we will be shut off for a short time period. You can see that our remaining retrievals drop by one each time we make a request to the API.  In the following example, we retrieve a user's Twitter friends, parse the returned JSON, and extract some of the information about the friends. We also dump the JSON after parsing and "pretty-print" it with an indent of four characters to allow us to pore through the data when we want to extract more fields. 
+Insieme ai dati della timeline restituiti, Twitter restituisce anche i metadati relativi alla richiesta nelle intestazioni delle risposte HTTP. In particolare, un'intestazione * x-rate-limit-remaining *, ci informa su quante più richieste possiamo fare prima di essere spenti per un breve periodo di tempo. Puoi vedere che i nostri restanti recuperi diminuiscono di uno ogni volta che facciamo una richiesta all'API.
+Nell'esempio seguente, recuperiamo gli amici di Twitter di un utente, analizziamo il JSON restituito ed estrapiamo alcune informazioni sugli amici. Inoltre, eseguiamo il dump del JSON dopo l'analisi e "stampiamo" con un rientro di quattro caratteri per consentirci di analizzare i dati quando vogliamo estrarre più campi. 
 ######24
 ######25
 ../code3/twurl.py
 ######26
- Since the JSON becomes a set of nested Python lists and dictionaries, we can use a combination of the index operation and `for` loops to wander through the returned data structures with very little Python code.  The output of the program looks as follows (some of the data items are shortened to fit on the page): 
+Poiché il JSON diventa una serie di elenchi e dizionari Python nidificati, possiamo usare una combinazione di operazioni su indici e cicli `for` per vagare attraverso le strutture dati restituite con pochissimo codice Python.
+L'output del programma appare come segue (alcuni degli elementi dei dati vengono abbreviati per adattarsi alla pagina): 
 ~~~~11
 
 ~~~~12
 
 ~~~~13
- The last bit of the output is where we see the for loop reading the five most recent "friends" of the *drchuck* Twitter account and printing the most recent status for each friend. There is a great deal more data available in the returned JSON. If you look in the output of the program, you can also see that the "find the friends" of a particular account has a different rate limitation than the number of timeline queries we are allowed to run per time period.  These secure API keys allow Twitter to have solid confidence that they know who is using their API and data and at what level. The rate-limiting approach allows us to do simple, personal data retrievals but does not allow us to build a product that pulls data from their API millions of times per day.  Glossary
+L'ultimo bit dell'output è dove vediamo il ciclo for che legge i cinque "amici" più recenti dell'account Twitter * drchuck * e che stampa lo stato più recente per ciascun amico. Vi sono molti più dati disponibili nel JSON restituito. Se si guarda l'output del programma, è anche possibile vedere che il "trova gli amici" di un determinato account ha una diversa velocità rispetto al numero di query della timeline che è possibile eseguire per periodo di tempo.
+Queste chiavi API sicure consentono a Twitter di avere una solida certezza di sapere chi sta usando le loro API e i loro dati ea quale livello. L'approccio di limitazione della velocità ci consente di eseguire semplici recuperi di dati personali, ma non ci consente di creare un prodotto che estrae i dati dalle loro API milioni di volte al giorno.
+
+Glossario
 --------
- API :   Application Program Interface - A contract between applications that     defines the patterns of interaction between two application     components.
+API: Application Program Interface - Un contratto tra le applicazioni che definisce i modelli di interazione tra due componenti dell'applicazione.
 ######27
- ElementTree :   A built-in Python library used to parse XML data.
+ElementTree: una libreria Python integrata utilizzata per analizzare i dati XML.
 ######28
- JSON :   JavaScript Object Notation. A format that allows for the markup of     structured data based on the syntax of JavaScript Objects.
+JSON: notazione oggetto JavaScript. Un formato che consente il markup dei dati strutturati in base alla sintassi degli oggetti JavaScript.
 ######29
 ######30
- SOA :   Service-Oriented Architecture. When an application is made of     components connected across a network.
+SOA: architettura orientata ai servizi. Quando un'applicazione è composta da componenti connessi attraverso una rete.
 ######31
 ######32
- XML :   eXtensible Markup Language. A format that allows for the markup of     structured data.
+XML: eXtensible Markup Language. Un formato che consente il markup dei dati strutturati.
 ######33
 ######34
- Exercises
+Esercizi
 ---------
- **Exercise 1:** Change either the [www.py4e.com/code3/geojson.py](http://www.py4e.com/code3/geojson.py) or [www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) to print out the two-character country code from the retrieved data. Add error checking so your program does not traceback if the country code is not there. Once you have it working, search for "Atlantic Ocean" and make sure it can handle locations that are not in any country.  
+** Esercizio 1: ** Modifica il [www.py4e.com/code3/geojson.py](http://www.py4e.com/code3/geojson.py) o [www.py4e.com/code3/ geoxml.py] (http://www.py4e.com/code3/geoxml.py) per stampare il codice paese a due caratteri dai dati recuperati. Aggiungi il controllo degli errori in modo che il tuo programma non esegua il traceback se il codice del paese non è presente. Una volta che hai funzionato, cerca "Oceano Atlantico" e assicurati che possa gestire luoghi che non si trovano in nessun paese.
