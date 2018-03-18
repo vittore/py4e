@@ -1,20 +1,20 @@
 Files
 =====
 
-######1
-######2
+\index{file}
+\index{type!file}
 
 Persistence
 -----------
 
-######3
-######4
+\index{persistence}
+\index{secondary memory}
 
 So far, we have learned how to write programs and communicate our intentions to the *Central Processing Unit* using conditional execution, functions, and iterations. We have learned how to create and use data structures in the *Main Memory*. The CPU and memory are where our software works and runs. It is where all of the "thinking" happens.
 
 But if you recall from our hardware architecture discussions, once the power is turned off, anything stored in either the CPU or main memory is erased. So up to now, our programs have just been transient fun exercises to learn Python.
 
-######5
+![Secondary Memory](height=2.5in@../images/arch)
 
 In this chapter, we start to work with *Secondary Memory*
 (or files). Secondary memory is not erased when the power is turned
@@ -25,9 +25,9 @@ We will primarily focus on reading and writing text files such as those we creat
 Opening files
 -------------
 
-######6
-######7
-######8
+\index{file!open}
+\index{open function}
+\index{function!open}
 
 When we want to read or write a file (say on your hard drive), we first must *open* the file. Opening the file communicates with your operating system, which knows where the data for each file is stored. When you open a file, you are asking the operating system to find the file by name and make sure the file exists. In this example, we open the file `mbox.txt`, which should be stored in the same folder that you are in when you start Python. You can download this file from [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
 
@@ -35,11 +35,11 @@ When we want to read or write a file (say on your hard drive), we first must *op
     >>> print(fhand)
     <_io.TextIOWrapper name='mbox.txt' mode='r' encoding='cp1252'>
 
-######9
+\index{file handle}
 
 If the `open` is successful, the operating system returns us a *file handle*. The file handle is not the actual data contained in the file, but instead it is a "handle" that we can use to read the data. You are given a handle if the requested file exists and you have the proper permissions to read the file.
 
-######10
+![A File Handle](height=2.0in@../images/handle)
 
 If the file does not exist, `open` will fail with a traceback and you will not get a handle to access the contents of the file:
 
@@ -77,7 +77,7 @@ These files are in a standard format for a file containing multiple mail message
 
 To break the file into lines, there is a special character that represents the "end of the line" called the *newline* character.
 
-######11
+\index{newline}
 
 In Python, we represent the *newline* character as a backslash-n in string constants. Even though this looks like two characters, it is actually a single character. When we look at the variable by entering "stuff" in the interpreter, it shows us the `\n` in the string, but when we use `print` to show the string, we see the string broken into two lines by the newline character.
 
@@ -103,15 +103,15 @@ So the newline character separates the characters in the file into lines.
 Reading files
 -------------
 
-######12
-######13
+\index{file!reading}
+\index{counter}
 
 While the *file handle* does not contain the data for the file, it is quite easy to construct a `for` loop to read through and count each of the lines in a file:
 
-######14
-######15
+\VerbatimInput{../code3/open.py}
+\begin{trinketfiles}
 ../code3/mbox-short.txt
-######16
+\end{trinketfiles}
 
 We can use the file handle as the sequence in our `for` loop. Our `for` loop simply counts the number of lines in the file and prints them out. The rough translation of the `for` loop into English is, "for each line in the file represented by the file handle, add one to the `count` variable."
 
@@ -148,17 +148,17 @@ Searching through a file
 
 When you are searching through data in a file, it is a very common pattern to read through a file, ignoring most of the lines and only processing lines which meet a particular condition. We can combine the pattern for reading a file with string methods to build simple search mechanisms.
 
-######17
-######18
+\index{filter pattern}
+\index{pattern!filter}
 
 For example, if we wanted to read a file and only print out lines which started with the prefix "From:", we could use the string method
 *startswith* to select only those lines with the desired
 prefix:
 
-######19
-######20
+\VerbatimInput{../code3/search1.py}
+\begin{trinketfiles}
 ../code3/mbox-short.txt
-######21
+\end{trinketfiles}
 
 When this program runs, we get the following output:
 
@@ -175,10 +175,10 @@ The output looks great since the only lines we are seeing are those which start 
 
 We could use line slicing to print all but the last character, but a simpler approach is to use the *rstrip* method which strips whitespace from the right side of a string as follows:
 
-######22
-######23
+\VerbatimInput{../code3/search2.py}
+\begin{trinketfiles}
 ../code3/mbox-short.txt
-######24
+\end{trinketfiles}
 
 When this program runs, we get the following output:
 
@@ -195,10 +195,10 @@ As your file processing programs get more complicated, you may want to structure
 
 We can structure the loop to follow the pattern of skipping uninteresting lines as follows:
 
-######25
-######26
+\VerbatimInput{../code3/search3.py}
+\begin{trinketfiles}
 ../code3/mbox-short.txt
-######27
+\end{trinketfiles}
 
 The output of the program is the same. In English, the uninteresting lines are those which do not start with "From:", which we skip using
 `continue`. For the "interesting" lines (i.e., those that
@@ -206,10 +206,10 @@ start with "From:") we perform the processing on those lines.
 
 We can use the `find` string method to simulate a text editor search that finds lines where the search string is anywhere in the line. Since `find` looks for an occurrence of a string within another string and either returns the position of the string or -1 if the string was not found, we can write the following loop to show lines which contain the string "@uct.ac.za" (i.e., they come from the University of Cape Town in South Africa):
 
-######28
-######29
+\VerbatimInput{../code3/search4.py}
+\begin{trinketfiles}
 ../code3/mbox-short.txt
-######30
+\end{trinketfiles}
 
 Which produces the following output:
 
@@ -231,10 +231,10 @@ We really do not want to have to edit our Python code every time we want to proc
 This is quite simple to do by reading the file name from the user using
 `input` as follows:
 
-######31
-######32
+\VerbatimInput{../code3/search6.py}
+\begin{trinketfiles}
 ../code3/mbox-short.txt
-######33
+\end{trinketfiles}
 
 We read the file name from the user and place it in a variable named
 `fname` and open that file. Now we can run the program
@@ -273,24 +273,24 @@ What if our user types something that is not a file name?
 
 Do not laugh. Users will eventually do every possible thing they can do to break your programs, either on purpose or with malicious intent. As a matter of fact, an important part of any software development team is a person or group called *Quality Assurance* (or QA for short) whose very job it is to do the craziest things possible in an attempt to break the software that the programmer has created.
 
-######34
-######35
+\index{Quality Assurance}
+\index{QA}
 
 The QA team is responsible for finding the flaws in programs before we have delivered the program to the end users who may be purchasing the software or paying our salary to write the software. So the QA team is the programmer's best friend.
 
-######36
-######37
-######38
-######39
-######40
-######41
+\index{try statement}
+\index{statement!try}
+\index{open function}
+\index{function!open}
+\index{exception!IOError}
+\index{IOError}
 
 So now that we see the flaw in the program, we can elegantly fix it using the `try`/`except` structure. We need to assume that the `open` call might fail and add recovery code when the `open` fails as follows:
 
-######42
-######43
+\VerbatimInput{../code3/search7.py}
+\begin{trinketfiles}
 ../code3/mbox-short.txt
-######44
+\end{trinketfiles}
 
 The `exit` function terminates the program. It is a function that we call that never returns. Now when our user (or QA team) types in silliness or bad file names, we "catch" them and recover gracefully:
 
@@ -302,7 +302,7 @@ The `exit` function terminates the program. It is a function that we call that n
     Enter the file name: na na boo boo
     File cannot be opened: na na boo boo
 
-######45
+\index{Pythonic}
 
 Protecting the `open` call is a good example of the proper use of `try` and `except` in a Python program. We use the term "Pythonic" when we are doing something the "Python way". We might say that the above example is the Pythonic way to open a file.
 
@@ -311,7 +311,7 @@ Once you become more skilled in Python, you can engage in repartee with other Py
 Writing files
 -------------
 
-######46
+\index{file!writing}
 
 To write a file, you have to open it with mode "w" as a second parameter:
 
@@ -327,7 +327,7 @@ The `write` method of the file handle object puts data into the file, returning 
     >>> fout.write(line1)
     24
 
-######47
+\index{newline}
 
 Again, the file object keeps track of where it is, so if you call
 `write` again, it adds the new data to the end.
@@ -344,14 +344,14 @@ When you are done writing, you have to close the file to make sure that the last
 
 We could close the files which we open for read as well, but we can be a little sloppy if we are only opening a few files since Python makes sure that all open files are closed when the program ends. When we are writing files, we want to explicitly close the files so as to leave nothing to chance.
 
-######48
-######49
+\index{close method}
+\index{method!close}
 
 Debugging
 ---------
 
-######50
-######51
+\index{debugging}
+\index{whitespace}
 
 When you are reading and writing files, you might run into problems with whitespace. These errors can be hard to debug because spaces, tabs, and newlines are normally invisible:
 
@@ -360,9 +360,9 @@ When you are reading and writing files, you might run into problems with whitesp
     1 2  3
      4
 
-######52
-######53
-######54
+\index{repr function}
+\index{function!repr}
+\index{string representation}
 
 The built-in function `repr` can help. It takes any object as an argument and returns a string representation of the object. For strings, it represents whitespace characters with backslash sequences:
 
@@ -375,7 +375,7 @@ One other problem you might run into is that different systems use different cha
 `\r`. Some use both. If you move files between different systems, these
 inconsistencies might cause problems.
 
-######55
+\index{end of line character}
 
 For most systems, there are applications to convert from one format to another. You can find them (and read more about this issue) at
 [wikipedia.org/wiki/Newline](wikipedia.org/wiki/Newline). Or, of course,
@@ -387,29 +387,29 @@ Glossary
 catch
 :   To prevent an exception from terminating a program using the
     `try` and `except` statements.
-######56
+\index{catch}
 
 newline
 :   A special character used in files and strings to indicate the end of
     a line.
-######57
+\index{newline}
 
 Pythonic
 :   A technique that works elegantly in Python. "Using try and except is
     the *Pythonic* way to recover from missing files".
-######58
+\index{Pythonic}
 
 Quality Assurance
 :   A person or team focused on insuring the overall quality of a
     software product. QA is often involved in testing a product and
     identifying problems before the product is released.
-######59
-######60
+\index{Quality Assurance}
+\index{QA}
 
 text file
 :   A sequence of characters stored in permanent storage like a hard
     drive.
-######61
+\index{text file}
 
 Exercises
 ---------

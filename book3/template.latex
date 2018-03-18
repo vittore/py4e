@@ -164,6 +164,10 @@ $endfor$
 
 %% Italian add-options
 \usepackage[italian]{babel}
+\DeclareUnicodeCharacter{FEFF}{ }
+\DeclareUnicodeCharacter{200B}{ }
+\DeclareUnicodeCharacter{3C0}{pi}
+
 
 \makeindex
 

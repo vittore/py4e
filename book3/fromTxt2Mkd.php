@@ -16,12 +16,14 @@ foreach($tagsFile as $line){
   $tag=substr($line,$p+1);
   $raw=str_replace("######$tagId\r\n",$tag,$raw);
 }
+if (file_exists("snippet/$filename")){
 $d = dir("snippet/$filename/");
 while (false !== ($entry = $d->read())) {
   if (substr($entry,-strlen('snippet'))!='snippet'){continue;}
   $snippetId=substr($entry,0,-1-strlen('snippet'));
   $snippet=file_get_contents("snippet/$filename/$entry");
-  $raw=str_replace("~~~~$snippetId\r\n",$snippet."\r\n",$raw);
+  $raw=str_replace("~~~~$snippetId\r\n","\r\n".$snippet."\r\n\r\n",$raw);
 }
 $d->close();
+}
 file_put_contents("$filename.mkd",$raw);

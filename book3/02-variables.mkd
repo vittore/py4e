@@ -1,27 +1,17 @@
-Variables, expressions, and statements
+﻿%
+
+Variabili, espressioni ed istruzioni
 ======================================
 
-Values and types
+Valori e tipi
 ----------------
 
 \index{value}
 \index{type}
 \index{string}
-
-A *value* is one of the basic things a program works
-with, like a letter or a number. The values we have seen so far are
-`1`, `2`, and "Hello, World!"
-
-These values belong to different *types*: `2`
-is an integer, and "Hello, World!" is a *string*, so
-called because it contains a "string" of letters. You (and the
-interpreter) can identify strings because they are enclosed in quotation
-marks.
-
+Un *valore* è uno degli elementi basilari che permettono ad un programma di funzionare, come una lettera o un numero. I valori che abbiamo visto finora sono `1`,` 2` e "Hello, World!". Questi valori appartengono a diversi *tipi *:` 2` è un numero intero e "Hello, World!"è una *stringa*, così chiamata perché contiene una "stringa" di lettere. Voi (e l'interprete) potete identificare le stringhe perché sono racchiuse tra virgolette.
 \index{quotation mark}
-
-The `print` statement also works for integers. We use the
-`python` command to start the interpreter.
+L'istruzione `print` funziona anche con i numeri interi. Tramite il comando `python` è possibile avviare l'interprete.
 
 ~~~~ {.python}
 python
@@ -29,7 +19,8 @@ python
 4
 ~~~~
 
-If you are not sure what type a value has, the interpreter can tell you.
+
+Se non siete sicuri a quale tipo appartenga uno specifico valore, potrete consultare l'interprete.
 
 ~~~~ {.python .trinket height="160"}
 >>> type('Hello, World!')
@@ -38,12 +29,8 @@ If you are not sure what type a value has, the interpreter can tell you.
 <class 'int'>
 ~~~~
 
-Not surprisingly, strings belong to the type `str` and
-integers belong to the type `int`. Less obviously, numbers
-with a decimal point belong to a type called `float`, because
-these numbers are represented in a format called *floating
-point*.
 
+Non c’è da sorprendersi se le stringhe appartengono al tipo `str` e i numeri interi appartengono al tipo` int`. È meno ovvio che i numeri con un punto decimale appartengano al tipo chiamato `float`, ciò è dovuto al fatto che questi numeri sono rappresentati in un formato chiamato a *virgola mobile*.
 \index{type}
 \index{string type}
 \index{class!str}
@@ -52,15 +39,16 @@ point*.
 \index{float type}
 \index{class!float}
 
+
 ~~~~ {.python .trinket height="120"}
 >>> type(3.2)
 <class 'float'>
 ~~~~
 
-What about values like "17" and "3.2"? They look like numbers, but
-they are in quotation marks like strings.
 
+Che dire di valori come "17" e "3.2"? Sembrano numeri, ma sono inseriti tra virgolette come se fossero stringhe.
 \index{quotation mark}
+
 
 ~~~~ {.python .trinket  height="160"}
 >>> type('17')
@@ -69,42 +57,26 @@ they are in quotation marks like strings.
 <class 'str'>
 ~~~~
 
-They're strings.
 
-When you type a large integer, you might be tempted to use commas
-between groups of three digits, as in `1,000,000`. This is
-not a legal integer in Python, but it is legal:
+In realtà sono stringhe.  Quando si digita un numero intero di grandi dimensioni, si potrebbe essere tentati di utilizzare le virgole tra gruppi di tre cifre, come in "1,000,000", un numero intero consentito in Python, anche se sembra scritto correttamente:
 
 ~~~~ {.python .trinket height="120"}
 >>> print(1,000,000)
 1 0 0
 ~~~~
 
-Well, that's not what we expected at all! Python interprets
-`1,000,000` as a comma-separated sequence of integers, which
-it prints with spaces between.
 
+Beh, non è per niente quello che ci aspettavamo! Python interpreta `1,000,000` come se fosse una sequenza di numeri interi separati da virgole, che visualizza inserendo degli spazi in corrispondenza delle virgole.
 \index{semantic error}
 \index{error!semantic}
 \index{error message}
-
-This is the first example we have seen of a semantic error: the code
-runs without producing an error message, but it doesn't do the "right"
-thing.
-
-Variables
+Questo è il primo esempio che vediamo di errore semantico: il codice viene eseguito senza visualizzare un messaggio di errore, ma non fa l'operazione per la quale pensavamo di averlo progettato.  Variabili
 ---------
 
 \index{variable}
 \index{assignment statement}
 \index{statement!assignment}
-
-One of the most powerful features of a programming language is the
-ability to manipulate *variables*. A variable is a name
-that refers to a value.
-
-An *assignment statement* creates new variables and gives
-them values:
+Una delle più potenti funzionalità di un linguaggio di programmazione è la capacità di manipolare delle *variabili*. Una variabile è un nome che si riferisce ad un valore.  Una *istruzione di assegnazione* ha la capacità di creare nuove variabili ed assegnare loro un valore:
 
 ~~~~ {.python}
 >>> message = 'And now for something completely different'
@@ -112,12 +84,8 @@ them values:
 >>> pi = 3.1415926535897931
 ~~~~
 
-This example makes three assignments. The first assigns a string to a
-new variable named `message`; the second assigns the integer
-`17` to `n`; the third assigns the (approximate)
-value of $\pi$ to `pi`.
 
-To display the value of a variable, you can use a print statement:
+In questo esempio vengono fatte tre assegnazioni. La prima assegna una stringa ad una nuova variabile chiamata `message`; la seconda assegna il numero intero `17` alla variabile `n`; la terza assegna il valore (approssimativo) di $\pi$ a `pi`.  Per visualizzare il valore di una variabile, è possibile usare l'istruzione print:
 
 ~~~~ {.python}
 >>> print(n)
@@ -126,7 +94,8 @@ To display the value of a variable, you can use a print statement:
 3.141592653589793
 ~~~~
 
-The type of a variable is the type of the value it refers to.
+
+Il tipo di una variabile è il tipo di valore a cui questa si riferisce.
 
 ~~~~ {.python}
 >>> type(message)
@@ -137,28 +106,14 @@ The type of a variable is the type of the value it refers to.
 <class 'float'>
 ~~~~
 
-Variable names and keywords
+
+Nomi delle variabili e parole chiavi
 ---------------------------
 
 \index{keyword}
-
-Programmers generally choose names for their variables that are
-meaningful and document what the variable is used for.
-
-Variable names can be arbitrarily long. They can contain both letters
-and numbers, but they cannot start with a number. It is legal to use
-uppercase letters, but it is a good idea to begin variable names with a
-lowercase letter (you'll see why later).
-
-The underscore character (`_`) can appear in a name. It is often used in
-names with multiple words, such as `my_name` or
-`airspeed_of_unladen_swallow`. Variable names can start with an
-underscore character, but we generally avoid doing this unless we are
-writing library code for others to use.
-
+I programmatori in genere scelgono nomi per le loro variabili che siano significativi e documentino l'utilizzo della variabile.  I nomi delle variabili hanno una lunghezza arbitraria. Possono contenere sia lettere sia numeri, ma non possono iniziare con un numero. È possibile utilizzare lettere maiuscole, ma è preferibile iniziare i nomi delle variabili con una lettera minuscola (in seguito ne vedremo il motivo).  Il carattere underscore (`_`) può apparire nel nome di una variabile. Questo carattere è spesso utilizzato in nomi composti da più parole, come `my_name` o `airspeed_of_unladen_swallow`. I nomi delle variabili possono iniziare con il carattere underscore, ma generalmente evitiamo di farlo a meno che non stiamo scrivendo codice di librerie che verranno utilizzate da altri.
 \index{underscore character}
-
-If you give a variable an illegal name, you get a syntax error:
+Se assegnate ad una variabile un nome non valido, otterrete un errore di sintassi:
 
 ~~~~ {.python .trinket height="450"}
 >>> 76trombones = 'big parade'
@@ -169,17 +124,10 @@ SyntaxError: invalid syntax
 SyntaxError: invalid syntax
 ~~~~
 
-`76trombones` is illegal because it begins with a number.
-`more@` is illegal because it contains an illegal character,
-`@`. But what's wrong with `class`?
 
-It turns out that `class` is one of Python's
-*keywords*. The interpreter uses keywords to recognize
-the structure of the program, and they cannot be used as variable names.
-
+Il nome `76trombones` non è valido perché inizia con un numero, `more@`, invece, non è valido perché contiene il carattere non ammesso '@'. Ma cosa c'è di errato in `class`?  Risulta che `class` è una delle *parole riservate* di Python. L'interprete utilizza le parole chiave per riconoscere la struttura del programma perciò non possono essere utilizzate come nomi di variabili.
 \index{keyword}
-
-Python reserves 33 keywords:
+Python si riserva 33 parole chiave:
 
 ~~~~
 and       del       from      None      True
@@ -191,29 +139,14 @@ continue  finally   is        raise
 def       for       lambda    return
 ~~~~
 
-You might want to keep this list handy. If the interpreter complains
-about one of your variable names and you don't know why, see if it is on
-this list.
 
-Statements
+E' consigliabile tenere questo elenco a portata di mano. Se l'interprete segnala di uno dei nomi delle variabili e non ne capite il motivo, controllate se questa sia presente nella lista precedente.  Istruzioni.
 ----------
-
-A *statement* is a unit of code that the Python
-interpreter can execute. We have seen two kinds of statements: print being
-an expression statement and assignment.
-
+Una *istruzione* è un'unità di codice che può essere eseguita dall'interprete di Python. Abbiamo visto due tipi di istruzioni: la Print è istruzione espressione e assegnazione.
 \index{statement}
 \index{interactive mode}
 \index{script mode}
-
-When you type a statement in interactive mode, the interpreter executes
-it and displays the result, if there is one.
-
-A script usually contains a sequence of statements. If there is more
-than one statement, the results appear one at a time as the statements
-execute.
-
-For example, the script
+Quando si digita un'istruzione in modalità interattiva, l'interprete la esegue e, nel caso esista, ne visualizza il risultato.  Generalmente uno script contiene una sequenza di istruzioni. Se c'è più di una istruzione, i risultati vengono visualizzati uno alla volta mano a mano che le istruzioni vengono eseguite.  Ad esempio, il seguente script:
 
 ~~~~ {.python}
 print(1)
@@ -221,38 +154,32 @@ x = 2
 print(x)
 ~~~~
 
-produces the output
+
+produce l'output
 
 ~~~~
 1
 2
 ~~~~
 
-The assignment statement produces no output.
 
-Operators and operands
+Le istruzioni di assegnazione non producono output.
+
+Operatori e operandi
 ----------------------
 
 \index{operator, arithmetic}
 \index{arithmetic operator}
 \index{operand}
 \index{expression}
-
-*Operators* are special symbols that represent
-computations like addition and multiplication. The values the operator
-is applied to are called *operands*.
-
-The operators `+`, `-`, `*`, `/`, and
-`**` perform addition, subtraction, multiplication, division,
-and exponentiation, as in the following examples:
+Gli *operatori * sono simboli speciali che rappresentano calcoli come ad esempio l'addizione e la moltiplicazione. I valori a cui l'operatore è applicato sono chiamati *operandi*.  Gli operatori `+`, `-`, `*`, `/`, e `**` eseguono rispettivamente le operazioni di addizione, sottrazione, moltiplicazione, divisione, e l'elevamento a potenza, come negli esempi seguenti:
 
 ~~~~ {.python}
 20+32   hour-1   hour*60+minute   minute/60   5**2   (5+9)*(15-7)
 ~~~~
 
-There has been a change in the division operator between Python 2.x
-and Python 3.x.  In Python 3.x, the result of this division is a
-floating point result:
+
+C'è stato un cambiamento nell'operatore della divisione tra Python 2.x e Python 3.x.  In Python 3.x, il risultato di questa divisione viene rappresentato in virgola mobile:
 
 ~~~~ {.python .trinket height="160"}
 >>> minute = 59
@@ -260,8 +187,8 @@ floating point result:
 0.9833333333333333
 ~~~~
 
-The division operator in Python 2.0 would divide two integers and 
-truncate the result to an integer:
+
+L'operatore di divisione in Python 2.0 avrebbe diviso due numeri interi e avrebbe troncato il risultato restituendo un numero intero:
 
 ~~~~ {.python}
 >>> minute = 59
@@ -269,7 +196,8 @@ truncate the result to an integer:
 0
 ~~~~
 
-To obtain the same answer in Python 3.0 use floored ( // integer) division.
+
+Per ottenere la stessa risposta in Python 3.0, bisogna utilizzare la divisione intera (// intero).
 
 ~~~~ {.python .trinket  height="160"}
 >>> minute = 59
@@ -277,24 +205,18 @@ To obtain the same answer in Python 3.0 use floored ( // integer) division.
 0
 ~~~~
 
-In Python 3.0 integer division functions much more as you would expect
-if you entered the expression on a calculator.
 
+In Python 3.0 la divisione integer funziona molto di più come ci si aspetterebbe se si inserisse l'espressione su una calcolatrice.
 \index{Python 3.0}
 \index{Python 2.0}
 \index{floating-point division}
 \index{division!floating-point}
-
-Expressions
+Espressioni
 -----------
-
-An *expression* is a combination of values, variables,
-and operators. A value all by itself is considered an expression, and so
-is a variable, so the following are all legal expressions (assuming that
-the variable `x` has been assigned a value):
-
+Un'*espressione* è una combinazione di valori, variabili e operatori. Un valore da solo è considerato un'espressione, come lo è una variabile, pertanto le seguenti sono tutte espressioni corrette (posto che sia stato assegnato un valore alla variabile `x`)
 \index{expression}
 \index{evaluate}
+
 
 ~~~~ {.python}
 17
@@ -302,20 +224,16 @@ x
 x + 17
 ~~~~
 
-If you type an expression in interactive mode, the interpreter
-*evaluates* it and displays the result:
+
+Se si digita un'espressione in modalità interattiva, l'interprete la *calcola* e ne visualizza il risultato:
 
 ~~~~ {.python}
 >>> 1 + 1
 2
 ~~~~
 
-But in a script, an expression all by itself doesn't do anything! This
-is a common source of confusion for beginners.
 
-
-**Exercise 1: Type the following statements in the Python interpreter to
-see what they do:**
+Ma in uno script, un'espressione da sola non fa nulla! Questa è una frequente fonte di confusione per i principianti.   **Esercizio 1: Digitare le seguenti istruzioni nell'interprete Python per osservare il loro comportamento:**
 
 ~~~~ {.python}
 5
@@ -323,56 +241,29 @@ x = 5
 x + 1
 ~~~~
 
-Order of operations
+
+Ordine delle operazioni
 -------------------
 
 \index{order of operations}
 \index{rules of precedence}
 \index{PEMDAS}
-
-When more than one operator appears in an expression, the order of
-evaluation depends on the *rules of precedence*. For
-mathematical operators, Python follows mathematical convention. The
-acronym *PEMDAS* is a useful way to remember the rules:
-
+Quando in un'espressione appare più di un operatore, l'ordine di calcolo dipende dalle *regole di precedenza*. Per quanto riguarda gli operatori matematici, Python segue le convenzioni matematiche. L'acronimo * PEMDAS * è un modo utile per ricordare le regole:
 \index{parentheses!overriding precedence}
 
--   *P*arentheses have the highest precedence and can be
-    used to force an expression to evaluate in the order you want. Since
-    expressions in parentheses are evaluated first, `2 *
-    (3-1)` is 4, and `(1+1)**(5-2)` is 8. You can
-    also use parentheses to make an expression easier to read, as in
-    `(minute * 100) / 60`, even if it doesn't change the
-    result.
-
--   *E*xponentiation has the next highest precedence, so
-    `2**1+1` is 3, not 4, and `3*1**3` is 3,
-    not 27.
-
--   *M*ultiplication and *D*ivision have
-    the same precedence, which is higher than *A*ddition
-    and *S*ubtraction, which also have the same
-    precedence. So `2*3-1` is 5, not 4, and
-    `6+4/2` is 8.0, not 5.
-
--   Operators with the same precedence are evaluated from left to right.
-    So the expression `5-3-1` is 1, not 3, because the
-    `5-3` happens first and then `1` is subtracted
-    from `2`.
-
-When in doubt, always put parentheses in your expressions to make sure
-the computations are performed in the order you intend.
-
-Modulus operator
+- *P*arentesi hanno la precedenza più alta e possono essere
+    utilizzate per costringere il computer a svolgere un'espressione nell'ordine desiderato. Poiché le espressioni tra parentesi vengono valutate per prime, `2 * (3-1)` è 4, e `(1 + 1) ** (5-2)` è 8. Potete anche utilizzare le parentesi per rendere l'espressione più leggibile, come in `(minuto * 100) / 60`, sebbene ciò non cambi il risultato.
+- L'*E*levamento a potenza ha il livello di precedenza immediatamente successivo, pertanto
+    `2 ** 1 + 1` è 3, non 4, e` 3 * 1 ** 3` è 3, non 27.
+- Le *M*oltiplicazioni e le *D*ivisioni hanno
+    la stessa precedenza, superiore alle *A*ddizioni e alle *S*ottrazioni, che hanno lo stesso livello di precedenza. Quindi `2 * 3-1` è 5, non 4, e` 6 + 4 / 2` è 8.0, non 5.
+- Gli operatori con la stessa precedenza vengono calcolati da sinistra a destra.
+    Quindi l'espressione `5-3-1` da 1 e non 3, perché `5-3` viene svolto per primo mentre viene sottratto `1` da `2` dopo.  In caso di dubbio, mettete sempre le parentesi nelle vostre espressioni per essere sicuri che i calcoli siano eseguiti nell'ordine voluto.  Operatore modulo
 ----------------
 
 \index{modulus operator}
 \index{operator!modulus}
-
-The *modulus operator* works on integers and yields the
-remainder when the first operand is divided by the second. In Python,
-the modulus operator is a percent sign (`%`). The syntax is the same as
-for other operators:
+L'operatore *modulo* viene applicato a numeri interi e produce il resto quando il primo operando viene diviso per il secondo. In Python, l'operatore modulo è il carattere percentuale (`%`). La sintassi è la stessa degli altri operatori:
 
 ~~~~ {.python .trinket height="240"}
 >>> quotient = 7 // 3
@@ -383,31 +274,17 @@ for other operators:
 1
 ~~~~
 
-So 7 divided by 3 is 2 with 1 left over.
 
-The modulus operator turns out to be surprisingly useful. For example,
-you can check whether one number is divisible by another: if `x %
-y` is zero, then `x` is divisible by `y`.
-
+Quindi 7 diviso per 3 fa 2 con il resto di 1.  L'operatore modulo si può rivelare sorprendentemente utile. Per esempio, è possibile verificare se un numero è divisibile per un altro: se `x%y` fa zero, allora `x` è divisibile per `y`.
 \index{divisibility}
-
-You can also extract the right-most digit or digits from a number. For
-example, `x % 10` yields the right-most digit of
-`x` (in base 10). Similarly, `x % 100` yields the
-last two digits.
-
-String operations
+È inoltre possibile ricavare da un numero quale sia il valore della cifra o delle cifre più a destra. Per esempio, `x % 10` restituisce la cifra più a destra di `x` (in base 10). in modo simile, `x% 100` restituisce le ultime due cifre.  Operazioni con le stringhe
 -----------------
 
 \index{string!operation}
 \index{operator!string}
-
-The `+` operator works with strings, but it is not addition
-in the mathematical sense. Instead it performs
-*concatenation*, which means joining the strings by
-linking them end to end. For example:
-
+L'operatore `+` opera con le stringhe, ma non è un'addizione in senso strettamente matematico. Esegue invece *concatenazione*, che significa unire le stringhe collegandole da un capo all'altro. Per esempio:
 \index{concatenation}
+
 
 ~~~~ {.python}
 >>> first = 10
@@ -420,10 +297,8 @@ linking them end to end. For example:
 100150
 ~~~~
 
-The output of this program is `100150`.
 
-The `*` operator also works with strings by multiplying the content
-of a string by an integer. For example:
+L'output di questo programma è `100150`.  L'operatore `*` lavora anche con le stringhe moltiplicando il contenuto di una stringa per un numero intero. Per esempio:
 
 ~~~~ {.python}
 >>> first = 'Test '
@@ -432,20 +307,14 @@ of a string by an integer. For example:
 Test Test Test
 ~~~~
 
-Asking the user for input
+
+Chiedere un valore in input all'utente
 -------------------------
 
 \index{keyboard input}
-
-Sometimes we would like to take the value for a variable from the user
-via their keyboard. Python provides a built-in function called
-`input` that gets input from the keyboard^[In Python 2.0, this function was named `raw_input`.]. 
-When this function is
-called, the program stops and waits for the user to type something. When
-the user presses `Return` or `Enter`, the program
-resumes and `input` returns what the user typed as a string.
-
+A volte potrebbe essere necessario richiedere all'utente di inserire il valore di una variabile. Python fornisce una funzione integrata chiamata `input` che riceve input dalla tastiera^[In Python 2.0, questa funzione era chiamata `raw_input`].  Quando si utilizza questa funzione il programma si arresta in attesa che l'utente digiti qualcosa. Quando l'utente preme `Invio` o` Enter`, l'esecuzione del programma riprende e `input` restituisce ciò che l'utente ha digitato come stringa.
 \index{Python 2.0}
+
 
 ~~~~ {.python}
 >>> inp = input()
@@ -454,11 +323,10 @@ Some silly stuff
 Some silly stuff
 ~~~~
 
-Before getting input from the user, it is a good idea to print a prompt
-telling the user what to input. You can pass a string to `input` to
-be displayed to the user before pausing for input:
 
+Prima di ricevere input dall'utente, è una buona idea visualizzare un prompt che informa l'utente su cosa inserire. È possibile fornire una stringa alla funzione `input` affinché venga visualizzata dall'utente prima della pausa in attesa dell'input:
 \index{prompt}
+
 
 ~~~~ {.python}
 >>> name = input('What is your name?\n')
@@ -468,14 +336,10 @@ Chuck
 Chuck
 ~~~~
 
-The sequence `\n` at the end of the prompt represents a
-*newline*, which is a special character that causes a
-line break. That's why the user's input appears below the prompt.
 
+La sequenza `\n` alla fine del prompt rappresenta un *a capo*, che è un carattere speciale che causa l'interruzione della linea. Ecco perché l'input dell'utente appare sotto il prompt.
 \index{newline}
-
-If you expect the user to type an integer, you can try to convert the
-return value to `int` using the `int()` function:
+Se vi aspettate che l'utente debba digitare un intero, è possibile provare a convertire il valore restituito in `int` usando la funzione `int()`.
 
 ~~~~ {.python}
 >>> prompt = 'What...is the airspeed velocity of an unladen swallow?\n'
@@ -488,8 +352,8 @@ What...is the airspeed velocity of an unladen swallow?
 22
 ~~~~
 
-But if the user types something other than a string of digits, you get
-an error:
+
+Ma se l'utente digita qualcosa di diverso da una stringa di cifre, viene visualizzato un errore:
 
 ~~~~ {.python}
 >>> speed = input(prompt)
@@ -499,70 +363,48 @@ What do you mean, an African or a European swallow?
 ValueError: invalid literal for int() with base 10:
 ~~~~
 
-We will see how to handle this kind of error later.
 
+Vedremo in seguito come gestire questo tipo di errore.
 \index{ValueError}
 \index{exception!ValueError}
-
-Comments
+Commenti
 --------
 
 \index{comment}
-
-As programs get bigger and more complicated, they get more difficult to
-read. Formal languages are dense, and it is often difficult to look at a
-piece of code and figure out what it is doing, or why.
-
-For this reason, it is a good idea to add notes to your programs to
-explain in natural language what the program is doing. These notes are
-called *comments*, and in Python they start with the `#`
-symbol:
+Man mano che i programmi diventano più grandi e complicati, diventano più difficili da leggere. I linguaggi formali sono densi, ed è spesso difficile guardare un pezzo di codice e capire cosa sta facendo, o perché.  Per questo motivo, è una buona idea aggiungere alcune note ai vostri programmi per spiegare in linguaggio naturale cosa stia facendo il programma. Queste note sono chiamate *commenti*, e in Python iniziano con il simbolo `#`:
 
 ~~~~ {.python}
 # compute the percentage of the hour that has elapsed
 percentage = (minute * 100) / 60
 ~~~~
 
-In this case, the comment appears on a line by itself. You can also put
-comments at the end of a line:
+
+In questo caso, il commento appare da solo su una riga. Potete anche inserire commenti alla fine di una riga:
 
 ~~~~ {.python}
 percentage = (minute * 100) / 60     # percentage of an hour
 ~~~~
 
-Everything from the `\#` to the end of the line is ignored; it
-has no effect on the program.
 
-Comments are most useful when they document non-obvious features of the
-code. It is reasonable to assume that the reader can figure out *what*
-the code does; it is much more useful to explain *why*.
-
-This comment is redundant with the code and useless:
+Tutto ciò che è compreso tra "\#" e la fine della riga viene ignorato; non alcun effetto sul programma.  I commenti sono ancor più utili quando documentano funzionalità del codice non così evidenti. Anche se è ragionevole presumere che chi legge il codice possa capire *cosa* questo faccia; è molto più utile spiegarne il *perché*.  Questo commento al codice è superfluo ed inutile:
 
 ~~~~ {.python}
 v = 5     # assign 5 to v
 ~~~~
 
-This comment contains useful information that is not in the code:
+
+Questo commento, invece, contiene informazioni utili che non sono comprese nel codice:
 
 ~~~~ {.python}
 v = 5     # velocity in meters/second.
 ~~~~
 
-Good variable names can reduce the need for comments, but long names can
-make complex expressions hard to read, so there is a trade-off.
 
-Choosing mnemonic variable names
+Assegnare nomi adeguati alle variabili può ridurre la necessità di commenti, ma i nomi lunghi possono rendere difficili da leggere le espressioni complesse, pertanto esiste un compromesso.  Scegliere nomi mnemonici delle variabili
 --------------------------------
 
 \index{mnemonic}
-
-As long as you follow the simple rules of variable naming, and avoid
-reserved words, you have a lot of choice when you name your variables.
-In the beginning, this choice can be confusing both when you read a
-program and when you write your own programs. For example, the following
-three programs are identical in terms of what they accomplish, but very
-different when you read them and try to understand them.
+Finché si seguono le semplici regole di denominazione delle variabili, e si evitano le parole riservate, avrete una vasta scelta per chiamare le vostre variabili. All'inizio, questa scelta può essere fonte di confusione sia quando leggete un programma e sia quando scrivete i vostri programmi. Ad esempio, i seguenti tre programmi sono identici in termini di ciò che fanno, ma molto diversi quando li leggete e provate a capirne il significato.
 
 ~~~~ {.python}
 a = 35.0
@@ -571,12 +413,18 @@ c = a * b
 print(c)
 ~~~~
 
+
+
+
 ~~~~ {.python}
 hours = 35.0
 rate = 12.50
 pay = hours * rate
 print(pay)
 ~~~~
+
+
+
 
 ~~~~ {.python}
 x1q3z9ahd = 35.0
@@ -585,99 +433,41 @@ x1q3p9afd = x1q3z9ahd * x1q3z9afd
 print(x1q3p9afd)
 ~~~~
 
-The Python interpreter sees all three of these programs as *exactly the
-same* but humans see and understand these programs quite differently.
-Humans will most quickly understand the *intent* of the
-second program because the programmer has chosen variable names that
-reflect their intent regarding what data will be stored in each
-variable.
 
-We call these wisely chosen variable names "mnemonic variable names".
-The word *mnemonic*^[See <http://en.wikipedia.org/wiki/Mnemonic> for an extended
-description of the word "mnemonic".] means "memory aid". We choose mnemonic variable
-names to help us remember why we created the variable in the first
-place.
-
-While this all sounds great, and it is a very good idea to use mnemonic
-variable names, mnemonic variable names can get in the way of a
-beginning programmer's ability to parse and understand code. This is
-because beginning programmers have not yet memorized the reserved words
-(there are only 33 of them) and sometimes variables with names that are
-too descriptive start to look like part of the language and not just
-well-chosen variable names.
-
-Take a quick look at the following Python sample code which loops
-through some data. We will cover loops soon, but for now try to just
-puzzle through what this means:
+L'interprete Python vede tutti e tre questi programmi *esattamente allo stesso modo* ma gli umani vedono e comprendono questi programmi in modo abbastanza diverso. Gli umani capiranno velocemente lo *scopo* del secondo programma perché lo sviluppatore ha scelto i nomi delle variabili pensando a quali dati saranno memorizzati in ciascuna variabile.  Chiamiamo questi nomi di variabili così saggiamente scelti "nomi mnemonici delle variabili". La parola *mnemonico*^[Vedi <http://en.wikipedia.org/wiki/Mememonico> per un'estesa descrizione della parola "mnemonico".] significa "aiuto per la memoria". Scegliamo nomi mnemonici per le variabili principalmente per aiutarci a ricordare il perché le abbiamo create.  Mentre tutto ciò sembra grandioso, ed è una buona idea usare nomi mnemonici per le variabili, i nomi delle variabili mnemonici possono essere d'intralcio alla capacità iniziale di uno sviluppatore di analizzare e comprendere il codice. Questo perché gli sviluppatori principianti non hanno ancora memorizzato le parole riservate (ce ne sono solo 33) e talvolta variabili con nomi troppo descrittivi iniziano a sembrare parte del linguaggio e non solo nomi di variabili ben scelti.  Date una rapida occhiata al seguente codice esempio di Python che viene eseguito ripetutamente (in loop) su alcuni dati. Affronteremo presto i loop, ma per ora cercate di capire che cosa significhi:
 
 ~~~~ {.python}
 for word in words:
     print(word)
 ~~~~
 
-What is happening here? Which of the tokens (for, word, in, etc.) are
-reserved words and which are just variable names? Does Python understand
-at a fundamental level the notion of words? Beginning programmers have
-trouble separating what parts of the code *must* be the same as this
-example and what parts of the code are simply choices made by the
-programmer.
 
-The following code is equivalent to the above code:
+Cosa sta succedendo? Quali parole (for, word, in, ecc.) sono parole riservate e quali sono solo nomi di variabili? Python riesce a capire a livello fondamentale la nozione di parole? I programmatori principianti hanno difficoltà a distinguere quali parti del codice *debbano* restare invariate come in questo esempio e quali parti del codice siano semplicemente scelte fatte dallo sviluppatore.  Il codice seguente equivale al precedente:
 
 ~~~~ {.python}
 for slice in pizza:
     print(slice)
 ~~~~
 
-It is easier for the beginning programmer to look at this code and know
-which parts are reserved words defined by Python and which parts are
-simply variable names chosen by the programmer. It is pretty clear that
-Python has no fundamental understanding of pizza and slices and the fact
-that a pizza consists of a set of one or more slices.
 
-But if our program is truly about reading data and looking for words in
-the data, `pizza` and `slice` are very un-mnemonic
-variable names. Choosing them as variable names distracts from the
-meaning of the program.
+Per il programmatore principiante è più facile osservare questo codice per sapere quali parti siano parole riservate definite da Python e quali parti siano semplicemente nomi di variabili scelti dallo sviluppatore. È abbastanza chiaro che Python non conosce la nozione di pizza e di trancio (slice) e il fatto che una pizza consista in un insieme di uno o più tranci.  Ma se il nostro programma riguarda veramente la lettura di dati e la ricerca di parole nei dati, `pizza` e` slice` non sono per niente nomi mnemonici di variabili. Sceglierli come nomi variabili ci distrae dallo scopo del programma.  Dopo un breve periodo di tempo, conoscerete le più comuni parole riservate e inizierete a vedere le parole riservate che vi saltano agli occhi: <pre> <b>for</b> word <b>in</b> words<b>:</b> <b>print</b> word </pre> Le parti del codice che sono definite da Python (`for`, `in`, `print`, e `:`) sono in grassetto e le variabili scelte dallo sviluppatore (`word` e `words`) non lo sono. Molti editor di testo sono a conoscenza della sintassi di Python e coloreranno le parole riservate in modo diverso per metterle in evidenza e mantenere separate le variabili dalle parole riservate. Dopo un po' che inizierete a leggere Python determinerete rapidamente quale sia una variabile e quale una parola riservata.
 
-After a pretty short period of time, you will know the most common
-reserved words and you will start to see the reserved words jumping out
-at you:
-
-<pre>
-<b>for</b> word <b>in</b> words<b>:</b>
-    <b>print</b> word
-</pre>
-
-The parts of the code that are defined by Python (`for`,
-`in`, `print`, and `:`) are in bold and
-the programmer-chosen variables (`word` and
-`words`) are not in bold. Many text editors are aware of
-Python syntax and will color reserved words differently to give you
-clues to keep your variables and reserved words separate. After a while
-you will begin to read Python and quickly determine what is a variable
-and what is a reserved word.
-
-Debugging
+Debug
 ---------
 
 \index{debugging}
-
-At this point, the syntax error you are most likely to make is an
-illegal variable name, like `class` and `yield`,
-which are keywords, or `odd~job` and `US$`, which contain illegal
-characters.
-
+A questo punto, l'errore di sintassi che è più probabile che voi possiate fare è un nome di variabile non consentito, come `class` e `yield`, che sono parole chiave, o `odd~job` e` US$ `, che contengono caratteri non consentiti.
 \index{syntax error}
 \index{error!syntax}
-
-If you put a space in a variable name, Python thinks it is two operands
-without an operator:
+Se mettete uno spazio in un nome di variabile, Python pensa che siano due operandi senza un operatore:
 
 ~~~~ {.python}
 >>> bad name = 5
 SyntaxError: invalid syntax
 ~~~~
+
+
+
 
 ~~~~ {.python}
 >>> month = 09
@@ -687,20 +477,14 @@ SyntaxError: invalid syntax
 SyntaxError: invalid token
 ~~~~
 
-For syntax errors, the error messages don't help much. The most common
-messages are `SyntaxError: invalid syntax` and
-`SyntaxError: invalid token`, neither of which is very
-informative.
 
+Per gli errori di sintassi, i messaggi di errore non aiutano molto. Il messaggi più comuni sono `SyntaxError: invalid syntax` e `SyntaxError: invalid token`, nessuno dei due è molto esplicativo.
 \index{error message}
 \index{use before def}
 \index{exception}
 \index{runtime error}
 \index{error!runtime}
-
-The runtime error you are most likely to make is a "use before def;"
-that is, trying to use a variable before you have assigned a value. This
-can happen if you spell a variable name wrong:
+Il runtime error che è più probabile che possiate fare è un "use before def;" cioè cercare di usare una variabile prima di averle assegnato un valore. Questo può accadere se si scrive una variabile in modo errato:
 
 ~~~~ {.python}
 >>> principal = 327.68
@@ -708,132 +492,69 @@ can happen if you spell a variable name wrong:
 NameError: name 'principle' is not defined
 ~~~~
 
-Variables names are case sensitive, so `LaTeX` is not the
-same as `latex`.
 
+I nomi delle variabili sono case sensitive, quindi `LaTeX` non è lo stesso di` latex`.
 \index{case-sensitivity, variable names}
 \index{semantic error}
 \index{error!semantic}
-
-At this point, the most likely cause of a semantic error is the order of
-operations. For example, to evaluate $1/2\pi$, you might be
-tempted to write
+A questo punto, la causa più probabile di un errore semantico è l'ordine delle operazioni. Ad esempio, per calcolare $1/2\pi$, potreste essere tentati a scrivere:
 
 ~~~~ {.python}
 >>> 1.0 / 2.0 * pi
 ~~~~
 
-But the division happens first, so you would get $\pi / 2$, which is not
-the same thing! There is no way for Python to know what you meant to
-write, so in this case you don't get an error message; you just get the
-wrong answer.
 
+Ma la divisione avviene prima, quindi otterreste $\pi / 2$, il che non è la stessa cosa! Python non ha modo di sapere cosa intendeste scrivere, quindi in questo caso non riceverete un messaggio di errore; avete appena ottenuto la risposta sbagliata.
 \index{order of operations}
-
-Glossary
+Glossario
 --------
-
-assignment
-:   A statement that assigns a value to a variable.
+Istruzione: Istruzione che assegna un valore a una variabile.
 \index{assignment}
-
-concatenate
-:   To join two operands end to end.
+concatenare: Unire due operandi tra di loro.
 \index{concatenation}
-
-comment
-:   Information in a program that is meant for other programmers (or
-    anyone reading the source code) and has no effect on the execution
-    of the program.
+commento: informazioni in un programma destinato ad altri programmatori (o a chiunque stia leggendo il codice sorgente) e non ha alcun effetto sull'esecuzione del programma.
 \index{comment}
-
-evaluate
-:   To simplify an expression by performing the operations in order to
-    yield a single value.
-
-expression
-:   A combination of variables, operators, and values that represents a
-    single result value.
+calcolare: Semplificare un'espressione eseguendo le operazioni in modo da fornire un unico valore. espressione: Combinazione di variabili, operatori e valori che rappresenta un singolo valore come risultato.
 \index{expression}
-
-floating point
-:   A type that represents numbers with fractional parts.
+virgola mobile: un tipo che rappresenta i numeri con le parti frazionarie.
 \index{floating-point}
-
-integer
-:   A type that represents whole numbers.
+integer: Un tipo di dato che rappresenta numeri interi.
 \index{integer}
-
-keyword
-:   A reserved word that is used by the compiler to parse a program; you
-    cannot use keywords like `if`, `def`, and
-    `while` as variable names.
+parola chiave: Una parola riservata che viene utilizzata dal compilatore per analizzare un programma; non potete utilizzare parole chiave come `if`, `def` e `while` come nomi di variabili.
 \index{keyword}
-
-mnemonic
-:   A memory aid. We often give variables mnemonic names to help us
-    remember what is stored in the variable.
+mnemonico: Un aiuto mnemonico. Spesso diamo alle variabili nomi mnemonici per aiutarci a ricordare cosa è memorizzato nella variabile.
 \index{mnemonic}
-
-modulus operator
-:   An operator, denoted with a percent sign (`%`), that
-    works on integers and yields the remainder when one number is
-    divided by another.
+operatore modulo: Un operatore, indicato con un segno di percentuale (`%`), che funziona con numeri interi e restituisce il resto quando un numero è diviso per un altro.
 \index{modulus operator}
 \index{operator!modulus}
-
-operand
-:   One of the values on which an operator operates.
+operando: uno dei valori su cui viene applicato un operatore.
 \index{operand}
-
-operator
-:   A special symbol that represents a simple computation like addition,
-    multiplication, or string concatenation.
+operatore: Un simbolo speciale che rappresenta un semplice calcolo come un'addizione, una moltiplicazione o una concatenazione di stringhe.
 \index{operator}
-
-rules of precedence
-:   The set of rules governing the order in which expressions involving
-    multiple operators and operands are evaluated.
+regole di precedenza: Il set di regole che disciplinano l'ordine in cui le espressioni coinvolgono operatori multipli e in cui gli operandi vengono calcolati.
 \index{rules of precedence}
 \index{precedence}
-
-statement
-:   A section of code that represents a command or action. So far, the
-    statements we have seen are assignments and print expression statement.
+istruzione: una sezione di codice che rappresenta un comando o un'azione. Finora, le istruzioni che abbiamo visto sono assegnazioni e istruzioni di stampa.
 \index{statement}
-
-string
-:   A type that represents sequences of characters.
+: Un tipo di dato che rappresenta una sequenza di caratteri.
 \index{string}
-
-type
-:   A category of values. The types we have seen so far are integers
-    (type `int`), floating-point numbers (type
-    `float`), and strings (type `str`).
+tipo: Una categoria di valori. I tipi che abbiamo visto fino ad ora sono interi (tipo `int`), numeri a virgola mobile (tipo `float`) e stringhe (tipo `str`).
 \index{type}
-
-value
-:   One of the basic units of data, like a number or string, that a
-    program manipulates.
+valore: una delle unità di base dei dati, come un numero o una stringa, che possono essere manipolate da un programma.
 \index{value}
-
-variable
-:   A name that refers to a value.
+Varibile: Un nome riferito ad un valore.
 \index{variable}
-
-Exercises
+Esercizi
 ---------
-
-**Exercise 2: Write a program that uses `input` to prompt a user for
-their name and then welcomes them.**
+** Esercizio 2: Scrivete un programma che usi `input` per chiedere agli utenti il proprio nome e poi date loro il benvenuto.**
 
 ~~~~
 Enter your name: Chuck
 Hello Chuck
 ~~~~
 
-**Exercise 3: Write a program to prompt the user for hours and rate per
-hour to compute gross pay.**
+
+** Esercizio 3: scrivete un programma per richiedere all'utente ore e tariffe orarie per calcolare la retribuzione lorda.**
 
 ~~~~
 Enter Hours: 35
@@ -841,32 +562,25 @@ Enter Rate: 2.75
 Pay: 96.25
 ~~~~
 
-We won't worry about making sure our pay has exactly two digits after
-the decimal place for now. If you want, you can play with the built-in
-Python `round` function to properly round the resulting pay
-to two decimal places.
 
-**Exercise 4: Assume that we execute the following assignment statements:**
+Per ora non ci preoccuperemo di assicurarci che la nostra paga abbia esattamente due cifre dopo la virgola. Se volete, potete giocare con la funzione `round` integrata in Python per arrotondare correttamente la retribuzione risultante a due cifre decimali.   ** Esercizio 4: supponiamo di eseguire le seguenti istruzioni di assegnazione: **
 
 ~~~~
 width = 17
 height = 12.0
 ~~~~
 
-For each of the following expressions, write the value of the expression
-and the type (of the value of the expression).
 
+Per ciascuna delle seguenti espressioni, scrivete il valore dell'espressione e il tipo di dato (del valore dell'espressione).
 1.  `width//2`
-
 2.  `width/2.0`
-
 3.  `height/3`
+~~~~4  
+~~~~ {.python .trinket height="120"}
+>>> print(1,000,000)
+1 0 0
+~~~~
 
-4.  `1 + 2 * 5`
 
-Use the Python interpreter to check your answers.
-
-**Exercise 5: Write a program which prompts the user for a Celsius
-temperature, convert the temperature to Fahrenheit, and print out the
-converted temperature.**
-
+Usate l'interprete Python per verificare le vostre risposte.
+** Esercizio 5: scrivete un programma che richieda all'utente una temperatura in gradi Celsius, la converta in Fahrenheit e poi la stampi.**

@@ -1,0 +1,316 @@
+﻿
+Espressioni regolari
+===================
+Finora abbiamo letto i file, cercato modelli ed estrapolati vari pezzi di linee che riteniamo interessanti. Siamo stati
+
+usando metodi di stringa come `split` e` find` e usando liste e slicing delle stringhe per estrarre parti delle linee. 
+\index{regular expressions}
+\index{regex}
+\index{re module}
+Questo compito di ricerca ed estrazione è così comune che Python ha una libreria molto potente chiamata * regular expressions * che gestisce molte di queste attività in modo abbastanza elegante. La ragione per cui non abbiamo introdotto le espressioni regolari in precedenza nel libro è perché, sebbene siano molto potenti, sono un po 'complicate e la loro sintassi richiede un po' di tempo per abituarsi.
+Le espressioni regolari sono quasi il loro piccolo linguaggio di programmazione per la ricerca e l'analisi delle stringhe. In effetti, sono stati scritti interi libri sul tema delle espressioni regolari. In questo capitolo, tratteremo solo le basi delle espressioni regolari. Per maggiori dettagli sulle espressioni regolari, vedi:
+<Http://en.wikipedia.org/wiki/Regular_expression>
+<Https://docs.python.org/3.5/library/re.html>
+La libreria di espressioni regolari `re` deve essere importata nel tuo programma prima che tu possa usarla. L'uso più semplice della libreria di espressioni regolari è la funzione `search ()`. Il seguente programma dimostra un uso banale della funzione di ricerca. 
+\index{regex!search}
+
+\VerbatimInput{../code3/re01.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Apriamo il file, passiamo in loop su ogni riga e usiamo l'espressione regolare `search ()` per stampare solo le righe che contengono la stringa "From:". Questo programma non usa il vero potere delle espressioni regolari, dal momento che avremmo potuto usare altrettanto facilmente `line.find ()` per ottenere lo stesso risultato. 
+\index{string!find}
+La potenza delle espressioni regolari arriva quando aggiungiamo caratteri speciali alla stringa di ricerca che ci consente di controllare più precisamente le linee che corrispondono alla stringa. L'aggiunta di questi caratteri speciali alla nostra espressione regolare ci consente di eseguire abbinamenti ed estrazioni sofisticati durante la scrittura di un codice molto piccolo.  Ad esempio, il carattere di accento viene utilizzato nelle espressioni regolari per corrispondere "all'inizio" di una linea. Potremmo cambiare il nostro programma per abbinare solo le righe in cui "From:" era all'inizio della riga come segue: 
+\VerbatimInput{../code3/re02.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Ora abbineremo solo le righe che * iniziano con * la stringa "From:". Questo è ancora un esempio molto semplice che avremmo potuto fare in modo equivalente con il metodo `startswith ()` dalla libreria di stringhe. Ma serve a introdurre la nozione che le espressioni regolari contengono caratteri di azioni speciali che ci danno più controllo su ciò che corrisponderà all'espressione regolare. 
+\index{string!startswith}
+Corrispondenza di caratteri nelle espressioni regolari
+-----------------------------------------
+Ci sono un certo numero di altri personaggi speciali che ci permettono di costruire espressioni regolari ancora più potenti. Il carattere speciale più comunemente usato è il punto o punto, che corrisponde a qualsiasi carattere. 
+\index{wild card}
+\index{regex!wild card}
+Nell'esempio seguente, l'espressione regolare "F..m:" corrisponderebbe a qualsiasi stringa "From:", "Fxxm:", "F12m:" o "F!@m: "poiché i caratteri del periodo nell'espressione regolare corrispondono a qualsiasi carattere. 
+\VerbatimInput{../code3/re03.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Questo è particolarmente potente se combinato con la capacità di indicare che un personaggio può essere ripetuto un numero qualsiasi di volte usando i caratteri "\ *" o "+" nell'espressione regolare. Questi caratteri speciali significano che invece di trovare un singolo carattere nella stringa di ricerca, corrispondono a zero o più caratteri (nel caso dell'asterisco) o uno o più caratteri (nel caso del segno più) .  Possiamo restringere ulteriormente le linee che corrispondono usando un carattere * wild card * ripetuto nel seguente esempio: 
+\VerbatimInput{../code3/re04.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+La stringa di ricerca "` ^ `Da:. + @" Corrisponderà correttamente alle righe che iniziano con "Da:", seguite da uno o più caratteri (". +"), Seguiti da un simbolo di destinazione. Quindi questo corrisponderà alla seguente riga: * `Da: stephen.marquard @` * `uct.ac.za` Puoi pensare al carattere". + "Come espandibile per far combaciare tutti i caratteri tra il carattere del colon e l'at- cartello.  * `Da :.+ @ `* È bene pensare ai caratteri più e asterisco come" invadenti ". Ad esempio, la stringa seguente corrisponderebbe all'ultimo segno nella stringa mentre ". +" Si spinge verso l'esterno, come mostrato di seguito: * `Da: stephen.marquard@uct.ac.za, csev@umich.edu, e cwen @ `*` iupui.edu` È possibile indicare un asterisco o un segno più per non essere così "goloso" aggiungendo un altro carattere. Vedere la documentazione dettagliata per informazioni su come disattivare il comportamento avido. 
+\index{greedy}
+Estrazione dei dati utilizzando le espressioni regolari
+-----------------------------------------
+Se vogliamo estrarre dati da una stringa in Python possiamo usare il metodo `findall ()` per estrarre tutte le sottostringhe che corrispondono a un'espressione regolare. Usiamo l'esempio di voler estrarre qualsiasi cosa che assomigli ad un indirizzo email da qualsiasi riga indipendentemente dal formato. Ad esempio, vogliamo estrarre gli indirizzi email da ognuna delle seguenti righe: 
+~~~~
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+          for <source@collab.sakaiproject.org>;
+Received: (from apache@localhost)
+Author: stephen.marquard@uct.ac.za
+~~~~
+
+Non vogliamo scrivere codice per ciascuno dei tipi di linee, suddivisione e divisione in modo diverso per ogni riga. Questo programma seguente usa `findall ()` per trovare le linee con indirizzi e-mail al loro interno ed estrarre uno o più indirizzi da ognuna di quelle linee. 
+\index{findall}
+\index{regex!findall}
+
+\VerbatimInput{../code3/re05.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Il metodo `findall ()` ricerca la stringa nel secondo argomento e restituisce un elenco di tutte le stringhe che assomigliano a indirizzi email. Stiamo usando una sequenza di due caratteri che corrisponde a un carattere non di uno spazio (`\` S).  L'output del programma sarebbe: 
+~~~~
+['csev@umich.edu', 'cwen@iupui.edu']
+~~~~
+
+Traducendo l'espressione regolare, cerchiamo sottostringhe con almeno un carattere non di uno spazio bianco, seguito da un segno di at, seguito da almeno un altro carattere di spazi non di uno spazio. "" \ "S +" corrisponde a quanti più caratteri non spazi bianchi possibile.  L'espressione regolare corrisponderebbe due volte (csev@umich.edu e cwen@iupui.edu), ma non corrisponderebbe alla stringa "@ 2PM" perché non ci sono caratteri non vuoti * prima * di at-sign. Possiamo usare questa espressione regolare in un programma per leggere tutte le righe in un file e stampare qualsiasi cosa che assomigli ad un indirizzo email come segue: 
+\VerbatimInput{../code3/re06.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Leggiamo ogni riga e quindi estrapiamo tutte le sottostringhe che corrispondono alla nostra espressione regolare. Poiché `findall ()` restituisce una lista, controlliamo semplicemente se il numero di elementi nella nostra lista restituita è maggiore di zero per stampare solo le righe in cui abbiamo trovato almeno una sottostringa che assomiglia ad un indirizzo email.  Se eseguiamo il programma su `mbox.txt` otteniamo il seguente risultato: 
+~~~~
+['wagnermr@iupui.edu']
+['cwen@iupui.edu']
+['<postmaster@collab.sakaiproject.org>']
+['<200801032122.m03LMFo4005148@nakamura.uits.iupui.edu>']
+['<source@collab.sakaiproject.org>;']
+['<source@collab.sakaiproject.org>;']
+['<source@collab.sakaiproject.org>;']
+['apache@localhost)']
+['source@collab.sakaiproject.org;']
+~~~~
+
+Alcuni dei nostri indirizzi email hanno caratteri non corretti come "` <`" o ";" all'inizio o alla fine. Diciamo che siamo interessati solo alla parte della stringa che inizia e finisce con una lettera o un numero.  Per fare ciò, usiamo un'altra caratteristica delle espressioni regolari. Le parentesi quadre sono utilizzate per indicare un insieme di più caratteri accettabili che siamo disposti a considerare l'abbinamento. In un certo senso, "" \ "S" sta chiedendo di abbinare il set di "caratteri non di uno spazio bianco". Ora saremo un po 'più espliciti in termini di personaggi che abbineremo.  Ecco la nostra nuova espressione regolare: 
+~~~~
+[a-zA-Z0-9]\S*@\S*[a-zA-Z]
+~~~~
+
+Questo sta diventando un po 'complicato e puoi cominciare a capire perché le espressioni regolari sono la loro piccola lingua per se stesse. Traducendo questa espressione regolare, cerchiamo sottostringhe che iniziano con una * lettera maiuscola * singola, una lettera maiuscola o un numero "[a-zA-Z0-9]", seguita da zero o più caratteri non vuoti ("` \ `S \ *"), seguito da un segno at, seguito da zero o più caratteri non vuoti ("` \ \ S \ * "), seguito da una lettera maiuscola o minuscola. Si noti che siamo passati da "+" a "\ *" per indicare zero o più caratteri non vuoti poiché "[a-zA-Z0-9]" è già un carattere non vuoto. Ricorda che "\ *" o "+" si applica al singolo carattere immediatamente a sinistra del segno più o dell'asterisco. 
+\index{regex!character sets(brackets)}
+Se usiamo questa espressione nel nostro programma, i nostri dati sono molto più puliti: 
+\VerbatimInput{../code3/re07.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+
+~~~~
+...
+['wagnermr@iupui.edu']
+['cwen@iupui.edu']
+['postmaster@collab.sakaiproject.org']
+['200801032122.m03LMFo4005148@nakamura.uits.iupui.edu']
+['source@collab.sakaiproject.org']
+['source@collab.sakaiproject.org']
+['source@collab.sakaiproject.org']
+['apache@localhost']
+~~~~
+
+Si noti che sulle linee "source@collab.sakaiproject.org", la nostra espressione regolare ha eliminato due lettere alla fine della stringa ("`> `;"). Questo perché quando appendiamo "[a-zA-Z]" alla fine della nostra espressione regolare, chiediamo che qualsiasi stringa trovata dal parser di espressioni regolari debba terminare con una lettera. Quindi, quando vede ""> "" dopo "sakaiproject.org`>`; " si ferma semplicemente sull'ultima lettera "corrispondente" trovata (cioè, la "g" era l'ultima corrispondenza valida).  Si noti inoltre che l'output del programma è un elenco Python che ha una stringa come singolo elemento nell'elenco.
+
+Combinare la ricerca e l'estrazione
+----------------------------------
+Se vogliamo trovare numeri su linee che iniziano con la stringa "X-" come: 
+~~~~
+X-DSPAM-Confidence: 0.8475
+X-DSPAM-Probability: 0.0000
+~~~~
+
+non vogliamo solo numeri in virgola mobile da nessuna riga. Vogliamo solo estrarre numeri da linee che hanno la sintassi sopra.  Possiamo costruire la seguente espressione regolare per selezionare le linee: 
+~~~~
+^X-.*: [0-9.]+
+~~~~
+
+Traducendo questo, stiamo dicendo, vogliamo linee che iniziano con "X-", seguite da zero o più caratteri (". \ *"), Seguiti da due punti (":") e quindi da uno spazio. Dopo lo spazio, cerchiamo uno o più caratteri che siano una cifra (0-9) o un punto "[0-9.] +". Si noti che all'interno delle parentesi quadre, il periodo corrisponde a un periodo effettivo (cioè, non è un carattere jolly tra parentesi quadre).  Questa è un'espressione molto stretta che corrisponderà quasi solo alle linee che ci interessano come segue: 
+\VerbatimInput{../code3/re10.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Quando eseguiamo il programma, vediamo i dati filtrati per mostrare solo le linee che stiamo cercando. 
+~~~~
+X-DSPAM-Confidence: 0.8475
+X-DSPAM-Probability: 0.0000
+X-DSPAM-Confidence: 0.6178
+X-DSPAM-Probability: 0.0000
+~~~~
+
+Ma ora dobbiamo risolvere il problema dell'estrazione dei numeri. Mentre sarebbe abbastanza semplice usare `split`, possiamo usare un'altra caratteristica delle espressioni regolari per cercare e analizzare la linea allo stesso tempo. 
+\index{string!split}
+Le parentesi sono un altro carattere speciale nelle espressioni regolari. Quando aggiungi le parentesi a un'espressione regolare, vengono ignorate quando si abbina la stringa. Ma quando stai usando `findall ()`, le parentesi indicano che mentre vuoi che l'intera espressione corrisponda, ti interessa solo estrarre una porzione della sottostringa che corrisponda all'espressione regolare. 
+\index{regex!parentheses}
+\index{parentheses!regular expression}
+Quindi apportiamo la seguente modifica al nostro programma: 
+\VerbatimInput{../code3/re11.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Invece di chiamare `search ()`, aggiungiamo parentesi attorno alla parte dell'espressione regolare che rappresenta il numero in virgola mobile per indicare che vogliamo solo `findall ()` per restituirci la parte in virgola mobile della stringa corrispondente .  L'output di questo programma è il seguente: 
+~~~~
+['0.8475']
+['0.0000']
+['0.6178']
+['0.0000']
+['0.6961']
+['0.0000']
+..
+~~~~
+
+I numeri sono ancora in una lista e devono essere convertiti da stringhe a virgola mobile, ma abbiamo usato il potere delle espressioni regolari per cercare ed estrarre le informazioni che abbiamo trovato interessanti.  Come un altro esempio di questa tecnica, se si guarda il file ci sono un certo numero di linee del modulo: Dettagli: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772 Se volessimo estrarre tutto i numeri di revisione (il numero intero alla fine di queste righe) utilizzando la stessa tecnica di cui sopra, potremmo scrivere il seguente programma: 
+\VerbatimInput{../code3/re12.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Traducendo la nostra espressione regolare, stiamo cercando le righe che iniziano con "Dettagli:", seguito da un numero qualsiasi di caratteri (". \ *"), Seguito da "rev =", e quindi da una o più cifre. Vogliamo trovare linee che combacino con l'intera espressione ma vogliamo solo estrarre il numero intero alla fine della riga, quindi circondiamo "[0-9] +" con parentesi.  Quando eseguiamo il programma, otteniamo il seguente risultato: 
+~~~~
+['39772']
+['39771']
+['39770']
+['39769']
+...
+~~~~
+
+Ricorda che "[0-9] +" è "goloso" e tenta di creare una stringa di cifre il più ampia possibile prima di estrarre tali cifre. Questo comportamento "avido" è il motivo per cui otteniamo tutte e cinque le cifre per ogni numero. La libreria di espressioni regolari si espande in entrambe le direzioni fino a quando non incontra un numero non numerico o l'inizio o la fine di una riga.  Ora possiamo usare le espressioni regolari per ripetere un esercizio da prima nel libro in cui eravamo interessati all'ora del giorno di ciascun messaggio. Abbiamo cercato le linee del modulo: 
+~~~~
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+~~~~
+
+e volevo estrarre l'ora del giorno per ogni linea. In precedenza lo abbiamo fatto con due chiamate a `split`. Prima la linea è stata divisa in parole e poi abbiamo estratto la quinta parola e l'abbiamo divisa nuovamente sul personaggio del colon per tirare fuori i due personaggi a cui eravamo interessati.  Mentre questo ha funzionato, in realtà si traduce in un codice piuttosto fragile che presuppone che le linee siano ben formattate. Se dovessi aggiungere abbastanza controllo degli errori (o un grosso tentativo / eccetto il blocco) per assicurare che il tuo programma non abbia mai fallito quando presentato con linee formattate in modo errato, il codice si espanderebbe a 10-15 righe di codice che era piuttosto difficile da leggere.  Possiamo farlo in un modo molto più semplice con la seguente espressione regolare: 
+~~~~
+^From .* [0-9][0-9]:
+~~~~
+
+La traduzione di questa espressione regolare è che stiamo cercando linee che iniziano con "From" (notare lo spazio), seguito da un numero qualsiasi di caratteri (". \ *"), Seguito da uno spazio, seguito da due cifre "[ 0-9] [0-9] ", seguito da un carattere di due punti. Questa è la definizione dei tipi di linee che stiamo cercando.  Per estrarre solo l'ora usando `findall ()`, aggiungiamo parentesi attorno alle due cifre come segue: 
+~~~~
+^From .* ([0-9][0-9]):
+~~~~
+
+Ciò risulta nel seguente programma: 
+\VerbatimInput{../code3/re13.py} 
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+Quando il programma viene eseguito, produce il seguente output: 
+~~~~
+['09']
+['18']
+['16']
+['15']
+...
+~~~~
+
+Carattere di fuga
+----------------
+Poiché utilizziamo caratteri speciali nelle espressioni regolari per abbinare l'inizio o la fine di una riga o specificare i caratteri jolly, abbiamo bisogno di un modo per indicare che questi caratteri sono "normali" e vogliamo abbinare il carattere reale come un segno di dollaro o un segno di omissione .  Possiamo indicare che vogliamo semplicemente abbinare un carattere prefiggendo quel carattere con una barra rovesciata. Ad esempio, possiamo trovare importi in denaro con la seguente espressione regolare. 
+~~~~ {.python}
+import re
+x = 'We just received $10.00 for cookies.'
+y = re.findall('\$[0-9.]+',x)
+~~~~
+
+Dal momento che prefissiamo il simbolo del dollaro con una barra rovesciata, esso corrisponde effettivamente al simbolo del dollaro nella stringa di input anziché corrispondere alla "fine della riga" e il resto dell'espressione regolare corrisponde a una o più cifre o al carattere del periodo. * Nota: * All'interno di parentesi quadre, i caratteri non sono "speciali". Quindi quando diciamo "[0-9.]", Significa davvero cifre o un punto. Al di fuori delle parentesi quadre, un punto è il carattere "wild-card" e corrisponde a qualsiasi carattere. All'interno di parentesi quadre, il periodo è un periodo.
+
+Sommario
+-------
+Mentre questo ha solo graffiato la superficie delle espressioni regolari, abbiamo imparato un po 'il linguaggio delle espressioni regolari. Sono stringhe di ricerca con caratteri speciali in esse che comunicano i tuoi desideri al sistema di espressioni regolari su cosa definisce "matching" e cosa viene estratto dalle stringhe corrispondenti. Ecco alcuni di quei personaggi speciali e sequenze di personaggi:
+`^` Corrisponde all'inizio della linea.
+`$` Corrisponde alla fine della riga.
+. Corrisponde a qualsiasi carattere (un carattere jolly).
+`\ s corrisponde a un carattere di spazio bianco.
+`\ S corrisponde a un carattere non di spazi bianchi (opposto a` \ `s).
+`*` Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti.
+`*?`Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti in" modalità non greedy ".
+`+` Si applica al carattere immediatamente precedente e indica di abbinare uno o più dei caratteri precedenti.
+`+?`Si applica al carattere immediatamente precedente e indica di abbinare uno o più dei caratteri precedenti in" modalità non greedy ".
+[aeiou] Corrisponde a un singolo carattere fintanto che quel personaggio si trova nel set specificato. In questo esempio, corrisponderebbe "a", "e", "i", "o" o "u", ma nessun altro carattere.
+[a-z0-9] È possibile specificare intervalli di caratteri utilizzando il segno meno. Questo esempio è un singolo carattere che deve essere una lettera minuscola o una cifra.
+[`^` A-Za-z] Quando il primo carattere nella notazione impostata è un segno di omissione, inverte la logica. Questo esempio corrisponde a un singolo carattere che è qualsiasi * diverso da * una lettera maiuscola o minuscola.
+() Quando le parentesi vengono aggiunte a un'espressione regolare, vengono ignorate ai fini della corrispondenza, ma consentono di estrarre un particolare sottoinsieme della stringa con corrispondenza piuttosto che l'intera stringa quando si utilizza `findall ()`.
+`\` b Trova la stringa vuota, ma solo all'inizio o alla fine di una parola.
+`\` B Trova la stringa vuota, ma non all'inizio o alla fine di una parola.
+`\` d corrisponde a qualsiasi cifra decimale; equivalente all'insieme [0-9].
+`\` D corrisponde a qualsiasi carattere non numerico; equivalente al set [`^` 0-9].  
+
+Sezione bonus per utenti Unix / Linux
+------------------------------------
+Il supporto per la ricerca di file tramite espressioni regolari è stato incorporato nel sistema operativo Unix sin dagli anni '60 ed è disponibile in quasi tutti i linguaggi di programmazione in una forma o nell'altra. 
+\index{grep}
+Di fatto, esiste un programma da riga di comando incorporato in Unix chiamato * grep * (Generalized Expression Parser Regular) che funziona più o meno come gli esempi di `search ()` in questo capitolo. Quindi se hai un sistema Macintosh o Linux, puoi provare i seguenti comandi nella finestra della riga di comando. 
+~~~~ {.shell}
+$ grep '^From:' mbox-short.txt
+From: stephen.marquard@uct.ac.za
+From: louis@media.berkeley.edu
+From: zqian@umich.edu
+From: rjlowe@iupui.edu
+~~~~
+
+Questo dice a `grep` di mostrare le linee che iniziano con la stringa" From: "nel file` mbox-short.txt`. Se sperimentate un po 'il comando `grep` e leggete la documentazione di` grep`, troverete alcune sottili differenze tra il supporto delle espressioni regolari in Python e il supporto delle espressioni regolari in `grep`. Ad esempio, `grep` non supporta il carattere non vuoto" `\` S ", quindi dovrai usare la notazione set leggermente più complessa" [`^`] ", che significa semplicemente abbinare un carattere che è qualcosa diverso da uno spazio.  
+
+Debug
+---------
+Python ha una documentazione integrata semplice e rudimentale che può essere molto utile se hai bisogno di un rapido aggiornamento per attivare la tua memoria sul nome esatto di un particolare metodo. Questa documentazione può essere visualizzata nell'interprete Python in modalità interattiva.  È possibile visualizzare un sistema di guida interattivo usando `help ()`. 
+~~~~
+>>> help()
+
+help> modules
+~~~~
+
+Se sai quale modulo vuoi usare, puoi usare il comando `dir ()` per trovare i metodi nel modulo come segue: 
+~~~~ {.python .trinket}
+>>> import re
+>>> dir(re)
+[.. 'compile', 'copy_reg', 'error', 'escape', 'findall',
+'finditer', 'match', 'purge', 'search', 'split', 'sre_compile',
+'sre_parse', 'sub', 'subn', 'sys', 'template']
+~~~~
+
+È inoltre possibile ottenere una piccola quantità di documentazione su un particolare metodo utilizzando il comando dir. 
+~~~~ {.python .trinket}
+>>> help (re.search)
+Help on function search in module re:
+
+search(pattern, string, flags=0)
+    Scan through string looking for a match to the pattern, returning
+    a match object, or None if no match was found.
+>>>
+~~~~
+
+La documentazione integrata non è molto ampia, ma può essere utile quando si è di fretta o non si ha accesso a un browser Web o motore di ricerca.
+Glossario
+--------
+codice fragile: codice che funziona quando i dati di input sono in un formato particolare ma è soggetto a rotture se c'è qualche deviazione dal formato corretto. Chiamiamo questo "codice fragile" perché è facilmente rotto.
+corrispondenza avida: la nozione che i caratteri "+" e "\ *" in un'espressione regolare si espandono verso l'esterno per corrispondere alla stringa più grande possibile.
+\index{greedy}
+\index{greedy matching}
+grep: un comando disponibile nella maggior parte dei sistemi Unix che cerca tra i file di testo alla ricerca di linee che soddisfino le espressioni regolari. Il nome del comando sta per "parser di espressioni regolari generalizzate".
+\index{grep}
+espressione regolare: una lingua per esprimere stringhe di ricerca più complesse. Un'espressione regolare può contenere caratteri speciali che indicano che una ricerca corrisponde solo all'inizio o alla fine di una riga o molte altre funzionalità simili.
+jolly: un personaggio speciale che corrisponde a qualsiasi personaggio. Nelle espressioni regolari il carattere jolly è il periodo.
+\index{wild card}
+Esercizi
+---------
+** Esercizio 1: ** Scrivi un semplice programma per simulare l'operazione del comando `grep` su Unix. Chiedi all'utente di immettere un'espressione regolare e di contare il numero di righe che corrispondono all'espressione regolare: 
+~~~~
+$ python grep.py
+Enter a regular expression: ^Author
+mbox.txt had 1798 lines that matched ^Author
+
+$ python grep.py
+Enter a regular expression: ^X-
+mbox.txt had 14368 lines that matched ^X-
+
+$ python grep.py
+Enter a regular expression: java$
+mbox.txt had 4218 lines that matched java$
+~~~~
+
+** Esercizio 2: ** Scrivi un programma per cercare le linee del modulo 
+~~~~
+`New Revision: 39772`
+~~~~
+
+ed estrae il numero da ciascuna delle linee usando un'espressione regolare e il metodo `findall ()`. Calcola la media dei numeri e stampa la media.  ~~~~22

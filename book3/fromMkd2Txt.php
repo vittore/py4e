@@ -46,14 +46,8 @@ foreach($rows as $i=>$row){
 
 foreach($newText as $i=>$row){
   if(($i+2)<sizeof($newText)){
-  if ((substr($newText[$i+1],0,1)=="=")){$finalText[]=$row;continue;}
-  if ((substr($newText[$i],0,1)=="=")){$finalText[]=$row;continue;}
-  if ((substr($newText[$i+1],0,1)=="-")){$finalText[]=$row;continue;}
-  if ((substr($newText[$i],0,1)=="-")){$finalText[]=$row;continue;}
-  if ((substr($newText[$i+1],0,1)=="#")){$finalText[]=$row;continue;}
-  if ((substr($newText[$i],0,1)=="#")){$finalText[]=$row;continue;}
-  if ((substr($newText[$i+1],0,1)=="~")){$finalText[]=$row;continue;}
-  if ((substr($newText[$i],0,1)=="~")){$finalText[]=$row;continue;}
+  if (preg_match('/[a-zA-Z]/',substr($newText[$i+1],0,1))==0){$finalText[]=$row;continue;}
+  if (preg_match('/[a-zA-Z]/',substr($newText[$i],0,1))==0){$finalText[]=$row;continue;}
 }
 
   if ((substr($row,-1)=="\n") && @(substr($newText[$i+1],1)=="\n")) {

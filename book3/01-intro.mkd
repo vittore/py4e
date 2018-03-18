@@ -1,4 +1,4 @@
-% Python per tutti 
+% Python per tutti
 % Esplorare i dati usando Python 3
 % Charles R. Severance
 
@@ -885,7 +885,7 @@ d) Accetta input dall'utente
 **Esercizio 3: Quale è la differenza tra un compilatore e un
 interprete?**
 
-** Esercizio 4: Quale delle seguenti alternative contiene "codice macchina"?**
+**Esercizio 4: Quale delle seguenti alternative contiene "codice macchina"?**
 
 a\) L'interprete di Python\
 b) La tastiera\
@@ -903,7 +903,7 @@ d) Un documento di elaborazione di testo
     >>>
 ~~~~
 
-** Esercizio 6: Dove viene memorizzata una variabile "x" simile a quella
+**Esercizio 6: Dove viene memorizzata una variabile "x" simile a quella
 scritta dopo la seguente linea Python?**
 
 ~~~~ {.python}
@@ -929,9 +929,9 @@ b) 44\
 c) x + 1\
 d) Errore perché x = x + 1 non è matematicamente possibile
 
-** Esercizio 8: Spiega ognuno dei seguenti esempi usando come esempio una capacitá
+**Esercizio 8: Spiega ognuno dei seguenti esempi usando come esempio una capacitá
 degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria
 secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é
 l'equivalente nell'uomo di una "Unità di elaborazione centrale"?**
 
-** Esercizio 9: Come si corregge un "Syntax Error"?**
+**Esercizio 9: Come si corregge un "Syntax Error"?**
