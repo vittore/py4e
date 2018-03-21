@@ -1,6 +1,8 @@
 Visualizing data
 ================
- So far we have been learning the Python language and then learning how to use Python, the network, and databases to manipulate data.  In this chapter, we take a look at three complete applications that bring all of these things together to manage and visualize data. You might use these applications as sample code to help get you started in solving a real-world problem.  Each of the applications is a ZIP file that you can download and extract onto your computer and execute.  Building a Google map from geocoded data
+ So far we have been learning the Python language and then learning how to use Python, the network, and databases to manipulate data.  In this chapter, we take a look at three complete applications that bring all of these things together to manage and visualize data. You might use these applications as sample code to help get you started in solving a real-world problem.  Each of the applications is a ZIP file that you can download and extract onto your computer and execute.
+
+Building a Google map from geocoded data
 ----------------------------------------
 
 ######1
@@ -15,7 +17,9 @@ Visualizing data
 ~~~~2
  The file *where.html* consists of HTML and JavaScript to visualize a Google map. It reads the most recent data in *where.js* to get the data to be visualized. Here is the format of the *where.js* file: 
 ~~~~3
- This is a JavaScript variable that contains a list of lists. The syntax for JavaScript list constants is very similar to Python, so the syntax should be familiar to you.  Simply open *where.html* in a browser to see the locations. You can hover over each map pin to find the location that the geocoding API returned for the user-entered input. If you cannot see any data when you open the *where.html* file, you might want to check the JavaScript or developer console for your browser.  Visualizing networks and interconnections
+ This is a JavaScript variable that contains a list of lists. The syntax for JavaScript list constants is very similar to Python, so the syntax should be familiar to you.  Simply open *where.html* in a browser to see the locations. You can hover over each map pin to find the location that the geocoding API returned for the user-entered input. If you cannot see any data when you open the *where.html* file, you might want to check the JavaScript or developer console for your browser.
+
+Visualizing networks and interconnections
 -----------------------------------------
 
 ######5
@@ -37,7 +41,9 @@ Visualizing data
 ~~~~9
  For each iteration of the page rank algorithm it prints the average change in page rank per page. The network initially is quite unbalanced and so the individual page rank values change wildly between iterations. But in a few short iterations, the page rank converges. You should run *sprank.py* long enough that the page rank values converge.  If you want to visualize the current top pages in terms of page rank, run *spjson.py* to read the database and write the data for the most highly linked pages in JSON format to be viewed in a web browser. 
 ~~~~10
- You can view this data by opening the file *force.html* in your web browser. This shows an automatic layout of the nodes and links. You can click and drag any node and you can also double-click on a node to find the URL that is represented by the node.  If you rerun the other utilities, rerun *spjson.py* and press refresh in the browser to get the new data from *spider.json*.  Visualizing mail data
+ You can view this data by opening the file *force.html* in your web browser. This shows an automatic layout of the nodes and links. You can click and drag any node and you can also double-click on a node to find the URL that is represented by the node.  If you rerun the other utilities, rerun *spjson.py* and press refresh in the browser to get the new data from *spider.json*.
+
+Visualizing mail data
 ---------------------
  Up to this point in the book, you have become quite familiar with our *mbox-short.txt* and *mbox.txt* data files. Now it is time to take our analysis of email data to the next level.  In the real world, sometimes you have to pull down mail data from servers. That might take quite some time and the data might be inconsistent, error-filled, and need a lot of cleanup or adjustment. In this section, we work with an application that is the most complex so far and pull down nearly a gigabyte of data and visualize it. 
 ######9
