@@ -5,14 +5,14 @@
 Perché dovreste imparare a scrivere programmi?
 =======================================
 
-Scrivere programmi (o programmare) è un'attivitá molto creativa e gratificante. Potete scrivere programmi per molte ragioni, per guadagnarvi da vivere, per risolvere complessi problemi di analisi dei dati, per divertimento o per aiutare qualcun altro a risolvere un problema. Questo libro presuppone che *tutti* abbiano bisogno di saper programmare e che, una volta appreso come programmare, sapranno cosa fare con le nuove capacità acquisite.
+Scrivere programmi (o programmare) è un'attivitá molto creativa e gratificante. Potete scrivere programmi per molte ragioni: per guadagnarvi da vivere, per risolvere complessi problemi di analisi di dati, per divertimento o per aiutare qualcun altro a risolvere un problema. Questo libro presuppone che *tutti* abbiano bisogno di saper programmare e che, una volta appreso come programmare, sapranno cosa fare con questa nuova capacità.
 
 
 Oggi giorno siamo circondati da computer che vanno dai portatili agli smartphone. Possiamo pensare a queste macchine come a degli "assistenti personali" che si prendono cura di molti aspetti della nostra vita. L'hardware degli elaboratori moderni è essenzialmente costruito per porci continuamente la domanda: "Cosa vorresti che faccia dopo?"
 
 ![Personal Digital Assistant](height=1.0in@../images/pda)
 
-I programmatori hanno aggiunto un sistema operativo e una serie di applicazioni all'hardware ed abbiamo ottenuto un assistente personale digitale che è abbastanza utile e capace di aiutarci svolgendo molti compiti diversi.
+I programmatori hanno aggiunto all'hardware un sistema operativo e una serie di applicazioni ed abbiamo ottenuto un assistente personale digitale che è abbastanza utile ed in grado di aiutarci svolgendo molti compiti diversi.
 
 I nostri computer sono veloci e sono dotati di una grande quantità di memoria e potrebbero esserci molto utili se solo conoscessimo la lingua per spiegare loro quello che vorremmo fosse "fatto dopo". Se la conoscessimo, potremmo dire al computer di svolgere compiti ripetitivi per nostro conto. 
 È interessante notare che il tipo di attività che i computer possono fare meglio sono spesso il genere di cose che noi umani troviamo più noiose e logoranti.
