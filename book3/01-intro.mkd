@@ -18,7 +18,7 @@ I nostri computer sono veloci e sono dotati di una grande quantità di memoria e
 È interessante notare che il tipo di attività che i computer possono fare meglio sono spesso il genere di cose che noi umani troviamo più noiose e logoranti.
 
 Ad esempio, leggete i primi tre paragrafi di questo capitolo ed individuate la parola più comunemente usata e quante volte la stessa venga ripetuta.
-Mentre siete in grado di leggere e capire le parole in pochi secondi, contarle è piuttosto difficoltoso in quanto non è il tipo di problema da risolvere per cui la nostra mente è stata concepita. Per un computer è l'opposto ad essere vero, leggere e capire il testo da un pezzo di carta è difficoltoso mentre contare le parole e dirvi quante volte é ripetuta la parola più usata è molto semplice per il computer:
+Mentre siete in grado di leggere e capire le parole in pochi secondi, contarle è piuttosto difficoltoso in quanto non è il tipo di problema da risolvere per cui la nostra mente è stata concepita. Per un computer è infatti l'opposto: leggere e capire il testo da un pezzo di carta è difficoltoso mentre contare le parole e dirvi quante volte é ripetuta la parola più usata è estramamente semplice.
 
 ~~~~ {.python}
     python words.py
@@ -26,42 +26,21 @@ Mentre siete in grado di leggere e capire le parole in pochi secondi, contarle �
     to 16
 ~~~~
 
-Il nostro "assistente personal per l'analisi delle informazioni" ci ha rapidamente detto che
-la parola "a" è stata usata sedici volte nei primi tre paragrafi di questo
-capitolo.
+Il nostro "assistente personale per l'analisi delle informazioni" ci ha rapidamente detto che la parola "a" è stata usata sedici volte nei primi tre paragrafi di questo capitolo.
 
-Questo fatto stesso che i computer siano bravi in attività in cui gli umani non lo sono
-é il motivo per cui è necessario che voi diventiate abili nel parlare un "linguaggio informatico". Una volta che
-avrete imparato questa nuova lingua, potrete delegare al vostro partner (il computer) compiti banali,
-lasciandovi più tempo per fare le cose per cui
-siete piú portati. Voi aggiungete creatività, intuizione e invettiva
-a questa partnership.
+Il fatto  che i computer siano bravi in attività in cui gli umani non lo sono é il motivo per cui è necessario che voi diventiate abili nel parlare un "linguaggio informatico". Una volta che avrete imparato questa nuova lingua, potrete delegare al vostro partner (il computer) i compiti banali, ritagliandovi più tempo per le attività per cui siete piú portati. Voi aggiungete a questa collaborazione creatività, intuizione e invettiva.
 
 Creatività e motivazione
 -------------------------
 
-Nonostante questo libro non sia destinato a programmatori professionisti,
-la programmazione può essere un lavoro molto gratificante sia dal punto dal punto di vista finanziario
-sia da quello personale. Scrivere programmi utili, eleganti e intelligenti affinchè altri
-li possano utilizzare è un'attività molto creativa. Il vostro computer o il vostro Assistente Personale Digitale
-(PDA) di solito contegono molti programmi diversi scritti da molti
-diversi team di sviluppatori, ciascuno dei quali in competizione per la vostra attenzione e
-interesse. Fanno del loro meglio per soddisfare le vostre esigenze e fornirvi, nel contempo, una meravigliosa
-esperienza utente. In alcune situazioni, quando si sceglie uno
-specifico software, i programmatori sono direttamente compensati dalla
-vostra scelta.
+Nonostante questo libro non sia destinato a programmatori professionisti, la programmazione può essere un lavoro molto gratificante sia dal punto di vista finanziario sia da quello personale. Scrivere programmi utili, eleganti e intelligenti affinchè altri li possano utilizzare è un'attività molto creativa. Il vostro computer o il vostro Assistente Personale Digitale (PDA) di solito contiene molti programmi scritti da team diversi di sviluppatori, ciascuno dei quali in competizione per la vostra attenzione ed
+interesse. Fanno del loro meglio per soddisfare le vostre esigenze e fornirvi, nel contempo, una meravigliosa esperienza utente. In alcune situazioni, quando si sceglie uno specifico software, i programmatori sono direttamente compensati dalla vostra scelta.
 
-Se pensiamo ai programmi come alla produzione creativa di team di programmatori,
-probabilmente la seguente immagine è una versione più sensata del nostro PDA:
+Se pensiamo ai programmi come alla produzione creativa di team di programmatori, probabilmente la seguente immagine è una versione più sensata del nostro PDA:
 
 ![Programmers Talking to You](height=1.0in@../images/pda2)
 
-Per ora, la nostra motivazione principale non è guadagnare soldi o soddisfare
-utenti finali, ma piuttosto essere più produttivi nella gestione dei dati e
-informazioni che incontreremo nelle nostre vite. In un primo momento,
-sarete sia lo sviluppatore sia l'utente finale dei vostri programmi. Appena
-migliorete la vostra abilità come programmatore e la programmazione sembrerà più creativa,
-potreste iniziare a pensare allo sviluppo di programmi per gli altri.
+Per ora, la nostra motivazione principale non è guadagnare soldi o soddisfare utenti finali, ma piuttosto essere più produttivi nella gestione dei dati e informazioni che incontreremo nelle nostre vite. In un primo momento, sarete sia lo sviluppatore sia l'utente finale dei vostri programmi. Appena migliorerete la vostra abilità come programmatore e la programmazione sembrerà più creativa, potreste iniziare a pensare allo sviluppo di programmi per gli altri.
 
 Architettura hardware del computer
 ------------------------------
@@ -78,100 +57,42 @@ e guardarvi dentro, trovereste le seguenti parti:
 
 Le definizioni di alto livello di queste parti sono le seguenti:
 
-- La *Central Processing Unit* (o CPU) è la parte del
-    computer che è stata costruita per essere ossessionata dalla domanda "qual è la prossima istruzione?" Se
-    il vostro computer ha una frequenza di 3.0 Gigahertz, significa che la CPU chiederà
-    "qual è la prossima istruzione?" tre miliardi di volte al secondo. State per
-    imparare come parlare velocemente per stare al passo con la CPU.
+- La *Central Processing Unit* (o CPU) è la parte del computer che è stata costruita per essere ossessionata dalla domanda "qual è la prossima istruzione?" Se il vostro computer ha una frequenza di 3.0 Gigahertz, significa che la CPU chiederà "qual è la prossima istruzione?" tre miliardi di volte al secondo. State per imparare come parlare velocemente per stare al passo con la CPU.
 
-- La * Memoria principale * viene utilizzata per memorizzare le informazioni di cui
-    la CPU ha bisogno nel minore tempo possibile. La memoria principale è veloce quasi quanto la
-    CPU. Ma le informazioni memorizzate nella memoria principale spariscono quando
-    il computer viene spento.
+- La *Memoria principale* viene utilizzata per memorizzare le informazioni di cui la CPU ha bisogno nel minore tempo possibile. La memoria principale è veloce quasi quanto la CPU ma le informazioni memorizzate si perdono allo spegnimento del computer.
 
-- La * memoria secondaria * è utilizzata anche per memorizzare
-    informazioni, ma è molto più lenta della memoria principale. Il
-    vantaggio della memoria secondaria è che può conservare le informazioni
-    anche quando il computer non viene alimentato. Esempi di memoria
-    secondaria sono i dischi rigidi o le memoria flash (generalmente pendrive USB
-    e lettori multimediali portatili).
+- La *Memoria secondaria* è utilizzata anche per memorizzare informazioni, ma è molto più lenta della memoria principale. Il vantaggio della memoria secondaria è che può conservare le informazioni anche quando il computer non viene alimentato. Esempi di memoria secondaria sono i dischi rigidi o le memoria flash (generalmente pendrive USB e lettori multimediali portatili).
 
-- I * Dispositivi di Input ed Output * sono, semplicemente, il nostro schermo,
-    la tastiera, il mouse, il microfono, gli altoparlanti, il touchpad, ecc. Sono tutti
-    i modi con cui interagiamo con il computer.
+- I *Dispositivi di Input ed Output* sono, semplicemente, il nostro schermo, la tastiera, il mouse, il microfono, gli altoparlanti, il touchpad, ecc.. in altre parole rappresentao tutti i dispositivi con cui interagiamo per comunicare con il computer.
 
-- Al giorno d'oggi la maggior parte dei computer ha anche una *Connessione
-    di rete* per scambiare informazioni su una rete. Possiamo
-    pensare alla rete come a un posto molto lento per archiviare e recuperare dati,
-    che potrebbe non essere sempre funzionante. Quindi in un certo senso, la rete è la
-    forma più lenta e talvolta inaffidabile di *memoria
-    secondaria*.
+- Al giorno d'oggi la maggior parte dei computer ha anche una *Connessione di rete* per scambiare informazioni con altri computer. Possiamo pensare alla rete come ad una sorta di supporto molto lento per archiviare e recuperare dati che potrebbe non essere sempre funzionante. Quindi in un certo senso, la rete è un tipo più lento e talvolta inaffidabile di *memoria secondaria*.
 
-Mentre la maggior parte dei dettagli su come funzionano questi componenti è meglio lasciarli
-ai costruttori di computer, è utile conoscere un po' di terminologia in modo da poter parlare
-di questi diversi componenti mentre scriviamo i nostri programmi.
+Mentre la maggior parte dei dettagli su come funzionano questi componenti è meglio lasciarli ai costruttori di computer, è utile conoscere un po' di terminologia in modo da poter parlare di questi diversi componenti mentre scriviamo i nostri programmi.
 
-Come sviluppatori, il vostro compito è quello di utilizzare e armonizzare ciascuna di queste
-risorse per risolvere i problemi e analizzare i
-dati ottenuti. Per lo più come sviluppatori
-"parlerete" con la CPU e le indicherete cosa fare dopo. A volte direte
-alla CPU di usare la memoria principale, la memoria secondaria, la rete o i
-dispositivi di input/output.
+Come sviluppatori, il vostro compito è quello di utilizzare e armonizzare ciascuna di queste risorse per risolvere i problemi e analizzare i dati ottenuti. Per lo più come sviluppatori "parlerete" con la CPU e le indicherete cosa fare dopo. A volte direte alla CPU di usare la memoria principale, la memoria secondaria, la rete o i dispositivi di input/output.
 
 ![Where Are You?](height=1.75in@../images/arch2)
 
-Dovete essere coloro che rispondono alla domanda posta dalla CPU: "Qual è la prossima istruzione?".
-Ma sarebbe molto scomodo rimpicciolirvi a 5 mm di altezza e
-introdurvi nel computer solo per poter dare un comando per tre
-miliardi di volte al secondo. Piuttosto sarebbe più indicato scrivere in anticipo le vostre
-istruzioni. Chiamiamo *programma* queste istruzioni memorizzate
-e *programmazione* l'atto di scrivere queste istruzioni
-e fare in modo che siano corrette.
+Dovrete essere coloro che risponderanno alla domanda posta dalla CPU: "Qual è la prossima istruzione?". Ma sarebbe molto scomodo rimpicciolirsi a 5 mm di altezza e introdursi nel computer solo per poter dare un comando per tre miliardi di volte al secondo. Piuttosto sarebbe più indicato scrivere in anticipo le vostre istruzioni. Chiamiamo *programma* queste istruzioni memorizzate e *programmazione* l'atto di scrivere queste istruzioni e fare in modo che siano corrette.
 
 Capire la Programmazione
 -------------------------
 
-Nel resto di questo libro, cercheremo di trasformarvi in persone
-esperte nell'arte della programmazione. Alla fine diventerete
-*programmatori* - forse non programmatori professionisti, ma
-almeno avrete le capacità per esaminare un problema riguardante l'analisi di dati/informazioni
-e sviluppare un programma che lo risolva.
+Nel resto di questo libro, cercheremo di trasformarvi in persone esperte nell'arte della programmazione. Alla fine diventerete *programmatori* - forse non programmatori professionisti, ma almeno avrete le capacità per esaminare un problema riguardante l'analisi di dati/informazioni e sviluppare un programma che lo risolva.
 
 \index{problem solving}
 
 In un certo senso, avrete bisogno di due abilità per diventare programmatori:
 
-- Per prima cosa, dovrete conoscere il linguaggio di programmazione (Python) - del quale avete bisogno
-    di conoscere il vocabolario e la grammatica. Dovete essere in grado di scrivere correntemente
-    le parole in questa nuova lingua e sapere come costruire
-    frasi "ben strutturate" in questa nuova lingua.
+- Per prima cosa, dovrete conoscere il linguaggio di programmazione (Python) - del quale avrete bisogno di conoscere il vocabolario e la grammatica. Dovrete essere in grado di scrivere correntemente le parole in questa nuova lingua e sapere come costruire frasi "ben strutturate" in questa nuova lingua.
 
-- In secondo luogo, avete bisogno di "raccontare una storia". Per scrivere una storia, combinate
-    parole e frasi allo scopo di trasmettere un'idea al lettore. Sono necessarie
-    abilità e arte nella costruzione della storia e l'abilità nella scrittura di storie
-    viene migliorata scrivendo e ottenendo feedback. Nella
-    programmazione, il nostro programma è la "storia" e il problema che state
-    cercando di risolvere è "l'idea".
+- In secondo luogo, avrete bisogno di "raccontare una storia". Per scrivere una storia, combinerete parole e frasi allo scopo di trasmettere un'idea al lettore. Sono necessarie abilità e arte nella costruzione della storia e l'abilità nella scrittura di storie viene migliorata scrivendo e ottenendo feedback. Nella programmazione il nostro programma è la "storia" e il problema che state cercando di risolvere è "l'idea".
 
-Una volta che avrete imparato un linguaggio di programmazione come Python, sarà
-molto più facile imparare un secondo linguaggio di programmazione come JavaScript o
-C++. Il nuovo linguaggio di programmazione avrà un vocabolario ed una grammatica molto diversi
-ma le capacità di problem-solving sono le medesime in tutti
-i linguaggi di programmazione.
+Una volta che avrete imparato un linguaggio di programmazione come Python, sarà molto più facile imparare un secondo linguaggio di programmazione come JavaScript o C++. Il nuovo linguaggio di programmazione avrà un vocabolario ed una grammatica molto diversi ma le capacità di problem-solving sono le medesime in tutti i linguaggi di programmazione.
 
-Imparete il "vocabolario" e le "frasi" di Python molto
-velocemente. Sarà necessario più tempo per essere in grado di scrivere un programma che sia adatto a
-risolvere un problema nuovo. Si insegna a programmare in modo simile a
-come si insegna a scrivere. Iniziamo con il leggere e comprendere i programmi, quindi scriveremo
-alcuni semplici programmi, in seguito scriveremo programmi sempre più complessi
-. Ad un certo punto "troverete la vostra ispirazione" e riuscirete a vedere da soli lo schema
-e sarà più naturale risolvere un problema e scrivere un programma
-che lo risolva. Una volta arrivati a quel punto, programmare
-diventerà un processo molto piacevole e creativo.
+Imparete il "vocabolario" e le "frasi" di Python molto velocemente. Sarà necessario più tempo per essere in grado di scrivere un programma che sia adatto a risolvere un problema nuovo. Si insegna a programmare in modo simile a come si insegna a scrivere. Iniziamo con il leggere e comprendere i programmi, quindi scriveremo alcuni semplici programmi, in seguito scriveremo programmi sempre più complessi. Ad un certo punto "troverete la vostra ispirazione" e riuscirete a vedere da soli lo schema e sarà più naturale risolvere un problema e scrivere un programma che lo risolva. Una volta arrivati a quel punto, programmare diventerà un processo molto piacevole e creativo.
 
-Iniziamo con il vocabolario e la struttura dei programmi in Python. Siate
-pazienti, questi esempi più semplici vi ricorderanno quando avete iniziato a leggere
-per la prima volta.
+Iniziamo con il vocabolario e la struttura dei programmi in Python. Siate pazienti, questi esempi più semplici vi ricorderanno quando avete iniziato a leggere per la prima volta.
 
 Parole e frasi
 -------------------
@@ -180,25 +101,12 @@ Parole e frasi
 \index{linguaggio!programmazione}
 
 A differenza dei nostri linguaggi, il vocabolario di Python è in realtà piuttosto limitato.
-Chiamiamo questo "vocabolario" "parole riservate". Queste sono parole che
-hanno un significato molto speciale per Python. Quando Python incontra queste parole in un suo
-script, hanno un solo ed unico significato per Python. Più tardi, quando
-scriverete codice, avrete la possibilità di creare vostre parole che avranno un preciso significato per voi
-che chiameremo *variabili*. Avrete una grande libertà nello
-scegliere i nomi per le vostre variabili, ma non potrete usare nessuna
-delle parole riservate di Python come nome per una variabile.
+Chiamiamo questo "vocabolario" "parole riservate". Queste sono parole che hanno un significato molto speciale per Python. Quando Python incontra queste parole in un suo script, hanno un solo ed unico significato per Python. Più tardi, quando scriverete codice, avrete la possibilità di creare vostre parole che avranno un preciso significato per voi che chiameremo *variabili*. Avrete una grande libertà nello scegliere i nomi per le vostre variabili, ma non potrete usare nessuna delle parole riservate di Python come nome per una variabile.
 
-Quando addestriamo un cane, utilizziamo parole speciali come "sit", "stay" e
-"fetch". Quando parlate con un cane e non utilizzate nessuna delle parole riservate,
-vi guarderà in faccia con uno sguardo interrogativo finché non direte
-una parola riservata. Ad esempio, se dite "Ogni giorno Luigi cammina almeno per almeno due chilometri",
-ciò che la maggior parte dei cani probabilmente sentirà sarà "bla
-bla bla *cammina* bla bla bla bla." Questo perché
-"cammina" è una parola riservata nel linguaggio del cane. In molti potrebbero suggerire che il
-il linguaggio tra umani e gatti non abbia parole riservate^[<http://xkcd.com/231/>].
+Quando addestriamo un cane, utilizziamo parole speciali come "sit", "stay" e "fetch". Quando parlate con un cane e non utilizzate nessuna delle parole riservate, vi guarderà in faccia con uno sguardo interrogativo finché non direte una parola riservata. Ad esempio, se dite "Ogni giorno Luigi cammina almeno per almeno due chilometri", ciò che la maggior parte dei cani probabilmente sentirà sarà "bla
+bla bla *cammina* bla bla bla bla." Questo perché "cammina" è una parola riservata nel linguaggio del cane. In molti potrebbero suggerire che il linguaggio tra umani e gatti non abbia parole riservate^[<http://xkcd.com/231/>].
 
-Le parole riservate nella lingua utilizzata dagli umani per comunicare con Python includono
-le seguenti:
+Le parole riservate nella lingua utilizzata dagli umani per comunicare con Python includono le seguenti:
 
     and       del       global      not       with
     as        elif      if          or        yield
@@ -208,42 +116,23 @@ le seguenti:
     continue  for       lambda      try
     def       from      nonlocal    while    
 
-Cioè, a differenza di un cane, Python è già completamente addestrato. Quando
-voi dite "try" (prova), Python proverà ogni volta che lo direte senza fallire.
+Cioè, a differenza di un cane, Python è già completamente addestrato. Quando voi dite "try" (prova), Python proverà ogni volta che lo direte senza fallire.
 
-A tempo debito impareremo queste parole riservate ed il loro utilizzo,
-ma per ora ci concentreremo sull'equivalente in Python di "parlare" (in
-linguaggio uomo-cane). Il bello di dire a Python di parlare è
-che possiamo persino indicargli cosa dire dandogli un messaggio tra virgolette:
+A tempo debito impareremo queste parole riservate ed il loro utilizzo, ma per ora ci concentreremo sull'equivalente in Python di "parlare" (in linguaggio uomo-cane). Il bello di dire a Python di parlare è che possiamo persino indicargli cosa dire dandogli un messaggio tra virgolette:
 
 ~~~~ {.python}
     print('Hello world!')
 ~~~~
 
-Così abbiamo persino scritto la nostra prima frase Python sintatticamente corretta.
-La nostra frase inizia con la funzione *print*
-seguito da una stringa di testo a nostra scelta racchiusa tra virgolette singole.
-Le stringhe nelle istruzioni di stampa sono racchiuse tra le virgolette. Le virgolette
-singole e le virgolette doppie fanno la stessa cosa; la maggior parte delle persone usa le virgolette singole
-tranne in casi come questo in cui una virgoletta singola (che è anche un
-apostrofo) appare nella stringa.
+Così abbiamo persino scritto la nostra prima frase Python sintatticamente corretta. La nostra frase inizia con la funzione *print* seguito da una stringa di testo a nostra scelta racchiusa tra virgolette singole. Le stringhe nelle istruzioni di stampa sono racchiuse tra le virgolette. Le virgolette singole e le virgolette doppie fanno la stessa cosa; la maggior parte delle persone usa le virgolette singole tranne in casi come questo in cui una virgoletta singola (che è anche un apostrofo) appare nella stringa.
 
 Conversare con Python
 ----------------------
 
-Ora che conosciamo una parola e una frase semplice in Python,
-abbiamo bisogno di sapere come avviare una conversazione con Python per testare le nostre nuove
-abilità linguistiche.
+Ora che conosciamo una parola e una frase semplice in Python, abbiamo bisogno di sapere come avviare una conversazione con Python per testare le nostre nuove abilità linguistiche.
 
-Prima di poter dialogare con Python, dovete installare il software Python
-sul vostro computer e imparare ad avviarlo.
-Questo procedimento è troppo dettagliato per questo capitolo, quindi vi suggerisco di
-consultare [www.py4e.com] (http://www.py4e.com) dove ho indicato istruzioni dettagliate
-e screencast dell'installazione e dell'avvio di Python
-su sistemi Macintosh e Windows. Ad un certo punto, vi troverete in un terminale
-o una finestra di comando e dovrete digitare * python * e
-l'interprete Python si avvierà in modalità interattiva e apparirà
-bene o male qualcosa del genere:
+Prima di poter dialogare con Python, dovete installare il software Python sul vostro computer e imparare ad avviarlo.
+Questo procedimento è troppo dettagliato per questo capitolo, quindi vi suggerisco di consultare [www.py4e.com] (http://www.py4e.com) dove ho indicato istruzioni dettagliate e screencast dell'installazione e dell'avvio di Python su sistemi Macintosh e Windows. Ad un certo punto, vi troverete in un terminale o una finestra di comando e dovrete digitare *python* e l'interprete Python si avvierà in modalità interattiva e apparirà bene o male qualcosa del genere:
 
 \index{modalità interattiva}
 
@@ -254,15 +143,10 @@ bene o male qualcosa del genere:
     >>>
 ~~~~
 
-Il prompt `>>>` è il modo di chiedere dell'interprete Python
-"Cosa vuoi che faccia dopo? "Python è pronto per
-conversare con voi. Tutto quello che dovete sapere è come parlare il linguaggio Python.
+Il prompt `>>>` è il modo di chiedere dell'interprete Python "Cosa vuoi che faccia dopo? "Python è pronto per conversare con voi. Tutto quello che dovete sapere è come parlare il linguaggio Python.
 
 
-Supponiamo, per esempio, che non sappiate nemmeno le più semplici parole o frasi del linguaggio Python.
-Potreste voler utilizzare la linea guida
-che usano gli astronauti quando atterrano su un pianeta lontano e cercano di parlare
-con gli abitanti del pianeta:
+Supponiamo, per esempio, che non sappiate nemmeno le più semplici parole o frasi del linguaggio Python. Potreste voler utilizzare la linea guida che usano gli astronauti quando atterrano su un pianeta lontano e cercano di parlare con gli abitanti del pianeta:
 
 ~~~~ {.python}
     >>> I come in peace, please take me to your leader
@@ -273,12 +157,9 @@ con gli abitanti del pianeta:
     >>>
 ~~~~
 
-Non sta andando molto bene. A meno che non pensiate a qualcosa velocemente,
-è probabile che gli abitanti del pianeta ti pugnalino con le loro lance, ti mettano
-su uno spiedo, ti arrostiscano sopra un fuoco e ti mangino per cena.
+Non sta andando molto bene. A meno che non pensiate a qualcosa velocemente, è probabile che gli abitanti del pianeta ti pugnalino con le loro lance, ti mettano su uno spiedo, ti arrostiscano sopra un fuoco e ti mangino per cena.
 
-Fortunatamente avete portato una copia di questo libro nel vostro viaggio e il vostro dito è fermo
-in questa stessa pagina e riprovate:
+Fortunatamente avete portato una copia di questo libro nel vostro viaggio e il vostro dito è fermo in questa stessa pagina e riprovate:
 
 ~~~~ {.python}
     >>> print('Hello world!')
