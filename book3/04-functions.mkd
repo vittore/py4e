@@ -5,6 +5,7 @@ Funzioni
 Chiamate di funzione
 --------------
 
+
 \index{function call}
 Nel contesto della programmazione, una *funzione* è una sequenza di istruzioni, cui è stato attribuito un nome, che esegue un calcolo. Quando si definisce una funzione, si specifica il nome e la sequenza di istruzioni. Successivamente è possibile "chiamare" la funzione per mezzo del suo nome. Abbiamo già visto un esempio di una *chiamata di funzione*:
 
@@ -42,6 +43,7 @@ La funzione `max` ci indica il "carattere più grande" nella stringa (che si riv
 11
 >>>
 ~~~~
+
 
 
 Queste funzioni non sono fatte solo per esaminare stringhe. Possono operare su un qualsiasi insieme di valori, come vedremo nei prossimi capitoli.  È necessario trattare i nomi delle funzioni integrate come parole riservate (ad esempio, evitate di utilizzare "max" come nome di variabile).
@@ -154,7 +156,7 @@ Il secondo esempio calcola il seno in `radianti`. Il nome della variabile sugger
 ~~~~
 
 
-L'espressione `math.pi` ricava la variabile `pi` dal modulo math. Il valore di questa variabile è un'approssimazione di $\pi$, con una precisione di circa 15 cifre.
+L'espressione `math.pi` ricava la variabile `pi` dal modulo math. Il valore di questa variabile è un'approssimazione di $\pi$pu, con una precisione di circa 15 cifre.
 \index{pi}
 
 Conoscendo la trigonometria, si può controllare il risultato precedente confrontandolo con la radice quadrata di due divisa per due:
@@ -238,6 +240,7 @@ Per scegliere un elemento da una sequenza casuale, potete usare `choice`:
 >>> random.choice(t)
 3
 ~~~~
+
 
 
 Il modulo `random` fornisce anche funzioni per generare valori casuali da distribuzioni continue tra cui la gaussiana, l'esponenziale, la gamma e altre.
@@ -552,7 +555,7 @@ valore di ritorno: il risultato di una funzione. Se una chiamata di funzione vie
 funzione vuota: una funzione che non restituisce alcun valore.
 \index{void function}
 
-  Esercizi
+Esercizi
 ---------
 
 **Esercizio 4: Qual è lo scopo della parola chiave "def" in Python?**
