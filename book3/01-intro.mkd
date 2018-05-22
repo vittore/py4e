@@ -131,8 +131,8 @@ Conversare con Python
 
 Ora che conosciamo una parola e una frase semplice in Python, abbiamo bisogno di sapere come avviare una conversazione con Python per testare le nostre nuove abilità linguistiche.
 
-Prima di poter dialogare con Python, dovete installare il software Python sul vostro computer e imparare ad avviarlo.
-Questo procedimento è troppo dettagliato per questo capitolo, quindi vi suggerisco di consultare [www.py4e.com] (http://www.py4e.com) dove ho indicato istruzioni dettagliate e screencast dell'installazione e dell'avvio di Python su sistemi Macintosh e Windows. Ad un certo punto, vi troverete in un terminale o una finestra di comando e dovrete digitare *python* e l'interprete Python si avvierà in modalità interattiva e apparirà bene o male qualcosa del genere:
+Prima di poter dialogare con Python, dovrete installare il software Python sul vostro computer e imparare ad avviarlo.
+Questo procedimento è troppo dettagliato per questo capitolo, quindi vi suggerisco di consultare [www.py4e.com] (http://www.py4e.com) dove ho indicato istruzioni dettagliate e screencast dell'installazione e dell'avvio di Python su sistemi Macintosh e Windows. Ad un certo punto, vi troverete in un terminale o una finestra di comando e dovrete digitare *python* e l'interprete Python si avvierà in modalità interattiva e apparirà qualcosa del genere:
 
 \index{modalità interattiva}
 
@@ -143,7 +143,7 @@ Questo procedimento è troppo dettagliato per questo capitolo, quindi vi suggeri
     >>>
 ~~~~
 
-Il prompt `>>>` è il modo di chiedere dell'interprete Python "Cosa vuoi che faccia dopo? "Python è pronto per conversare con voi. Tutto quello che dovete sapere è come parlare il linguaggio Python.
+Il prompt `>>>` è il modo di chiedere dell'interprete Python "Cosa vuoi che faccia dopo? "Python è pronto per conversare con voi. Tutto quello che dovrete sapere è come parlare il linguaggio Python.
 
 
 Supponiamo, per esempio, che non sappiate nemmeno le più semplici parole o frasi del linguaggio Python. Potreste voler utilizzare la linea guida che usano gli astronauti quando atterrano su un pianeta lontano e cercano di parlare con gli abitanti del pianeta:
@@ -157,16 +157,16 @@ Supponiamo, per esempio, che non sappiate nemmeno le più semplici parole o fras
     >>>
 ~~~~
 
-Non sta andando molto bene. A meno che non pensiate a qualcosa velocemente, è probabile che gli abitanti del pianeta ti pugnalino con le loro lance, ti mettano su uno spiedo, ti arrostiscano sopra un fuoco e ti mangino per cena.
+Non sta andando molto bene. A meno che non pensiate a qualcosa velocemente, è probabile che gli abitanti del pianeta vi pugnalino con le loro lance, vi mettano su uno spiedo, vi arrostiscano sopra un fuoco e vi mangino per cena.
 
-Fortunatamente avete portato una copia di questo libro nel vostro viaggio e il vostro dito è fermo in questa stessa pagina e riprovate:
+Fortunatamente avete portato con voi una copia di questo libro e il vostro dito è fermo in questa pagina e riprovate:
 
 ~~~~ {.python}
     >>> print('Hello world!')
     Hello world!
 ~~~~
 
-Questo è molto più bello, quindi provate a comunicare ancora:
+Questo è molto più chiaro, quindi provate a comunicare ancora:
 
 ~~~~ {.python}
     >>> print('You must be the legendary god that comes from the sky')
