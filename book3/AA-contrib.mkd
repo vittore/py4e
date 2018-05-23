@@ -6,24 +6,7 @@ Contributi
 Elenco dei collaboratori di Python per tutti 
 -------------------------------------------
 
-Elliott Hauser,
-Stephen Catto,
-Sue Blumenberg,
-Tamara Brunnock,
-Mihaela Mack,
-Chris Kolosiwsky,
-Dustin Farley,
-Jens Leerssen,
-Naveen KT,
-Mirza Ibrahimovic,
-Naveen (@togarnk),
-Zhou Fangyi,
-Alistair Walsh,
-Erica Brody,
-Jih-Sheng Huang,
-Louis Luangkesorn,
-and
-Michael Fudge
+Elliott Hauser, Stephen Catto, Sue Blumenberg, Tamara Brunnock, Mihaela Mack, Chris Kolosiwsky, Dustin Farley, Jens Leerssen, Naveen KT, Mirza Ibrahimovic, Naveen (@togarnk), Zhou Fangyi, Alistair Walsh, Erica Brody, Jih-Sheng Huang, Louis Luangkesorn e Michael Fudge.
 
 Qui potete vedere i dettagli dei contributi:
 
@@ -48,13 +31,10 @@ Uno dei problemi che avevo notato erano i libri di testo. Troppo voluminosi, con
 
 Due settimane prima dell’inizio del corso, decisi di scrivere il mio libro di testo. I miei obiettivi erano:
 
-- Essere conciso. Per gli studenti è molto meglio leggere 10 pagine che non leggerne 50.
-
-- Prestare attenzione al vocabolario. Ho cercato di minimizzare il gergo e definire ogni termine sin dal primo uso.
-
-- Procedere gradualmente. Per evitare trappole ho preso gli argomenti più difficili e li ho suddivisi in piccoli passi.
-
-- Focalizzarmi sulla programmazione, non sul linguaggio. Ho incluso la minima selezione utile di Java ed ho tralasciato il resto.
+- essere conciso. Per gli studenti è molto meglio leggere 10 pagine che non leggerne 50,
+- prestare attenzione al vocabolario. Ho cercato di minimizzare il gergo e definire ogni termine sin dal primo uso,
+- procedere gradualmente. Per evitare trappole ho preso gli argomenti più difficili e li ho suddivisi in piccoli passi,
+- focalizzarmi sulla programmazione, non sul linguaggio. Ho incluso la minima selezione utile di Java ed ho tralasciato il resto.
 
 Mi serviva un titolo e quasi per scherzo ho scelto *How to Think Like a Computer Scientist*.
 
