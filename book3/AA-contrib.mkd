@@ -51,9 +51,9 @@ Jeff ed io rivedemmo insieme il libro includendo anche uno caso di studio di Chr
 
 Nel 2003 insegnai all'Olin College ed ebbi modo di insegnare Python per la prima volta. Il contrasto con Java era impressionante: gli studenti avevano meno difficoltà, imparavano di più, lavoravano a progetti più interessanti e, in generale, si divertivano molto di più.
 
-Nei seguenti 5 anni ho continuato a sviluppare il libro, correggere gli errori, migliorare gli esempi e ad aggiungere materiale, specialmente gli esercizi. Nel 2008 ho iniziato a lavorare ad una importante revisione e allo stesso tempo sono stato contattato da un editore alla Cambridge University Press che era intenzionato a pubblicare la nuova versione del libro. Tempismo eccellente!
+Nei seguenti 5 anni ho continuato a sviluppare il libro, correggere gli errori, migliorare gli esempi e ad aggiungere materiale, specialmente gli esercizi. Nel 2008 ho iniziato a lavorare ad una importante revisione e allo stesso tempo sono stato contattato da un editore della Cambridge University Press che era intenzionato a pubblicare la nuova versione del libro. Tempismo eccellente!
 
-Spero che vi piaccia lavorare con questo libro, che vi aiuti ad imparare a programmare ed a pensare, almeno un po', come un Computer Scientist.
+Spero che vi piaccia lavorare con questo libro, che vi aiuti ad imparare a programmare e a pensare, almeno un po', come un Computer Scientist.
 
 ### Ringraziamenti per "Think Python"
 
