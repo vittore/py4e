@@ -247,36 +247,18 @@ stancante da scrivere poiché composto esclusivamente da zeri e uno:
     ...
 ~~~~
 
-Il linguaggio macchina a prima vista sembra abbastanza semplice, dato che ci sono
-solo zeri e uno, ma la sua sintassi è molto più complessa e molto più
-intricata di quella del Python. Pertanto pochissimi programmatori scrivono in linguaggio
-macchina. Piuttosto costruiamo vari traduttori per consentire agli sviluppatori di
-scrivere in linguaggi di alto livello come Python o JavaScript, cosicché questi
-traduttori convertano i programmi in linguaggio macchina per l'effettiva
-esecuzione da parte della CPU.
+Il linguaggio macchina a prima vista sembra abbastanza semplice, dato che ci sono solo zeri e uno, ma la sua sintassi è molto più complessa e molto più intricata di quella del Python. Pertanto pochissimi programmatori scrivono in linguaggio macchina. Piuttosto costruiamo vari traduttori per consentire agli sviluppatori di scrivere in linguaggi di alto livello come Python o JavaScript, cosicché questi traduttori convertano i programmi in linguaggio macchina per l'effettiva esecuzione da parte della CPU.
 
-Poiché il linguaggio macchina è legato all'hardware del computer, tale linguaggio
-non è *trasferibile* tra diversi tipi di
-hardware. I programmi scritti in linguaggi di alto livello possono essere spostati su
-sistemi diversi utilizzando l'interprete presente sulla nuova macchina
-o ricompilando il codice per creare una versione in linguaggio macchina del
-programma per il nuovo sistema.
+Poiché il linguaggio macchina è legato all'hardware del computer, tale linguaggio non è *trasferibile* tra diversi tipi di
+hardware. I programmi scritti in linguaggi di alto livello possono essere spostati su sistemi diversi utilizzando l'interprete presente sulla nuova macchina o ricompilando il codice per creare una versione in linguaggio macchina del programma per il nuovo sistema.
 
-Questi traduttori dei linguaggi di programmazione si dividono in due categorie generali:
-(1) interpreti e (2) compilatori.
+Questi traduttori dei linguaggi di programmazione si dividono in due categorie generali: (1) *interpreti* e (2) *compilatori*.
 
-Un *interprete* legge il codice sorgente del programma così come è stato
-scritto dal programmatore, analizza il codice sorgente e interpreta le istruzioni al volo.
-Python è un interprete e quando lo eseguiamo
-in modalitá interattiva, possiamo digitare una riga di Python (una frase)
-e Python la elabora immediatamente e rimarrà in attesa della successiva
-riga di Python.
+Un *interprete* legge il codice sorgente del programma così come è stato scritto dal programmatore, analizza il codice sorgente e interpreta le istruzioni al volo.
+Python è un interprete e quando lo eseguiamo in modalitá interattiva, possiamo digitare una riga di Python (una frase)
+e Python la elabora immediatamente e rimarrà in attesa della successiva riga di Python.
 
-Alcune delle righe di Python dicono a Python che volete che ricordi
-qualche valore per un secondo momento. Dobbiamo scegliere un nome per quel valore da
-ricordare e possiamo usare quel nome simbolico per recuperare il valore
-in un secondo momento. Usiamo il termine *variabile* per fare riferimento alle etichette
-che usiamo per riferirci a questi dati memorizzati.
+Alcune delle righe di Python dicono a Python che volete che ricordi qualche valore per un secondo momento. Dobbiamo scegliere un nome per quel valore da ricordare e da utilizzare per recuperarlo in un secondo momento. Usiamo il termine *variabile* per fare riferimento alle etichette che usiamo per riferirci a questi dati memorizzati.
 
 ~~~~ {.python}
     >>> x = 6
@@ -288,34 +270,19 @@ che usiamo per riferirci a questi dati memorizzati.
     >>>
 ~~~~
 
-In questo esempio, chiediamo a Python di ricordare il valore 6 e di usare
-l'etichetta *x* in modo da poter recuperare il valore più tardi.
-Verifichiamo che Python abbia effettivamente registrato il valore utilizzando
-*print*. Quindi chiediamo a Python di recuperare
-*x* e moltiplicarlo per 7 ed assegnare il nuovo
-risultato a *y*. Quindi chiediamo a Python di stampare il valore
+In questo esempio, chiediamo a Python di ricordare il valore 6 e di usare l'etichetta *x* in modo da poter recuperare il valore più tardi. 
+Verifichiamo che Python abbia effettivamente registrato il valore utilizzando *print*. Quindi chiediamo a Python di recuperare
+*x* e moltiplicarlo per 7 e assegnare il nuovo risultato a *y*. Quindi chiediamo a Python di stampare il valore
 attualmente contenuto in *y*.
 
-Anche se stiamo digitando questi comandi in Python una riga per volta,
-Python li tratta come una sequenza ordinata di istruzioni con successive
-istruzioni in grado di recuperare i dati creati durante precedenti istruzioni. Noi stiamo
-scrivendo il nostro primo semplice paragrafo con quattro frasi in un ordine logico e
-che abbia un significato.
+Anche se stiamo digitando questi comandi in Python una riga per volta, Python li tratta come una sequenza ordinata di istruzioni con successive istruzioni in grado di recuperare i dati creati durante precedenti istruzioni. Noi stiamo scrivendo il nostro primo semplice paragrafo con quattro frasi in un ordine logico e che abbia un significato.
 
 L'essere in grado di avere
-una conversazione interattiva simile alla precendente é nella natura di un *interprete*. Un *compilatore*
-necessita di avere l'intero codice prima di avviare il processo
-di traduzione del codice sorgente di alto livello in linguaggio macchina
-e quindi il compilatore inserisce il linguaggio macchina risultante in un file
-per la successiva esecuzione.
+una conversazione interattiva simile alla precendente é nella natura di un *interprete*. Un *compilatore* invece necessita di avere l'intero codice prima di avviare il processo di traduzione del codice sorgente di alto livello in linguaggio macchina e quindi il compilatore inserisce il linguaggio macchina risultante in un file per la successiva esecuzione.
 
-Se disponete di un sistema Windows, spesso questi eseguibili in linguaggio macchina
-hanno un suffisso ".exe" o ".dll" che indica rispettivamente "eseguibile"
-e libreria DLL. In Linux e Macintosh,
-non esiste un suffisso che contrassegni in modo univoco un file come eseguibile.
+Se disponete di un sistema Windows, spesso questi eseguibili in linguaggio macchina hanno un suffisso ".exe" o ".dll" che indicano rispettivamente "eseguibile" e libreria DLL. In Linux e Macintosh, non esiste un suffisso che contrassegni in modo univoco un file come eseguibile.
 
-Se doveste aprire un file eseguibile con un editor di testo, il contenuto vi sembrerà
-completamente folle ed illeggibile:
+Se doveste aprire un file eseguibile con un editor di testo, il contenuto vi sembrerà completamente folle ed illeggibile:
 
 ~~~~
     ^?ELF^A^A^A^@^@^@^@^@^@^@^@^@^B^@^C^@^A^@^@^@\xa0\x82
@@ -326,49 +293,32 @@ completamente folle ed illeggibile:
     ....
 ~~~~
 
-Non è semplice leggere o scrivere il linguaggio macchina, quindi è bello che
-si possa disporre di *interpreti* e *compilatori* che
+Non è semplice leggere o scrivere in linguaggio macchina, quindi è bello che si possa disporre di *interpreti* e *compilatori* che
 permettano di scrivere in linguaggi di alto livello come Python o C.
 
-Ora, a questo punto della nostra discussione di compilatori e interpreti, vi
-starate chiedendo qualcosa sull'interprete stesso di Python. In che
-linguaggio è stato scritto? È scritto in un linguaggio compilato? Quando
-digitiamo "Python", cosa succede esattamente?
+Ora, a questo punto della nostra discussione di compilatori e interpreti, vi starate chiedendo qualcosa sull'interprete stesso di Python. In che linguaggio è stato scritto? È scritto in un linguaggio compilato? Quando digitiamo "Python", cosa succede esattamente?
 
-L'interprete di Python è scritto in un linguaggio di alto livello chiamato "C".
-Potete dare un'occhiata all'attuale codice sorgente dell'interprete di Python andando nel sito
-[www.python.org] (http://www.python.org) e facendovi strada fino al codice sorgente.
-Quindi Python è esso stesso un programma ed é stato compilato
-in linguaggio macchina. Quando avete installato Python nel vostro computer (o se é stato installato
-dal venditore), avete copiato una copia in linguaggio macchina del programma Python tradotto per il
-vostro sistema. In Windows, il linguaggio macchina eseguibile per
-lo stesso Python è probabilmente in un file con un nome simile a:
+L'interprete di Python è scritto in un linguaggio di alto livello chiamato "C". Potete dare un'occhiata all'attuale codice sorgente dell'interprete di Python andando nel sito [www.python.org] (http://www.python.org), facendovi strada fino al codice sorgente.
+Quindi Python è esso stesso un programma ed é stato compilato in linguaggio macchina. Quando avete installato Python nel vostro computer (o se é stato installato dal venditore), avete copiato una copia in linguaggio macchina del programma Python tradotto per il vostro sistema. In Windows, il linguaggio macchina eseguibile per lo stesso Python è probabilmente in un file con un nome simile a:
 
 ~~~~
     C:\Python35\python.exe
 ~~~~
 
-Questo è più di quanto voi abbiate davvero bisogno di sapere per essere un programmatore Python, ma
-a volte paga rispondere subito a quelle piccole domande
-fastidiose.
+Questo è più di quanto voi abbiate davvero bisogno di sapere per essere un programmatore Python, ma a volte paga rispondere subito a quelle piccole domande fastidiose.
 
 Scrivere un programma
 -----------------
 
-Digitare comandi nell'interprete di Python è un ottimo modo per sperimentare
-le funzionalità di Python, ma non è consigliato per risolvere i
-problemi più complessi.
+Digitare comandi nell'interprete di Python è un ottimo modo per sperimentare le funzionalità di Python, ma non è consigliato per risolvere i problemi più complessi.
 
-Quando vogliamo scrivere un programma, possiamo utilizzare un editor di testo per scrivere le
-istruzioni Python in un file, chiamato
-*script*. Per convenzione, gli script Python hanno nomi che
-terminano con l'estensione `.py`.
+Quando vogliamo scrivere un programma, possiamo utilizzare un editor di testo per scrivere le istruzioni Python in un file, chiamato
+*script*. Per convenzione, gli script Python hanno nomi che terminano con l'estensione `.py`.
 
 \index{script}
 
 Per eseguire uno script, dovete dire all'interprete Python il nome del file.
-In una finestra di comando di Unix o Windows, dovete digitare
-`python hello.py` come nel seguente esempio:
+In una finestra di comando di Unix o Windows, dovete digitare `python hello.py` come nel seguente esempio:
 
 ~~~~ {.bash}
     csev$ cat hello.py
@@ -378,88 +328,51 @@ In una finestra di comando di Unix o Windows, dovete digitare
     csev$
 ~~~~
 
-Il "csev\$" è il prompt del sistema operativo e "cat hello.py"
-mostra che il file "hello.py" ha una riga di programma Python per
-stampare una stringa.
+Il "csev\$" è il prompt del sistema operativo e "cat hello.py" mostra che il file "hello.py" ha una riga di programma Python per stampare una stringa.
 
-Avviamo l'interprete di Python e diciamogli di leggere il codice sorgente dal
-file "hello.py" invece di chiederci in modo interattivo linee di codice
-Python.
+Avviamo l'interprete di Python e diciamogli di leggere il codice sorgente dal file "hello.py" invece di chiederci in modo interattivo linee di codice Python.
 
-Noterete che non é stato necessario inserire *quit()*
-alla fine del programma Python. Quando Python legge
-il vostro codice sorgente da un file, sa di fermarsi quando raggiunge la fine
-del file.
+Noterete che non é stato necessario inserire *quit()* alla fine del programma Python. Quando Python legge il vostro codice sorgente da un file, sa di fermarsi quando raggiunge la fine del file.
 
 Cos'è un programma?
 ------------------
 
-Si potrebbe definire il termine *programma* nella sua accezione più basilare come una
-sequenza di istruzioni Python scritte per fare qualcosa.
-Anche il nostro semplice script *hello.py* è un programma. È un
-programma composto da sola una riga non particolarmente utile ma, nella definizione più rigorosa,
-è un programma Python.
+Si potrebbe definire il termine *programma* nella sua accezione più basilare come una sequenza di istruzioni Python scritte per fare qualcosa. Anche il nostro semplice script *hello.py* è un programma. È un programma composto da una sola riga non particolarmente utile ma, nella definizione più rigorosa, è un programma Python.
 
-Potrebbe essere più facile capire cosa sia un programma pensando ad un problema
-che possa essere risolto da un programma e, di conseguenza, cercando
-un programma che risolverebbe tale problema.
+Potrebbe essere più facile capire cosa sia un programma pensando ad un problema che possa essere risolto da un programma e, di conseguenza, cercando un programma che possa risolvere tale problema.
 
-Diciamo che state facendo ricerche di Social Computing su alcuni post di Facebook e
-vi interessa la parola più frequentemente usata in una serie di post.
-Potreste stampare il flusso dei post di Facebook e scorrere
-il testo per cercare la parola più comune, ma tale operazione richiederebbe molto tempo
-e sarebbe molto soggetta ad errori. Sarebbe meglio scrivere un programma in Python
-per gestire l'attività in modo rapido e preciso, in modo da poter trascorrere il
-fine settimana facendo qualcosa di divertente.
+Diciamo che state facendo ricerche di Social Computing su alcuni post di Facebook e vi interessa la parola più frequentemente usata in una serie di post.
+Potreste stampare il flusso dei post di Facebook e scorrere il testo per cercare la parola più comune, ma tale operazione richiederebbe molto tempo e sarebbe molto soggetta ad errori. Sarebbe meglio scrivere un programma in Python per gestire l'attività in modo rapido e preciso, in modo da poter trascorrere il fine settimana facendo qualcosa di divertente.
 
-Ad esempio, considerate il seguente testo riguardante un clown e una macchina. Guardate
-il testo e cercate di capire la parola più comune e quante volte
-si ripete.
+Ad esempio, considerate il seguente testo riguardante un clown e una macchina. Guardate il testo e cercate di capire la parola più comune e quante volte si ripete.
 
 ~~~~
     the clown ran after the car and the car ran into the tent
     and the tent fell down on the clown and the car
 ~~~~
 
-Quindi immaginate di svolgere questo compito guardando milioni di righe di testo.
-Francamente, sarebbe più veloce per voi imparare Python e scrivere un
-programma Python per contare le parole, di quanto non lo sarebbe fare la scansione manuale delle parole.
+Quindi immaginate di svolgere questo compito guardando milioni di righe di testo. Francamente, è per voi più rapido imparare Python e scrivere un programma Python per contare le parole, di quanto non sia fare la scansione manuale delle parole.
 
 
-La notizia ancora migliore è che ho già creato un semplice programma per
-trovare la parola più comune in un file di testo. L'ho scritto, l'ho testato e adesso
-ve lo sto dando per usarlo e poter risparmiare un po' di tempo.
+La notizia ancora migliore è che ho già creato un semplice programma per trovare la parola più comune in un file di testo. L'ho scritto, l'ho testato e adesso ve lo sto dando per usarlo e poter risparmiare un po' di tempo.
 
 \VerbatimInput{../code3/words.py}
 \begin{trinketfiles}
 ../code3/words.txt
 \end{trinketfiles}
 
-Non avete nemmeno bisogno di conoscere il Python per utilizzare questo programma. Avrete bisogno di
-completare il Capitolo 10 di questo libro per comprendere appieno le fantastiche
-tecniche di Python utilizzate per realizzare il programma. Voi siete gli utenti finali,
-usate semplicemente il programma e stupitevi della sua intelligenza e di come
-vi ha risparmiato così tanto lavoro manuale. Basta digitare il codice in un file
-chiamato *words.py* ed eseguirlo oppure scaricare il codice sorgente
-da <http://www.py4e.com/code3/> ed eseguirlo.
+Non avete nemmeno bisogno di conoscere il Python per utilizzare questo programma. Avrete bisogno di completare il Capitolo 10 di questo libro per comprendere appieno le fantastiche tecniche di Python utilizzate per realizzare il programma. Voi siete gli utenti finali, usate semplicemente il programma e stupitevi della sua intelligenza e di come vi ha risparmiato così tanto lavoro manuale. Basta digitare il codice in un file chiamato *words.py* ed eseguirlo oppure scaricare il codice sorgente da <http://www.py4e.com/code3/> ed eseguirlo.
 
 \index{programma}
 
-Questo è un buon esempio di come Python e il linguaggio Python agiscano
-come intermediario tra voi (gli utenti finali) e me (lo sviluppatore).
-Python è un modo per scambiare sequenze di istruzioni utili (es.
-programmi) in un linguaggio comune che possa essere utilizzato da chiunque installi
-Python sul proprio computer. Quindi nessuno di noi sta parlando *a
-Python*, piuttosto comunichiamo con altri
-*attraverso* Python.
+Questo è un buon esempio di come Python e il linguaggio Python agiscano come intermediario tra voi (gli utenti finali) e me (lo sviluppatore). 
+Python è un modo per scambiare sequenze di istruzioni utili (es. programmi) in un linguaggio comune che possa essere utilizzato da chiunque installi Python sul proprio computer. 
+Nessuno di noi sta, quindi, parlando *a Python*, piuttosto comunichiamo con altri *attraverso* Python.
 
 I blocchi per costruire i programmi
 -------------------------------
 
-Nei prossimi capitoli, approfondiremo maggiormente il vocabolario,
-la struttura delle frasi, la struttura dei paragrafi e la storia di Python.
-Impareremo a conoscere le potenti funzionalità di Python e come
-unire queste funzionalità per creare programmi utili.
+Nei prossimi capitoli approfondiremo maggiormente il vocabolario, la struttura delle frasi, la struttura dei paragrafi e la storia di Python. Impareremo a conoscere le potenti funzionalità di Python e come unire queste funzionalità per creare programmi utili.
 
 Esistono alcuni modelli concettuali di basso livello che usiamo per progettare
 programmi. Questi costrutti non si limitano solo ai programmi Python ma sono
@@ -467,53 +380,33 @@ applicabili ad ogni linguaggio di programmazione, dal linguaggio macchina fino a
 linguaggi di alto livello.
 
 input
-: Ottiene dati dal "mondo esterno". Potrebbe trattarsi della lettura di dati da
-    un file, oppure di qualche tipo di sensore come un microfono o un GPS. Nei nostri
-    programmi iniziali, il nostro input verrà generato dall'utente che digita i dati
-    sulla tastiera.
+: Ottiene dati dal "mondo esterno". Potrebbe trattarsi della lettura di dati da un file, oppure di qualche tipo di sensore come un microfono o un GPS. Nei nostri programmi iniziali, il nostro input verrà generato dall'utente che digita i dati sulla tastiera.
 
 output
-: Visualizza i risultati del programma su uno schermo o li memorizza in un
-    file o magari lo scrive su un dispositivo come un altoparlante per riprodurre musica
-    o leggere del testo.
+: Visualizza i risultati del programma su uno schermo o li memorizza in un file o magari lo scrive su un dispositivo come un altoparlante per riprodurre musica o leggere del testo.
 
 esecuzione sequenziale
-: Esegue le istruzioni una dopo l'altra nell'ordine in cui vengono
-    incontrate nel codice.
+: Esegue le istruzioni una dopo l'altra nell'ordine in cui vengono incontrate nel codice.
 
 esecuzione condizionale
-: Verifica alcune condizioni e poi esegue o salta una sequenza di
-    istruzioni.
+: Verifica alcune condizioni e poi esegue o salta una sequenza di istruzioni.
 
 esecuzione ripetuta
-: Esegue ripetutamente alcune istruzioni, di solito con alcune
-    variazioni.
+: Esegue ripetutamente alcune istruzioni, di solito con alcune variazioni.
 
 riutilizzo
-: Scrive una serie di istruzioni una volta e dà loro un nome per poi riutilizzare
-    quelle istruzioni se necessarie durante l'esecuzione del programma.
+: Scrive una serie di istruzioni una volta e dà loro un nome per poi riutilizzare quelle istruzioni se necessarie durante l'esecuzione del programma.
 
-Sembra quasi troppo semplice per essere vero, ovviamente non è mai così
-semplice. È come dire che camminare è semplicemente "mettere un piede
-davanti all'altro". L'"arte" di scrivere un programma è comporre ed
-unire molte volte questi elementi di base per produrre
-un qualcosa che sia utile ai propri utenti.
+Sembra quasi troppo semplice per essere vero, ovviamente non è mai così semplice. È come dire che camminare è semplicemente "mettere un piede davanti all'altro". L'"arte" di scrivere un programma è comporre ed unire molte volte questi elementi di base per produrre un qualcosa che sia utile ai propri utenti.
 
-Il programma di conteggio delle parole di cui sopra utilizza direttamente tutti questi modelli
-ad eccezione di uno.
+Il programma di conteggio delle parole di cui sopra utilizza direttamente tutti questi modelli ad eccezione di uno.
 
 Cosa potrebbe andare storto?
 -----------------------------
 
-Come abbiamo visto nelle nostre precedenti conversazioni con Python, dobbiamo comunicare
-in modo molto preciso quando scriviamo il codice Python. La più piccola deviazione o
-errore farà sì che Python smetta di leggere il vostro programma.
+Come abbiamo visto nelle nostre precedenti conversazioni con Python, dobbiamo comunicare in modo molto preciso quando scriviamo il codice Python. La più piccola deviazione o errore farà sì che Python smetta di leggere il vostro programma.
 
-I programmatori principianti spesso citano il fatto che Python non lasci spazio
-ad errori come prova che Python sia cattivo, odioso e crudele. Mentre Python
-sembra andare d'accordo con tutti gli altri, Python conosce personalmente i principianti e
-porta loro rancore. A causa di questo rancore, Python prende i nostri programmi scritti in maniera impeccabile
-e li rigetta come "inadatti" solo per tormentarci.
+I programmatori principianti spesso citano il fatto che Python non lasci spazio ad errori come prova che Python sia cattivo, odioso e crudele. Mentre Python sembra andare d'accordo con tutti gli altri, Python conosce personalmente i principianti e porta loro rancore. A causa di questo rancore, Python prende i nostri programmi scritti in maniera impeccabile e li rigetta come "inadatti" solo per tormentarci.
 
 ~~~~ {.python}
     >>> primt 'Hello world!'
@@ -539,100 +432,37 @@ e li rigetta come "inadatti" solo per tormentarci.
     >>>
 ~~~~
 
-Si ottiene poco discutendo con Python. È solo uno strumento.
-Non ha emozioni ed è felice e pronto a servirvi ogni volta che
-ne abbiate bisogno. I suoi messaggi di errore sono inclementi, ma sono solo la richiesta di aiuto
-di Python. Ha esaminato ciò che avete digitato e non riesce semplicemente
-a capire cosa abbiate inserito.
+Si ottiene poco discutendo con Python: è solo uno strumento. Non ha emozioni ed è felice e pronto a servirvi ogni volta che ne abbiate bisogno. I suoi messaggi di errore sono inclementi, ma sono solo la richiesta di aiuto di Python. Ha esaminato ciò che avete digitato e non riesce semplicemente a capire cosa abbiate inserito.
 
-Python è molto più simile a un cane, che amandovi incondizionatamente, conoscendo poche
-parole chiave, vi guarda dolcemente
-(`>>>`), ed aspetta che voi diciate qualcosa che sia in grado di capire.
-Quando Python visualizza "SyntaxError: invalid syntax", sta
-semplicemente dicendo, scodinzolando, "Mi sembra che voi abbiate detto qualcosa ma non
-ne capisco il significato; ma per favore continuate a parlarmi
-(`>>>`)."
+Python è molto più simile a un cane, che amandovi incondizionatamente, conoscendo poche parole chiave, vi guarda dolcemente (`>>>`), ed aspetta che voi diciate qualcosa che sia in grado di capire. Quando Python visualizza "SyntaxError: invalid syntax", sta semplicemente dicendo, scodinzolando, "Mi sembra che voi abbiate detto qualcosa ma non ne capisco il significato; ma per favore continuate a parlarmi (`>>>`)."
 
-Man mano che i vostri programmi diventeranno più sofisticati, incontrerete
-tre tipologie di errore:
+Man mano che i vostri programmi diventeranno più sofisticati, incontrerete tre tipologie di errore:
 
 Errori di sintassi
-: Questi sono i primi errori che farete ed i più facili da correggere. Un
-    errore di sintassi indica che avete violato le regole di "grammatica" di
-    Python. Python fará del suo meglio per puntare direttamente alla riga e
-    al carattere in cui ha notato un errore. L'unico inconveniente degli
-    errori di sintassi è che, a volte, l'errore che deve essere risolto è
-    in realtà in una fase precedente del programma rispetto al punto in cui Python
-    *si è accorto* di essere confuso. Quindi la riga e il carattere
-    in cui Python indica la presenza di un errore di sintassi potrebbe essere solo il punto di partenza
-    della vostra ricerca.
+: Questi sono i primi errori che farete ed i più facili da correggere. Un errore di sintassi indica che avete violato le regole di "grammatica" di Python. Python fará del suo meglio per puntare direttamente alla riga e al carattere in cui ha notato un errore. L'unico inconveniente degli errori di sintassi è che, a volte, l'errore che deve essere risolto è in realtà in una fase precedente del programma rispetto al punto in cui Python *si è accorto* di essere confuso. Quindi la riga e il carattere in cui Python indica la presenza di un errore di sintassi potrebbe essere solo il punto di partenza della vostra ricerca.
 
 Errori di logica:
-: Un errore logico si verifica quando il vostro programma ha una buona sintassi ma c'è un
-    errore nell'ordine delle istruzioni o forse un errore nel come
-    queste si relazionino l'una all'altra. Un buon esempio di errore di logica
-    potrebbe essere il seguente: "bevete un sorso dalla vostra bottiglia d'acqua, mettetela nel vostro
-    zaino, camminate fino alla biblioteca e poi rimettete il tappo alla bottiglia."
+: Un errore logico si verifica quando il vostro programma ha una buona sintassi ma c'è un errore nell'ordine delle istruzioni o forse un errore nel come queste si relazionino l'una all'altra. Un buon esempio di errore di logica potrebbe essere il seguente: "bevete un sorso dalla vostra bottiglia d'acqua, mettetela nel vostro zaino, camminate fino alla biblioteca e poi rimettete il tappo alla bottiglia."
 
 
 Errori di Semantica
-: Un errore semantico si verifica quando la descrizione dei passaggi da eseguire è
-    sintatticamente perfetta e nel giusto ordine, ma c'è semplicemente un
-    errore nel programma. Il programma è completamente corretto ma non fa
-    ciò che *intendete* fargli fare.
-    Un semplice esempio potrebbe essere dare ad una persona le indicazioni per un
-    ristorante dicendo: "... quando si raggiunge l'incrocio con la
-    stazione di benzina, girare a sinistra e procedere per 1 km. Il ristorante é un edificio rosso
-    sulla sinistra." Il vostro amico é molto in ritardo e vi chiama
-    per dirvi di trovarsi in una fattoria e che si stanno aggirando dietro un granaio,
-    senza trovare alcuna traccia di un ristorante. Quindi dite "ma hai girato a sinistra o
-    a destra alla stazione di servizio?" e loro rispondono "ho seguito le tue indicazioni
-    alla lettera, le abbiamo perfino annotate: dicono di girare a sinistra e procedere per un
-    km dal distributore di benzina." Così voi aggiungete "Mi dispiace molto, perché
-    nonostante le mie istruzioni fossero sintatticamente corrette, purtroppo
-    contenevano un errore semantico piccolo ma non rilevato".
+: Un errore semantico si verifica quando la descrizione dei passaggi da eseguire è sintatticamente perfetta e nel giusto ordine, ma c'è semplicemente un errore nel programma. Il programma è completamente corretto ma non fa ciò che *intendete* fargli fare. Un semplice esempio potrebbe essere dare ad una persona le indicazioni per un ristorante dicendo: "... quando si raggiunge l'incrocio con la stazione di benzina, girare a sinistra e procedere per 1 km. Il ristorante é un edificio rosso sulla sinistra." Il vostro amico é molto in ritardo e vi chiama per dirvi di trovarsi in una fattoria e che si stanno aggirando dietro un granaio, senza trovare alcuna traccia di un ristorante. Quindi dite "ma hai girato a sinistra o a destra alla stazione di servizio?" e loro rispondono "ho seguito le tue indicazioni alla lettera, le abbiamo perfino annotate: dicono di girare a sinistra e procedere per un km dal distributore di benzina." Così voi aggiungete "Mi dispiace molto, perché nonostante le mie istruzioni fossero sintatticamente corrette, purtroppo contenevano un errore semantico piccolo ma non rilevato".
 
-Ribadisco che in tutte e tre le categorie di errori, Python sta semplicemente facendo del suo meglio
-per fare esattamente quello che gli avete chiesto.
+Ribadisco che in tutte e tre le categorie di errori, Python sta semplicemente facendo del suo meglio per fare esattamente quello che gli avete chiesto.
 
 Il percorso di studio
 --------------------
 
-Mentre avanzate attraverso il resto del libro, non abbiate paura se
-i concetti non sembrano amalgamarsi bene l'uno all'altro da subito. Quando stavate
-imparando a parlare, non è stato un problema se avete passato i primi anni
-producendo solo dei dolci gorgoglii. E non c'erano problemi se ci sono voluti sei mesi
-per passare da un vocabolario limitato a semplici frasi, se ci sono voluti 5 o 6
-anni in più per passare dalle frasi ai paragrafi e ancora qualche anno
-per essere in grado di scrivere un avvincente racconto breve per conto vostro.
+Mentre avanzate attraverso il resto del libro, non abbiate paura se i concetti non sembrano amalgamarsi bene l'uno all'altro da subito. Quando stavate imparando a parlare, non è stato un problema se avete passato i primi anni producendo solo dei dolci gorgoglii. E non c'erano problemi se ci sono voluti sei mesi per passare da un vocabolario limitato a semplici frasi, se ci sono voluti 5 o 6 anni in più per passare dalle frasi ai paragrafi e ancora qualche anno per essere in grado di scrivere un avvincente racconto breve per conto vostro.
 
-Vorremmo che possiate imparare Python molto rapidamente, per questo motivo vi insegneremo tutto
-nei prossimi capitoli. Sarà come imparare un nuovo
-linguaggio che richiede tempo per essere assorbito e compreso prima che diventi naturale.
-Ciò porterà ad una certa confusione mentre vedremo e rivedremo argomenti
-cercando di farvi vedere il quadro generale mentre definiamo i piccoli
-frammenti che lo compongono. Nonostante il libro sia scritto in modo
-lineare, e se state seguendo un corso questo proseguirà linearmente,
-non esitare ad essere molto non-lineari nel modo in cui vi approcciate al
-materiale. Sbirciate avanti e indietro e leggete con leggerezza.
-Sfogliando il materiale più avanzato senza comprenderne appieno i dettagli,
-potrete capire meglio il "perché?" della programmazione.
-Rivedendo il materiale precedente e anche rifacendo gli esercizi precedenti, realizzerete
-che in realtà avete imparato molto anche se il materiale
-che al momento state fissando sembra un po' imperscrutabile.
+Vorremmo che possiate imparare Python molto rapidamente, per questo motivo vi insegneremo tutto nei prossimi capitoli. Sarà come imparare un nuovo linguaggio che richiede tempo per essere assorbito e compreso prima che diventi naturale.
+Ciò porterà ad una certa confusione mentre vedremo e rivedremo argomenti cercando di farvi vedere il quadro generale mentre definiamo i piccoli frammenti che lo compongono. Nonostante il libro sia scritto in modo lineare, e se state seguendo un corso questo proseguirà linearmente, non esitare ad essere molto non-lineari nel modo in cui vi approcciate al materiale. Sbirciate avanti e indietro e leggete con leggerezza.
+Sfogliando il materiale più avanzato senza comprenderne appieno i dettagli, potrete capire meglio il "perché?" della programmazione.
+Rivedendo il materiale precedente e anche rifacendo gli esercizi precedenti, realizzerete che in realtà avete imparato molto anche se il materiale che al momento state fissando sembra un po' imperscrutabile.
 
-Di solito quando state imparando il vostro primo linguaggio di programmazione, ci sono
-alcuni meravigliosi momenti di stupore in cui potete alzare lo sguardo dallo scalfire
-qualche pietra con un martello e uno scalpello e cominciare a vedere
-che state davvero scolpendo una bellissima scultura.
+Di solito quando state imparando il vostro primo linguaggio di programmazione, ci sono alcuni meravigliosi momenti di stupore in cui potete alzare lo sguardo dallo scalfire qualche pietra con un martello e uno scalpello e cominciare a vedere che state davvero scolpendo una bellissima scultura.
 
-Se qualcosa sembra particolarmente difficile, di solito è inutile
-restare svegli tutta la notte a fissarla. Fate una pausa, fate un pisolino, mangiate uno
-spuntino, spiegate a qualcuno in cosa state avendo problemi (o magari
-al vostro cane), così da ritornare con occhi nuovi. Vi assicuriamo che
-una volta che apprenderete i concetti della programmazione nel libro, guarderete indietro
-e vedrete che tutto è stato molto semplice ed elegante e vi ha semplicemente richiesto
-un po' di tempo per assimilarlo.
+Se qualcosa sembra particolarmente difficile, di solito è inutile restare svegli tutta la notte a fissarla. Fate una pausa, fate un pisolino, mangiate uno spuntino, spiegate a qualcuno in cosa state avendo problemi (o magari al vostro cane), così da ritornare con occhi nuovi. Vi assicuriamo che una volta che apprenderete i concetti della programmazione nel libro, guarderete indietro e vedrete che tutto è stato molto semplice ed elegante e vi ha semplicemente richiesto un po' di tempo per assimilarlo.
 
 Glossario
 --------
@@ -642,44 +472,36 @@ bug
 \index{bug}
 
 central processing unit
-: Il cuore di qualsiasi computer. È ciò che gestisce il codice che noi
-    scriviamo; é anche chiamato "CPU" o "processore".
+: Il cuore di qualsiasi computer. È ciò che gestisce il codice che noi scriviamo; é anche chiamato "CPU" o "processore".
 \index{central processing unit}
 \index{CPU}
 
 compilare
-: Tradurre completamente in una sola volta un programma scritto in un linguaggio di alto livello in un
-    linguaggio di basso livello, in preparazione per l'esecuzione successiva.
+: Tradurre completamente in una sola volta un programma scritto in un linguaggio di alto livello in un linguaggio di basso livello, in preparazione per l'esecuzione successiva.
 \index{compilare}
 
 linguaggio di alto livello
-: Un linguaggio di programmazione come Python progettato per essere facilmente
-    letto e scritto dagli umani.
+: Un linguaggio di programmazione come Python progettato per essere facilmente letto e scritto dagli umani.
 \index{linguaggio di alto livello}
 
 modalità interattiva
-: Un modo di utilizzare l'interprete Python digitando singoli comandi e
-    espressioni al prompt.
+: Un modo di utilizzare l'interprete Python digitando singoli comandi e espressioni al prompt.
 \index{modalità interattiva}
 
 interprete
-: Eseguire un programma scritto in un linguaggio di alto livello traducendo
-    una riga alla volta.
+: Eseguire un programma scritto in un linguaggio di alto livello traducendo una riga alla volta.
 \index{interprete}
 
 linguaggio di basso livello
-: Un linguaggio di programmazione progettato per essere facilmente eseguito
-    da un computer; é chiamato anche "codice macchina" o "linguaggio assembly".
+: Un linguaggio di programmazione progettato per essere facilmente eseguito da un computer; é chiamato anche "codice macchina" o "linguaggio assembly".
 \index{linguaggio di basso livello}
 
 codice macchina
-: Il linguaggio di livello più basso, è il linguaggio
-    che viene eseguito direttamente dall'unità di elaborazione centrale (CPU).
+: Il linguaggio di livello più basso, è il linguaggio che viene eseguito direttamente dall'unità di elaborazione centrale (CPU).
 \index{codice macchina}
 
 memoria principale
-: Conserva programmi e dati. La memoria principale perde le sue informazioni memorizzate quando il
-    computer viene spento.
+: Conserva programmi e dati. La memoria principale perde le sue informazioni memorizzate quando il computer viene spento.
 \index{memoria principale}
 
 analizzare
@@ -687,19 +509,16 @@ analizzare
 \index{analizzare}
 
 portabilità
-: Proprietà di un programma che gli permette di essere eseguito su più di un tipo di
-    computer.
+: Proprietà di un programma che gli permette di essere eseguito su più di un tipo di computer.
 \index{portabilità}
 
 funzione di stampa
-: Istruzione che fa in modo che l'interprete Python visualizzi un valore
-    su schermo.
+: Istruzione che fa in modo che l'interprete Python visualizzi un valore su schermo.
 \index{funzione di stampa}
 \index{funzione!stampa}
 
 risoluzione dei problemi
-: Il processo composto dal formulare un problema, ricercare una soluzione, e
-    fornire la soluzione.
+: Il processo composto dal formulare un problema, ricercare una soluzione, e fornire la soluzione.
 \index{risoluzione dei problemi}
 
 programma
@@ -707,14 +526,11 @@ programma
 \index{programma}
 
 prompt
-: Si verifica quando un programma visualizza un messaggio a schermo e si interrompe affinché l'utente possa digitare
-    un input destinato al programma.
+: Si verifica quando un programma visualizza un messaggio a schermo e si interrompe affinché l'utente possa digitare un input destinato al programma.
 \index{prompt}
 
 memoria secondaria
-: Memorizza programmi e dati e ne conserva le informazioni anche quando
-    viene tolta l'alimentazione. Generalmente é più lenta della memoria principale. Esempi di
-    memoria secondaria includono l'unità disco o la memoria flash nelle chiavette USB.
+: Memorizza programmi e dati e ne conserva le informazioni anche quando viene tolta l'alimentazione. Generalmente é più lenta della memoria principale. Esempi di memoria secondaria includono l'unità disco o la memoria flash nelle chiavette USB.
 \index{memoria secondaria}
 
 semantica
@@ -722,8 +538,7 @@ semantica
 \index{semantica}
 
 errore semantico
-: Errore in un programma che gli fa fare qualcosa di diverso da quello
-    previsto dallo sviluppatore.
+: Errore in un programma che gli fa fare qualcosa di diverso da quello previsto dallo sviluppatore.
 \index{errore semantico}
 
 codice sorgente
@@ -789,9 +604,6 @@ b) 44\
 c) x + 1\
 d) Errore perché x = x + 1 non è matematicamente possibile
 
-**Esercizio 8: Spiega ognuno dei seguenti esempi usando come esempio una capacitá
-degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria
-secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é
-l'equivalente nell'uomo di una "Unità di elaborazione centrale"?**
+**Esercizio 8: Spiega ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é l'equivalente nell'uomo di una "Unità di elaborazione centrale"?**
 
 **Esercizio 9: Come si corregge un "Syntax Error"?**
