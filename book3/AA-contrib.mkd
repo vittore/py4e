@@ -3,7 +3,7 @@
 Contributi
 =============
 
-Elenco dei collaboratori per Python per tutti 
+Elenco dei collaboratori di Python per tutti 
 -------------------------------------------
 
 Elliott Hauser,
