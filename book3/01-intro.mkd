@@ -73,17 +73,17 @@ Dovrete essere coloro che risponderanno alla domanda posta dalla CPU: "Quale è 
 Capire la Programmazione
 -------------------------
 
-Nel resto di questo libro, cercheremo di trasformarvi in persone esperte nell'arte della programmazione. Alla fine diventerete *programmatori* - forse non programmatori professionisti, ma almeno avrete le capacità per esaminare un problema riguardante l'analisi di dati/informazioni e sviluppare un programma che lo risolva.
+Nel resto di questo libro, cercheremo di trasformarvi in persone esperte nell'arte della programmazione. Alla fine diventerete *programmatori*, forse non programmatori professionisti, ma almeno avrete le capacità per esaminare un problema relativo l'analisi di dati/informazioni e sviluppare un programma che lo risolva.
 
 \index{problem solving}
 
 In un certo senso, avrete bisogno di due abilità per diventare programmatori:
 
-- Per prima cosa, dovrete conoscere il linguaggio di programmazione (Python) - del quale avrete bisogno di conoscere il vocabolario e la grammatica. Dovrete essere in grado di scrivere correntemente le parole in questa nuova lingua e sapere come costruire frasi "ben strutturate" in questa nuova lingua.
+- Per prima cosa, dovrete conoscere il linguaggio di programmazione (Python) di cui avrete bisogno di conoscere vocabolario e grammatica. Dovrete essere in grado di scrivere correntemente le parole in questa nuova lingua e sapere come costruire frasi "ben strutturate".
 
-- In secondo luogo, avrete bisogno di "raccontare una storia". Per scrivere una storia, combinerete parole e frasi allo scopo di trasmettere un'idea al lettore. Sono necessarie abilità e arte nella costruzione della storia e l'abilità nella scrittura di storie viene migliorata scrivendo e ottenendo feedback. Nella programmazione il nostro programma è la "storia" e il problema che state cercando di risolvere è "l'idea".
+- In secondo luogo, avrete bisogno di "raccontare una storia". Per scrivere una storia, combinerete parole e frasi allo scopo di trasmettere un'idea al lettore. Sono richieste abilità e arte nella costruzione di storie, l'abilità nella scrittura di storie è una capacità che si migliora scrivendo e ottenendo feedback. Nell'ambito della programmazione il nostro programma è la "storia" e il problema che state cercando di risolvere è "l'idea".
 
-Una volta che avrete imparato un linguaggio di programmazione come Python, sarà molto più facile imparare un secondo linguaggio di programmazione come JavaScript o C++. Il nuovo linguaggio di programmazione avrà un vocabolario ed una grammatica molto diversi ma le capacità di problem-solving sono le medesime in tutti i linguaggi di programmazione.
+Una volta che avrete imparato un linguaggio di programmazione come Python, sarà molto più facile imparare un secondo linguaggio come JavaScript o C++. sebbene il nuovo linguaggio di programmazione abbia un vocabolario ed una grammatica molto diversi rispetto a Python, la capacità di problem-solving è la medesima in tutti i linguaggi di programmazione.
 
 Imparete il "vocabolario" e le "frasi" di Python molto velocemente. Sarà necessario più tempo per essere in grado di scrivere un programma che sia adatto a risolvere un problema nuovo. Si insegna a programmare in modo simile a come si insegna a scrivere. Iniziamo con il leggere e comprendere i programmi, quindi scriveremo alcuni semplici programmi, in seguito scriveremo programmi sempre più complessi. Ad un certo punto "troverete la vostra ispirazione" e riuscirete a vedere da soli lo schema e sarà più naturale risolvere un problema e scrivere un programma che lo risolva. Una volta arrivati a quel punto, programmare diventerà un processo molto piacevole e creativo.
 
