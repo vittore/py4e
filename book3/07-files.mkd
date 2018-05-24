@@ -1,0 +1,388 @@
+%
+﻿
+File
+=====
+
+\index{file}
+\index{type!file}
+
+Persistenza
+-----------
+
+\index{persistence}
+\index{secondary memory}
+
+Finora, abbiamo imparato come scrivere programmi e comunicare le nostre intenzioni all'*unità di elaborazione centrale* usando l'esecuzione condizionale, le funzioni e le iterazioni. Abbiamo imparato come creare e utilizzare strutture di dati nella *memoria principale*. La CPU e la memoria sono i luoghi dove il nostro software lavora e funziona. È dove si forma tutto il "pensiero".  Ma se ricordate le nostre discussioni sull'architettura hardware, una volta che l'alimentazione viene spenta, qualsiasi cosa memorizzata nella CPU o nella memoria principale viene cancellata. Così fino ad ora, i nostri programmi sono stati solo fugaci esercizi divertenti per imparare Python.
+
+![Secondary Memory](height=2.5in@../images/arch)
+
+In questo capitolo, iniziamo a lavorare con la *Memoria Secondaria* (o file). La memoria secondaria non viene cancellata quando si spegne l'alimentazione o, nel caso di un'unità flash USB, i dati che ricaviamo dai nostri programmi possono essere rimossi dal sistema e trasportati su un altro sistema.  Ci concentreremo principalmente sulla lettura e la scrittura di file di testo come quelli che creiamo in un editor di testo. Più avanti vedremo come lavorare con i file di database che sono file binari, progettati specificamente per essere letti e scritti tramite programmi di database.
+
+Aprire i file
+-------------
+
+\index{file!open}
+\index{open function}
+\index{function!open}
+
+Quando vogliamo leggere o scrivere un file (ad esempio sul disco rigido), dobbiamo prima *aprire* il file. L'apertura del file comunica con il vostro sistema operativo, che sa dove sono archiviati i dati per ogni file. Quando aprite un file, chiedete al sistema operativo di trovare il file tramite il suo nome e di assicurarsi che il file esista. In questo esempio, apriamo il file `mbox.txt`, che dovrebbe essere memorizzato nella stessa cartella in cui vi trovate quando avviate Python.
+
+Potete scaricare questo file da [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
+
+    >>> fhand = open ('mbox.txt')
+    >>> print(fhand)
+    <_io.TextIOWrapper name = 'mbox.txt' mode = 'r' encoding = 'cp1252'>
+
+\index{file handle}
+
+
+Se l'`apertura` ha successo, il sistema operativo ci restituisce un *handle di file *. L'handle del file non è il dato reale contenuto nel file, ma è invece una "maniglia" che possiamo usare per leggere i dati. Viene fornito un handle se il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
+
+![A File Handle](height=2.0in@../images/handle)
+
+Se il file non esiste, `open` fallirà con un traceback e non avrete un handle per accedere ai contenuti del file:
+
+    >>> fhand = open ('stuff.txt')
+    Traceback (most recent call last) :
+     File "<stdin>", riga 1, in <module>
+    FileNotFoundError: [Errno 2] No such file or directory: 'stuff.txt'
+
+Successivamente useremo `try` e` except` per gestire con più eleganza la situazione in cui si tenta di aprire un file che non esiste.
+
+File di testo e righe
+--------------------
+
+
+Un file di testo può essere pensato come una sequenza di righe, proprio come una stringa Python può essere pensata come una sequenza di caratteri. Ad esempio, questo è un file di testo dimostrativo che registra l'attività di posta da vari individui di un team di sviluppo di progetti open source:
+
+`From stephen.marquard@uct.ac.za Sab 5 gen 09:14:16 2008` \
+`Return-Path: <postmaster@collab.sakaiproject.org> `\
+`Date: Sat, 5 Jan 2008 09:12:18 -0500`\
+`To: source@collab.sakaiproject.org`\
+`From: stephen.marquard@uct.ac.za`\
+`Subject: [sakai] svn commit: r39772 - content / branches /`\
+`Details: http: //source.sakaiproject.org/viewsvn/? view = rev & rev = 39772`\
+`...`
+
+
+L'intero file di interazioni di posta è disponibile su
+[www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
+e una versione abbreviata del file è disponibile su
+[www.py4e.com/code3/mbox-short.txt](http://www.py4e.com/code3/mbox-short.txt)
+Questi file sono in un formato standard per file contenenti più messaggi di posta. Le righe che iniziano con "From" separano i messaggi e le righe che iniziano con "From:" fanno parte dei messaggi. Per ulteriori informazioni sul formato mbox, consultate [en.wikipedia.org/wiki/Mbox](en.wikipedia.org/wiki/Mbox).  
+Per suddividere il file in righe, c'è un carattere speciale che rappresenta la "fine della riga" chiamato carattere *newline*.
+
+
+\index{newline}
+
+In Python, rappresentiamo il carattere * newline * con backslash-n tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Quando guardiamo la variabile immettendo "stuff" nell'interprete, ci mostra `\n` nella stringa, ma quando usiamo` print` per mostrare la stringa, vediamo la stringa spezzata in due righe dal carattere newline.
+
+    >>> stuff = 'Hello \ nWorld!'
+    >>> stuff' Ciao \ nWorld!'
+    >>> print (stuff) Hello World!
+    >>> stuff = 'X \ nY'
+    >>> print (stuff) X Y
+    >>> len (stuff) 3
+
+Potete anche vedere che la lunghezza della stringa `X\nY` è di * tre * caratteri perché il carattere newline conta come un singolo carattere.  Quindi, quando guardiamo le linee in un file, dobbiamo * immaginare * che ci sia uno speciale carattere invisibile chiamato newline alla fine di ogni riga che segna la fine della riga.  Quindi il carattere newline divide i caratteri del file in righe.
+
+Lettura dei file
+-------------
+
+\index{file!reading}
+\index{counter}
+
+Mentre *l'handle* del file non contiene i dati per il file, è abbastanza semplice costruire un ciclo `for` per leggere e contare ciascuna delle righe in un file:
+
+\VerbatimInput{../code3/open.py}
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+
+Possiamo usare l'handle del file come sequenza nel nostro ciclo `for`. Il nostro ciclo `for` conta semplicemente il numero di righe nel file e le visualizza. La traduzione approssimativa del ciclo `for` in italiano è," per ogni riga nel file rappresentato dall'handle del file, aggiungi uno alla variabile `count`." La ragione per cui la funzione `open` non legge l'intero file è che il file potrebbe essere abbastanza grande con molti gigabyte di dati. L'istruzione `open` richiede lo stesso tempo indipendentemente dalla dimensione del file. Il ciclo `for` fa effettivamente in modo che vengano letti i dati contenuti nel file.  
+
+Quando il file viene letto utilizzando un ciclo `for` in questo modo, Python si occupa di suddividere i dati nel file in righe separate usando il carattere newline. Python legge ogni riga fino al carattere newline e include il newline come ultimo carattere nella variabile `line` per ogni iterazione del ciclo` for`.  
+
+Poiché il ciclo `for` legge i dati una riga per volta, può leggere e contare efficientemente le righe in file di grandi dimensioni senza esaurire la memoria principale per archiviare i dati. Il programma di cui poc'anzi può contare le righe in file di qualsiasi dimensione utilizzando pochissima memoria poiché ogni riga viene letta, contata e quindi scartata.  Se sapete che il file è relativamente piccolo rispetto alla dimensione della memoria principale, potete leggere l'intero file in un'unica stringa utilizzando il metodo `read` sull'handle del file.
+
+    >>> fhand = open ('mbox-short.txt')
+    >>> inp = fhand.read ()
+    >>> print (len (inp))
+    94626
+    >>> print (inp [: 20])
+    From stephen.marquar
+
+In questo esempio, l'intero contenuto (tutti i 94.626 caratteri) del file `mbox-short.txt` viene letto direttamente nella variabile` inp`. Usiamo il taglio delle stringhe per stampare i primi 20 caratteri dei dati di stringa memorizzati in `inp`.  
+
+Quando il file viene letto in questo modo, tutti i caratteri, includendo tutte le righe e i caratteri newline vengono considerati come una grande stringa nella variabile *inp*.
+Ricordate che questa forma della funzione `open` dovrebbe essere usata solo se i dati del file si adattano comodamente alla memoria
+
+principale del vostro computer.  Se il file è troppo grande per adattarsi alla memoria principale, dovreste scrivere il vostro programma per leggere il file in blocchi utilizzando un ciclo `for` o` while`.
+
+Ricerche in un file
+------------------------
+
+Quando si cercano dei dati in un file, è uno molto comune leggere un file ignorando la maggior parte delle righe e analizzando solo le righe che soddisfano una particolare condizione. Possiamo combinare il modello per la lettura di un file con i metodi per le stringhe per costruire semplici meccanismi di ricerca.
+\index{filter pattern}
+\index{pattern!filter}
+
+Ad esempio, se volessimo leggere un file e stampare solo le righe che iniziano con il prefisso "From:", potremmo usare il metodo per le stringhe stringhe * startswith * per selezionare solo le righe con il prefisso desiderato:
+
+\VerbatimInput{../code3/search1.py}
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+
+Quando questo programma viene eseguito, viene visualizzato il seguente output:
+
+    From: stephen.marquard@uct.ac.za
+
+    From: louis@media.berkeley.edu
+
+    From: zqian@umich.edu
+
+    From: rjlowe@iupui.edu
+
+    ...  
+
+L'output sembra ottimo dato che le uniche righe che stiamo visualizzando sono quelle che iniziano con "From:", ma perché stiamo vedendo le righe vuote in più? Ciò è dovuto al carattere invisibile *newline*.
+
+Ognuna delle righe termina con un carattere newline, quindi l'istruzione `print` visualizza la stringa nella variabile *line* che include una nuova riga e quindi` print` visualizza *un'altra* nuova riga, ottenendo l'effetto di doppia spaziatura che vediamo.  Potremmo usare il taglio delle stringhe per visualizzare tutto tranne l'ultimo carattere, ma un approccio più semplice è usare il metodo *rstrip* che rimuove gli spazi bianchi dal lato destro di una stringa, come segue:
+
+\VerbatimInput{../code3/search2.py}
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+
+Quando questo programma viene eseguito, viene visualizzato il seguente output:
+
+    From: stephen.marquard@uct.ac.za
+    From: louis@media.berkeley.edu
+    From: zqian@umich.edu
+    From: rjlowe@iupui.edu
+    From: zqian@umich.edu
+    From: rjlowe@iupui.edu
+    From: cwen@iupui.edu
+    ...  
+
+Man mano che i programmi di elaborazione dei file diventano più complicati, potreste voler strutturare i vostri cicli di ricerca utilizzando `continue`. L'idea di base del ciclo di ricerca è che state cercando righe "interessanti" e saltando efficacemente righe "non interessanti". E poi quando trovate una riga interessante, facciate qualcosa con quella riga.  Potete strutturare il ciclo per seguire lo schema che salti le righe non interessanti come segue:
+
+\VerbatimInput{../code3/search3.py}
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+
+L'output del programma è lo stesso. In italiano, le righe non interessanti sono quelle che non iniziano con "From:", che saltiamo usando `continue`. Per le righe "interessanti" (cioè quelle che iniziano con "From:") eseguiamo l'elaborazione su quelle righe.  Possiamo usare il metodo oer le stringhe `find` per simulare una ricerca nell'editor di testo che trova le righe in cui la stringa ricercata si trova in qualsiasi punto della riga.
+
+Poiché `find` cerca un'occorrenza di una stringa all'interno di un'altra stringa e restituisce la posizione della stringa o -1 se la stringa non è stata trovata, possiamo scrivere il seguente ciclo per mostrare le righe che contengono la stringa" @uct.ac.za "(cioè, quelle che provengono dall'università di Cape Town in Sud Africa):
+
+\VerbatimInput{../code3/search4.py}
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+
+Che produce il seguente output:
+
+    From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008
+    X-Authentication-Warning: set sender to stephen.marquard@uct.ac.za using -f
+    From: stephen. marquard@uct.ac.za
+    Author: stephen.marquard@uct.ac.za
+    From david.horwitz@uct.ac.za Fri Jan 4 07:02:32 2008
+    X-Authentication-Warning: set sender to david.horwitz@uct.ac.za using -f
+    From: david.horwitz@uct.ac.za
+    Author: david.horwitz@uct.ac.za ...
+
+Far scegliere all'utente il nome del file
+-------------------------------------
+
+Non vogliamo davvero dover modificare il nostro codice Python ogni volta che vogliamo elaborare un file diverso. Sarebbe più utile chiedere all'utente di inserire la stringa del nome del file ogni volta che il programma viene eseguito in modo che possano usare il nostro programma su file diversi senza modificare il codice Python.  
+
+Questo è abbastanza semplice facendo leggendo il nome del file dall'utente utilizzando `input` come segue:
+
+\VerbatimInput{../code3/search6.py}
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+
+Leggiamo il nome del file inserito dell'utente e lo posizioniamo in una variabile denominata `fname` e apriamo quel file. Ora possiamo eseguire il programma ripetutamente su file diversi.
+
+    python search6.py
+    Inserisci il nome del file: mbox.txt
+    Ci sono 1797 righe di oggetto in mbox.txt
+
+    python search6.py
+    Inserisci il nome del file: mbox-short.txt
+    Ci sono 27 righe di soggetto in mbox-short.txt
+
+Prima di sbirciare nella prossima sezione, date uno sguardo al programma precedente e chiedetevi: "Che cosa potrebbe andare storto qui?"o" Che cosa potrebbe fare il nostro amico utente per far sì che il nostro piccolo programma non esca con un traceback, facendoci sembrare non proprio brillanti agli occhi dei nostri utenti?"
+
+Utilizzare `try, except` e `open`
+-----------------------------------------------------
+
+Vi ho detto di non sbirciare. Questa è la vostra ultima possibilità.  Cosa succede se il nostro utente digita qualcosa che non è il nome di un file?
+      python search6.py
+      Immettere il nome del file: missing.txt
+      Traceback (chiamata più recente per ultima):
+       File "search6.py", line 2, in <module>
+        fhand = open (fname)
+      FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'
+
+      python search6.py
+      Immettere il nome del file: na na boo boo
+      Traceback (chiamata più recente per ultima):
+       file "search6.py", riga 2, in <module>
+        fhand = open (fname)
+         FileNotFoundError: [Errno 2] No such file or directory : 'na na boo boo'
+
+Non ridete. Gli utenti alla fine faranno tutte le cose che possono fare per violare i programmi, di proposito o con intenzioni malevole. In effetti, un componente importante di qualsiasi team di sviluppo software è una persona o un gruppo chiamato * Quality Assurance * (o QA in breve) il cui compito è quello di fare le cose più folli possibili nel tentativo di violare il software che lo sviluppatore ha creato.
+
+\index{Quality Assurance}
+\index{QA}
+
+Il team addetto al controllo qualità è responsabile della ricerca dei difetti nei programmi prima di consegnarli agli utenti finali che potrebbero acquistare il software o pagare il nostro stipendio per sviluppare software. Quindi la squadra di controllo qualità è la migliore amica dello sviluppatore.
+
+\index{try statement}
+\index{statement!try}
+\index{open function}
+\index{function!open}
+\index{exception!IOError}
+\index{IOError}
+
+Quindi una volta che individuiamo il difetto nel programma, possiamo sistemarlo elegantemente usando la struttura `try` /` except`. Dobbiamo supporre che la chiamata `open` potrebbe fallire e aggiungere il codice di ripristino quando` open` fallisce come segue:
+
+\VerbatimInput{../code3/search7.py}
+\begin{trinketfiles}
+../code3/mbox-short.txt
+\end{trinketfiles}
+
+La funzione `exit` termina il programma. È una funzione che chiamiamo che non ritorna mai. Ora, quando il nostro utente (o il team controllo qualità) digita nomi incompleti o sbagliati, li "catturiamo" e recuperiamo con eleganza:
+    python search7.py
+    Inserisci il nome del file: mbox.txt
+    There were 1797 subject lines in mbox.txt
+
+    python search7. py
+    Immettere il nome del file: na na boo boo
+    File cannot be opened: na na boo boo
+
+\index{Pythonic}
+
+Proteggere la chiamata `open` è un buon esempio dell'uso corretto di` try` e `except` in un programma Python. Usiamo il termine "Pythonic" quando stiamo facendo qualcosa in "modo Python". Potremmo dire che l'esempio sopra è il modo Pythonic per aprire un file.  Una volta che diventerete più abili in Python, potrete impegnarvi in un litigio con altri programmatori Python per decidere quale delle due soluzioni equivalenti a un problema sia "più Pythonic".
+
+L'obiettivo di essere "più Pythonic" cattura l'idea che la programmazione sia in parte ingegneria e in parte arte. Non siamo interessati solo a far funzionare qualcosa, vogliamo anche che la nostra soluzione sia elegante e apprezzata come elegante dai nostri colleghi.
+
+Scrivere file
+-------------
+
+\index{file!writing}
+Per scrivere un file, devete aprirlo con la modalità "w" come secondo parametro:
+
+    >>> fout = open ('output.txt', 'w')
+    >>> print (fout)
+    <_io.TextIOWrapper name = 'output.txt' mode = 'w' encoding = 'cp1252'>
+
+Se il file esiste già, aprendolo in modalità di scrittura cancellerete i vecchi dati e lo avvierete nuovamente, quindi fate attenzione! Se il file non esiste, ne viene creato uno nuovo.  Il metodo `write` dell'oggetto file handle mette i dati nel file, restituendo il numero di caratteri scritti.
+
+La modalità di scrittura predefinita è testo per scrivere (e leggere) stringhe.
+
+    >>> line1 = "These here's the wattle,\n"
+    >>> fout.write (line1)
+    24
+
+\index{newline}
+
+Di nuovo, l'oggetto file tiene traccia di dove si trova, quindi se si chiama `write` di nuovo, aggiunge i nuovi dati alla fine.  
+
+Dobbiamo assicurarci di gestire le estremità delle righe mentre scriviamo nel file inserendo esplicitamente il carattere newline quando vogliamo terminare una riga. L'istruzione `print` aggiunge automaticamente una nuova riga, ma il metodo` write` non inserisce automaticamente un carattere newline.
+
+    >>> line2 = 'the emblem of our land.\n'
+    >>> fout.write (line2)
+    24
+
+Quando havete finito di scrivere, dovete chiudere il file per assicurarvi che l'ultimo bit di dati venga scritto fisicamente sul disco in modo che non andrà perso se si interrompe l'alimentazione.
+
+    >>> fout.close ()
+
+
+Potremmo chiudere anche i file che apriamo anche per leggerli, ma possiamo essere un po' approssimativi se apriamo solo alcuni file dato che Python si assicura che tutti i file aperti vengano chiusi quando il programma termina . Quando scriviamo dei file, vogliamo chiudere esplicitamente i file in modo da non lasciare nulla al caso.
+
+
+\index{close method}
+\index{method!close}
+
+Debug
+---------
+
+\index{debugging}
+\index{whitespace}
+
+Quando leggete e scrivete file, potreste incontrare problemi con gli spazi bianchi. Questi errori possono essere difficili da risolvere perché gli spazi, le schede e le nuove linee sono normalmente invisibili:
+
+    >>> s = '1 2\t 3\n 4'
+    >>> print (s)
+    1 2  3
+     4
+
+\index{repr function}
+\index{function!repr}
+\index{string representation}
+
+La funzione integrata `repr` può aiutare. Prende qualsiasi oggetto come argomento e restituisce una rappresentazione sotto forma di stringa dell'oggetto. Per le stringhe, rappresenta i caratteri di spaziatura con sequenze di backslash:
+
+    >>> print (repr (s))
+    '1 2 \t 3 \n 4'
+
+Ciò può essere utile per il debug.  Un altro problema che potreste incontrare è che diversi sistemi usano caratteri diversi per indicare la fine di una riga. Alcuni sistemi usano un carattere newline, rappresentato da `\n`. Altri usano un carattere di ritorno, rappresentato da `\r`. Alcuni usano entrambi. Se si spostano file tra sistemi diversi, queste incoerenze potrebbero causare problemi.
+
+\index{end of line character}
+
+Per la maggior parte dei sistemi, ci sono applicazioni per convertire da un formato all'altro. Potete trovarle (e leggere ulteriori informazioni su questo problema) su [wikipedia.org/wiki/Newline](wikipedia.org/wiki/Newline). O, naturalmente, potreste scriverne uno voi stessi.
+
+Glossario
+--------
+
+catch
+: impedire che un'eccezione termini un programma usando le istruzioni `try` e` except`.
+\index{catch}
+
+newline
+: un carattere speciale utilizzato nei file e nelle stringhe per indicare la fine di una riga.
+\index{newline}
+
+Pythonic
+: una tecnica che funziona elegantemente in Python. "Usare try e except è il modo *Pythonic* per risolvere l'errore dovuto a file mancanti".
+\index{Pythonic}
+
+Controllo qualità
+: una persona o un team focalizzato sull'assicurazione della qualità complessiva di un prodotto software. Il controllo qualità è solitamente impegnato nella verifica di un prodotto e nell'identificazione dei problemi prima che il prodotto venga rilasciato.
+\index{Quality Assurance}
+\index{QA}
+
+File di testo
+: una sequenza di caratteri memorizzati nella memoria permanente come un disco rigido.
+\index{text file}
+
+Esercizi
+---------
+
+**Esercizio 1:** Scrivete un programma per leggere un file e stampare il contenuto del file (riga per riga) tutto in maiuscolo. L'esecuzione del programma avrà il seguente aspetto:
+
+    python shout.py
+    Enter a file name: mbox-short.txt
+    FROM STEPHEN.MARQUARD@UCT.AC.ZA SAT JAN 5 09:14:16 2008
+    RETURN-PATH: <POSTMASTER@COLLAB.SAKAIPROJECT.ORG>
+    RECEIVED: FROM MURDER (MAIL.UMICH.EDU [141.211.14.90])
+        BY FRANKENSTEIN.MAIL.UMICH.EDU (CYRUS V2.3.8) WITH LMTPA;
+        SAT, 05 JAN 2008 09:14:16 -0500
+
+È possibile scaricare il file da
+
+[www.py4e.com/code3/mbox-short.txt](http://www.py4e.com/code3/mbox-short. txt)
+
+**Esercizio 2:** scrivete un programma per richiedere il nome di un file, quindi leggete il file e cercate le righe del form:
+
+    `X-DSPAM-Confidence:` **`0.8475` **
+
+Quando incontrate una riga che inizia con "X-DSPAM-Confidence:" separate la riga per estrarre il numero a virgola mobile contenuto nella riga. Contate queste righe e quindi calcolare il totale dei valori di spam confidence in queste righe. Quando raggiungete la fine del file, stampate la media dei valori di spam confidence.
+Inserite il nome del file: mbox.txt Media spam confidence : 0.894128046745 Inserisci il nome del file: mbox-short.txt Media spam confidence: 0.750718518519 Mettete alla prova il vostro file sui file `mbox.txt` e` mbox-short.txt`.  
+
+**Esercizio 3:** A volte quando gli sviluppatori si annoiano o vogliono divertirsi, aggiungono un innocuo * Easter Egg * al loro programma. Modificate il programma che richiede all'utente il nome del file in modo che stampi un messaggio divertente quando l'utente digita nel nome esatto del file "na na boo boo". Il programma dovrebbe comportarsi normalmente per tutti gli altri file che esistono e non esistono. Ecco un'esecuzione di esempio del programma: python egg.py Immettere il nome del file: mbox.txt There were 1797 subject lines in mbox.txt python egg.py Immettere il nome del file: missing.tyxt File cannot be opened: missing.tyxt python egg.py Inserisci il nome del file: na na boo boo NA NA BOO BOO TO YOU - You have been punk'd!  Non vi stiamo incoraggiando a inserire degli Easter egg nei vostri programmi; questo è solo un esercizio.
