@@ -14,7 +14,7 @@ Oggi giorno siamo circondati da computer che vanno dai portatili agli smartphone
 
 I programmatori hanno aggiunto all'hardware un sistema operativo e una serie di applicazioni ed abbiamo ottenuto un assistente personale digitale che è abbastanza utile ed in grado di aiutarci svolgendo molti compiti diversi.
 
-I nostri computer sono veloci e sono dotati di una grande quantità di memoria e potrebbero esserci molto utili se solo conoscessimo la lingua per spiegare loro quello che vorremmo fosse "fatto dopo". Se la conoscessimo, potremmo dire al computer di svolgere compiti ripetitivi per nostro conto. 
+I nostri computer sono veloci e sono dotati di una grande quantità di memoria e potrebbero esserci molto utili se solo conoscessimo la lingua per spiegare loro quello che vorremmo fosse "fatto dopo". Se la conoscessimo, potremmo dire al computer di svolgere compiti ripetitivi per nostro conto.
 È interessante notare che il tipo di attività che i computer possono fare meglio sono spesso il genere di cose che noi umani troviamo più noiose e logoranti.
 
 Ad esempio, leggete i primi tre paragrafi di questo capitolo ed individuate la parola più comunemente usata e quante volte la stessa venga ripetuta.
@@ -240,7 +240,7 @@ Alcune delle righe di Python dicono a Python che volete che ricordi qualche valo
     >>>
 ~~~~
 
-In questo esempio, chiediamo a Python di ricordare il valore 6 e di usare l'etichetta *x* in modo da poter recuperare il valore più tardi. 
+In questo esempio, chiediamo a Python di ricordare il valore 6 e di usare l'etichetta *x* in modo da poter recuperare il valore più tardi.
 Verifichiamo che Python abbia effettivamente registrato il valore utilizzando *print*. Quindi chiediamo a Python di recuperare *x* e moltiplicarlo per 7 e assegnare il nuovo risultato a *y*. Quindi chiediamo a Python di stampare il valore attualmente contenuto in *y*.
 
 Anche se stiamo digitando questi comandi in Python una riga per volta, Python li tratta come una sequenza ordinata di istruzioni con successive istruzioni in grado di recuperare i dati creati durante precedenti istruzioni. Noi stiamo scrivendo il nostro primo semplice paragrafo con quattro frasi in un ordine logico e che abbia un significato.
@@ -330,8 +330,8 @@ Non avete nemmeno bisogno di conoscere il Python per utilizzare questo programma
 
 \index{programma}
 
-Questo è un buon esempio di come Python e il linguaggio Python agiscano come intermediario tra voi (gli utenti finali) e me (lo sviluppatore). 
-Python è un modo per scambiare sequenze di istruzioni utili (es. programmi) in un linguaggio comune che possa essere utilizzato da chiunque installi Python sul proprio computer. 
+Questo è un buon esempio di come Python e il linguaggio Python agiscano come intermediario tra voi (gli utenti finali) e me (lo sviluppatore).
+Python è un modo per scambiare sequenze di istruzioni utili (es. programmi) in un linguaggio comune che possa essere utilizzato da chiunque installi Python sul proprio computer.
 Nessuno di noi sta, quindi, parlando *a Python*, piuttosto comunichiamo con altri *attraverso* Python.
 
 I blocchi per costruire i programmi
@@ -510,25 +510,25 @@ codice sorgente
 Esercizi
 ---------
 
-**Esercizio 1: Quale è la funzione della memoria secondaria in un computer?**
+**Esercizio 1:** Quale è la funzione della memoria secondaria in un computer?
 
 a\) Esegue tutto il calcolo e la logica del programma\
 b) Recupera pagine Web da Internet\
 c) Conservare le informazioni a lungo termine, anche oltre un ciclo di alimentazione\
 d) Accetta input dall'utente
 
-**Esercizio 2: Che cos'è un programma?**
+**Esercizio 2:** Che cos'è un programma?
 
-**Esercizio 3: Quale è la differenza tra un compilatore e un interprete?**
+**Esercizio 3:** Quale è la differenza tra un compilatore e un interprete?
 
-**Esercizio 4: Quale delle seguenti alternative contiene "codice macchina"?**
+**Esercizio 4:** Quale delle seguenti alternative contiene "codice macchina"?
 
 a\) L'interprete di Python\
 b) La tastiera\
 c) Un file sorgente di Python\
 d) Un documento di elaborazione di testo
 
-**Esercizio 5: Cosa c'è di errato nel codice seguente?:**
+**Esercizio 5:** Cosa c'è di errato nel codice seguente?:
 
 ~~~~ {.python}
     >>> primt 'Hello world!'
@@ -539,7 +539,7 @@ d) Un documento di elaborazione di testo
     >>>
 ~~~~
 
-**Esercizio 6: Dove viene memorizzata una variabile "x" simile a quella scritta dopo la seguente linea Python?**
+**Esercizio 6:** Dove viene memorizzata una variabile "x" simile a quella scritta dopo la seguente linea Python?
 
 ~~~~ {.python}
     x = 123
@@ -551,7 +551,7 @@ c) Memoria Secondaria\
 d) Dispositivi di input\
 e) Dispositivi di output
 
-**Esercizio 7: Cosa verrà visualizzato dal questo programma?:**
+**Esercizio 7:** Cosa verrà visualizzato dal questo programma?:
 
 ~~~~ {.python}
     x = 43
@@ -564,6 +564,6 @@ b) 44\
 c) x + 1\
 d) Errore perché x = x + 1 non è matematicamente possibile
 
-**Esercizio 8: Spiega ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é l'equivalente nell'uomo di una "Unità di elaborazione centrale"?**
+**Esercizio 8:** Spiega ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
 
-**Esercizio 9: Come si corregge un "Syntax Error"?**
+**Esercizio 9:** Come si corregge un "Syntax Error"?

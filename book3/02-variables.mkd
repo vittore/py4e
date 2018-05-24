@@ -236,7 +236,9 @@ Se si digita un'espressione in modalità interattiva, l'interprete la *calcola* 
 ~~~~
 
 
-Ma in uno script, un'espressione da sola non fa nulla! Questa è una frequente fonte di confusione per i principianti.   **Esercizio 1: Digitare le seguenti istruzioni nell'interprete Python per osservare il loro comportamento:**
+Ma in uno script, un'espressione da sola non fa nulla! Questa è una frequente fonte di confusione per i principianti.   
+
+**Esercizio 1:** Digitare le seguenti istruzioni nell'interprete Python per osservare il loro comportamento:
 
 ~~~~ {.python}
 5
@@ -597,7 +599,7 @@ variabile
 Esercizi
 ---------
 
-**Esercizio 2: Scrivete un programma che usi `input` per chiedere agli utenti il proprio nome e poi date loro il benvenuto.**
+**Esercizio 2:** Scrivete un programma che usi `input` per chiedere agli utenti il proprio nome e poi date loro il benvenuto.
 
 ~~~~
 Enter your name: Chuck
@@ -605,7 +607,7 @@ Hello Chuck
 ~~~~
 
 
-**Esercizio 3: scrivete un programma per richiedere all'utente ore e tariffe orarie per calcolare la retribuzione lorda.**
+**Esercizio 3:** scrivete un programma per richiedere all'utente ore e tariffe orarie per calcolare la retribuzione lorda.
 
 ~~~~
 Enter Hours: 35
@@ -616,7 +618,7 @@ Pay: 96.25
 
 Per ora non ci preoccuperemo di assicurarci che la nostra paga abbia esattamente due cifre dopo la virgola. Se volete, potete giocare con la funzione `round` integrata in Python per arrotondare correttamente la retribuzione risultante a due cifre decimali.   
 
-**Esercizio 4: supponiamo di eseguire le seguenti istruzioni di assegnazione:**
+**Esercizio 4:** supponiamo di eseguire le seguenti istruzioni di assegnazione:
 
 ~~~~
 width = 17
@@ -638,4 +640,4 @@ Per ciascuna delle seguenti espressioni, scrivete il valore dell'espressione e i
 
 Usate l'interprete Python per verificare le vostre risposte.
 
-**Esercizio 5: scrivete un programma che richieda all'utente una temperatura in gradi Celsius, la converta in Fahrenheit e poi la stampi.**
+**Esercizio 5:** scrivete un programma che richieda all'utente una temperatura in gradi Celsius, la converta in Fahrenheit e poi la stampi.

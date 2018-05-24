@@ -314,7 +314,7 @@ iterazione: esecuzione ripetuta di un insieme di istruzioni utilizzando una funz
 Esercizi
 ---------
 
-**Esercizio 1: scrivete un programma che legga ripetutamente i numeri fino a quando l'utente non digiti "finito". Una volta che viene digitato "finito", dovrà essere visualizzato il totale, il conteggio e la media dei numeri. Se l'utente dovesse digitare qualcosa di diverso da un numero, occorrerà rilevare l'errore usando `try` e `except`, visualizzareun messaggio di errore e passare al numero successivo.**
+**Esercizio 1:** scrivete un programma che legga ripetutamente i numeri fino a quando l'utente non digiti "finito". Una volta che viene digitato "finito", dovrà essere visualizzato il totale, il conteggio e la media dei numeri. Se l'utente dovesse digitare qualcosa di diverso da un numero, occorrerà rilevare l'errore usando `try` e `except`, visualizzareun messaggio di errore e passare al numero successivo.
 
 ~~~~
 Enter a number: 4
@@ -327,4 +327,4 @@ Enter a number: done
 ~~~~
 
 
-**Esercizio 2: Scrivete un altro programma che richieda un elenco di numeri come nell'esercizio precedente e alla fine visualizzi sia il numero più grande che quello più piccolo invece della media.**
+**Esercizio 2:** Scrivete un altro programma che richieda un elenco di numeri come nell'esercizio precedente e alla fine visualizzi sia il numero più grande che quello più piccolo invece della media.

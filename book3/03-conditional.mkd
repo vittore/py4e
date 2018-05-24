@@ -60,7 +60,7 @@ Operatori logici
 \index{logical operator}
 \index{operator!logical}
 Esistono tre *operatori logici*: `and`, `or` e `not`. La semantica (significato) di questi operatori è simile al loro significato in inglese. Ad esempio:
-`x> 0 and x <10` 
+`x> 0 and x <10`
 è TRUE solo se `x` è maggiore di 0 *e* minore di 10.
 
 \index{and operator}
@@ -450,7 +450,7 @@ cortocircuito
 Esercizi
 ---------
 
-**Esercizio 1: Riscrivete il vostro calcolo della retribuzione per attribuire ad un dipendente una maggiorazione oraria di 1,5 volte, per le ore lavorate superiori a 40.**
+**Esercizio 1:** Riscrivete il vostro calcolo della retribuzione per attribuire ad un dipendente una maggiorazione oraria di 1,5 volte, per le ore lavorate superiori a 40.
 
 ~~~~
 Enter Hours: 45
@@ -459,7 +459,7 @@ Pay: 475.0
 ~~~~
 
 
-**Esercizio 2: Riscrivete il vostro programma di calcolo della retribuzione usando `try` e `except` in modo che il tuo programma gestisca input non-numerici in maniera elegante stampando un messaggio ed uscendo dal programma. Di seguito vengono mostrate due esecuzioni del programma:**
+**Esercizio 2:** Riscrivete il vostro programma di calcolo della retribuzione usando `try` e `except` in modo che il tuo programma gestisca input non-numerici in maniera elegante stampando un messaggio ed uscendo dal programma. Di seguito vengono mostrate due esecuzioni del programma:
 
 ~~~~
 Enter Hours: 20
@@ -476,7 +476,7 @@ Error, please enter numeric input
 ~~~~
 
 
-**Esercizio 3: scrivete un programma per richiedere un punteggio compreso tra 0.0 e 1.0. Se il punteggio non è compreso nell'intervallo, visualizzate un messaggio di errore. Se il punteggio è compreso tra 0,0 e 1,0, visualizzate un voto utilizzando la seguente tabella:**
+**Esercizio 3:** scrivete un programma per richiedere un punteggio compreso tra 0.0 e 1.0. Se il punteggio non è compreso nell'intervallo, visualizzate un messaggio di errore. Se il punteggio è compreso tra 0,0 e 1,0, visualizzate un voto utilizzando la seguente tabella:
 
 ~~~~
  Score   Grade

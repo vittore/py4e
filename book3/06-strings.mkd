@@ -619,14 +619,14 @@ Esercizi
 ---------
 
 
-**Esercizio 5: prendete il seguente codice Python che memorizza una stringa:** `str = 'X-DSPAM-Confidence:` **`0.8475`** `'`
+**Esercizio 5:** prendete il seguente codice Python che memorizza una stringa:** `str = 'X-DSPAM-Confidence:` **`0.8475`** `'`
 
-**Usate `find` e la segmentazione delle stringhe per estrarre la porzione di stringa dopo il carattere dei due punti e quindi utilizzare la funzione `float` per convertire la stringa estratta in un numero a virgola mobile.**
+Usate `find` e la segmentazione delle stringhe per estrarre la porzione di stringa dopo il carattere dei due punti e quindi utilizzare la funzione `float` per convertire la stringa estratta in un numero a virgola mobile.
 
 \index{string method}
 \index{method!string}
 
-**Esercizio 6: leggete la documentazione dei metodi di stringa su <https://docs.python.org/3.5/library/stdtypes.html#string-methods>
-Potreste voler fare degli esperimenti con alcuni di essi per assicurarvi di aver capito come funzionano. `strip` e `replace` sono particolarmente utili.**
+**Esercizio 6:** leggete la documentazione dei metodi di stringa su <https://docs.python.org/3.5/library/stdtypes.html#string-methods>
+Potreste voler fare degli esperimenti con alcuni di essi per assicurarvi di aver capito come funzionano. `strip` e `replace` sono particolarmente utili.
 
-**La documentazione utilizza una sintassi che potrebbe essere fonte di confusione. Ad esempio, in `find(sub[, start[, end]])`, le parentesi indicano argomenti opzionali. Quindi `sub` è richiesto, ma `start` è opzionale e se si include `start`, allora `end` è opzionale.**
+La documentazione utilizza una sintassi che potrebbe essere fonte di confusione. Ad esempio, in `find(sub[, start[, end]])`, le parentesi indicano argomenti opzionali. Quindi `sub` è richiesto, ma `start` è opzionale e se si include `start`, allora `end` è opzionale.

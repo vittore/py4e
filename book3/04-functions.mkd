@@ -213,7 +213,7 @@ Questo programma produce il seguente elenco di 10 numeri casuali tra 0.0 e 1.0 (
 ~~~~
 
 
-**Esercizio 1: eseguite il programma sul vostro sistema per vedere quali numeri si ottengono. Eseguite il programma più di una volta e vedete quali numeri si ottengono.**
+**Esercizio 1:** eseguite il programma sul vostro sistema per vedere quali numeri si ottengono. Eseguite il programma più di una volta e vedete quali numeri si ottengono.
 
 La funzione `random` è solo una delle molte funzioni che gestiscono numeri casuali. La funzione `randint` accetta i parametri `low` e `high` e restituisce un intero compreso tra i due (inclusi).
 \index{randint function}
@@ -344,9 +344,9 @@ Questo programma contiene due definizioni di funzioni: `print_lyrics` e `repeat_
 
 Come ci si potrebbe aspettare, è necessario creare una funzione prima di poterla eseguire. In altre parole, la definizione della funzione deve essere effettuata prima della prima chiamata.
 
-**Esercizio 2: spostate l'ultima riga di questo programma in cima, in modo tale da far apparire la chiamata della funzione prima delle definizioni. Eseguite il programma e vedete quale messaggio di errore ricevete.**
+**Esercizio 2:** spostate l'ultima riga di questo programma in cima, in modo tale da far apparire la chiamata della funzione prima delle definizioni. Eseguite il programma e vedete quale messaggio di errore ricevete.
 
-**Esercizio 3: spostate di nuovo la chiamata della funzione in basso e spostate la definizione di `print_lyrics` dopo la definizione di `repeat_lyrics`. Cosa succede quando si esegue questo programma?**
+**Esercizio 3:** spostate di nuovo la chiamata della funzione in basso e spostate la definizione di `print_lyrics` dopo la definizione di `repeat_lyrics`. Cosa succede quando si esegue questo programma?
 
 Flusso di esecuzione
 -----------------
@@ -581,7 +581,7 @@ funzione vuota
 Esercizi
 ---------
 
-**Esercizio 4: Quale è lo scopo della parola chiave "def" in Python?**
+**Esercizio 4:** Quale è lo scopo della parola chiave "def" in Python?
 
 a) È gergale, significa "il seguente codice è veramente bello".\
 b) Indica l'inizio di una funzione.\
@@ -589,7 +589,7 @@ c) Indica che la seguente sezione di codice indentata deve essere memorizzata pe
 d) b e c sono entrambi veri.\
 e) Nessuno dei precedenti.
 
-**Esercizio 5: cosa stamperà il seguente programma Python?**
+**Esercizio 5:** cosa stamperà il seguente programma Python?
 
 ~~~~ {.python}
 def fred():
@@ -610,7 +610,7 @@ c) ABC Zap jane \
 d) ABC Zap ABC \
 e) Zap Zap Zap
 
-**Esercizio 6: Riscrivete il calcolo della vostra retribuzione con gli straordinari pagati il 50% in più e create una funzione chiamata `computepay` che richiede due parametri (`hours` e `rate`).**
+**Esercizio 6:** Riscrivete il calcolo della vostra retribuzione con gli straordinari pagati il 50% in più e create una funzione chiamata `computepay` che richiede due parametri (`hours` e `rate`).
 
 ~~~~
 Enter Hours: 45
@@ -619,7 +619,7 @@ Pay: 475.0
 ~~~~
 
 
-**Esercizio 7: Riscrivete il programma di valutazione del capitolo precedente usando una funzione chiamata `computegrade` che accetta un punteggio come parametro e restituisce un voto sotto forma di stringa.**
+**Esercizio 7:** Riscrivete il programma di valutazione del capitolo precedente usando una funzione chiamata `computegrade` che accetta un punteggio come parametro e restituisce un voto sotto forma di stringa.
 
 ~~~~
  Score   Grade
