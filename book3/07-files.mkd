@@ -1,7 +1,7 @@
 %
-﻿
+
 File
-=====
+============
 
 \index{file}
 \index{type!file}
@@ -12,11 +12,13 @@ Persistenza
 \index{persistence}
 \index{secondary memory}
 
-Finora, abbiamo imparato come scrivere programmi e comunicare le nostre intenzioni all'*unità di elaborazione centrale* usando l'esecuzione condizionale, le funzioni e le iterazioni. Abbiamo imparato come creare e utilizzare strutture di dati nella *memoria principale*. La CPU e la memoria sono i luoghi dove il nostro software lavora e funziona. È dove si forma tutto il "pensiero".  Ma se ricordate le nostre discussioni sull'architettura hardware, una volta che l'alimentazione viene spenta, qualsiasi cosa memorizzata nella CPU o nella memoria principale viene cancellata. Così fino ad ora, i nostri programmi sono stati solo fugaci esercizi divertenti per imparare Python.
+Finora, abbiamo imparato come scrivere programmi e comunicare le nostre intenzioni all'*unità di elaborazione centrale* usando l'esecuzione condizionale, le funzioni e le iterazioni. Abbiamo imparato come creare e utilizzare strutture di dati nella *memoria principale*. La CPU e la memoria sono i luoghi dove il nostro software lavora e funziona.
+È dove si forma tutto il "pensiero".  Ma se ricordate le nostre discussioni sull'architettura hardware, una volta che l'alimentazione viene spenta, qualsiasi cosa memorizzata nella CPU o nella memoria principale viene cancellata. Così fino ad ora, i nostri programmi sono stati solo fugaci esercizi divertenti per imparare Python.
 
 ![Secondary Memory](height=2.5in@../images/arch)
 
-In questo capitolo, iniziamo a lavorare con la *Memoria Secondaria* (o file). La memoria secondaria non viene cancellata quando si spegne l'alimentazione o, nel caso di un'unità flash USB, i dati che ricaviamo dai nostri programmi possono essere rimossi dal sistema e trasportati su un altro sistema.  Ci concentreremo principalmente sulla lettura e la scrittura di file di testo come quelli che creiamo in un editor di testo. Più avanti vedremo come lavorare con i file di database che sono file binari, progettati specificamente per essere letti e scritti tramite programmi di database.
+In questo capitolo, iniziamo a lavorare con la *Memoria Secondaria* (o file). La memoria secondaria non viene cancellata quando si spegne l'alimentazione o, nel caso di un'unità flash USB, i dati che ricaviamo dai nostri programmi possono essere rimossi dal sistema e trasportati su un altro sistema.  
+Ci concentreremo principalmente sulla lettura e la scrittura di file di testo come quelli che creiamo in un editor di testo. Più avanti vedremo come lavorare con i file di database che sono file binari, progettati specificamente per essere letti e scritti tramite programmi di database.
 
 Aprire i file
 -------------
@@ -66,16 +68,23 @@ Un file di testo può essere pensato come una sequenza di righe, proprio come un
 
 
 L'intero file di interazioni di posta è disponibile su
+
 [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
+
 e una versione abbreviata del file è disponibile su
+
 [www.py4e.com/code3/mbox-short.txt](http://www.py4e.com/code3/mbox-short.txt)
-Questi file sono in un formato standard per file contenenti più messaggi di posta. Le righe che iniziano con "From" separano i messaggi e le righe che iniziano con "From:" fanno parte dei messaggi. Per ulteriori informazioni sul formato mbox, consultate [en.wikipedia.org/wiki/Mbox](en.wikipedia.org/wiki/Mbox).  
+
+Questi file sono in un formato standard per file contenenti più messaggi di posta. Le righe che iniziano con "From" separano i messaggi e le righe che iniziano con "From:" fanno parte dei messaggi. Per ulteriori informazioni sul formato mbox, consultate
+
+[en.wikipedia.org/wiki/Mbox](en.wikipedia.org/wiki/Mbox).  
+
 Per suddividere il file in righe, c'è un carattere speciale che rappresenta la "fine della riga" chiamato carattere *newline*.
 
 
 \index{newline}
 
-In Python, rappresentiamo il carattere * newline * con backslash-n tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Quando guardiamo la variabile immettendo "stuff" nell'interprete, ci mostra `\n` nella stringa, ma quando usiamo` print` per mostrare la stringa, vediamo la stringa spezzata in due righe dal carattere newline.
+In Python, rappresentiamo il carattere *newline* con backslash-n tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Quando guardiamo la variabile immettendo "stuff" nell'interprete, ci mostra `\n` nella stringa, ma quando usiamo` print` per mostrare la stringa, vediamo la stringa spezzata in due righe dal carattere newline.
 
     >>> stuff = 'Hello \ nWorld!'
     >>> stuff' Ciao \ nWorld!'
@@ -84,7 +93,7 @@ In Python, rappresentiamo il carattere * newline * con backslash-n tra le costan
     >>> print (stuff) X Y
     >>> len (stuff) 3
 
-Potete anche vedere che la lunghezza della stringa `X\nY` è di * tre * caratteri perché il carattere newline conta come un singolo carattere.  Quindi, quando guardiamo le linee in un file, dobbiamo * immaginare * che ci sia uno speciale carattere invisibile chiamato newline alla fine di ogni riga che segna la fine della riga.  Quindi il carattere newline divide i caratteri del file in righe.
+Potete anche vedere che la lunghezza della stringa `X\nY` è di *tre* caratteri perché il carattere newline conta come un singolo carattere.  Quindi, quando guardiamo le linee in un file, dobbiamo *immaginare* che ci sia uno speciale carattere invisibile chiamato newline alla fine di ogni riga che segna la fine della riga.  Quindi il carattere newline divide i caratteri del file in righe.
 
 Lettura dei file
 -------------
@@ -126,7 +135,7 @@ Quando si cercano dei dati in un file, è uno molto comune leggere un file ignor
 \index{filter pattern}
 \index{pattern!filter}
 
-Ad esempio, se volessimo leggere un file e stampare solo le righe che iniziano con il prefisso "From:", potremmo usare il metodo per le stringhe stringhe * startswith * per selezionare solo le righe con il prefisso desiderato:
+Ad esempio, se volessimo leggere un file e stampare solo le righe che iniziano con il prefisso "From:", potremmo usare il metodo per le stringhe stringhe *startswith* per selezionare solo le righe con il prefisso desiderato:
 
 \VerbatimInput{../code3/search1.py}
 \begin{trinketfiles}
@@ -234,7 +243,7 @@ Vi ho detto di non sbirciare. Questa è la vostra ultima possibilità.  Cosa suc
         fhand = open (fname)
          FileNotFoundError: [Errno 2] No such file or directory : 'na na boo boo'
 
-Non ridete. Gli utenti alla fine faranno tutte le cose che possono fare per violare i programmi, di proposito o con intenzioni malevole. In effetti, un componente importante di qualsiasi team di sviluppo software è una persona o un gruppo chiamato * Quality Assurance * (o QA in breve) il cui compito è quello di fare le cose più folli possibili nel tentativo di violare il software che lo sviluppatore ha creato.
+Non ridete. Gli utenti alla fine faranno tutte le cose che possono fare per violare i programmi, di proposito o con intenzioni malevole. In effetti, un componente importante di qualsiasi team di sviluppo software è una persona o un gruppo chiamato *Quality Assurance* (o QA in breve) il cui compito è quello di fare le cose più folli possibili nel tentativo di violare il software che lo sviluppatore ha creato.
 
 \index{Quality Assurance}
 \index{QA}
@@ -382,7 +391,33 @@ Esercizi
 
     `X-DSPAM-Confidence:` **`0.8475` **
 
-Quando incontrate una riga che inizia con "X-DSPAM-Confidence:" separate la riga per estrarre il numero a virgola mobile contenuto nella riga. Contate queste righe e quindi calcolare il totale dei valori di spam confidence in queste righe. Quando raggiungete la fine del file, stampate la media dei valori di spam confidence.
-Inserite il nome del file: mbox.txt Media spam confidence : 0.894128046745 Inserisci il nome del file: mbox-short.txt Media spam confidence: 0.750718518519 Mettete alla prova il vostro file sui file `mbox.txt` e` mbox-short.txt`.  
+Quando incontrate una riga che inizia con "X-DSPAM-Confidence:" separate la riga per estrarre il numero a virgola mobile contenuto nella riga. Contate queste righe e quindi calcolare il totale dei valori di spam confidence in queste righe.
 
-**Esercizio 3:** A volte quando gli sviluppatori si annoiano o vogliono divertirsi, aggiungono un innocuo * Easter Egg * al loro programma. Modificate il programma che richiede all'utente il nome del file in modo che stampi un messaggio divertente quando l'utente digita nel nome esatto del file "na na boo boo". Il programma dovrebbe comportarsi normalmente per tutti gli altri file che esistono e non esistono. Ecco un'esecuzione di esempio del programma: python egg.py Immettere il nome del file: mbox.txt There were 1797 subject lines in mbox.txt python egg.py Immettere il nome del file: missing.tyxt File cannot be opened: missing.tyxt python egg.py Inserisci il nome del file: na na boo boo NA NA BOO BOO TO YOU - You have been punk'd!  Non vi stiamo incoraggiando a inserire degli Easter egg nei vostri programmi; questo è solo un esercizio.
+Quando raggiungete la fine del file, stampate la media dei valori di spam confidence.
+
+    Inserite il nome del file: mbox.txt
+    Media spam confidence : 0.894128046745
+
+    Inserisci il nome del file: mbox-short.txt
+    Media spam confidence: 0.750718518519
+
+Mettete alla prova il vostro file sui file `mbox.txt` e` mbox-short.txt`.  
+
+
+**Esercizio 3:** A volte quando gli sviluppatori si annoiano o vogliono divertirsi, aggiungono un innocuo *Easter Egg* al loro programma. Modificate il programma che richiede all'utente il nome del file in modo che stampi un messaggio divertente quando l'utente digita nel nome esatto del file "na na boo boo".
+
+Il programma dovrebbe comportarsi normalmente per tutti gli altri file che esistono e non esistono. Ecco un'esecuzione di esempio del programma:
+
+    python egg.py
+    Immettere il nome del file: mbox.txt
+    There were 1797 subject lines in mbox.txt
+
+    python egg.py
+    Immettere il nome del file: missing.tyxt
+    File cannot be opened: missing.tyxt
+
+    python egg.py
+    Inserisci il nome del file: na na boo boo
+    NA NA BOO BOO TO YOU - You have been punk'd!  
+
+Non vi stiamo incoraggiando a inserire degli Easter egg nei vostri programmi; questo è solo un esercizio.

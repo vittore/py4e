@@ -128,7 +128,7 @@ while index < len(fruit):
 
 Questo ciclo scorre la stringa e mostra ogni lettera su una riga da sola. La condizione del ciclo è `index <len (fruit)`, quindi quando `index` è uguale alla lunghezza della stringa, la condizione è falsa e il corpo del ciclo non viene eseguito. L'ultimo carattere a cui si accede è quello con l'indice uguale a `len (fruit) -1`, che è l'ultimo carattere nella stringa.  
 
-** Esercizio 1: Scrivete un ciclo `while` che inizi dall'ultimo carattere della stringa e proceda all'indietro fino al primo carattere della stringa, visualizzando ogni lettera su una riga separata, tranne che all'indietro.**
+**Esercizio 1:** Scrivete un ciclo `while` che inizi dall'ultimo carattere della stringa e proceda all'indietro fino al primo carattere della stringa, visualizzando ogni lettera su una riga separata, tranne che all'indietro.
 
 Un altro modo per scrivere uno scorrimento è con un ciclo `for`:
 
@@ -186,7 +186,7 @@ Se il primo indice è maggiore o uguale al secondo, il risultato è una *stringa
 
 Una stringa vuota non contiene caratteri e ha lunghezza 0, ma a parte questo è uguale a qualsiasi altra stringa.  
 
-**Esercizio 2: Dato che `fruit` è una stringa, cosa significa` fruit [:] `?**
+**Esercizio 2:** Dato che `fruit` è una stringa, cosa significa` fruit [:] `?
 
 \index{copy!slice}
 \index{slice!copy}
@@ -216,6 +216,7 @@ L'"oggetto" in questione è la stringa e l'"elemento" è il carattere che avete 
 \index{item assignment}
 \index{assignment!item}
 \index{immutability}
+
 Il motivo dell'errore è che le stringhe sono *immutabili*, quindi non è possibile modificare una stringa esistente. La cosa migliore che potete fare è creare una nuova stringa che sia una variante dell'originale:
 
 ~~~~ {.python}
@@ -253,7 +254,7 @@ print(count)
 Questo programma dimostra un altro schema di computazione chiamato *contatore*. La variabile `count` è inizializzata a 0 e poi viene incrementata ogni volta che viene trovata una `a`. Quando il ciclo termina, `count` conterrà il risultato: il numero totale di` a`.
 \index{encapsulation}
 
-**Esercizio 3: Incorpora questo codice in una funzione chiamata "count" e generalizzala in modo che accetti stringhe e lettere come argomenti.**
+**Esercizio 3:** Incorpora questo codice in una funzione chiamata "count" e generalizzala in modo che accetti stringhe e lettere come argomenti.
 
 L'operatore `in`
 ----------------------------
@@ -262,6 +263,7 @@ L'operatore `in`
 \index{operator!in}
 \index{boolean operator}
 \index{operator!boolean}
+
 La parola `in` è un operatore booleano che prende due stringhe e restituisce` True` se la prima è contenuta come sottostringa nella seconda:
 
 ~~~~ {.python}
@@ -278,6 +280,7 @@ Comparazione di stringhe
 
 \index{string!comparison}
 \index{comparison!string}
+
 Gli operatori di comparazione funzionano anche sulle stringhe. Per vedere se due stringhe sono uguali:
 
 ~~~~ {.python}
@@ -313,7 +316,8 @@ Un modo comune per risolvere questo problema è convertire le stringhe in un for
 Metodi delle `stringhe`
 ---------------------------
 
-Le stringhe sono un esempio di *oggetti* Python. Un oggetto contiene sia i dati (la stringa vera e propria) che i *metodi*, che sono essenzialmente funzioni incorporate nell'oggetto e sono disponibili per qualsiasi *istanza* dell'oggetto.  Python ha una funzione chiamata `dir` che elenca i metodi disponibili per un oggetto. La funzione `type` mostra il tipo di un oggetto e la funzione `dir` mostra i metodi disponibili.
+Le stringhe sono un esempio di *oggetti* Python.
+Un oggetto contiene sia i dati (la stringa vera e propria) che i *metodi*, che sono essenzialmente funzioni incorporate nell'oggetto e sono disponibili per qualsiasi *istanza* dell'oggetto.  Python ha una funzione chiamata `dir` che elenca i metodi disponibili per un oggetto. La funzione `type` mostra il tipo di un oggetto e la funzione `dir` mostra i metodi disponibili.
 
 ~~~~ {.python}
 >>> stuff = 'Hello world'
@@ -342,7 +346,9 @@ capitalize(...)
 
 
 
-Mentre la funzione `dir` elenca i metodi, e potete usare `help` per ottenere una semplice documentazione su un metodo, una migliore fonte di documentazione per i metodi delle stringhe potrebbe essere <https://docs.python.org/3.5/library /stdtypes.html#string-methods>.  Chiamare un *metodo* è simile a chiamare una funzione (riceve argomenti e restituisce un valore) ma la sintassi è diversa. Chiamiamo un metodo aggiungendo il nome del metodo al nome della variabile usando un punto come delimitatore.  Ad esempio, il metodo `upper` prende una stringa e restituisce una nuova stringa con tutte le lettere maiuscole:
+Mentre la funzione `dir` elenca i metodi, e potete usare `help` per ottenere una semplice documentazione su un metodo, una migliore fonte di documentazione per i metodi delle stringhe potrebbe essere <https://docs.python.org/3.5/library /stdtypes.html#string-methods>.  
+Chiamare un *metodo* è simile a chiamare una funzione (riceve argomenti e restituisce un valore) ma la sintassi è diversa. Chiamiamo un metodo aggiungendo il nome del metodo al nome della variabile usando un punto come delimitatore.  
+Ad esempio, il metodo `upper` prende una stringa e restituisce una nuova stringa con tutte le lettere maiuscole:
 \index{method}
 \index{string!method}
 
@@ -435,14 +441,21 @@ Nell'ultimo esempio, viene chiamato il metodo `lower` e quindi usiamo `startswit
 \index{count method}
 \index{method!count}
 
-**Esercizio 4: esiste un metodo per le stringhe chiamato `count` che è simile alla funzione dell'esercizio precedente.
+**Esercizio 4:** esiste un metodo per le stringhe chiamato `count` che è simile alla funzione dell'esercizio precedente.
 
-Leggete la documentazione di questo metodo su <https://docs.python.org/3.5/library/stdtypes.html#string-methods> e scrivete un'invocazione che conta il numero di volte in cui la lettera a appare nella stringa "banana".**
+Leggete la documentazione di questo metodo su <https://docs.python.org/3.5/library/stdtypes.html#string-methods> e scrivete un'invocazione che conta il numero di volte in cui la lettera a appare nella stringa "banana".
 
 Analisi delle stringhe
 ---------------
 
-Spesso, vogliamo esaminare una stringa e trovare una sottostringa. Per esempio, se ci venisse presentata una serie di linee formattate come segue: `From stephen.marquard@`*` uct.ac.za`*` Sat Jan 5 09:14:16 2008` e volessimo estrarre solo la seconda metà dell'indirizzo (ad es., `uct.ac.za`) da ogni riga, possiamo farlo usando il metodo `find` e la segmentazione delle stringhe.  In primo luogo, troveremo la posizione del simbolo chiocciola nella stringa. Quindi individuiamo la posizione del primo spazio *dopo* il simbolo chiocciola. Poi usiamo la segmentazione delle stringhe per estrarre la porzione della stringa che stiamo cercando.
+Spesso, vogliamo esaminare una stringa e trovare una sottostringa. Per esempio, se ci venisse presentata una serie di linee formattate come segue:
+
+`From stephen.marquard@uct.ac.za`
+`Sat Jan 5 09:14:16 2008`
+
+e volessimo estrarre solo la seconda metà dell'indirizzo (ad es., `uct.ac.za`) da ogni riga, possiamo farlo usando il metodo `find` e la segmentazione delle stringhe.  
+
+In primo luogo, troveremo la posizione del simbolo chiocciola nella stringa. Quindi individuiamo la posizione del primo spazio *dopo* il simbolo chiocciola. Poi usiamo la segmentazione delle stringhe per estrarre la porzione della stringa che stiamo cercando.
 
 ~~~~ {.python}
 >>> data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
@@ -460,7 +473,8 @@ uct.ac.za
 
 
 
-Usiamo una versione del metodo `find` che ci permette di specificare una posizione nella stringa in cui vogliamo che ` find` inizi a guardare. Quando dividiamo, estraiamo i caratteri da "uno oltre il simbolo chiocciola fino al carattere spazio, *ma senza includerlo*.  La documentazione per il metodo `find` è disponibile su <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.
+Usiamo una versione del metodo `find` che ci permette di specificare una posizione nella stringa in cui vogliamo che ` find` inizi a guardare. Quando dividiamo, estraiamo i caratteri da "uno oltre il simbolo chiocciola fino al carattere spazio, *ma senza includerlo*.  
+La documentazione per il metodo `find` è disponibile su <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.
 
 Operatore di formato
 ---------------
@@ -469,9 +483,11 @@ Operatore di formato
 \index{operator!format}
 
 L'operatore di *formato*, `%` ci consente di costruire stringhe, sostituendo parti di esse con i dati memorizzati nelle variabili. Se applicato a numeri interi, `%` rappresenta l'operatore modulo. Ma quando il primo operando è una stringa, `%` rappresenta l'operatore di formato.
+
 \index{format string}
 
-Il primo operando è detto *stringa di formato*, che contiene una o più *sequenze di formato* che specificano il formato del secondo operando. Il risultato è una stringa.
+Il primo operando è detto *stringa di formato*, che contiene una o più *sequenze di formato* che specificano il formato del secondo operando.
+Il risultato è una stringa.
 \index{format sequence}
 
 Ad esempio, la sequenza di formato "% d" significa che il secondo operando dovrebbe essere nel formato di numero intero (`d` significa "in base decimale"):
@@ -563,6 +579,8 @@ Un altro modo è scrivere in modo sicuro l'istruzione `if` usando lo schema del 
 
 Glossario
 --------
+
+
 contatore: una variabile utilizzata per contare qualcosa, di solito inizializzata a zero e poi incrementata.
 \index{counter}
 
@@ -619,7 +637,7 @@ Esercizi
 ---------
 
 
-**Esercizio 5:** prendete il seguente codice Python che memorizza una stringa:** `str = 'X-DSPAM-Confidence:` **`0.8475`** `'`
+**Esercizio 5:** prendete il seguente codice Python che memorizza una stringa: **`str = 'X-DSPAM-Confidence:` **`0.8475`** `'`
 
 Usate `find` e la segmentazione delle stringhe per estrarre la porzione di stringa dopo il carattere dei due punti e quindi utilizzare la funzione `float` per convertire la stringa estratta in un numero a virgola mobile.
 
