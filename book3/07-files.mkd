@@ -241,7 +241,7 @@ Vi ho detto di non sbirciare. Questa è la vostra ultima possibilità.  Cosa suc
       Traceback (chiamata più recente per ultima):
        file "search6.py", riga 2, in <module>
         fhand = open (fname)
-         FileNotFoundError: [Errno 2] No such file or directory : 'na na boo boo'
+      FileNotFoundError: [Errno 2] No such file or directory : 'na na boo boo'
 
 Non ridete. Gli utenti alla fine faranno tutte le cose che possono fare per violare i programmi, di proposito o con intenzioni malevole. In effetti, un componente importante di qualsiasi team di sviluppo software è una persona o un gruppo chiamato *Quality Assurance* (o QA in breve) il cui compito è quello di fare le cose più folli possibili nel tentativo di violare il software che lo sviluppatore ha creato.
 
@@ -369,6 +369,7 @@ Controllo qualità
 File di testo
 : una sequenza di caratteri memorizzati nella memoria permanente come un disco rigido.
 \index{text file}
+
 
 Esercizi
 ---------

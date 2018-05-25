@@ -581,55 +581,71 @@ Glossario
 --------
 
 
-contatore: una variabile utilizzata per contare qualcosa, di solito inizializzata a zero e poi incrementata.
+contatore
+: una variabile utilizzata per contare qualcosa, di solito inizializzata a zero e poi incrementata.
 \index{counter}
 
-stringa vuota: una stringa senza caratteri e con lunghezza pari a 0, rappresentata da due virgolette.
+stringa vuota
+: una stringa senza caratteri e con lunghezza pari a 0, rappresentata da due virgolette.
 \index{empty string}
 
-operatore di formato: un operatore, `%`, che riceve una stringa di formato e una tupla e genera una stringa che include gli elementi della tupla formattata come specificato dalla stringa di formato.
+operatore di formato
+: un operatore, `%`, che riceve una stringa di formato e una tupla e genera una stringa che include gli elementi della tupla formattata come specificato dalla stringa di formato.
 \index{format operator}
 \index{operator!format}
 
-sequenza di formato: una sequenza di caratteri in una stringa di formato, come `%d`, che specifica come deve essere formattato un valore.
+sequenza di formato
+: una sequenza di caratteri in una stringa di formato, come `%d`, che specifica come deve essere formattato un valore.
 \index{format sequence}
 
-stringa di formato: una stringa, utilizzata con l'operatore di formattazione, che contiene sequenze di formato.
+stringa di formato
+: una stringa, utilizzata con l'operatore di formattazione, che contiene sequenze di formato.
 \index{format string}
 
-flag: una variabile booleana utilizzata per indicare se una condizione è vera o falsa.
+flag
+: una variabile booleana utilizzata per indicare se una condizione è vera o falsa.
 \index{flag}
 
-invocazione: un'istruzione che serve per chiamare un metodo.
+invocazione
+: un'istruzione che serve per chiamare un metodo.
 \index{invocation}
 
-immutabile: la proprietà di una sequenza i cui elementi non possono essere assegnati.
+immutabile
+: la proprietà di una sequenza i cui elementi non possono essere assegnati.
 \index{immutability}
 
-indice: un valore intero utilizzato per selezionare un elemento in una sequenza, ad esempio un carattere in una stringa.
+indice
+: un valore intero utilizzato per selezionare un elemento in una sequenza, ad esempio un carattere in una stringa.
 \index{index}
 \index{}
 
-item: uno dei valori in una sequenza.
+item
+: uno dei valori in una sequenza.
 \index{item}
 
-metodo: una funzione associata a un oggetto e chiamata utilizzando la notazione punto.
+metodo
+: una funzione associata a un oggetto e chiamata utilizzando la notazione punto.
 \index{method}
 
-oggetto: Qualcosa a cui una variabile può riferirsi. Per ora, potete usare "oggetto" e "valore" in modo intercambiabile.
+oggetto
+: Qualcosa a cui una variabile può riferirsi. Per ora, potete usare "oggetto" e "valore" in modo intercambiabile.
 \index{object}
 
-ricerca: uno sistema di scorrimento che si ferma quando trova ciò che sta cercando.
+ricerca
+: uno sistema di scorrimento che si ferma quando trova ciò che sta cercando.
 \index{search pattern}
 \index{pattern!search}
 
-sequenza: un insieme ordinato; ovvero, un insieme di valori in cui ogni valore è identificato da un indice intero.
+sequenza
+: un insieme ordinato; ovvero, un insieme di valori in cui ogni valore è identificato da un indice intero.
 \index{sequence}
 
-segmento: una parte di una stringa specificata da un intervallo di indici.
+segmento
+: una parte di una stringa specificata da un intervallo di indici.
 \index{slice}
 
-traverse: per scorrere gli elementi di una sequenza, eseguendo un'operazione simile su ognuno.
+traverse
+: per scorrere gli elementi di una sequenza, eseguendo un'operazione simile su ognuno.
 \index{traversal}
 
 
