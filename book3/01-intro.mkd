@@ -8,6 +8,7 @@ Perché dovreste imparare a scrivere programmi?
 Scrivere programmi (o programmare) è un'attivitá molto creativa e gratificante. Potete scrivere programmi per molte ragioni: per guadagnarvi da vivere, per risolvere complessi problemi di analisi di dati, per divertimento o per aiutare qualcun altro a risolvere un problema. Questo libro presuppone che *tutti* abbiano bisogno di saper programmare e che, una volta appreso come programmare, sapranno cosa fare con questa nuova capacità.
 
 
+<<<<<<< HEAD
 Oggi giorno siamo circondati da computer che vanno dai portatili agli smartphone. Possiamo pensare a queste macchine come a degli "assistenti personali" che si prendono cura di molti aspetti della nostra vita. L'hardware degli elaboratori moderni è essenzialmente costruito per porci continuamente la domanda: "Cosa vorresti che faccia dopo?"
 
 ![Personal Digital Assistant](height=1.0in@../images/pda)
@@ -19,6 +20,17 @@ I nostri computer sono veloci e sono dotati di una grande quantità di memoria e
 
 Ad esempio, leggete i primi tre paragrafi di questo capitolo ed individuate la parola più comunemente usata e quante volte la stessa venga ripetuta.
 Mentre siete in grado di leggere e capire le parole in pochi secondi, contarle è piuttosto difficoltoso in quanto non è il tipo di problema da risolvere per cui la nostra mente è stata concepita. Per un computer è infatti l'opposto: leggere e capire il testo da un pezzo di carta è difficoltoso mentre contare le parole e dirvi quante volte é ripetuta la parola più usata è estramamente semplice.
+=======
+Ogni giorno siamo circondati da computer che vanno dai portatili agli smartphone. Possiamo pensare a questi computer come ad una sorta di "assistenti personali" che si prendono cura di molti aspetti della nostra vita. L'hardware degli elaboratori moderni è essenzialmente costruito per porci continuamente la domanda: "Cosa vorresti che faccia dopo?"
+
+![Personal Digital Assistant](height=1.0in@../images/pda)
+
+I programmatori hanno aggiunto all'hardware un sistema operativo e una serie di applicazioni che ha permesso di ottenereun assistente personale digitale che si è dimostrato utile e capace di aiutarci in grado di svolgere compiti diversi.
+
+I computer sono veloci e dotati di una grande quantità di memoria e potrebbero esserci estramente utili se solo conoscessimo la lingua per spiegare loro quello che vorremmo fosse "fatto dopo". Se la conoscessimo, potremmo dire al computer di svolgere compiti ripetitivi per nostro conto. È interessante tenere presente che il tipo di attività che i computer possono fare meglio sono spesso il genere di cose che noi umani troviamo più noiose e logoranti.
+
+Ad esempio leggere i primi tre paragrafi di questo capitolo ed individuare quante volte venga ripetuta la parola più comunemente usata. Mentre siete in grado di leggere e capire le parole in pochi secondi, contarle è piuttosto difficoltoso in quanto non è il tipo di problema per cui la nostra mente è stata concepita. Per un computer ad essere vero è l'opposto: leggere e capire il testo è difficoltoso mentre è molto più semplice contare le parole e indicarvi quante volte é ripetuta la parola più usata.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 ~~~~ {.python}
     python words.py
@@ -26,7 +38,11 @@ Mentre siete in grado di leggere e capire le parole in pochi secondi, contarle �
     to 16
 ~~~~
 
+<<<<<<< HEAD
 Il nostro "assistente personale per l'analisi delle informazioni" ci ha rapidamente detto che la parola "a" è stata usata sedici volte nei primi tre paragrafi di questo capitolo.
+=======
+Il nostro "assistente personal per l'analisi delle informazioni" ci ha rapidamente detto che la parola "a" è stata usata sedici volte nei primi tre paragrafi di questo capitolo.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Il fatto  che i computer siano bravi in attività in cui gli umani non lo sono é il motivo per cui è necessario che voi diventiate abili nel parlare un "linguaggio informatico". Una volta che avrete imparato questa nuova lingua, potrete delegare al vostro partner (il computer) i compiti banali, ritagliandovi più tempo per le attività per cui siete piú portati. Voi aggiungete a questa collaborazione creatività, intuizione e invettiva.
 
@@ -55,6 +71,7 @@ Le definizioni di alto livello di queste parti sono le seguenti:
 
 - La *Central Processing Unit* (o CPU) è la parte del computer che è stata costruita per essere ossessionata dalla domanda "qual è la prossima istruzione?" Se il vostro computer ha una frequenza di 3.0 Gigahertz, significa che la CPU chiederà "qual è la prossima istruzione?" tre miliardi di volte al secondo. State per imparare come parlare velocemente per stare al passo con la CPU.
 
+<<<<<<< HEAD
 - La *Memoria principale* viene utilizzata per memorizzare le informazioni di cui la CPU ha bisogno nel minore tempo possibile. La memoria principale è veloce quasi quanto la CPU ma le informazioni memorizzate si perdono allo spegnimento del computer.
 
 - La *Memoria secondaria* è utilizzata anche per memorizzare informazioni, ma è molto più lenta della memoria principale. Il vantaggio della memoria secondaria è che può conservare le informazioni anche quando il computer non viene alimentato. Esempi di memoria secondaria sono i dischi rigidi o le memoria flash (generalmente pendrive USB e lettori multimediali portatili).
@@ -62,6 +79,15 @@ Le definizioni di alto livello di queste parti sono le seguenti:
 - I *Dispositivi di Input ed Output* sono, semplicemente, il nostro schermo, la tastiera, il mouse, il microfono, gli altoparlanti, il touchpad, ecc.. in altre parole rappresentao tutti i dispositivi con cui interagiamo per comunicare con il computer.
 
 - Al giorno d'oggi la maggior parte dei computer ha anche una *Connessione di rete* per scambiare informazioni con altri computer. Possiamo pensare alla rete come ad una sorta di supporto molto lento per archiviare e recuperare dati che potrebbe non essere sempre funzionante. Quindi in un certo senso, la rete è un tipo più lento e talvolta inaffidabile di *memoria secondaria*.
+=======
+- La * Memoria principale * viene utilizzata per memorizzare le informazioni di cui la CPU ha bisogno nel minore tempo possibile. La memoria principale è veloce quasi quanto la CPU. Ma le informazioni memorizzate nella memoria principale spariscono quando il computer viene spento.
+
+- La * memoria secondaria * è utilizzata anche per memorizzare informazioni, ma è molto più lenta della memoria principale. Il vantaggio della memoria secondaria è che può conservare le informazioni anche quando il computer non viene alimentato. Esempi di memoria secondaria sono i dischi rigidi o le memoria flash (generalmente pendrive USB e lettori multimediali portatili).
+
+- I * Dispositivi di Input ed Output * sono, semplicemente, il nostro schermo, la tastiera, il mouse, il microfono, gli altoparlanti, il touchpad, ecc. Sono tutti i modi con cui interagiamo con il computer.
+
+- Al giorno d'oggi la maggior parte dei computer ha anche una *Connessione di rete* per scambiare informazioni su una rete. Possiamo pensare alla rete come a un posto molto lento per archiviare e recuperare dati, che potrebbe non essere sempre funzionante. Quindi in un certo senso, la rete è la forma più lenta e talvolta inaffidabile di *memoria secondaria*.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Mentre la maggior parte dei dettagli su come funzionano questi componenti è meglio lasciarli ai costruttori di computer, è utile conoscere un po' di terminologia in modo da poter parlare di questi diversi componenti mentre scriviamo i nostri programmi.
 
@@ -69,7 +95,12 @@ Come sviluppatori, il vostro compito è quello di utilizzare e armonizzare ciasc
 
 ![Where Are You?](height=1.75in@../images/arch2)
 
+<<<<<<< HEAD
 Dovrete essere coloro che risponderanno alla domanda posta dalla CPU: "Qual è la prossima istruzione?". Ma sarebbe molto scomodo rimpicciolirsi a 5 mm di altezza e introdursi nel computer solo per poter dare un comando per tre miliardi di volte al secondo. Piuttosto sarebbe più indicato scrivere in anticipo le vostre istruzioni. Chiamiamo *programma* queste istruzioni memorizzate e *programmazione* l'atto di scrivere queste istruzioni e fare in modo che siano corrette.
+=======
+Dovete essere coloro che rispondono alla domanda posta dalla CPU: "Qual è la prossima istruzione?".
+Ma sarebbe molto scomodo rimpicciolirvi a 5 mm di altezza e introdurvi nel computer solo per poter dare un comando per tre miliardi di volte al secondo. Piuttosto sarebbe più indicato scrivere in anticipo le vostre istruzioni. Chiamiamo *programma* queste istruzioni memorizzate e *programmazione* l'atto di scrivere queste istruzioni e fare in modo che siano corrette.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Capire la Programmazione
 -------------------------
@@ -80,9 +111,15 @@ Nel resto di questo libro, cercheremo di trasformarvi in persone esperte nell'ar
 
 In un certo senso, avrete bisogno di due abilità per diventare programmatori:
 
+<<<<<<< HEAD
 - Per prima cosa, dovrete conoscere il linguaggio di programmazione (Python) - del quale avrete bisogno di conoscere il vocabolario e la grammatica. Dovrete essere in grado di scrivere correntemente le parole in questa nuova lingua e sapere come costruire frasi "ben strutturate" in questa nuova lingua.
 
 - In secondo luogo, avrete bisogno di "raccontare una storia". Per scrivere una storia, combinerete parole e frasi allo scopo di trasmettere un'idea al lettore. Sono necessarie abilità e arte nella costruzione della storia e l'abilità nella scrittura di storie viene migliorata scrivendo e ottenendo feedback. Nella programmazione il nostro programma è la "storia" e il problema che state cercando di risolvere è "l'idea".
+=======
+- Per prima cosa, dovrete conoscere il linguaggio di programmazione (Python) - del quale avete bisogno di conoscere il vocabolario e la grammatica. Dovete essere in grado di scrivere correntemente le parole in questa nuova lingua e sapere come costruire     frasi "ben strutturate" in questa nuova lingua.
+
+- In secondo luogo, avete bisogno di "raccontare una storia". Per scrivere una storia, combinate parole e frasi allo scopo di trasmettere un'idea al lettore. Sono necessarie abilità e arte nella costruzione della storia e l'abilità nella scrittura di storie viene migliorata scrivendo e ottenendo feedback. Nella programmazione, il nostro programma è la "storia" e il problema che state cercando di risolvere è "l'idea".
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Una volta che avrete imparato un linguaggio di programmazione come Python, sarà molto più facile imparare un secondo linguaggio di programmazione come JavaScript o C++. Il nuovo linguaggio di programmazione avrà un vocabolario ed una grammatica molto diversi ma le capacità di problem-solving sono le medesime in tutti i linguaggi di programmazione.
 
@@ -99,9 +136,16 @@ Parole e frasi
 A differenza dei nostri linguaggi, il vocabolario di Python è in realtà piuttosto limitato.
 Chiamiamo questo "vocabolario" "parole riservate". Queste sono parole che hanno un significato molto speciale per Python. Quando Python incontra queste parole in un suo script, hanno un solo ed unico significato per Python. Più tardi, quando scriverete codice, avrete la possibilità di creare vostre parole che avranno un preciso significato per voi che chiameremo *variabili*. Avrete una grande libertà nello scegliere i nomi per le vostre variabili, ma non potrete usare nessuna delle parole riservate di Python come nome per una variabile.
 
+<<<<<<< HEAD
 Quando addestriamo un cane, utilizziamo parole speciali come "sit", "stay" e "fetch". Quando parlate con un cane e non utilizzate nessuna delle parole riservate, vi guarderà in faccia con uno sguardo interrogativo finché non direte una parola riservata. Ad esempio, se dite "Ogni giorno Luigi cammina almeno per almeno due chilometri", ciò che la maggior parte dei cani probabilmente sentirà sarà "bla bla bla *cammina* bla bla bla bla." Questo perché "cammina" è una parola riservata nel linguaggio del cane. In molti potrebbero suggerire che il linguaggio tra umani e gatti non abbia parole riservate^[<http://xkcd.com/231/>].
 
 Le parole riservate nella lingua utilizzata dagli umani per comunicare con Python includono le seguenti:
+=======
+Quando addestriamo un cane, utilizziamo parole speciali come "sit", "stay" e "fetch". Quando parlate con un cane e non utilizzate nessuna delle parole riservate, vi guarderà in faccia con uno sguardo interrogativo finché non direte una parola riservata. Ad esempio, se dite "Ogni giorno Luigi cammina almeno per almeno due chilometri", ciò che la maggior parte dei cani probabilmente sentirà sarà "bla
+bla bla *cammina* bla bla bla bla." Questo perché "cammina" è una parola riservata nel linguaggio del cane. In molti potrebbero suggerire che il linguaggio tra umani e gatti non abbia parole riservate^[<http://xkcd.com/231/>].
+
+Le parole riservate nella lingua utilizzata dagli umani per comunicare con Python includono:
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
     and       del       global      not       with
     as        elif      if          or        yield
@@ -119,15 +163,26 @@ A tempo debito impareremo queste parole riservate ed il loro utilizzo, ma per or
     print('Hello world!')
 ~~~~
 
+<<<<<<< HEAD
 Così abbiamo persino scritto la nostra prima frase Python sintatticamente corretta. La nostra frase inizia con la funzione *print* seguito da una stringa di testo a nostra scelta racchiusa tra virgolette singole. Le stringhe nelle istruzioni di stampa sono racchiuse tra le virgolette. Le virgolette singole e le virgolette doppie fanno la stessa cosa; la maggior parte delle persone usa le virgolette singole tranne in casi come questo in cui una virgoletta singola (che è anche un apostrofo) appare nella stringa.
+=======
+Così abbiamo persino scritto la nostra prima frase Python sintatticamente corretta.
+La nostra frase inizia con la funzione *print* seguito da una stringa di testo a nostra scelta racchiusa tra virgolette singole.
+Le stringhe nelle istruzioni di stampa sono racchiuse tra le virgolette. Le virgolette singole e le virgolette doppie fanno la stessa cosa; la maggior parte delle persone usa le virgolette singole tranne in casi come questo in cui una virgoletta singola (che è anche un apostrofo) appare nella stringa.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Conversare con Python
 ----------------------
 
 Ora che conosciamo una parola e una frase semplice in Python, abbiamo bisogno di sapere come avviare una conversazione con Python per testare le nostre nuove abilità linguistiche.
 
+<<<<<<< HEAD
 Prima di poter dialogare con Python, dovrete installare il software Python sul vostro computer e imparare ad avviarlo.
 Questo procedimento è troppo dettagliato per questo capitolo, quindi vi suggerisco di consultare [www.py4e.com] (http://www.py4e.com) dove ho indicato istruzioni dettagliate e screencast dell'installazione e dell'avvio di Python su sistemi Macintosh e Windows. Ad un certo punto, vi troverete in un terminale o una finestra di comando e dovrete digitare *python* e l'interprete Python si avvierà in modalità interattiva e apparirà qualcosa del genere:
+=======
+Prima di poter dialogare con Python, dovete installare il software Python sul vostro computer e imparare ad avviarlo.
+Questo procedimento è troppo dettagliato per questo capitolo, quindi vi suggerisco di consultare [www.py4e.com] (http://www.py4e.com) dove ho indicato istruzioni dettagliate e screencast dell'installazione e dell'avvio di Python su sistemi Macintosh e Windows. Ad un certo punto, vi troverete in un terminale o una finestra di comando e dovrete digitare * python * e l'interprete Python si avvierà in modalità interattiva e apparirà bene o male qualcosa del genere:
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 \index{modalità interattiva}
 
@@ -138,7 +193,11 @@ Questo procedimento è troppo dettagliato per questo capitolo, quindi vi suggeri
     >>>
 ~~~~
 
+<<<<<<< HEAD
 Il prompt `>>>` è il modo di chiedere dell'interprete Python "Cosa vuoi che faccia dopo? "Python è pronto per conversare con voi. Tutto quello che dovrete sapere è come parlare il linguaggio Python.
+=======
+Il prompt `>>>` è il modo di chiedere dell'interprete Python "Cosa vuoi che faccia dopo? "Python è pronto per conversare con voi. Tutto quello che dovete sapere è come parlare il linguaggio Python.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 
 Supponiamo, per esempio, che non sappiate nemmeno le più semplici parole o frasi del linguaggio Python. Potreste voler utilizzare la linea guida che usano gli astronauti quando atterrano su un pianeta lontano e cercano di parlare con gli abitanti del pianeta:
@@ -152,9 +211,15 @@ Supponiamo, per esempio, che non sappiate nemmeno le più semplici parole o fras
     >>>
 ~~~~
 
+<<<<<<< HEAD
 Non sta andando molto bene. A meno che non pensiate a qualcosa velocemente, è probabile che gli abitanti del pianeta vi pugnalino con le loro lance, vi mettano su uno spiedo, vi arrostiscano sopra un fuoco e vi mangino per cena.
 
 Fortunatamente avete portato con voi una copia di questo libro e il vostro dito è fermo in questa pagina e riprovate:
+=======
+Non sta andando molto bene. A meno che non pensiate a qualcosa velocemente, è probabile che gli abitanti del pianeta ti pugnalino con le loro lance, ti mettano su uno spiedo, ti arrostiscano sopra un fuoco e ti mangino per cena.
+
+Fortunatamente avete portato una copia di questo libro nel vostro viaggio e il vostro dito è fermo in questa stessa pagina e riprovate:
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 ~~~~ {.python}
     >>> print('Hello world!')
@@ -316,7 +381,12 @@ Ad esempio, considerate il seguente testo riguardante un clown e una macchina. G
     and the tent fell down on the clown and the car
 ~~~~
 
+<<<<<<< HEAD
 Quindi immaginate di svolgere questo compito guardando milioni di righe di testo. Francamente, è per voi più rapido imparare Python e scrivere un programma Python per contare le parole, di quanto non sia fare la scansione manuale delle parole.
+=======
+Quindi immaginate di svolgere questo compito guardando milioni di righe di testo.
+Francamente, sarebbe più veloce per voi imparare Python e scrivere un programma Python per contare le parole, di quanto non lo sarebbe fare la scansione manuale delle parole.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 
 La notizia ancora migliore è che ho già creato un semplice programma per trovare la parola più comune in un file di testo. L'ho scritto, l'ho testato e adesso ve lo sto dando per usarlo e poter risparmiare un po' di tempo.
@@ -330,19 +400,31 @@ Non avete nemmeno bisogno di conoscere il Python per utilizzare questo programma
 
 \index{programma}
 
+<<<<<<< HEAD
 Questo è un buon esempio di come Python e il linguaggio Python agiscano come intermediario tra voi (gli utenti finali) e me (lo sviluppatore).
 Python è un modo per scambiare sequenze di istruzioni utili (es. programmi) in un linguaggio comune che possa essere utilizzato da chiunque installi Python sul proprio computer.
 Nessuno di noi sta, quindi, parlando *a Python*, piuttosto comunichiamo con altri *attraverso* Python.
+=======
+Questo è un buon esempio di come Python e il linguaggio Python agiscano come intermediario tra voi (gli utenti finali) e me (lo sviluppatore). Python è un modo per scambiare sequenze di istruzioni utili (es. programmi) in un linguaggio comune che possa essere utilizzato da chiunque installi Python sul proprio computer. Quindi nessuno di noi sta parlando *a Python*, piuttosto comunichiamo con altri *attraverso* Python.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 I blocchi per costruire i programmi
 -------------------------------
 
+<<<<<<< HEAD
 Nei prossimi capitoli approfondiremo maggiormente il vocabolario, la struttura delle frasi, la struttura dei paragrafi e la storia di Python. Impareremo a conoscere le potenti funzionalità di Python e come unire queste funzionalità per creare programmi utili.
+=======
+Nei prossimi capitoli, approfondiremo maggiormente il vocabolario, la struttura delle frasi, la struttura dei paragrafi e la storia di Python. Impareremo a conoscere le potenti funzionalità di Python e come unire queste funzionalità per creare programmi utili.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Esistono alcuni modelli concettuali di basso livello che usiamo per progettare programmi. Questi costrutti non si limitano solo ai programmi Python ma sono applicabili ad ogni linguaggio di programmazione, dal linguaggio macchina fino ai linguaggi di alto livello.
 
 input
+<<<<<<< HEAD
 : Ottiene dati dal "mondo esterno". Potrebbe trattarsi della lettura di dati da un file, oppure di qualche tipo di sensore come un microfono o un GPS. Nei nostri programmi iniziali, il nostro input verrà generato dall'utente che digita i dati sulla tastiera.
+=======
+: Ottiene dati dal "mondo esterno". Potrebbe trattarsi della lettura di dati da     un file, oppure di qualche tipo di sensore come un microfono o un GPS. Nei nostri programmi iniziali, il nostro input verrà generato dall'utente che digita i dati sulla tastiera.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 output
 : Visualizza i risultati del programma su uno schermo o li memorizza in un file o magari lo scrive su un dispositivo come un altoparlante per riprodurre musica o leggere del testo.
@@ -357,7 +439,11 @@ esecuzione ripetuta
 : Esegue ripetutamente alcune istruzioni, di solito con alcune variazioni.
 
 riutilizzo
+<<<<<<< HEAD
 : Scrive una serie di istruzioni una volta e dà loro un nome per poi riutilizzare quelle istruzioni se necessarie durante l'esecuzione del programma.
+=======
+: Scrive una serie di istruzioni una volta e dà loro un nome per poi riutilizzare  quelle istruzioni se necessarie durante l'esecuzione del programma.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Sembra quasi troppo semplice per essere vero, ovviamente non è mai così semplice. È come dire che camminare è semplicemente "mettere un piede davanti all'altro". L'"arte" di scrivere un programma è comporre ed unire molte volte questi elementi di base per produrre un qualcosa che sia utile ai propri utenti.
 
@@ -394,17 +480,31 @@ I programmatori principianti spesso citano il fatto che Python non lasci spazio 
     >>>
 ~~~~
 
+<<<<<<< HEAD
 Si ottiene poco discutendo con Python: è solo uno strumento. Non ha emozioni ed è felice e pronto a servirvi ogni volta che ne abbiate bisogno. I suoi messaggi di errore sono inclementi, ma sono solo la richiesta di aiuto di Python. Ha esaminato ciò che avete digitato e semplicemente non riesce a capire cosa abbiate inserito.
 
 Python è molto più simile a un cane, che amandovi incondizionatamente e conoscendo poche parole chiave, vi guarda dolcemente (`>>>`), aspettando che voi diciate qualcosa che sia in grado di capire. Quando Python visualizza "SyntaxError: invalid syntax", sta semplicemente dicendo, scodinzolando, "Mi sembra che voi abbiate detto qualcosa ma non ne capisco il significato; ma per favore continuate a parlarmi (`>>>`)."
+=======
+Si ottiene poco discutendo con Python. È solo uno strumento. Non ha emozioni ed è felice e pronto a servirvi ogni volta che ne abbiate bisogno. I suoi messaggi di errore sono inclementi, ma sono solo la richiesta di aiuto di Python. Ha esaminato ciò che avete digitato e non riesce semplicemente a capire cosa abbiate inserito.
+
+Python è molto più simile a un cane, che amandovi incondizionatamente, conoscendo poche parole chiave, vi guarda dolcemente (`>>>`), ed aspetta che voi diciate qualcosa che sia in grado di capire.
+Quando Python visualizza "SyntaxError: invalid syntax", sta semplicemente dicendo, scodinzolando, "Mi sembra che voi abbiate detto qualcosa ma non ne capisco il significato; ma per favore continuate a parlarmi (`>>>`)."
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Man mano che i vostri programmi diventeranno più sofisticati, incontrerete tre tipologie di errore:
 
 Errori di sintassi
+<<<<<<< HEAD
 : Questi sono i primi errori che farete e i più facili da correggere. Un errore di sintassi indica che avete violato le regole di "grammatica" di Python. Python fará del suo meglio per puntare direttamente alla riga e al carattere in cui ha notato un errore. L'unico inconveniente degli errori di sintassi è che, a volte, l'errore che deve essere risolto è in realtà in una fase precedente del programma rispetto al punto in cui Python *si è accorto* di essere confuso. Quindi la riga e il carattere in cui Python indica la presenza di un errore di sintassi potrebbe essere solo il punto di partenza della vostra ricerca.
 
 Errori di logica:
 : Un errore logico si verifica quando il vostro programma ha una buona sintassi ma c'è un errore nell'ordine delle istruzioni o forse un errore nel come queste si relazionino l'una all'altra. Un buon esempio di errore di logica potrebbe essere il seguente: "bevete un sorso dalla vostra bottiglia d'acqua, mettetela nel vostro zaino, camminate fino alla biblioteca e poi rimettete il tappo alla bottiglia".
+=======
+: Questi sono i primi errori che farete ed i più facili da correggere. Un errore di sintassi indica che avete violato le regole di "grammatica" di Python. Python fará del suo meglio per puntare direttamente alla riga e al carattere in cui ha notato un errore. L'unico inconveniente degli errori di sintassi è che, a volte, l'errore che deve essere risolto è in realtà in una fase precedente del programma rispetto al punto in cui Python *si è accorto* di essere confuso. Quindi la riga e il carattere in cui Python indica la presenza di un errore di sintassi potrebbe essere solo il punto di partenza della vostra ricerca.
+
+Errori di logica:
+: Un errore logico si verifica quando il vostro programma ha una buona sintassi ma c'è un errore nell'ordine delle istruzioni o forse un errore nel come queste si relazionino l'una all'altra. Un buon esempio di errore di logica potrebbe essere il seguente: "bevete un sorso dalla vostra bottiglia d'acqua, mettetela nel vostro zaino, camminate fino alla biblioteca e poi rimettete il tappo alla bottiglia."
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 
 Errori di Semantica
@@ -417,10 +517,15 @@ Il percorso di studio
 
 Mentre avanzate attraverso il resto del libro, non abbiate paura se i concetti non sembrano amalgamarsi bene l'uno all'altro da subito. Quando stavate imparando a parlare, non è stato un problema se avete passato i primi anni producendo solo dei dolci gorgoglii. E non c'erano problemi se ci sono voluti sei mesi per passare da un vocabolario limitato a semplici frasi, se ci sono voluti 5 o 6 anni in più per passare dalle frasi ai paragrafi e ancora qualche anno per essere in grado di scrivere un avvincente racconto breve per conto vostro.
 
+<<<<<<< HEAD
 Vorremmo che possiate imparare Python molto rapidamente, per questo motivo vi insegneremo tutto nei prossimi capitoli. Sarà come imparare un nuovo linguaggio che richiede tempo per essere assorbito e compreso prima che diventi naturale.
 Ciò porterà ad una certa confusione mentre vedremo e rivedremo argomenti cercando di farvi vedere il quadro generale mentre definiamo i piccoli frammenti che lo compongono. Nonostante il libro sia scritto in modo lineare, ed anche se state seguendo un corso che proseguirà linearmente, non esitare ad essere molto non-lineari nel modo in cui vi approcciate al materiale. Sbirciate avanti e indietro e leggete con leggerezza.
 Sfogliando il materiale più avanzato senza comprenderne appieno i dettagli, potrete capire meglio il "perché?" della programmazione.
 Rivedendo il materiale precedente e anche rifacendo gli esercizi precedenti, realizzerete che in realtà avete imparato molto anche se il materiale che al momento state fissando sembra un po' imperscrutabile.
+=======
+Vorremmo che possiate imparare Python molto rapidamente, per questo motivo vi insegneremo tutto nei prossimi capitoli. Sarà come imparare un nuovo linguaggio che richiede tempo per essere assorbito e compreso prima che diventi naturale. Ciò porterà ad una certa confusione mentre vedremo e rivedremo argomenti cercando di farvi vedere il quadro generale mentre definiamo i piccoli frammenti che lo compongono. Nonostante il libro sia scritto in modo lineare, e se state seguendo un corso questo proseguirà linearmente, non esitare ad essere molto non-lineari nel modo in cui vi approcciate al materiale. Sbirciate avanti e indietro e leggete con leggerezza.
+Sfogliando il materiale più avanzato senza comprenderne appieno i dettagli, potrete capire meglio il "perché?" della programmazione. Rivedendo il materiale precedente e anche rifacendo gli esercizi precedenti, realizzerete che in realtà avete imparato molto anche se il materiale che al momento state fissando sembra un po' imperscrutabile.
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 Di solito quando state imparando il vostro primo linguaggio di programmazione, ci sono alcuni meravigliosi momenti di stupore in cui potete alzare lo sguardo dallo scalfire qualche pietra con un martello e uno scalpello e cominciare a vedere che state davvero scolpendo una bellissima scultura.
 
@@ -519,7 +624,11 @@ d) Accetta input dall'utente
 
 **Esercizio 2:** Che cos'è un programma?
 
+<<<<<<< HEAD
 **Esercizio 3:** Quale è la differenza tra un compilatore e un interprete?
+=======
+**Esercizio 3: Quale è la differenza tra un compilatore e un interprete?**
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 **Esercizio 4:** Quale delle seguenti alternative contiene "codice macchina"?
 
@@ -539,7 +648,11 @@ d) Un documento di elaborazione di testo
     >>>
 ~~~~
 
+<<<<<<< HEAD
 **Esercizio 6:** Dove viene memorizzata una variabile "x" simile a quella scritta dopo la seguente linea Python?
+=======
+** Esercizio 6: Dove viene memorizzata una variabile "x" simile a quella scritta dopo la seguente linea Python?**
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 ~~~~ {.python}
     x = 123
@@ -564,6 +677,10 @@ b) 44\
 c) x + 1\
 d) Errore perché x = x + 1 non è matematicamente possibile
 
+<<<<<<< HEAD
 **Esercizio 8:** Spiega ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
+=======
+** Esercizio 8: Spiega ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é l'equivalente nell'uomo di una "Unità di elaborazione centrale"?**
+>>>>>>> 789df1a8fcf76b251fdf89fcf490e8737773dddd
 
 **Esercizio 9:** Come si corregge un "Syntax Error"?
