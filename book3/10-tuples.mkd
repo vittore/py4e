@@ -1,7 +1,9 @@
 %
-﻿
+
+
 Tuple
-======
+=========
+
 
 Le tuple sono immutabili
 --------------------
@@ -500,9 +502,16 @@ Esercizi
 
 **Esercizio 1:** Rivedete un programma precedente in questo modo: leggete e analizzate le righe "From" ed estraete gli indirizzi dalla riga. Contate il numero di messaggi provenienti da ogni persona usando un dizionario.
 Dopo aver letto tutti i dati, visualizzate la persona con il maggior numero di occorrenze creando un elenco di tuple (count, email) dal dizionario. Quindi ordinate l'elenco in ordine inverso e visualizzate la persona che ha il maggior numero di occorrenze.
-Esempio di riga: From stephen.marquard@uct.ac.za Sat 5 Jan 09:14:16 2008
-Inserire un nome per il file: mbox-short.txt cwen@iupui.edu 5
-Immettere un nome file: mbox.txt zqian@umich.edu 195
+
+~~~~
+Esempio di riga:
+From stephen.marquard@uct.ac.za Sat 5 Jan 09:14:16 2008
+Inserire un nome per il file: mbox-short.txt
+cwen@iupui.edu 5
+
+Immettere un nome file: mbox.txt
+zqian@umich.edu 195
+~~~~
 
 **Esercizio 2:** Questo programma conta la distribuzione delle ore del giorno per ciascuno dei messaggi. Potete estrarre l'ora dalla riga "From" trovando la stringa dell'orario e quindi suddividendo quella stringa usando il carattere dei due punti. Dopo aver accumulato i conteggi per ogni orario, visualizzarli, uno per riga, ordinati per ora come mostrato di seguito.
 
