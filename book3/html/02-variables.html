@@ -1,83 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="http://thisisdallas.github.io/Simple-Grid/simpleGrid.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Untitled</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="http://thisisdallas.github.io/Simple-Grid/simpleGrid.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-<h1 id="variables-expressions-and-statements">Variables, expressions, and statements</h1>
-<h2 id="values-and-types">Values and types</h2>
-<p>  </p>
-<p>A <em>value</em> is one of the basic things a program works with, like a letter or a number. The values we have seen so far are <code>1</code>, <code>2</code>, and &quot;Hello, World!&quot;</p>
-<p>These values belong to different <em>types</em>: <code>2</code> is an integer, and &quot;Hello, World!&quot; is a <em>string</em>, so called because it contains a &quot;string&quot; of letters. You (and the interpreter) can identify strings because they are enclosed in quotation marks.</p>
-<p></p>
-<p>The <code>print</code> statement also works for integers. We use the <code>python</code> command to start the interpreter.</p>
+<h1 id="variabili-espressioni-ed-istruzioni">Variabili, espressioni ed istruzioni</h1>
+<h2 id="valori-e-tipi">Valori e tipi</h2>
+<p>   Un <em>valore</em> è uno degli elementi basilari che permettono ad un programma di funzionare, come una lettera o un numero. I valori che abbiamo visto finora sono <code>1</code>, <code>2</code> e “Hello, World!”. Questi valori appartengono a diversi <em>tipi</em>: <code>2</code> è un numero intero e “Hello, World!”è una <em>stringa</em>, così chiamata perché contiene una “stringa” di lettere. Voi (e l’interprete) potete identificare le stringhe perché sono racchiuse tra virgolette.  L’istruzione <code>print</code> funziona anche con i numeri interi. Tramite il comando <code>python</code> è possibile avviare l’interprete.</p>
 <pre class="python"><code>python
 &gt;&gt;&gt; print(4)
 4</code></pre>
-<p>If you are not sure what type a value has, the interpreter can tell you.</p>
+<p>Se non siete sicuri a quale tipo appartenga uno specifico valore, potrete consultare l’interprete.</p>
 <pre class="python trinket" height="160"><code>&gt;&gt;&gt; type(&#39;Hello, World!&#39;)
 &lt;class &#39;str&#39;&gt;
 &gt;&gt;&gt; type(17)
 &lt;class &#39;int&#39;&gt;</code></pre>
-<p>Not surprisingly, strings belong to the type <code>str</code> and integers belong to the type <code>int</code>. Less obviously, numbers with a decimal point belong to a type called <code>float</code>, because these numbers are represented in a format called <em>floating point</em>.</p>
-<p>      </p>
+<p>Non c’è da sorprendersi se le stringhe appartengono al tipo <code>str</code> e i numeri interi appartengono al tipo <code>int</code>. È meno ovvio che i numeri con un punto decimale appartengano al tipo chiamato <code>float</code>, ciò è dovuto al fatto che questi numeri sono rappresentati in un formato chiamato a <em>virgola mobile</em>.       </p>
 <pre class="python trinket" height="120"><code>&gt;&gt;&gt; type(3.2)
 &lt;class &#39;float&#39;&gt;</code></pre>
-<p>What about values like &quot;17&quot; and &quot;3.2&quot;? They look like numbers, but they are in quotation marks like strings.</p>
-<p></p>
+<p>Che dire di valori come “17” e “3.2”? Sembrano numeri, ma sono inseriti tra virgolette come se fossero stringhe. </p>
 <pre class="python trinket" height="160"><code>&gt;&gt;&gt; type(&#39;17&#39;)
 &lt;class &#39;str&#39;&gt;
 &gt;&gt;&gt; type(&#39;3.2&#39;)
 &lt;class &#39;str&#39;&gt;</code></pre>
-<p>They're strings.</p>
-<p>When you type a large integer, you might be tempted to use commas between groups of three digits, as in <code>1,000,000</code>. This is not a legal integer in Python, but it is legal:</p>
+<p>In realtà sono stringhe. Quando si digita un numero intero di grandi dimensioni, si potrebbe essere tentati di utilizzare le virgole tra gruppi di tre cifre, come “1,000,000”, un numero intero consentito in Python, anche se sembra scritto correttamente:</p>
 <pre class="python trinket" height="120"><code>&gt;&gt;&gt; print(1,000,000)
 1 0 0</code></pre>
-<p>Well, that's not what we expected at all! Python interprets <code>1,000,000</code> as a comma-separated sequence of integers, which it prints with spaces between.</p>
-<p>  </p>
-<p>This is the first example we have seen of a semantic error: the code runs without producing an error message, but it doesn't do the &quot;right&quot; thing.</p>
-<h2 id="variables">Variables</h2>
-<p>  </p>
-<p>One of the most powerful features of a programming language is the ability to manipulate <em>variables</em>. A variable is a name that refers to a value.</p>
-<p>An <em>assignment statement</em> creates new variables and gives them values:</p>
+<p>Beh, non è per niente quello che ci aspettavamo! Python interpreta <code>1,000,000</code> come se fosse una sequenza di numeri interi separati da virgole, che visualizza inserendo degli spazi in corrispondenza delle virgole.    Questo è il primo esempio che vediamo di errore semantico: il codice viene eseguito senza visualizzare un messaggio di errore, ma non fa l’operazione per la quale pensavamo di averlo progettato.</p>
+<h2 id="variabili">Variabili</h2>
+<p>   Una delle più potenti funzionalità di un linguaggio di programmazione è la capacità di manipolare delle <em>variabili</em>. Una variabile è un nome che si riferisce ad un valore. Una <em>istruzione di assegnazione</em> ha la capacità di creare nuove variabili ed assegnare loro un valore:</p>
 <pre class="python"><code>&gt;&gt;&gt; message = &#39;And now for something completely different&#39;
 &gt;&gt;&gt; n = 17
 &gt;&gt;&gt; pi = 3.1415926535897931</code></pre>
-<p>This example makes three assignments. The first assigns a string to a new variable named <code>message</code>; the second assigns the integer <code>17</code> to <code>n</code>; the third assigns the (approximate) value of <span class="math inline"><em>π</em></span> to <code>pi</code>.</p>
-<p>To display the value of a variable, you can use a print statement:</p>
+<p>In questo esempio vengono fatte tre assegnazioni. La prima assegna una stringa ad una nuova variabile chiamata <code>message</code>; la seconda assegna il numero intero <code>17</code> alla variabile <code>n</code>; la terza assegna il valore (approssimativo) di <span class="math inline"><em>π</em></span> a <code>pi</code>. Per visualizzare il valore di una variabile, è possibile usare l’istruzione print:</p>
 <pre class="python"><code>&gt;&gt;&gt; print(n)
 17
 &gt;&gt;&gt; print(pi)
 3.141592653589793</code></pre>
-<p>The type of a variable is the type of the value it refers to.</p>
+<p>Il tipo di una variabile è il tipo di valore a cui questa si riferisce.</p>
 <pre class="python"><code>&gt;&gt;&gt; type(message)
 &lt;class &#39;str&#39;&gt;
 &gt;&gt;&gt; type(n)
 &lt;class &#39;int&#39;&gt;
 &gt;&gt;&gt; type(pi)
 &lt;class &#39;float&#39;&gt;</code></pre>
-<h2 id="variable-names-and-keywords">Variable names and keywords</h2>
-<p></p>
-<p>Programmers generally choose names for their variables that are meaningful and document what the variable is used for.</p>
-<p>Variable names can be arbitrarily long. They can contain both letters and numbers, but they cannot start with a number. It is legal to use uppercase letters, but it is a good idea to begin variable names with a lowercase letter (you'll see why later).</p>
-<p>The underscore character (<code>_</code>) can appear in a name. It is often used in names with multiple words, such as <code>my_name</code> or <code>airspeed_of_unladen_swallow</code>. Variable names can start with an underscore character, but we generally avoid doing this unless we are writing library code for others to use.</p>
-<p></p>
-<p>If you give a variable an illegal name, you get a syntax error:</p>
+<h2 id="nomi-delle-variabili-e-parole-chiavi">Nomi delle variabili e parole chiavi</h2>
+<p> In genere i programmatori scelgono nomi per le loro variabili che siano significativi e documentino l’utilizzo della variabile. I nomi delle variabili hanno una lunghezza arbitraria. Possono contenere sia lettere sia numeri, ma non possono iniziare con un numero. È possibile utilizzare lettere maiuscole, ma è preferibile iniziare i nomi delle variabili con una lettera minuscola (in seguito ne vedremo il motivo). Il carattere underscore (<code>_</code>) può apparire nel nome di una variabile. Questo carattere è spesso utilizzato in nomi composti da più parole, come <code>my_name</code> o <code>airspeed_of_unladen_swallow</code>. I nomi delle variabili possono iniziare con il carattere underscore, ma generalmente evitiamo di farlo a meno che non stiamo scrivendo il codice di librerie che verranno utilizzate da altri.  Se assegnate ad una variabile un nome non valido, otterrete un errore di sintassi:</p>
 <pre class="python trinket" height="450"><code>&gt;&gt;&gt; 76trombones = &#39;big parade&#39;
 SyntaxError: invalid syntax
 &gt;&gt;&gt; more@ = 1000000
 SyntaxError: invalid syntax
 &gt;&gt;&gt; class = &#39;Advanced Theoretical Zymurgy&#39;
 SyntaxError: invalid syntax</code></pre>
-<p><code>76trombones</code> is illegal because it begins with a number. <code>more@</code> is illegal because it contains an illegal character, <code>@</code>. But what's wrong with <code>class</code>?</p>
-<p>It turns out that <code>class</code> is one of Python's <em>keywords</em>. The interpreter uses keywords to recognize the structure of the program, and they cannot be used as variable names.</p>
-<p></p>
-<p>Python reserves 33 keywords:</p>
+<p>Il nome <code>76trombones</code> non è valido perché inizia con un numero, <code>more@</code>, invece, non è valido perché contiene il carattere non ammesso ‘@’. Ma cosa c’è di errato in <code>class</code>? Risulta che <code>class</code> è una delle <em>parole riservate</em> di Python. L’interprete utilizza le parole chiave per riconoscere la struttura del programma perciò non possono essere utilizzate come nomi di variabili.  Python si riserva 33 parole chiave:</p>
 <pre><code>and       del       from      None      True
 as        elif      global    nonlocal  try
 assert    else      if        not       while
@@ -85,81 +73,64 @@ break     except    import    or        with
 class     False     in        pass      yield
 continue  finally   is        raise
 def       for       lambda    return</code></pre>
-<p>You might want to keep this list handy. If the interpreter complains about one of your variable names and you don't know why, see if it is on this list.</p>
-<h2 id="statements">Statements</h2>
-<p>A <em>statement</em> is a unit of code that the Python interpreter can execute. We have seen two kinds of statements: print being an expression statement and assignment.</p>
-<p>  </p>
-<p>When you type a statement in interactive mode, the interpreter executes it and displays the result, if there is one.</p>
-<p>A script usually contains a sequence of statements. If there is more than one statement, the results appear one at a time as the statements execute.</p>
-<p>For example, the script</p>
+<p>E’ consigliabile tenere questo elenco a portata di mano. Se l’interprete si lamenta del nome di una delle vostre variabili e non ne capite il motivo, verificate se questa sia presente nella lista precedente.</p>
+<h2 id="istruzioni">Istruzioni</h2>
+<p>Una <em>istruzione</em> è un’unità di codice che può essere eseguita dall’interprete di Python. Abbiamo visto due tipi di istruzioni: Print è istruzione espressione e assegnazione.    Quando si digita un’istruzione in modalità interattiva, l’interprete la esegue e nel caso esista ne visualizza il risultato. Generalmente uno script contiene una sequenza di istruzioni. Se c’è più di una istruzione i risultati vengono visualizzati uno alla volta mano a mano che le istruzioni vengono eseguite. Ad esempio:</p>
 <pre class="python"><code>print(1)
 x = 2
 print(x)</code></pre>
-<p>produces the output</p>
+<p>produce l’output</p>
 <pre><code>1
 2</code></pre>
-<p>The assignment statement produces no output.</p>
-<h2 id="operators-and-operands">Operators and operands</h2>
-<p>   </p>
-<p><em>Operators</em> are special symbols that represent computations like addition and multiplication. The values the operator is applied to are called <em>operands</em>.</p>
-<p>The operators <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>**</code> perform addition, subtraction, multiplication, division, and exponentiation, as in the following examples:</p>
+<p>Le istruzioni di assegnazione non producono output.</p>
+<h2 id="operatori-e-operandi">Operatori e operandi</h2>
+<p>    Gli <em>operatori</em> sono simboli speciali che rappresentano calcoli come ad esempio l’addizione e la moltiplicazione. I valori a cui l’operatore è applicato sono chiamati <em>operandi</em>. Gli operatori <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, e <code>**</code> eseguono rispettivamente le operazioni di addizione, sottrazione, moltiplicazione, divisione, e l’elevamento a potenza, come illustrato negli esempi seguenti:</p>
 <pre class="python"><code>20+32   hour-1   hour*60+minute   minute/60   5**2   (5+9)*(15-7)</code></pre>
-<p>There has been a change in the division operator between Python 2.x and Python 3.x. In Python 3.x, the result of this division is a floating point result:</p>
+<p>C’è stato un cambiamento nell’operatore della divisione tra Python 2.x e Python 3.x: in Python 3.x, il risultato di questa divisione viene rappresentato in virgola mobile:</p>
 <pre class="python trinket" height="160"><code>&gt;&gt;&gt; minute = 59
 &gt;&gt;&gt; minute/60
 0.9833333333333333</code></pre>
-<p>The division operator in Python 2.0 would divide two integers and truncate the result to an integer:</p>
+<p>L’operatore di divisione in Python 2.0 avrebbe diviso due numeri interi e avrebbe troncato il risultato restituendo un numero intero:</p>
 <pre class="python"><code>&gt;&gt;&gt; minute = 59
 &gt;&gt;&gt; minute/60
 0</code></pre>
-<p>To obtain the same answer in Python 3.0 use floored ( // integer) division.</p>
+<p>Per ottenere la stessa risposta in Python 3.0, bisogna utilizzare la divisione intera (// intero).</p>
 <pre class="python trinket" height="160"><code>&gt;&gt;&gt; minute = 59
 &gt;&gt;&gt; minute//60
 0</code></pre>
-<p>In Python 3.0 integer division functions much more as you would expect if you entered the expression on a calculator.</p>
-<p>   </p>
-<h2 id="expressions">Expressions</h2>
-<p>An <em>expression</em> is a combination of values, variables, and operators. A value all by itself is considered an expression, and so is a variable, so the following are all legal expressions (assuming that the variable <code>x</code> has been assigned a value):</p>
-<p> </p>
+<p>In Python 3.0 la divisione integer funziona molto di più come ci si aspetterebbe se si inserisse l’espressione su una calcolatrice.    </p>
+<h2 id="espressioni">Espressioni</h2>
+<p>Un’<em>espressione</em> è una combinazione di valori, variabili e operatori. Un valore da solo è considerato un’espressione, come lo è una variabile, pertanto le seguenti sono tutte espressioni corrette (posto che sia stato assegnato un valore alla variabile <code>x</code>)  </p>
 <pre class="python"><code>17
 x
 x + 17</code></pre>
-<p>If you type an expression in interactive mode, the interpreter <em>evaluates</em> it and displays the result:</p>
+<p>Se si digita un’espressione in modalità interattiva, l’interprete la <em>calcola</em> e ne visualizza il risultato:</p>
 <pre class="python"><code>&gt;&gt;&gt; 1 + 1
 2</code></pre>
-<p>But in a script, an expression all by itself doesn't do anything! This is a common source of confusion for beginners.</p>
-<p>Exercise 1: Type the following statements in the Python interpreter to see what they do:</p>
+<p>Ma in uno script, un’espressione da sola non fa nulla! Questa è una frequente fonte di confusione per i principianti.</p>
+<p><strong>Esercizio 1:</strong> Digitare le seguenti istruzioni nell’interprete Python per osservare il loro comportamento:</p>
 <pre class="python"><code>5
 x = 5
 x + 1</code></pre>
-<h2 id="order-of-operations">Order of operations</h2>
-<p>  </p>
-<p>When more than one operator appears in an expression, the order of evaluation depends on the <em>rules of precedence</em>. For mathematical operators, Python follows mathematical convention. The acronym <em>PEMDAS</em> is a useful way to remember the rules:</p>
-<p></p>
+<h2 id="ordine-delle-operazioni">Ordine delle operazioni</h2>
+<p>   Quando in un’espressione appare più di un operatore, l’ordine di calcolo dipende dalle <em>regole di precedenza</em>. Per quanto riguarda gli operatori matematici, Python segue le convenzioni matematiche. L’acronimo * PEMDAS * è un modo utile per ricordare le regole: </p>
 <ul>
-<li><p><em>P</em>arentheses have the highest precedence and can be used to force an expression to evaluate in the order you want. Since expressions in parentheses are evaluated first, <code>2 * (3-1)</code> is 4, and <code>(1+1)**(5-2)</code> is 8. You can also use parentheses to make an expression easier to read, as in <code>(minute * 100) / 60</code>, even if it doesn't change the result.</p></li>
-<li><p><em>E</em>xponentiation has the next highest precedence, so <code>2**1+1</code> is 3, not 4, and <code>3*1**3</code> is 3, not 27.</p></li>
-<li><p><em>M</em>ultiplication and <em>D</em>ivision have the same precedence, which is higher than <em>A</em>ddition and <em>S</em>ubtraction, which also have the same precedence. So <code>2*3-1</code> is 5, not 4, and <code>6+4/2</code> is 8.0, not 5.</p></li>
-<li><p>Operators with the same precedence are evaluated from left to right. So the expression <code>5-3-1</code> is 1, not 3, because the <code>5-3</code> happens first and then <code>1</code> is subtracted from <code>2</code>.</p></li>
+<li><em>P</em>arentesi hanno la precedenza più alta e possono essere utilizzate per costringere il computer a svolgere un’espressione nell’ordine desiderato. Poiché le espressioni tra parentesi vengono valutate per prime, <code>2 * (3-1)</code> è 4, e <code>(1 + 1) ** (5-2)</code> è 8. Potete anche utilizzare le parentesi per rendere l’espressione più leggibile, come in <code>(minuto * 100) / 60</code>, sebbene ciò non cambi il risultato.</li>
+<li>L’<em>E</em>levamento a potenza ha il livello di precedenza immediatamente successivo, pertanto <code>2 ** 1 + 1</code> è 3, non 4, e<code>3 * 1 ** 3</code> è 3, non 27.</li>
+<li>Le <em>M</em>oltiplicazioni e le <em>D</em>ivisioni hanno la stessa precedenza, superiore alle <em>A</em>ddizioni e alle <em>S</em>ottrazioni, che hanno lo stesso livello di precedenza. Quindi <code>2 * 3-1</code> è 5, non 4, e<code>6 + 4 / 2</code> è 8.0, non 5.</li>
+<li>Gli operatori con la stessa precedenza vengono calcolati da sinistra a destra. Quindi l’espressione <code>5-3-1</code> ha come risultato 1 e non 3, perché <code>5-3</code> viene svolta per prima e solo dopo viene sottratto <code>1</code> da <code>2</code>. In caso di dubbio, usate sempre le parentesi nelle vostre espressioni, per essere sicuri che i calcoli siano eseguiti nell’ordine voluto.</li>
 </ul>
-<p>When in doubt, always put parentheses in your expressions to make sure the computations are performed in the order you intend.</p>
-<h2 id="modulus-operator">Modulus operator</h2>
-<p> </p>
-<p>The <em>modulus operator</em> works on integers and yields the remainder when the first operand is divided by the second. In Python, the modulus operator is a percent sign (<code>%</code>). The syntax is the same as for other operators:</p>
+<h2 id="operatore-modulo">Operatore modulo</h2>
+<p>  L’operatore <em>modulo</em> viene applicato a numeri interi e produce il resto quando il primo operando viene diviso per il secondo. In Python, l’operatore modulo è il carattere percentuale (<code>%</code>). La sintassi è la stessa degli altri operatori:</p>
 <pre class="python trinket" height="240"><code>&gt;&gt;&gt; quotient = 7 // 3
 &gt;&gt;&gt; print(quotient)
 2
 &gt;&gt;&gt; remainder = 7 % 3
 &gt;&gt;&gt; print(remainder)
 1</code></pre>
-<p>So 7 divided by 3 is 2 with 1 left over.</p>
-<p>The modulus operator turns out to be surprisingly useful. For example, you can check whether one number is divisible by another: if <code>x % y</code> is zero, then <code>x</code> is divisible by <code>y</code>.</p>
-<p></p>
-<p>You can also extract the right-most digit or digits from a number. For example, <code>x % 10</code> yields the right-most digit of <code>x</code> (in base 10). Similarly, <code>x % 100</code> yields the last two digits.</p>
-<h2 id="string-operations">String operations</h2>
-<p> </p>
-<p>The <code>+</code> operator works with strings, but it is not addition in the mathematical sense. Instead it performs <em>concatenation</em>, which means joining the strings by linking them end to end. For example:</p>
-<p></p>
+<p>Quindi 7 diviso per 3 fa 2 con il resto di 1. L’operatore modulo si può rivelare sorprendentemente utile. Per esempio, è possibile verificare se un numero è divisibile per un altro: se <code>x%y</code> fa zero, allora <code>x</code> è divisibile per <code>y</code>.  È inoltre possibile ricavare da un numero quale sia il valore della cifra o delle cifre più a destra. Per esempio, <code>x % 10</code> restituisce la cifra più a destra di <code>x</code> (in base 10). in modo simile, <code>x% 100</code> restituisce le ultime due cifre.</p>
+<h2 id="operazioni-con-le-stringhe">Operazioni con le stringhe</h2>
+<p>  L’operatore <code>+</code> opera con le stringhe, ma non è un’addizione in senso strettamente matematico. Esegue invece <em>concatenazione</em>, che significa unire le stringhe collegandole da un capo all’altro. Per esempio: </p>
 <pre class="python"><code>&gt;&gt;&gt; first = 10
 &gt;&gt;&gt; second = 15
 &gt;&gt;&gt; print(first+second)
@@ -168,25 +139,24 @@ x + 1</code></pre>
 &gt;&gt;&gt; second = &#39;150&#39;
 &gt;&gt;&gt; print(first + second)
 100150</code></pre>
-<p>The output of this program is <code>100150</code>.</p>
-<h2 id="asking-the-user-for-input">Asking the user for input</h2>
-<p></p>
-<p>Sometimes we would like to take the value for a variable from the user via their keyboard. Python provides a built-in function called <code>input</code> that gets input from the keyboard<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. When this function is called, the program stops and waits for the user to type something. When the user presses <code>Return</code> or <code>Enter</code>, the program resumes and <code>input</code> returns what the user typed as a string.</p>
-<p></p>
+<p>L’output di questo programma è <code>100150</code>. L’operatore <code>*</code> lavora anche con le stringhe moltiplicando il contenuto di una stringa per un numero intero. Per esempio:</p>
+<pre class="python"><code>&gt;&gt;&gt; first = &#39;Test &#39;
+&gt;&gt;&gt; second = 3
+&gt;&gt;&gt; print(first * second)
+Test Test Test</code></pre>
+<h2 id="chiedere-un-valore-in-input-allutente">Chiedere un valore in input all’utente</h2>
+<p> A volte potrebbe essere necessario richiedere all’utente di inserire il valore di una variabile. Python fornisce una funzione integrata chiamata <code>input</code> che riceve input dalla tastiera<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Quando si utilizza questa funzione il programma si arresta in attesa che l’utente digiti qualcosa. Quando l’utente preme <code>Invio</code> o <code>Enter</code>, l’esecuzione del programma riprende e <code>input</code> restituisce ciò che l’utente ha digitato come stringa. </p>
 <pre class="python"><code>&gt;&gt;&gt; inp = input()
 Some silly stuff
 &gt;&gt;&gt; print(inp)
 Some silly stuff</code></pre>
-<p>Before getting input from the user, it is a good idea to print a prompt telling the user what to input. You can pass a string to <code>input</code> to be displayed to the user before pausing for input:</p>
-<p></p>
+<p>Prima di ricevere input dall’utente, è una buona idea visualizzare un prompt che informa l’utente su cosa inserire. È possibile fornire una stringa alla funzione <code>input</code> affinché venga visualizzata dall’utente prima della pausa in attesa dell’input: </p>
 <pre class="python"><code>&gt;&gt;&gt; name = input(&#39;What is your name?\n&#39;)
 What is your name?
 Chuck
 &gt;&gt;&gt; print(name)
 Chuck</code></pre>
-<p>The sequence <code>\n</code> at the end of the prompt represents a <em>newline</em>, which is a special character that causes a line break. That's why the user's input appears below the prompt.</p>
-<p></p>
-<p>If you expect the user to type an integer, you can try to convert the return value to <code>int</code> using the <code>int()</code> function:</p>
+<p>La sequenza <code>\n</code> alla fine del prompt rappresenta un <em>a capo</em>, che è un carattere speciale che causa l’interruzione della linea. Ecco perché l’input dell’utente appare sotto il prompt.  Se vi aspettate che l’utente debba digitare un intero, è possibile provare a convertire il valore restituito in <code>int</code> usando la funzione <code>int()</code>.</p>
 <pre class="python"><code>&gt;&gt;&gt; prompt = &#39;What...is the airspeed velocity of an unladen swallow?\n&#39;
 &gt;&gt;&gt; speed = input(prompt)
 What...is the airspeed velocity of an unladen swallow?
@@ -195,32 +165,26 @@ What...is the airspeed velocity of an unladen swallow?
 17
 &gt;&gt;&gt; int(speed) + 5
 22</code></pre>
-<p>But if the user types something other than a string of digits, you get an error:</p>
+<p>Ma se l’utente digita qualcosa di diverso da una stringa di cifre, viene visualizzato un errore:</p>
 <pre class="python"><code>&gt;&gt;&gt; speed = input(prompt)
 What...is the airspeed velocity of an unladen swallow?
 What do you mean, an African or a European swallow?
 &gt;&gt;&gt; int(speed)
 ValueError: invalid literal for int() with base 10:</code></pre>
-<p>We will see how to handle this kind of error later.</p>
-<p> </p>
-<h2 id="comments">Comments</h2>
-<p></p>
-<p>As programs get bigger and more complicated, they get more difficult to read. Formal languages are dense, and it is often difficult to look at a piece of code and figure out what it is doing, or why.</p>
-<p>For this reason, it is a good idea to add notes to your programs to explain in natural language what the program is doing. These notes are called <em>comments</em>, and in Python they start with the <code>#</code> symbol:</p>
+<p>Vedremo in seguito come gestire questo tipo di errore.  </p>
+<h2 id="commenti">Commenti</h2>
+<p> Man mano che i programmi diventano più grandi e complicati, questi diventano più difficili da leggere. I linguaggi formali sono condensati ed è spesso difficile esaminare un pezzo di codice e capire il suo funzionamento o la sua utilità. Per questo motivo, è una buona idea aggiungere alcune note ai vostri programmi per spiegare in linguaggio naturale cosa stia facendo il programma. Queste note sono chiamate <em>commenti</em>, e in Python iniziano con il simbolo <code>#</code>:</p>
 <pre class="python"><code># compute the percentage of the hour that has elapsed
 percentage = (minute * 100) / 60</code></pre>
-<p>In this case, the comment appears on a line by itself. You can also put comments at the end of a line:</p>
+<p>In questo caso, il commento appare da solo su una riga. Potete anche inserire commenti alla fine di una riga:</p>
 <pre class="python"><code>percentage = (minute * 100) / 60     # percentage of an hour</code></pre>
-<p>Everything from the <code>\#</code> to the end of the line is ignored; it has no effect on the program.</p>
-<p>Comments are most useful when they document non-obvious features of the code. It is reasonable to assume that the reader can figure out <em>what</em> the code does; it is much more useful to explain <em>why</em>.</p>
-<p>This comment is redundant with the code and useless:</p>
+<p>Tutto ciò che è compreso tra “#” e la fine della riga viene ignorato e non ha alcun effetto sul programma. I commenti sono ancor più utili quando documentano funzionalità del codice non così evidenti. Anche se è ragionevole presumere che chi legge il codice possa capire <em>cosa</em> questo faccia, è molto più utile spiegarne il <em>perché</em>. Questo commento al codice è superfluo ed inutile:</p>
 <pre class="python"><code>v = 5     # assign 5 to v</code></pre>
-<p>This comment contains useful information that is not in the code:</p>
+<p>Questo commento, invece, contiene informazioni utili che non sono comprese nel codice:</p>
 <pre class="python"><code>v = 5     # velocity in meters/second.</code></pre>
-<p>Good variable names can reduce the need for comments, but long names can make complex expressions hard to read, so there is a trade-off.</p>
-<h2 id="choosing-mnemonic-variable-names">Choosing mnemonic variable names</h2>
-<p></p>
-<p>As long as you follow the simple rules of variable naming, and avoid reserved words, you have a lot of choice when you name your variables. In the beginning, this choice can be confusing both when you read a program and when you write your own programs. For example, the following three programs are identical in terms of what they accomplish, but very different when you read them and try to understand them.</p>
+<p>Assegnare nomi adeguati alle variabili può ridurre la necessità di commenti, ma i nomi lunghi possono rendere difficili da leggere le espressioni complesse, pertanto esiste un compromesso.</p>
+<h2 id="scegliere-nomi-mnemonici-delle-variabili">Scegliere nomi mnemonici delle variabili</h2>
+<p> Finché si seguono le semplici regole di denominazione delle variabili e si evitano le parole riservate, avrete una vasta scelta nel nominare le vostre variabili. All’inizio questa scelta può essere fonte di confusione sia quando leggete un programma sia quando scrivete i vostri programmi. Ad esempio, i seguenti tre programmi sono identici in termini di ciò che fanno, ma molto diversi quando li leggete e provate a capirne il significato.</p>
 <pre class="python"><code>a = 35.0
 b = 12.50
 c = a * b
@@ -233,29 +197,17 @@ print(pay)</code></pre>
 x1q3z9afd = 12.50
 x1q3p9afd = x1q3z9ahd * x1q3z9afd
 print(x1q3p9afd)</code></pre>
-<p>The Python interpreter sees all three of these programs as <em>exactly the same</em> but humans see and understand these programs quite differently. Humans will most quickly understand the <em>intent</em> of the second program because the programmer has chosen variable names that reflect their intent regarding what data will be stored in each variable.</p>
-<p>We call these wisely chosen variable names &quot;mnemonic variable names&quot;. The word <em>mnemonic</em><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> means &quot;memory aid&quot;. We choose mnemonic variable names to help us remember why we created the variable in the first place.</p>
-<p>While this all sounds great, and it is a very good idea to use mnemonic variable names, mnemonic variable names can get in the way of a beginning programmer's ability to parse and understand code. This is because beginning programmers have not yet memorized the reserved words (there are only 33 of them) and sometimes variables with names that are too descriptive start to look like part of the language and not just well-chosen variable names.</p>
-<p>Take a quick look at the following Python sample code which loops through some data. We will cover loops soon, but for now try to just puzzle through what this means:</p>
+<p>L’interprete Python legge tutti e tre questi programmi <em>esattamente allo stesso modo</em> mentre gli umani vedono e comprendono questi programmi in modo abbastanza diverso. Gli umani capiranno velocemente lo <em>scopo</em> del secondo programma poiché lo sviluppatore ha scelto i nomi delle variabili pensando a quali dati saranno memorizzati in ciascuna variabile. Chiamiamo questi nomi di variabili così saggiamente scelti “nomi mnemonici delle variabili”. La parola <em>mnemonico</em><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> significa “aiuto per la memoria”. Scegliamo nomi mnemonici per le variabili principalmente per aiutarci a ricordare il perché le abbiamo create. Mentre tutto ciò sembra grandioso, i nomi delle variabili mnemonici possono essere d’intralcio alla capacità di uno sviluppatore alle prime armi di analizzare e comprendere un codice. Questo perché gli sviluppatori principianti non hanno ancora memorizzato le parole riservate (ce ne sono solo 33) e talvolta variabili con nomi troppo descrittivi iniziano a sembrare parte del linguaggio e non solo nomi di variabili ben scelti. Date una rapida occhiata al seguente codice esempio di Python che viene eseguito ripetutamente (in loop) su alcuni dati. Affronteremo presto i loop, ma per ora cercate di capire che cosa significhi:</p>
 <pre class="python"><code>for word in words:
     print(word)</code></pre>
-<p>What is happening here? Which of the tokens (for, word, in, etc.) are reserved words and which are just variable names? Does Python understand at a fundamental level the notion of words? Beginning programmers have trouble separating what parts of the code <em>must</em> be the same as this example and what parts of the code are simply choices made by the programmer.</p>
-<p>The following code is equivalent to the above code:</p>
+<p>Cosa sta succedendo? Quali parole (for, word, in, ecc.) sono parole riservate e quali sono solo nomi di variabili? Python riesce a capire a livello fondamentale la nozione di parole? I programmatori principianti hanno difficoltà a distinguere quali parti del codice <em>debbano</em> restare invariate, come in questo esempio, e quali parti del codice siano semplicemente scelte fatte dallo sviluppatore. Il codice seguente equivale al precedente:</p>
 <pre class="python"><code>for slice in pizza:
     print(slice)</code></pre>
-<p>It is easier for the beginning programmer to look at this code and know which parts are reserved words defined by Python and which parts are simply variable names chosen by the programmer. It is pretty clear that Python has no fundamental understanding of pizza and slices and the fact that a pizza consists of a set of one or more slices.</p>
-<p>But if our program is truly about reading data and looking for words in the data, <code>pizza</code> and <code>slice</code> are very un-mnemonic variable names. Choosing them as variable names distracts from the meaning of the program.</p>
-<p>After a pretty short period of time, you will know the most common reserved words and you will start to see the reserved words jumping out at you:</p>
-<pre>
-<b>for</b> word <b>in</b> words<b>:</b>
-    <b>print</b> word
-</pre>
-<p>The parts of the code that are defined by Python (<code>for</code>, <code>in</code>, <code>print</code>, and <code>:</code>) are in bold and the programmer-chosen variables (<code>word</code> and <code>words</code>) are not in bold. Many text editors are aware of Python syntax and will color reserved words differently to give you clues to keep your variables and reserved words separate. After a while you will begin to read Python and quickly determine what is a variable and what is a reserved word.</p>
-<h2 id="debugging">Debugging</h2>
-<p></p>
-<p>At this point, the syntax error you are most likely to make is an illegal variable name, like <code>class</code> and <code>yield</code>, which are keywords, or <code>odd~job</code> and <code>US$</code>, which contain illegal characters.</p>
-<p> </p>
-<p>If you put a space in a variable name, Python thinks it is two operands without an operator:</p>
+Per il programmatore principiante è più facile osservare questo codice per sapere quali parti siano parole riservate definite da Python e quali parti siano semplicemente nomi di variabili scelti dallo sviluppatore. È abbastanza chiaro che Python non conosce la nozione di pizza e di trancio (slice) e il fatto che una pizza consista in un insieme di uno o più tranci. Ma se il nostro programma riguarda veramente la lettura di dati e la ricerca di parole nei dati, <code>pizza</code> e <code>slice</code> non sono per niente nomi mnemonici di variabili. Sceglierli come nomi variabili ci distrae dallo scopo del programma. Dopo un breve periodo di tempo, conoscerete le più comuni parole riservate e inizierete a vedere le parole riservate che vi saltano agli occhi:
+<pre> <b>for</b> word <b>in</b> words<b>:</b> <b>print</b> word </pre>
+<p>Le parti del codice che sono definite da Python (<code>for</code>, <code>in</code>, <code>print</code>, e <code>:</code>) sono in grassetto e le variabili scelte dallo sviluppatore (<code>word</code> e <code>words</code>) non lo sono. Molti editor di testo sono a conoscenza della sintassi di Python e coloreranno le parole riservate in modo diverso per metterle in evidenza e mantenere separate le variabili dalle parole riservate. Dopo un po’ che inizierete a leggere Python determinerete rapidamente quale sia una variabile e quale una parola riservata.</p>
+<h2 id="debug">Debug</h2>
+<p> A questo punto, l’errore di sintassi che è più probabile che voi possiate fare è un nome di variabile non consentito, come <code>class</code> e <code>yield</code>, che sono parole chiave, o <code>odd~job</code> e<code>US$</code>, che contengono caratteri non consentiti.   Se mettete uno spazio in un nome di variabile, Python penserà che siano due operandi senza un operatore:</p>
 <pre class="python"><code>&gt;&gt;&gt; bad name = 5
 SyntaxError: invalid syntax</code></pre>
 <pre class="python"><code>&gt;&gt;&gt; month = 09
@@ -263,102 +215,93 @@ SyntaxError: invalid syntax</code></pre>
     month = 09
              ^
 SyntaxError: invalid token</code></pre>
-<p>For syntax errors, the error messages don't help much. The most common messages are <code>SyntaxError: invalid syntax</code> and <code>SyntaxError: invalid token</code>, neither of which is very informative.</p>
-<p>    </p>
-<p>The runtime error you are most likely to make is a &quot;use before def;&quot; that is, trying to use a variable before you have assigned a value. This can happen if you spell a variable name wrong:</p>
+<p>Per gli errori di sintassi, i messaggi di errore non aiutano molto. Il messaggi più comuni sono <code>SyntaxError: invalid syntax</code> e <code>SyntaxError: invalid token</code>, nessuno dei due è molto esplicativo.      Il runtime error che è più probabile che possiate fare è un “use before def;” cioè cercare di usare una variabile prima di averle assegnato un valore. Questo può accadere se si scrive una variabile in modo errato:</p>
 <pre class="python"><code>&gt;&gt;&gt; principal = 327.68
 &gt;&gt;&gt; interest = principle * rate
 NameError: name &#39;principle&#39; is not defined</code></pre>
-<p>Variables names are case sensitive, so <code>LaTeX</code> is not the same as <code>latex</code>.</p>
-<p>  </p>
-<p>At this point, the most likely cause of a semantic error is the order of operations. For example, to evaluate <span class="math inline">1/2<em>π</em></span>, you might be tempted to write</p>
+<p>I nomi delle variabili sono case sensitive, quindi <code>LaTeX</code> non è lo stesso di <code>latex</code>.    A questo punto la causa più probabile di un errore semantico, è l’ordine delle operazioni. Ad esempio, per calcolare <span class="math inline">1/2<em>π</em></span>, potreste essere tentati di scrivere:</p>
 <pre class="python"><code>&gt;&gt;&gt; 1.0 / 2.0 * pi</code></pre>
-<p>But the division happens first, so you would get <span class="math inline"><em>π</em>/2</span>, which is not the same thing! There is no way for Python to know what you meant to write, so in this case you don't get an error message; you just get the wrong answer.</p>
-<p></p>
-<h2 id="glossary">Glossary</h2>
+<p>Ma la divisione viene effettuata prima, quindi otterrete <span class="math inline"><em>π</em>/2</span>, e non è la stessa cosa! Python non ha modo di sapere cosa volevate scrivere, quindi in questo caso non riceverete un messaggio di errore ma solo un risultato errato. </p>
+<h2 id="glossario">Glossario</h2>
 <dl>
-<dt>assignment</dt>
-<dd>A statement that assigns a value to a variable. 
+<dt>Istruzione</dt>
+<dd>Istruzione che assegna un valore a una variabile. 
 </dd>
-<dt>concatenate</dt>
-<dd>To join two operands end to end. 
+<dt>concatenare</dt>
+<dd>Unire due operandi tra di loro. 
 </dd>
-<dt>comment</dt>
-<dd>Information in a program that is meant for other programmers (or anyone reading the source code) and has no effect on the execution of the program. 
+<dt>commento</dt>
+<dd>informazioni in un programma destinato ad altri programmatori (o a chiunque stia leggendo il codice sorgente) e non ha alcun effetto sull’esecuzione del programma. 
 </dd>
-<dt>evaluate</dt>
-<dd>To simplify an expression by performing the operations in order to yield a single value.
+<dt>calcolare</dt>
+<dd>Semplificare un’espressione eseguendo le operazioni in modo da fornire un unico valore.
 </dd>
-<dt>expression</dt>
-<dd>A combination of variables, operators, and values that represents a single result value. 
+<dt>espressione</dt>
+<dd>Combinazione di variabili, operatori e valori che rappresenta un singolo valore come risultato. 
 </dd>
-<dt>floating point</dt>
-<dd>A type that represents numbers with fractional parts. 
+<dt>virgola mobile</dt>
+<dd>un tipo che rappresenta i numeri con le parti frazionarie. 
 </dd>
 <dt>integer</dt>
-<dd>A type that represents whole numbers. 
+<dd>Un tipo di dato che rappresenta numeri interi. 
 </dd>
-<dt>keyword</dt>
-<dd>A reserved word that is used by the compiler to parse a program; you cannot use keywords like <code>if</code>, <code>def</code>, and <code>while</code> as variable names. 
+<dt>parola chiave</dt>
+<dd>Una parola riservata che viene utilizzata dal compilatore per analizzare un programma; non potete utilizzare parole chiave come <code>if</code>, <code>def</code> e <code>while</code> come nomi di variabili. 
 </dd>
-<dt>mnemonic</dt>
-<dd>A memory aid. We often give variables mnemonic names to help us remember what is stored in the variable. 
+<dt>mnemonico</dt>
+<dd>Un aiuto mnemonico. Spesso diamo alle variabili nomi mnemonici per aiutarci a ricordare cosa è memorizzato nella variabile. 
 </dd>
-<dt>modulus operator</dt>
-<dd>An operator, denoted with a percent sign (<code>%</code>), that works on integers and yields the remainder when one number is divided by another.  
+<dt>operatore modulo</dt>
+<dd>Un operatore, indicato con un segno di percentuale (<code>%</code>), che funziona con numeri interi e restituisce il resto quando un numero è diviso per un altro.  
 </dd>
-<dt>operand</dt>
-<dd>One of the values on which an operator operates. 
+<dt>operando</dt>
+<dd>uno dei valori su cui viene applicato un operatore. 
 </dd>
-<dt>operator</dt>
-<dd>A special symbol that represents a simple computation like addition, multiplication, or string concatenation. 
+<dt>operatore</dt>
+<dd>Un simbolo speciale che rappresenta un semplice calcolo come un’addizione, una moltiplicazione o una concatenazione di stringhe. 
 </dd>
-<dt>rules of precedence</dt>
-<dd>The set of rules governing the order in which expressions involving multiple operators and operands are evaluated.  
+<dt>regole di precedenza</dt>
+<dd>Il set di regole che disciplinano l’ordine in cui le espressioni coinvolgono operatori multipli e in cui gli operandi vengono calcolati.  
 </dd>
-<dt>statement</dt>
-<dd>A section of code that represents a command or action. So far, the statements we have seen are assignments and print expression statement. 
+<dt>istruzione</dt>
+<dd>una sezione di codice che rappresenta un comando o un’azione. Finora le istruzioni che abbiamo visto sono assegnazioni e istruzioni di stampa. 
 </dd>
-<dt>string</dt>
-<dd>A type that represents sequences of characters. 
+<dt>stringa</dt>
+<dd>Un tipo di dato che rappresenta una sequenza di caratteri. 
 </dd>
-<dt>type</dt>
-<dd>A category of values. The types we have seen so far are integers (type <code>int</code>), floating-point numbers (type <code>float</code>), and strings (type <code>str</code>). 
+<dt>tipo</dt>
+<dd>Una categoria di valori. I tipi che abbiamo visto fino ad ora sono interi (tipo <code>int</code>), numeri a virgola mobile (tipo <code>float</code>) e stringhe (tipo <code>str</code>). 
 </dd>
-<dt>value</dt>
-<dd>One of the basic units of data, like a number or string, that a program manipulates. 
+<dt>valore</dt>
+<dd>una delle unità di base dei dati, come un numero o una stringa, che possono essere manipolate da un programma. 
 </dd>
-<dt>variable</dt>
-<dd>A name that refers to a value. 
+<dt>variabile</dt>
+<dd>Un nome riferito ad un valore. 
 </dd>
 </dl>
-<h2 id="exercises">Exercises</h2>
-<p>Exercise 2: Write a program that uses <code>input</code> to prompt a user for their name and then welcomes them.</p>
+<h2 id="esercizi">Esercizi</h2>
+<p><strong>Esercizio 2:</strong> Scrivete un programma che usi <code>input</code> per chiedere agli utenti il proprio nome e poi date loro il benvenuto.</p>
 <pre><code>Enter your name: Chuck
 Hello Chuck</code></pre>
-<p>Exercise 3: Write a program to prompt the user for hours and rate per hour to compute gross pay.</p>
+<p><strong>Esercizio 3:</strong> scrivete un programma per richiedere all’utente ore e tariffe orarie per calcolare la retribuzione lorda.</p>
 <pre><code>Enter Hours: 35
 Enter Rate: 2.75
 Pay: 96.25</code></pre>
-<p>We won't worry about making sure our pay has exactly two digits after the decimal place for now. If you want, you can play with the built-in Python <code>round</code> function to properly round the resulting pay to two decimal places.</p>
-<p>Exercise 4: Assume that we execute the following assignment statements:</p>
+<p>Per ora non ci preoccuperemo di assicurarci che la nostra paga abbia esattamente due cifre dopo la virgola. Se volete, potete giocare con la funzione <code>round</code> integrata in Python per arrotondare correttamente la retribuzione risultante a due cifre decimali.</p>
+<p><strong>Esercizio 4:</strong> supponiamo di eseguire le seguenti istruzioni di assegnazione:</p>
 <pre><code>width = 17
 height = 12.0</code></pre>
-<p>For each of the following expressions, write the value of the expression and the type (of the value of the expression).</p>
-<ol style="list-style-type: decimal">
-<li><p><code>width//2</code></p></li>
-<li><p><code>width/2.0</code></p></li>
-<li><p><code>height/3</code></p></li>
-<li><p><code>1 + 2 * 5</code></p></li>
-</ol>
-<p>Use the Python interpreter to check your answers.</p>
-<p>Exercise 5: Write a program which prompts the user for a Celsius temperature, convert the temperature to Fahrenheit, and print out the converted temperature.</p>
-<div class="footnotes">
+<p>Per ciascuna delle seguenti espressioni, scrivete il valore dell’espressione e il tipo di dato (del valore dell’espressione). 1. <code>width//2</code> 2. <code>width/2.0</code> 3. <code>height/3</code></p>
+<pre class="python trinket" height="120"><code>&gt;&gt;&gt; print(1,000,000)
+1 0 0</code></pre>
+<p>Usate l’interprete Python per verificare le vostre risposte.</p>
+<p><strong>Esercizio 5:</strong> scrivete un programma che richieda all’utente una temperatura in gradi Celsius, la converta in Fahrenheit e poi la stampi.</p>
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>In Python 2.0, this function was named <code>raw_input</code>.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>See <a href="http://en.wikipedia.org/wiki/Mnemonic" class="uri">http://en.wikipedia.org/wiki/Mnemonic</a> for an extended description of the word &quot;mnemonic&quot;.<a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p>In Python 2.0, questa funzione era chiamata <code>raw_input</code><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p> Vedi <a href="http://en.wikipedia.org/wiki/Mememonico" class="uri">http://en.wikipedia.org/wiki/Mememonico</a> per un’estesa descrizione della parola “mnemonico”.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
-</div>
+</section>
 </body>
 </html>

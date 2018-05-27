@@ -1,34 +1,43 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="http://thisisdallas.github.io/Simple-Grid/simpleGrid.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Untitled</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="http://thisisdallas.github.io/Simple-Grid/simpleGrid.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-<h1 id="object-oriented-programming">Object-Oriented Programming</h1>
-<h2 id="managing-larger-programs">Managing Larger Programs</h2>
-<p></p>
-<p>At the beginning of this book, we came up with four basic programming patterns which we use to construct programs:</p>
+<p>%</p>
+<h1 id="programmazione-orientata-agli-oggetti">Programmazione orientata agli oggetti</h1>
+<h2 id="gestione-di-programmi-più-grandi">Gestione di programmi più grandi</h2>
+
+<p>All’inizio di questo libro, abbiamo visto quattro schemi di programmazione di base che usiamo per costruire programmi:</p>
 <ul>
-<li>Sequential code</li>
-<li>Conditional code (if statements)</li>
-<li>Repetitive code (loops)</li>
-<li>Store and reuse (functions)</li>
+<li>Codice sequenziale</li>
+<li>Codice condizionale (istruzioni if)</li>
+<li>Codice ripetitivo (cicli)</li>
+<li>Memorizza e riutilizza (funzioni).</li>
 </ul>
-<p>In later chapters, we explored simple variables as well as collection data structures like lists, tuples, and dictionaries.</p>
-<p>As we build programs, we design data structures and write code to manipulate those data structures. There are many ways to write programs and by now, you probably have written some programs that are &quot;not so elegant&quot; and other programs that are &quot;more elegant&quot;. Even though your programs may be small, you are starting to see how there is a bit of &quot;art&quot; and &quot;aesthetic&quot; to writing code.</p>
-<p>As programs get to be millions of lines long, it becomes increasingly important to write code that is easy to understand. If you are working on a million line program, you can never keep the entire program in your mind at the same time. So we need ways to break the program into multiple smaller pieces so to solve a problem, fix a bug, or add a new feature we have less to look at.</p>
-<p>In a way, object oriented programming is a way to arrange your code so that you can zoom into 500 lines of the code, and understand it while ignoring the other 999,500 lines of code for the moment.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Like many aspects of programming it is necessary to learn the concepts of object oriented programming before you can use them effectively. So approach this chapter as a way to learn some terms and concepts and work through a few simple examples to lay a foundation for future learning. Throughout the rest of the book we will be using objects in many of the programs but we won't be building our own new objects in the programs.</p>
-<p>The key outcome of this chapter is to have a basic understanding of how objects are constructed and how they function and most importantly how we make use of the capabilities of objects that are provided to us by Python and Python libraries.</p>
-<h2 id="using-objects">Using Objects</h2>
-<p>It turns out we have been using objects all along in this class. Python provides us with many built-in objects. Here is some simple code where the first few lines should feel very simple and natural to you.</p>
-<p></p>
+<p>Nei capitoli seguenti, abbiamo trattato le variabili semplici e le strutture di raccolta di dati come elenchi, tuple e dizionari.</p>
+<p>Mentre costruiamo programmi, progettiamo strutture dati e scriviamo codice per manipolarle. Esistono molti modi per scrivere programmi e, a questo punto, probabilmente avete scritto alcuni programmi “non così eleganti” e altri “più eleganti”. Anche se i vostri programmi potrebbero essere piccoli, state iniziando a vedere come ci sia un po’ di “arte” ed “estetica” nello scrivere un codice.</p>
+<p>Poiché i programmi diventano lunghi milioni di righe, diventa sempre più importante scrivere codice che sia facile da capire. Se state lavorando su un programma di milioni di righe, non potrete mai tenere in mente l’intero programma allo stesso tempo. Quindi abbiamo bisogno di modi per spezzare il programma in più pezzi di minore dimensione in modo da risolvere problemi, correggere un bug o aggiungere una nuova caratteristica a cui dobbiamo guardare meno.</p>
+<p>In un certo senso, la programmazione orientata agli oggetti è un modo per disporre il codice per poter eseguire lo zoom su 500 righe di codice e capirlo ignorando le altre 999.500 righe di codice per il momento.</p>
+<h2 id="iniziamo">Iniziamo</h2>
+<p>Come molti aspetti della programmazione, è necessario imparare i concetti della programmazione orientata agli oggetti prima di poterla utilizzare in modo efficace. Quindi, consultate questo capitolo come un modo per imparare alcuni termini e concetti e lavorare attraverso alcuni semplici esempi, per gettare le basi per l’apprendimento futuro. Nel resto del libro useremo gli oggetti in molti programmi, ma non costruiremo i nostri nuovi oggetti.</p>
+<p>Il risultato chiave di questo capitolo è avere una conoscenza di base di come gli oggetti siano costruiti e come funzionano e, soprattutto, come facciamo a sfruttare le capacità degli oggetti che ci vengono fornite da Python e dalle librerie Python.</p>
+<h2 id="utilizzo-degli-oggetti">Utilizzo degli oggetti</h2>
+<p>Scopriremo che abbiamo utilizzato gli oggetti durante tutto il corso. Python ci fornisce molti oggetti integrati. Ecco un semplice codice in cui le prime poche righe dovrebbero sembrarvi molto semplici e naturali.</p>
+
 <pre class="python"><code>stuff = list()
 stuff.append(&#39;python&#39;)
 stuff.append(&#39;chuck&#39;)
@@ -39,17 +48,13 @@ print (stuff.__getitem__(0))
 print (list.__getitem__(stuff,0))
 
 # Code: http://www.py4e.com/code3/party1.py</code></pre>
-<p>But instead of focusing on what these lines accomplish, lets look at what is really happening from the point of view of object-oriented programming. Don't worry if the following paragraphs don't make any sense the first time you read them because we have not yet defined all these terms.</p>
-<p>The first line is <em>constructing</em> an object of type <em>list</em>, the second and third lines are calling the <code>append()</code> <em>method</em>, the fourth line is calling the <code>sort()</code> <em>method</em>, and the fifth line is retrieving the item at position 0.</p>
-<p>The sixth line is calling the <code>__getitem__()</code> method in the <code>stuff</code> list with a parameter of zero.</p>
+<p>Ma invece di concentrarci su ciò che queste righe realizzano, vediamo cosa sta realmente accadendo dal punto di vista della programmazione orientata agli oggetti. Non preoccupatevi se i seguenti paragrafi non hanno senso la prima volta che li leggete perché non abbiamo ancora definito tutti questi termini. La prima riga sta <em>costruendo</em> un oggetto di tipo <em>lista</em>, la seconda e la terza linea chiamano il <em>metodo</em> <code>append()</code>, la quarta riga chiama il <em>metodo</em> <code>sort()</code>, e la quinta riga sta ottenendo l’elemento alla posizione 0. La sesta riga chiama il metodo <code>__getitem __()</code> nell’elenco <code>stuff</code> con parametro zero.</p>
 <pre class="python"><code>print (stuff.__getitem__(0))</code></pre>
-<p>The seventh line is an even more verbose way of retrieving the 0th item in the list.</p>
+<p>La settima riga è un modo ancora più dettagliato di recuperare l’elemento zero nell’elenco.</p>
 <pre class="python"><code>print (list.__getitem__(stuff,0))</code></pre>
-<p>In this code, we care calling the <code>__getitem__</code> method in the <code>list</code> class and passing in the list (<code>stuff</code>) and the item we want retrieved from the list as parameters.</p>
-<p>The last three lines of the program are completely equivalent, but it is more convenient to simply use the square bracket syntax to look up an item at a particular position in a list.</p>
-<p>We can take a look into the capabilities of an object by looking at the output of the <code>dir()</code> function:</p>
+<p>In questo codice, vogliamo chiamare il metodo <code>__getitem__</code> nella classe <code>list</code> e passare nella lista (<code>stuff</code>) e l’elemento che vogliamo recuperato dalla lista come parametri. Le ultime tre righe del programma sono completamente equivalenti, ma è più semplice utilizzare semplicemente la sintassi con le parentesi quadre per cercare un elemento in una posizione particolare in un elenco. Possiamo dare un’occhiata alle capacità di un oggetto osservando l’output della funzione <code>dir()</code>:</p>
 <pre><code>&gt;&gt;&gt; stuff = list()
-&gt;&gt;&gt; dir(stuff)
+&gt;&gt;&gt; dir (stuff)
 [&#39;__add__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;,
 &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;,
 &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;,
@@ -61,23 +66,19 @@ print (list.__getitem__(stuff,0))
 &#39;append&#39;, &#39;clear&#39;, &#39;copy&#39;, &#39;count&#39;, &#39;extend&#39;, &#39;index&#39;,
 &#39;insert&#39;, &#39;pop&#39;, &#39;remove&#39;, &#39;reverse&#39;, &#39;sort&#39;]
 &gt;&gt;&gt;</code></pre>
-<p>The precise definition of <code>dir()</code> is that it lists the <em>methods</em> and <em>attributes</em> of a Python object.</p>
-<p>The rest of this chapter will define all of the above terms so make sure to come back after you finish the chapter and re-read the above paragraphs to check your understanding.</p>
-<h2 id="starting-with-programs">Starting with Programs</h2>
-<p>A program in its most basic form takes some input, does some processing, and produces some output. Our elevator conversion program demonstrates a very short but complete program showing all three of these steps.</p>
+<p>La definizione precisa di <code>dir()</code> è che elenca i <em>metodi</em> e gli <em>attributi</em> di un oggetto Python. Il resto di questo capitolo definirà tutti i termini sopra riportati, quindi assicuratevi di tornare indietro dopo aver completato il capitolo e rileggete i paragrafi precedenti per verificare la vostra comprensione.</p>
+<h2 id="iniziare-con-i-programmi">Iniziare con i programmi</h2>
+<p>Un programma nella sua forma più semplice richiede qualche input, fa qualche elaborazione e produce un output. Il nostro programma di conversione degli esponenti si mostra molto breve ma completo e che illustra tutti e tre i passaggi.</p>
 <pre class="python"><code>usf = input(&#39;Enter the US Floor Number: &#39;)
 wf = int(usf) - 1
 print(&#39;Non-US Floor Number is&#39;,wf)
 
 # Code: http://www.py4e.com/code3/elev.py</code></pre>
-<p>If we think a bit more about this program, there is the &quot;outside world&quot; and the program. The input and output aspects are where the program interacts with the outside world. Within the program we have code and data to accomplish the task the program is designed to solve.</p>
-<div class="figure">
-<img src="../images/program.svg" alt="A Program" />
-<p class="caption">A Program</p>
-</div>
-<p>When we are &quot;in&quot; the program, we have some defined interactions with the &quot;outside&quot; world, but those interactions are well defined and generally not something we focus on. While we are coding we worry only about the details &quot;inside the program&quot;.</p>
-<p>One way to think about object oriented programming is that we are separating our program into multiple &quot;zones&quot;. Each &quot;zone&quot; contains some code and data (like a program) and has well defined interactions with the outside world and the other zones within the program.</p>
-<p>If we look back at the link extraction application where we used the BeautifulSoup library, we can see a program that is constructed by connecting different objects together to accomplish a task:</p>
+<p>Se pensiamo un po’ di più a questo programma, c’è il “mondo esterno” e il programma. Gli aspetti di input e di output sono dove il programma interagisce con il mondo esterno. All’interno del programma abbiamo codice e dati per svolgere il compito che il programma è progettato per risolvere.</p>
+<figure>
+<img src="../images/program.svg" alt="A Program" /><figcaption>A Program</figcaption>
+</figure>
+<p>Quando siamo “dentro” il programma, abbiamo alcune interazioni definite con il mondo “esterno”, ma quelle interazioni sono ben definite e generalmente non sono qualcosa su cui ci focalizziamo. Mentre stiamo scrivendo del codice, ci preoccupiamo solo dei dettagli “all’interno del programma”. Un modo per pensare alla programmazione orientata agli oggetti è che stiamo separando il nostro programma in più “zone”. Ogni “zona” contiene codice e dati (come un programma) e ha interazioni ben definite con il mondo esterno e con le altre zone all’interno del programma. Se guardiamo indietro all’applicazione di estrazione dei collegamenti in cui abbiamo usato la libreria BeautifulSoup, possiamo vedere un programma che viene costruito collegando insieme diversi oggetti per svolgere un compito:</p>
 <p>  </p>
 <pre class="python"><code># To run this, you can install BeautifulSoup
 # https://pypi.python.org/pypi/beautifulsoup4
@@ -105,31 +106,28 @@ for tag in tags:
     print(tag.get(&#39;href&#39;, None))
 
 # Code: http://www.py4e.com/code3/urllinks.py</code></pre>
-<p>We read the URL into a string, and then pass that into <code>urllib</code> to retrieve the data from the web. The <code>urllib</code> library uses the <code>socket</code> library to make the actual network connection to retrieve the data. We take the string that we get back from <code>urllib</code> and hand it to BeautifulSoup for parsing. BeautifulSoup makes use of another object called <code>html.parser</code><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and returns an object. We call the <code>tags()</code> method in the returned object and then get a dictionary of tag objects, and loop through the tags and call the <code>get()</code> method for each tag to print out the 'href' attribute.</p>
-<div class="figure">
-<img src="../images/program-oo.svg" alt="A Program as Network of Objects" />
-<p class="caption">A Program as Network of Objects</p>
-</div>
-<p>We can draw a picture of this program and how the objects work together.</p>
-<p>The key here is not to fully understand how this program works but to see how we build a network of interacting objects and orchestrate the movement of information between the objects to create a program. It is also important to note that when you looked at that program several chapters back, you could fully understand what was going on in the program without even realizing that the program was &quot;orchestrating the movement of data between objects&quot;. Back then it was just lines of code that got the job done.</p>
-<h2 id="subdividing-a-problem---encapsulation">Subdividing a Problem - Encapsulation</h2>
-<p>One of the advantages of the object oriented approach is that it can hide complexity. For example, while we need to know how to use the <code>urllib</code> and BeautifulSoup code, we do not need to know how those libraries work internally. It allows us to focus on the part of the problem we need to solve and ignore the other parts of the program.</p>
-<div class="figure">
-<img src="../images/program-oo-code.svg" alt="Ignoring Detail When Using an Object" />
-<p class="caption">Ignoring Detail When Using an Object</p>
-</div>
-<p>This ability to focus on a part of a program that we care about and ignore the rest of the program is also helpful to the developers of the objects. For example the programmers developing BeautifulSoup do not need to know or care about how we retrieve our HTML page, what parts we want to read or what we plan to do with the data we extract from the web page.</p>
-<div class="figure">
-<img src="../images/program-oo-bs4.svg" alt="Ignoring Detail When Building an Object" />
-<p class="caption">Ignoring Detail When Building an Object</p>
-</div>
-<p></p>
-<p>Another word we use to capture this idea that we ignore the internal detail of objects we use is &quot;encapsulation&quot;. This means that we can know how to use an object without knowing how it internally accomplishes what we need done.</p>
-<h2 id="our-first-python-object">Our First Python Object</h2>
-<p>At its simplest, an object is some code plus data structures that is smaller than a whole program. Defining a function allows us to store a bit of code and give it a name and then later invoke that code using the name of the function.</p>
-<p>An object can contain a number of functions (which we call &quot;methods&quot;) as well as data that is used by those functions. We call data items that are part of the object &quot;attributes&quot;.</p>
-<p></p>
-<p>We use the <code>class</code> keyword to define the data and code that will make up each of the objects. The class keyword includes the name of the class and begins an indented block of code where we include the attributes (data) and methods (code).</p>
+<p>Leggiamo l’URL in una stringa, e poi lo passiamo in <code>urllib</code> per recuperare i dati dal web. La libreria <code>urllib</code> usa la libreria <code>socket</code> per realizzare la connessione di rete per recuperare i dati. Prendiamo la stringa che otteniamo da ‘urllib<code>e la consegniamo a BeautifulSoup per l'analisi. BeautifulSoup utilizza un altro oggetto chiamato</code>html.parser<code>^[https://docs.python.org/3/library/html.parser.html] e restituisce un oggetto.   Chiamiamo il metodo</code>tags()<code>nell'oggetto restituito e poi prendiamo un dizionario di oggetti tag, e passiamo in rassegna i tag e chiamiamo il metodo</code>get()` per ogni tag per visualizzare l’attributo ’href’.</p>
+<figure>
+<img src="../images/program-oo.svg" alt="A Program as Network of Objects" /><figcaption>A Program as Network of Objects</figcaption>
+</figure>
+<p>Possiamo disegnare un’immagine di questo programma e di come gli oggetti lavorano insieme.</p>
+<p>La chiave qui non è comprendere appieno come funziona questo programma, ma vedere come costruiamo una rete di oggetti che interagiscono e orchestrare lo scambio di informazioni tra gli oggetti per creare un programma.</p>
+<p>È anche importante notare che quando si guardava un programma diversi capitoli indietro, si poteva capire appieno cosa stava succedendo nel programma senza nemmeno rendersi conto che il programma stava “orchestrando il movimento dei dati tra gli oggetti”. Allora c’erano solo righe di codice che portavano a termine il lavoro.</p>
+<h2 id="suddividere-un-problema---lincapsulamento">Suddividere un problema - l’incapsulamento</h2>
+<p>Uno dei vantaggi dell’approccio orientato agli oggetti è che può nascondere la complessità. Ad esempio, mentre abbiamo bisogno di sapere come usare i codici <code>urllib</code> e BeautifulSoup, non abbiamo bisogno di sapere come tali librerie funzionino internamente. Ciò ci consente di concentrarci sulla parte del problema che dobbiamo risolvere e ignorare le altre parti del programma.</p>
+<figure>
+<img src="../images/program-oo-code.svg" alt="Ignoring Detail When Using an Object" /><figcaption>Ignoring Detail When Using an Object</figcaption>
+</figure>
+<p>Questa capacità di concentrarci su una parte di un programma che ci interessa e ignorare il resto del programma è utile anche per gli sviluppatori degli oggetti. Ad esempio, i programmatori che sviluppano BeautifulSoup non hanno bisogno di sapere o preoccuparsi di come recuperiamo la nostra pagina HTML, quali parti vogliamo leggere o cosa intendiamo fare con i dati estratti dalla pagina web.</p>
+<figure>
+<img src="../images/program-oo-bs4.svg" alt="Ignoring Detail When Building an Object" /><figcaption>Ignoring Detail When Building an Object</figcaption>
+</figure>
+
+<p>Un’altra parola che usiamo per rendere l’idea che ignoriamo il dettaglio interno degli oggetti che usiamo è “incapsulamento”. Ciò significa che possiamo sapere come utilizzare un oggetto senza sapere come svolge internamente ciò che abbiamo bisogno di fare.</p>
+<h2 id="il-nostro-primo-oggetto-python">Il nostro primo oggetto Python</h2>
+<p>Nel modo più semplice, un oggetto è un codice con strutture di dati che è più piccolo di un intero programma. La definizione di una funzione ci consente di archiviare un po’ di codice e dargli un nome e successivamente invocare questo codice usando il nome della funzione. Un oggetto può contenere un certo numero di funzioni (che chiamiamo “metodi”) e dei dati utilizzati da tali funzioni. Chiamiamo dati gli elementi che compongono degli “attributi” dell’oggetto.</p>
+
+<p>Usiamo la parola chiave <code>class</code> per definire i dati e il codice che comporranno ciascuno degli oggetti. La parola chiave class include il nome della classe e inizia un blocco di codice indentato in cui includiamo gli attributi (dati) e i metodi (codice).</p>
 <pre class="python"><code>class PartyAnimal:
    x = 0
 
@@ -144,36 +142,27 @@ an.party()
 PartyAnimal.party(an)
 
 # Code: http://www.py4e.com/code3/party2.py</code></pre>
-<p>Each method looks like a function, starting with the <code>def</code> keyword and consisting of an indented block of code. This example has one attribute (x) and one method (party). The methods have a special first parameter that we name by convention <code>self</code>.</p>
-<p>Much like the <code>def</code> keyword does not cause function code to be executed, the <code>class</code> keyword does not create an object. Instead, the <code>class</code> keyword defines a template indicating what data and code will be contained in each object of type <code>PartyAnimal</code>. The class is like a cookie cutter and the objects created using the class are the cookies<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. You don't put frosting on the cookie cutter, you put frosting on the cookies - and you can put different frosting on each cookie.</p>
-<div class="figure">
-<img src="../photos/cookie_cutter_flickr_Didriks.png" alt="A Class and Two Objects" />
-<p class="caption">A Class and Two Objects</p>
-</div>
-<p>If you continue through the example code, we see the first executable line of code:</p>
+<p>Ogni metodo ha l’aspetto di una funzione, inizia con la parola chiave <code>def</code> ed è costituito da un blocco di codice indentato. Questo esempio ha un attributo (x) e un metodo (party).</p>
+<p>I metodi hanno uno primo parametro speciale che chiamiamo per convenzione <code>self</code>. Proprio come la parola chiave <code>def</code> non provoca l’esecuzione del codice della funzione, la parola chiave <code>class</code> non crea un oggetto. Invece, la parola chiave <code>class</code> definisce un modello che indica quali dati e codice saranno contenuti in ogni oggetto di tipo <code>PartyAnimal</code>.</p>
+<p>La classe è come uno stampino per biscotti e gli oggetti creati utilizzando la classe sono i biscotti<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Non mettete la glassa sullo stampino, mettete la glassa sui biscotti e potete mettere glassa diversa su ciascun biscotto.</p>
+<figure>
+<img src="../photos/cookie_cutter_flickr_Didriks.png" alt="A Class and Two Objects" /><figcaption>A Class and Two Objects</figcaption>
+</figure>
+<p>Se continuate con il codice di esempio, vediamo la prima riga di codice eseguibile:</p>
 <pre class="python"><code>an = PartyAnimal()</code></pre>
 <p>   </p>
-<p>This is where we instruct Python to construct (e.g. create) an <em>object</em> or &quot;instance of the class named PartyAnimal&quot;. It looks like a function call to the class itself and Python constructs the object with the right data and methods and returns the object which is then assigned to the variable <code>an</code>. In a way this is quite similar to the following line which we have been using all along:</p>
+<p>Qui è dove istruiamo Python a costruire (ad es. creare) un <em>oggetto</em> o “istanza della classe denominata PartyAnimal”. Sembra una chiamata di funzione alla classe stessa e Python costruisce l’oggetto con i dati e i metodi corretti e restituisce l’oggetto che viene quindi assegnato alla variabile <code>an</code>. In un certo senso questo è abbastanza simile alla seguente riga che abbiamo usato da sempre:</p>
 <pre class="python"><code>counts = dict()</code></pre>
-<p>Here we are instructing Python to construct an object using the <code>dict</code> template (already present in Python), return the instance of dictionary and assign it to the variable <code>counts</code>.</p>
-<p>When the PartyAnimal class is used to construct an object, the variable <code>an</code> is used to point to that object. We use <code>an</code> to access the code and data for that particular instance of a PartyAnimal object.</p>
-<p>Each Partyanimal object/instance contains within it a variable <code>x</code> and a method/function named <code>party</code>. We call that <code>party</code> method in this line:</p>
+<p>Qui stiamo istruendo Python per costruire un oggetto usando il template <code>dict</code> (già presente in Python), restituire l’istanza del dizionario e assegnarla alla variabile <code>counts</code>. Quando la classe PartyAnimal viene utilizzata per costruire un oggetto, la variabile <code>an</code> viene utilizzata per puntare a quell’oggetto. Usiamo <code>an</code> per accedere al codice e ai dati per quella particolare istanza di un oggetto PartyAnimal. Ogni oggetto/istanza Partyanimal contiene al suo interno una variabile <code>x</code> e un metodo/funzione chiamato <code>party</code>. Chiamiamo il metodo <code>party</code> in questa riga:</p>
 <pre class="python"><code>an.party()</code></pre>
-<p>When the <code>party</code> method is called, the first parameter (which we call by convention <code>self</code>) points to the particular instance of the PartyAnimal object that <code>party</code> is called from within. Within the <code>party</code> method, we see the line:</p>
+<p>Quando viene chiamato il metodo <code>party</code>, il primo parametro (che chiamiamo per convenzione <code>self</code>) punta alla particolare istanza dell’oggetto PartyAnimal che viene chiamata all’interno di <code>party</code>. All’interno del metodo <code>party</code>, vedremo la riga:</p>
 <pre class="python"><code>self.x = self.x + 1</code></pre>
-<p>This syntax using the 'dot' operator is saying 'the x within self'. So each time <code>party()</code> is called, the internal <code>x</code> value is incremented by 1 and the value is printed out.</p>
-<p>To help make sense of the difference between a global function and a method within a class/object, the following line is another way to call the <code>party</code> method within the <code>an</code> object:</p>
+<p>Questa sintassi che usa l’operatore ‘punto’ sta indicando ‘la x dentro self’. Quindi ogni volta che viene chiamato <code>party()</code>, il valore interno <code>x</code> viene incrementato di 1 e il valore viene visualizzato. Per aiutare a comprendere la differenza tra una funzione globale e un metodo all’interno di una classe/oggetto, la seguente riga è un altro modo per chiamare il metodo <code>party</code> all’interno dell’oggetto <code>an</code>:</p>
 <pre class="python"><code>PartyAnimal.party(an)</code></pre>
-<p>In this variation, we are accessing the code from within the <em>class</em> and explicitly passing the object pointer <code>an</code> in as the first parameter (i.e. <code>self</code> within the method). You can think of <code>an.party()</code> as shorthand for the above line.</p>
-<p>When the program executes, it produces the following output:</p>
-<pre><code>So far 1
-So far 2
-So far 3
-So far 4</code></pre>
-<p>The object is constructed, and the <code>party</code> method is called four times, both incrementing and printing the value for <code>x</code> within the <code>an</code> object.</p>
-<h2 id="classes-as-types">Classes as Types</h2>
+<p>In questa variante, stiamo accedendo al codice dalla <em>classe</em> e passando esplicitamente il puntatore dell’oggetto <code>an</code> come primo parametro (cioè <code>self</code> all’interno del metodo). Potete pensare a <code>an.party()</code> come ad un’abbreviazione per la riga precedente. Quando il programma viene eseguito, produce il seguente output: So far 1 So far 2 So far 3 So far 4 L’oggetto è stato costituito, e il metodo <code>party</code> è chiamato quattro volte, sia incrementando che visualizzando il valore di <code>x</code> all’interno l’oggetto <code>an</code>.</p>
+<h2 id="classi-come-tipi">Classi come tipi</h2>
 <p> </p>
-<p>As we have seen, in Python, all variables have a type. And we can use the built-in <code>dir</code> function to examine the capabilities of a variable. We can use <code>type</code> and <code>dir</code> with the classes that we create.</p>
+<p>Come abbiamo visto, in Python, tutte le variabili hanno un tipo. E possiamo usare la funzione integrata <code>dir</code> per esaminare le possibilità di una variabile. Possiamo usare <code>type</code> e <code>dir</code> con le classi che creiamo.</p>
 <pre class="python"><code>class PartyAnimal:
    x = 0
 
@@ -188,18 +177,17 @@ print (&quot;Type&quot;, type(an.x))
 print (&quot;Type&quot;, type(an.party))
 
 # Code: http://www.py4e.com/code3/party3.py</code></pre>
-<p>When this program executes, it produces the following output:</p>
-<pre><code>Type &lt;class &#39;__main__.PartyAnimal&#39;&gt;
-Dir  [&#39;__class__&#39;, &#39;__delattr__&#39;, ...
+<p>Quando questo programma viene eseguito, produce il seguente output:</p>
+<pre><code> Type &lt;class &#39;__main__.PartyAnimal &#39;&gt;
+Dir [&#39;__class__&#39;, &#39;__delattr__&#39;, ...
 &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;,
 &#39;__weakref__&#39;, &#39;party&#39;, &#39;x&#39;]
 Type &lt;class &#39;int&#39;&gt;
 Type &lt;class &#39;method&#39;&gt;</code></pre>
-<p>You can see that using the <code>class</code> keyword, we have created a new type. From the <code>dir</code> output, you can see both the <code>x</code> integer attribute and the <code>party</code> method are available in the object.</p>
-<h2 id="object-lifecycle">Object Lifecycle</h2>
+<p>Potete notare che usando la parola chiave <code>class</code>, abbiamo creato un nuovo tipo. Dall’output di <code>dir</code>, potete notare che sia l’attributo intero <code>x</code> che il metodo <code>party</code> sono disponibili nell’oggetto.</p>
+<h2 id="ciclo-di-vita-delloggetto">Ciclo di vita dell’oggetto</h2>
 <p>  </p>
-<p>In the previous examples, we are defining a class (template) and using that class to create an instance of that class (object) and then using the instance. When the program finishes, all the variables are discarded. Usually we don't think much about the creation and destruction of variables, but often as our objects become more complex, we need to take some action within the object to set things up as the object is being constructed and possibly clean things up as the object is being discarded.</p>
-<p>If we want our object to be aware of these moments of construction and destruction, we add specially named methods to our object:</p>
+<p>Negli esempi precedenti, stiamo definendo una classe (template) e usiamo quella classe per crearne un’istanza (oggetto) e quindi usare l’istanza. Al termine del programma, tutte le variabili vengono eliminate. Di solito non pensiamo molto alla creazione e distruzione di variabili, ma spesso quando i nostri oggetti diventano più complessi, dobbiamo agire all’interno dell’oggetto per sistemare le cose mentre l’oggetto viene costruito e possibilmente pulire le cose come l’oggetto viene eliminato. Se vogliamo che il nostro oggetto si renda conto di questi momenti di costruzione e distruzione, aggiungeremo metodi con una denominazione speciale al nostro oggetto:</p>
 <pre class="python"><code>class PartyAnimal:
    x = 0
 
@@ -220,19 +208,17 @@ an = 42
 print(&#39;an contains&#39;,an)
 
 # Code: http://www.py4e.com/code3/party4.py</code></pre>
-<p>When this program executes, it produces the following output:</p>
-<pre><code>I am constructed
+<p>Quando questo programma viene eseguito, produce il seguente output:</p>
+<pre><code>I am contructed
 So far 1
 So far 2
 I am destructed 2
 an contains 42</code></pre>
-<p>As Python is constructing our object, it calls our <code>__init__</code> method to give us a chance to set up some default or initial values for the object. When Python encounters the line:</p>
+<p>Poichè Python sta costruendo il nostro oggetto, chiama il nostro metodo <code>__init__</code> per darci la possibilità di impostare alcuni valori iniziali o predefiniti per l’oggetto. Quando Python incontra la riga:</p>
 <pre><code>an = 42</code></pre>
-<p>It actually 'thows our object away' so it can reuse the <code>an</code> variable to store the value <code>42</code>. Just at the moment when our <code>an</code> object is being 'destroyed' our destructor code (<code>__del__</code>) is called. We cannot stop our variable from being destroyed, but we can do any necessary cleanup right before our object no longer exists.</p>
-<p>When developing objects, it is quite common to add a constructor to an object to set in initial values in the object, it is relatively rare to need a destructor for an object.</p>
-<h2 id="many-instances">Many Instances</h2>
-<p>So far, we have been defining a class, making a single object, using that object, and then throwing the object away. But the real power in object oriented happens when we make many instances of our class.</p>
-<p>When we are making multiple objects from our class, we might want to set up different initial values for each of the objects. We can pass data into the constructors to give each object a different initial value:</p>
+<p>In effetti “butta via il nostro oggetto” in modo da poter riutilizzare la variabile <code>an</code> per memorizzare il valore <code>42</code>. Proprio nel momento in cui il nostro oggetto <code>an</code> viene “distrutto”, viene chiamato il nostro codice distruttore (<code>__del__</code>). Non possiamo impedire che la nostra variabile venga distrutta, ma possiamo fare qualsiasi operazione di pulizia necessaria prima che il nostro oggetto non esista più. Quando si sviluppano oggetti, è abbastanza comune aggiungere un costruttore a un oggetto per impostarne i valori iniziali, è relativamente raro che sia necessario un distruttore per un oggetto.</p>
+<h2 id="molte-istanze">Molte istanze</h2>
+<p>Finora, abbiamo definito una classe, creato un singolo oggetto, usato quell’oggetto che infine abbiamo eliminato. Ma la vera forza della programmazione orientata agli oggetti si rivela quando facciamo molte istanze della nostra classe. Quando realizziamo oggetti multipli dalla nostra classe, potremmo voler impostare diversi valori iniziali per ciascuno degli oggetti. Possiamo passare i dati nei costruttori per assegnare a ciascun oggetto un diverso valore iniziale:</p>
 <pre class="python"><code>class PartyAnimal:
    x = 0
    name = &#39;&#39;
@@ -252,20 +238,14 @@ j.party()
 s.party()
 
 # Code: http://www.py4e.com/code3/party5.py</code></pre>
-<p>The constructor has both a <code>self</code> parameter that points to the object instance and then additional parameters that are passed into the constructor as the object is being constructed:</p>
-<pre><code>s = PartyAnimal(&#39;Sally&#39;)</code></pre>
-<p>Within the constructor, the line:</p>
-<pre><code>self.name = nam</code></pre>
-<p>Copies the parameter that is passed in (<code>nam</code>) into the <code>name</code> attribute within the object instance.</p>
-<p>The output of the program shows that each of the objects (<code>s</code> and <code>j</code>) contain their own independent copies of <code>x</code> and <code>nam</code>:</p>
+<p>Il costruttore ha sia un parametro <code>self</code> che punta all’istanza dell’oggetto e quindi altri parametri che vengono passati al costruttore mentre l’oggetto viene costruito: s = PartyAnimal(‘Sally’) All’interno del costruttore, la riga: self.name = nam Copia il parametro passato (<code>nam</code>) nell’attributo <code>name</code> all’interno dell’istanza dell’oggetto. L’output del programma mostra che ognuno degli oggetti (<code>s</code> e <code>j</code>) contiene le proprie copie indipendenti di <code>x</code> e <code>nam</code>:</p>
 <pre><code>Sally constructed
 Sally party count 1
 Jim constructed
 Jim party count 1
 Sally party count 2</code></pre>
-<h2 id="inheritance">Inheritance</h2>
-<p>Another powerful feature of object oriented programming is the ability to create a new class by extending an existing class. When extending a class, we call the original class the 'parent class' and the new class as the 'child class'.</p>
-<p>For this example, we will move our <code>PartyAnimal</code> class into its own file:</p>
+<h2 id="ereditarietà">Ereditarietà</h2>
+<p>Un’altra potente caratteristica della programmazione orientata agli oggetti è la possibilità di creare una nuova classe estendendo una classe esistente. Quando estendiamo una classe, chiamiamo la classe originale la ‘classe genitore’ e la nuova classe come ‘classe figlia’. Per questo esempio, sposteremo la nostra classe <code>PartyAnimal</code> nel suo file:</p>
 <pre class="python"><code>class PartyAnimal:
    x = 0
    name = &#39;&#39;
@@ -278,7 +258,7 @@ Sally party count 2</code></pre>
      print(self.name,&#39;party count&#39;,self.x)
 
 # Code: http://www.py4e.com/code3/party.py</code></pre>
-<p>Then, we can 'import' the <code>PartyAnimal</code> class in a new file and extend it as follows:</p>
+<p>Quindi, possiamo ‘importare’ la classe <code>PartyAnimal</code> in un nuovo file ed estenderla come segue:</p>
 <pre class="python"><code>from party import PartyAnimal
 
 class CricketFan(PartyAnimal):
@@ -296,9 +276,7 @@ j.six()
 print(dir(j))
 
 # Code: http://www.py4e.com/code3/party6.py</code></pre>
-<p>When we are defining the <code>CricketFan</code> object, we indicate that we are extending the <code>PartyAnimal</code> class. This means that all of the variables (<code>x</code>) and methods (<code>party</code>) from the <code>PartyAnimal</code> class are inherited by the <code>CricketFan</code> class.</p>
-<p>You can see that within the <code>six</code> method in the <code>CricketFan</code> class, we can call the <code>party</code> method from the <code>PartyAnimal</code> class. The variables and methods from the parent class are <em>merged</em> into the child class.</p>
-<p>As the program executes, we can see that the <code>s</code> and <code>j</code> are independent instances of <code>PartyAnimal</code> and <code>CricketFan</code>. The <code>j</code> object has additional capabilities beyond the <code>s</code> object.</p>
+<p>Quando definiamo l’oggetto <code>CricketFan</code>, indichiamo che stiamo estendendo la classe <code>PartyAnimal</code>. Ciò significa che tutte le variabili (<code>x</code>) e i metodi (<code>party</code>) della classe <code>PartyAnimal</code> sono ereditate dalla classe <code>CricketFan</code>. Potete vedere che all’interno del metodo <code>six</code> nella classe <code>CricketFan</code>, possiamo chiamare il metodo <code>party</code> dalla classe <code>PartyAnimal</code>. Le variabili e i metodi della classe genitore sono <em>uniti</em> nella classe figlio. Mentre il programma viene eseguito, possiamo vedere che <code>s</code> e <code>j</code> sono istanze indipendenti di <code>PartyAnimal</code> e <code>CricketFan</code>. L’oggetto <code>j</code> ha capacità aggiuntive rispetto all’oggetto <code>s</code>.</p>
 <pre><code>Sally constructed
 Sally party count 1
 Jim constructed
@@ -307,9 +285,9 @@ Jim party count 2
 Jim points 6
 [&#39;__class__&#39;, &#39;__delattr__&#39;, ... &#39;__weakref__&#39;,
 &#39;name&#39;, &#39;party&#39;, &#39;points&#39;, &#39;six&#39;, &#39;x&#39;]</code></pre>
-<p>In the <code>dir</code> output for the <code>j</code> object (instance of the <code>CricketFan</code> class) you can see that it both has the attributes and methods of the parent class as well as the attributes and methods that were added when the class was extended to create the <code>CricketFan</code> class.</p>
-<h2 id="summary">Summary</h2>
-<p>This is a very quick introduction to object-oriented programming that focuses mainly on terminology and the syntax of defining and using objects. Let's quickly review the code that we looked at in the beginning of the chapter. At this point you should fully understand what is going on.</p>
+<p>Nell’output <code>dir</code> per l’oggetto <code>j</code> (istanza della classe <code>CricketFan</code>) potete vedere che entrambi hanno gli attributi e i metodi della classe genitore così come gli attributi e i metodi che sono stati aggiunti quando la classe è stata estesa per creare la classe <code>CricketFan</code>.</p>
+<h2 id="sommario">Sommario</h2>
+<p>Questa è un’introduzione molto rapida alla programmazione orientata agli oggetti che si concentra principalmente sulla terminologia e sulla sintassi della definizione e sull’utilizzo degli oggetti. Rivediamo rapidamente il codice che abbiamo visto all’inizio del capitolo. A questo punto dovreste capire appieno cosa sta succedendo.</p>
 <pre class="python"><code>stuff = list()
 stuff.append(&#39;python&#39;)
 stuff.append(&#39;chuck&#39;)
@@ -320,49 +298,46 @@ print (stuff.__getitem__(0))
 print (list.__getitem__(stuff,0))
 
 # Code: http://www.py4e.com/code3/party1.py</code></pre>
-<p>The first line constructs a <code>list</code> <em>object</em>. When Python creates the <code>list</code> object, it calls the <em>constructor</em> method (named <code>__init__</code>) to set up the internal data attributes that will be used to store the list data. Due to <em>encapsulation</em> we neither need to know, nor need to care about how these internal data attributes are arranged.</p>
-<p>We are not passing any parameters to the <em>constructor</em> and when the constructor returns, we use the variable <code>stuff</code> to point to the returned instance of the <code>list</code> class.</p>
-<p>The second and third lines are calling the <code>append</code> method with one parameter to add a new item at the end of the list by updating the attributes within <code>stuff</code>. Then in the fourth line, we call the <code>sort</code> method with no parameters to sort the data within the <code>stuff</code> object.</p>
-<p>Then we print out the first item in the list using the square brackets which are a shortcut to calling the <code>__getitem__</code> method within the <code>stuff</code> <em>object</em>. And this is equivalent to calling the <code>__getitem__</code> method in the <code>list</code> <em>class</em> passing the <code>stuff</code> object in as the first parameter and the position we are looking for as the second parameter.</p>
-<p>At the end of the program the <code>stuff</code> object is discarded but not before calling the <em>destructor</em> (named <code>__del__</code>) so the object can clean up any loose ends as necessary.</p>
-<p>Those are the basics and terminology of object oriented programming. There are many additional details as to how to best use object oriented approaches when developing large applications and libraries that are beyond the scope of this chapter.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
-<h2 id="glossary">Glossary</h2>
+<p>La prima riga costruisce un <em>oggetto</em> <code>list</code>. Quando Python crea l’oggetto <code>list</code>, chiama il metodo <em>constructor</em> (chiamato <code>__init__</code>) per impostare gli attributi dei dati interni che verranno utilizzati per memorizzare i dati dell’elenco.<br />
+Grazie all’<em>incapsulamento</em> non abbiamo bisogno di sapere, né di preoccuparci di come sono organizzati questi attributi dei dati interni.</p>
+<p>Non passiamo alcun parametro al <em>costruttore</em> e quando il costruttore ritorna, usiamo la variabile <code>stuff</code> per puntare all’istanza restituita della classe <code>list</code>. La seconda e la terza riga chiamano il metodo <code>append</code> con un parametro per aggiungere un nuovo elemento alla fine dell’elenco aggiornando gli attributi all’interno di <code>stuff</code>. Quindi nella quarta riga, chiamiamo il metodo <code>sort</code> senza parametri per ordinare i dati all’interno dell’oggetto <code>stuff</code>.</p>
+<p>Quindi stampiamo il primo elemento nell’elenco usando le parentesi quadre che sono una scorciatoia per chiamare il metodo <code>__getitem__</code> all’interno dell’<em>oggetto</em> <code>stuff</code>. E questo equivale a chiamare il metodo <code>__getitem__</code> nella <em>classe</em> <code>list</code> passando l’oggetto <code>stuff</code> come primo parametro e la posizione che stiamo cercando come secondo parametro. Alla fine del programma l’oggetto <code>stuff</code> viene scartato ma non prima di chiamare il <em>destructor</em> (chiamato<code>__del__</code>) in modo che l’oggetto possa ripulire le estremità libere se necessario.</p>
+<p>Queste sono le basi e la terminologia della programmazione orientata agli oggetti. Ci sono molti dettagli aggiuntivi su come utilizzare al meglio gli approcci orientati agli oggetti quando si sviluppano applicazioni e librerie di grandi dimensioni che vanno oltre lo scopo di questo capitolo.^ [Se siete curiosi di sapere dove è definita la classe list, date un’occhiata (speriamo che l’URL non cambierà) https://github.com/python/cpython/blob/master/Objects/listobject.c - la classe list è scritta in un linguaggio chiamato “C”. Se date un’occhiata a quel codice sorgente e lo trovate curioso, potreste voler esplorare alcuni corsi di informatica.]</p>
+<h2 id="glossario">Glossario</h2>
 <dl>
-<dt>attribute</dt>
-<dd>A variable that is part of a class. 
+<dt>attributo</dt>
+<dd>una variabile che fa parte di una classe. 
 </dd>
-<dt>class</dt>
-<dd>A template that can be used to construct an object. Defines the attributes and methods that will make up the object. 
+<dt>classe</dt>
+<dd>un modello che può essere utilizzato per costruire un oggetto. Definisce gli attributi e i metodi che compongono l’oggetto. 
 </dd>
-<dt>child class</dt>
-<dd>A new class created when a parent class is extended. The child class inherits all of the attributes and methods of the parent class. 
+<dt>classe figlia</dt>
+<dd>una nuova classe creata quando viene estesa una classe genitore. La classe figlia eredita tutti gli attributi e i metodi della classe genitore. 
 </dd>
-<dt>constructor</dt>
-<dd>An optional specially named method (<code>__init__</code>) that is called at the moment when a class is being used to construct an object. Usually this is used to set up initial values for the object. 
+<dt>costruttore</dt>
+<dd>un metodo opzionale con un nome speciale (<code>__init__</code>) chiamato nel momento in cui una classe viene usata per costruire un oggetto. Di solito viene utilizzato per impostare i valori iniziali dell’oggetto. 
 </dd>
 <dt>destructor</dt>
-<dd>An optional specially named method (<code>__del__</code>) that is called at the moment just before an object is destroyed. Destructors are rarely used. 
+<dd>un metodo opzionale con un nome speciale (<code>__del__</code>) che viene chiamato al momento giusto prima che un oggetto venga distrutto. I distruttori sono usati raramente. 
 </dd>
-<dt>inheritance</dt>
-<dd>When we create a new class (child) by extending an existing class (parent). The child class has all the attributes and methods of the parent class plus additional attributes and methods defined by the child class. 
+<dt>ereditarietà</dt>
+<dd>quando creiamo una nuova classe (figlia) estendendo una classe esistente (genitore). La classe figlia ha tutti gli attributi e i metodi della classe genitore più ulteriori attributi e metodi definiti dalla classe figlio. 
 </dd>
-<dt>method</dt>
-<dd>A function that is contained within a class and the objects that are constructed from the class. Some object-oriented patterns use 'message' instead of 'method' to describe this concept.  
+<dt>metodo</dt>
+<dd>una funzione che è contenuta all’interno di una classe e gli oggetti costruiti dalla classe. Alcuni modelli orientati agli oggetti usano ‘messaggio’ invece di ‘metodo’ per descrivere questo concetto.  
 </dd>
-<dt>object</dt>
-<dd>A constructed instance of a class. An object contains all of the attributes and methods that were defined by the class. Some object-oriented documentation uses the term 'instance' interchangeably with 'object'. 
+<dt>oggetto</dt>
+<dd>un’istanza costruita di una classe. Un oggetto contiene tutti gli attributi e i metodi definiti dalla classe. Alcuni documenti orientati agli oggetti usano il termine ‘istanza’ in modo intercambiabile con ‘oggetto’. 
 </dd>
-<dt>parent class</dt>
-<dd>The class which is being extended to create a new child class. The parent class contributes all of its methods and attributes to the new child class. 
+<dt>classe genitore</dt>
+<dd>la classe che viene estesa per creare una nuova classe figlia. La classe genitore contribuisce con tutti i suoi metodi e attributi alla nuova classe figlia. 
 </dd>
 </dl>
-<div class="footnotes">
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>https://docs.python.org/3/library/html.parser.html<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Cookie image copyright CC-BY https://www.flickr.com/photos/dinnerseries/23570475099<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>If you are curious about where the list class is defined, take a look at (hopefully the URL won't change) https://github.com/python/cpython/blob/master/Objects/listobject.c - the list class is written in a language called &quot;C&quot;. If you take a look at that source code and find it curious you might want to explore a few Computer Science courses.<a href="#fnref3">↩</a></p></li>
+<li id="fn1"><p>Cookie immagine copyright CC-BY https://www.flickr.com/photos/dinnerseries/23570475099<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
-</div>
+</section>
 </body>
 </html>

@@ -1,76 +1,81 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="http://thisisdallas.github.io/Simple-Grid/simpleGrid.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Untitled</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="http://thisisdallas.github.io/Simple-Grid/simpleGrid.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-<h1 id="dictionaries">Dictionaries</h1>
+<h1 id="dizionari">Dizionari</h1>
 <p> </p>
 <p>    </p>
-<p>A <em>dictionary</em> is like a list, but more general. In a list, the index positions have to be integers; in a dictionary, the indices can be (almost) any type.</p>
-<p>You can think of a dictionary as a mapping between a set of indices (which are called <em>keys</em>) and a set of values. Each key maps to a value. The association of a key and a value is called a <em>key-value pair</em> or sometimes an <em>item</em>.</p>
-<p>As an example, we'll build a dictionary that maps from English to Spanish words, so the keys and the values are all strings.</p>
-<p>The function <code>dict</code> creates a new dictionary with no items. Because <code>dict</code> is the name of a built-in function, you should avoid using it as a variable name.</p>
+<p>Un <em>dizionario</em> è come un elenco, ma più generico. In un elenco, gli indici di posizione devono essere numeri interi; in un dizionario, gli indici possono essere (più o meno) di qualsiasi tipo. Potete pensare a un dizionario come una correlazione tra un insieme di indici (che sono chiamati <em>chiavi</em>) e un insieme di valori. Ogni chiave viene associata ad un valore. L’associazione di una chiave e un valore è chiamata <em>coppia chiave-valore</em> o talvolta <em>elemento</em>.<br />
+Ad esempio, costruiremo un dizionario che associ le parole inglesi alle spagnole, quindi le chiavi e i valori saranno tutte stringhe.<br />
+La funzione <code>dict</code> crea un nuovo dizionario senza elementi. Poiché <code>dict</code> è il nome di una funzione integrata, dovreste evitare di usarlo come nome di variabile.</p>
 <p> </p>
 <pre class="python trinket"><code>&gt;&gt;&gt; eng2sp = dict()
 &gt;&gt;&gt; print(eng2sp)
 {}</code></pre>
-<p>The curly brackets, <code>{}</code>, represent an empty dictionary. To add items to the dictionary, you can use square brackets:</p>
+<p>Le parentesi graffe, <code>{}</code>, rappresentano un dizionario vuoto. Per aggiungere elementi al dizionario, potete usare le parentesi quadre:</p>
 <p> </p>
 <pre class="python"><code>&gt;&gt;&gt; eng2sp[&#39;one&#39;] = &#39;uno&#39;</code></pre>
-<p>This line creates an item that maps from the key <code>'one'</code> to the value &quot;uno&quot;. If we print the dictionary again, we see a key-value pair with a colon between the key and value:</p>
+<p>Questa linea crea un oggetto che associa la chiave “uno” al valore “uno”. Se visualizziamo nuovamente il dizionario, vediamo una coppia chiave-valore con due punti tra la chiave e il valore:</p>
 <pre class="python"><code>&gt;&gt;&gt; print(eng2sp)
 {&#39;one&#39;: &#39;uno&#39;}</code></pre>
-<p>This output format is also an input format. For example, you can create a new dictionary with three items. But if you print <code>eng2sp</code>, you might be surprised:</p>
+<p>Questo formato di output è anche un formato di input. Ad esempio, potete creare un nuovo dizionario con tre elementi. Ma se visualizzate <code>eng2sp</code>, potreste rimanere sorpresi:</p>
 <pre class="python"><code>&gt;&gt;&gt; eng2sp = {&#39;one&#39;: &#39;uno&#39;, &#39;two&#39;: &#39;dos&#39;, &#39;three&#39;: &#39;tres&#39;}
 &gt;&gt;&gt; print(eng2sp)
 {&#39;one&#39;: &#39;uno&#39;, &#39;three&#39;: &#39;tres&#39;, &#39;two&#39;: &#39;dos&#39;}</code></pre>
-<p>The order of the key-value pairs is not the same. In fact, if you type the same example on your computer, you might get a different result. In general, the order of items in a dictionary is unpredictable.</p>
-<p>But that's not a problem because the elements of a dictionary are never indexed with integer indices. Instead, you use the keys to look up the corresponding values:</p>
+<p>L’ordine delle coppie chiave-valore non è lo stesso. Infatti, se digitiate lo stesso esempio sul vostro computer, potreste ottenere un risultato diverso. In generale, l’ordine degli elementi in un dizionario è imprevedibile. Ma questo non è un problema perché gli elementi di un dizionario non sono mai indicizzati con indici interi. Invece, usate le chiavi per cercare i valori corrispondenti:</p>
 <pre class="python"><code>&gt;&gt;&gt; print(eng2sp[&#39;two&#39;])
 &#39;dos&#39;</code></pre>
-<p>The key <code>'two'</code> always maps to the value &quot;dos&quot; so the order of the items doesn't matter.</p>
-<p>If the key isn't in the dictionary, you get an exception:</p>
+<p>La chiave <code>'two'</code> si associa sempre al valore “dos” in modo che l’ordine degli oggetti non abbia importanza. Se la chiave non è nel dizionario, otterrete un’eccezione:</p>
 <p> </p>
 <pre class="python"><code>&gt;&gt;&gt; print(eng2sp[&#39;four&#39;])
 KeyError: &#39;four&#39;</code></pre>
-<p>The <code>len</code> function works on dictionaries; it returns the number of key-value pairs:</p>
+<p>La funzione <code>len</code> può essere utilizzata sui dizionari; restituisce il numero di coppie chiave-valore:</p>
 <p> </p>
 <pre class="python"><code>&gt;&gt;&gt; len(eng2sp)
 3</code></pre>
-<p>The <code>in</code> operator works on dictionaries; it tells you whether something appears as a <em>key</em> in the dictionary (appearing as a value is not good enough).</p>
+<p>L’operatore <code>in</code> lavora sui dizionari; vi dice se qualche elemento risulta come una <em>chiave</em> nel dizionario (se risulta come un valore non va bene).</p>
 <p>  </p>
 <pre class="python"><code>&gt;&gt;&gt; &#39;one&#39; in eng2sp
 True
 &gt;&gt;&gt; &#39;uno&#39; in eng2sp
 False</code></pre>
-<p>To see whether something appears as a value in a dictionary, you can use the method <code>values</code>, which returns the values as a list, and then use the <code>in</code> operator:</p>
+<p>Per vedere se qualcosa risulta come valore in un dizionario, potete usare il metodo <code>values</code>, che restituisce i valori come un elenco, e quindi utilizzate l’operatore<code>in</code>:</p>
 <p> </p>
 <pre class="python"><code>&gt;&gt;&gt; vals = list(eng2sp.values())
 &gt;&gt;&gt; &#39;uno&#39; in vals
 True</code></pre>
-<p>The <code>in</code> operator uses different algorithms for lists and dictionaries. For lists, it uses a linear search algorithm. As the list gets longer, the search time gets longer in direct proportion to the length of the list. For dictionaries, Python uses an algorithm called a <em>hash table</em> that has a remarkable property: the <code>in</code> operator takes about the same amount of time no matter how many items there are in a dictionary. I won't explain why hash functions are so magical, but you can read more about it at <a href="wikipedia.org/wiki/Hash_table" class="uri">wikipedia.org/wiki/Hash_table</a>.</p>
-<p></p>
-<p>Exercise 1: [wordlist2]</p>
+<p>L’operatore <code>in</code> utilizza algoritmi diversi per elenchi e dizionari. Per gli elenchi, utilizza un algoritmo di ricerca lineare. Man mano che l’elenco si allunga, il tempo di ricerca si allunga in proporzione diretta alla lunghezza dell’elenco. Per i dizionari, Python utilizza un algoritmo chiamato <em>tabella degli hash</em> che ha una proprietà notevole: l’operatore <code>in</code> richiede circa la stessa quantità di tempo indipendentemente dal numero di elementi presenti in un dizionario. Non spiegheremo perché le funzioni di hash sono così magiche, ma potete leggere ulteriori informazioni su <a href="wikipedia.org/wiki/Hash_table" class="uri">wikipedia.org/wiki/Hash_table</a>.</p>
+
+<p><strong>Esercizio 1:</strong></p>
+<p>Scarica una copia del file: <a href="http://www.py4e.com/code3/words.txt">www.py4e.com/code3/words.txt</a></p>
 <p> </p>
-<p>Write a program that reads the words in <code>words.txt</code> and stores them as keys in a dictionary. It doesn't matter what the values are. Then you can use the <code>in</code> operator as a fast way to check whether a string is in the dictionary.</p>
-<h2 id="dictionary-as-a-set-of-counters">Dictionary as a set of counters</h2>
-<p></p>
-<p>Suppose you are given a string and you want to count how many times each letter appears. There are several ways you could do it:</p>
-<ol style="list-style-type: decimal">
-<li><p>You could create 26 variables, one for each letter of the alphabet. Then you could traverse the string and, for each character, increment the corresponding counter, probably using a chained conditional.</p></li>
-<li><p>You could create a list with 26 elements. Then you could convert each character to a number (using the built-in function <code>ord</code>), use the number as an index into the list, and increment the appropriate counter.</p></li>
-<li><p>You could create a dictionary with characters as keys and counters as the corresponding values. The first time you see a character, you would add an item to the dictionary. After that you would increment the value of an existing item.</p></li>
+<p>Scrivete un programma che legga le parole in <code>words.txt</code> e le memorizzi come chiavi in ​​un dizionario. Non importa quali siano i valori. Quindi potete usare l’operatore <code>in</code> come un modo veloce per verificare se una stringa è nel dizionario.</p>
+<h2 id="dizionario-come-insieme-di-contatori">Dizionario come insieme di contatori</h2>
+
+<p>Supponiamo di avere una stringa e di voler contare quante volte appaia ogni lettera. Ci sono diversi modi per farlo:</p>
+<ol type="1">
+<li><p>Potreste creare 26 variabili, una per ogni lettera dell’alfabeto. Quindi potreste scorrere la stringa e, per ogni carattere, incrementare il contatore corrispondente, probabilmente usando una condizione concatenata.</p></li>
+<li><p>Potreste creare una lista con 26 elementi. Quindi potreste convertire ciascun carattere in un numero (utilizzando la funzione incorporata <code>ord</code>), utilizzare il numero come indice nell’elenco e incrementare il contatore appropriato.</p></li>
+<li><p>potreste creare un dizionario con caratteri come chiavi e contatori come valori corrispondenti. La prima volta che vedete un carattere, dovrete aggiungere un elemento al dizionario. Successivamente, dovreste incrementerare il valore di un elemento esistente.</p></li>
 </ol>
-<p>Each of these options performs the same computation, but each of them implements that computation in a different way.</p>
-<p></p>
-<p>An <em>implementation</em> is a way of performing a computation; some implementations are better than others. For example, an advantage of the dictionary implementation is that we don't have to know ahead of time which letters appear in the string and we only have to make room for the letters that do appear.</p>
-<p>Here is what the code might look like:</p>
+<p>Ognuna di queste opzioni esegue lo stesso calcolo, ma ognuna di esse implementa tale calcolo in una maniera diversa.</p>
+
+<p>Un’<em>implementazione</em> è un modo di eseguire un calcolo; alcune implementazioni sono migliori di altre. Ad esempio, un vantaggio dell’implementazione del dizionario è che non dobbiamo sapere in anticipo quali lettere appaiono nella stringa e dobbiamo solo fare spazio per le lettere che appaiono. Ecco come potrebbe apparire il codice:</p>
 <pre class="python trinket"><code>word = &#39;brontosaurus&#39;
 d = dict()
 for c in word:
@@ -79,41 +84,37 @@ for c in word:
     else:
         d[c] = d[c] + 1
 print(d)</code></pre>
-<p>We are effectively computing a <em>histogram</em>, which is a statistical term for a set of counters (or frequencies).</p>
+<p>Stiamo effettivamente calcolando un <em>istogramma</em>, che è un termine statistico per un insieme di contatori (o frequenze).</p>
 <p>  </p>
-<p>The <code>for</code> loop traverses the string. Each time through the loop, if the character <code>c</code> is not in the dictionary, we create a new item with key <code>c</code> and the initial value 1 (since we have seen this letter once). If <code>c</code> is already in the dictionary we increment <code>d[c]</code>.</p>
-<p></p>
-<p>Here's the output of the program:</p>
+<p>Il ciclo <code>for</code> attraversa la stringa. Ogni volta che viene eseguito il ciclo, se il carattere <code>c</code> non è nel dizionario, creiamo un nuovo elemento con la chiave <code>c</code> e il valore iniziale 1 (poiché abbiamo visto questa lettera una sola volta). Se <code>c</code> è già presente nel dizionario incrementiamo <code>d[c]</code>.</p>
+
+<p>Ecco l’output del programma:</p>
 <pre class="python"><code>{&#39;a&#39;: 1, &#39;b&#39;: 1, &#39;o&#39;: 2, &#39;n&#39;: 1, &#39;s&#39;: 2, &#39;r&#39;: 2, &#39;u&#39;: 2, &#39;t&#39;: 1}</code></pre>
-<p>The histogram indicates that the letters <code>'a'</code> and &quot;b&quot; appear once; &quot;o&quot; appears twice, and so on.</p>
+<p>L’istogramma indica che le lettere “a” e “b” compaiono una sola volta; “o” appare due volte e così via.</p>
 <p> </p>
-<p>Dictionaries have a method called <code>get</code> that takes a key and a default value. If the key appears in the dictionary, <code>get</code> returns the corresponding value; otherwise it returns the default value. For example:</p>
+<p>I dizionari hanno un metodo chiamato <code>get</code> che riceve una chiave e un valore predefinito. Se la chiave è presente nel dizionario, <code>get</code> restituisce il valore corrispondente; altrimenti restituisce il valore predefinito. Per esempio:</p>
 <pre class="python trinket"><code>&gt;&gt;&gt; counts = { &#39;chuck&#39; : 1 , &#39;annie&#39; : 42, &#39;jan&#39;: 100}
 &gt;&gt;&gt; print(counts.get(&#39;jan&#39;, 0))
 100
 &gt;&gt;&gt; print(counts.get(&#39;tim&#39;, 0))
 0</code></pre>
-<p>We can use <code>get</code> to write our histogram loop more concisely. Because the <code>get</code> method automatically handles the case where a key is not in a dictionary, we can reduce four lines down to one and eliminate the <code>if</code> statement.</p>
+<p>Possiamo usare <code>get</code> per scrivere il nostro ciclo di istogramma in modo più rapido. Poiché il metodo <code>get</code> gestisce automaticamente il caso in cui una chiave non è presente in un dizionario, possiamo ridurre quattro righe ad una sola ed eliminare l’istruzione <code>if</code>.</p>
 <pre class="python"><code>word = &#39;brontosaurus&#39;
 d = dict()
 for c in word:
     d[c] = d.get(c,0) + 1
 print(d)</code></pre>
-<p>The use of the <code>get</code> method to simplify this counting loop ends up being a very commonly used &quot;idiom&quot; in Python and we will use it many times in the rest of the book. So you should take a moment and compare the loop using the <code>if</code> statement and <code>in</code> operator with the loop using the <code>get</code> method. They do exactly the same thing, but one is more succinct.</p>
-<p></p>
-<h2 id="dictionaries-and-files">Dictionaries and files</h2>
-<p>One of the common uses of a dictionary is to count the occurrence of words in a file with some written text. Let's start with a very simple file of words taken from the text of <em>Romeo and Juliet</em>.</p>
-<p>For the first set of examples, we will use a shortened and simplified version of the text with no punctuation. Later we will work with the text of the scene with punctuation included.</p>
-<pre><code>But soft what light through yonder window breaks
-It is the east and Juliet is the sun
-Arise fair sun and kill the envious moon
-Who is already sick and pale with grief</code></pre>
-<p>We will write a Python program to read through the lines of the file, break each line into a list of words, and then loop through each of the words in the line and count each word using a dictionary.</p>
+<p>L’uso del metodo <code>get</code> per semplificare questo ciclo di conteggio sarà un “idioma” usato molto comunemente in Python e lo useremo molte volte nel resto del libro. Quindi dovreste prendervi un momento e confrontare il ciclo che utilizza l’istruzione <code>if</code> e l’operatore <code>in</code> con il ciclo che utilizza il metodo <code>get</code>. Fanno esattamente la stessa cosa, ma uno è più conciso.</p>
+
+<h2 id="dizionari-e-file">Dizionari e file</h2>
+<p>Uno degli usi più comuni di un dizionario è contare la frequenza di parole in un file che abbia un testo scritto. Iniziamo con un semplice file di parole tratto dal testo di <em>Romeo e Giulietta</em>.</p>
+<p>Per la prima serie di esempi, utilizzeremo una versione abbreviata e semplificata del testo senza segni di punteggiatura. Successivamente lavoreremo con il testo della scena con la punteggiatura inclusa.</p>
+<p>But soft what light through yonder window breaks It is the east and Juliet is the sun Arise fair sun and kill the envious moon Who is already sick and pale with grief</p>
+<p>Scriveremo un programma Python per leggere le righe del file, suddividere ogni riga in un elenco di parole, quindi scorrere ciascuna parola presente nella riga e contarne ognuna utilizzando un dizionario.</p>
 <p> </p>
-<p>You will see that we have two <code>for</code> loops. The outer loop is reading the lines of the file and the inner loop is iterating through each of the words on that particular line. This is an example of a pattern called <em>nested loops</em> because one of the loops is the <em>outer</em> loop and the other loop is the <em>inner</em> loop.</p>
-<p>Because the inner loop executes all of its iterations each time the outer loop makes a single iteration, we think of the inner loop as iterating &quot;more quickly&quot; and the outer loop as iterating more slowly.</p>
-<p></p>
-<p>The combination of the two nested loops ensures that we will count every word on every line of the input file.</p>
+<p>Vedrete che avremo due cicli <code>for</code>. Il ciclo esterno sta leggendo le righe del file e il ciclo interno si sta ripetendo su ciascuna delle parole presenti in quella particolare riga. Questo è un esempio di uno schema chiamato <em>cicli annidati</em> perché uno dei cicli è il ciclo <em>esterno</em> e l’altro è il ciclo <em>interno</em>. Poiché il ciclo interno esegue tutte le sue iterazioni ogni volta che il ciclo esterno effettua una singola iterazione, pensiamo al ciclo interno come se iterasse “più rapidamente” e al ciclo esterno come se iterasse più lentamente.</p>
+
+<p>La combinazione dei due cicli annidati garantisce che conteremo ogni parola su ogni riga del file in input.</p>
 <pre class="python"><code>fname = input(&#39;Enter the file name: &#39;)
 try:
     fhand = open(fname)
@@ -134,7 +135,7 @@ print(counts)
 
 # Code: http://www.py4e.com/code3/count1.py</code></pre>
 
-<p>When we run the program, we see a raw dump of all of the counts in unsorted hash order. (the <code>romeo.txt</code> file is available at <a href="http://www.py4e.com/code3/romeo.txt">www.py4e.com/code3/romeo.txt</a>)</p>
+<p>Quando eseguiamo il programma, vediamo un mucchio grezzo di tutti i conteggi in un ordine di hash non ordinato. (il file <code>romeo.txt</code> è disponibile su <a href="http://www.py4e.com/code3/romeo.txt">www.py4e.com/code3/romeo.txt</a>)</p>
 <pre><code>python count1.py
 Enter the file name: romeo.txt
 {&#39;and&#39;: 3, &#39;envious&#39;: 1, &#39;already&#39;: 1, &#39;fair&#39;: 1,
@@ -143,60 +144,54 @@ Enter the file name: romeo.txt
 &#39;window&#39;: 1, &#39;sick&#39;: 1, &#39;east&#39;: 1, &#39;breaks&#39;: 1,
 &#39;grief&#39;: 1, &#39;with&#39;: 1, &#39;light&#39;: 1, &#39;It&#39;: 1, &#39;Arise&#39;: 1,
 &#39;kill&#39;: 1, &#39;the&#39;: 3, &#39;soft&#39;: 1, &#39;Juliet&#39;: 1}</code></pre>
-<p>It is a bit inconvenient to look through the dictionary to find the most common words and their counts, so we need to add some more Python code to get us the output that will be more helpful.</p>
-<h2 id="looping-and-dictionaries">Looping and dictionaries</h2>
+<p>È un po’ scomodo cercare nel dizionario per trovare le parole più comuni e i loro conteggi, quindi abbiamo bisogno di aggiungere altro codice Python per ottenere un output che ci sarà più utile.</p>
+<h2 id="cicli-e-dizionari">Cicli e dizionari</h2>
 <p>  </p>
-<p>If you use a dictionary as the sequence in a <code>for</code> statement, it traverses the keys of the dictionary. This loop prints each key and the corresponding value:</p>
+<p>Se si usa un dizionario come una sequenza in un’istruzione <code>for</code>, questo scorre le chiavi del dizionario. Questo ciclo visualizza ogni chiave e il valore corrispondente:</p>
 <pre class="python"><code>counts = { &#39;chuck&#39; : 1 , &#39;annie&#39; : 42, &#39;jan&#39;: 100}
 for key in counts:
     print(key, counts[key])</code></pre>
-<p>Here's what the output looks like:</p>
+<p>Ecco come appare l’output:</p>
 <pre><code>jan 100
 chuck 1
 annie 42</code></pre>
-<p>Again, the keys are in no particular order.</p>
-<p></p>
-<p>We can use this pattern to implement the various loop idioms that we have described earlier. For example if we wanted to find all the entries in a dictionary with a value above ten, we could write the following code:</p>
+<p>Anche qui le chiavi non seguono alcun ordine particolare.</p>
+
+<p>Possiamo usare questo schema per implementare i vari cicli degli idiomi che abbiamo descritto in precedenza. Ad esempio, se volessimo trovare tutte le voci in un dizionario con un valore superiore a dieci, potremmo scrivere il seguente codice:</p>
 <pre class="python"><code>counts = { &#39;chuck&#39; : 1 , &#39;annie&#39; : 42, &#39;jan&#39;: 100}
 for key in counts:
     if counts[key] &gt; 10 :
         print(key, counts[key])</code></pre>
-<p>The <code>for</code> loop iterates through the <em>keys</em> of the dictionary, so we must use the index operator to retrieve the corresponding <em>value</em> for each key. Here's what the output looks like:</p>
+<p>Il ciclo <code>for</code> scorre le <em>chiavi</em> del dizionario, quindi dovremo utilizzare l’operatore di indice per recuperare il <em>valore</em> corrispondente per ogni chiave. Ecco come appare l’output:</p>
 <pre><code>jan 100
 annie 42</code></pre>
-<p>We see only the entries with a value above 10.</p>
+<p>Vediamo solo le voci con un valore superiore a 10.</p>
 <p> </p>
-<p>If you want to print the keys in alphabetical order, you first make a list of the keys in the dictionary using the <code>keys</code> method available in dictionary objects, and then sort that list and loop through the sorted list, looking up each key and printing out key-value pairs in sorted order as follows:</p>
+<p>Se desiderate visualizzare le chiavi in ordine alfabetico, è prima necessario creare un elenco delle chiavi nel dizionario utilizzando il metodo <code>keys</code> disponibile per gli oggetti dizionario, quindi ordinare l’elenco e scorrere l’elenco ordinato, cercando ogni chiave e visualizzando le coppie chiave-valore in maniera ordinata come segue:</p>
 <pre class="python"><code>counts = { &#39;chuck&#39; : 1 , &#39;annie&#39; : 42, &#39;jan&#39;: 100}
 lst = list(counts.keys())
 print(lst)
 lst.sort()
 for key in lst:
     print(key, counts[key])</code></pre>
-<p>Here's what the output looks like:</p>
+<p>Ecco come appare l’output:</p>
 <pre><code>[&#39;jan&#39;, &#39;chuck&#39;, &#39;annie&#39;]
 annie 42
 chuck 1
 jan 100</code></pre>
-<p>First you see the list of keys in unsorted order that we get from the <code>keys</code> method. Then we see the key-value pairs in order from the <code>for</code> loop.</p>
-<h2 id="advanced-text-parsing">Advanced text parsing</h2>
-<p></p>
-<p>In the above example using the file <code>romeo.txt</code>, we made the file as simple as possible by removing all punctuation by hand. The actual text has lots of punctuation, as shown below.</p>
+<p>Per prima cosa vedrete la lista delle chiavi in maniera non ordinata che otteniamo dal metodo <code>keys</code>. Quindi vedrete le coppie chiave-valore ordinate dal ciclo <code>for</code>.</p>
+<h2 id="analisi-avanzata-del-testo">Analisi avanzata del testo</h2>
+
+<p>Nell’esempio precedente utilizzando il file <code>romeo.txt</code>, abbiamo reso il file il più semplice possibile rimuovendo manualmente tutti i segni di punteggiatura. Il testo reale ha molta punteggiatura, come mostrato di seguito.</p>
 <pre><code>But, soft! what light through yonder window breaks?
 It is the east, and Juliet is the sun.
 Arise, fair sun, and kill the envious moon,
 Who is already sick and pale with grief,</code></pre>
-<p>Since the Python <code>split</code> function looks for spaces and treats words as tokens separated by spaces, we would treat the words &quot;soft!&quot; and &quot;soft&quot; as <em>different</em> words and create a separate dictionary entry for each word.</p>
-<p>Also since the file has capitalization, we would treat &quot;who&quot; and &quot;Who&quot; as different words with different counts.</p>
-<p>We can solve both these problems by using the string methods <code>lower</code>, <code>punctuation</code>, and <code>translate</code>. The <code>translate</code> is the most subtle of the methods. Here is the documentation for <code>translate</code>:</p>
-<p><code>line.translate(str.maketrans(fromstr, tostr, deletestr))</code></p>
-<p><em>Replace the characters in <code>fromstr</code> with the character in the same position in <code>tostr</code> and delete all characters that are in <code>deletestr</code>. The <code>fromstr</code> and <code>tostr</code> can be empty strings and the <code>deletestr</code> parameter can be omitted.</em></p>
-<p>We will not specify the <code>table</code> but we will use the <code>deletechars</code> parameter to delete all of the punctuation. We will even let Python tell us the list of characters that it considers &quot;punctuation&quot;:</p>
+<p>Dato che la funzione Python <code>split</code> cerca spazi e tratta parole come elementi separati da spazi, tratteremo le parole “soft!”e “soft”come parole <em>differenti</em> e creiamo una voce di dizionario separata per ognuna di queste. Inoltre, poiché il file è in maiuscolo, considereremo “who” e “Who” come parole diverse con diversi conteggi. Possiamo risolvere entrambi questi problemi usando i metodi per le stringhe <code>lower</code>, <code>punctuation</code> e <code>translate</code>. Il metodo <code>translate</code> è il più astuto dei metodi. Ecco la documentazione del metodo <code>translate</code>: <code>line.translate(str.maketrans(fromstr, tostr, deletestr))</code> <em>Sostituisce i caratteri in <code>fromstr</code> con il carattere nella stessa posizione in <code>tostr</code> ed elimina tutti i caratteri che sono in <code>deletestr</code>. <code>Fromstr</code> e <code>tostr</code> possono essere stringhe vuote e il parametro <code>deletestr</code> può essere omesso.</em>Non specificheremo la <code>tabella</code>, ma useremo il parametro <code>deletechars</code> per cancellare tutta la punteggiatura. Lasceremo persino che Python ci fornisca la lista dei caratteri che considera “punteggiatura”:</p>
 <pre class="python"><code>&gt;&gt;&gt; import string
 &gt;&gt;&gt; string.punctuation
 &#39;!&quot;#$%&amp;\&#39;()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~&#39;</code></pre>
-<p>The parameters used by <code>translate</code> were different in Python 2.0.</p>
-<p>We make the following modifications to our program:</p>
+<p>I parametri utilizzati dal metodo <code>translate</code> erano diversi in Python 2.0. Effettuiamo le seguenti modifiche al nostro programma:</p>
 <pre class="python"><code>import string
 
 fname = input(&#39;Enter the file name: &#39;)
@@ -222,81 +217,100 @@ print(counts)
 
 # Code: http://www.py4e.com/code3/count2.py</code></pre>
 
-<p>Part of learning the &quot;Art of Python&quot; or &quot;Thinking Pythonically&quot; is realizing that Python often has built-in capabilities for many common data analysis problems. Over time, you will see enough example code and read enough of the documentation to know where to look to see if someone has already written something that makes your job much easier.</p>
-<p>The following is an abbreviated version of the output:</p>
+<p>Parte dell’apprendimento di “Art of Python” o “Thinking Pythonically” è comprendere che Python ha spesso funzionalità integrate per molti problemi comuni di analisi dei dati. Nel tempo, vedrete abbastanza codice di esempio e leggerete abbastanza documentazione per sapere dove guardare per vedere se qualcuno ha già scritto qualcosa che renderà il vostro lavoro molto più facile. Quanto segue è una versione abbreviata dell’output:</p>
 <pre><code>Enter the file name: romeo-full.txt
 {&#39;swearst&#39;: 1, &#39;all&#39;: 6, &#39;afeard&#39;: 1, &#39;leave&#39;: 2, &#39;these&#39;: 2,
 &#39;kinsmen&#39;: 2, &#39;what&#39;: 11, &#39;thinkst&#39;: 1, &#39;love&#39;: 24, &#39;cloak&#39;: 1,
 a&#39;: 24, &#39;orchard&#39;: 2, &#39;light&#39;: 5, &#39;lovers&#39;: 2, &#39;romeo&#39;: 40,
 &#39;maiden&#39;: 1, &#39;whiteupturned&#39;: 1, &#39;juliet&#39;: 32, &#39;gentleman&#39;: 1,
 &#39;it&#39;: 22, &#39;leans&#39;: 1, &#39;canst&#39;: 1, &#39;having&#39;: 1, ...}</code></pre>
-<p>Looking through this output is still unwieldy and we can use Python to give us exactly what we are looking for, but to do so, we need to learn about Python <em>tuples</em>. We will pick up this example once we learn about tuples.</p>
-<h2 id="debugging">Debugging</h2>
-<p></p>
-<p>As you work with bigger datasets it can become unwieldy to debug by printing and checking data by hand. Here are some suggestions for debugging large datasets:</p>
+<p>Guardare a questo output è ancora poco agevole e possiamo usare Python per darci esattamente quello che stiamo cercando, ma per farlo, abbiamo bisogno di conoscere le <em>tuple</em> di Python. Riprenderemo questo esempio una volta appresa le tuple.</p>
+<h2 id="debug">Debug</h2>
+
+<p>Lavorando con insiemi di dati più grandi, può risultare poco pratico eseguire il debug stampando e controllando i dati manualmente. Ecco alcuni suggerimenti per il debug di insiemi di dati di grandi dimensioni: Ridimensionare l’input: se possibile, ridurre la dimensione dell’insieme di dati. Ad esempio, se il programma legge un file di testo, iniziate con solo le prime 10 righe o con l’esempio più piccolo che riuscite a trovare. Potete modificare i file stessi o (meglio) modificare il programma in modo che legga solo le prime <code>n</code> righe.</p>
+<p>Se c’è un errore, potete ridurre <code>n</code> al valore più piccolo che manifesta l’errore, e poi aumentarlo gradualmente man mano che trovate e correggete gli errori.</p>
+<p>Controllare i riepiloghi e i tipi: anziché visualizzare e controllare l’intero set di dati, prendete in considerazione la stampa di riepiloghi dei dati: ad esempio, il numero di elementi in un dizionario o il totale di un elenco di numeri.</p>
+<p>Una causa comune di errori di runtime è un valore che non è di tipo corretto. Per eseguire il debug di questo tipo di errore, è spesso sufficiente visualizzare il tipo di un valore.</p>
+<p>Scrivete autocontrolli: a volte potete scrivere codice per verificare automaticamente gli errori. Ad esempio, se si calcola la media di un elenco di numeri, è possibile verificare che il risultato non sia maggiore dell’elemento più grande nell’elenco o minore del più piccolo. Questo è chiamato “controllo di integrità” perché individua risultati “completamente illogici”.</p>
+<p> </p>
+<p>Un altro tipo di controllo confronta i risultati di due diversi calcoli per vedere se sono coerenti. Questo è chiamato “controllo di coerenza”. Visualizzare bene l’output: la formattazione dell’output di debug può rendere più facile individuare un errore. Ancora una volta, il tempo speso per la costruzione di impalcature può ridurre il tempo impiegato per il debugging.</p>
+
+<h2 id="glossario">Glossario</h2>
 <dl>
-<dt>Scale down the input</dt>
-<dd><p>If possible, reduce the size of the dataset. For example if the program reads a text file, start with just the first 10 lines, or with the smallest example you can find. You can either edit the files themselves, or (better) modify the program so it reads only the first <code>n</code> lines.</p>
-<p>If there is an error, you can reduce <code>n</code> to the smallest value that manifests the error, and then increase it gradually as you find and correct errors.</p>
-</dd>
-<dt>Check summaries and types</dt>
-<dd><p>Instead of printing and checking the entire dataset, consider printing summaries of the data: for example, the number of items in a dictionary or the total of a list of numbers.</p>
-<p>A common cause of runtime errors is a value that is not the right type. For debugging this kind of error, it is often enough to print the type of a value.</p>
-</dd>
-<dt>Write self-checks</dt>
-<dd><p>Sometimes you can write code to check for errors automatically. For example, if you are computing the average of a list of numbers, you could check that the result is not greater than the largest element in the list or less than the smallest. This is called a &quot;sanity check&quot; because it detects results that are &quot;completely illogical&quot;.  </p>
-<p>Another kind of check compares the results of two different computations to see if they are consistent. This is called a &quot;consistency check&quot;.</p>
-</dd>
-<dt>Pretty print the output</dt>
-<dd>Formatting debugging output can make it easier to spot an error.
+<dt>dizionario</dt>
+<dd>Creare una correlazione tra una serie di chiavi e i corrispondenti valori.
 </dd>
 </dl>
-<p>Again, time you spend building scaffolding can reduce the time you spend debugging. </p>
-<h2 id="glossary">Glossary</h2>
+
 <dl>
-<dt>dictionary</dt>
-<dd>A mapping from a set of keys to their corresponding values. 
-</dd>
-<dt>hashtable</dt>
-<dd>The algorithm used to implement Python dictionaries. 
-</dd>
-<dt>hash function</dt>
-<dd>A function used by a hashtable to compute the location for a key. 
-</dd>
-<dt>histogram</dt>
-<dd>A set of counters. 
-</dd>
-<dt>implementation</dt>
-<dd>A way of performing a computation. 
-</dd>
-<dt>item</dt>
-<dd>Another name for a key-value pair. 
-</dd>
-<dt>key</dt>
-<dd>An object that appears in a dictionary as the first part of a key-value pair. 
-</dd>
-<dt>key-value pair</dt>
-<dd>The representation of the mapping from a key to a value. 
-</dd>
-<dt>lookup</dt>
-<dd>A dictionary operation that takes a key and finds the corresponding value. 
-</dd>
-<dt>nested loops</dt>
-<dd>When there are one or more loops &quot;inside&quot; of another loop. The inner loop runs to completion each time the outer loop runs once.  
-</dd>
-<dt>value</dt>
-<dd>An object that appears in a dictionary as the second part of a key-value pair. This is more specific than our previous use of the word &quot;value&quot;. 
+<dt>Tabella di hash</dt>
+<dd>l’algoritmo utilizzato per implementare i dizionari Python.
 </dd>
 </dl>
-<h2 id="exercises">Exercises</h2>
-<p><strong>Exercise 2:</strong> Write a program that categorizes each mail message by which day of the week the commit was done. To do this look for lines that start with &quot;From&quot;, then look for the third word and keep a running count of each of the days of the week. At the end of the program print out the contents of your dictionary (order does not matter).</p>
-<p>Sample Line:</p>
+
+<dl>
+<dt>Funzione hash</dt>
+<dd>una funzione utilizzata da una tabella di hash per calcolare la posizione di una chiave.
+</dd>
+</dl>
+
+<dl>
+<dt>istogramma</dt>
+<dd>una serie di contatori.
+</dd>
+</dl>
+
+<dl>
+<dt>implementazione</dt>
+<dd>un modo di eseguire un calcolo.
+</dd>
+</dl>
+
+<dl>
+<dt>elemento</dt>
+<dd>un altro nome per una coppia chiave-valore.
+</dd>
+</dl>
+
+<dl>
+<dt>chiave</dt>
+<dd>un oggetto che appare in un dizionario come prima parte di una coppia chiave-valore.
+</dd>
+</dl>
+
+<dl>
+<dt>coppia chiave-valore</dt>
+<dd>la rappresentazione della correlazione da una chiave a un valore.
+</dd>
+</dl>
+
+<dl>
+<dt>ricerca</dt>
+<dd>un’operazione di dizionario che prende una chiave e trova il valore corrispondente.
+</dd>
+</dl>
+
+<dl>
+<dt>cicli annidati</dt>
+<dd>quando ci sono uno o più cicli “all’interno” di un altro ciclo. Il ciclo interno viene completato ogni volta che il ciclo esterno viene eseguito.
+</dd>
+</dl>
+<p> </p>
+<dl>
+<dt>valore</dt>
+<dd>un oggetto che appare in un dizionario come seconda parte di una coppia chiave-valore. Questo è più specifico del nostro precedente uso della parola “valore”.
+</dd>
+</dl>
+
+<h2 id="esercizi">Esercizi</h2>
+<p><strong>Esercizio 2:</strong> Scrivete un programma che classifichi ogni messaggio di posta in base al giorno della settimana in cui è stato inviato. Per fare ciò, cercate le righe che iniziano con “From”, quindi cercate la terza parola e mantenete un conteggio di ciascuno dei giorni della settimana. Alla fine del programma visualizzate i contenuti del vostro dizionario (l’ordine non ha importanza).<br />
+Riga di esempio:</p>
 <pre><code>    From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008</code></pre>
-<p>Sample Execution:</p>
+<p>Esempio di esecuzione:</p>
 <pre><code>python dow.py
 Enter a file name: mbox-short.txt
 {&#39;Fri&#39;: 20, &#39;Thu&#39;: 6, &#39;Sat&#39;: 1}</code></pre>
-<p><strong>Exercise 3:</strong> Write a program to read through a mail log, build a histogram using a dictionary to count how many messages have come from each email address, and print the dictionary.</p>
+<p><strong>Esercizio 3:</strong> Scrivete un programma per leggere un registro di posta, create un istogramma utilizzando un dizionario per contare quanti messaggi sono arrivati ​​da ciascun indirizzo di posta elettronica e stampate il dizionario.</p>
 <pre><code>Enter file name: mbox-short.txt
 {&#39;gopal.ramasammycook@gmail.com&#39;: 1, &#39;louis@media.berkeley.edu&#39;: 3,
 &#39;cwen@iupui.edu&#39;: 5, &#39;antranig@caret.cam.ac.uk&#39;: 1,
@@ -304,14 +318,14 @@ Enter a file name: mbox-short.txt
 &#39;david.horwitz@uct.ac.za&#39;: 4, &#39;wagnermr@iupui.edu&#39;: 1,
 &#39;zqian@umich.edu&#39;: 4, &#39;stephen.marquard@uct.ac.za&#39;: 2,
 &#39;ray@media.berkeley.edu&#39;: 1}</code></pre>
-<p><strong>Exercise 4:</strong> Add code to the above program to figure out who has the most messages in the file.</p>
-<p>After all the data has been read and the dictionary has been created, look through the dictionary using a maximum loop (see Section [maximumloop]) to find who has the most messages and print how many messages the person has.</p>
+<p><strong>Esercizio 4:</strong> Aggiungete codice al programma di cui sopra per capire chi ha il maggior numero di messaggi nel file.</p>
+<p>Dopo che tutti i dati sono stati letti e il dizionario è stato creato, scorrete il dizionario usando un ciclo massimo (vedi Sezione [maximumloop]) per trovare chi ha più messaggi e visualizzare quanti messaggi ha la persona.</p>
 <pre><code>Enter a file name: mbox-short.txt
 cwen@iupui.edu 5
 
 Enter a file name: mbox.txt
 zqian@umich.edu 195</code></pre>
-<p><strong>Exercise 5:</strong> This program records the domain name (instead of the address) where the message was sent from instead of who the mail came from (i.e., the whole email address). At the end of the program, print out the contents of your dictionary.</p>
+<p><strong>Esercizio 5:</strong> Questo programma registra il nome di dominio (anziché l’indirizzo) da cui è stato inviato il messaggio anziché da chi proviene la posta (ovvero, l’intero indirizzo email). Alla fine del programma, visualizzate i contenuti del vostro dizionario.</p>
 <pre><code>python schoolcount.py
 Enter a file name: mbox-short.txt
 {&#39;media.berkeley.edu&#39;: 4, &#39;uct.ac.za&#39;: 6, &#39;umich.edu&#39;: 7,
