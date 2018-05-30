@@ -1,25 +1,17 @@
-Using Web Services
-==================
 
-Once it became easy to retrieve documents and parse documents over HTTP
-using programs, it did not take long to develop an approach where we
+%
 
-started producing documents that were specifically designed to be
-consumed by other programs (i.e., not HTML to be displayed in a
-browser).
+Utilizzo di servizi Web
+=======================
 
-There are two common formats that we use when exchanging data across the
-web. The "eXtensible Markup Language" or XML has been in use for a very
-long time and is best suited for exchanging document-style data. When
-programs just want to exchange dictionaries, lists, or other internal
-information with each other, they use JavaScript Object Notation or JSON
-(see [www.json.org](http://www.json.org)). We will look at both formats.
+
+Ora che è diventato semplice ottenere i documenti via HTTP e analizzarli utilizzando i programmi, non è stato necessario molto tempo per sviluppare un approccio in cui abbiamo iniziato a produrre documenti realizzati specificamente per essere utilizzati da altri programmi (ossia non HTML da visualizzare in un browser ).
+Esistono due formati comuni che utilizziamo per scambiare dati sul Web. L'eXtensible Markup Language o XML è in uso da molto tempo ed è più adatto per lo scambio di dati in stile documento. Quando i programmi vogliono solo scambiare dizionari, elenchi o altre informazioni interne tra loro, viene utilizzata la JavaScript Object Notation o JSON (si veda [www.json.org] (http://www.json.org)). Analizzeremo entrambi i formati.
 
 eXtensible Markup Language - XML
 --------------------------------
 
-XML looks very similar to HTML, but XML is more structured than HTML.
-Here is a sample of an XML document:
+XML si presenta molto simile all'HTML, ma XML è più strutturato. Ecco un esempio di un documento XML:
 
 ~~~~ {.xml}
 <person>
@@ -31,61 +23,41 @@ Here is a sample of an XML document:
 </person>
 ~~~~
 
-Often it is helpful to think of an XML document as a tree structure
-where there is a top tag `person` and other tags such as
-`phone` are drawn as *children* of their parent nodes.
+Spesso è utile pensare a un documento XML come una struttura ad albero in cui è presente un tag 'person` in alto e altri tag inseriti come `phone`, rappresentati come figli dei loro nodi padre.
 
 ![A Tree Representation of XML](height=2.0in@../images/xml-tree)
 
-Parsing XML
+Analizzare XML
 -----------
 
 \index{ElementTree}
 \index{ElementTree!fromstring}
 \index{ElementTree!find}
 
-Here is a simple application that parses some XML and extracts some data
-elements from the XML:
+Ecco una semplice applicazione che analizza alcuni XML e ne estrae alcuni elementi:
 
-\VerbatimInput{../code3/xml1.py} 
+\VerbatimInput{../code3/xml1.py}
 
-Calling `fromstring` converts the string representation of
-the XML into a "tree" of XML nodes. When the XML is in a tree, we have a
-series of methods we can call to extract portions of data from the XML.
-
-The `find` function searches through the XML tree and
-retrieves a *node* that matches the specified tag. Each
-node can have some text, some attributes (like hide), and some "child"
-nodes. Each node can be the top of a tree of nodes.
+Chiamando `fromstring` convertiamo la rappresentazione a stringa dell'XML in un "albero" di nodi XML. Quando l'XML è ad albero, abbiamo una serie di metodi che possiamo chiamare per estrarre dati dall'XML.  La funzione `find` cerca attraverso l'albero XML e recupera un *nodo* che corrisponde al tag specificato. Ogni nodo può avere un testo, degli attributi (come hide) e alcuni nodi "figli". Ogni nodo può essere a sua volta la cima di un albero di nodi.
 
 ~~~~
 Name: Chuck
 Attr: yes
 ~~~~
 
-Using an XML parser such as `ElementTree` has the advantage
-that while the XML in this example is quite simple, it turns out there
-are many rules regarding valid XML and using `ElementTree`
-allows us to extract data from XML without worrying about the rules of
-XML syntax.
+L'utilizzo di un parser XML come `ElementTree` ha il vantaggio che anche se l'XML in questo esempio è piuttosto semplice, risulta avere molte regole riguardanti XML valido e l'uso di `ElementTree` ci consente di estrarre dati dall'XML senza preoccuparci delle regole della sintassi.
 
-Looping through nodes
+Cicli con i nodi degli XML
 ---------------------
 
 \index{ElementTree!findall}
 \index{ElementTree!get}
 
-Often the XML has multiple nodes and we need to write a loop to process
-all of the nodes. In the following program, we loop through all of the
-`user` nodes:
+Spesso un XML ha più nodi e abbiamo bisogno di scrivere un ciclo per elaborarli tutti. Nel seguente programma, passiamo scorrere tutti i nodi `user`:
 
-\VerbatimInput{../code3/xml2.py} 
+\VerbatimInput{../code3/xml2.py}
 
-The `findall` method retrieves a Python list of subtrees that
-represent the `user` structures in the XML tree. Then we can
-write a `for` loop that looks at each of the user nodes, and
-prints the `name` and `id` text elements as well
-as the `x` attribute from the `user` node.
+Il metodo `findall` recupera una lista di Python fatta di sottoalberi che rappresentano le strutture `user` nell'albero XML. Quindi possiamo scrivere un ciclo `for` che esamini ciascuno dei nodi user, e visualizzi gli elementi di testo `name` e `id` come pure l'attributo `x` dal nodo `utente`.
 
 ~~~~
 User count: 2
@@ -103,14 +75,8 @@ JavaScript Object Notation - JSON
 \index{JSON}
 \index{JavaScript Object Notation}
 
-The JSON format was inspired by the object and array format used in the
-JavaScript language. But since Python was invented before JavaScript,
-Python's syntax for dictionaries and lists influenced the syntax of
-JSON. So the format of JSON is nearly identical to a combination of
-Python lists and dictionaries.
-
-Here is a JSON encoding that is roughly equivalent to the simple XML
-from above:
+Il formato JSON è stato ispirato dai formati oggetto e array utilizzato nel linguaggio JavaScript. Ma poiché Python è stato inventato prima di JavaScript, la sintassi di Python per i dizionari e le liste ha influenzato la sintassi di JSON. Quindi il formato di JSON è quasi identico a una combinazione di elenchi e dizionari Python.
+Di seguito una codifica JSON che è approssimativamente equivalente al semplice XML di cui sopra:
 
 ~~~~ {.json}
 {
@@ -125,49 +91,20 @@ from above:
 }
 ~~~~
 
-You will notice some differences. First, in XML, we can add attributes
-like "intl" to the "phone" tag. In JSON, we simply have key-value pairs.
-Also the XML "person" tag is gone, replaced by a set of outer curly
-braces.
+Noterete alcune differenze. Innanzitutto, nel formato XML possiamo aggiungere attributi come "intl" al tag "phone". Con il formato JSON, abbiamo semplicemente coppie chiave-valore. Anche il tag XML "person" è scomparso, sostituito da una serie di parentesi graffe.
+In generale, le strutture JSON sono più semplici di XML perché JSON dispone di meno funzionalità rispetto ad essa. Ma il formato JSON ha il vantaggio di mappare *direttamente* alcune combinazioni di dizionari ed elenchi. E poiché quasi tutti i linguaggi di programmazione hanno qualcosa di equivalente ai dizionari e agli elenchi di Python, JSON è un formato molto naturale in cui far scambiare dati a due programmi cooperanti.
+JSON sta rapidamente diventando il formato scelto per quasi tutti gli scambi di dati tra le applicazioni a causa della relativa semplicità rispetto al formato XML.
 
-In general, JSON structures are simpler than XML because JSON has fewer
-capabilities than XML. But JSON has the advantage that it maps
-*directly* to some combination of dictionaries and lists.
-And since nearly all programming languages have something equivalent to
-Python's dictionaries and lists, JSON is a very natural format to have
-two cooperating programs exchange data.
-
-JSON is quickly becoming the format of choice for nearly all data
-exchange between applications because of its relative simplicity
-compared to XML.
-
-Parsing JSON
+Analizzare JSON
 ------------
 
-We construct our JSON by nesting dictionaries (objects) and lists as
-needed. In this example, we represent a list of users where each user is
-a set of key-value pairs (i.e., a dictionary). So we have a list of
-dictionaries.
-
-In the following program, we use the built-in *json*
-library to parse the JSON and read through the data. Compare this
-closely to the equivalent XML data and code above. The JSON has less
-detail, so we must know in advance that we are getting a list and that
-the list is of users and each user is a set of key-value pairs. The JSON
-is more succinct (an advantage) but also is less self-describing (a
-disadvantage).
+Costruiamo il nostro JSON annidando dizionari (oggetti) ed elenchi in base alle necessità. In questo esempio, rappresentiamo un elenco di utenti in cui ogni utente è un insieme di coppie chiave-valore (cioè un dizionario). Quindi abbiamo un elenco di dizionari.
+Nel seguente programma, usiamo la libreria integrata *json* per analizzare il JSON e leggerne i dati. Mettete a confronto i corrispondenti dati in XML e il codice precedente. Il JSON ha meno dettagli, quindi dobbiamo sapere in anticipo che stiamo ottenendo una lista e che la lista è di utenti e che ogni utente è un insieme di coppie chiave-valore. Il JSON è più succinto (un vantaggio) ma è anche meno descrittivo (uno svantaggio).
 
 \VerbatimInput{../code3/json2.py}
 
-If you compare the code to extract data from the parsed JSON and XML you
-will see that what we get from *json.loads()* is a Python
-list which we traverse with a `for` loop, and each item
-within that list is a Python dictionary. Once the JSON has been parsed,
-we can use the Python index operator to extract the various bits of data
-for each user. We don't have to use the JSON library to dig through the
-parsed JSON, since the returned data is simply native Python structures.
-
-The output of this program is exactly the same as the XML version above.
+Se confrontate il codice per estrarre i dati dal JSON e dall'XML analizzati, vedrete che ciò che otteniamo da *json.loads()* è un elenco Python che scorriamo con un ciclo `for`, e ogni elemento all'interno di tale elenco è un dizionario Python. Una volta analizzato il JSON, possiamo usare l'operatore dell'indice Python per estrarre i vari bit di dati per ciascun utente. Non dobbiamo usare la libreria JSON per cercare all'interno del JSON analizzato, dal momento che i dati restituiti sono semplicemente strutture native di Python.
+L'output di questo programma è esattamente lo stesso della versione XML di cui sopra.
 
 ~~~~
 User count: 2
@@ -179,115 +116,47 @@ Id 009
 Attribute 7
 ~~~~
 
-In general, there is an industry trend away from XML and towards JSON
-for web services. Because the JSON is simpler and more directly maps to
-native data structures we already have in programming languages, the
-parsing and data extraction code is usually simpler and more direct when
-using JSON. But XML is more self-descriptive than JSON and so there are
-some applications where XML retains an advantage. For example, most word
-processors store documents internally using XML rather than JSON.
+In generale, per i servizi web c'è una tendenza ad allontanarsi dal formato XML verso il formato JSON. Poiché il formato JSON è più semplice e più direttamente associabile a strutture di dati nativamente che ritroviamo già presenti nei linguaggi di programmazione, il codice di analisi e di estrazione dei dati è in genere più semplice e diretto quando si utilizza il JSON. Ma l'XML è più auto-descrittivo del JSON e quindi ci sono alcune applicazioni in cui XML mantiene un vantaggio. Ad esempio, la maggior parte dei word processor memorizza i documenti internamente utilizzando il formato XML piuttosto che il JSON.
 
-Application Programming Interfaces
+Interfacce per la programmazione di applicazioni
 ----------------------------------
 
-We now have the ability to exchange data between applications using
-HyperText Transport Protocol (HTTP) and a way to represent complex data
-that we are sending back and forth between these applications using
-eXtensible Markup Language (XML) or JavaScript Object Notation (JSON).
-
-The next step is to begin to define and document "contracts" between
-applications using these techniques. The general name for these
-application-to-application contracts is *Application Program
-Interfaces* or APIs. When we use an API, generally one program
-makes a set of *services* available for use by other
-applications and publishes the APIs (i.e., the "rules") that must be
-followed to access the services provided by the program.
-
-When we begin to build our programs where the functionality of our
-program includes access to services provided by other programs, we call
-the approach a *Service-Oriented Architecture* or SOA. A
-SOA approach is one where our overall application makes use of the
-services of other applications. A non-SOA approach is where the
-application is a single standalone application which contains all of the
-code necessary to implement the application.
-
-We see many examples of SOA when we use the web. We can go to a single
-web site and book air travel, hotels, and automobiles all from a single
-site. The data for hotels is not stored on the airline computers.
-Instead, the airline computers contact the services on the hotel
-computers and retrieve the hotel data and present it to the user. When
-the user agrees to make a hotel reservation using the airline site, the
-airline site uses another web service on the hotel systems to actually
-make the reservation. And when it comes time to charge your credit card
-for the whole transaction, still other computers become involved in the
-process.
+Ora abbiamo la possibilità di scambiare dati tra le applicazioni utilizzando l'HyperText Transport Protocol (HTTP) e un modo per rappresentare dati complessi che stiamo inviando avanti e indietro tra le applicazioni utilizzando l'eXtensible Markup Language (XML) o la JavaScript Object Notation (JSON).
+Il prossimo passo è iniziare a definire e documentare "contratti" tra le applicazioni che utilizzano queste tecniche. Il nome generico per questi contratti applicazione-applicazione è *Application Program Interfaces* o API. Quando usiamo un'API, generalmente un programma rende disponibile un insieme di *servizi* utilizzabili da altre applicazioni e pubblica le API (cioè le "regole") che devono essere seguite per accedere ai servizi forniti dal programma.
+Quando iniziamo a costruire i nostri programmi con funzionalità che prevedono l'accesso ai servizi forniti da altri programmi, usiamo un approccio chiamato *Service-Oriented Architecture* o SOA. Un approccio SOA è quello in cui la nostra applicazione principale si avvale dei servizi di altre applicazioni. Un approccio non è "SOA" quando abbiamo una singola applicazione standalone che contiene tutto il codice necessario per implementare l'applicazione.
+Vediamo molti esempi di SOA quando usiamo il web. Possiamo andare su un unico sito web e prenotare viaggi aerei, hotel e automobili. I dati per gli hotel non sono memorizzati nei computer delle compagnie aeree. Invece, i computer delle compagnie aeree contattano i servizi sui computer dell'hotel e recuperano i dati dell'hotel e li presentano all'utente. Quando l'utente accetta di effettuare una prenotazione alberghiera utilizzando il sito della compagnia aerea, il sito della compagnia aerea utilizza un altro servizio Web sui sistemi dell'hotel per effettuare concretamente la prenotazione. E quando arriva il momento di addebitare il costo sulla vostra carta di credito per l'intera transazione, vengono coinvolti anche altri computer.
 
 ![Service Oriented Architecture](height=3.0in@../images/soa)
 
-A Service-Oriented Architecture has many advantages including: (1) we
-always maintain only one copy of data (this is particularly important
-for things like hotel reservations where we do not want to over-commit)
-and (2) the owners of the data can set the rules about the use of their
-data. With these advantages, an SOA system must be carefully designed to
-have good performance and meet the user's needs.
+Un'architettura orientata ai servizi (SOA) presenta molti vantaggi, tra cui: (1) conserviamo sempre una sola copia di dati (questo è particolarmente importante per cose come prenotazioni di hotel in cui non vogliamo sovrapporre azioni) e (2) i proprietari dei dati possono gestire le regole sull'uso dei propri dati. Con questi vantaggi, un sistema SOA deve essere progettato oculatamente per avere buone prestazioni e soddisfare le esigenze dell'utente.
+Quando delle applicazioni mettono a disposizione sul web una serie di servizi nelle loro API, le chiamiamo *servizi web*.
 
-When an application makes a set of services in its API available over
-the web, we call these *web services*.
-
-Google geocoding web service
+Servizio web di geocodifica di Google
 ----------------------------
 
 \index{Google}
 \index{geocoding}
 \index{web service}
 
-Google has an excellent web service that allows us to make use of their
-large database of geographic information. We can submit a geographical
-search string like "Ann Arbor, MI" to their geocoding API and have
-Google return its best guess as to where on a map we might find our
-search string and tell us about the landmarks nearby.
-
-The geocoding service is free but rate limited so you cannot make
-unlimited use of the API in a commercial application. But if you have
-some survey data where an end user has entered a location in a
-free-format input box, you can use this API to clean up your data quite
-nicely.
-
-*When you are using a free API like Google's geocoding API, you
-need to be respectful in your use of these resources. If too many people
-abuse the service, Google might drop or significantly curtail its free
-service.*
+Google ha un eccellente servizio web che ci consente di utilizzare il suo ampio database di informazioni geografiche. Possiamo inviare una stringa di ricerca geografica come "Ann Arbor, MI" alla sua API di geocodifica e fare in modo che Google restituisca la migliore ipotesi su dove in una mappa potremmo trovare la nostra stringa di ricerca e comunicarci i punti di riferimento nelle vicinanze.
+Il servizio di geocodifica è gratuito ma limitato, quindi non è possibile utilizzare l'API in modo illimitato in un'applicazione commerciale. Tuttavia, se si dispone di dati di sondaggi in cui un utente finale ha inserito una posizione in una casella di immissione a formato libero, è possibile utilizzare questa API per pulire i dati in modo da renderli più gradevoli.
+*Quando utilizzate un'API gratuita come l'API di geocodifica di Google, è necessario essere rispettosi nell'uso di queste risorse. Se troppe persone abusano del servizio, Google potrebbe abbandonare o ridurre significativamente il suo servizio gratuito.*
 
 \index{rate limiting}
 
-You can read the online documentation for this service, but it is quite
-simple and you can even test it using a browser by typing the following
-URL into your browser:
+Potete leggere la documentazione online per questo servizio, ma è abbastanza semplice e potete persino testarlo utilizzando un browser e digitando il seguente URL:
 
-[http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI](http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI)
+[http://maps.googleapis.com/maps/api/geocode/json?address=Ann+Arbor%2C+MI](http://maps.googleapis.com/maps/api/geocode/json?address= Ann+ Arbor% 2C + MI)
 
-Make sure to unwrap the URL and remove any spaces from the URL before
-pasting it into your browser.
+Assicuratevi di estrarre l'URL e rimuovere gli spazi prima di incollarlo nel vostro browser.
 
-The following is a simple application to prompt the user for a search
-string, call the Google geocoding API, and extract information from the
-returned JSON.
+La seguente è una semplice applicazione per richiedere all'utente una stringa di ricerca, chiamare l'API di geocodifica di Google ed estrarre informazioni dal JSON restituito.
 
-\VerbatimInput{../code3/geojson.py} 
+\VerbatimInput{../code3/geojson.py}
 
-The program takes the search string and constructs a URL with the search
-string as a properly encoded parameter and then uses
-*urllib* to retrieve the text from the Google geocoding
-API. Unlike a fixed web page, the data we get depends on the parameters
-we send and the geographical data stored in Google's servers.
-
-Once we retrieve the JSON data, we parse it with the
-*json* library and do a few checks to make sure that we
-received good data, then extract the information that we are looking
-for.
-
-The output of the program is as follows (some of the returned JSON has
-been removed):
+Il programma prende la stringa di ricerca e costruisce un URL con la stringa di ricerca come parametro opportunamente codificato e quindi utilizza *urllib* per recuperare il testo dall'API di geocodifica di Google. A differenza di una pagina web fissa, i dati che otteniamo dipendono dai parametri che inviamo e dai dati geografici memorizzati nei server di Google.
+Una volta recuperati i dati JSON, li analizziamo con la libreria *json* e facciamo alcuni controlli per assicurarci di aver ricevuto dati validi, quindi estraiamo le informazioni che stiamo cercando.
+L'output del programma è il seguente (alcuni dei JSON restituiti sono stati rimossi):
 
 ~~~~
 $ python3 geojson.py
@@ -335,62 +204,30 @@ Ann Arbor, MI, USA
 Enter location:
 ~~~~
 
-You can download
-[www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) to
-explore the XML variant of the Google geocoding API.
 
-Security and API usage
+Potete scaricare [www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) per esplorare la variante XML dell'API di geocodifica di Google.
+
+Sicurezza e utilizzo delle API
 ----------------------
 
 \index{OAuth}
 \index{API!key}
 
-It is quite common that you need some kind of "API key" to make use of a
-vendor's API. The general idea is that they want to know who is using
-their services and how much each user is using. Perhaps they have free
-and pay tiers of their services or have a policy that limits the number
-of requests that a single individual can make during a particular time
-period.
+È abbastanza comune che sia necessario un qualche tipo di "chiave API" per utilizzare l'API di un venditore. L'idea generale è che vogliono sapere chi sta usando i loro servizi e quanto ogni utente li sta usando. Potrebbero avere dei livelli gratuiti e altri a pagamento dei loro servizi o potrebbero avere una politica che limita il numero di richieste che un singolo individuo può effettuare durante un determinato periodo di tempo.
+A volte, una volta ottenuta la chiave API, è sufficiente includere la chiave come parte dei dati POST o forse come parametro sull'URL quando si chiama l'API.
+Altre volte, i venditori desiderano una maggiore garanzia sulla fonte delle richieste e quindi pretendono che inviamo messaggi firmati crittograficamente utilizzando chiavi condivise e segreti. Una tecnologia molto comune che viene utilizzata per firmare le richieste su Internet si chiama *OAuth*. Potete leggere ulteriori informazioni sul protocollo OAuth su [www.oauth.net] (http://www.oauth.net).
+Man mano che l'API di Twitter diventava sempre più preziosa, Twitter è passato da un'API pubblica e aperta a un'API che richiedeva l'uso delle firme OAuth su ogni richiesta. Per fortuna ci sono ancora un certo numero di librerie OAuth convenienti e gratuite, così potete evitare di scrivere un'implementazione OAuth da zero leggendo le specifiche. Queste librerie sono di varia complessità e hanno vari gradi di completezza. Il sito Web OAuth contiene informazioni su varie librerie OAuth.
+Per questo prossimo programma di esempio scaricheremo i files *twurl.py*, *hidden.py*, *oauth.py* e *twitter1.py* da
+[www.py4e.com/code](http://www .py4e.com/code3) e li metteremo tutti in una cartella sul nostro computer.
+Per utilizzare questi programmi è necessario disporre di un account Twitter e autorizzare il codice Python come applicazione, impostare una chiave, un segreto, un token e un token segreto. Modifichiamo il file *hidden.py* e inseriamo queste quattro stringhe nelle variabili appropriate nel file:
 
-Sometimes once you get your API key, you simply include the key as part
-of POST data or perhaps as a parameter on the URL when calling the API.
+\VerbatimInput{../code3/hidden.py}
 
-Other times, the vendor wants increased assurance of the source of the
-requests and so they add expect you to send cryptographically signed
-messages using shared keys and secrets. A very common technology that is
-used to sign requests over the Internet is called
-*OAuth*. You can read more about the OAuth protocol at
-[www.oauth.net](http://www.oauth.net).
-
-As the Twitter API became increasingly valuable, Twitter went from an
-open and public API to an API that required the use of OAuth signatures
-on each API request. Thankfully there are still a number of convenient
-and free OAuth libraries so you can avoid writing an OAuth
-implementation from scratch by reading the specification. These
-libraries are of varying complexity and have varying degrees of
-richness. The OAuth web site has information about various OAuth
-libraries.
-
-For this next sample program we will download the files
-*twurl.py*, *hidden.py*,
-*oauth.py*, and *twitter1.py* from
-[www.py4e.com/code](http://www.py4e.com/code3) and put them all in a folder
-on your computer.
-
-To make use of these programs you will need to have a Twitter account,
-and authorize your Python code as an application, set up a key, secret,
-token and token secret. You will edit the file
-*hidden.py* and put these four strings into the
-appropriate variables in the file:
-
-\VerbatimInput{../code3/hidden.py} 
-
-The Twitter web service are accessed using a URL like this:
+Il servizio web di Twitter è accessibile tramite un URL come questo:
 
 <https://api.twitter.com/1.1/statuses/user_timeline.json>
 
-But once all of the security information has been added, the URL will
-look more like:
+Ma una volta aggiunte tutte le informazioni sulla sicurezza, l'URL sarà più simile a:
 
 ~~~~
 https://api.twitter.com/1.1/statuses/user_timeline.json?count=2
@@ -400,26 +237,16 @@ https://api.twitter.com/1.1/statuses/user_timeline.json?count=2
 &oauth_signature_method=HMAC-SHA1
 ~~~~
 
-You can read the OAuth specification if you want to know more about the
-meaning of the various parameters that are added to meet the security
-requirements of OAuth.
+Potete leggere le specifiche OAuth se volete sapere di più sul significato dei vari parametri che vengono aggiunti per soddisfare i requisiti di sicurezza di OAuth.
+Per i programmi che eseguiamo con Twitter, nascondiamo tutta la complessità nei file *oauth.py* e *twurl.py*. Impostiamo semplicemente i segreti in *hidden.py* e poi inviamo l'URL desiderato alla funzione *twurl.augment()* e il codice della libreria aggiunge tutti i parametri necessari all'URL per noi.
+Questo programma recupera la cronologia per un particolare utente Twitter e ci restituisce tutto in una stringa in formato JSON. Visualizziamo semplicemente i primi 250 caratteri della stringa:
 
-For the programs we run with Twitter, we hide all the complexity in the
-files *oauth.py* and *twurl.py*. We simply
-set the secrets in *hidden.py* and then send the desired
-URL to the *twurl.augment()* function and the library
-code adds all the necessary parameters to the URL for us.
-
-This program retrieves the timeline for a
-particular Twitter user and returns it to us in JSON format in a string.
-We simply print the first 250 characters of the string:
-
-\VerbatimInput{../code3/twitter1.py} 
+\VerbatimInput{../code3/twitter1.py}
 \begin{trinketfiles}
 ../code3/twurl.py
 \end{trinketfiles}
 
-When the program runs it produces the following output:
+Quando il programma viene eseguito, viene visualizzato il seguente output:
 
 ~~~~
 Enter Twitter Account:drchuck
@@ -443,31 +270,16 @@ Remaining 177
 Enter Twitter Account:
 ~~~~
 
-Along with the returned timeline data, Twitter also returns metadata
-about the request in the HTTP response headers. One header in
-particular, *x-rate-limit-remaining*, informs us how many
-more requests we can make before we will be shut off for a short time
-period. You can see that our remaining retrievals drop by one each time
-we make a request to the API.
+Insieme ai dati della cronologia restituiti, Twitter restituisce anche i metadati relativi alla richiesta nelle intestazioni delle risposte HTTP. In particolare, l'intestazione *x-rate-limit-remaining*, ci informa su quante altre richieste possiamo fare prima di venire bloccati per un breve periodo di tempo. Potete vedere che le richieste rimanenti diminuiscono di uno ogni volta che ne facciamo una.
+Nell'esempio seguente, recuperiamo gli amici di Twitter di un utente, analizziamo il JSON restituito ed estraiamo alcune informazioni sugli amici. Inoltre, eseguiamo il dump del JSON dopo averlo analizzato e "stampato" con un rientro di quattro caratteri per consentirci di analizzare i dati quando vogliamo estrarre più campi.
 
-In the following example, we retrieve a user's Twitter friends, parse
-the returned JSON, and extract some of the information about the
-friends. We also dump the JSON after parsing and "pretty-print" it with
-an indent of four characters to allow us to pore through the data when
-we want to extract more fields.
-
-\VerbatimInput{../code3/twitter2.py} 
+\VerbatimInput{../code3/twitter2.py}
 \begin{trinketfiles}
 ../code3/twurl.py
 \end{trinketfiles}
 
-Since the JSON becomes a set of nested Python lists and dictionaries, we
-can use a combination of the index operation and `for` loops
-to wander through the returned data structures with very little Python
-code.
-
-The output of the program looks as follows (some of the data items are
-shortened to fit on the page):
+Poiché il JSON diventa una serie di elenchi e dizionari Python annidati, possiamo usare una combinazione di operazioni su indici e cicli `for` per scorrere le strutture dati restituite con pochissimo codice Python.
+L'output del programma appare come segue (alcuni degli elementi dei dati vengono abbreviati per adattarsi alla pagina):
 
 ~~~~
 Enter Twitter Account:drchuck
@@ -521,59 +333,42 @@ scweeker
 Enter Twitter Account:
 ~~~~
 
-The last bit of the output is where we see the for loop reading the five
-most recent "friends" of the *drchuck* Twitter account
-and printing the most recent status for each friend. There is a great
-deal more data available in the returned JSON. If you look in the output
-of the program, you can also see that the "find the friends" of a
-particular account has a different rate limitation than the number of
-timeline queries we are allowed to run per time period.
+L'ultimo pezzo dell'output è dove vediamo il ciclo for che legge i cinque "amici" più recenti dell'account Twitter *drchuck* e visualizziamo lo stato più recente per ciascun amico. Vi sono molti più dati disponibili nel JSON restituito. Se si guarda l'output del programma, è anche possibile vedere che il "trova gli amici" di un determinato account ha una diversa velocità in base al numero di query sulla cronologia che è possibile eseguire per ogni periodo di tempo.
+Queste chiavi API sicure consentono a Twitter di sapere con certezza chi sta usando le sue API e i suoi dati e a che livello. L'approccio sulla limitazione della velocità ci consente di eseguire semplici raccolte di dati personali, ma non ci consente di creare un prodotto che estragga i dati dalle API milioni di volte al giorno.
 
-These secure API keys allow Twitter to have solid confidence that they
-know who is using their API and data and at what level. The
-rate-limiting approach allows us to do simple, personal data retrievals
-but does not allow us to build a product that pulls data from their API
-millions of times per day.
-
-Glossary
+Glossario
 --------
 
 API
-:   Application Program Interface - A contract between applications that
-    defines the patterns of interaction between two application
-    components.
+: Application Program Interface - Un contratto tra le applicazioni che definisce i modelli di interazione tra due componenti di un'applicazione.
+
 \index{API}
 
 ElementTree
-:   A built-in Python library used to parse XML data.
+: una libreria Python integrata utilizzata per analizzare i dati XML.
+
 \index{ElementTree}
 
 JSON
-:   JavaScript Object Notation. A format that allows for the markup of
-    structured data based on the syntax of JavaScript Objects.
+: JavaScript Object Notation. Un formato che consente il markup dei dati strutturati in base alla sintassi degli oggetti JavaScript.
+
 \index{JSON}
 \index{JavaScript Object Notation}
 
 SOA
-:   Service-Oriented Architecture. When an application is made of
-    components connected across a network.
+: Service-Oriented Architecture. Quando un'applicazione è fatta di componenti connessi attraverso una rete.
+
 \index{SOA}
 \index{Service Oriented Architecture}
 
 XML
-:   eXtensible Markup Language. A format that allows for the markup of
-    structured data.
+: eXtensible Markup Language. Un formato che consente il markup dei dati strutturati.
+
 \index{XML}
 \index{eXtensible Markup Language}
 
-Exercises
+Esercizi
 ---------
 
-**Exercise 1:** Change either the
-[www.py4e.com/code3/geojson.py](http://www.py4e.com/code3/geojson.py) or
-[www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) to print
-out the two-character country code from the retrieved data. Add error
-checking so your program does not traceback if the country code is not
-there. Once you have it working, search for "Atlantic Ocean" and make
-sure it can handle locations that are not in any country.
-
+**Esercizio 1:** Modificate [www.py4e.com/code3/geojson.py](http://www.py4e.com/code3/geojson.py) o [www.py4e.com/code3/ geoxml.py] (http://www.py4e.com/code3/geoxml.py) per visualizzare il codice paese di due caratteri dai dati recuperati.
+Aggiungete il controllo degli errori in modo che il vostro programma non esegua il traceback se il codice del paese non è presente. Una volta che ha funzionato, cercate "Atlantic Ocean" e assicuratevi che possa gestire luoghi che non si trovano in nessun paese.

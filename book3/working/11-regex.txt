@@ -1,0 +1,187 @@
+﻿
+Espressioni regolari
+===================
+Finora abbiamo letto i file, cercato modelli ed estratto varie parti di righe ritenute interessanti. Abbiamo usato
+
+metodi di stringa come `split` e` find`, oltre all'uso di elenchi e frazionamento delle stringhe per estrarre parti delle righe. 
+######1
+######2
+######3
+Questo compito di ricerca ed estrazione è così comune al punto che Python ha una libreria molto potente chiamata *espressoni regolari* che gestisce molte di queste attività in modo abbastanza elegante. La ragione per cui non abbiamo introdotto le espressioni regolari in precedenza nel libro è perché, sebbene siano molto potenti, sono un po' complicate e la loro sintassi richiede un po' di tempo per essere padroneggiata.
+Le espressioni regolari sono quasi un piccolo linguaggio di programmazione per la ricerca e l'analisi delle stringhe. In effetti, sono stati scritti interi libri sul tema delle espressioni regolari. In questo capitolo, tratteremo solo le basi delle espressioni regolari. Per maggiori dettagli sulle espressioni regolari, consultate:
+<Http://en.wikipedia.org/wiki/Regular_expression>
+<Https://docs.python.org/3.5/library/re.html>
+La libreria delle espressioni regolari `re` deve essere importata nel vostro programma prima che possiate usarla. L'uso più semplice della libreria di espressioni regolari è la funzione `search()`. Il seguente programma illustra un uso banale della funzione di ricerca. 
+######4
+
+######5
+######6
+../code3/mbox-short.txt
+######7
+Apriamo il file, passiamo con un ciclo su ogni riga e usiamo l'espressione regolare `search()` per visualizzare solo le righe che contengono la stringa "From:". Questo programma non sfrutta il vero potere delle espressioni regolari, dal momento che avremmo potuto usare altrettanto facilmente `line.find()` per ottenere lo stesso risultato. 
+######8
+La potenza delle espressioni regolari arriva quando aggiungiamo caratteri speciali alla stringa di ricerca che ci consente di controllare più precisamente quali righe corrispondono alla stringa. L'aggiunta di questi caratteri speciali alla nostra espressione regolare ci consente di eseguire abbinamenti ed estrazioni sofisticate tramite la stesura di un codice molto piccolo.  Ad esempio, il carattere di accento viene utilizzato nelle espressioni regolari per confrontare "all'inizio" di una riga. Potremmo cambiare il nostro programma per confrontare solo le righe in cui "From:" si trova all'inizio della riga come segue: 
+######9
+######10
+../code3/mbox-short.txt
+######11
+Ora confronteremo solo le righe che *iniziano con* la stringa "From:". Questo è davvero un esempio molto semplice che avremmo potuto fare in modo equivalente con il metodo `startswith()` incluso nella libreria delle stringhe. Ma serve a introdurre la nozione per cui le espressioni regolari contengono caratteri per azioni speciali che ci danno più controllo su ciò che confronterà l'espressione regolare. 
+######12
+Confronto di caratteri nelle espressioni regolari
+-----------------------------------------
+Ci sono un certo numero di altri caratteri speciali che ci permettono di costruire espressioni regolari ancora più potenti. Il carattere speciale più comunemente usato è il punto, che corrisponde a qualsiasi carattere. 
+######13
+######14
+Nell'esempio seguente, l'espressione regolare "F..m:" corrisponderebbe a qualsiasi stringa "From:", "Fxxm:", "F12m:" o "F!@m:" poiché il carattere punto nell'espressione regolare corrisponde a qualsiasi carattere. 
+######15
+######16
+../code3/mbox-short.txt
+######17
+Questo è particolarmente potente se combinato con la capacità di indicare che un carattere può essere ripetuto un numero qualsiasi di volte usando i caratteri "\*" o "+" nell'espressione regolare. Questi caratteri speciali fanno sì che invece di corrispondere a un singolo carattere nella stringa di ricerca, corrispondono a zero o più caratteri (nel caso dell'asterisco) o uno o più caratteri (nel caso del segno più) .  Possiamo restringere ulteriormente le righe che confrontiamo usando un carattere *wild card* ripetuto, come nel seguente esempio: 
+######18
+######19
+../code3/mbox-short.txt
+######20
+La stringa di ricerca "`^`From:.+@" corrisponderà correttamente alle righe che iniziano con "From:", seguite da uno o più caratteri (".+"), seguiti da un carattere chiocciola. Quindi questo corrisponderà alla seguente riga: *`From:stephen.marquard@`*`uct.ac.za` Potete pensare al carattere wildcard ".+" come all'estensione del confronto tra tutti i caratteri inclusi tra il carattere due punti e la chiocciola.  * `From :.+ @ `* È bene pensare ai caratteri più e asterisco come "invadenti". Ad esempio, la stringa seguente corrisponderebbe all'ultimo carattere chiocciola mentre ".+" andrebbe oltre, come mostrato di seguito: *`From: stephen.marquard@uct.ac.za, csev@umich.edu, e cwen @ `*` iupui.edu` È possibile far sì che l'asterisco o il segno più non siano così "avidi" aggiungendo un altro carattere. Vedere la documentazione dettagliata per informazioni su come disattivare questo comportamento avido. 
+######21
+Estrazione dei dati utilizzando le espressioni regolari
+-----------------------------------------
+Se vogliamo estrarre dei dati da una stringa in Python possiamo usare il metodo `findall()` per estrarre tutte le sottostringhe che corrispondono a un'espressione regolare. Pensiamo, ad esempio, di voler estrarre qualsiasi cosa che assomigli ad un indirizzo email da qualsiasi riga indipendentemente dal formato. Ad esempio, vogliamo estrarre gli indirizzi email da ognuna delle seguenti righe: 
+~~~~1
+Non vogliamo scrivere del codice per ciascuno dei tipi di righe suddividendo e segmentando in modo diverso ogni riga. Questo programma seguente usa `findall()` per trovare le righe con indirizzi e-mail al loro interno ed estrarre uno o più indirizzi da ognuna delle righe. 
+######22
+######23
+
+######24
+######25
+../code3/mbox-short.txt
+######26
+Il metodo `findall()` ricerca la stringa nel secondo argomento e restituisce un elenco di tutte le stringhe che somigliano a indirizzi email. Stiamo usando una sequenza di due caratteri che corrisponde a un carattere diverso dall spazio (`\`S).  L'output del programma sarebbe: 
+~~~~2
+Traducendo l'espressione regolare, stiamo cercando sottostringhe con almeno un carattere diverso dallo spazio, seguito da un carattere chiocciola, seguito da almeno un altro carattere diverso dallo spazio. "'\'S+" corrisponde a quanti più caratteri possibile che siano diversi dallo spazio.  L'espressione regolare troverebbe corrispondenze due volte (csev@umich.edu e cwen@iupui.edu), ma non corrisponderebbe alla stringa "@2PM" perché non ci sono caratteri diversi dallo spazio *prima* del carattere chiocciola. Possiamo usare questa espressione regolare in un programma per leggere tutte le righe in un file e visualizzare qualsiasi cosa che somigli ad un indirizzo email come segue: 
+######27
+######28
+../code3/mbox-short.txt
+######29
+Leggiamo ogni riga e quindi estraiamo tutte le sottostringhe che corrispondono alla nostra espressione regolare. Poiché `findall()` restituisce un elenco, controlliamo semplicemente se il numero di elementi nel nostro elenco risultante è maggiore di zero per visualizzare solo le righe in cui abbiamo trovato almeno una sottostringa che somigli ad un indirizzo email.  Se eseguiamo il programma su `mbox.txt` otterremo il seguente risultato: 
+~~~~3
+Alcuni dei nostri indirizzi email presentano caratteri non corretti come "`<`" o ";" all'inizio o alla fine. Dobbiamo indicare che siamo interessati solo alla parte della stringa che inizia e finisce con una lettera o un numero.  Per fare ciò, usiamo un'altra caratteristica delle espressioni regolari. Le parentesi quadre sono utilizzate per indicare un insieme di più caratteri accettabili che siamo disposti a considerare coincidenti. In un certo senso, "'\'S" sta chiedendo di confrontare l'insieme di "caratteri diversi dallo spazio". Ora saremo un po' più espliciti in termini di caratteri che confronteremo.  Ecco la nostra nuova espressione regolare: 
+~~~~4
+Sta diventando tutto un po' complicato e potete cominciare a capire perché le espressioni regolari sono loro stesse un piccolo linguaggio. Traducendo questa espressione regolare, cerchiamo sottostringhe che iniziano con un carattere *singola* lettera minuscola, lettera maiuscola o un numero "[a-zA-Z0-9]", seguito da zero o più caratteri non vuoti ("`\'S'\*"), seguito da una chiocciola, seguito da zero o più caratteri non vuoti ("`\'S\*"), seguito da una lettera maiuscola o minuscola. Notate che siamo passati da "+" a "\*" per indicare zero o più caratteri non vuoti poiché "[a-zA-Z0-9]" è già un carattere non vuoto. Ricordate che "\*" o "+" si applicano al singolo carattere immediatamente a sinistra del segno più o dell'asterisco. 
+######30
+Se usiamo questa espressione nel nostro programma, i nostri dati appariranno molto più puliti: 
+######31
+######32
+../code3/mbox-short.txt
+######33
+
+~~~~5
+Si noti che sulle righe "source@collab.sakaiproject.org", la nostra espressione regolare ha eliminato due lettere alla fine della stringa ("`>`;"). Questo perché quando accodiamo "[a-zA-Z]" alla fine della nostra espressione regolare, vogliamo che qualsiasi stringa trovata dal analizzatore di espressioni regolari debba terminare con una lettera. Quindi, quando vede il carattere "'>'" dopo "sakaiproject.org`>`;" si ferma semplicemente sull'ultima lettera "corrispondente" che ha trovato (ovvero, la "g" era l'ultima corrispondenza valida).  Si noti inoltre che l'output del programma è un elenco Python che ha una stringa come unico elemento dello stesso.
+
+Combinare ricerca ed estrazione
+----------------------------------
+Se vogliamo trovare i numeri sulle righe che iniziano con la stringa "X-" come: 
+~~~~6
+non vogliamo solo i numeri in virgola mobile da qualsiasi riga. Vogliamo soltanto estrarre i numeri dalle righe che hanno la sintassi sopra indicata.  Possiamo costruire la seguente espressione regolare per selezionare le righe: 
+~~~~7
+Traducendo questo, stiamo dicendo che vogliamo le righe che iniziano con "X-", seguite da zero o più caratteri (".\*"), seguiti da due punti (":") e quindi da uno spazio. Dopo lo spazio, cerchiamo uno o più caratteri che siano una cifra (0-9) o un punto "[0-9.]+". Notate che all'interno delle parentesi quadre, il punto corrisponde a un punto effettivo (cioè, non è un carattere wildcard tra parentesi quadre).  Questa è un'espressione molto stringente che corrisponderà quasi solo alle righe che ci interessano come segue: 
+######34
+######35
+../code3/mbox-short.txt
+######36
+Quando eseguiamo il programma, vedremo i dati filtrati per mostrare solo le righe che stiamo cercando. 
+~~~~8
+Ma ora dobbiamo risolvere il problema dell'estrazione dei numeri. Mentre sarebbe abbastanza semplice usare `split`, possiamo usare un'altra caratteristica delle espressioni regolari per cercare e analizzare la riga allo stesso tempo. 
+######37
+Le parentesi sono un altro carattere speciale nelle espressioni regolari. Quando aggiungete le parentesi a un'espressione regolare, queste vengono ignorate durante il confronto della stringa. Ma quando state usando `findall()`, le parentesi indicano che mentre volete confrontare l'intera espressione, vi interessa solo estrarre una porzione della sottostringa che corrisponda all'espressione regolare. 
+######38
+######39
+Quindi apportiamo la seguente modifica al nostro programma: 
+######40
+######41
+../code3/mbox-short.txt
+######42
+Invece di chiamare `search()`, aggiungiamo le parentesi attorno alla parte dell'espressione regolare che rappresenta il numero in virgola mobile per indicare che vogliamo che `findall()` ci restituisca solo la parte in virgola mobile della stringa confrontata.  L'output di questo programma è il seguente: 
+~~~~9
+I numeri sono ancora in un elenco e devono essere convertiti da stringhe a numeri in virgola mobile, ma abbiamo usato il potere delle espressioni regolari per cercare ed estrarre le informazioni che abbiamo trovato interessanti.  Come un altro esempio di questa tecnica, se guardate il file ci sono un certo numero di righe del form: Dettagli: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772 Se volessimo estrarre tutti i numeri di revisione (i numeri interi alla fine delle righe) utilizzando la stessa tecnica di cui sopra, potremmo scrivere il seguente programma: 
+######43
+######44
+../code3/mbox-short.txt
+######45
+Traducendo la nostra espressione regolare, stiamo cercando le righe che iniziano con "Details:", seguito da un numero qualsiasi di caratteri (".\*"), seguito da "rev =", e quindi da una o più cifre. Vogliamo trovare le righe che combacino con l'intera espressione ma ci interessa solo estrarre il numero intero alla fine della riga, perciò racchiudiamo "[0-9] +" tra parentesi.  Quando eseguiamo il programma, otteniamo il seguente risultato: 
+~~~~10
+Ricordate che "[0-9] +" è "avido" e tenta di creare una stringa di cifre il più ampia possibile prima di estrarre tali cifre. Questo comportamento "avido" è il motivo per cui otteniamo tutte e cinque le cifre per ogni numero. La libreria di espressioni regolari si espande in entrambe le direzioni fino a quando non incontra un carattere non numerico o l'inizio o la fine di una riga.  Ora possiamo usare le espressioni regolari per ripetere un esercizio visto in precedenza nel libro in cui eravamo interessati all'ora del giorno di ciascuna mail. Abbiamo cercato le righe del form: 
+~~~~11
+e volevamo estrarre l'ora del giorno per ogni riga. In precedenza lo abbiamo fatto con due chiamate a `split`. Per prima cosa la riga è stata divisa in parole e poi abbiamo estratto la quinta parola e diviso nuovamente la riga sul carattere due punti per tirare fuori i due caratteri di interesse.  Nonostante ciò abbia funzionato, in realtà otteniamo un codice piuttosto fragile che presuppone che le righe siano ben formattate. Se dovessimo aggiungere abbastanza controlli degli errori (o un grande blocco try/except) per assicurarsi che il programma non si blocchi quando incontra righe formattate in modo errato, il codice si espanderebbe di 10-15 righe e sarebbe piuttosto difficile da leggere.  Possiamo farlo in un modo molto più semplice con la seguente espressione regolare: 
+~~~~12
+La traduzione di questa espressione regolare è che stiamo cercando le righe che inizino con "From " (notate lo spazio), seguito da un numero qualsiasi di caratteri (".\*"), seguito da uno spazio, seguito da due cifre "[0-9][0-9] ", seguito da un carattere di due punti. Questa è la definizione delle tipologie di righe che stiamo cercando.  Per estrarre solo l'ora usando `findall()`, aggiungiamo le parentesi attorno alle due cifre come segue: 
+~~~~13
+Ciò si potrà vedere nel seguente programma: 
+######46
+######47
+../code3/mbox-short.txt
+######48
+Quando il programma viene eseguito, produce il seguente output: 
+~~~~14
+Carattere di escape
+----------------
+Poiché utilizziamo caratteri speciali nelle espressioni regolari per confrontare l'inizio o la fine di una riga o specificare i caratteri wild card, abbiamo bisogno di un modo per indicare che questi caratteri sono "normali" e vogliamo confrontarli con un carattere reale come un segno di dollaro o un accento circonflesso.  Possiamo indicare che vogliamo semplicemente abbinare un carattere anteponendo a quel carattere un backslash. Ad esempio, possiamo individuare gli importi in denaro con la seguente espressione regolare. 
+~~~~15
+Dal momento che facciamo precedere il simbolo del dollaro da un backslash, esso corrisponde effettivamente al simbolo del dollaro nella stringa di input anziché corrispondere alla "fine della riga" e il resto dell'espressione regolare corrisponderà a una o più cifre o al carattere del punto. *Nota:* All'interno di parentesi quadre, i caratteri non sono "speciali". Quindi quando diciamo "[0-9.]", indichiamo davvero le cifre o il punto. Al di fuori delle parentesi quadre, un punto è un carattere "wild card" e corrisponde a qualsiasi carattere. All'interno di parentesi quadre, il punto è un punto.
+
+Sommario
+-------
+Anche se abbiamo solo grattato la superficie delle espressioni regolari, abbiamo imparato un po' il loro linguaggio. Sono stringhe di ricerca contenenti caratteri speciali che comunicano i vostri desideri al sistema di espressioni regolari in merito a cosa definire "coincidente" e cosa estrarre dalle stringhe corrispondenti. Ecco alcuni di quei caratteri speciali e sequenze di caratteri:
+`^` Corrisponde all'inizio della riga.
+`$` Corrisponde alla fine della riga.
+. Corrisponde a qualsiasi carattere (un carattere wild-card).
+`\'s corrisponde a un carattere di spazio.
+`\'S corrisponde a un carattere diverso dallo spazio (opposto a `\`s).
+`*` Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti.
+`*?` Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti in "modalità non avida".
+`+` Si applica al carattere immediatamente precedente e indica di corrispondere a uno o più dei caratteri precedenti.
+`+?` Si applica al carattere immediatamente precedente e indica di corrispondere a uno o più dei caratteri precedenti in "modalità non avida".
+[aeiou] Corrisponde a un singolo carattere fintanto che quel carattere si trova nell'insieme specificato. In questo esempio, confronterebbe con "a", "e", "i", "o" o "u", e nessun altro carattere.
+[a-z0-9] È possibile specificare intervalli di caratteri utilizzando il segno meno. In questo esempio si tratta di un singolo carattere che deve essere una lettera minuscola o una cifra.
+[`^`A-Za-z] Quando il primo carattere nella notazione impostata è un accento circonflesso, inverte la logica. In questo esempio corrisponde a un qualsiasi singolo carattere che è *diverso da* una lettera maiuscola o minuscola.
+() Quando le parentesi vengono aggiunte a un'espressione regolare, vengono ignorate ai fini della confronto, ma consentono di estrarre un particolare sottoinsieme della stringa confrontata piuttosto che l'intera stringa quando si utilizza `findall()`.
+`\`b Corrisponde alla stringa vuota, ma solo all'inizio o alla fine di una parola.
+`\`B Corrisponde alla stringa vuota, ma non all'inizio o alla fine di una parola.
+`\`d Corrisponde a qualsiasi cifra decimale; è equivalente all'insieme [0-9].
+`\`D Corrisponde a qualsiasi carattere non numerico; è equivalente al set [`^`0-9].  
+
+Sezione bonus per utenti Unix/Linux
+------------------------------------
+Il supporto per la ricerca di file tramite espressioni regolari è stato incorporato nel sistema operativo Unix sin dagli anni '60 ed è disponibile in quasi tutti i linguaggi di programmazione in una forma o in un'altra. 
+######49
+Di fatto, esiste un programma per riga di comando incorporato in Unix chiamato *grep* (Generalized Regular Expression Parser) che funziona più o meno come negli esempi di `search()` in questo capitolo. Quindi se avete un sistema Macintosh o Linux, potete provare i seguenti comandi nella finestra della riga di comando. 
+~~~~16
+Questo dice a `grep` di mostrare le righe che iniziano con la stringa "From:" nel file `mbox-short.txt`. Se sperimentate un po' con il comando `grep` e leggete la documentazione di `grep`, troverete alcune sottili differenze tra il supporto delle espressioni regolari in Python e il supporto delle espressioni regolari in `grep`. Ad esempio, `grep` non supporta il carattere non vuoto "`\`S", quindi dovrete usare una notazione per gli insiemi leggermente più complessa "['^']", che indica semplicemente di individuare un carattere diverso da uno spazio.  
+
+Debug
+---------
+Python ha una documentazione integrata semplice e rudimentale che può essere molto utile se avete bisogno di un rapido aggiornamento per rinfrescare la vostra memoria sul nome esatto di un particolare metodo. Questa documentazione può essere visualizzata nell'interprete Python in modalità interattiva.  Potete visualizzare una guida interattiva usando `help()`. 
+~~~~17
+Se sapete quale modulo volete usare, potete usare il comando `dir()` per trovare i metodi nel modulo come segue: 
+~~~~18
+È inoltre possibile, utilizzando il comando dir, ottenere una piccola documentazione su un particolare metodo. 
+~~~~19
+La documentazione integrata non è molto ampia, ma può essere utile quando si ha fretta o non si ha accesso a un browser Web o ad un motore di ricerca.
+Glossario
+--------
+codice fragile: codice che funziona quando i dati di input sono in un formato particolare ma è soggetto a rotture se c'è qualche deviazione dal formato corretto. Chiamiamo questo "codice fragile" perché si rompe facilmente.
+corrispondenza avida: la nozione per indicare che i caratteri "+" e "\*" in un'espressione regolare si espandono verso l'esterno per corrispondere alla stringa più grande possibile.
+######50
+######51
+grep: un comando disponibile nella maggior parte dei sistemi Unix che cerca tra i file di testo alla ricerca di righe che soddisfino le espressioni regolari. Il nome del comando sta per "Generalized Regular Expression Parser".
+######52
+espressione regolare: un linguaggio per esprimere stringhe di ricerca più complesse. Un'espressione regolare può contenere caratteri speciali che indicano che una ricerca corrisponde solo all'inizio o alla fine di una riga o molte altre funzionalità simili.
+wild-card: un carattere speciale che corrisponde a qualsiasi carattere. Nelle espressioni regolari il carattere wild-card è il punto.
+######53
+Esercizi
+---------
+** Esercizio 1: ** Scrivete un semplice programma per simulare l'operazione del comando `grep` su Unix. Chiedete all'utente di immettere un'espressione regolare e di contare il numero di righe che corrispondono all'espressione regolare: 
+~~~~20
+** Esercizio 2: ** Scrivete un programma per cercare le righe del form 
+~~~~21
+ed estrarre il numero da ciascuna delle righe usando un'espressione regolare e il metodo `findall()`. Calcolate la media dei numeri e visualizzatela.  ~~~~22

@@ -1,52 +1,49 @@
+-%
 
-Iteration
+Iterazione
 =========
 
 \index{iteration}
 
-Updating variables
+Aggiornamento delle variabili
 ------------------
 
 \index{update}
 \index{variable!updating}
 
-A common pattern in assignment statements is an assignment statement
-that updates a variable, where the new value of the variable depends on
-the old.
+Un comune schema nelle istruzioni di assegnazione è quello che aggiorna una variabile, in cui il nuovo valore della variabile dipende da quello vecchio.
 
 ~~~~ {.python}
 x = x + 1
 ~~~~
 
-This means "get the current value of `x`, add 1, and then
-update `x` with the new value."
 
-If you try to update a variable that doesn't exist, you get an error,
-because Python evaluates the right side before it assigns a value to
-`x`:
+
+
+Ciò significa "prendi il valore corrente di` x`, aggiungi 1, quindi aggiorna `x` con il nuovo valore." Se provate ad aggiornare una variabile che non esiste, otterrete un errore, perché Python valuta il lato destro dell'istruzione prima di assegnare un valore a `x`:
 
 ~~~~ {.python}
 >>> x = x + 1
 NameError: name 'x' is not defined
 ~~~~
 
-Before you can update a variable, you have to
-*initialize* it, usually with a simple assignment:
 
+Prima di poter aggiornare una variabile, occorre *inizializzarla*, solitamente con una semplice assegnazione:
 \index{initialization (before update)}
+
 
 ~~~~ {.python}
 >>> x = 0
 >>> x = x + 1
 ~~~~
 
-Updating a variable by adding 1 is called an *increment*;
-subtracting 1 is called a *decrement*.
+
+Aggiornare una variabile aggiungendo 1 viene definito *incremento*; sottrarre 1 è definito *decremento*.
 
 \index{increment}
 \index{decrement}
 
-The `while` statement
+L'istruzione `while`
 --------------------------------
 
 \index{statement!while}
@@ -54,14 +51,7 @@ The `while` statement
 \index{loop!while}
 \index{iteration}
 
-Computers are often used to automate repetitive tasks. Repeating
-identical or similar tasks without making errors is something that
-computers do well and people do poorly. Because iteration is so common,
-Python provides several language features to make it easier.
-
-One form of iteration in Python is the `while` statement.
-Here is a simple program that counts down from five and then says
-"Blastoff!".
+I computer sono spesso usati per automatizzare attività ripetitive. Ripetere compiti identici o simili senza fare errori è qualcosa che i computer fanno bene e le persone fanno male. Poiché le iterazioni sono molto comuni, Python fornisce diverse funzionalità per renderle più semplici.  Una forma di iterazione in Python è l'istruzione `while`. Ecco un semplice programma che conta alla rovescia da cinque e poi dice "Decollo!".
 
 ~~~~ {.python}
 n = 5
@@ -71,73 +61,35 @@ while n > 0:
 print('Blastoff!')
 ~~~~
 
-You can almost read the `while` statement as if it were
-English. It means, "While `n` is greater than 0, display the
-value of `n` and then reduce the value of `n` by
-1. When you get to 0, exit the `while` statement and display
-the word `Blastoff!`"
+
+Potete quasi leggere l'istruzione `while` come se fosse inglese. Significa, "Mentre `n` è maggiore di 0, mostra il valore di `n` e quindi riduci di 1 il valore di `n`. Quando arrivi a 0, esci dall'istruzione `while` e visualizza la parola `Decollo!`"
 
 \index{flow of execution}
 
-More formally, here is the flow of execution for a `while`
-statement:
-
-1.  Evaluate the condition, yielding `True` or
-    `False`.
-
-2.  If the condition is false, exit the `while` statement and
-    continue execution at the next statement.
-
-3.  If the condition is true, execute the body and then go back to
-    step 1.
-
-This type of flow is called a *loop* because the third
-step loops back around to the top. We call each time we execute the body
-of the loop an *iteration*. For the above loop, we would
-say, "It had five iterations", which means that the body of the loop was
-executed five times.
+Più formalmente, ecco il flusso di esecuzione per un'istruzione `while`: 1.  Valuta la condizione, dando come risultato `True` o `False`.  2.   Se la condizione è falsa, esce dall'istruzione `while` e prosegue con l'istruzione successiva.  3.   Se la condizione è vera, esegui il blocco e quindi torna al passaggio 1.  Questo tipo di flusso è chiamato *loop* o ciclo perché il terzo step riporta all'inizio. Chiamiamo *iterazione* ogni esecuzione del blocco incluso nel ciclo. Per il ciclo precedente, diremmo "Aveva cinque iterazioni", il che significa che il blocco del loop è stato eseguito cinque volte.
 
 \index{condition}
 \index{loop}
 \index{body}
 
-The body of the loop should change the value of one or more variables so
-that eventually the condition becomes false and the loop terminates. We
-call the variable that changes each time the loop executes and controls
-when the loop finishes the *iteration variable*. If there
-is no iteration variable, the loop will repeat forever, resulting in an
-*infinite loop*.
+Il blocco del ciclo dovrebbe cambiare il valore di una o più variabili in modo da far diventare infine falsa la condizione e far sì che il ciclo termini. Chiamiamo *variabile di iterazione* la variabile che cambia ogni volta che il ciclo viene eseguito e controlla quando il ciclo termina. Se non esiste una variabile di iterazione, il ciclo si ripeterà per sempre e ne risulterà un *ciclo infinito*.
 
-Infinite loops
+Cicli infiniti
 --------------
 
-An endless source of amusement for programmers is the observation that
-the directions on shampoo, "Lather, rinse, repeat," are an infinite loop
-because there is no *iteration variable* telling you how
-many times to execute the loop.
+Una fonte inesauribile di divertimento per i programmatori è l'osservazione delle istruzioni sui flaconi di shampoo, "Insapona, risciacqua, ripeti", sono un ciclo infinito perché non esiste una *variabile di iterazione* che vi dice quante volte eseguire il ciclo.
 
 \index{infinite loop}
 \index{loop!infinite}
 
-In the case of `countdown`, we can prove that the loop
-terminates because we know that the value of `n` is finite,
-and we can see that the value of `n` gets smaller each time
-through the loop, so eventually we have to get to 0. Other times a loop
-is obviously infinite because it has no iteration variable at all.
+Nel caso di `countdown`, possiamo dimostrare che il ciclo termina perché sappiamo che il valore di `n` è finito, e possiamo vedere che il valore di `n` diminuisce ogni volta che si esegue il ciclo, quindi alla fine deve arrivare a 0. Altre volte un ciclo è ovviamente infinito perché non ha alcuna variabile di iterazione.
 
-"Infinite loops" and `break`
+"Cicli infiniti" e `break`
 ---------------------------------------
 
 \index{break statement}
 \index{statement!break}
-
-Sometimes you don't know it's time to end a loop until you get half way
-through the body. In that case you can write an infinite loop on purpose
-and then use the `break` statement to jump out of the loop.
-
-This loop is obviously an *infinite loop* because the
-logical expression on the `while` statement is simply the
-logical constant `True`:
+A volte non si sa che è il momento di terminare un ciclo finché non si arriva a metà del blocco. In tal caso potete scrivere di proposito un ciclo infinito e poi usare l'istruzione `break` per uscire dal loop.  Questo ciclo è ovviamente un *ciclo infinito* perché l'espressione logica nell'istruzione `while` è semplicemente la costante logica `True`:
 
 ~~~~ {.python}
 n = 10
@@ -147,30 +99,12 @@ while True:
 print('Done!')
 ~~~~
 
-If you make the mistake and run this code, you will learn quickly how to
-stop a runaway Python process on your system or find where the power-off
-button is on your computer. This program will run forever or until your
-battery runs out because the logical expression at the top of the loop
-is always true by virtue of the fact that the expression is the constant
-value `True`.
 
-While this is a dysfunctional infinite loop, we can still use this
-pattern to build useful loops as long as we carefully add code to the
-body of the loop to explicitly exit the loop using `break`
-when we have reached the exit condition.
-
-For example, suppose you want to take input from the user until they
-type `done`. You could write:
+Se commettete l'errore di eseguire questo codice, imparerete rapidamente a fermare un processo Python in esecuzione sul vostro sistema o a trovare il pulsante di spegnimento sul vostro computer. Questo programma verrà eseguito per sempre o fino a quando la vostra batteria si esaurirà, perché l'espressione logica nella parte superiore del ciclo è sempre vera in virtù del fatto che l'espressione è il valore costante `True`.  Anche se questo è un ciclo infinito disfunzionale, possiamo ancora usare questo schema per costruire cicli utili, a patto di aggiungere con cura codice al blocco del ciclo per uscirne esplicitamente usando `break` quando abbiamo raggiunto la condizione di uscita.  Ad esempio, supponiamo di voler ricevere input dall'utente fino a quando non digita `fatto`. Potreste scrivere:
 
 \VerbatimInput{../code3/copytildone1.py}
 
-The loop condition is `True`, which is always true, so the
-loop runs repeatedly until it hits the break statement.
-
-Each time through, it prompts the user with an angle bracket. If the
-user types `done`, the `break` statement exits the
-loop. Otherwise the program echoes whatever the user types and goes back
-to the top of the loop. Here's a sample run:
+La condizione del ciclo è `True`, che è sempre vera, quindi il ciclo viene eseguito ripetutamente finché non incontra l'istruzione break.  Ogni volta mostra il prompt all'utente con una parentesi angolare. Se l'utente digita `fatto`, l'istruzione` break` chiude il ciclo, Altrimenti il ​​programma ripete a pappagallo qualsiasi cosa scriva l'utente e torna all'inizio del ciclo. Ecco un esempio di esecuzione:
 
 ~~~~
 > hello there
@@ -181,33 +115,21 @@ finished
 Done!
 ~~~~
 
-This way of writing `while` loops is common because you can
-check the condition anywhere in the loop (not just at the top) and you
-can express the stop condition affirmatively ("stop when this happens")
-rather than negatively ("keep going until that happens.").
 
-Finishing iterations with `continue`
+Questo modo di scrivere cicli `while` è comune, perché è possibile controllare la condizione in qualsiasi punto del ciclo (non solo nella parte superiore) ed è possibile esprimere la condizione di arresto in modo affermativo ("fermati quando questo accade") piuttosto che in modo negativo ("continua finché ciò non accadrà.").
+
+Fermare le iterazioni con `continue`
 -----------------------------------------------
 
 \index{continue statement}
 \index{statement!continue}
-
-Sometimes you are in an iteration of a loop and want to finish the
-current iteration and immediately jump to the next iteration. In that
-case you can use the `continue` statement to skip to the next
-iteration without finishing the body of the loop for the current
-iteration.
-
-Here is an example of a loop that copies its input until the user types
-"done", but treats lines that start with the hash character as lines not
-to be printed (kind of like Python comments).
+A volte vi trovate nella ripetizione di un ciclo e desiderate terminare l'iterazione corrente e saltare immediatamente alla successiva. In questo caso potete usare l'istruzione `continue` per saltare alla successiva iterazione senza terminare il corpo del ciclo per l'iterazione corrente.  Ecco un esempio di un ciclo che copia il suo input fino a quando l'utente digita "fatto", ma considera le righe che iniziano con il carattere cancelletto come righe da non visualizzare (un po' come i commenti di Python).
 
 \VerbatimInput{../code3/copytildone2.py}
 
-Here is a sample run of this new program with `continue`
-added.
+Ecco un esempio di questo nuovo programma con l'aggiunta di `continue`.
 
-~~~~ 
+~~~~
 > hello there
 hello there
 > # don't print this
@@ -217,29 +139,16 @@ print this!
 Done!
 ~~~~
 
-All the lines are printed except the one that starts with the hash sign
-because when the `continue` is executed, it ends the current
-iteration and jumps back to the `while` statement to start
-the next iteration, thus skipping the `print` statement.
 
-Definite loops using `for` 
+Vengono visualizzate tutte le righe, tranne quella che inizia con il segno cancelletto perché, quando viene eseguito `continue`, l'iterazione corrente termina e si ritorna all'istruzione `while` per iniziare l'iterazione successiva, saltando l'istruzione `print`.
+
+Cicli definiti con l'uso di `for`
 --------------------------------------
 
 \index{for statement}
 \index{statement!for}
 
-Sometimes we want to loop through a *set* of things such
-as a list of words, the lines in a file, or a list of numbers. When we
-have a list of things to loop through, we can construct a *definite*
-loop using a `for` statement. We call the `while`
-statement an *indefinite* loop because it simply loops until some
-condition becomes `False`, whereas the `for` loop
-is looping through a known set of items so it runs through as many
-iterations as there are items in the set.
-
-The syntax of a `for` loop is similar to the
-`while` loop in that there is a `for` statement
-and a loop body:
+A volte vogliamo eseguire il ciclo su un *insieme* di cose come un elenco di parole, le righe di un file o un elenco di numeri. Quando abbiamo un elenco di cose da ripetere, possiamo costruire un ciclo *definito* usando un'istruzione `for`. Chiamiamo l'istruzione `while` un ciclo *indefinito* perché essa semplicemente si ripete fino a quando alcune condizioni diventano `False`, mentre il ciclo `for` sta scorrendo attraverso un insieme noto di elementi in modo da ripetere tante iterazioni quanti sono gli elementi dell'insieme.  La sintassi di un ciclo `for` è simile al ciclo `while`, in quanto esiste un'istruzione `for` e un blocco del ciclo:
 
 ~~~~ {.python}
 friends = ['Joseph', 'Glenn', 'Sally']
@@ -248,11 +157,8 @@ for friend in friends:
 print('Done!')
 ~~~~
 
-In Python terms, the variable `friends` is a list^[We will examine lists 
-in more detail in a later chapter.] of
-three strings and the `for` loop goes through the list and
-executes the body once for each of the three strings in the list
-resulting in this output:
+
+Dal punto di vista di Python, la variabile `friends` è una lista ^ [Le liste verranno esaminate in modo più dettagliato in un capitolo successivo.] di tre stringhe e il ciclo `for` scorre attraverso l'elenco ed esegue il blocco una volta per ognuna delle tre stringhe dell'elenco, generando questo output:
 
 ~~~~ {.python}
 Happy New Year: Joseph
@@ -261,51 +167,34 @@ Happy New Year: Sally
 Done!
 ~~~~
 
-Translating this `for` loop to English is not as direct as
-the `while`, but if you think of friends as a
-*set*, it goes like this: "Run the statements in the body
-of the for loop once for each friend *in* the set named friends."
 
-Looking at the `for` loop, *for* and
-*in* are reserved Python keywords, and
-`friend` and `friends` are variables.
+La traduzione di questo ciclo `for` in inglese non è diretta come il `while`, ma se si pensa agli amici come un *insieme*, funziona così: "Esegui le istruzioni nel corpo del ciclo for una volta per ogni amico *contenuto* nell'insieme chiamato amici." Esaminando il ciclo `for`, *for* e *in* sono parole chiave Python riservate, e `friend` e `friends` sono variabili.
 
 ~~~~ {.python}
 for friend in friends:
     print('Happy New Year:', friend)
 ~~~~
 
-In particular, `friend` is the *iteration
-variable* for the for loop. The variable `friend`
-changes for each iteration of the loop and controls when the
-`for` loop completes. The *iteration variable*
-steps successively through the three strings stored in the
-`friends` variable.
 
-Loop patterns
+In particolare, `friend` è la *variabile di iterazione* per il ciclo for. La variabile `friend` cambia in ogni iterazione del ciclo e controlla quando il ciclo` for` termina. La *variabile di iterazione* scorre successivamente attraverso le tre stringhe memorizzate nella variabile `friends`.
+
+Schemi di ciclo
 -------------
 
-Often we use a `for` or `while` loop to go through
-a list of items or the contents of a file and we are looking for
-something such as the largest or smallest value of the data we scan
-through.
 
-These loops are generally constructed by:
 
--   Initializing one or more variables before the loop starts
+Spesso usiamo un ciclo `for` o` while` per scorrere un elenco di elementi o il contenuto di un file e cerchiamo qualcosa come il valore più grande o più piccolo dei dati che scansioniamo.  Questi cicli sono generalmente costruiti in questo modo:
 
--   Performing some computation on each item in the loop body, possibly
-    changing the variables in the body of the loop
+- Inizializzazione di una o più variabili prima dell'inizio del ciclo
 
--   Looking at the resulting variables when the loop completes
+- Esecuzione di alcuni calcoli su ciascun elemento nel blocco del ciclo, eventualmente modificando le variabili nel blocco del ciclo
+- Osservazione delle variabili risultanti al termine del ciclo
 
-We will use a list of numbers to demonstrate the concepts and
-construction of these loop patterns.
+Useremo un elenco di numeri per dimostrare i concetti e la costruzione di questi schemi di ciclo.
 
-### Counting and summing loops
+### Cicli per contare e sommare
 
-For example, to count the number of items in a list, we would write the
-following `for` loop:
+Ad esempio, per contare il numero di elementi in una lista, scriveremo il seguente ciclo `for`:
 
 ~~~~ {.python}
 count = 0
@@ -314,25 +203,8 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Count: ', count)
 ~~~~
 
-We set the variable `count` to zero before the loop starts,
-then we write a `for` loop to run through the list of
-numbers. Our *iteration* variable is named
-`itervar` and while we do not use `itervar` in the
-loop, it does control the loop and cause the loop body to be executed
-once for each of the values in the list.
 
-In the body of the loop, we add 1 to the current value of
-`count` for each of the values in the list. While the loop is
-executing, the value of `count` is the number of values we
-have seen "so far".
-
-Once the loop completes, the value of `count` is the total
-number of items. The total number "falls in our lap" at the end of the
-loop. We construct the loop so that we have what we want when the loop
-finishes.
-
-Another similar loop that computes the total of a set of numbers is as
-follows:
+Impostiamo la variabile `count` a zero prima dell'inizio del ciclo, quindi scriviamo un ciclo` for` per scorrere l'elenco dei numeri. La nostra variabile di *iterazione* si chiama `itervar` e sebbene non usiamo `itervar` nel ciclo, controlla il ciclo e fa sì che il corpo del ciclo sia eseguito una volta per ciascuno dei valori nella lista.  Nel blocco del ciclo, aggiungiamo 1 al valore corrente di "count" per ciascuno dei valori dell'elenco. Mentre il ciclo è in esecuzione, il valore di "count" è il numero di valori che abbiamo visto "finora".  Una volta completato il ciclo, il valore di `count` è il numero totale di elementi. Il numero totale "ci finisce tra le mani" alla fine del ciclo. Costruiamo il ciclo in modo da ottenere ciò che vogliamo quando termina il ciclo.  Un altro ciclo simile che calcola il totale di un insieme di numeri è il seguente:
 
 ~~~~ {.python}
 total = 0
@@ -341,36 +213,21 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Total: ', total)
 ~~~~
 
-In this loop we *do* use the *iteration variable*.
-Instead of simply adding one to the `count` as in the
-previous loop, we add the actual number (3, 41, 12, etc.) to the running
-total during each loop iteration. If you think about the variable
-`total`, it contains the "running total of the values so
-far". So before the loop starts `total` is zero because we
-have not yet seen any values, during the loop `total` is the
-running total, and at the end of the loop `total` is the
-overall total of all the values in the list.
 
-As the loop executes, `total` accumulates the sum of the
-elements; a variable used this way is sometimes called an
-*accumulator*.
+In questo ciclo *usiamo* la *variabile di iterazione*. Invece di aggiungere semplicemente uno a `count`, come nel ciclo precedente, aggiungiamo il numero effettivo (3, 41, 12, ecc.) al totale parziale durante ogni iterazione del ciclo. La variabile `total`, contiene il "totale parziale dei valori finora esaminati". Quindi, prima che inizi il ciclo, `total` è zero perché non abbiamo ancora esaminato alcun valore, durante il ciclo, 'total` è il totale parziale, e alla fine del ciclo' total` è il totale complessivo di tutti i valori dell'elenco.  Mentre il ciclo viene eseguito, `total` accumula la somma degli elementi; una variabile usata in questo modo viene talvolta chiamata *accumulatore*.
 
 \index{accumulator!sum}
 
-Neither the counting loop nor the summing loop are particularly useful
-in practice because there are built-in functions `len()` and
-`sum()` that compute the number of items in a list and the
-total of the items in the list respectively.
+Né il ciclo di conteggio né il ciclo di somma sono particolarmente utili in pratica perché ci sono le funzioni integrate `len ()` e `sum ()` che calcolano rispettivamente il numero di elementi e il totale degli elementi dell'elenco.
 
-### Maximum and minimum loops
+### Cicli di massimo e minimo
 
 \index{loop!maximum}
 \index{loop!minimum}
 \index{None special value}
 \index{special value!None}
 
-To find the largest value in a list or sequence, we
-construct the following loop:
+Per trovare il valore più grande in un elenco o sequenza, costruiamo il seguente ciclo:
 
 ~~~~ {.python}
 largest = None
@@ -382,7 +239,8 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Largest:', largest)
 ~~~~
 
-When the program executes, the output is as follows:
+
+Quando il programma viene eseguito, l'output è il seguente:
 
 ~~~~
 Before: None
@@ -395,34 +253,8 @@ Loop: 15 74
 Largest: 74
 ~~~~
 
-The variable `largest` is best thought of as the "largest
-value we have seen so far". Before the loop, we set `largest`
-to the constant `None`. `None` is a special
-constant value which we can store in a variable to mark the variable as
-"empty".
 
-Before the loop starts, the largest value we have seen so far is
-`None` since we have not yet seen any values. While the loop
-is executing, if `largest` is `None` then we take
-the first value we see as the largest so far. You can see in the first
-iteration when the value of `itervar` is 3, since
-`largest` is `None`, we immediately set
-`largest` to be 3.
-
-After the first iteration, `largest` is no longer
-`None`, so the second part of the compound logical expression
-that checks `itervar > largest` triggers only when we see a
-value that is larger than the "largest so far". When we see a new "even
-larger" value we take that new value for `largest`. You can
-see in the program output that `largest` progresses from 3 to
-41 to 74.
-
-At the end of the loop, we have scanned all of the values and the
-variable `largest` now does contain the largest value in the
-list.
-
-To compute the smallest number, the code is very similar with one small
-change:
+La variabile `largest` si può meglio definire come il "valore più grande che abbiamo visto finora". Prima del ciclo, diamo alla variabile `largest` il valore della costante `None`. `None` è un valore costante speciale che possiamo memorizzare in una variabile per contrassegnarla come "vuota".  Prima dell'avvio del ciclo, il valore più grande che abbiamo visto finora è `None` poiché non abbiamo ancora visto alcun valore. Mentre il ciclo è in esecuzione, se `largest` è` None`, il primo valore esaminato sarà il più grande fino a quel punto. Nella prima iterazione, quando il valore di `itervar` è 3, poiché `largest` è `None`, a questa variabile viene immediatamente dato il valore 3.  Dopo la prima iterazione, `largest` non è più `None`, quindi la seconda parte dell'espressione logica composta che controlla `itervar > largest` si attiva solo quando osserviamo un valore che è maggiore del "più grande finora osservato". Quando osserviamo un nuovo valore "ancora più grande", quel nuovo valore sarà "il più grande". Potete vedere nell'output del programma che `largest` progredisce da 3 a 41 a 74.  Alla fine del ciclo, abbiamo scansionato tutti i valori e la variabile `largest` contiene il valore più grande dell'elenco.  Per calcolare il numero più piccolo, il codice è molto simile, con una piccola modifica:
 
 ~~~~ {.python}
 smallest = None
@@ -434,16 +266,8 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print('Smallest:', smallest)
 ~~~~
 
-Again, `smallest` is the "smallest so far" before, during,
-and after the loop executes. When the loop has completed,
-`smallest` contains the minimum value in the list.
 
-Again as in counting and summing, the built-in functions
-`max()` and `min()` make writing these exact loops
-unnecessary.
-
-The following is a simple version of the Python built-in
-`min()` function:
+Di nuovo, `il più piccolo' è il " più piccolo finora ", prima, durante e dopo l'esecuzione del ciclo. Al termine del ciclo, `più piccolo' contiene il valore minimo dell'elenco.  Come nel conteggio e nella somma, le funzioni integrate `max ()` e `min ()` rendono superflua la creazione di questi cicli.  Quella che segue è una semplice versione della funzione `min ()` integrata in Python:
 
 ~~~~ {.python}
 def min(values):
@@ -454,88 +278,49 @@ def min(values):
     return smallest
 ~~~~
 
-In the function version of the smallest code, we removed all of the
-`print` statements so as to be equivalent to the
-`min` function which is already built in to Python.
 
-Debugging
+Nella versione funzione del codice più piccolo abbiamo rimosso tutte le istruzioni `print` in modo da renderla equivalente alla funzione `min` già incorporata in Python.
+
+Debug
 ---------
 
-As you start writing bigger programs, you might find yourself spending
-more time debugging. More code means more chances to make an error and
-more places for bugs to hide.
-
+Quando iniziate a scrivere programmi più grandi, potreste impiegare più tempo per il debug. Più codice significa più possibilità di commettere un errore e più spazio concesso agli errori per nascondersi.
 \index{debugging!by bisection}
 \index{bisection, debugging by}
 
-One way to cut your debugging time is "debugging by bisection." For
-example, if there are 100 lines in your program and you check them one
-at a time, it would take 100 steps.
+Un modo per ridurre il tempo di debug è effettuare un "debug per bisezione". Ad esempio, se ci sono 100 righe nel vostro programma e le controllate una alla volta, ci vorranno 100 step.  Provate invece a interrompere il problema nel mezzo. Esaminate la parte centrale del programma, o la parte vicina a questa, per trovare un valore intermedio da controllare. Aggiungete un'istruzione `print` (o qualcos'altro che abbia un effetto verificabile) ed eseguite il programma.  Se il posto di controllo centrale non risulta corretto, il problema deve essere nella prima metà del programma. Se è corretto, il problema è nella seconda metà.  Ogni volta che eseguite un controllo come questo, dimezzate il numero di righe da controllare. Dopo sei passaggi (che sono molto meno di 100), si dovrebbe scendere a una o due righe di codice, almeno in teoria.  Nella pratica non è sempre chiaro quale sia il "centro del programma" e non è sempre possibile controllarlo. Non ha senso contare le righe e trovare il punto centrale esatto. Pensate invece ai punti del programma in cui potrebbero esserci errori e ai luoghi in cui è facile effettuare un controllo. Quindi scegliete un punto in cui ritenete che le probabilità che l'errore sia prima o dopo il controllo siano all'incirca uguali.
 
-Instead, try to break the problem in half. Look at the middle of the
-program, or near it, for an intermediate value you can check. Add a
-`print` statement (or something else that has a verifiable
-effect) and run the program.
-
-If the mid-point check is incorrect, the problem must be in the first
-half of the program. If it is correct, the problem is in the second
-half.
-
-Every time you perform a check like this, you halve the number of lines
-you have to search. After six steps (which is much less than 100), you
-would be down to one or two lines of code, at least in theory.
-
-In practice it is not always clear what the "middle of the program" is
-and not always possible to check it. It doesn't make sense to count
-lines and find the exact midpoint. Instead, think about places in the
-program where there might be errors and places where it is easy to put a
-check. Then choose a spot where you think the chances are about the same
-that the bug is before or after the check.
-
-Glossary
+Glossario
 --------
 
-accumulator
-:   A variable used in a loop to add up or accumulate a result.
+Accumulatore
+: una variabile utilizzata in un ciclo per sommare o accumulare un risultato.
 \index{accumulator}
 
-counter
-:   A variable used in a loop to count the number of times something
-    happened. We initialize a counter to zero and then increment the
-    counter each time we want to "count" something.
+contatore
+: una variabile utilizzata in un ciclo per contare il numero di volte in cui qualcosa è accaduto. Inizializziamo un contatore a zero e quindi incrementiamo il contatore ogni volta che vogliamo "contare" qualcosa.
 \index{counter}
 
-decrement
-:   An update that decreases the value of a variable.
+decremento
+: un aggiornamento che riduce il valore di una variabile.
 \index{decrement}
 
-initialize
-:   An assignment that gives an initial value to a variable that will be
-    updated.
-
-increment
-:   An update that increases the value of a variable (often by one).
+inizializzare
+: un'assegnazione che fornisce un valore iniziale a una variabile che verrà aggiornata. incremento: un aggiornamento che aumenta il valore di una variabile (spesso di uno).
 \index{increment}
 
-infinite loop
-:   A loop in which the terminating condition is never satisfied or for
-    which there is no terminating condition.
+ciclo infinito
+: un ciclo in cui la condizione di terminazione non è mai soddisfatta o per il quale non esiste una condizione di terminazione.
 \index{infinite loop}
 
-iteration
-:   Repeated execution of a set of statements using either a function
-    that calls itself or a loop.
+iterazione
+: esecuzione ripetuta di un insieme di istruzioni utilizzando una funzione che evoca se stessa o un ciclo.
 \index{iteration}
 
-Exercises
+Esercizi
 ---------
 
-**Exercise 1: Write a program which repeatedly reads numbers until the
-user enters "done". Once "done" is entered, print out the total, count,
-and average of the numbers. If the user enters anything other than a
-number, detect their mistake using `try` and
-`except` and print an error message and skip to the next
-number.**
+**Esercizio 1:** scrivete un programma che legga ripetutamente i numeri fino a quando l'utente non digiti "finito". Una volta che viene digitato "finito", dovrà essere visualizzato il totale, il conteggio e la media dei numeri. Se l'utente dovesse digitare qualcosa di diverso da un numero, occorrerà rilevare l'errore usando `try` e `except`, visualizzareun messaggio di errore e passare al numero successivo.
 
 ~~~~
 Enter a number: 4
@@ -547,7 +332,5 @@ Enter a number: done
 16 3 5.333333333333333
 ~~~~
 
-**Exercise 2: Write another program that prompts for a list of numbers as
-above and at the end prints out both the maximum and minimum of the
-numbers instead of the average.**
 
+**Esercizio 2:** Scrivete un altro programma che richieda un elenco di numeri come nell'esercizio precedente e alla fine visualizzi sia il numero più grande che quello più piccolo invece della media.

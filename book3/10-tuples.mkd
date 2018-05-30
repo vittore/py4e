@@ -1,37 +1,32 @@
+%
 
-Tuples
-======
 
-Tuples are immutable
+Tuple
+=========
+
+
+Le tuple sono immutabili
 --------------------
 
 \index{tuple}
 \index{type!tuple}
 \index{sequence}
 
-A tuple^[Fun fact: The word "tuple" comes from the names given to sequences
-of numbers of varying lengths: single, double, triple, quadruple,
-quituple, sextuple, septuple, etc.] is a sequence of values much like a list. The values stored
-in a tuple can be any type, and they are indexed by integers. The
-important difference is that tuples are *immutable*.
-Tuples are also *comparable* and
-*hashable* so we can sort lists of them and use tuples as
-key values in Python dictionaries.
+Una tupla ^ [Curiosità: la parola "tupla" deriva dai nomi dati a sequenze di numeri di lunghezza variabile: singola, doppie, triple, quadruple, quintuple, sestuple, settuple, ecc.] È una sequenza di valori molto simile a un elenco. I valori memorizzati in una tupla possono essere di qualsiasi tipo e sono indicizzati tramite numeri interi. La differenza fondamentale è che le tuple sono *immutabili*.
+Anche le tuple sono *paragonabili* e *hashabili*, e perciò possiamo ordinare gli elenchi di tuple e queste ultime possono essere utilizzate come valori chiave nei dizionari Python.
 
 \index{mutability}
 \index{hashable}
 \index{comparable}
 \index{immutability}
 
-Syntactically, a tuple is a comma-separated list of values:
+Sintatticamente, una tupla è un elenco di valori separati da virgole:
 
 ~~~~ {.python}
 >>> t = 'a', 'b', 'c', 'd', 'e'
 ~~~~
 
-Although it is not necessary, it is common to enclose tuples in
-parentheses to help us quickly identify tuples when we look at Python
-code:
+Sebbene non sia necessario, è convenzione racchiudere le tuple tra parentesi tonde per identificarle rapidamente quando esaminiamo del codice Python:
 
 \index{parentheses!tuples in}
 
@@ -39,8 +34,7 @@ code:
 >>> t = ('a', 'b', 'c', 'd', 'e')
 ~~~~
 
-To create a tuple with a single element, you have to include the final
-comma:
+Per creare una tupla con un singolo elemento, occorre aggiungere una virgola dopo l'elemento:
 
 \index{singleton}
 \index{tuple!singleton}
@@ -51,8 +45,7 @@ comma:
 <type 'tuple'>
 ~~~~
 
-Without the comma Python treats `('a')` as an expression with a string
-in parentheses that evaluates to a string:
+Senza la virgola, Python considera `('a')` come un'espressione contenente una stringa tra parentesi che valuta come una stringa:
 
 ~~~~ {.python}
 >>> t2 = ('a')
@@ -60,8 +53,7 @@ in parentheses that evaluates to a string:
 <type 'str'>
 ~~~~
 
-Another way to construct a tuple is the built-in function
-`tuple`. With no argument, it creates an empty tuple:
+Un altro modo per costruire una tupla è usare la funzione incorporata `tuple`. Priva di argomenti, crea una tupla vuota:
 
 \index{tuple function}
 \index{function!tuple}
@@ -72,9 +64,7 @@ Another way to construct a tuple is the built-in function
 ()
 ~~~~
 
-If the argument is a sequence (string, list, or tuple), the result of
-the call to `tuple` is a tuple with the elements of the
-sequence:
+Se l'argomento è una sequenza (stringa, elenco o tupla), il risultato della chiamata di `tuple` è una tupla con gli elementi della sequenza:
 
 ~~~~ {.python .trinket}
 >>> t = tuple('lupins')
@@ -82,11 +72,7 @@ sequence:
 ('l', 'u', 'p', 'i', 'n', 's')
 ~~~~
 
-Because `tuple` is the name of a constructor, you should
-avoid using it as a variable name.
-
-Most list operators also work on tuples. The bracket operator indexes an
-element:
+Poiché `tuple` è il nome di una funzione predefinita, è necessario evitare di usarlo come nome di variabile.  La maggior parte degli operatori degli elenchi funziona anche sulle tuple. L'operatore parentesi quadra indicizza un elemento:
 
 \index{bracket operator}
 \index{operator!bracket}
@@ -97,7 +83,7 @@ element:
 'a'
 ~~~~
 
-And the slice operator selects a range of elements.
+E l'operatore slice seleziona un intervallo di elementi.
 
 \index{slice operator}
 \index{operator!slice}
@@ -109,8 +95,7 @@ And the slice operator selects a range of elements.
 ('b', 'c')
 ~~~~
 
-But if you try to modify one of the elements of the tuple, you get an
-error:
+Ma se cercate di modificare uno degli elementi della tupla, otterrete un messaggio di errore:
 
 \index{exception!TypeError}
 \index{TypeError}
@@ -122,8 +107,7 @@ error:
 TypeError: object doesn't support item assignment
 ~~~~
 
-You can't modify the elements of a tuple, but you can replace one tuple
-with another:
+Non è possibile modificare gli elementi di una tupla, ma è possibile sostituire una tupla con un'altra:
 
 ~~~~ {.python .trinket}
 >>> t = ('A',) + t[1:]
@@ -131,7 +115,7 @@ with another:
 ('A', 'b', 'c', 'd', 'e')
 ~~~~
 
-Comparing tuples
+Confronto tra tuple
 ----------------
 
 \index{comparison!tuple}
@@ -139,11 +123,7 @@ Comparing tuples
 \index{sort method}
 \index{method!sort}
 
-The comparison operators work with tuples and other sequences. Python
-starts by comparing the first element from each sequence. If they are
-equal, it goes on to the next element, and so on, until it finds
-elements that differ. Subsequent elements are not considered (even if
-they are really big).
+Gli operatori di confronto funzionano con le tuple e le altre sequenze. Python inizia a confrontare il primo elemento di ogni sequenza. Se sono uguali, passa all'elemento successivo, e così via, finché non trova due elementi diversi. Gli elementi che seguono non vengono considerati (anche se sono molto grandi).
 
 ~~~~ {.python .trinket}
 >>> (0, 1, 2) < (0, 3, 4)
@@ -152,62 +132,45 @@ True
 True
 ~~~~
 
-The `sort` function works the same way. It sorts primarily by
-first element, but in the case of a tie, it sorts by second element, and
-so on.
+La funzione `sort` funziona allo stesso modo. Di base ordina iniziando dal primo elemento, ma nel caso di pari lunghezza, inizia dal secondo elemento, e così via.
+Questa caratteristica torna utile in un modello chiamato *DSU* per
 
-This feature lends itself to a pattern called *DSU* for
+Decorare (decorate)
+: una sequenza costruendo un elenco di tuple con una o più chiavi di ordinamento che precedono gli elementi della sequenza,
 
-Decorate
-:   a sequence by building a list of tuples with one or more sort keys
-    preceding the elements from the sequence,
+Ordinare (sort)
+: l'elenco di tuple usando il `sort` incorporato in Python, e
 
-Sort
-:   the list of tuples using the Python built-in `sort`, and
+Eliminare (undecorate)
+: la decorazione estraendo gli elementi della sequenza, una volta ordinati.
 
-Undecorate
-:   by extracting the sorted elements of the sequence.
-
-[DSU]
 \index{DSU pattern}
 \index{pattern!DSU}
 \index{decorate-sort-undecorate pattern}
 \index{pattern!decorate-sort-undecorate}
 \index{Romeo and Juliet}
 
-For example, suppose you have a list of words and you want to sort them
-from longest to shortest:
+Ad esempio, supponiamo di avere un elenco di parole che devono essere ordinate dalla più lunga alla più breve:
 
-\VerbatimInput{../code3/soft.py} 
+\VerbatimInput{../code3/soft.py}
 
-The first loop builds a list of tuples, where each tuple is a word
-preceded by its length.
-
-`sort` compares the first element, length, first, and only
-considers the second element to break ties. The keyword argument
-`reverse=True` tells `sort` to go in decreasing
-order.
+Il primo ciclo crea un elenco di tuple, in cui ogni tupla è una parola preceduta dalla sua lunghezza. `sort` confronta il primo elemento, la lunghezza, per primo, e considera il secondo elemento solo se necessario per superare i casi in cui la lunghezza è la stessa.
+L'argomento della parola chiave `reverse = True` provoca l'esecuzione del `sort` in ordine decrescente.
 
 \index{keyword argument}
 \index{argument!keyword}
 \index{traversal}
 
-The second loop traverses the list of tuples and builds a list of words
-in descending order of length. The four-character words are sorted in
-*reverse* alphabetical order, so "what" appears before
-"soft" in the following list.
-
-The output of the program is as follows:
+Il secondo ciclo scorre l'elenco di tuple e crea un elenco di parole in ordine decrescente di lunghezza. Le parole di quattro caratteri sono ordinate in ordine alfabetico *inverso*, quindi "what" appare prima di "soft" nell'elenco che segue.  L'output del programma è il seguente:
 
 ~~~~
 ['yonder', 'window', 'breaks', 'light', 'what',
 'soft', 'but', 'in']
 ~~~~
 
-Of course the line loses much of its poetic impact when turned into a
-Python list and sorted in descending word length order.
+Ovviamente il verso perde molto del suo impatto poetico quando viene trasformato in un elenco Python ordinato in ordine decrescente di lunghezza delle parole.
 
-Tuple assignment
+Assegnazione di tupla
 ----------------
 
 \index{tuple!assignment}
@@ -215,14 +178,7 @@ Tuple assignment
 \index{swap pattern}
 \index{pattern!swap}
 
-One of the unique syntactic features of the Python language is the
-ability to have a tuple on the left side of an assignment statement.
-This allows you to assign more than one variable at a time when the left
-side is a sequence.
-
-In this example we have a two-element list (which is a sequence) and
-assign the first and second elements of the sequence to the variables
-`x` and `y` in a single statement.
+Una delle caratteristiche sintattiche uniche del linguaggio Python è la possibilità di avere una tupla sul lato sinistro di un'istruzione di assegnazione. Ciò consente di assegnare più di una variabile alla volta quando il lato sinistro è una sequenza.  In questo esempio abbiamo un elenco di due elementi (che è quindi una sequenza) e assegniamo il primo e il secondo elemento della sequenza alle variabili `x` e` y` in una singola istruzione.
 
 ~~~~ {.python .trinket}
 >>> m = [ 'have', 'fun' ]
@@ -234,9 +190,7 @@ assign the first and second elements of the sequence to the variables
 >>>
 ~~~~
 
-It is not magic, Python *roughly* translates the tuple assignment syntax
-to be the following:^[Python does not translate the syntax literally. For example, if
-you try this with a dictionary, it will not work as might expect.]
+Non è magia, Python *approssimativamente* traduce la sintassi dell'assegnazione della tupla come segue: ^ [Python non traduce la sintassi alla lettera. Ad esempio, se provate questo con un dizionario, non funzionerà come previsto.]
 
 ~~~~ {.python .trinket}
 >>> m = [ 'have', 'fun' ]
@@ -249,9 +203,7 @@ you try this with a dictionary, it will not work as might expect.]
 >>>
 ~~~~
 
-Stylistically when we use a tuple on the left side of the assignment
-statement, we omit the parentheses, but the following is an equally
-valid syntax:
+Stilisticamente, quando usiamo una tupla sul lato sinistro dell'istruzione di assegnazione, omettiamo le parentesi, ma quella che segue è una sintassi altrettanto valida:
 
 ~~~~ {.python}
 >>> m = [ 'have', 'fun' ]
@@ -263,21 +215,13 @@ valid syntax:
 >>>
 ~~~~
 
-A particularly clever application of tuple assignment allows us to
-*swap* the values of two variables in a single statement:
+Un'applicazione particolarmente ingegnosa dell'assegnazione di tuple ci consente di *scambiare* i valori di due variabili in una singola istruzione:
 
 ~~~~ {.python}
 >>> a, b = b, a
 ~~~~
 
-Both sides of this statement are tuples, but the left side is a tuple of
-variables; the right side is a tuple of expressions. Each value on the
-right side is assigned to its respective variable on the left side. All
-the expressions on the right side are evaluated before any of the
-assignments.
-
-The number of variables on the left and the number of values on the
-right must be the same:
+Entrambi i lati di questa istruzione sono tuple, ma il lato sinistro è una tupla di variabili, il lato destro è una tupla di espressioni. Ogni valore sul lato destro è assegnato alla rispettiva variabile sul lato sinistro. Tutte le espressioni sul lato destro sono valutate prima di qualsiasi assegnazione.  Il numero di variabili a sinistra e il numero di valori a destra devono essere uguali:
 
 \index{exception!ValueError}
 \index{ValueError}
@@ -287,9 +231,7 @@ right must be the same:
 ValueError: too many values to unpack
 ~~~~
 
-More generally, the right side can be any kind of sequence (string,
-list, or tuple). For example, to split an email address into a user name
-and a domain, you could write:
+Più in generale, il lato destro può essere qualsiasi tipo di sequenza (stringa, elenco o tupla). Ad esempio, per dividere un indirizzo email in nome utente e dominio, è possibile scrivere:
 
 \index{split method}
 \index{method!split}
@@ -300,9 +242,7 @@ and a domain, you could write:
 >>> uname, domain = addr.split('@')
 ~~~~
 
-The return value from `split` is a list with two elements;
-the first element is assigned to `uname`, the second to
-`domain`.
+Il valore restituito da `split` è un elenco con due elementi; il primo assegnato a `uname`, il secondo a` dominio`.
 
 ~~~~ {.python}
 >>> print(uname)
@@ -311,7 +251,7 @@ monty
 python.org
 ~~~~
 
-Dictionaries and tuples
+Dizionari e tuple
 -----------------------
 
 \index{dictionary}
@@ -319,8 +259,7 @@ Dictionaries and tuples
 \index{method!items}
 \index{key-value pair}
 
-Dictionaries have a method called `items` that returns a list
-of tuples, where each tuple is a key-value pair:
+I dizionari supportano un metodo chiamato `items` che restituisce un elenco di tuple, in cui ogni tupla è una coppia chiave-valore:
 
 ~~~~ {.python .trinket}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -329,13 +268,9 @@ of tuples, where each tuple is a key-value pair:
 [('b', 1), ('a', 10), ('c', 22)]
 ~~~~
 
-As you should expect from a dictionary, the items are in no particular
-order.
+Come dovreste aspettarvi da un dizionario, gli elementi non sono in un ordine particolare.
 
-However, since the list of tuples is a list, and tuples are comparable,
-we can now sort the list of tuples. Converting a dictionary to a list of
-tuples is a way for us to output the contents of a dictionary sorted by
-key:
+Tuttavia, poiché l'elenco di tuple è un elenco e le tuple sono comparabili, possiamo ordinare l'elenco di tuple. Convertire un dizionario in un elenco di tuple è un modo per far sì che il contenuto di un dizionario sia ordinato in base a una chiave:
 
 ~~~~ {.python}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -347,33 +282,25 @@ key:
 [('a', 10), ('b', 1), ('c', 22)]
 ~~~~
 
-The new list is sorted in ascending alphabetical order by the key value.
+Il nuovo elenco viene ordinato in ordine alfabetico crescente del valore della chiave.
 
-Multiple assignment with dictionaries
+Assegnazione multipla con dizionari
 -------------------------------------
 
 \index{traverse!dictionary}
 \index{dictionary!traversal}
 
-Combining `items`, tuple assignment, and `for`,
-you can see a nice code pattern for traversing the keys and values of a
-dictionary in a single loop:
+Combinando `items`, assegnazione di tuple e `for`, è possibile individuare un bel modello di codice che scorre le chiavi e i valori di un dizionario in un singolo ciclo:
 
 ~~~~ {.python}
 for key, val in list(d.items()):
     print(val, key)
 ~~~~
 
-This loop has two *iteration variables* because
-`items` returns a list of tuples and `key, val` is
-a tuple assignment that successively iterates through each of the
-key-value pairs in the dictionary.
+Questo ciclo ha due *variabili di iterazione*, perché `items` restituisce un elenco di tuple e `key, val` è un'assegnazione di tupla che successivamente si ripete attraverso ciascuna delle coppie chiave-valore nel dizionario.
 
-For each iteration through the loop, both `key` and
-`value` are advanced to the next key-value pair in the
-dictionary (still in hash order).
-
-The output of this loop is:
+Per ogni iterazione nel ciclo, sia `key` che `value` avanzano alla successiva coppia chiave-valore nel dizionario (sempre in ordine di hash).
+L'output di questo ciclo è:
 
 ~~~~
 10 a
@@ -381,17 +308,9 @@ The output of this loop is:
 1 b
 ~~~~
 
-Again, it is in hash key order (i.e., no particular order).
-
-If we combine these two techniques, we can print out the contents of a
-dictionary sorted by the *value* stored in each key-value pair.
-
-To do this, we first make a list of tuples where each tuple is
-`(value, key)`. The `items` method would give us a
-list of `(key, value)` tuples, but this time we want to sort
-by value, not key. Once we have constructed the list with the value-key
-tuples, it is a simple matter to sort the list in reverse order and
-print out the new, sorted list.
+Di nuovo, l'ordine è basato sul valore dell'hash (cioè, nessun ordine particolare).
+Se combiniamo queste due tecniche, possiamo visualizzare il contenuto di un dizionario ordinato per il *valore* memorizzato in ciascuna coppia chiave-valore.
+Per fare questo, prima creiamo un elenco di tuple in cui ogni tupla è `(valore, chiave)`. Il metodo `items` ci fornisce un elenco di tuple `(chiave, valore)`, ma questa volta vogliamo ordinare per valore, non per chiave. Una volta creato l'elenco con le tuple chiave-valore, è semplice ordinare l'elenco in ordine inverso e visualizzare il nuovo elenco ordinato.
 
 ~~~~ {.python}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -407,41 +326,24 @@ print out the new, sorted list.
 >>>
 ~~~~
 
-By carefully constructing the list of tuples to have the value as the
-first element of each tuple, we can sort the list of tuples and get our
-dictionary contents sorted by value.
+Costruendo attentamente l'elenco di tuple in modo da avere il valore come primo elemento di ogni tupla, possiamo ordinare l'elenco di tuple e ottenere i contenuti del nostro dizionario ordinati per valore.
 
-The most common words
+Le parole più comuni
 ---------------------
 
 \index{Romeo and Juliet}
 
-Coming back to our running example of the text from *Romeo and Juliet*
-Act 2, Scene 2, we can augment our program to use this technique to
-print the ten most common words in the text as follows:
+Tornando all'esempio del testo di *Romeo e Giulietta* Atto 2, Scena 2, possiamo implementare il nostro programma per utilizzare questa tecnica per visualizzare le dieci parole più comuni nel testo in questo modo:
 
-\VerbatimInput{../code3/count3.py} 
+\VerbatimInput{../code3/count3.py}
 \begin{trinketfiles}
 ../code3/romeo-full.txt
 \end{trinketfiles}
 
-The first part of the program which reads the file and computes the
-dictionary that maps each word to the count of words in the document is
-unchanged. But instead of simply printing out `counts` and
-ending the program, we construct a list of `(val, key)`
-tuples and then sort the list in reverse order.
-
-Since the value is first, it will be used for the comparisons. If there
-is more than one tuple with the same value, it will look at the second
-element (the key), so tuples where the value is the same will be further
-sorted by the alphabetical order of the key.
-
-At the end we write a nice `for` loop which does a multiple
-assignment iteration and prints out the ten most common words by
-iterating through a slice of the list (`lst[:10]`).
-
-So now the output finally looks like what we want for our word frequency
-analysis.
+La prima parte del programma che legge il file e calcola il dizionario che associa ogni parola al conteggio delle parole nel documento rimane invariata. Ma invece di visualizzare semplicemente i "conteggi" e terminare il programma, costruiamo un elenco di tuple "(val, key)" e poi ordiniamo l'elenco in ordine inverso.
+Poiché il valore viene prima, verrà utilizzato per i confronti. Se è presente più di una tupla con lo stesso valore, verrà esaminato il secondo elemento (la chiave), quindi le tuple in cui il valore è lo stesso verranno ulteriormente ordinate in base all'ordine alfabetico della chiave.
+Alla fine scriviamo un bel ciclo `for` che esegue un'iterazione di assegnazione multipla e visualizza le dieci parole più comuni ripetendo una parte dell'elenco (` lst [: 10] `).
+Così ora l'output somiglia finalmente a quello che vogliamo per la nostra analisi della frequenza delle parole.
 
 ~~~~
 61 i
@@ -456,33 +358,22 @@ analysis.
 24 thee
 ~~~~
 
-The fact that this complex data parsing and analysis can be done with an
-easy-to-understand 19-line Python program is one reason why Python is a
-good choice as a language for exploring information.
+Il fatto che questa complessa analisi e studio dei dati possa essere eseguita con un programma Python di 19 righe di facile comprensione è una delle ragioni per cui Python è un buon linguaggio per l'esplorazione delle informazioni.
 
-Using tuples as keys in dictionaries
+Usare tuple come chiavi nei dizionari
 ------------------------------------
 
 \index{tuple!as key in dictionary}
 \index{hashable}
 
-Because tuples are *hashable* and lists are not, if we
-want to create a *composite* key to use in a dictionary
-we must use a tuple as the key.
-
-We would encounter a composite key if we wanted to create a telephone
-directory that maps from last-name, first-name pairs to telephone
-numbers. Assuming that we have defined the variables `last`,
-`first`, and `number`, we could write a dictionary
-assignment statement as follows:
+Poiché le tuple sono *hashabili* e gli elenchi non lo sono, se vogliamo creare una chiave *composta* da usare in un dizionario dobbiamo usare come chiave una tupla.
+Abbiamo bisogno di una chiave composta se vogliamo creare una rubrica telefonica che associ coppie di cognome e nome a numeri di telefono. Supponendo di aver definito le variabili `last`, `first` e `number`, potremmo scrivere un'istruzione di assegnazione del dizionario come segue:
 
 ~~~~ {.python}
 directory[last,first] = number
 ~~~~
 
-The expression in brackets is a tuple. We could use tuple assignment in
-a `for` loop to traverse this dictionary.
-
+L'espressione tra parentesi è una tupla. Potremmo usare l'assegnazione della tupla in un ciclo `for` per scorrere questo dizionario.
 \index{tuple!in brackets}
 
 ~~~~ {.python}
@@ -490,24 +381,16 @@ for last, first in directory:
     print(first, last, directory[last,first])
 ~~~~
 
-This loop traverses the keys in `directory`, which are
-tuples. It assigns the elements of each tuple to `last` and
-`first`, then prints the name and corresponding telephone
-number.
+Questo ciclo scorre le chiavi in ​​`directory`, che sono tuple. Assegna gli elementi di ciascuna tupla a `last` e `first`, quindi visualizza il nome e il numero di telefono corrispondente.
 
-Sequences: strings, lists, and tuples - Oh My!
+Sequenze: stringhe, elenchi e tuple - Oh cavolo!
 --------------------------------------------
 
 \index{sequence}
 
-I have focused on lists of tuples, but almost all of the examples in
-this chapter also work with lists of lists, tuples of tuples, and tuples
-of lists. To avoid enumerating the possible combinations, it is
-sometimes easier to talk about sequences of sequences.
+Ci siamo concentrati su elenchi di tuple, ma quasi tutti gli esempi in questo capitolo funzionano anche con elenchi di elenchi, tuple di tuple e tuple di elenchi. Per evitare di elencare le possibili combinazioni, a volte è più semplice parlare di sequenze di sequenze.
 
-In many contexts, the different kinds of sequences (strings, lists, and
-tuples) can be used interchangeably. So how and why do you choose one
-over the others?
+In molti casi, i diversi tipi di sequenze (stringhe, elenchi e tuple) possono essere utilizzati in modo intercambiabile. Quindi come e perché sceglierne uno rispetto agli altri?
 
 \index{string}
 \index{list}
@@ -515,38 +398,19 @@ over the others?
 \index{mutability}
 \index{immutability}
 
-To start with the obvious, strings are more limited than other sequences
-because the elements have to be characters. They are also immutable. If
-you need the ability to change the characters in a string (as opposed to
-creating a new string), you might want to use a list of characters
-instead.
-
-Lists are more common than tuples, mostly because they are mutable. But
-there are a few cases where you might prefer tuples:
-
-1.  In some contexts, like a `return` statement, it is
-    syntactically simpler to create a tuple than a list. In other
-    contexts, you might prefer a list.
-
-2.  If you want to use a sequence as a dictionary key, you have to use
-    an immutable type like a tuple or string.
-
-3.  If you are passing a sequence as an argument to a function, using
-    tuples reduces the potential for unexpected behavior due to
-    aliasing.
-
-Because tuples are immutable, they don't provide methods like
-`sort` and `reverse`, which modify existing lists.
-However Python provides the built-in functions `sorted` and
-`reversed`, which take any sequence as a parameter and return
-a new sequence with the same elements in a different order.
+Ovviamente, le stringhe sono più limitate di altre sequenze perché gli elementi devono essere caratteri. Sono anche immutabili. Se avete bisogno della possibilità di cambiare i caratteri in una stringa (invece di creare una nuova stringa), potreste invece usare un elenco di caratteri.
+Gli elenchi sono usati più frequentemente delle tuple, soprattutto perché sono mutabili. Ma ci sono alcuni casi in cui sono preferibili le tuple:
+1.  In alcuni contesti, come un'istruzione `return`, è sintatticamente più semplice creare una tupla anziché un elenco. In altri contesti, potrebbe essere preferibile un elenco.
+2.   Se si deve utilizzare una sequenza come chiave del dizionario, è necessario utilizzare un tipo immutabile come una tupla o una stringa.
+3.   Se passate una sequenza come argomento a una funzione, l'utilizzo di tuple riduce le possibilità di comportamenti imprevisti dovuti agli alias.
+Poiché le tuple sono immutabili, non possiedono come `sort` e `reverse`, che modificano degli elenchi esistenti. Comunque Python fornisce le funzioni integrate `sorted` e `reversed`, che accettano qualsiasi sequenza come parametro e restituiscono una nuova sequenza con gli stessi elementi in un ordine diverso.
 
 \index{sorted function}
 \index{function!sorted}
 \index{reversed function}
 \index{function!reversed}
 
-Debugging
+Debug
 ---------
 
 \index{debugging}
@@ -554,168 +418,104 @@ Debugging
 \index{shape error}
 \index{error!shape}
 
-Lists, dictionaries and tuples are known generically as *data
-structures*; in this chapter we are starting to see compound
-data structures, like lists of tuples, and dictionaries that contain
-tuples as keys and lists as values. Compound data structures are useful,
-but they are prone to what I call *shape errors*; that
-is, errors caused when a data structure has the wrong type, size, or
-composition, or perhaps you write some code and forget the shape of your
-data and introduce an error.
+Elenchi, dizionari e tuple sono noti genericamente come *strutture di dati*; in questo capitolo abbiamo iniziato ad esaminare strutture di dati composte, come elenchi di tuple e dizionari che contengono tuple come chiavi ed elenchi come valori. Le strutture di dati composti sono utili, ma sono soggette a ciò che chiamiamo *errori di formato*; errori, cioè, causati dal fatto che una struttura di dati è di tipo, dimensione o struttura sbagliati, o probabilmente quando si scrive del codice e ci si dimentica del formato dei dati e si introduce un errore.
+Ad esempio, se un programma si aspetta un elenco che contiene un numero intero e invece gli passate un intero puro e semplice (non incluso in un elenco), non funzionerà.
+Quando eseguite il debug di un programma, specialmente se state lavorando su un bug difficile, ci sono quattro cose da provare:
+lettura: esaminate il vostro codice, rileggetelo a voi stessi e controllate che indichi cosa intendevate dire.
+esecuzione: sperimentate apportando modifiche e eseguendo versioni diverse. Spesso se indicate la cosa giusta nel posto giusto nel programma, il problema diventa ovvio, ma a volte dovete passare un po' di tempo per costruire un'impalcatura.
+riflessione: prendetevi un po' di tempo per pensare! Che tipo di errore è: sintassi, runtime, semantica? Quali informazioni si possono ottenere dai messaggi di errore o dall'output del programma? Che tipo di errore potrebbe causare il problema che state osservando? Che cosa avete cambiato per ultima, prima che il problema apparisse?
+ritirata: ad un certo punto, la cosa migliore da fare è di tornare indietro, annullare le modifiche recenti, fino a quando non si torna a un programma che funziona e che si comprende, quindi potete iniziare la ricostruzione.
+Gli sviluppatori principianti a volte rimangono bloccati in una di queste attività e dimenticano le altre. Ogni attività ha una sua modalità di errore.
 
-For example, if you are expecting a list with one integer and I give you
-a plain old integer (not in a list), it won't work.
-
-When you are debugging a program, and especially if you are working on a
-hard bug, there are four things to try:
-
-reading
-:   Examine your code, read it back to yourself, and check that it says
-    what you meant to say.
-
-running
-:   Experiment by making changes and running different versions. Often
-    if you display the right thing at the right place in the program,
-    the problem becomes obvious, but sometimes you have to spend some
-    time to build scaffolding.
-
-ruminating
-:   Take some time to think! What kind of error is it: syntax, runtime,
-    semantic? What information can you get from the error messages, or
-    from the output of the program? What kind of error could cause the
-    problem you're seeing? What did you change last, before the problem
-    appeared?
-
-retreating
-:   At some point, the best thing to do is back off, undoing recent
-    changes, until you get back to a program that works and that you
-    understand. Then you can start rebuilding.
-
-Beginning programmers sometimes get stuck on one of these activities and
-forget the others. Each activity comes with its own failure mode.
 \index{typographical error}
 
-For example, reading your code might help if the problem is a
-typographical error, but not if the problem is a conceptual
-misunderstanding. If you don't understand what your program does, you
-can read it 100 times and never see the error, because the error is in
-your head.
+Ad esempio, leggere il codice potrebbe essere d'aiuto se il problema è un errore tipografico, ma non serve se il problema è un malinteso concettuale. Se non capite cosa fa il vostro programma, potete leggerlo 100 volte e non vedere mai l'errore, perché l'errore è nella vostra testa.
 
 \index{experimental debugging}
 
-Running experiments can help, especially if you run small, simple tests.
-But if you run experiments without thinking or reading your code, you
-might fall into a pattern I call "random walk programming", which is the
-process of making random changes until the program does the right thing.
-Needless to say, random walk programming can take a long time.
+Fare esperimenti può essere d'aiuto, specialmente se si eseguono test piccoli e semplici. Ma se fate esperimenti senza pensare o leggere il vostro codice, potreste cadere in uno schema che chiamo "programmazione per mezzo di una passeggiata aleatoria", che consiste nel processo di apportare modifiche casuali fino a quando il programma non fa la cosa giusta. Inutile dire che questo tipo di programmazione può richiedere molto tempo.
 
 \index{random walk programming}
 \index{development plan!random walk programming}
 
-You have to take time to think. Debugging is like an experimental
-science. You should have at least one hypothesis about what the problem
-is. If there are two or more possibilities, try to think of a test that
-would eliminate one of them.
+Dovete prendere tempo per pensare. Il debug è come una scienza sperimentale. Dovreste almeno formulare un'ipotesi su quale sia il problema. Se ci sono due o più possibilità, provate a pensare a un test che elimini una di esse.
+Prendersi una pausa aiuta a pensare, come parlarne. Se spiegate il problema a qualcun altro (o anche a voi stessi), a volte troverete la risposta prima di finire la domanda.
+Ma anche le migliori tecniche di debug falliranno se ci sono troppi errori o se il codice che state cercando di risolvere è troppo grande e complicato. A volte l'opzione migliore è ritirarsi, semplificando il programma fino ad arrivare a qualcosa che funziona e che capite.
+I programmatori principianti sono spesso riluttanti a ritirarsi perché non sopportano di cancellare una riga di codice (anche se è sbagliata). Se vi fa sentire meglio, copiate il vostro programma in un altro file prima di iniziare a ridurlo, sarà poi possibile incollare i pezzi di nuovo in un po' alla volta.
+Per trovare un bug tosto occorre leggere, correre, riflettere e talvolta ritirarsi. Se rimanete bloccati in una di queste attività, provate le altre.
 
-Taking a break helps with the thinking. So does talking. If you explain
-the problem to someone else (or even to yourself), you will sometimes
-find the answer before you finish asking the question.
-
-But even the best debugging techniques will fail if there are too many
-errors, or if the code you are trying to fix is too big and complicated.
-Sometimes the best option is to retreat, simplifying the program until
-you get to something that works and that you understand.
-
-Beginning programmers are often reluctant to retreat because they can't
-stand to delete a line of code (even if it's wrong). If it makes you
-feel better, copy your program into another file before you start
-stripping it down. Then you can paste the pieces back in a little bit at
-a time.
-
-Finding a hard bug requires reading, running, ruminating, and sometimes
-retreating. If you get stuck on one of these activities, try the others.
-
-Glossary
+Glossario
 --------
+comparabile
+: un tipo di dato di cui è possibile controllare il valore per vedere se è maggiore, minore o uguale a un altro valore dello stesso tipo. I tipi che sono comparabili possono essere messi in un elenco e ordinati.
 
-comparable
-:   A type where one value can be checked to see if it is greater than,
-    less than, or equal to another value of the same type. Types which
-    are comparable can be put in a list and sorted.
 \index{comparable}
 
-data structure
-:   A collection of related values, often organized in lists,
-    dictionaries, tuples, etc.
+struttura di dati
+: una raccolta di valori correlati, spesso organizzati in elenchi, dizionari, tuple, ecc.
+
 \index{data structure}
 
 DSU
-:   Abbreviation of "decorate-sort-undecorate", a pattern that involves
-    building a list of tuples, sorting, and extracting part of the
-    result.
+: abbreviazione di "decorare-ordinare-rimuovere la decorazione", un modello che comporta la creazione di un elenco di tuple, l'ordinamento e l'estrazione di parte del risultato.
+
 \index{DSU pattern}
 
 gather
-:   The operation of assembling a variable-length argument tuple.
+: l'operazione di assemblaggio di una tupla di argomenti a lunghezza variabile.
+
 \index{gather}
 
-hashable
-:   A type that has a hash function. Immutable types like integers,
-    floats, and strings are hashable; mutable types like lists and
-    dictionaries are not.
+hashabile
+: un tipo a cui è applicabile una funzione di hash. I tipi immutabili come gli interi, virgola mobile e stringhe sono hashabili; tipi mutabili come elenchi e dizionari non lo sono.
+
 \index{hashable}
 
 scatter
-:   The operation of treating a sequence as a list of arguments.
+: l'operazione di trattare una sequenza come un elenco di argomenti.
+
 \index{scatter}
 
-shape (of a data structure)
-:   A summary of the type, size, and composition of a data structure.
+formato (di una struttura dati)
+: un riepilogo del tipo, delle dimensioni e della composizione di una struttura di dati.
+
 \index{shape}
 
 singleton
-:   A list (or other sequence) with a single element.
+: un elenco (o altra sequenza) con un singolo elemento.
+
 \index{singleton}
 
-tuple
-:   An immutable sequence of elements.
+tupla
+: una sequenza immutabile di elementi.
+
 \index{tuple}
 
-tuple assignment
-:   An assignment with a sequence on the right side and a tuple of
-    variables on the left. The right side is evaluated and then its
-    elements are assigned to the variables on the left.
+assegnazione di tupla
+: una assegnazione con una sequenza sul lato destro e una tupla di variabili sul lato sinistro. Il lato destro viene valutato e quindi i suoi elementi vengono assegnati alle variabili a sinistra.
+
 \index{tuple assignment}
 \index{assignment!tuple}
 
-Exercises
+Esercizi
 ---------
 
-**Exercise 1:** Revise a previous program as follows: Read and parse the
-"From" lines and pull out the addresses from the line. Count the number
-of messages from each person using a dictionary.
+**Esercizio 1:** Rivedete un programma precedente in questo modo: leggete e analizzate le righe "From" ed estraete gli indirizzi dalla riga. Contate il numero di messaggi provenienti da ogni persona usando un dizionario.
+Dopo aver letto tutti i dati, visualizzate la persona con il maggior numero di occorrenze creando un elenco di tuple (count, email) dal dizionario. Quindi ordinate l'elenco in ordine inverso e visualizzate la persona che ha il maggior numero di occorrenze.
 
-After all the data has been read, print the person with the most commits
-by creating a list of (count, email) tuples from the dictionary. Then
-sort the list in reverse order and print out the person who has the most
-commits.
+~~~~
+Esempio di riga:
+From stephen.marquard@uct.ac.za Sat 5 Jan 09:14:16 2008
+Inserire un nome per il file: mbox-short.txt
+cwen@iupui.edu 5
 
-    Sample Line:
-    From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+Immettere un nome file: mbox.txt
+zqian@umich.edu 195
+~~~~
 
-    Enter a file name: mbox-short.txt
-    cwen@iupui.edu 5
+**Esercizio 2:** Questo programma conta la distribuzione delle ore del giorno per ciascuno dei messaggi. Potete estrarre l'ora dalla riga "From" trovando la stringa dell'orario e quindi suddividendo quella stringa usando il carattere dei due punti. Dopo aver accumulato i conteggi per ogni orario, visualizzarli, uno per riga, ordinati per ora come mostrato di seguito.
 
-    Enter a file name: mbox.txt
-    zqian@umich.edu 195
-
-**Exercise 2:** This program counts the distribution of the hour of the day
-for each of the messages. You can pull the hour from the "From" line by
-finding the time string and then splitting that string into parts using
-the colon character. Once you have accumulated the counts for each hour,
-print out the counts, one per line, sorted by hour as shown below.
-
-Sample Execution:
+Esempio di esecuzione:
 
 ~~~~
 python timeofday.py
@@ -734,15 +534,8 @@ Enter a file name: mbox-short.txt
 19 1
 ~~~~
 
-**Exercise 3:** Write a program that reads a file and prints the
-*letters* in decreasing order of frequency. Your program
-should convert all the input to lower case and only count the letters
-a-z. Your program should not count spaces, digits, punctuation, or
-anything other than the letters a-z. Find text samples from several
-different languages and see how letter frequency varies between
-languages. Compare your results with the tables at
+**Esercizio 3:** Scrivete un programma che legge un file e visualizza *le lettere* in ordine decrescente di frequenza. Il vostro programma dovrebbe convertire tutti gli input in lettere minuscole e contare solo le lettere dalla a alla z. Il programma non dovrebbe contare spazi, cifre, segni di punteggiatura o altro oltre alle lettere dalla a alla z. Trovate esempi di testo di diverse lingue e scoprite come varia la frequenza delle lettere tra le lingue. Confrontate i risultati con le tabelle in
 [wikipedia.org/wiki/Letter\_frequencies](wikipedia.org/wiki/Letter_frequencies).
 
 \index{letter frequency}
 \index{frequency!letter}
-

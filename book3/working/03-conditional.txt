@@ -1,0 +1,200 @@
+
+Esecuzione condizionale
+=====================
+Espressioni booleane
+-------------------
+
+######1
+######2
+######3
+######4
+Un'espressione *booleana* è un'espressione che può essere o vera o falsa. Gli esempi seguenti usano l'operatore `==` per la comparazione di due operandi e produrranno `True` nel caso siano uguali o `False` in caso contrario:
+~~~~1
+`True` e `False` non sono stringhe ma sono valori speciali che appartengono al tipo `bool`:
+######5
+######6
+######7
+######8
+######9
+######10
+
+~~~~2
+L'operatore `==` è uno degli *operatori di comparazione*; gli altri sono:
+~~~~3
+Anche se queste operazioni vi saranno probabilmente familiari, i simboli utilizzati da Python sono diversi da quelli matematici. Un errore comune è l'utilizzare un singolo segno di uguale (`=`) al posto di un doppio segno di uguale (`==`). Ricordate che `=` è un operatore di assegnazione mentre `==` è un operatore di comparazione. Non esiste un qualcosa di simile a `=<` o `=>`.
+######11
+######12
+Operatori logici
+-----------------
+
+######13
+######14
+Esistono tre *operatori logici*: `and`, `or` e `not`. La semantica (significato) di questi operatori è simile al loro significato in inglese. Ad esempio, `x> 0 and x <10` è TRUE solo se `x` è maggiore di 0 *e* minore di 10.
+######15
+######16
+######17
+######18
+######19
+######20
+`n%2 == 0 or n%3 == 0` è TRUE se si verifica *una* delle condizioni, cioè se il numero è divisibile per 2 *or* 3.  Infine, l'operatore `not` nega un'espressione booleana, quindi `not (x>y)` è true se` x> y` è false; cioè, se `x` è minore o uguale a `y`.  In pratica, gli operandi degli operatori logici dovrebbero essere espressioni booleane, ma Python non è molto rigoroso in merito. Qualsiasi numero diverso da zero viene interpretato come "true".
+~~~~4
+Questa flessibilità può essere utile, ma ci sono alcuni dettagli che potrebbero creare confusione. Potrebbe essere il caso di evitare un evento del genere, a meno che non si sappia cosa si stia facendo.  Esecuzione condizionale
+---------------------
+
+######21
+######22
+######23
+######24
+######25
+Per scrivere programmi utili, abbiamo quasi sempre bisogno di verificare le condizioni e modificare di conseguenza il comportamento del programma. Le *istruzioni condizionali* ci fornisco questa capacità. La forma più semplice è l'istruzione `if`:
+~~~~5
+L'espressione booleana dopo l'istruzione `if` è chiamata *condizione*. Terminiamo l'istruzione `if` con il carattere due punti (:) e la linea/linee seguenti l'istruzione devono essere indentate (rientrate).
+######26
+  Se la condizione logica è vera, allora verrà eseguita l'istruzione indentata. Se la condizione logica è falsa, l'istruzione indentata verrà saltata.
+######27
+######28
+######29
+Le istruzioni `if` hanno la stessa struttura delle definizioni di funzione o cicli `for`^[Impareremo a conoscere le funzioni nel Capitolo 4 e i cicli nel Capitolo 5.]. L'istruzione consiste in una riga di intestazione che termina con il carattere dei due punti (:) seguito da un blocco indentato. Istruzioni come questa sono chiamate *istruzioni composte* perché si estendono su più di una riga.  Non c'è alcun limite al numero di istruzioni che possono apparire nel blocco, ma deve esserne presente almeno una. Occasionalmente, è utile avere un blocco senza istruzioni (di solito come segnaposto per codice non ancora scritto). In tal caso, puoi usare l'istruzione `pass`, che non ha alcun effetto.
+######30
+######31
+
+~~~~6
+Se si immette un'istruzione `if` nell'interprete Python, il prompt cambierà da tre chevron a tre punti per indicare che ci si trova nel mezzo di un blocco di istruzioni, come mostrato di seguito:
+~~~~7
+Quando si utilizza l'interprete Python, è necessario lasciare una riga vuota alla fine di un blocco, altrimenti Python restituirà un errore:
+~~~~8
+Durante la scrittura e l'esecuzione di uno script non è necessaria una riga vuota alla fine di un blocco di istruzioni, ma può migliorare la leggibilità del codice.  Esecuzione alternativa
+---------------------
+
+######32
+######33
+######34
+Una seconda forma dell'istruzione `if` è l'*esecuzione alternativa*, in cui ci sono due possibilità e la condizione determina quale debba essere eseguita. La sintassi ha questo aspetto:
+~~~~9
+Quando `x` è diviso per 2, se il resto è 0, allora sappiamo che` x` è pari e il programma visualizza un messaggio in tal senso. Se la condizione è falsa, viene eseguita la seconda serie di istruzioni.
+######35
+Poiché una condizione deve necessariamente essere vera o falsa, verrà eseguita esattamente una delle alternative. Le alternative sono chiamate *branches*, perché sono come rami nel flusso di esecuzione.
+######36
+Condizioni concatenate
+--------------------
+
+######37
+######38
+A volte ci sono più di due possibilità e abbiamo bisogno di più di due branches. Un modo per esprimere un simile calcolo è una condizione *concatenata*:
+~~~~10
+`elif` è un'abbreviazione di" else if ". Anche stavolta verrà eseguito esattamente un ramo.
+######39
+Non c'è limite al numero di istruzioni `elif`. Se esiste una condizione `else`, deve essere messa alla fine, ma non deve essercene necessariamente una.
+######40
+######41
+
+~~~~11
+Ogni condizione viene controllata in ordine. Se la prima condizione è falsa, verrà controllata la successiva e così via. Se una tra queste condizioni risulta vera, verrà eseguito il branch corrispondente e l'istruzione sarà terminata. Anche se più di una condizione è vera, verrà eseguito solo il primo branch vero.  Condizioni nidificate
+-------------------
+
+######42
+######43
+Una condizione può anche essere annidata in un'altra. Avremmo potuto scrivere l'esempio a tre branches in questo modo:
+~~~~12
+La condizione esterna contiene due branches. Il primo branch contiene una semplice istruzione. Il secondo branch contiene un'altra istruzione `if`, che ha due branches propri. Questi due branches sono entrambi semplici istruzioni, sebbene potessero essere anche istruzioni condizionali.
+######44
+Sebbene l'indentazione delle istruzioni renda la struttura visivamente più intuitiva, le *condizioni nidificate* diventano difficili da leggere molto rapidamente. In generale, è una buona idea evitarli quando è possibile.  Gli operatori logici forniscono spesso un modo per semplificare le istruzioni con condizioni nidificate. Ad esempio, possiamo riscrivere il seguente codice usando una singola condizione:
+~~~~13
+L'istruzione `print` viene eseguita solo se vengono soddisfatte entrambe le condizioni, quindi possiamo ottenere lo stesso effetto con l'operatore `and`:
+~~~~14
+Gestione delle eccezioni usando try ed except
+----------------------------------------
+In precedenza abbiamo esaminato un segmento di codice in cui abbiamo utilizzato le funzioni `input` e` int` per leggere e analizzare un numero intero inserito dall'utente. Abbiamo anche visto quanto far ciò potrebbe risultare insidioso:
+~~~~15
+Quando vengono eseguite queste istruzioni nell'interprete Python, si riceve un nuovo prompt dall'interprete, come se pensasse "oops" e passasse all'istruzione successiva.  Tuttavia, se si inserisce questo codice in uno script Python e si verifica questo errore, lo script si ferma immediatamente nel suo percorso con un traceback. Non esegue l'istruzione successiva.
+######45
+Ecco un programma di esempio per convertire una temperatura da Fahrenheit a Celsius:
+######46
+######47
+######48
+
+######49
+Se eseguiamo questo codice e gli diamo input non validi, fallirà semplicemente con un messaggio di errore poco amichevole:
+~~~~16
+
+~~~~17
+Esiste una struttura di esecuzione condizionale incorporata in Python che serve a gestire questi tipi di errori previsti e inaspettati chiamati "try / except". La finalità di `try` e `except` è che voi sapete in anticipo che alcune sequenze di istruzioni potrebbero incontrare problemi e pertanto vorreste aggiungere alcune istruzioni da eseguire in caso di errore. Queste istruzioni aggiuntive (il blocco except) vengono ignorate se non ci sono errori.  Potreste pensare alla funzione `try` e `except` in Python come una "polizza assicurativa" su una sequenza di istruzioni.  Ad esempio, possiamo riscrivere il codice del nostro convertitore di temperatura come segue:
+######50
+Python inizia eseguendo la sequenza di istruzioni nel blocco `try`. Se tutto va bene, salta il blocco `except` e procede. Se si verifica un'eccezione nel blocco `try`, Python salta fuori dal blocco `try` ed esegue la sequenza di istruzioni nel blocco `except`.
+~~~~18
+
+~~~~19
+Gestire un'eccezione con un'istruzione `try` è detto *catching * di un'eccezione. In questo esempio, la condizione `except` stampa un messaggio di errore. In generale, catturare un'eccezione vi dà la possibilità di risolvere il problema, o riprovare, o almeno di terminare il programma elegantemente.  Valutazione di un cortocircuito di espressioni logiche
+-----------------------------------------------
+
+######51
+Quando Python sta elaborando un'espressione logica come `x> = 2 and (x/y)> 2`, calcola l'espressione da sinistra a destra. A causa della definizione di `and`, se `x` è minore di 2, l'espressione `x> = 2` è `False` e ​​quindi l'intera espressione è `False` indipendentemente dal fatto che `(x/y)> 2` restituisca `True` o `False`.  Quando Python rileva che non c'è nulla da guadagnare valutando il resto di un'espressione logica, interrompe la sua valutazione e non esegue i calcoli nel resto di questa. Quando la valutazione di un'espressione logica si arresta perché il valore complessivo è già noto, viene chiamato * cortocircuito * della valutazione.
+######52
+######53
+Anche se questo può sembrare una sottigliezza, il comportamento di cortocircuito porta a una tecnica intelligente chiamata * schema del guardiano *. Considerate la seguente sequenza di codice nell'interprete Python:
+~~~~20
+Il terzo calcolo non è riuscito perché Python stava calcolando `(x / y)` e `y` era zero, il che causa un errore di runtime. Ma il secondo esempio *non* ha fallito perché la prima parte dell'espressione `x>=2` è stata calcolata come `False` quindi `(x / y)` non è mai stato eseguito a causa della regola del *cortocircuito* e non c'erano errori.  Possiamo costruire l'espressione logica per posizionare strategicamente un calcolo *guard* appena prima del calcolo che potrebbe causare un errore, come di seguito:
+~~~~21
+Nella prima espressione logica, `x>=2` è `False`, quindi il calcolo si ferma su `and`. Nella seconda espressione logica, `x>=2` è `True` ma `y!= 0` è `False` quindi non raggiungiamo mai `(x/y)`.  Nella terza espressione logica, il `y != 0` viene *dopo* il calcolo `(x/y)` pertanto l'espressione fallisce con un errore.  Nella seconda espressione, diciamo che `y != 0` funge da *guardia* per assicurare che `(x/y)` venga eseguito solo se `y` è diverso da zero.  Debug
+---------
+
+######54
+######55
+Il traceback di Python viene visualizzato quando si verifica un errore che contiene molte informazioni, che possono essere difficili da gestire. Le parti più utili sono di solito:
+- Che tipo di errore era, e
+
+- Dove si è verificato.
+Gli errori di sintassi sono solitamente facili da trovare, ma ci sono alcuni tranelli. Gli errori di spaziatura possono essere difficoltosi perché gli spazi e le tabulazioni sono invisibili e siamo abituati ad ignorarli.
+######56
+
+~~~~22
+In questo esempio, il problema è che la seconda riga è rientrata di uno spazio. Ma il messaggio di errore punta ad `y`, e ciò può essere fuorviante. In generale, i messaggi di errore indicano dove è stato rilevato il problema, ma l'errore effettivo potrebbe essere precedente nel codice, a volte su una riga precedente.  In generale, i messaggi di errore indicano dove è stato scoperto il problema, ma spesso quel punto non indica dove è stato causato.  Glossario
+--------
+blocco: la sequenza di istruzioni all'interno di un'istruzione composta.
+######57
+Un'espressione *booleana* è un'espressione che può essere o vera o falsa.
+######58
+######59
+branch: una delle sequenze di istruzioni alternative in un'istruzione condizionale.
+######60
+condizione concatenata: un'istruzione condizionale con una serie di branches alternativi.
+######61
+######62
+operatore di comparazione: uno degli operatori che confronta i suoi operandi: `==`, `!= `,`> `,` <`,`> = `, e` <= `. istruzione condizionale: una istruzione che controlla il flusso di esecuzione in base ad alcune condizioni.
+######63
+######64
+condizione: l'espressione booleana in un'istruzione condizionale che determina quale branc viene eseguito.
+######65
+: Un'istruzione che composta da un'intestazione e un corpo. L'intestazione termina con due punti (:). Il corpo è rientrato rispetto all'intestazione.
+######66
+schema del guardiano: quando costruiamo un'espressione logica con comparazioni aggiuntive per sfruttare il comportamento di cortocircuito.
+######67
+######68
+operatore logico: uno degli operatori che combina espressioni booleane: `and`, `or`, e `not`. condizionale nidificato: un'istruzione condizionale che appare in uno dei branches di un'altra istruzione condizionale.
+######69
+######70
+traceback: un elenco delle funzioni che sono in esecuzione, che verranno visualizzate quando si verifica un'eccezione.
+######71
+cortocircuito: quando Python è a metà strada nel calcolo di un'espressione logica e interrompe il calcolo perché Python conosce il valore finale dell'espressione senza dover calcolare il resto dell'espressione.
+######72
+Esercizi
+---------
+** Esercizio 1: Riscrivete il vostro calcolo della retribuzione per attribuire ad un dipendente una maggiorazione oraria di 1,5 volte, per le ore lavorate superiori a 40.**
+~~~~23
+** Esercizio 2: Riscrivete il vostro programma di calcolo della retribuzione usando `try` e `except` in modo che il tuo programma gestisca input non-numerici in maniera elegante stampando un messaggio ed uscendo dal programma. Di seguito vengono mostrate due esecuzioni del programma: **
+~~~~24
+
+~~~~25
+** Esercizio 3: scrivete un programma per richiedere un punteggio compreso tra 0.0 e 1.0. Se il punteggio non è compreso nell'intervallo, visualizzate un messaggio di errore. Se il punteggio è compreso tra 0,0 e 1,0, visualizzate un voto utilizzando la seguente tabella: **
+~~~~26
+
+~~~~27
+
+~~~~28
+
+~~~~29
+
+~~~~30
+
+~~~~31
+Eseguite ripetutamente il programma per testare i diversi valori di input.

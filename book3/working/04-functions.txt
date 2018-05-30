@@ -1,0 +1,282 @@
+
+Funzioni
+=========
+Chiamate di funzione
+--------------
+
+######1
+Nel contesto della programmazione, una *funzione* è una sequenza di istruzioni, cui è stato attribuito un nome, che esegue un calcolo. Quando si definisce una funzione, si specifica il nome e la sequenza di istruzioni. Successivamente è possibile "chiamare" la funzione per mezzo del suo nome. Abbiamo già visto un esempio di una *chiamata di funzione*:
+~~~~1
+Il nome della funzione è `type`. L'espressione tra parentesi è chiamata *argomento* della funzione. L'argomento è un valore o una variabile che stiamo passando alla funzione come input della funzione. Il risultato della funzione `type` è il tipo di dato dell'argomento.
+######2
+È normale dire che una funzione "accetta" un argomento e "restituisce" un risultato. Quest'ultimo è chiamato *valore di ritorno*.
+######3
+######4
+Funzioni integrate
+------------------
+Python fornisce una serie di importanti funzioni integrate che possiamo usare senza doverle definire. I creatori di Python hanno scritto una serie di funzioni per risolvere problemi comuni, includendole in Python per essere utilizzate.  Le funzioni `max` e `min` ci forniscono rispettivamente i valori più grandi e più piccoli di un elenco:
+~~~~2
+La funzione `max` ci indica il "carattere più grande" nella stringa (che si rivela essere la lettera "w") e la funzione`min` ci mostra il carattere più piccolo (che si rivela essere uno spazio).  Un'altra funzione incorporata molto comune è la funzione `len`, che ci dice quanti oggetti ci sono nel suo argomento. Se l'argomento di `len` è una stringa, viene restituito il numero di caratteri nella stringa.
+~~~~3
+Queste funzioni non sono fatte solo per esaminare stringhe. Possono operare su un qualsiasi insieme di valori, come vedremo nei prossimi capitoli.  È necessario trattare i nomi delle funzioni integrate come parole riservate (ad esempio, evitate di utilizzare "max" come nome di variabile).
+
+Funzioni di conversione dei tipi di dato
+-------------------------
+
+######5
+######6
+Python fornisce anche funzioni integrate che convertono i valori da un tipo all'altro. La funzione `int` accetta qualsiasi valore e lo converte in un numero intero, se possibile, in caso contrario si lamenta:
+######7
+######8
+
+~~~~4
+`int` può convertire valori in virgola mobile in numeri interi, ma non arrotonda; elimina la parte frazionaria:
+~~~~5
+`float` converte numeri interi e stringhe in numeri in virgola mobile:
+######9
+######10
+
+~~~~6
+Infine, `str` converte il suo argomento in una stringa:
+######11
+######12
+
+~~~~7
+Funzioni matematiche
+--------------
+
+######13
+######14
+######15
+######16
+Python ha un modulo `math` che fornisce la maggior parte delle comuni funzioni matematiche. Prima di poter usare il modulo, dobbiamo importarlo:
+~~~~8
+Questa istruzione crea un *oggetto modulo* chiamato math. Se si stampa l'oggetto modulo, si ottengono alcune informazioni su di esso:
+~~~~9
+L'oggetto modulo contiene le funzioni e le variabili definite nel modulo. Per accedere a una delle funzioni, è necessario specificare il nome del modulo e il nome della funzione, separati da un punto. Questo formato è chiamato *notazione punto*.
+######17
+
+~~~~10
+Il primo esempio calcola il logaritmo in base 10 del rapporto segnale/rumore. Il modulo math fornisce anche una funzione chiamata `log` che calcola i logaritmi in base `e`.
+######18
+######19
+######20
+######21
+######22
+######23
+Il secondo esempio calcola il seno in `radianti`. Il nome della variabile suggerisce che `sin` e le altre funzioni trigonometriche (`cos`, `tan`, ecc.) accettano argomenti in radianti. Per convertire da gradi a radianti, occorre dividere per 360 e moltiplicare per 2π:
+######24
+
+~~~~11
+L'espressione `math.pi` ricava la variabile `pi` dal modulo math. Il valore di questa variabile è un'approssimazione di π, con una precisione di circa 15 cifre.
+######25
+Conoscendo la trigonometria, si può controllare il risultato precedente confrontandolo con la radice quadrata di due divisa per due:
+######26
+######27
+
+~~~~12
+Numeri casuali
+--------------
+
+######28
+######29
+######30
+######31
+Dati gli stessi input, la maggior parte dei programmi per computer genera sempre gli stessi output, quindi si dice che sono *deterministici*. Il determinismo di solito è una buona cosa, poiché ci aspettiamo che lo stesso calcolo produca lo stesso risultato. Per alcune applicazioni, tuttavia, desideriamo che il computer sia imprevedibile. I giochi sono un ovvio esempio, ma ce ne sono altri.  Realizzare un programma veramente non deterministico risulta non essere così facile, ma ci sono modi per farlo almeno sembrare non deterministico. Uno di questi è usare *algoritmi* che generano numeri *pseudo-casuali*. I numeri pseudo-casuali non sono veramente casuali perché sono generati da un calcolo deterministico, ma guardando solo i numeri è quasi impossibile distinguerli da quelli casuali.
+######32
+######33
+Il modulo `random` fornisce funzioni che generano numeri pseudo-casuali (che chiameremo semplicemente "casuali" da qui in poi).
+######34
+######35
+La funzione `random` restituisce un numero decimale casuale compreso tra 0.0 e 1.0 (compreso 0.0 ma non 1.0). Ogni volta che si evoca `random`, si ottiene il numero successivo di una lunga serie. Per vedere un esempio, eseguite questo ciclo:
+~~~~13
+Questo programma produce il seguente elenco di 10 numeri casuali tra 0.0 e 1.0 (1.0 escluso).
+~~~~14
+** Esercizio 1: eseguite il programma sul vostro sistema per vedere quali numeri si ottengono. Eseguite il programma più di una volta e vedete quali numeri si ottengono.** La funzione `random` è solo una delle molte funzioni che gestiscono numeri casuali. La funzione `randint` accetta i parametri `low` e `high`, e restituisce un intero compreso tra `low` e `high` (entrambi inclusi).
+######36
+######37
+
+~~~~15
+Per scegliere un elemento da una sequenza casuale, potete usare `choice`:
+######38
+######39
+
+~~~~16
+Il modulo `random` fornisce anche funzioni per generare valori casuali da distribuzioni continue tra cui la gaussiana, l'esponenziale, la gamma e altre.
+
+Aggiungere nuove funzioni
+--------------------
+Finora, abbiamo solo usato le funzioni fornite con Python, ma è anche possibile aggiungere nuove funzioni. Una *definizione di funzione* specifica il nome di una nuova funzione e la sequenza di istruzioni che vengono eseguite quando la funzione viene chiamata. Una volta definita una funzione, possiamo riutilizzarla più e più volte nel nostro programma.
+######40
+######41
+######42
+Ecco un esempio:
+~~~~17
+`def` è una parola chiave che indica che questa è una definizione di funzione. Il nome della funzione è `print_lyrics`. Le regole per i nomi delle funzioni sono le stesse dei nomi delle variabili: lettere, numeri e alcuni segni di punteggiatura sono consentiti, ma il primo carattere non può essere un numero. Non potete utilizzare una parola chiave come nome di una funzione e dovreste evitare di avere una variabile e una funzione con lo stesso nome.
+######43
+######44
+######45
+Le parentesi vuote dopo il nome indicano che questa funzione non riceve argomenti. Più tardi costruiremo delle funzioni che ricevono degli argomenti come input.
+######46
+######47
+######48
+######49
+######50
+La prima riga della definizione di funzione è chiamata *header*; il resto è chiamato *corpo*. L'header deve terminare con due punti e il corpo deve essere indentato. Per convenzione, il rientro è sempre di quattro spazi. Il corpo può contenere un numero qualsiasi di istruzioni.
+######51
+Se scrivete una definizione di funzione in modalità interattiva, l'interprete stampa i punti di sospensione (* ... *) per indicare che la definizione non è completa:
+~~~~18
+Per terminare la funzione, dovete inserire una riga vuota (non è necessario in uno script).  La definizione di una funzione crea una variabile con lo stesso nome.
+~~~~19
+Il valore di `print_lyrics` è un *oggetto funzione *, di tipo "funzione".
+######52
+######53
+La sintassi per chiamare la nuova funzione è la stessa delle funzioni integrate:
+~~~~20
+Una volta che avete definito una funzione, potrete utilizzarla all'interno di un'altra funzione. Ad esempio, per ripetere il ritornello precedente, potremmo scrivere una funzione chiamata `repeat_lyrics`:
+~~~~21
+E poi chiamare `repeat_lyrics`:
+~~~~22
+Ma la canzone non fa proprio così.
+
+Definizioni e usi
+--------------------
+
+######54
+Raggruppando i frammenti di codice dalla sezione precedente, l'intero programma si presenterà come segue:
+######55
+Questo programma contiene due definizioni di funzioni: `print_lyrics` e` repeat_lyrics`. Le definizioni delle funzioni vengono eseguite come le altre istruzioni, ma l'effetto è creare oggetti funzione. Le istruzioni all'interno della funzione non vengono eseguite finché non viene chiamata la funzione e la definizione di una funzione non genera alcun output.
+######56
+Come ci si potrebbe aspettare, è necessario creare una funzione prima di poterla eseguire. In altre parole, la definizione della funzione deve essere effettuata prima della prima chiamata.  ** Esercizio 2: spostate l'ultima riga di questo programma in cima, in modo tale da far apparire la chiamata della funzione prima delle definizioni. Eseguite il programma e vedete quale messaggio di errore ricevete.** ** Esercizio 3: spostate di nuovo la chiamata della funzione in basso e spostate la definizione di `print_lyrics` dopo la definizione di `repeat_lyrics`. Cosa succede quando si esegue questo programma?**
+
+Flusso di esecuzione
+-----------------
+
+######57
+Per garantire che una funzione venga definita prima del suo primo utilizzo, è necessario che conosciate l'ordine in cui vengono eseguite le istruzioni, che viene chiamato il *flusso di esecuzione*.  L'esecuzione inizia sempre dalla prima istruzione del programma. Le istruzioni vengono eseguite una alla volta, in ordine dall'alto verso il basso.  Le definizioni di *funzione* non alterano il flusso di esecuzione del programma, ma ricordate che le istruzioni all'interno della funzione non vengono eseguite fino a quando la funzione non viene chiamata.  Una chiamata di funzione è come una deviazione nel flusso di esecuzione. Invece di passare all'istruzione successiva, il flusso salta al corpo della funzione, esegue tutte le istruzioni contenute e quindi torna indietro per riprendere da dove era stato interrotto.  Sembra abbastanza semplice, finché non vi ricordate che una funzione può chiamarne un'altra. Mentre si trova nel mezzo di una funzione, il programma potrebbe dover eseguire le istruzioni di un'altra funzione. Ma mentre si esegue quella nuova funzione, il programma potrebbe dover eseguire un'altra funzione!  Fortunatamente, Python è bravo a tenere traccia di dove si trova, quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione. Quando arriva alla fine del programma, questo termina.  Qual è la morale di questa sordida storia? Quando leggete un programma, non sempre volete leggerlo da cima a fondo. A volte ha più senso se seguite il flusso dell'esecuzione.
+
+Parametri e argomenti
+------------------------
+
+######58
+######59
+######60
+######61
+Alcune delle funzioni integrate che abbiamo visto richiedono degli argomenti. Ad esempio, quando chiamate `math.sin` passate un numero come argomento. Alcune funzioni richiedono più di un argomento: `math.pow` ne prende due, la base e l'esponente.  All'interno della funzione, gli argomenti sono assegnati a variabili chiamate *parametri*. Ecco un esempio di una funzione definita dall'utente che riceve un argomento:
+######62
+
+~~~~23
+Questa funzione assegna l'argomento ad un parametro chiamato `bruce`. Quando viene chiamata la funzione, stampa due volte il valore del parametro (qualunque esso sia).  Questa funzione opera con qualsiasi valore che può essere stampato.
+~~~~24
+Le stesse regole di composizione che si applicano alle funzioni integrate si applicano anche alle funzioni definite dall'utente, quindi possiamo usare qualsiasi tipo di espressione come argomento per `print_twice`:
+######63
+
+~~~~25
+L'argomento viene valutato prima che la funzione venga chiamata, quindi negli esempi le espressioni `Spam '* 4` e` math.cos (math.pi) `vengono valutate solo una volta.
+######64
+Potete anche usare una variabile come argomento:
+~~~~26
+Il nome della variabile che passiamo come argomento (`michael`) non ha nulla a che fare con il nome del parametro (` bruce`). Non importa quale sia il nome valore (nel chiamante); qui in `print_twice`, chiamiamo tutti` bruce`.
+
+Funzioni produttive e funzioni vuote
+-------------------------------------
+
+######65
+######66
+######67
+######68
+Alcune delle funzioni che stiamo usando, come le funzioni matematiche, restituiscono dei risultati; per mancanza di un nome migliore, le chiamiamo * funzioni produttive *. Altre funzioni, come `print_twice`, eseguono un'azione ma non restituiscono alcun valore. Vengono chiamate * funzioni vuote *.  Quando chiamate una funzione produttiva, quasi sempre dovete utilizzarne il risultato; ad esempio, potreste assegnarlo a una variabile o usarlo come parte di un'espressione:
+~~~~27
+Quando si chiama una funzione in modalità interattiva, Python visualizza il risultato:
+~~~~28
+Ma in uno script, se si chiama una funzione produttiva e non si memorizza il risultato della funzione in una variabile, il valore di ritorno scompare nella nebbia!
+~~~~29
+Questo script calcola la radice quadrata di 5, ma poiché non memorizza il risultato in una variabile e non mostra il risultato, non è molto utile.
+######69
+######70
+Le funzioni vuote potrebbero visualizzare qualcosa sullo schermo o avere qualche altro effetto, ma non hanno alcun valore di ritorno. Se si tenta di assegnare il risultato a una variabile, si ottiene un valore speciale chiamato "None".
+######71
+######72
+
+~~~~30
+Il valore `None` non è uguale alla stringa " None ". È un valore speciale che ha un suo tipo:
+~~~~31
+Per restituire un risultato da una funzione, utilizziamo l'istruzione `return` nella nostra funzione. Ad esempio, potremmo creare una funzione molto semplice chiamata "addtwo" che unisce due numeri e restituisce un risultato.
+######73
+Quando questo script viene eseguito, l'istruzione `print` stamperà" 8 "perché la funzione` addtwo` è stata chiamata passando gli argomenti 3 e 5. All'interno della funzione, i parametri `a` e` b` erano rispettivamente 3 e 5. La funzione calcola la somma dei due numeri e la colloca nella variabile di funzione locale chiamata `added`. Quindi ha usato l'istruzione `return` per inviare il valore calcolato al codice chiamante come risultato della funzione, che è stato assegnato alla variabile` x` e quindi stampato.
+
+Perché le funzioni?
+--------------
+
+######74
+Potrebbe non essere chiaro il motivo per cui vale la pena di dividere un programma in funzioni. Ci sono diversi motivi:
+- La creazione di una nuova funzione vi dà l'opportunità di dare un nome a un gruppo di istruzioni, il che facilita la lettura, la comprensione e il debug del vostro programma.
+- Le funzioni possono rendere un programma più piccolo, eliminando il codice ripetitivo. Successivamente, se apportate un cambiamento, dovete farlo solo in un posto.
+- Dividere un programma lungo in funzioni consente di eseguire il debug delle parti una alla volta e quindi assemblarle in un insieme funzionante.
+- Le funzioni ben progettate sono spesso utili per molti programmi. Una volta che le scrivete e ne fate il debug, potete riutilizzarle.  Per il resto del libro, spesso useremo una definizione di funzione per spiegare un concetto. Parte della capacità di creare e utilizzare le funzioni è di avere una funzione per cogliere correttamente un'idea come "trovate il valore più piccolo in un elenco di valori". Successivamente vi mostreremo il codice che trova il valore più piccolo in un elenco di valori e ve lo presenteremo come una funzione chiamata `min`, che prende come argomento un elenco di valori e restituisce il valore più piccolo dell'elenco.  Debug
+---------
+
+######75
+Se usate un editor di testo per scrivere i vostri script, potreste avere problemi con spazi e tabulazioni. Il modo migliore per evitare questi problemi è utilizzare esclusivamente gli spazi (senza tabulazioni). La maggior parte degli editor di testo che conoscono Python lo fanno per impostazione predefinita, ma altri no.
+######76
+Le tabulazioni e gli spazi sono generalmente invisibili, il che ne rende difficile il debug, quindi provate a trovare un editor che gestisca l'indentazione per voi.  Inoltre, non dimenticate di salvare il programma prima di eseguirlo, Alcuni ambienti di sviluppo lo fanno automaticamente, ma altri no. In tal caso, il programma che state guardando nell'editor di testo non è lo stesso del programma che state utilizzando.  Il debug può richiedere molto tempo se si continua a ripetere lo stesso programma errato più e più volte!  Assicuratevi che il codice che state esaminando sia il codice che state utilizzando. Se non siete sicuri, mettete qualcosa come `print (" ciao ")` all'inizio del programma ed eseguitelo di nuovo. Se non vedete `ciao`, non state eseguendo il programma giusto!  Glossario
+--------
+Algoritmo: un processo generale per risolvere una categoria di problemi.
+######77
+argomento: un valore fornito a una funzione quando questa viene chiamata. Questo valore è assegnato al parametro corrispondente nella funzione.
+######78
+corpo: la sequenza di istruzioni all'interno di una definizione di funzione.
+######79
+composizione: utilizzo di un'espressione come parte di un'espressione più grande o di un'istruzione come parte di un'istruzione più ampia.
+######80
+deterministico: pertinente a un programma che produce lo stesso risultato ogni volta che viene eseguito, con gli stessi input.
+######81
+notazione del punto: la sintassi per chiamare una funzione in un altro modulo specificando il nome del modulo seguito da un punto e il nome della funzione.
+######82
+flusso di esecuzione: l'ordine in cui le istruzioni vengono eseguite durante l'esecuzione di un programma.
+######83
+funzione produttiva: una funzione che restituisce un valore.
+######84
+funzione: una sequenza di istruzioni provvista di nome che esegue alcune operazioni utili.     Le funzioni possono accettare o non accettare argomenti e possono o meno produrre un risultato.
+######85
+chiamata di funzione: un'istruzione che esegue una funzione. Consiste del nome della funzione seguito da un elenco di argomenti.
+######86
+definizione della funzione: un'istruzione che crea una nuova funzione, specificandone il nome, i parametri e le istruzioni che esegue.
+######87
+oggetto funzione: un valore creato da una definizione di funzione. Il nome della funzione è una variabile che fa riferimento a un oggetto funzione.
+######88
+intestazione: la prima riga di una definizione di funzione.
+######89
+istruzione import: un'istruzione che legge un file del modulo e crea un oggetto modulo.
+######90
+######91
+oggetto modulo: un valore creato da un'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
+######92
+parametro: un nome utilizzato all'interno di una funzione per fare riferimento al valore passato come argomento.
+######93
+pseudo-casuale: pertinente a una sequenza di numeri che sembrano casuali, ma sono generati da un programma deterministico.
+######94
+valore di ritorno: il risultato di una funzione. Se una chiamata di funzione viene utilizzata come espressione, il valore restituito è il valore dell'espressione.
+######95
+funzione vuota: una funzione che non restituisce alcun valore.
+######96
+
+  Esercizi
+---------
+** Esercizio 4: Qual è lo scopo della parola chiave "def" in Python?** a \) È gergale, significa "il seguente codice è veramente bello" \ b) Indica l'inizio di una funzione \ c) Indica che la seguente sezione di codice indentata deve essere memorizzata per uno scopo successivo \ d) b e c sono entrambi veri \ e) Nessuno dei precedenti ** Esercizio 5: cosa stamperà il seguente programma Python?**
+~~~~32
+a \) Zap ABC jane fred jane \ b) Zap ABC Zap \ c) ABC Zap jane \ d) ABC Zap ABC \ e) Zap Zap Zap ** Esercizio 6: Riscrivete il calcolo della vostra retribuzione con gli straordinari pagati il 50% in più e create una funzione chiamata `computepay` che richiede due parametri (`hours` e `rate`).**
+~~~~33
+** Esercizio 7: Riscrivete il programma di valutazione del capitolo precedente usando una funzione chiamata `computegrade` che accetta un punteggio come parametro e restituisce un voto sotto forma di stringa.**
+~~~~34
+
+~~~~35
+
+~~~~36
+
+~~~~37
+
+~~~~38
+
+~~~~39
+Eseguite ripetutamente il programma per testare i diversi valori di input.
