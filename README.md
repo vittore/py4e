@@ -1,22 +1,21 @@
 # pythonlearn
 
-Web site for www.pythonlearn.com
+Sito Web temporaneo per www.pythonlearn.com
 
-The Python3 versions of the code is all in code3
+La versione Python3 degli script è nella cartella code3
 
-If you are interested in the Python for Everybody book
-see the folders
+Se siete interessati al libro Python for Everybody date un'occhiata alle cartelle
 
 * book
 * figures
 * images
 
-For the work in progress.
+per lo stato di avanzamento della traduzione.
 
-To host this
+per ospitarci
 
     cp config-dist.php config.php 
 
-And edit the variables as necessary
+E modificate le variabili secondo le vostre necessità
 
-See the file `book/README.md` for more details.
+Fate riferimento al file `book/README.md` per ulteriori dettagli.
