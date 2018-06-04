@@ -5,18 +5,18 @@
 Perché dovresti imparare a scrivere programmi?
 =======================================
 
-Scrivere programmi (o programmare) è un'attivitá molto creativa e gratificante. Potete scrivere programmi per molte ragioni, per guadagnarvi da vivere, per risolvere complessi problemi di analisi dei dati, per divertimento o per aiutare qualcun altro a risolvere un problema. Questo libro presuppone che *tutti* abbiano bisogno di saper programmare e che, una volta appreso come programmare, sapranno cosa fare con le nuove capacità acquisite.
+Scrivere programmi (o programmare) è un'attivitá molto creativa e gratificante. Puoi scrivere programmi per molte ragioni, per guadagnarti da vivere, per effettuare complesse analisi dei dati, per divertimento o per aiutare qualcun altro a risolvere un problema. Questo libro presuppone che *tutti* abbiano bisogno di saper programmare e che, una volta appreso come programmare, sappiano cosa fare con le nuove capacità acquisite.
 
 
 Ogni giorno siamo circondati da computer che vanno dai portatili agli smartphone. Possiamo pensare a questi computer come ad una sorta di "assistenti personali" che si prendono cura di molti aspetti della nostra vita. L'hardware degli elaboratori moderni è essenzialmente costruito per porci continuamente la domanda: "Cosa vorresti che faccia dopo?"
 
-![Personal Digital Assistant](height=1.0in@../images/pda)
+![Assistente Digitale Personale](height=1.0in@../images/pda)
 
-I programmatori hanno aggiunto all'hardware un sistema operativo e una serie di applicazioni che ha permesso di ottenereun assistente personale digitale che si è dimostrato utile e capace di aiutarci in grado di svolgere compiti diversi.
+I programmatori hanno affiancato all'hardware un sistema operativo e una serie di applicazioni che hanno permesso di ottenere un assistente personale digitale che si è dimostrato utile e capace di aiutarci svolgendo compiti diversi.
 
-I computer sono veloci e dotati di una grande quantità di memoria e potrebbero esserci estramente utili se solo conoscessimo la lingua per spiegare loro quello che vorremmo fosse "fatto dopo". Se la conoscessimo, potremmo dire al computer di svolgere compiti ripetitivi per nostro conto. È interessante tenere presente che il tipo di attività che i computer possono fare meglio sono spesso il genere di cose che noi umani troviamo più noiose e logoranti.
+I computer sono dotati di velocità oltre che di una grande quantità di memoria e potrebbero esserci estramente utili se solo conoscessimo la lingua per spiegare loro quello che vorremmo fosse "fatto dopo". Se così fosse, potremmo dire al computer di svolgere compiti ripetitivi al nostro posto. Va tenuto a mente che il tipo di attività che i computer possono fare meglio sono spesso il genere di cose che noi umani troviamo più noiose e logoranti.
 
-Ad esempio leggere i primi tre paragrafi di questo capitolo ed individuare quante volte venga ripetuta la parola più comunemente usata. Mentre siete in grado di leggere e capire le parole in pochi secondi, contarle è piuttosto difficoltoso in quanto non è il tipo di problema per cui la nostra mente è stata concepita. Per un computer ad essere vero è l'opposto: leggere e capire il testo è difficoltoso mentre è molto più semplice contare le parole e indicarvi quante volte é ripetuta la parola più usata.
+Per esempio leggere i primi tre paragrafi di questo capitolo ed individuare quante volte venga ripetuta la parola più comune. Anche se sei in grado di leggere e capire le parole in pochi secondi, contarle è piuttosto difficoltoso in quanto non è il tipo di problema per cui la nostra mente è stata concepita. Per un computer è l'opposto: leggere e capire il testo è difficoltoso mentre è molto più semplice contare le parole e indicarti quante volte é ripetuta la parola più usata.
 
 ~~~~ {.python}
     python words.py
@@ -26,19 +26,19 @@ Ad esempio leggere i primi tre paragrafi di questo capitolo ed individuare quant
 
 Il nostro "assistente personale per l'analisi delle informazioni" ci ha rapidamente detto che la parola "a" è stata usata sedici volte nei primi tre paragrafi di questo capitolo.
 
-Il fatto che i computer siano bravi in attività in cui gli umani non lo sono, é il motivo per cui è necessario che voi diventiate abili nel parlare un "linguaggio informatico". Una volta che avrete imparato questa nuova lingua, potrete delegare al vostro partner (il computer) i compiti banali, ritagliandovi più tempo per le attività per cui siete piú portati. Voi apportate a questa collaborazione creatività, intuizione ed invettiva.
+Il fatto che i computer siano bravi in attività in cui gli umani non lo sono, é il motivo per cui è necessario che tu diventi abile nel parlare un "linguaggio informatico". Una volta che avrai imparato questa nuova lingua, potrai delegare al tuo partner (il computer) i compiti banali, ritagliandoti più tempo per le attività per cui sei piú portato. In altre parole, tu apportati a questa collaborazione creatività, intuizione ed invettiva.
 
 Creatività e motivazione
 -------------------------
 
 Sebbene questo libro non sia destinato a programmatori professionisti, la programmazione può essere un lavoro molto gratificante sia dal punto di vista finanziario sia da quello personale.
-Scrivere programmi utili, eleganti e intelligenti affinchè possano essere utilizzare da altri è un'attività molto creativa. Il vostro computer o il vostro Assistente Personale Digitale (PDA) di solito ha al suo interno molti programmi scritti da team diversi di sviluppatori, ciascuno dei quali in competizione per conquistare la vostra attenzione ed interesse. Fanno del loro meglio per soddisfare le vostre esigenze e fornirvi, nel contempo, una meravigliosa esperienza utente. In alcune situazioni, quando si sceglie uno specifico software, i programmatori sono direttamente compensati dalla vostra scelta.
+Scrivere programmi utili, eleganti e intelligenti affinchè possano essere utilizzare da altri è un'attività molto creativa. Il tuo computer o il tuo Assistente Personale Digitale (PDA) di solito ha al suo interno molti programmi scritti da team diversi di sviluppatori, ciascuno dei quali in competizione per conquistare la tua attenzione ed interesse. Fanno del loro meglio per soddisfare le tue esigenze e fornirti, nel contempo, una meravigliosa esperienza utente. In alcune situazioni, quando si sceglie uno specifico software, i programmatori sono direttamente gratificati dalla tua scelta.
 
 Se pensiamo ai programmi come alla produzione creativa di team di programmatori, probabilmente la seguente immagine è una visione più ragionevole del nostro PDA:
 
 ![Programmers Talking to You](height=1.0in@../images/pda2)
 
-Per ora, la nostra motivazione principale non è guadagnare soldi o soddisfare altri utenti, ma piuttosto essere più produttivi nella gestione dei dati e informazioni che incontreremo nelle nostre vite. In un primo momento, sarete sia lo sviluppatore sia l'utente finale dei vostri programmi. Appena migliorerete le vostre capacità come programmatore e la programmazione vi sembrerà più creativa, potreste iniziare a pensare allo sviluppo di programmi conto terzi.
+Per ora, la nostra motivazione principale non è guadagnare soldi o soddisfare altri utenti, ma piuttosto essere più efficienti nella gestione di dati e informazioni che incontreremo. In un primo momento, sarai sia lo sviluppatore sia l'utente finale dei tuoi programmi. Appena migliorerai le tue capacità come programmatore e la programmazione ti sembrerà più creativa, potrai iniziare a pensare allo sviluppo di programmi per conto di terzi.
 
 Architettura hardware del computer
 ------------------------------
@@ -48,7 +48,7 @@ Architettura hardware del computer
 
 Prima di iniziare a imparare la lingua che useremo per dare istruzioni ad un computer per sviluppare software, abbiamo bisogno di memorizzare un piccolo numero di nozioni su cosa costituisce un computer. Se smontaste il vostro computer o il vostro cellulare e ci guardaste dentro, trovereste le seguenti parti:
 
-![Hardware Architecture](height=1.75in@../images/arch)
+![Architettura dell'hardware](height=1.75in@../images/arch)
 
 Le definizioni di alto livello di quelle parti sono le seguenti:
 
