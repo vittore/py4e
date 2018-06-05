@@ -177,10 +177,10 @@ Questo è molto più chiaro, quindi prova a comunicare ancora:
     >>>
 ~~~~
 
-La conversazione stava andando così bene per un po' e poi avete fatto l'errore più piccolo che si possa fare usando il linguaggio Python e Python ha mostrato di nuovo le lance.
+La conversazione stava andando così bene, poi quando hai fatto l'errore più piccolo che si possa fare usando il linguaggio Python e Python ha tirato nuovamente fuori le lance.
 
 
-A questo punto, dovreste anche rendervi conto che mentre Python è incredibilmente complesso, potente e schizzinoso sulla sintassi che usate per comunicare con esso, Python *non* è intelligente. In realtà state solo avendo una conversazione con voi stessi, ma usando una sintassi corretta.
+A questo punto, dovresti esserti reso conto che mentre Python è incredibilmente complesso, potente e schizzinoso sulla sintassi da utilizzare per comunicare con "lui", Python *non* è affatto intelligente. In realtà stai solo avendo una conversazione con te stesso, ma usando una sintassi corretta.
 
 
 In un certo senso, quando usate un programma scritto da qualcun altro la conversazione si realizza tra voi e gli altri sviluppatori, con Python ad agire come intermediario. Per chi scrive codice Python è un modo di esprimere come dovrebbe procedere la conversazione. E in soli pochi altri capitoli, sarete uno di quei programmatori che usano Python per parlare agli utenti del vostro programma.
