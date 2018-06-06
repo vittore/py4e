@@ -417,16 +417,15 @@ Ribadisco che in tutte e tre le tipologie di errori, Python sta semplicemente fa
 Il percorso di studio
 --------------------
 
-Mentre avanzai attraverso il resto del libro, non aver paura se i concetti non sembrano amalgamarsi bene l'uno all'altro sin da subito. Quando stavi imparando a parlare, non è stato un problema se avete passato i primi anni producendo solo dei dolci gorgoglii. Non c'erano problemi se ci sono voluti sei mesi per passare da un vocabolario limitato a semplici frasi, se ci sono voluti 5 o 6 anni in più per passare dalle frasi ai paragrafi e ancora qualche anno per essere in grado di scrivere un avvincente racconto breve per conto vostro.
+Mentre prosegui nella lettura di questo libro, non aver paura se i concetti non sembrano amalgamarsi bene l'uno all'altro sin da subito. Quando stavi imparando a parlare, non è stato un problema se hai passato i primi anni producendo solo dei dolci gorgoglii. Non c'erano problemi se ci sono voluti sei mesi per passare da un vocabolario limitato a semplici frasi, se ci sono voluti 5 o 6 anni in più per passare da frasi a paragrafi e ancora qualche anno per essere in grado di scrivere un avvincente racconto breve.
 
-Vorremmo che possiate imparare Python molto rapidamente, per questo motivo vi insegneremo tutto nei prossimi capitoli. Sarà come imparare un nuovo linguaggio che richiede tempo per essere assorbito e compreso prima che diventi naturale.
-Ciò porterà ad una certa confusione mentre vedremo e rivedremo argomenti cercando di farvi vedere il quadro generale mentre definiamo i piccoli frammenti che lo compongono. Nonostante il libro sia scritto in modo lineare, ed anche se state seguendo un corso che proseguirà linearmente, non esitare ad essere molto non-lineari nel modo in cui vi approcciate al materiale. Sbirciate avanti e indietro e leggete con leggerezza.
-Sfogliando il materiale più avanzato senza comprenderne appieno i dettagli, potrete capire meglio il "perché?" della programmazione.
-Rivedendo il materiale precedente e anche rifacendo gli esercizi precedenti, realizzerete che in realtà avete imparato molto anche se il materiale che al momento state fissando sembra un po' imperscrutabile.
+Poichè vorremmo che tu possa imparare Python rapidamente, ti insegneremo tutto nei prossimi capitoli. Sarà come imparare un nuovo linguaggio che richiede tempo per essere assorbito e compreso prima che diventi naturale.
+Ciò causerà una certa confusione mentre vedremo e rivedremo argomenti cercando di farti vedere il quadro generale definendo i piccoli frammenti che lo compongono. Nonostante il libro sia scritto in modo lineare, ed anche se stai seguendo un corso che proseguirà linearmente, non esitare ad essere molto non-lineare nel modo in cui ti approcci ai contenuti. Sbircia avanti e indietro e leggi ciò che ti pare.
+Sfogliando il materiale più avanzato senza comprenderne appieno i dettagli, potresti capire meglio il "perché?" della programmazione.
+Rivedendo il materiale precedente o rifacendo gli esercizi precedenti, realizzerai che in realtà hai imparato molto anche se il materiale che stai fissando ora sembra un po' imperscrutabile.
 
-Di solito quando state imparando il vostro primo linguaggio di programmazione, ci sono alcuni meravigliosi momenti di stupore in cui potete alzare lo sguardo dallo scalfire qualche pietra con un martello e uno scalpello e cominciare a vedere che state davvero scolpendo una bellissima scultura.
-
-Se qualcosa sembra particolarmente difficile, di solito è inutile restare svegli tutta la notte a fissarla. Fate una pausa, fate un pisolino, mangiate uno spuntino, spiegate a qualcuno in cosa state avendo problemi (o magari al vostro cane), così da ritornare con occhi nuovi. Vi assicuriamo che una volta che apprenderete i concetti della programmazione nel libro, guarderete indietro e vedrete che tutto è stato molto semplice ed elegante e vi ha semplicemente richiesto un po' di tempo per assimilarlo.
+Capita spesso che quando stai imparando il tuo primo linguaggio di programmazione, ci siano alcuni meravigliosi momenti di stupore in cui, mentre sei intento a scalfire la tua pietra con martello e scalpello, puoi alzare lo sguardo e cominciare a vedere che stai davvero realizzando una bellissima scultura.
+Di solito è inutile restare svegli tutta la notte a fissare qualcosa che sembra particolarmente difficile. Fai una pausa, fai un pisolino, mangia uno spuntino, spiega a qualcuno in cosa stai avendo problemi (magari solo al tuo cane), così da ritornare al problema con occhi nuovi. Ti assicuriamo che una volta acquisiti i rudimenti della programmazione descritti nel libro, ti guarderai indietro e vedrai che tutto è stato molto semplice ed elegante e ti ha solo richiesto un po' di tempo per assimilarlo.
 
 Glossario
 --------
@@ -436,7 +435,7 @@ bug
 \index{bug}
 
 central processing unit
-: Il cuore di qualsiasi computer. È ciò che gestisce il codice che noi scriviamo; é anche chiamato "CPU" o "processore".
+: Chiamato anche "CPU" o "processore". È il cuore di qualsiasi computer ed è ciò che gestisce il codice che scriviamo.
 \index{central processing unit}
 \index{CPU}
 
@@ -457,7 +456,7 @@ interprete
 \index{interprete}
 
 linguaggio di basso livello
-: Un linguaggio di programmazione progettato per essere facilmente eseguito da un computer; é chiamato anche "codice macchina" o "linguaggio assembly".
+: Un linguaggio di programmazione progettato per essere eseguito da un computer; é chiamato anche "codice macchina" o "linguaggio assembly".
 \index{linguaggio di basso livello}
 
 codice macchina
@@ -482,7 +481,7 @@ funzione di stampa
 \index{funzione!stampa}
 
 risoluzione dei problemi
-: Il processo composto dal formulare un problema, ricercare una soluzione, e fornire la soluzione.
+: Il processo composto da formulare un problema, ricercare una soluzione e fornire la soluzione.
 \index{risoluzione dei problemi}
 
 programma
@@ -494,7 +493,7 @@ prompt
 \index{prompt}
 
 memoria secondaria
-: Memorizza programmi e dati e ne conserva le informazioni anche quando viene tolta l'alimentazione. Generalmente é più lenta della memoria principale. Esempi di memoria secondaria includono l'unità disco o la memoria flash nelle chiavette USB.
+: Generalmente più lenta della memoria principale, memorizza programmi e dati e ne conserva le informazioni anche quando viene tolta l'alimentazione. Esempi includono l'unità disco o la memoria flash nelle chiavette USB.
 \index{memoria secondaria}
 
 semantica
@@ -516,7 +515,7 @@ Esercizi
 
 a\) Esegue tutto il calcolo e la logica del programma\
 b) Recupera pagine Web da Internet\
-c) Conservare le informazioni a lungo termine, anche oltre un ciclo di alimentazione\
+c) Conserva le informazioni a lungo termine, anche oltre un ciclo di alimentazione\
 d) Accetta input dall'utente
 
 **Esercizio 2:** Che cos'è un programma?
@@ -566,6 +565,6 @@ b) 44\
 c) x + 1\
 d) Errore perché x = x + 1 non è matematicamente possibile
 
-**Esercizio 8:** Spiega ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
+**Esercizio 8:** Illustra ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
 
 **Esercizio 9:** Come si corregge un "Syntax Error"?
