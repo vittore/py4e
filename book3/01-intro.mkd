@@ -1,8 +1,8 @@
 % Python per tutti
-% Esplorare i dati usando Python 3
+% Esplorare dati con Python 3
 % Charles R. Severance
 
-Perché dovreste imparare a scrivere programmi?
+Perché dovresti imparare a scrivere programmi?
 =======================================
 
 Scrivere programmi (o programmare) è un'attivitá molto creativa e gratificante. Potete scrivere programmi per molte ragioni, per guadagnarvi da vivere, per risolvere complessi problemi di analisi dei dati, per divertimento o per aiutare qualcun altro a risolvere un problema. Questo libro presuppone che *tutti* abbiano bisogno di saper programmare e che, una volta appreso come programmare, sapranno cosa fare con le nuove capacità acquisite.
