@@ -16,7 +16,7 @@ I programmatori hanno affiancato all'hardware un sistema operativo e una serie d
 
 I computer sono dotati di velocità oltre che di una grande quantità di memoria e potrebbero esserci estramente utili se solo conoscessimo la lingua per spiegare loro quello che vorremmo fosse "fatto dopo". Se così fosse, potremmo dire al computer di svolgere compiti ripetitivi al nostro posto. Va tenuto a mente che il tipo di attività che i computer possono fare meglio sono spesso il genere di cose che noi umani troviamo più noiose e logoranti.
 
-Per esempio leggere i primi tre paragrafi di questo capitolo ed individuare quante volte venga ripetuta la parola più comune. Anche se sei in grado di leggere e capire le parole in pochi secondi, contarle è piuttosto difficoltoso in quanto non è il tipo di problema per cui la nostra mente è stata concepita. Per un computer è l'opposto: leggere e capire il testo è difficoltoso mentre è molto più semplice contare le parole e indicarti quante volte é ripetuta la parola più usata.
+Per esempio leggere i primi tre paragrafi di questo capitolo ed individuare quante volte venga ripetuta la parola più comune. Anche se sei in grado di leggere e capire le parole in pochi secondi, contarle è piuttosto difficoltoso in quanto non è il tipo di problema per cui la nostra mente è stata concepita. Per un computer è l'opposto: leggere e capire il testo è difficoltoso mentre è molto più semplice contare le parole e indicarti quante volte è ripetuta la parola più usata.
 
 ~~~~ {.python}
     python words.py
@@ -26,7 +26,7 @@ Per esempio leggere i primi tre paragrafi di questo capitolo ed individuare quan
 
 Il nostro "assistente personale per l'analisi delle informazioni" ci ha rapidamente detto che la parola "a" è stata usata sedici volte nei primi tre paragrafi di questo capitolo.
 
-Il fatto che i computer siano bravi in attività in cui gli umani non lo sono, é il motivo per cui è necessario che tu diventi abile nel parlare un "linguaggio informatico". Una volta che avrai imparato questa nuova lingua, potrai delegare al tuo partner (il computer) i compiti banali, ritagliandoti più tempo per le attività per cui sei piú portato. In altre parole, tu apporti a questa collaborazione creatività, intuizione ed invettiva.
+Il fatto che i computer siano bravi in attività in cui gli umani non lo sono, è il motivo per cui è necessario che tu diventi abile nel parlare un "linguaggio informatico". Una volta che avrai imparato questa nuova lingua, potrai delegare al tuo partner (il computer) i compiti banali, ritagliandoti più tempo per le attività per cui sei piú portato. In altre parole, tu apporti a questa collaborazione creatività, intuizione ed invettiva.
 
 Creatività e motivazione
 -------------------------
@@ -68,7 +68,7 @@ Come sviluppatore, il tuo compito è quello di utilizzare e armonizzare ciascuna
 
 ![Dove sei?](height=1.75in@../images/arch2)
 
-Dovrai essere colui che risponderà alla domanda posta dalla CPU: "Quale è la prossima istruzione?". Ma diciamocelo: sarebbe molto scomodo rimpicciolirsi a 5 mm di altezza e introdursi nel computer solo per poter dare comandi tre miliardi di volte al secondo. E' più semplice scrivere in anticipo le tue istruzioni. Chiamiamo *programma* queste istruzioni memorizzate e *programmazione* l'atto di scrivere queste istruzioni e fare in modo che siano corrette.
+Dovrai essere colui che risponderà alla domanda posta dalla CPU: "Quale è la prossima istruzione?". Ma diciamocelo: sarebbe molto scomodo rimpicciolirsi a 5 mm di altezza e introdursi nel computer solo per poter dare comandi tre miliardi di volte al secondo. È più semplice scrivere in anticipo le tue istruzioni. Chiamiamo *programma* queste istruzioni memorizzate e *programmazione* l'atto di scrivere queste istruzioni e fare in modo che siano corrette.
 
 Capire la Programmazione
 -------------------------
@@ -247,7 +247,7 @@ In questo esempio, stiamo chiedendo a Python di:
 
 Anche se stiamo digitando questi comandi una riga alla volta, Python li tratta come una sequenza ordinata di istruzioni permettendo alle  successive istruzioni di essere in grado di recuperare i dati creati precedentemente. Noi abbiamo scritto il nostro primo semplice paragrafo composto di quattro frasi in un ordine logico e che abbia un significato.
 
-L'instaurare una conversazione interattiva simile alla precendente é nella natura di un *interprete*. Un *compilatore* invece necessita di avere l'intero codice sorgente di alto livello prima di avviare il processo di traduzione e successivo salvataggio in un file eseguibile per l'esecuzione.
+L'instaurare una conversazione interattiva simile alla precendente è nella natura di un *interprete*. Un *compilatore* invece necessita di avere l'intero codice sorgente di alto livello prima di avviare il processo di traduzione e successivo salvataggio in un file eseguibile per l'esecuzione.
 
 Nel sistema Windows, spesso questi eseguibili hanno un suffisso ".exe" o ".dll" che indicano rispettivamente "eseguibile" o libreria DLL. In Linux e MacOsx, non esiste un suffisso che contrassegni in modo univoco un file come eseguibile.
 
@@ -267,7 +267,7 @@ Non è semplice leggere o scrivere in linguaggio macchina, quindi è utile che s
 Ora, a questo punto della nostra discussione su compilatori e interpreti, ti starai chiedendo qualcosa sull'interprete di Python. In che linguaggio è stato scritto? È scritto in un linguaggio compilato? Cosa succede esattamente quando digitiamo "Python"?
 
 L'interprete di Python è scritto in un linguaggio di alto livello chiamato "C". Puoi dare un'occhiata all'attuale codice sorgente dell'interprete andando nel sito [www.python.org] (http://www.python.org), nella sezione dedicata al codice sorgente.
-Quindi Python è esso stesso un programma compilato in linguaggio macchina. Quando hai installato Python nel tuo computer (o se é stato installato dal venditore), hai copiato una versione in linguaggio macchina adatta per il tuo sistema. In Windows, il linguaggio macchina eseguibile per lo stesso Python è probabilmente in un file con un nome simile a:
+Quindi Python è esso stesso un programma compilato in linguaggio macchina. Quando hai installato Python nel tuo computer (o se è stato installato dal venditore), hai copiato una versione in linguaggio macchina adatta per il tuo sistema. In Windows, il linguaggio macchina eseguibile per lo stesso Python è probabilmente in un file con un nome simile a:
 
 ~~~~
     C:\Python35\python.exe
@@ -299,7 +299,7 @@ Il "csev\$" è il prompt del sistema operativo e "cat hello.py" mostra che il fi
 
 Avvia l'interprete di Python dicendogli di leggere il codice sorgente dal file "hello.py" invece di chiederti in modo interattivo linee di codice.
 
-Noterai che non é stato necessario inserire *quit()* alla fine del programma Python. Quando Python legge il tuo codice sorgente da un file, sa di doversi fermare quando raggiunge la fine del file.
+Noterai che non è stato necessario inserire *quit()* alla fine del programma Python. Quando Python legge il tuo codice sorgente da un file, sa di doversi fermare quando raggiunge la fine del file.
 
 Cos'è un programma?
 ------------------
@@ -410,7 +410,7 @@ Errori di logica:
 
 
 Errori di Semantica
-: Un errore semantico si verifica quando la descrizione dei passaggi da eseguire è sintatticamente perfetta e nel giusto ordine, ma c'è un errore nel programma. Il programma è completamente corretto ma non fa ciò che *intendi* fargli fare. Un semplice esempio potrebbe essere il dare ad una persona le indicazioni per un ristorante dicendo: "... quando raggiungi l'incrocio con la stazione di benzina, gira a sinistra e procedi per 1 km. Il ristorante é l'edificio rosso sulla sinistra." Il tuo amico é molto in ritardo e ti chiama per dirti di trovarsi in una fattoria e che si sta aggirando dietro un granaio, senza trovare alcuna traccia del ristorante. "Ma hai girato a sinistra o a destra alla stazione di servizio?" e lui risponde "ho seguito le tue indicazioni alla lettera, le ho perfino annotate: dicono di girare a sinistra dal distributore di benzina e procedere per un km." "Mi dispiace molto, perché nonostante le mie istruzioni fossero sintatticamente corrette, purtroppo contenevano un piccolo errore semantico ma non rilevato".
+: Un errore semantico si verifica quando la descrizione dei passaggi da eseguire è sintatticamente perfetta e nel giusto ordine, ma c'è un errore nel programma. Il programma è completamente corretto ma non fa ciò che *intendi* fargli fare. Un semplice esempio potrebbe essere il dare ad una persona le indicazioni per un ristorante dicendo: "... quando raggiungi l'incrocio con la stazione di benzina, gira a sinistra e procedi per 1 km. Il ristorante è l'edificio rosso sulla sinistra." Il tuo amico è molto in ritardo e ti chiama per dirti di trovarsi in una fattoria e che si sta aggirando dietro un granaio, senza trovare alcuna traccia del ristorante. "Ma hai girato a sinistra o a destra alla stazione di servizio?" e lui risponde "ho seguito le tue indicazioni alla lettera, le ho perfino annotate: dicono di girare a sinistra dal distributore di benzina e procedere per un km." "Mi dispiace molto, perché nonostante le mie istruzioni fossero sintatticamente corrette, purtroppo contenevano un piccolo errore semantico ma non rilevato".
 
 Ribadisco che in tutte e tre le tipologie di errori, Python sta semplicemente facendo del suo meglio per fare esattamente quello che gli hai chiesto.
 
@@ -419,7 +419,7 @@ Il percorso di studio
 
 Mentre prosegui nella lettura di questo libro, non aver paura se i concetti non sembrano amalgamarsi bene l'uno all'altro sin da subito. Quando stavi imparando a parlare, non è stato un problema se hai passato i primi anni producendo solo dei dolci gorgoglii. Non c'erano problemi se ci sono voluti sei mesi per passare da un vocabolario limitato a semplici frasi, se ci sono voluti 5 o 6 anni in più per passare da frasi a paragrafi e ancora qualche anno per essere in grado di scrivere un avvincente racconto breve.
 
-Poichè vorremmo che tu possa imparare Python rapidamente, ti insegneremo tutto nei prossimi capitoli. Sarà come imparare un nuovo linguaggio che richiede tempo per essere assorbito e compreso prima che diventi naturale.
+Poiché vorremmo che tu possa imparare Python rapidamente, ti insegneremo tutto nei prossimi capitoli. Sarà come imparare un nuovo linguaggio che richiede tempo per essere assorbito e compreso prima che diventi naturale.
 Ciò causerà una certa confusione mentre vedremo e rivedremo argomenti cercando di farti vedere il quadro generale definendo i piccoli frammenti che lo compongono. Nonostante il libro sia scritto in modo lineare, ed anche se stai seguendo un corso che proseguirà linearmente, non esitare ad essere molto non-lineare nel modo in cui ti approcci ai contenuti. Sbircia avanti e indietro e leggi ciò che ti pare.
 Sfogliando il materiale più avanzato senza comprenderne appieno i dettagli, potresti capire meglio il "perché?" della programmazione.
 Rivedendo il materiale precedente o rifacendo gli esercizi precedenti, realizzerai che in realtà hai imparato molto anche se il materiale che stai fissando ora sembra un po' imperscrutabile.
@@ -456,7 +456,7 @@ interprete
 \index{interprete}
 
 linguaggio di basso livello
-: Un linguaggio di programmazione progettato per essere eseguito da un computer; é chiamato anche "codice macchina" o "linguaggio assembly".
+: Un linguaggio di programmazione progettato per essere eseguito da un computer; è chiamato anche "codice macchina" o "linguaggio assembly".
 \index{linguaggio di basso livello}
 
 codice macchina
@@ -565,6 +565,6 @@ b) 44\
 c) x + 1\
 d) Errore perché x = x + 1 non è matematicamente possibile
 
-**Esercizio 8:** Illustra ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual é l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
+**Esercizio 8:** Illustra ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual è l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
 
 **Esercizio 9:** Come si corregge un "Syntax Error"?
