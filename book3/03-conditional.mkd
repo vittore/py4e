@@ -9,7 +9,7 @@ Espressioni booleane
 \index{expression!boolean}
 \index{logical operator}
 \index{operator!logical}
-Un'espressione *booleana* è un'espressione che può essere o vera o falsa. Gli esempi seguenti usano l'operatore `==` per la comparazione di due operandi e produrranno `True` nel caso siano uguali o `False` in caso contrario:
+Un'espressione *booleana* è un'espressione che può assumere solo i valori vero o falso. Negli esempi seguenti l'operatore `==` viene utilizzato per la comparazione di due operandi e produrrà `True` nel caso siano uguali o `False` in caso contrario:
 
 ~~~~ {.python .trinket}
 >>> 5 == 5
@@ -20,7 +20,7 @@ False
 ~~~~
 
 
-`True` e `False` non sono stringhe ma sono valori speciali che appartengono al tipo `bool`:
+`True` e `False` non sono considerati stringhe ma sono valori speciali appartenenti al tipo `bool`:
 \index{True special value}
 \index{False special value}
 \index{special value!True}
@@ -50,7 +50,7 @@ L'operatore `==` è uno degli *operatori di comparazione*; gli altri sono:
 ~~~~
 
 
-Anche se queste operazioni vi saranno probabilmente familiari, i simboli utilizzati da Python sono diversi da quelli matematici. Un errore comune è l'utilizzare un singolo segno di uguale (`=`) al posto di un doppio segno di uguale (`==`). Ricordate che `=` è un operatore di assegnazione mentre `==` è un operatore di comparazione. Non esiste un qualcosa di simile a `=<` o `=>`.
+Anche se queste operazioni ti saranno probabilmente familiari, i simboli utilizzati da Python sono diversi da quelli matematici. Un errore comune è l'utilizzare un singolo segno di uguale (`=`) al posto di un doppio segno di uguale (`==`): Ricorda che `=` assegna un valore mentre `==` compara due valori. Al momento non esiste un operatore simile a `=<` o `=>`.
 \index{comparison operator}
 \index{operator!comparison}
 
@@ -59,7 +59,7 @@ Operatori logici
 
 \index{logical operator}
 \index{operator!logical}
-Esistono tre *operatori logici*: `and`, `or` e `not`. La semantica (significato) di questi operatori è simile al loro significato in inglese. Ad esempio:
+Esistono tre *operatori logici*: `and`, `or` e `not`. La semantica (significato) di questi operatori è simile al loro significato nella lingua inglese. Ad esempio:
 `x> 0 and x <10`
 è TRUE solo se `x` è maggiore di 0 *e* minore di 10.
 
@@ -70,7 +70,7 @@ Esistono tre *operatori logici*: `and`, `or` e `not`. La semantica (significato)
 \index{operator!or}
 \index{operator!not}
 
-`n%2 == 0 or n%3 == 0` è TRUE se si verifica *una* delle condizioni, cioè se il numero è divisibile per 2 *o* 3.  Infine, l'operatore `not` nega un'espressione booleana, quindi `not (x>y)` è true se ` x>y` è false; cioè, se `x` è minore o uguale a `y`.  In pratica, gli operandi degli operatori logici dovrebbero essere espressioni booleane, ma Python non è molto rigoroso in merito.
+`n%2 == 0 or n%3 == 0` è TRUE se si verifica *una* delle condizioni: cioè se il numero è divisibile per 2 *o* 3.  Infine, l'operatore `not` nega un'espressione booleana, quindi `not (x>y)` è true se ` x>y` è false; cioè, se `x` è minore o uguale a `y`.  In pratica, gli operandi degli operatori logici dovrebbero essere espressioni booleane, anche Python non è molto rigoroso in merito.
 Qualsiasi numero diverso da zero viene interpretato come "true":
 
 ~~~~ {.python}
@@ -79,7 +79,7 @@ True
 ~~~~
 
 
-Questa flessibilità può essere utile, ma ci sono alcuni dettagli che potrebbero creare confusione. Potrebbe essere il caso di evitare un evento del genere, a meno che non si sappia cosa si stia facendo.  
+Seppure questa flessibilità possa tornare utile, ci sono alcuni dettagli che potrebbero creare confusione. A meno che non si sappia cosa si stia facendo, è il caso di evitare un evento del genere.
 
 Esecuzione condizionale
 ---------------------
@@ -89,7 +89,7 @@ Esecuzione condizionale
 \index{if statement}
 \index{statement!if}
 \index{conditional executions}
-Per scrivere programmi utili, abbiamo quasi sempre bisogno di verificare le condizioni e modificare di conseguenza il comportamento del programma. Le *istruzioni condizionali* ci fornisco questa capacità. La forma più semplice è l'istruzione `if`:
+Per scrivere programmi utili, abbiamo quasi sempre bisogno di verificare le condizioni e modificare di conseguenza il comportamento del programma. Le *istruzioni condizionali* ci danno questa capacità. La forma più semplice è l'istruzione `if`:
 
 ~~~~ {.python}
 if x > 0 :
@@ -97,16 +97,16 @@ if x > 0 :
 ~~~~
 
 
-L'espressione booleana dopo l'istruzione `if` è chiamata *condizione*. Terminiamo l'istruzione `if` con il carattere due punti (:) e la linea/linee seguenti l'istruzione devono essere indentate (rientrate).
+L'espressione booleana dopo l'istruzione `if` è chiamata *condizione*. Al termine dell'istruzione `if` va posto il carattere due punti (:), la linea/linee di codice seguenti devono essere indentate (rientrate).
 
 ![If Logic](height=1.5in@../images/if)
 
-  Se la condizione logica è vera, allora verrà eseguita l'istruzione indentata. Se la condizione logica è falsa, l'istruzione indentata verrà saltata.
+  Se la condizione logica è vera verrà eseguita l'istruzione indentata. Se la condizione logica è falsa, questa verrà saltata.
 \index{condition}
 \index{compound statement}
 \index{statement!compound}
 
-Le istruzioni `if` hanno la stessa struttura delle definizioni di funzione o cicli `for`^[Impareremo a conoscere le funzioni nel Capitolo 4 e i cicli nel Capitolo 5.]. L'istruzione consiste in una riga di intestazione che termina con il carattere dei due punti (:) seguito da un blocco indentato. Istruzioni come questa sono chiamate *istruzioni composte* perché si estendono su più di una riga.  Non c'è alcun limite al numero di istruzioni che possono apparire nel blocco, ma deve esserne presente almeno una. Occasionalmente, è utile avere un blocco senza istruzioni (di solito come segnaposto per codice non ancora scritto). In tal caso, puoi usare l'istruzione `pass`, che non ha alcun effetto.
+Le istruzioni `if` hanno la stessa struttura delle definizioni di funzione o cicli `for`^[Impareremo a conoscere funzioni e cicli rispettivamente nel Capitolo 4 e 5.]. L'istruzione è composta da una riga di intestazione che termina con i due punti (:) seguita da un blocco indentato. Istruzioni come questa sono definite *composte* perché si estendono su più righe. Pur non essendoci alcun limite al numero di istruzioni che possono apparire nel blocco, deve esserne presente sempre almeno una: Ad esempio, però, è utile avere un blocco senza istruzioni (di solito come segnaposto per codice non ancora scritto). In tal caso, puoi usare l'istruzione `pass`, che non ha alcun effetto.
 \index{pass statement}
 \index{statement!pass}
 
