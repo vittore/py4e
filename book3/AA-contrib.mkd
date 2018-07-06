@@ -3,7 +3,7 @@
 Contributi
 =============
 
-Elenco dei collaboratori di Python per tutti 
+Elenco dei collaboratori di Python for Everybody 
 -------------------------------------------
 
 Elliott Hauser, Stephen Catto, Sue Blumenberg, Tamara Brunnock, Mihaela Mack, Chris Kolosiwsky, Dustin Farley, Jens Leerssen, Naveen KT, Mirza Ibrahimovic, Naveen (@togarnk), Zhou Fangyi, Alistair Walsh, Erica Brody, Jih-Sheng Huang, Louis Luangkesorn e Michael Fudge.
@@ -12,7 +12,23 @@ Qui potete vedere i dettagli dei contributi:
 
 https://github.com/csev/py4e/graphs/contributors
 
-Elenco di collaboratori per Python for Informatics 
+Elenco dei Traduttori di Python per tutti 
+-------------------------------------------
+
+Traduzione a cura di Vittore Zen ed Alessandro Rossetti
+
+Traduttori
+Umberto Buonora
+Gianfranco Frisani
+Alessandro Rella
+Alessandro Rossetti
+
+Correzione Bozze
+Silvia Baseggio
+Alessandro Rella
+Alessandro Rossetti
+
+Elenco dei collaboratori per Python for Informatics 
 -------------------------------------------
 
 Bruce Shields per la correzione delle bozze iniziali, Sarah Hegge, Steven Cherry, Sarah Kathleen Barbarow, Andrea Parker, Radaphat Chongthammakun, Megan Hixon, Kirby Urner, Sarah Kathleen Barbrow, Katie Kujala, Noah Botimer, Emily Alinder, Mark Thompson-Kular, James Perry , Eric Hofer, Eytan Adar, Peter Robinson, Deborah J. Nelson, Jonathan C. Anthony, Eden Rassette, Jeannette Schroeder, Justin Feezell, Chuanqi Li, Gerald Gordinier, Gavin Thomas Strassel, Ryan Clement, Alissa Talley, Caitlin Holman, Yong- Mi Kim, Karen Stover, Cherie Edmonds, Maria Seiferle, Romer Kristi D. Aranas (RK), Grant Boyer, Hedemarrie Dussan.
