@@ -17,16 +17,9 @@ Elenco dei Traduttori di Python per tutti
 
 Traduzione a cura di Vittore Zen ed Alessandro Rossetti
 
-Traduttori
-Umberto Buonora
-Gianfranco Frisani
-Alessandro Rella
-Alessandro Rossetti
+Traduttori: Umberto Buonora, Gianfranco Frisani, Alessandro Rella, Alessandro Rossetti
 
-Correzione Bozze
-Silvia Baseggio
-Alessandro Rella
-Alessandro Rossetti
+Correzione Bozze: Silvia Baseggio, Alessandro Rella, Alessandro Rossetti
 
 Elenco dei collaboratori per Python for Informatics 
 -------------------------------------------
