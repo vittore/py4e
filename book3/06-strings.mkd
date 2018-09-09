@@ -11,7 +11,7 @@ Una stringa è una sequenza
 \index{bracket operator}
 \index{operator!bracket}
 
-Una stringa è una *sequenza* di caratteri. Potete accedere ai caratteri uno alla volta con l'operatore parentesi quadre:
+Una stringa è una *sequenza* di caratteri a cui puoi accedere, uno alla volta, con l'operatore parentesi quadre:
 
 ~~~~ {.python}
 >>> fruit = 'banana'
@@ -23,7 +23,7 @@ Una stringa è una *sequenza* di caratteri. Potete accedere ai caratteri uno all
 \index{index}
 \index{}
 
-La seconda istruzione estrae il carattere nella posizione di indice 1 dalla variabile `fruit` e la assegna alla variabile `letter`.  L'espressione tra parentesi è denominata *indice*. L'indice indica quale carattere della sequenza vogliamo (da cui il nome).  Ma potreste non ottenere ciò che vi aspettate:
+La seconda istruzione estrae il carattere nella posizione 1 dalla stringa contenuta nella variabile `fruit` e la assegna alla variabile `letter`. L'espressione tra parentesi è denominata *indice* e indica quale carattere della sequenza vogliamo (da cui il nome). Ma potrai non ottenere ciò che ti aspetti:
 
 ~~~~ {.python}
 >>> print(letter)
@@ -32,7 +32,7 @@ a
 
 
 
-Per la maggior parte delle persone, la prima lettera di "banana" è `b`, non` a`. Ma in Python, l'indice indica una posizione dall'inizio della stringa e la posizione della prima lettera è zero.
+Per la maggior parte delle persone, la prima lettera di "banana" è `b`, non `a`. Ma in Python, l'indice indica una posizione dall'inizio della stringa e la posizione della prima lettera è zero.
 
 ~~~~ {.python}
 >>> letter = fruit[0]
@@ -49,7 +49,7 @@ Quindi `b` è la lettera 0 ("zero") di "banana", `a` è la 1^ lettera ("prima"),
 \index{index!starting at zero}
 \index{zero, index starting at}
 
-Potete utilizzare qualsiasi espressione, comprese variabili e operatori, come indice, ma il valore dell'indice deve essere un numero intero. Altrimenti otterrete:
+Potrai utilizzare qualsiasi espressione, comprese variabili e operatori, come indice, ma il valore dell'indice dovrà essere un numero intero. Altrimenti otterrai:
 
 \index{index}
 \index{}
@@ -70,7 +70,7 @@ Ottenere la lunghezza di una stringa usando `len`
 \index{len function}
 \index{function!len}
 
-`len` è una funzione integrata che restituisce il numero di caratteri in una stringa:
+`len` è una funzione che restituisce il numero di caratteri in una stringa:
 
 ~~~~ {.python}
 >>> fruit = 'banana'
@@ -80,7 +80,7 @@ Ottenere la lunghezza di una stringa usando `len`
 
 
 
-Per ottenere l'ultima lettera di una stringa, potreste essere tentati di provare qualcosa del genere:
+Per ottenere l'ultima lettera di una stringa, potresti essere tentato di provare qualcosa del genere:
 \index{exception!IndexError}
 \index{IndexError}
 
@@ -92,7 +92,7 @@ IndexError: string index out of range
 ~~~~
 
 
-Il motivo del messaggio "IndexError" è che non vi è alcuna lettera in "banana" con l'indice 6. Considerato che abbiamo iniziato a contare da zero, le sei lettere sono numerate da 0 a 5. Per ottenere l'ultimo carattere, dovete sottrarre 1 da `length`:
+Il motivo del messaggio d'errore è che non vi è alcuna lettera in "banana" con l'indice 6. Considerato che abbiamo iniziato a contare da zero, le sei lettere sono numerate da 0 a 5. Per ottenere l'ultimo carattere, dovrai sottrarre 1 a `length`:
 
 ~~~~ {.python}
 >>> last = fruit[length-1]
@@ -101,7 +101,7 @@ a
 ~~~~
 
 
-In alternativa, potete usare indici negativi, che contano all'indietro dalla fine della stringa. L'espressione `fruit [-1]` ci darà l'ultima lettera, `fruit [-2]` ci darà la penultima, e così via.
+In alternativa, puoi usare indici negativi, che partono a contare dalla fine della stringa. L'espressione `fruit [-1]` ci darà l'ultima lettera, `fruit [-2]` ci darà la penultima, e così via.
 \index{index!negative}
 \index{negative index}
 
