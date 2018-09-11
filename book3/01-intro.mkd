@@ -126,7 +126,8 @@ Conversare con Python
 Ora che conosciamo una parola e una frase semplice in Python, abbiamo bisogno di sapere come avviare una conversazione con Python per testare le nostre nuove abilità linguistiche.
 
 Prima di poter dialogare con Python, dovresti installare il software Python sul tuo computer e imparare come avviarlo.
-Questa procedura è troppo dettagliata per essere inclusa in questo capitolo, quindi ti suggerisco di consultare [www.py4e.com] (http://www.py4e.com) dove ho scritto istruzioni dettagliate e screencast dell'installazione e dell'avvio di Python su sistemi Macintosh e Windows. Ad un certo punto, potrai aprire un terminale o una finestra di comando e, digitando *python*, si avvierà l'interprete Python in modalità interattiva e verrà visualizzato qualcosa del genere:
+Questa procedura è troppo dettagliata per essere inclusa in questo capitolo, quindi ti suggerisco di consultare [www.py4e.com] (http://www.py4e.com) dove ho scritto istruzioni dettagliate e screencast dell'installazione e dell'avvio di Python su sistemi Macintosh e Windows.
+Ad un certo punto, potrai aprire un terminale o una finestra di comando e, digitando *python*, si avvierà l'interprete Python in modalità interattiva e verrà visualizzato qualcosa del genere:
 
 \index{modalità interattiva}
 
@@ -207,7 +208,8 @@ Il modo corretto per dire "arrivederci" a Python è digitare *quit()* al prompt 
 Terminologia: interprete e compilatore
 -------------------------------------
 
-Python è un *linguaggio di alto livello* destinato a essere relativamente semplice da leggere e scrivere per gli umani e altrettanto semplice da leggere ed elaborare per i computer. Altri linguaggi di alto livello sono Java, C ++, PHP, Ruby, Basic, Perl, JavaScript ecc. Purtroppo l'attuale architettura della Central Processing Unit (CPU) non è in grado di capire nessuno di questi linguaggi di alto livello.
+Python è un *linguaggio di alto livello* destinato a essere relativamente semplice da leggere e scrivere per gli umani e altrettanto semplice da leggere ed elaborare per i computer. Altri linguaggi di alto livello sono Java, C ++, PHP, Ruby, Basic, Perl, JavaScript ecc.
+Purtroppo l'attuale architettura della Central Processing Unit (CPU) non è in grado di capire nessuno di questi linguaggi di alto livello.
 
 La CPU comprende solo quello che chiamiamo *linguaggio macchina*.
 Il linguaggio macchina è molto basilare e francamente molto stancante da scrivere poiché composto esclusivamente da zeri e uno:
