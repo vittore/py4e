@@ -114,7 +114,7 @@ Scorrere una stringa con un ciclo
 \index{loop!for}
 \index{statement!for}
 \index{traversal}
-Molti calcoli comportano l'elaborazione di una stringa un carattere alla volta. Spesso cominciano dall'inizio, selezionano ciascun carattere a turno, fanno qualcosa e continuano fino alla fine. Questo modello di elaborazione è chiamato *traversale*. Un modo per codificare uno scorrimento consiste nell'utilizzare un ciclo `while`:
+Molti calcoli comportano l'elaborazione di un carattere alla volta di una stringa. Spesso cominciano dall'inizio, selezionano ciascun carattere a turno, fanno qualcosa e continuano fino alla fine. Questo modello di elaborazione è chiamato *traversale*. Un modo per codificare uno scorrimento consiste nell'utilizzare un ciclo `while`:
 
 ~~~~ {.python}
 index = 0
@@ -126,9 +126,9 @@ while index < len(fruit):
 
 
 
-Questo ciclo scorre la stringa e mostra ogni lettera su una riga da sola. La condizione del ciclo è `index <len (fruit)`, quindi quando `index` è uguale alla lunghezza della stringa, la condizione è falsa e il corpo del ciclo non viene eseguito. L'ultimo carattere a cui si accede è quello con l'indice uguale a `len (fruit) -1`, che è l'ultimo carattere nella stringa.  
+Questo ciclo scorre la stringa e mostra una singola lettera su una riga separata. La condizione del ciclo è `index < len(fruit)`, quindi quando `index` è uguale alla lunghezza della stringa, la condizione è false e il corpo del ciclo non viene più eseguito. L'ultimo carattere a cui si accede è quello con l'indice uguale a `len(fruit)-1`, che è l'ultimo carattere nella stringa.  
 
-**Esercizio 1:** Scrivete un ciclo `while` che inizi dall'ultimo carattere della stringa e proceda all'indietro fino al primo carattere della stringa, visualizzando ogni lettera su una riga separata, tranne che all'indietro.
+**Esercizio 1:** Scrivi un ciclo `while` che inizi dall'ultimo carattere della stringa e proceda fino al primo carattere della stringa, visualizzando ogni lettera su una riga separata, tranne che all'indietro.
 
 Un altro modo per scrivere uno scorrimento è con un ciclo `for`:
 
@@ -139,7 +139,7 @@ for char in fruit:
 
 
 
-Ogni volta che viene eseguito il ciclo, il carattere successivo nella stringa viene assegnato alla variabile `char`. Il ciclo continua fino a quando non rimane alcun carattere.
+Ogni volta che viene eseguito il ciclo, viene assegnato alla variabile `char` il carattere successivo nella stringa. Il ciclo si ripete fino a quando non rimane alcun carattere.
 
 Segmenti di stringhe
 -------------
@@ -149,7 +149,7 @@ Segmenti di stringhe
 \index{index!slice}
 \index{string!slice}
 \index{slice!string}
-Un segmento di una stringa è chiamato *slice*. La selezione di un segmento è simile alla selezione di un carattere:
+Il segmento di una stringa è chiamato *slice*. La selezione di un segmento è simile alla selezione di un carattere:
 
 ~~~~ {.python}
 >>> s = 'Monty Python'
@@ -161,7 +161,7 @@ Python
 
 
 
-L'operatore restituisce la parte della stringa dal carattere con indice "n" al carattere con indice "m", includendo il primo ma escludendo l'ultimo.  Se si omette il primo indice (prima dei due punti), il segmento comincia dall'inizio della stringa. Se omettete il ​​secondo indice, il segmento arriva alla fine della stringa:
+L'operatore restituisce la parte della stringa dal carattere indicato con il primo indice (incluso) al carattere indicato con indice (escluso). Se si omette il primo parametro (prima dei due punti), il segmento parte dall'inizio della stringa. Se invece si omette il secondo, il segmento arriva alla fine della stringa:
 
 ~~~~ {.python}
 >>> fruit = 'banana'
@@ -173,7 +173,7 @@ L'operatore restituisce la parte della stringa dal carattere con indice "n" al c
 
 
 
-Se il primo indice è maggiore o uguale al secondo, il risultato è una *stringa vuota*, rappresentata da due virgolette:
+Se il primo parametro è maggiore o uguale al secondo, otterrai una *stringa vuota*, rappresentata da due virgolette:
 \index{quotation mark}
 
 
@@ -184,9 +184,9 @@ Se il primo indice è maggiore o uguale al secondo, il risultato è una *stringa
 ~~~~
 
 
-Una stringa vuota non contiene caratteri e ha lunghezza 0, ma a parte questo è uguale a qualsiasi altra stringa.  
+Una stringa vuota è uguale a qualsiasi altra stringa nonostante non contenga caratteri ed abbia lunghezza pari a 0.  
 
-**Esercizio 2:** Dato che `fruit` è una stringa, cosa significa` fruit [:] `?
+**Esercizio 2:** Dato che `fruit` è una stringa, cosa significa `fruit[:]`?
 
 \index{copy!slice}
 \index{slice!copy}
@@ -198,7 +198,7 @@ Le stringhe sono immutabili
 \index{immutability}
 \index{string!immutable}
 
-Si potrebbe essere tentati di utilizzare l'operatore sul lato sinistro di un'assegnazione, con l'intenzione di cambiare un carattere in una stringa. Per esempio:
+Potresti essere tentato di utilizzare l'operatore sul lato sinistro di un'assegnazione con l'intenzione di cambiare un carattere in una stringa. Per esempio:
 \index{TypeError}
 \index{exception!TypeError}
 
@@ -210,14 +210,14 @@ TypeError: 'str' object does not support item assignment
 ~~~~
 
 
-L'"oggetto" in questione è la stringa e l'"elemento" è il carattere che avete provato ad assegnare. Per ora, un *oggetto* coincide con un valore, ma perfezioneremo questa definizione più avanti. Un *elemento* è uno dei valori di una sequenza.
+L'"object" in questione è la stringa e l'"item" è il carattere che avete provato ad assegnare. Per ora, un *oggetto* coincide con un valore, ma perfezioneremo questa definizione più avanti. Un *elemento* è uno dei valori di una sequenza.
 
 \index{object}
 \index{item assignment}
 \index{assignment!item}
 \index{immutability}
 
-Il motivo dell'errore è che le stringhe sono *immutabili*, quindi non è possibile modificare una stringa esistente. La cosa migliore che potete fare è creare una nuova stringa che sia una variante dell'originale:
+Il motivo dell'errore è che le stringhe sono *immutabili*, cioè non è possibile modificare una stringa esistente. La cosa migliore che puoi fare è creare una nuova stringa che sia una variante dell'originale:
 
 ~~~~ {.python}
 >>> greeting = 'Hello, world!'
@@ -228,7 +228,7 @@ Jello, world!
 
 
 
-Questo esempio concatena una nuova prima lettera su un segmento di `greeting`. Non ha alcun effetto sulla stringa originale.
+Questo esempio concatena una nuova  lettera su un segmento di `greeting` senza avere alcun effetto sulla stringa originale.
 \index{concatenation}
 
 Cicli e conteggi
@@ -239,7 +239,7 @@ Cicli e conteggi
 \index{looping and counting}
 \index{looping!with strings}
 
-Il seguente programma conta il numero di volte in cui la lettera `a` è contenuta in una stringa:
+Il seguente programma conta il numero di volte in cui la lettera `a` si ripete in una stringa:
 
 ~~~~ {.python}
 word = 'banana'
@@ -251,10 +251,10 @@ print(count)
 ~~~~
 
 
-Questo programma dimostra un altro schema di computazione chiamato *contatore*. La variabile `count` è inizializzata a 0 e poi viene incrementata ogni volta che viene trovata una `a`. Quando il ciclo termina, `count` conterrà il risultato: il numero totale di` a`.
+Questo programma dimostra un altro schema denominato *contatore*. La variabile `count` è inizializzata a 0 e viene poi incrementata ogni volta che viene rilevata una `a`. Quando il ciclo termina, `count` conterrà il risultato: il numero totale di `a` nella stringa analizzata.
 \index{encapsulation}
 
-**Esercizio 3:** Incorpora questo codice in una funzione chiamata "count" e generalizzala in modo che accetti stringhe e lettere come argomenti.
+**Esercizio 3:** Incorpora questo codice in una funzione chiamata "count" e rendila in grado di accettare stringhe e lettere come argomenti.
 
 L'operatore `in`
 ----------------------------
@@ -264,7 +264,7 @@ L'operatore `in`
 \index{boolean operator}
 \index{operator!boolean}
 
-La parola `in` è un operatore booleano che prende due stringhe e restituisce` True` se la prima è contenuta come sottostringa nella seconda:
+La parola `in` è un operatore booleano che prende due stringhe e restituisce `True` se la prima è contenuta nella seconda:
 
 ~~~~ {.python}
 >>> 'a' in 'banana'
@@ -281,7 +281,7 @@ Comparazione di stringhe
 \index{string!comparison}
 \index{comparison!string}
 
-Gli operatori di comparazione funzionano anche sulle stringhe. Per vedere se due stringhe sono uguali:
+Gli operatori di comparazione funzionano anche sulle stringhe. Per verificare se due stringhe sono uguali puoi usare questo script:
 
 ~~~~ {.python}
 if word == 'banana':
@@ -290,7 +290,7 @@ if word == 'banana':
 
 
 
-Altre operazioni di comparazione sono utili per mettere le parole in ordine alfabetico:
+Altre operazioni di comparazione sono utili per mettere delle parole in ordine alfabetico:
 
 ~~~~ {.python}
 if word < 'banana':
@@ -303,7 +303,7 @@ else:
 
 
 
-Python non gestisce le lettere maiuscole e minuscole nello stesso modo in cui fanno le persone. Tutte le lettere maiuscole vengono prima delle lettere minuscole, quindi:
+Python non gestisce le lettere maiuscole e minuscole nello stesso modo in cui fanno le persone: tutte le lettere maiuscole vengono prima delle lettere minuscole, quindi:
 
 ~~~~
 Your word, Pineapple, comes before banana.
@@ -311,13 +311,12 @@ Your word, Pineapple, comes before banana.
 
 
 
-Un modo comune per risolvere questo problema è convertire le stringhe in un formato standard, ad esempio tutto in minuscolo, prima di eseguire la comparazione. Tenetelo a mente se dovete difendervi da un uomo armato di Ananas.
+Un modo comune per risolvere questo problema è convertire le stringhe in un formato standard, ad esempio tutto il testo in minuscolo, prima di eseguire la comparazione. Tienilo a mente se mai dovessi difenderti da un uomo armato di Ananas.
 
 Metodi delle `stringhe`
 ---------------------------
 
-Le stringhe sono un esempio di *oggetti* Python.
-Un oggetto contiene sia i dati (la stringa vera e propria) che i *metodi*, che sono essenzialmente funzioni incorporate nell'oggetto e sono disponibili per qualsiasi *istanza* dell'oggetto.  Python ha una funzione chiamata `dir` che elenca i metodi disponibili per un oggetto. La funzione `type` mostra il tipo di un oggetto e la funzione `dir` mostra i metodi disponibili.
+Le stringhe sono un esempio di *oggetti* Python. Un oggetto contiene sia i dati (la stringa vera e propria) che i *metodi*, che essenzialmente sono funzioni incorporate nell'oggetto e sono disponibili per qualsiasi *istanza* dell'oggetto. Tramite due funzioni hai la possibilità di conoscere la tipologia di un oggetto ed i metodi ad esso associati. La funzione `type` mostra il tipo di oggetto e la funzione `dir` mostra i metodi disponibili.
 
 ~~~~ {.python}
 >>> stuff = 'Hello world'
@@ -346,13 +345,13 @@ capitalize(...)
 
 
 
-Mentre la funzione `dir` elenca i metodi, e potete usare `help` per ottenere una semplice documentazione su un metodo, una migliore fonte di documentazione per i metodi delle stringhe potrebbe essere <https://docs.python.org/3.5/library /stdtypes.html#string-methods>.  
-Chiamare un *metodo* è simile a chiamare una funzione (riceve argomenti e restituisce un valore) ma la sintassi è diversa. Chiamiamo un metodo aggiungendo il nome del metodo al nome della variabile usando un punto come delimitatore.  
-Ad esempio, il metodo `upper` prende una stringa e restituisce una nuova stringa con tutte le lettere maiuscole:
+Ti ho scritto che tramite la funzione `dir` otterrai un elenco di metodi, di cui, tramite la funzione `help` puoi ottenere una semplice documentazione; esiste però una migliore fonte di documentazione riguardo i metodi: <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.  
+Chiamare un *metodo* è simile al chiamare una funzione, cioè riceve argomenti e restituisce un valore, con una sintassi diversa. Chiamiamo un metodo facendo precedere il nome a quello della variabile usando un punto come delimitatore.  
+Ad esempio, il metodo `upper` prende una stringa in input e restituisce una nuova stringa con tutte le lettere maiuscole:
 \index{method}
 \index{string!method}
 
-Invece della sintassi della funzione `upper(word)`, usate la sintassi del metodo `word.upper()`.
+Non va utilizzata la sintassi `upper(word)`, ma piuttosto `word.upper()`.
 \index{dot notation}
 
 
@@ -364,13 +363,13 @@ BANANA
 ~~~~
 
 
-Questa forma di notazione con il punto specifica il nome del metodo, `upper`, e il nome della stringa `word` a cui applicare il metodo. Le parentesi vuote indicano che questo metodo non accetta argomenti.
+Questa forma di notazione con il punto specifica il nome del metodo (`upper`) e il nome della stringa (`word`) a cui applicare il metodo. Le parentesi vuote indicano che questo metodo non accetta argomenti.
 \index{parentheses!empty}
 
-Una chiamata al metodo è chiamata *invocazione*; in questo caso, diremo che stiamo invocando `upper` sulla stringa ` word`.
+La chiamata di un metodo è chiamata *invocazione*: nel caso precedente diremo che stiamo invocando `upper` sulla stringa `word`.
 \index{invocation}
 
-Ad esempio, esiste un metodo per le stringhe chiamato "find" che cerca la posizione di una stringa all'interno di un'altra:
+Ad esempio, esiste un metodo per le stringhe chiamato "find" che cerca l'eventuale posizione di una stringa o segmento all'interno di un'altra:
 
 ~~~~ {.python}
 >>> word = 'banana'
@@ -381,7 +380,7 @@ Ad esempio, esiste un metodo per le stringhe chiamato "find" che cerca la posizi
 
 
 
-In questo esempio, invochiamo `find` su` word` e passiamo come parametro la lettera che stiamo cercando.  Il metodo `find` può cercare sottostringhe e caratteri:
+In questo esempio, hai invocato `find` su `word` e passato come parametro la lettera che stiamo cercando. Il metodo `find` può cercare sia segmenti di stringhe sia caratteri:
 
 ~~~~ {.python}
 >>> word.find('na')
@@ -390,7 +389,7 @@ In questo esempio, invochiamo `find` su` word` e passiamo come parametro la lett
 
 
 
-Può ricevere come secondo argomento l'indice da cui dovrebbe iniziare:
+Questa funzione può ricevere, come secondo argomento, l'indice da cui dovrebbe iniziare la ricerca:
 \index{optional argument}
 \index{argument!optional}
 
@@ -401,7 +400,7 @@ Può ricevere come secondo argomento l'indice da cui dovrebbe iniziare:
 ~~~~
 
 
-Un'operazione comune è rimuovere lo spazio bianco (spazi, tabulazioni o newline) dall'inizio e dalla fine di una stringa usando il metodo `strip`:
+Un'altra operazione comune è il rimuovere lo spazio bianco (spazi, tabulazioni o newline) dall'inizio e dalla fine di una stringa usando il metodo `strip`:
 
 ~~~~ {.python}
 >>> line = '  Here we go  '
@@ -411,7 +410,7 @@ Un'operazione comune è rimuovere lo spazio bianco (spazi, tabulazioni o newline
 
 
 
-Alcuni metodi come *startswith* restituiscono valori booleani.
+Alcuni metodi, come *startswith*, restituiscono valori booleani:
 
 ~~~~ {.python}
 >>> line = 'Have a nice day'
@@ -423,7 +422,7 @@ False
 
 
 
-Noterete che `startswith` richiede tutte lettere maiuscole o tutte lettere minuscole, quindi a volte prendiamo una riga e la convertiamo tutta in minuscolo prima di fare qualsiasi controllo usando il metodo `lower`.
+Noterai che `startswith` richiede che ci sia un'esatta corrispondenza tra lettere maiuscole e minuscole. Può quindi tornare utile prendere una stringa e convertirla tutta in minuscolo tramite il metodo `lower`. 
 
 ~~~~ {.python}
 >>> line = 'Have a nice day'
@@ -437,25 +436,24 @@ True
 
 
 
-Nell'ultimo esempio, viene chiamato il metodo `lower` e quindi usiamo `startswith` per vedere se la risultante stringa in minuscolo inizia con la lettera "h". Finché stiamo attenti con l'ordine, possiamo effettuare più chiamate di metodo in una singola espressione.
+Nell'ultimo esempio, viene chiamato il metodo `lower` e quindi `startswith` per vedere se la stringa risultante inizia con la lettera "h". Finché facciamo attenzione all'ordine, possiamo effettuare più chiamate diverse in una singola espressione.
 \index{count method}
 \index{method!count}
 
-**Esercizio 4:** esiste un metodo per le stringhe chiamato `count` che è simile alla funzione dell'esercizio precedente.
+**Esercizio 4:** esiste un metodo per le stringhe chiamato `count` simile alla funzione dell'esercizio precedente.
 
-Leggete la documentazione di questo metodo su <https://docs.python.org/3.5/library/stdtypes.html#string-methods> e scrivete un'invocazione che conta il numero di volte in cui la lettera a appare nella stringa "banana".
+Leggi la documentazione di questo metodo su <https://docs.python.org/3.5/library/stdtypes.html#string-methods> e scrivi uno script che conti il numero di volte in cui la lettera `a` appare nella stringa "banana".
 
 Analisi delle stringhe
 ---------------
 
-Spesso, vogliamo esaminare una stringa e trovare una sottostringa. Per esempio, se ci venisse presentata una serie di linee formattate come segue:
+Spesso, vogliamo esaminare una stringa e trovare un segmento specifico. Per esempio, se ci venisse presentata una serie di linee formattate come segue:
 
-`From stephen.marquard@uct.ac.za`
-`Sat Jan 5 09:14:16 2008`
+`From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008`
 
-e volessimo estrarre solo la seconda metà dell'indirizzo (ad es., `uct.ac.za`) da ogni riga, possiamo farlo usando il metodo `find` e la segmentazione delle stringhe.  
+e volessimo estrarre solo la seconda metà dell'indirizzo (ad es., `uct.ac.za`) da ogni riga, ci verrà in aiuto il metodo `find` e la segmentazione delle stringhe.  
 
-In primo luogo, troveremo la posizione del simbolo chiocciola nella stringa. Quindi individuiamo la posizione del primo spazio *dopo* il simbolo chiocciola. Poi usiamo la segmentazione delle stringhe per estrarre la porzione della stringa che stiamo cercando.
+In primo luogo, dobbiamo trovare la posizione del simbolo chiocciola (@) nella stringa. Quindi individuiamo la posizione del primo spazio vuoto *dopo* lo stesso. Infine usiamo la segmentazione delle stringhe per estrarre la porzione della stringa che stiamo cercando.
 
 ~~~~ {.python}
 >>> data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
@@ -473,8 +471,8 @@ uct.ac.za
 
 
 
-Usiamo una versione del metodo `find` che ci permette di specificare una posizione nella stringa in cui vogliamo che ` find` inizi a guardare. Quando dividiamo, estraiamo i caratteri da "uno oltre il simbolo chiocciola fino al carattere spazio, *ma senza includerlo*.  
-La documentazione per il metodo `find` è disponibile su <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.
+Usiamo una applicazione del metodo `find` che ci permette di specificare la posizione nella stringa da cui vogliamo che `find` inizi a guardare. Dividiamo, estraiamo i caratteri ddalla posizione successiva al simbolo chiocciola fino a quello che precede lo spazio vuoto *escluso*.  
+La documentazione per `find` è disponibile all'indirizzo <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.
 
 Operatore di formato
 ---------------
@@ -482,7 +480,7 @@ Operatore di formato
 \index{format operator}
 \index{operator!format}
 
-L'operatore di *formato*, `%` ci consente di costruire stringhe, sostituendo parti di esse con i dati memorizzati nelle variabili. Se applicato a numeri interi, `%` rappresenta l'operatore modulo. Ma quando il primo operando è una stringa, `%` rappresenta l'operatore di formato.
+L'*operatore di formato* (%) ci consente di costruire stringhe, sostituendo parti di esse con i dati memorizzati nelle variabili. Se applicato a numeri interi, `%` rappresenta l'operatore modulo, se invece il primo operando è una stringa, `%` rappresenta l'operatore di formato.
 
 \index{format string}
 
@@ -490,7 +488,7 @@ Il primo operando è detto *stringa di formato*, che contiene una o più *sequen
 Il risultato è una stringa.
 \index{format sequence}
 
-Ad esempio, la sequenza di formato "% d" significa che il secondo operando dovrebbe essere nel formato di numero intero (`d` significa "in base decimale"):
+Ad esempio, la sequenza di formato "%d" significa che il secondo operando dovrebbe essere nel formato di numero intero (`d` sta per  "in base decimale"):
 
 ~~~~ {.python}
 >>> camels = 42
@@ -500,7 +498,7 @@ Ad esempio, la sequenza di formato "% d" significa che il secondo operando dovre
 
 
 
-Il risultato è la stringa "42", che non deve essere confusa con il numero intero `42`.  Una sequenza di formato può comparire in qualsiasi punto della stringa, pertanto è possibile incorporare un valore in una frase:
+Il risultato è la stringa "42" che non deve essere confusa con il numero intero `42`. Una sequenza di formato può comparire in qualsiasi punto della stringa, pertanto ti è possibile inserire un valore in una frase:
 
 ~~~~ {.python}
 >>> camels = 42
@@ -509,7 +507,7 @@ Il risultato è la stringa "42", che non deve essere confusa con il numero inter
 ~~~~
 
 
-Se in una stringa c'è più di una sequenza di formato, il secondo operando deve essere una tupla ^ [Una tupla è una sequenza di valori separati da virgole all'interno di una coppia di parentesi. Tratteremo le tuple nel Capitolo 10]. Ogni sequenza di formato corrisponde a un elemento della tupla, nell'ordine.  Nell'esempio seguente viene utilizzato "%d" per formattare un numero intero, "%g" per formattare un decimale a virgola mobile (non chiedetemi perché) e "% s" per formattare una stringa:
+Se in una stringa c'è più di una sequenza, il secondo operando deve essere una tupla ^ [Una tupla è una sequenza di valori separati da virgole all'interno di una coppia di parentesi. Tratteremo le tuple nel Capitolo 10]. Ogni sequenza di formato corrisponde a un elemento della tupla, nell'ordine.  Nell'esempio seguente viene utilizzato "%d" per formattare un numero intero, "%g" per formattare un decimale a virgola mobile (non chiedetemi perché) e "% s" per formattare una stringa:
 
 ~~~~ {.python}
 >>> 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')
