@@ -152,7 +152,8 @@ L'*istruzione* è un'unità minima di codice che può essere eseguita dall'inter
 \index{statement}
 \index{interactive mode}
 \index{script mode}
-Quando digiti un'istruzione in modalità interattiva, l'interprete la esegue e, nel caso esista, ne visualizza il risultato.  Generalmente uno script contiene una sequenza di istruzioni. Se c'è più di un'istruzione i risultati vengono visualizzati uno alla volta mano a mano che le istruzioni vengono eseguite. Ad esempio:
+Quando digiti un'istruzione in modalità interattiva, l'interprete la esegue e, nel caso esista, ne visualizza il risultato.
+Generalmente uno script contiene una sequenza di istruzioni. Se c'è più di un'istruzione i risultati vengono visualizzati uno alla volta mano a mano che le istruzioni vengono eseguite. Ad esempio:
 
 ~~~~ {.python}
 print(1)
@@ -309,8 +310,8 @@ L'operatore `+` opera con le stringhe, senza essere un'addizione in senso strett
 ~~~~
 
 
-L'output di questo script è `100150`. L'operatore `*` lavora anche con le stringhe moltiplicando il contenuto di una stringa per un numero intero.
-Per esempio:
+L'output di questo script è `100150`.
+L'operatore `*` lavora anche con le stringhe moltiplicando il contenuto di una stringa per un numero intero. Per esempio:
 
 ~~~~ {.python}
 >>> first = 'Test '
