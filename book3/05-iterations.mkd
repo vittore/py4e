@@ -89,7 +89,8 @@ Nel caso di `countdown`, possiamo dimostrare che il ciclo terminerà perché sap
 
 \index{break statement}
 \index{statement!break}
-A volte non si capisce che è il momento di terminare un ciclo fino a quando non si arriva a metà del blocco. In tal caso puoi scrivere di proposito un ciclo infinito e poi usare l'istruzione `break` per uscire dal loop. Il ciclo seguente è ovviamente un *ciclo infinito* perché l'espressione logica nell'istruzione `while` è semplicemente la costante logica `True`:
+A volte non si capisce che è il momento di terminare un ciclo fino a quando non si arriva a metà del blocco. In tal caso puoi scrivere di proposito un ciclo infinito e poi usare l'istruzione `break` per uscire dal loop.
+Il ciclo seguente è ovviamente un *ciclo infinito* perché l'espressione logica nell'istruzione `while` è semplicemente la costante logica `True`:
 
 ~~~~ {.python}
 n = 10
@@ -100,11 +101,13 @@ print('Done!')
 ~~~~
 
 
-Se commetti l'errore di eseguire questo codice, imparerai rapidamente a fermare un processo Python in esecuzione sul tuo sistema o a trovare il pulsante di spegnimento sul tuo computer. Questo programma verrà eseguito per sempre o fino a quando la tua batteria si esaurirà perché l'espressione logica nella parte superiore del ciclo è sempre vera in virtù del fatto che l'espressione è il valore costante `True`.  Anche se questo è un ciclo infinito disfunzionale, possiamo ancora usare questo schema per costruire cicli utili, a patto di aggiungere con cura codice al blocco del ciclo per uscirne esplicitamente usando `break` quando abbiamo raggiunto la condizione di uscita. Ad esempio, supponiamo di voler ricevere dati dall'utente fino a quando non digita `done`. Potresti scrivere:
+Se commetti l'errore di eseguire questo codice, imparerai rapidamente a fermare un processo Python in esecuzione sul tuo sistema o a trovare il pulsante di spegnimento sul tuo computer. Questo programma verrà eseguito per sempre o fino a quando la tua batteria si esaurirà perché l'espressione logica nella parte superiore del ciclo è sempre vera in virtù del fatto che l'espressione è il valore costante `True`.  Anche se questo è un ciclo infinito disfunzionale, possiamo ancora usare questo schema per costruire cicli utili, a patto di aggiungere con cura codice al blocco del ciclo per uscirne esplicitamente usando `break` quando abbiamo raggiunto la condizione di uscita.
+Ad esempio, supponiamo di voler ricevere dati dall'utente fino a quando non digita `done`. Potresti scrivere:
 
 \VerbatimInput{../code3/copytildone1.py}
 
-La condizione del ciclo è `True`, che è sempre vera, quindi il ciclo viene ripetuto finché non incontra l'istruzione `break`. Ogni volta viene mostrato il prompt all'utente con una parentesi angolare. Se l'utente digita `fatto`, l'istruzione `break` interrompe il ciclo, Altrimenti il programma ripete a pappagallo qualsiasi cosa scriva l'utente e torna all'inizio del ciclo. Ecco un esempio di esecuzione:
+La condizione del ciclo è `True`, che è sempre vera, quindi il ciclo viene ripetuto finché non incontra l'istruzione `break`. Ogni volta viene mostrato il prompt all'utente con una parentesi angolare. Se l'utente digita `fatto`, l'istruzione `break` interrompe il ciclo, Altrimenti il programma ripete a pappagallo qualsiasi cosa scriva l'utente e torna all'inizio del ciclo.
+Ecco un esempio di esecuzione:
 
 ~~~~
 > hello there
