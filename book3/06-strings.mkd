@@ -507,7 +507,8 @@ Il risultato è la stringa "42" che non deve essere confusa con il numero intero
 ~~~~
 
 
-Se in una stringa c'è più di una sequenza, il secondo operando deve essere una tupla ^ [Una tupla è una sequenza di valori separati da virgole all'interno di una coppia di parentesi. Tratteremo le tuple nel Capitolo 10]. Ogni sequenza di formato corrisponde a un elemento della tupla, nell'ordine.  Nell'esempio seguente viene utilizzato "%d" per formattare un numero intero, "%g" per formattare un decimale a virgola mobile (non chiedetemi perché) e "% s" per formattare una stringa:
+Se in una stringa c'è più di una sequenza, il secondo operando deve essere una tupla ^ [Una tupla è una sequenza di valori separati da virgole all'interno di una coppia di parentesi. Tratteremo le tuple nel Capitolo 10]. Ogni sequenza di formato corrisponde a un elemento della tupla, nell'ordine indicato.
+Nell'esempio seguente viene utilizzato "%d" per formattare un numero intero, "%g" per formattare un decimale a virgola mobile (non chiedetemi perché) e "%s" per formattare una stringa:
 
 ~~~~ {.python}
 >>> 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')
@@ -516,7 +517,7 @@ Se in una stringa c'è più di una sequenza, il secondo operando deve essere una
 
 
 
-Il numero di elementi nella tupla deve corrispondere al numero di sequenze di formato nella stringa. Anche i tipi di elementi devono corrispondere alle sequenze di formato:
+Il numero e tipi degli elementi nella tupla devono corrispondere al numero e al tipo di sequenze di formato indicate:
 \index{exception!TypeError}
 \index{TypeError}
 
@@ -529,18 +530,21 @@ TypeError: %d format: a number is required, not str
 ~~~~
 
 
-Nel primo esempio, non ci sono abbastanza elementi; nel secondo, l'elemento è di tipo sbagliato.  L'operatore di formattazione è potente, ma può essere difficile da usare. Potete leggere ulteriori informazioni su <https://docs.python.org/3.5/library/stdtypes.html#printf-style-string-formatting>.
+Nel primo esempio non sono presenti abbastanza elementi. Nel secondo l'elemento è del tipo sbagliato.
+L'operatore di formattazione è potente, ma può essere difficile da usare.
+Puoi leggere informazioni più dettagliate su <https://docs.python.org/3.5/library/stdtypes.html#printf-style-string-formatting>.
 
 Debug
 ---------
 
 \index{debugging}
 
-Un talento che dovreste coltivare mentre programmate è chiedervi sempre: "Cosa potrebbe andare storto qui?"o in alternativa, "Quale pazza cosa potrebbe fare il nostro utente per mandare in crash il nostro programma (apparentemente) perfetto?"Ad esempio, guardate il programma che abbiamo usato per dimostrare il ciclo` while` nel capitolo sull'iterazione:
+Un talento che dovresti coltivare mentre programmi è il chiederti sempre: "Cosa potrebbe andare storto qui?" o in alternativa "Quale imprevedibile cosa potrebbe essere fatta dal nostro utente per mandare in crash il mio programma (apparentemente) perfetto?".
+Ad esempio, guarda il programma che ti ho mostrato per dimostrare il ciclo `while` nel capitolo sull'iterazione:
 
 \VerbatimInput{../code3/copytildone2.py}
 
-Guardate cosa succede quando l'utente inserisce una riga vuota di input:
+Guarda cosa succede quando l'utente inserisce una riga vuota:
 
 ~~~~ {.python}
 > hello there
@@ -557,7 +561,8 @@ IndexError: string index out of range
 
 
 
-Il codice funziona bene finché non viene presentata una riga vuota. Quindi non è presente il carattere alla posizione zero e otteniamo un traceback. Ci sono due soluzioni per rendere la riga tre "sicura" anche se la riga è vuota.  Una possibilità è semplicemente usare il metodo `startswith` che restituisce `False` se la stringa è vuota.
+Il codice funziona bene finché non viene inserita una riga vuota. Quindi non essendo presente un carattere nella posizione zero, viene visualizzato un traceback. Ci sono due soluzioni per rendere la riga tre "sicura" anche se la riga è vuota.
+La prima è semplicemente usare il metodo `startswith` che restituirà `False` se la stringa è vuota.
 
 ~~~~
     if line.startswith('#'):
@@ -567,7 +572,7 @@ Il codice funziona bene finché non viene presentata una riga vuota. Quindi non 
 
 \index{guardian pattern}
 \index{pattern!guardian}
-Un altro modo è scrivere in modo sicuro l'istruzione `if` usando lo schema del *guardiano* e assicurarsi che la seconda espressione logica sia valutata solo dove c'è almeno un carattere nella stringa .:
+Un altra soluzione è l'utilizzo precauzionale dell'istruzione `if` adottando lo schema del *guardiano* per assicurarsi che la seconda espressione logica sia valutata solo se è presente almeno un carattere nella stringa:
 
 ~~~~
     if len(line) > 0 and line[0] == '#':
@@ -580,7 +585,7 @@ Glossario
 
 
 contatore
-: una variabile utilizzata per contare qualcosa, di solito inizializzata a zero e poi incrementata.
+: una variabile utilizzata per contare qualcosa; è solitamente inizializzata a zero e poi incrementata.
 \index{counter}
 
 stringa vuota
@@ -588,16 +593,16 @@ stringa vuota
 \index{empty string}
 
 operatore di formato
-: un operatore, `%`, che riceve una stringa di formato e una tupla e genera una stringa che include gli elementi della tupla formattata come specificato dalla stringa di formato.
+: un operatore `%` che riceve una stringa di formato e una tupla e genera una stringa che include gli elementi della tupla formattata come specificato dalla stringa di formato.
 \index{format operator}
 \index{operator!format}
 
 sequenza di formato
-: una sequenza di caratteri in una stringa di formato, come `%d`, che specifica come deve essere formattato un valore.
+: una sequenza di caratteri in una stringa di formato (es. `%d`) che specifica come deve essere formattato un dato.
 \index{format sequence}
 
 stringa di formato
-: una stringa, utilizzata con l'operatore di formattazione, che contiene sequenze di formato.
+: una stringa utilizzata con l'operatore di formattazione che contiene sequenze di formato.
 \index{format string}
 
 flag
@@ -609,7 +614,7 @@ invocazione
 \index{invocation}
 
 immutabile
-: la proprietà di una sequenza i cui elementi non possono essere assegnati.
+: la proprietà della sequenza i cui elementi non possono essere alterati.
 \index{immutability}
 
 indice
@@ -626,7 +631,7 @@ metodo
 \index{method}
 
 oggetto
-: Qualcosa a cui una variabile può riferirsi. Per ora, potete usare "oggetto" e "valore" in modo intercambiabile.
+: Qualcosa a cui può riferirsi una variabile. Per ora, puoi usare "oggetto" e "valore" in modo intercambiabile.
 \index{object}
 
 ricerca
@@ -635,15 +640,15 @@ ricerca
 \index{pattern!search}
 
 sequenza
-: un insieme ordinato; ovvero, un insieme di valori in cui ogni valore è identificato da un indice intero.
+: un insieme ordinato ovvero un insieme di valori in cui ogni valore è identificato da un indice intero.
 \index{sequence}
 
 segmento
-: una parte di una stringa specificata da un intervallo di indici.
+: parte di una stringa specificata da un intervallo di indici.
 \index{slice}
 
 traverse
-: per scorrere gli elementi di una sequenza, eseguendo un'operazione simile su ognuno.
+: scorrere gli elementi di una sequenza, eseguendo un'operazione simile su ognuno.
 \index{traversal}
 
 
@@ -651,14 +656,16 @@ Esercizi
 ---------
 
 
-**Esercizio 5:** prendete il seguente codice Python che memorizza una stringa: **`str = 'X-DSPAM-Confidence:` **`0.8475`** `'`
+**Esercizio 5:** prendi il seguente codice Python contenente una stringa:
+`str = 'X-DSPAM-Confidence:0.8475`
 
-Usate `find` e la segmentazione delle stringhe per estrarre la porzione di stringa dopo il carattere dei due punti e quindi utilizzare la funzione `float` per convertire la stringa estratta in un numero a virgola mobile.
+Usa `find` e la segmentazione delle stringhe per estrarre la porzione di stringa dopo il carattere ":" e utilizza la funzione `float` per convertire la stringa estratta in un numero a virgola mobile.
 
 \index{string method}
 \index{method!string}
 
-**Esercizio 6:** leggete la documentazione dei metodi di stringa su <https://docs.python.org/3.5/library/stdtypes.html#string-methods>
-Potreste voler fare degli esperimenti con alcuni di essi per assicurarvi di aver capito come funzionano. `strip` e `replace` sono particolarmente utili.
+**Esercizio 6:** leggi la documentazione dei metodi di stringa su
+<https://docs.python.org/3.5/library/stdtypes.html#string-methods>
+Potrebbe essere il caso di fare degli esperimenti con alcuni di essi per assicurarti di aver capito come funzionano. `strip` e `replace` sono particolarmente utili.
 
-La documentazione utilizza una sintassi che potrebbe essere fonte di confusione. Ad esempio, in `find(sub[, start[, end]])`, le parentesi indicano argomenti opzionali. Quindi `sub` è richiesto, ma `start` è opzionale e se si include `start`, allora `end` è opzionale.
+La documentazione utilizza una sintassi che potrebbe essere fonte di confusione. Ad esempio, in `find(sub[, start[, end]])`, le parentesi indicano argomenti opzionali. In altre parole `sub` è necessario, `start` è facoltativo ma nel caso tu lo inserisca, allora `end` diventa opzionale.
