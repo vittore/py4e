@@ -12,13 +12,13 @@ Persistenza
 \index{persistence}
 \index{secondary memory}
 
-Finora, abbiamo imparato come scrivere programmi e comunicare le nostre intenzioni all'*unità di elaborazione centrale* usando l'esecuzione condizionale, le funzioni e le iterazioni. Abbiamo imparato come creare e utilizzare strutture di dati nella *memoria principale*. La CPU e la memoria sono i luoghi dove il nostro software lavora e funziona.
-È dove si forma tutto il "pensiero".  Ma se ricordate le nostre discussioni sull'architettura hardware, una volta che l'alimentazione viene spenta, qualsiasi cosa memorizzata nella CPU o nella memoria principale viene cancellata. Così fino ad ora, i nostri programmi sono stati solo fugaci esercizi divertenti per imparare Python.
+Finora, abbiamo imparato come scrivere programmi e comunicare le nostre intenzioni all'*unità di elaborazione centrale* usando l'esecuzione condizionale, le funzioni e le iterazioni. Abbiamo anche imparato come creare e utilizzare strutture di dati nella *memoria principale*. La CPU e la memoria RAM sono i luoghi dove il nostro software lavora e funziona.
+È dove si forma tutto il "pensiero".  Ma se ricordate le nostre discussioni sull'architettura hardware, una volta che l'alimentazione viene tolta, qualsiasi cosa memorizzata nella CPU o nella memoria principale viene cancellata. Praticamente, i nostri programmi sono stati solo fugaci esercizi divertenti per imparare Python.
 
 ![Secondary Memory](height=2.5in@../images/arch)
 
-In questo capitolo, iniziamo a lavorare con la *Memoria Secondaria* (o file). La memoria secondaria non viene cancellata quando si spegne l'alimentazione o, nel caso di un'unità flash USB, i dati che ricaviamo dai nostri programmi possono essere rimossi dal sistema e trasportati su un altro sistema.  
-Ci concentreremo principalmente sulla lettura e la scrittura di file di testo come quelli che creiamo in un editor di testo. Più avanti vedremo come lavorare con i file di database che sono file binari, progettati specificamente per essere letti e scritti tramite programmi di database.
+In questo capitolo, iniziamo a lavorare con i file nella *Memoria Secondaria* che, come scritto, non viene cancellata quando si spegne il pc o, nel caso di utilizzo di un'unità flash USB, i dati prodotti dai nostri script possono essere rimossi dal sistema e trasportati su un altro sistema.  
+Ci concentreremo principalmente sulla lettura e la scrittura di file di testo simile a quelli che creiamo in un editor di testo. Più avanti vedremo come lavorare con i file di database che sono file binari, progettati specificamente per essere letti e scritti tramite programmi di database.
 
 Aprire i file
 -------------
@@ -27,9 +27,9 @@ Aprire i file
 \index{open function}
 \index{function!open}
 
-Quando vogliamo leggere o scrivere un file (ad esempio sul disco rigido), dobbiamo prima *aprire* il file. L'apertura del file comunica con il vostro sistema operativo, che sa dove sono archiviati i dati per ogni file. Quando aprite un file, chiedete al sistema operativo di trovare il file tramite il suo nome e di assicurarsi che il file esista. In questo esempio, apriamo il file `mbox.txt`, che dovrebbe essere memorizzato nella stessa cartella in cui vi trovate quando avviate Python.
+Quando vogliamo leggere o scrivere un file (ad esempio sul disco rigido), dobbiamo prima *aprire* il file. Quando apri un file, chiedi al sistema operativo di trovare il file di cui hai fornito il nome e di assicurarsi che esista. Nell'esempio seguente, apriremo il file `mbox.txt`, che dovrebbe essere memorizzato nella stessa cartella da cui avvii Python.
 
-Potete scaricare questo file da [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
+Puoi scaricare questo file da [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
 
     >>> fhand = open ('mbox.txt')
     >>> print(fhand)
