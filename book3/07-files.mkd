@@ -38,7 +38,7 @@ Puoi scaricare questo file da [www.py4e.com/code3/mbox.txt](http://www.py4e.com/
 \index{file handle}
 
 
-Se l'`apertura` ha successo, il sistema operativo ci restituisce un *handle di file *. L'handle del file non è il dato reale contenuto nel file, ma è invece una "maniglia" che possiamo usare per leggere i dati. Viene fornito un handle se il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
+3Se l'operazione `Open` ha successo, il sistema operativo ci restituisce un *file handle*. L'handle del file non rappresenta il dato reale contenuto nel file, ma piuttosto una "maniglia" che possiamo usare per leggere i dati. Viene fornito un handle se il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
 
 ![A File Handle](height=2.0in@../images/handle)
 
