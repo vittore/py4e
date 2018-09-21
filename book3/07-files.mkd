@@ -38,24 +38,24 @@ Puoi scaricare questo file da [www.py4e.com/code3/mbox.txt](http://www.py4e.com/
 \index{file handle}
 
 
-3Se l'operazione `Open` ha successo, il sistema operativo ci restituisce un *file handle*. L'handle del file non rappresenta il dato reale contenuto nel file, ma piuttosto una "maniglia" che possiamo usare per leggere i dati. Viene fornito un handle se il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
+Se l'operazione `Open` ha successo, il sistema operativo ci restituisce un *file handle*. L'handle del file non rappresenta il dato reale contenuto nel file, ma piuttosto una "maniglia" che possiamo usare per leggere i dati. Viene fornito un handle che indica che il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
 
 ![A File Handle](height=2.0in@../images/handle)
 
-Se il file non esiste, `open` fallirà con un traceback e non avrete un handle per accedere ai contenuti del file:
+Se il file non esiste, `open` fallirà visualizzando un traceback e non avrai un handle che ti permetta di accedere ai contenuti del file:
 
     >>> fhand = open ('stuff.txt')
     Traceback (most recent call last) :
      File "<stdin>", riga 1, in <module>
     FileNotFoundError: [Errno 2] No such file or directory: 'stuff.txt'
 
-Successivamente useremo `try` e` except` per gestire con più eleganza la situazione in cui si tenta di aprire un file che non esiste.
+Successivamente useremo `try` e `except` per gestire con più eleganza la situazione in cui si prova ad aprire un file che non esiste.
 
 File di testo e righe
 --------------------
 
 
-Un file di testo può essere pensato come una sequenza di righe, proprio come una stringa Python può essere pensata come una sequenza di caratteri. Ad esempio, questo è un file di testo dimostrativo che registra l'attività di posta da vari individui di un team di sviluppo di progetti open source:
+Un file di testo può essere pensato come una sequenza di righe, proprio come una stringa Python può essere vista come una sequenza di caratteri. Ad esempio, questo è un file di testo dimostrativo che registra l'attività di posta di vari appartenenti di un team di sviluppo di progetti open source:
 
 `From stephen.marquard@uct.ac.za Sab 5 gen 09:14:16 2008` \
 `Return-Path: <postmaster@collab.sakaiproject.org> `\
@@ -71,11 +71,11 @@ L'intero file di interazioni di posta è disponibile su
 
 [www.py4e.com/code3/mbox.txt](http://www.py4e.com/code3/mbox.txt)
 
-e una versione abbreviata del file è disponibile su
+e una versione ridotta del file è disponibile su
 
 [www.py4e.com/code3/mbox-short.txt](http://www.py4e.com/code3/mbox-short.txt)
 
-Questi file sono in un formato standard per file contenenti più messaggi di posta. Le righe che iniziano con "From" separano i messaggi e le righe che iniziano con "From:" fanno parte dei messaggi. Per ulteriori informazioni sul formato mbox, consultate
+Questi file sono strutturati in un formato standard per file contenenti più messaggi di posta. Le righe che iniziano con "From" separano i messaggi e le righe che iniziano con "From:" fanno parte dei messaggi. Per ulteriori informazioni sul formato mbox, consulta:
 
 [en.wikipedia.org/wiki/Mbox](en.wikipedia.org/wiki/Mbox).  
 
@@ -84,16 +84,22 @@ Per suddividere il file in righe, c'è un carattere speciale che rappresenta la 
 
 \index{newline}
 
-In Python, rappresentiamo il carattere *newline* con backslash-n tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Quando guardiamo la variabile immettendo "stuff" nell'interprete, ci mostra `\n` nella stringa, ma quando usiamo` print` per mostrare la stringa, vediamo la stringa spezzata in due righe dal carattere newline.
+In Python, il carattere *newline* viene rappresentato con backslash-n (\n) tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Prendi in considerazione il seguente listato. Il contenuto che stiamo per inserendo nella variabile "stuff" nell'interprete, ci mostra che la stringa contiene i caratteri `\n`. Quando però la stampiamo tramite il comando `print`, puoi notare che la stringa viene mostrata su due righe, spezzata nel punto dove è presente newline.
 
-    >>> stuff = 'Hello \ nWorld!'
-    >>> stuff' Ciao \ nWorld!'
-    >>> print (stuff) Hello World!
-    >>> stuff = 'X \ nY'
-    >>> print (stuff) X Y
-    >>> len (stuff) 3
+    >>> stuff = 'Hello\nWorld!'
+    >>> stuff
+    'Hello\nWorld!'
+    >>> print(stuff)
+    Hello
+    World!
+    >>> stuff = 'X\nY'
+    >>> print(stuff)
+    X
+    Y
+    >>> len(stuff)
+    3
 
-Potete anche vedere che la lunghezza della stringa `X\nY` è di *tre* caratteri perché il carattere newline conta come un singolo carattere.  Quindi, quando guardiamo le linee in un file, dobbiamo *immaginare* che ci sia uno speciale carattere invisibile chiamato newline alla fine di ogni riga che segna la fine della riga.  Quindi il carattere newline divide i caratteri del file in righe.
+Nota che nel secondo caso la lunghezza della stringa `X\nY` è di *tre* caratteri perché il carattere newline conta come un singolo carattere.  Quindi, quando guardiamo le linee in un file, dobbiamo *immaginare* che ci sia uno speciale carattere invisibile chiamato newline alla fine di ogni riga che indica la fine della riga. Quindi il carattere newline divide i caratteri del file in righe.
 
 Lettura dei file
 -------------
@@ -101,48 +107,48 @@ Lettura dei file
 \index{file!reading}
 \index{counter}
 
-Mentre *l'handle* del file non contiene i dati per il file, è abbastanza semplice costruire un ciclo `for` per leggere e contare ciascuna delle righe in un file:
+Mentre il *file handle* non contiene i dati per il file, è abbastanza semplice costruire un ciclo `for` per leggere e contare ciascuna delle righe in un file:
 
 \VerbatimInput{../code3/open.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Possiamo usare l'handle del file come sequenza nel nostro ciclo `for`. Il nostro ciclo `for` conta semplicemente il numero di righe nel file e le visualizza. La traduzione approssimativa del ciclo `for` in italiano è," per ogni riga nel file rappresentato dall'handle del file, aggiungi uno alla variabile `count`." La ragione per cui la funzione `open` non legge l'intero file è che il file potrebbe essere abbastanza grande con molti gigabyte di dati. L'istruzione `open` richiede lo stesso tempo indipendentemente dalla dimensione del file. Il ciclo `for` fa effettivamente in modo che vengano letti i dati contenuti nel file.  
+Possiamo usare il *file handle* come sequenza per il ciclo `for` che, in questo caso, ne trova e visualizza semplicemente il numero di righe . La traduzione approssimativa del ciclo `for` in italiano è, "per ogni riga nel file indicato dal *file handle*, aggiungi uno alla variabile `count`." La ragione per cui la funzione `open` non legge subito l'intero file è perchè potrebbe essere di notevoli dimensioni e contenere  molti gigabyte di dati. L'istruzione `open` richiede lo stesso tempo indipendentemente dalla dimensione del file. Il ciclo `for` effettivamente fa in modo che vengano letti i dati contenuti nel file.  
 
-Quando il file viene letto utilizzando un ciclo `for` in questo modo, Python si occupa di suddividere i dati nel file in righe separate usando il carattere newline. Python legge ogni riga fino al carattere newline e include il newline come ultimo carattere nella variabile `line` per ogni iterazione del ciclo` for`.  
+Quando il file viene letto utilizzando un ciclo `for`, Python si occupa di suddividere i dati in righe separate usando il carattere newline. Python legge ogni riga fino al carattere newline e lo include come ultimo carattere nella variabile `line` in ogni iterazione del ciclo `for`.  
 
-Poiché il ciclo `for` legge i dati una riga per volta, può leggere e contare efficientemente le righe in file di grandi dimensioni senza esaurire la memoria principale per archiviare i dati. Il programma di cui poc'anzi può contare le righe in file di qualsiasi dimensione utilizzando pochissima memoria poiché ogni riga viene letta, contata e quindi scartata.  Se sapete che il file è relativamente piccolo rispetto alla dimensione della memoria principale, potete leggere l'intero file in un'unica stringa utilizzando il metodo `read` sull'handle del file.
+Poiché il ciclo `for` prende in considerazione i dati una riga alla volta, può leggere e contare efficientemente le righe in file di grandi dimensioni senza esaurire la memoria principale. Lo script precedente può contare le righe in file di qualsiasi dimensione utilizzando pochissima memoria dato che ogni riga, dopo essere stata letta e "contata" , viene subito dopo scartata.
+Se il file è relativamente piccolo rispetto alla dimensione della memoria principale, puoi leggere l'intero file in un'unica stringa applicando il metodo `read` sul *file handle*:
 
-    >>> fhand = open ('mbox-short.txt')
-    >>> inp = fhand.read ()
-    >>> print (len (inp))
+    >>> fhand = open('mbox-short.txt')
+    >>> inp = fhand.read()
+    >>> print(len(inp))
     94626
-    >>> print (inp [: 20])
+    >>> print(inp[:20])
     From stephen.marquar
 
-In questo esempio, l'intero contenuto (tutti i 94.626 caratteri) del file `mbox-short.txt` viene letto direttamente nella variabile` inp`. Usiamo il taglio delle stringhe per stampare i primi 20 caratteri dei dati di stringa memorizzati in `inp`.  
+In questo esempio, l'intero contenuto del file `mbox-short.txt` (tutti i 94.626 caratteri) viene letto direttamente nella variabile `inp`. Usiamo il taglio delle stringhe per stampare i primi 20 caratteri dei dati di stringa memorizzati in `inp`.  
 
-Quando il file viene letto in questo modo, tutti i caratteri, includendo tutte le righe e i caratteri newline vengono considerati come una grande stringa nella variabile *inp*.
-Ricordate che questa forma della funzione `open` dovrebbe essere usata solo se i dati del file si adattano comodamente alla memoria
+Quando il file viene letto in questo modo, tutti i caratteri, inclusi tutte le righe e i caratteri newline, vengono considerati come una grande stringa nella variabile *inp*. Ricorda che questa applicazione della funzione `open` dovrebbe essere usata solo se i dati del file "entrano" comodamente nella memoria principale del vostro computer.
 
-principale del vostro computer.  Se il file è troppo grande per adattarsi alla memoria principale, dovreste scrivere il vostro programma per leggere il file in blocchi utilizzando un ciclo `for` o` while`.
+Se il file è troppo grande per adattarsi alla memoria principale, dovresti scrivere il tuo programma per leggere il file in blocchi utilizzando un ciclo `for` o `while`.
 
 Ricerche in un file
 ------------------------
 
-Quando si cercano dei dati in un file, è uno molto comune leggere un file ignorando la maggior parte delle righe e analizzando solo le righe che soddisfano una particolare condizione. Possiamo combinare il modello per la lettura di un file con i metodi per le stringhe per costruire semplici meccanismi di ricerca.
+Quando si cercano dei dati in un file è molto comune leggere un file ignorando la maggior parte delle righe analizzando solo quelle che soddisfano una particolare condizione. Possiamo combinare il modello per la lettura di un file con i metodi per le stringhe per costruire i primi semplici meccanismi di ricerca.
 \index{filter pattern}
 \index{pattern!filter}
 
-Ad esempio, se volessimo leggere un file e stampare solo le righe che iniziano con il prefisso "From:", potremmo usare il metodo per le stringhe stringhe *startswith* per selezionare solo le righe con il prefisso desiderato:
+Ad esempio, se volessimo leggere un file e stampare solo le righe che iniziano con il prefisso "From:", potremmo usare il metodo per le stringhe *startswith* per selezionare solo le righe con il prefisso desiderato:
 
 \VerbatimInput{../code3/search1.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Quando questo programma viene eseguito, viene visualizzato il seguente output:
+Quando questo programma viene eseguito viene visualizzato il seguente output:
 
     From: stephen.marquard@uct.ac.za
 
@@ -154,16 +160,16 @@ Quando questo programma viene eseguito, viene visualizzato il seguente output:
 
     ...  
 
-L'output sembra ottimo dato che le uniche righe che stiamo visualizzando sono quelle che iniziano con "From:", ma perché stiamo vedendo le righe vuote in più? Ciò è dovuto al carattere invisibile *newline*.
+L'output sembra ottimo dato che le uniche righe che stiamo visualizzando sono quelle che iniziano con "From:". Perché allora stiamo vedendo delle righe vuote in più? Ciò è dovuto al carattere invisibile *newline*.
 
-Ognuna delle righe termina con un carattere newline, quindi l'istruzione `print` visualizza la stringa nella variabile *line* che include una nuova riga e quindi` print` visualizza *un'altra* nuova riga, ottenendo l'effetto di doppia spaziatura che vediamo.  Potremmo usare il taglio delle stringhe per visualizzare tutto tranne l'ultimo carattere, ma un approccio più semplice è usare il metodo *rstrip* che rimuove gli spazi bianchi dal lato destro di una stringa, come segue:
+Ognuna delle righe termina con il carattere newline. L'istruzione `print` visualizza la stringa nella variabile *line* che include una riga e quindi `print` visualizza *un'altra* nuova riga, ottenendo l'effetto di doppia spaziatura che vediamo. Potremmo usare il taglio delle stringhe per visualizzare tutto tranne l'ultimo carattere, ma c'è un approccio più semplice: usare il metodo *rstrip* per rimuovere gli spazi bianchi dal lato destro di una stringa, come nell'esempio seguente:
 
 \VerbatimInput{../code3/search2.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Quando questo programma viene eseguito, viene visualizzato il seguente output:
+Quando eseguirai questo programma, otterrai il seguente output:
 
     From: stephen.marquard@uct.ac.za
     From: louis@media.berkeley.edu
@@ -174,16 +180,18 @@ Quando questo programma viene eseguito, viene visualizzato il seguente output:
     From: cwen@iupui.edu
     ...  
 
-Man mano che i programmi di elaborazione dei file diventano più complicati, potreste voler strutturare i vostri cicli di ricerca utilizzando `continue`. L'idea di base del ciclo di ricerca è che state cercando righe "interessanti" e saltando efficacemente righe "non interessanti". E poi quando trovate una riga interessante, facciate qualcosa con quella riga.  Potete strutturare il ciclo per seguire lo schema che salti le righe non interessanti come segue:
+Man mano che i tuoi script di manipolazione file diventano più complessi, potresti voler strutturare i cicli di ricerca utilizzando `continue`. L'idea di base del ciclo di ricerca è che stai cercando le righe "interessanti" e ignorando quelle "non interessanti". E, quando trovi una riga interessante, tu voglia farci qualcosa. Potresti strutturare questo tipo di ciclo come nell'esempio seguente:
 
 \VerbatimInput{../code3/search3.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-L'output del programma è lo stesso. In italiano, le righe non interessanti sono quelle che non iniziano con "From:", che saltiamo usando `continue`. Per le righe "interessanti" (cioè quelle che iniziano con "From:") eseguiamo l'elaborazione su quelle righe.  Possiamo usare il metodo oer le stringhe `find` per simulare una ricerca nell'editor di testo che trova le righe in cui la stringa ricercata si trova in qualsiasi punto della riga.
+L'output del programma è lo stesso. In altre parole, le righe non interessanti sono quelle che non iniziano con "From:", che vengono saltate usando `continue`. L'elaborazione verrà riservata alle righe "interessanti" (cioè quelle che iniziano con "From:").
 
-Poiché `find` cerca un'occorrenza di una stringa all'interno di un'altra stringa e restituisce la posizione della stringa o -1 se la stringa non è stata trovata, possiamo scrivere il seguente ciclo per mostrare le righe che contengono la stringa" @uct.ac.za "(cioè, quelle che provengono dall'università di Cape Town in Sud Africa):
+Possiamo usare il metodo `find` per simulare una ricerca simile a quella di un editor di testo che trova le righe che contengono la stringa ricercata.
+
+Dato che `find` cerca una stringa all'interno di un'altra e ne restituisce o la posizione o -1 se la stringa non è presente, possiamo scrivere il ciclo seguente per visualizzare le righe che contengono la stringa "@uct.ac.za "(cioè, le email che provengono dall'università di Cape Town in Sud Africa):
 
 \VerbatimInput{../code3/search4.py}
 \begin{trinketfiles}
@@ -204,46 +212,49 @@ Che produce il seguente output:
 Far scegliere all'utente il nome del file
 -------------------------------------
 
-Non vogliamo davvero dover modificare il nostro codice Python ogni volta che vogliamo elaborare un file diverso. Sarebbe più utile chiedere all'utente di inserire la stringa del nome del file ogni volta che il programma viene eseguito in modo che possano usare il nostro programma su file diversi senza modificare il codice Python.  
+Non è il caso di modificare il nostro codice Python ogni volta che vogliamo elaborare un file diverso. È più utile chiedere all'utente di inserire il nome del file ogni volta che il programma viene eseguito. In questo modo è possibile usare il nostro programma su file diversi senza modificare continuamente il codice.  
 
-Questo è abbastanza semplice facendo leggendo il nome del file dall'utente utilizzando `input` come segue:
+È una modifica abbastanza semplice da implementare: l'utente potrà inserire il nome del file utilizzando la funzione `input`:
 
 \VerbatimInput{../code3/search6.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Leggiamo il nome del file inserito dell'utente e lo posizioniamo in una variabile denominata `fname` e apriamo quel file. Ora possiamo eseguire il programma ripetutamente su file diversi.
+Il nome del file inserito dell'utente viene salvato nella variabile `fname` e successivamente aperto. Ora è possibile eseguire il programma su file diversi senza alterarne continuamente il codice.
 
     python search6.py
-    Inserisci il nome del file: mbox.txt
-    Ci sono 1797 righe di oggetto in mbox.txt
+    Enter the file name: mbox.txt
+    There were 1797 subject lines in mbox.txt
 
     python search6.py
-    Inserisci il nome del file: mbox-short.txt
-    Ci sono 27 righe di soggetto in mbox-short.txt
+    Enter the file name: mbox-short.txt
+    There were 27 subject lines in mbox-short.txt
 
-Prima di sbirciare nella prossima sezione, date uno sguardo al programma precedente e chiedetevi: "Che cosa potrebbe andare storto qui?"o" Che cosa potrebbe fare il nostro amico utente per far sì che il nostro piccolo programma non esca con un traceback, facendoci sembrare non proprio brillanti agli occhi dei nostri utenti?"
+Prima di sbirciare la prossima sezione, dai un'occhiata al programma precedente e prova a chiederti: "Che cosa potrebbe andare storto?" o "Che cosa potrebbe fare il nostro amato utente per far sì che il nostro piccolo programma si blocchi visualizzando un traceback, facendoti sembrare non proprio brillante agli occhi dei tuoi utenti?"
 
 Utilizzare `try, except` e `open`
 -----------------------------------------------------
 
-Vi ho detto di non sbirciare. Questa è la vostra ultima possibilità.  Cosa succede se il nostro utente digita qualcosa che non è il nome di un file?
+Ti ho scritto di non sbirciare. Questa è la tua ultima possibilità.
+
+Cosa succede se il nostro utente digita qualcosa che non è il nome di un file?
+
       python search6.py
-      Immettere il nome del file: missing.txt
-      Traceback (chiamata più recente per ultima):
+      Enter the file name: missing.txt
+      Traceback (most recent call last):
        File "search6.py", line 2, in <module>
         fhand = open (fname)
       FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'
 
       python search6.py
-      Immettere il nome del file: na na boo boo
-      Traceback (chiamata più recente per ultima):
+      Enter the file name: na na boo boo
+      Traceback (most recent call last):
        file "search6.py", riga 2, in <module>
         fhand = open (fname)
       FileNotFoundError: [Errno 2] No such file or directory : 'na na boo boo'
 
-Non ridete. Gli utenti alla fine faranno tutte le cose che possono fare per violare i programmi, di proposito o con intenzioni malevole. In effetti, un componente importante di qualsiasi team di sviluppo software è una persona o un gruppo chiamato *Quality Assurance* (o QA in breve) il cui compito è quello di fare le cose più folli possibili nel tentativo di violare il software che lo sviluppatore ha creato.
+Non ridere. Gli utenti faranno tutte le cose che possono fare per violare i programmi, di proposito o con intenzioni malevole. In effetti, un componente importante di qualsiasi team di sviluppo software è una persona o un gruppo chiamato *Quality Assurance* (o QA in breve) il cui compito è quello di fare le cose più folli possibili nel tentativo di violare il software che lo sviluppatore ha creato.
 
 \index{Quality Assurance}
 \index{QA}
