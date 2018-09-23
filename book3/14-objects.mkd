@@ -68,7 +68,9 @@ In questo codice, vogliamo chiamare il metodo `__getitem__` nella classe `list` 
     'insert', 'pop', 'remove', 'reverse', 'sort']
     >>>
 
-La definizione precisa di `dir()` è che elenca i *metodi* e gli *attributi* di un oggetto Python.  Il resto di questo capitolo definirà tutti i termini sopra riportati, quindi assicuratevi di tornare indietro dopo aver completato il capitolo e rileggete i paragrafi precedenti per verificare la vostra comprensione.  
+Più precisamente `dir()` elenca i *metodi* e gli *attributi* di un oggetto.
+
+Il resto di questo capitolo ti fornirà una definizione più precisa di tutti i termini già riportati, quindi, dopo aver completato questo capitolo, rileggi i paragrafi precedenti per verificare quanto to abbia veramente appreso.  
 
 Iniziare con i programmi
 ----------------------
