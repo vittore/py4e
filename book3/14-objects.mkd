@@ -91,9 +91,7 @@ Quando siamo "dentro" il programma, abbiamo alcune interazioni definite con il m
 
 \VerbatimInput{../code3/urllinks.py}
 
-Leggiamo l'URL in una stringa, e poi lo passiamo in `urllib` per recuperare i dati dal web.   La libreria `urllib` usa la libreria `socket` per realizzare la connessione di rete per recuperare i dati.  Prendiamo la stringa che otteniamo da 'urllib` e la consegniamo a BeautifulSoup per l'analisi. BeautifulSoup utilizza un altro oggetto chiamato `html.parser`   
-^[https://docs.python.org/3/library/html.parser.html] e restituisce un oggetto.  
-Chiamiamo il metodo `tags()` nell'oggetto restituito e poi prendiamo un dizionario di oggetti tag, e passiamo in rassegna i tag e chiamiamo il metodo `get()` per ogni tag per visualizzare l'attributo 'href'.
+L'URL viene richiesto come stringa, poi passato in `urllib` per il recupero dei dati da web. La libreria `urllib` effettua la  connessione di rete appoggiandosi alla libreria `socket`. La stringa scaricata da `urllib` viene consegnata a BeautifulSoup per l'analisi. BeautifulSoup utilizza l'oggetto `html.parser`^[https://docs.python.org/3/library/html.parser.html] per restituire un oggetto a cui viene applicato il metodo `tags()` per generare un dizionario di oggetti tag, che vengono passati in rassegna tramite il metodo `get()` per visualizzarne l'eventuale attributo 'href'.
 
 ![A Program as Network of Objects](height=1.50in@../images/program-oo)
 
