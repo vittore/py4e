@@ -93,9 +93,11 @@ Quando siamo "dentro" il programma, abbiamo alcune interazioni definite con il m
 
 L'URL viene richiesto come stringa, poi passato in `urllib` per il recupero dei dati da web. La libreria `urllib` effettua la  connessione di rete appoggiandosi alla libreria `socket`. La stringa scaricata da `urllib` viene consegnata a BeautifulSoup per l'analisi. BeautifulSoup utilizza l'oggetto `html.parser`^[https://docs.python.org/3/library/html.parser.html] per restituire un oggetto a cui viene applicato il metodo `tags()` per generare un dizionario di oggetti tag, che vengono passati in rassegna tramite il metodo `get()` per visualizzarne l'eventuale attributo 'href'.
 
+Possiamo rappressentare con la seguente immagine l'interazione degli oggetti di questo programma appena descritta.  
+
 ![A Program as Network of Objects](height=1.50in@../images/program-oo)
 
-Possiamo disegnare un'immagine di questo programma e di come gli oggetti lavorano insieme.  
+
 
 La chiave qui non è comprendere appieno come funziona questo programma, ma vedere come costruiamo una rete di oggetti che interagiscono e orchestrare lo scambio di informazioni tra gli oggetti per creare un programma.  
 
