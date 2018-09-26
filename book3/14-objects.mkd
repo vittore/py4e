@@ -164,19 +164,32 @@ Ogni oggetto/istanza Partyanimal contiene al suo interno una variabile `x` e un 
 an.party()
 ~~~~
 
-Quando viene chiamato il metodo `party`, il primo parametro (che chiamiamo per convenzione `self`) punta alla particolare istanza dell'oggetto PartyAnimal che viene chiamata all'interno di `party`.  All'interno del metodo `party`, vedremo la riga:
+Quando viene chiamato il metodo `party`, il primo parametro (chiamato per convenzione `self`) punta alla particolare istanza dell'oggetto PartyAnimal che viene chiamata all'interno di `party`.  All'interno del metodo `party`, possiamo vedere la riga:
 
 ~~~~ {.python}
 self.x = self.x + 1
 ~~~~
 
-Questa sintassi che usa l'operatore 'punto' sta indicando 'la x dentro self'. Quindi ogni volta che viene chiamato `party()`, il valore interno `x` viene incrementato di 1 e il valore viene visualizzato.  Per aiutare a comprendere la differenza tra una funzione globale e un metodo all'interno di una classe/oggetto, la seguente riga è un altro modo per chiamare il metodo `party` all'interno dell'oggetto `an`:
+Questa sintassi utilizzando l'operatore 'punto' indica 'la x dentro self'. Quindi ogni volta che viene chiamato `party()` viene incrementato di 1 il valore interno `x` che viene poi visualizzato.
+
+Per aiutarti a comprendere la differenza tra una funzione globale e un metodo all'interno di una classe/oggetto, nella riga seguente puoi vedere un altro modo per chiamare il metodo `party` all'interno dell'oggetto `an`:
 
 ~~~~ {.python}
 PartyAnimal.party(an)
 ~~~~
 
-In questa variante, stiamo accedendo al codice dalla *classe* e passando esplicitamente il puntatore dell'oggetto `an` come primo parametro (cioè `self` all'interno del metodo). Potete pensare a `an.party()` come ad un'abbreviazione per la riga precedente.  Quando il programma viene eseguito, produce il seguente output: So far 1 So far 2 So far 3 So far 4 L'oggetto è stato costituito, e il metodo `party` è chiamato quattro volte, sia incrementando che visualizzando il valore di `x` all'interno l'oggetto `an`.
+In questa variante stiamo accedendo al codice dalla *classe* e passando esplicitamente il puntatore dell'oggetto `an` come primo parametro (ad esempio `self` all'interno del metodo).
+
+Puoi pensare a `an.party()` come ad un'abbreviazione della riga precedente.
+
+Quando il programma viene eseguito verrà generato il seguente output:
+
+So far 1
+So far 2
+So far 3
+So far 4
+
+L'oggetto è stato costituito e il metodo `party` è chiamato quattro volte, incrementando e visualizzando il valore di `x` all'interno l'oggetto `an`.
 
 Classi come tipi
 ----------------
@@ -184,11 +197,11 @@ Classi come tipi
 \index{dir}
 \index{type}
 
-Come abbiamo visto, in Python, tutte le variabili hanno un tipo.  E possiamo usare la funzione integrata `dir` per esaminare le possibilità di una variabile.   Possiamo usare `type` e `dir` con le classi che creiamo.
+Come abbiamo visto, in Python tutte le variabili hanno un `type` che possiamo esaminare tramite la funzione integrata `dir`. queste funzionalità sono estese alle classi che creiamo.
 
 \VerbatimInput{../code3/party3.py}
 
-Quando questo programma viene eseguito, produce il seguente output:
+che può produrre l'output seguente:
 
      Type <class '__main__.PartyAnimal '>
     Dir ['__class__', '__delattr__', ...
@@ -197,7 +210,7 @@ Quando questo programma viene eseguito, produce il seguente output:
     Type <class 'int'>
     Type <class 'method'>
 
-Potete notare che usando la parola chiave `class`, abbiamo creato un nuovo tipo. Dall'output di `dir`, potete notare che sia l'attributo intero `x` che il metodo `party` sono disponibili nell'oggetto.
+Puoi notare che  abbiamo creato un nuovo type utilizzando la parola chiave `class`. Come puoi vedere dall'output di `dir` che sia l'attributo intero `x` sia il metodo `party` sono disponibili nell'oggetto.
 
 Ciclo di vita dell'oggetto
 ----------------
@@ -206,7 +219,9 @@ Ciclo di vita dell'oggetto
 \index{destructor}
 \index{object lifecycle}
 
-Negli esempi precedenti, stiamo definendo una classe (template) e usiamo quella classe per crearne un'istanza (oggetto) e quindi usare l'istanza.  Al termine del programma, tutte le variabili vengono eliminate.  Di solito non pensiamo molto alla creazione e distruzione di variabili, ma spesso quando i nostri oggetti diventano più complessi, dobbiamo agire all'interno dell'oggetto per sistemare le cose mentre l'oggetto viene costruito e possibilmente pulire le cose come l'oggetto viene eliminato.  Se vogliamo che il nostro oggetto si renda conto di questi momenti di costruzione e distruzione, aggiungeremo metodi con una denominazione speciale al nostro oggetto:
+Negli esempi precedenti, stiamo definendo una classe (template) e usiamo quella classe per crearne un'istanza (oggetto) e quindi usare l'istanza.  Al termine del programma, tutte le variabili vengono eliminate.  Di solito non pensiamo molto alla creazione e distruzione di variabili, ma spesso quando i nostri oggetti diventano più complessi, dobbiamo agire all'interno dell'oggetto per sistemare le cose mentre l'oggetto viene costruito e possibilmente pulire le cose come l'oggetto viene eliminato.
+
+Se vogliamo che il nostro oggetto si renda conto di questi momenti di costruzione e distruzione, aggiungeremo metodi con una denominazione speciale al nostro oggetto:
 
 \VerbatimInput{../code3/party4.py}
 
@@ -302,20 +317,20 @@ costruttore
 \index{constructor}
 
 destructor
-: un metodo opzionale con un nome speciale (`__del__`) che viene chiamato al momento giusto prima che un oggetto venga distrutto.  I distruttori sono usati raramente.
+: usato raramente, un metodo opzionale con un nome speciale (`__del__`) che viene chiamato appena prima che un oggetto venga distrutto. 
 \index{destructor}
 
 ereditarietà
-: quando creiamo una nuova classe (figlia) estendendo una classe esistente (genitore).  La classe figlia ha tutti gli attributi e i metodi della classe genitore più ulteriori attributi e metodi definiti dalla classe figlio.
+: l'atto di estendere una classe esistente (genitore) tramite la creazione di una nuova classe (figlia). La classe figlia ha tutti gli attributi e i metodi della classe genitore più ulteriori attributi e metodi definiti.
 \index{inheritance}
 
 metodo
-: una funzione che è contenuta all'interno di una classe e gli oggetti costruiti dalla classe. Alcuni modelli orientati agli oggetti usano 'messaggio' invece di 'metodo' per descrivere questo concetto.
+: una funzione che è contenuta all'interno di una classe e degli oggetti costruiti dalla classe. Alcuni modelli orientati agli oggetti usano la parola 'messaggio' invece di 'metodo' per descrivere questo concetto.
 \index{method}
 \index{message}
 
 oggetto
-: un'istanza costruita di una classe.  Un oggetto contiene tutti gli attributi e i metodi definiti dalla classe.     Alcuni documenti orientati agli oggetti usano il termine 'istanza' in modo intercambiabile con 'oggetto'.
+: un'istanza costruita di una classe.  Un oggetto contiene tutti gli attributi e i metodi definiti dalla classe. Alcuni documenti orientati agli oggetti usano il termine 'istanza' in modo intercambiabile con 'oggetto'.
 \index{method}
 
 classe genitore
