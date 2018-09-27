@@ -7,8 +7,7 @@ Valori e tipi
 \index{value}
 \index{type}
 \index{string}
-Un *valore*, come una lettera o un numero, è un elemento basilare che permette ad un programma di funzionare. I valori che abbiamo visto finora sono `1`, `2` e "Hello, World!". Questi valori appartengono a diversi *tipi*: `2` è un numero intero mentre "Hello, World!" è una *stringa*, così chiamata perché composta da una "stringa" di lettere. Tu (e l'interprete) puoi identificare le stringhe poiché racchiuse tra virgolette.
-\index{quotation mark}
+Un *valore*, come una lettera o un numero, è un elemento basilare che permette ad un programma di funzionare. I valori che abbiamo visto finora sono `1`, `2` e "Hello, World!". Questi valori appartengono a diversi *tipi*: `2` è un numero intero mentre "Hello, World!" è una *stringa*, così chiamata perché composta da una "stringa" di lettere. Tu (e l'interprete) puoi identificare le stringhe poiché racchiuse tra virgolette.\index{quotation mark}
 L'istruzione `print` funziona anche con i numeri interi, tramite il comando `python` è possibile avviare l'interprete.
 
 ~~~~ {.python}
@@ -65,10 +64,7 @@ Quando inserisci un numero intero di grandi dimensioni, come "1,000,000", potres
 ~~~~
 
 
-Beh, non è per niente quello che ci aspettavamo! Python interpreta `1,000,000` come se fosse una sequenza di numeri interi separati da virgole, che visualizza inserendo uno spazio in corrispondenza della virgola.
-\index{semantic error}
-\index{error!semantic}
-\index{error message}
+Beh, non è per niente quello che ci aspettavamo! Python interpreta `1,000,000` come se fosse una sequenza di numeri interi separati da virgole, che visualizza inserendo uno spazio in corrispondenza della virgola.\index{semantic error}\index{error!semantic}\index{error message}
 Questo è il primo esempio di errore semantico che vediamo: il codice viene eseguito senza visualizzare messaggi di errore ma non fa l'operazione per la quale pensavamo di averlo progettato.  
 
 Variabili
@@ -113,8 +109,7 @@ Nomi delle variabili e parole chiavi
 ---------------------------
 
 \index{keyword}
-Normalmente i programmatori scelgono nomi per le loro variabili che siano significativi e documentino l'utilizzo della variabile.  Questi nomi, di lunghezza arbitraria, possono contenere sia lettere sia numeri ma non possono iniziare con un numero. Anche se è possibile utilizzare lettere maiuscole, è preferibile iniziare i nomi delle variabili con una lettera minuscola (in seguito ne vedremo il motivo). Il carattere underscore (`_`) appare nel nome di una variabile ed è spesso utilizzato in nomi composti da più parole, come `my_name` o `airspeed_of_unladen_swallow`. I nomi delle variabili possono iniziare con il carattere underscore, ma generalmente evitiamo di farlo a meno che il codice che stiamo scrivendo sia contenuto in librerie che verranno utilizzate da altri.
-\index{underscore character}
+Normalmente i programmatori scelgono nomi per le loro variabili che siano significativi e documentino l'utilizzo della variabile.  Questi nomi, di lunghezza arbitraria, possono contenere sia lettere sia numeri ma non possono iniziare con un numero. Anche se è possibile utilizzare lettere maiuscole, è preferibile iniziare i nomi delle variabili con una lettera minuscola (in seguito ne vedremo il motivo). Il carattere underscore (`_`) appare nel nome di una variabile ed è spesso utilizzato in nomi composti da più parole, come `my_name` o `airspeed_of_unladen_swallow`. I nomi delle variabili possono iniziare con il carattere underscore, ma generalmente evitiamo di farlo a meno che il codice che stiamo scrivendo sia contenuto in librerie che verranno utilizzate da altri.\index{underscore character}
 Se assegni ad una variabile un nome non valido, provocherai un errore di sintassi:
 
 ~~~~ {.python .trinket height="450"}
@@ -128,8 +123,8 @@ SyntaxError: invalid syntax
 
 
 Il nome `76trombones` non è valido perché inizia con un numero, `more@`, invece, perché contiene il carattere non ammesso '@'. Ma cosa c'è di errato in `class`?
-Risulta che `class` è una delle *parole riservate* di Python. L'interprete utilizza queste parole per riconoscere la struttura del programma, quindi non possono essere assegnate alle variabili.
-\index{keyword}
+Risulta che `class` è una delle *parole riservate* di Python. L'interprete utilizza queste parole per riconoscere la struttura del programma, quindi non possono essere assegnate alle variabili.\index{keyword}
+
 Python si riserva 33 parole chiave:
 
 ~~~~
@@ -171,10 +166,7 @@ Ricorda che le istruzioni di assegnazione non producono output.
 Operatori e operandi
 ----------------------
 
-\index{operator, arithmetic}
-\index{arithmetic operator}
-\index{operand}
-\index{expression}
+\index{operator, arithmetic}\index{arithmetic operator}\index{operand}\index{expression}
 Gli *operatori* sono simboli speciali che rappresentano calcoli come l'addizione e la moltiplicazione. I valori a cui è applicato l'operatore sono chiamati *operandi*. Gli operatori `+`, `-`, `*`, `/`, e `**` eseguono rispettivamente le operazioni di addizione, sottrazione, moltiplicazione, divisione, e l'elevamento a potenza, come illustrato negli esempi seguenti:
 
 ~~~~ {.python}
@@ -282,8 +274,7 @@ L'operatore *modulo* viene applicato a numeri interi e fornisce come risultato i
 ~~~~
 
 
-Quindi 7 diviso per 3 fa 2 con il resto di 1. L'operatore modulo si può rivelare sorprendentemente utile. Per esempio, è possibile verificare se un numero è divisibile per un altro: se `x%y` fa zero, allora `x` è divisibile per `y`.
-\index{divisibility}
+Quindi 7 diviso per 3 fa 2 con il resto di 1. L'operatore modulo si può rivelare sorprendentemente utile. Per esempio, è possibile verificare se un numero è divisibile per un altro: se `x%y` fa zero, allora `x` è divisibile per `y`.\index{divisibility}
 È inoltre possibile ricavare da un numero quale sia il valore della cifra o delle cifre più a destra. Per esempio, `x % 10` restituisce la cifra più a destra di `x` (in base 10). In modo simile, `x% 100` restituisce le ultime due cifre.  
 
 Operazioni con le stringhe
@@ -347,8 +338,7 @@ Chuck
 ~~~~
 
 
-La sequenza `\n` alla fine del prompt indica un andare *a capo*, che è un carattere speciale che causa l'interruzione della linea. Ecco perché l'input dell'utente appare sotto il prompt.
-\index{newline}
+La sequenza `\n` alla fine del prompt indica un andare *a capo*, che è un carattere speciale che causa l'interruzione della linea. Ecco perché l'input dell'utente appare sotto il prompt.\index{newline}
 Se ti aspetti che l'utente digiti un intero, è possibile provare a convertire il valore restituito in `int` usando la funzione `int()`.
 
 ~~~~ {.python}
@@ -469,9 +459,7 @@ Debug
 ---------
 
 \index{debugging}
-A questo punto, l'errore di sintassi più probabile che tu possa fare è scegliere un nome di variabile non consentito, come `class` e `yield`, che sono parole chiave, o `odd~job` e` US$ `, che contiene caratteri non consentiti.
-\index{syntax error}
-\index{error!syntax}
+A questo punto, l'errore di sintassi più probabile che tu possa fare è scegliere un nome di variabile non consentito, come `class` e `yield`, che sono parole chiave, o `odd~job` e` US$ `, che contiene caratteri non consentiti.\index{syntax error}\index{error!syntax}
 Se inserisci uno spazio nel nome di variabile, Python riterrà che si tratti di due operandi senza un operatore:
 
 ~~~~ {.python}
@@ -491,12 +479,7 @@ SyntaxError: invalid token
 ~~~~
 
 
-Per quanto riguarda gli errori di sintassi, bisogna dire che i messaggi di errore non sono di grande aiuto. I messaggi più comuni, `SyntaxError: invalid syntax` e `SyntaxError: invalid token`, sono entrambi poco esplicativi.
-\index{error message}
-\index{use before def}
-\index{exception}
-\index{runtime error}
-\index{error!runtime}
+Per quanto riguarda gli errori di sintassi, bisogna dire che i messaggi di errore non sono di grande aiuto. I messaggi più comuni, `SyntaxError: invalid syntax` e `SyntaxError: invalid token`, sono entrambi poco esplicativi.\index{error message}\index{use before def}\index{exception}\index{runtime error}\index{error!runtime}
 L'errore di runtime più comune è "use before def;": cioè l'utilizzo di una variabile prima di averle assegnato un valore. Questo può verificarsi se viene scritta una variabile in modo errato:
 
 ~~~~ {.python}
@@ -506,10 +489,7 @@ NameError: name 'principle' is not defined
 ~~~~
 
 
-I nomi delle variabili sono case-sensitive: `LaTeX` non è lo stesso di `latex`.
-\index{case-sensitivity, variable names}
-\index{semantic error}
-\index{error!semantic}
+I nomi delle variabili sono case-sensitive: `LaTeX` non è lo stesso di `latex`.\index{case-sensitivity, variable names}\index{semantic error}\index{error!semantic}
 A questo punto la causa più probabile di un errore semantico è l'ordine delle operazioni. Ad esempio, per calcolare $1/2\pi$, potresti essere tentato di scrivere:
 
 ~~~~ {.python}
