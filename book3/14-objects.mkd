@@ -210,7 +210,7 @@ che può produrre l'output seguente:
     Type <class 'int'>
     Type <class 'method'>
 
-Puoi notare che  abbiamo creato un nuovo type utilizzando la parola chiave `class`. Come puoi vedere dall'output di `dir` che sia l'attributo intero `x` sia il metodo `party` sono disponibili nell'oggetto.
+Puoi notare che abbiamo creato un nuovo type utilizzando la parola chiave `class` e nell'output di `dir` che sia l'attributo intero `x` sia il metodo `party` sono disponibili nell'oggetto.
 
 Ciclo di vita dell'oggetto
 ----------------
@@ -219,13 +219,13 @@ Ciclo di vita dell'oggetto
 \index{destructor}
 \index{object lifecycle}
 
-Negli esempi precedenti, stiamo definendo una classe (template) e usiamo quella classe per crearne un'istanza (oggetto) e quindi usare l'istanza.  Al termine del programma, tutte le variabili vengono eliminate.  Di solito non pensiamo molto alla creazione e distruzione di variabili, ma spesso quando i nostri oggetti diventano più complessi, dobbiamo agire all'interno dell'oggetto per sistemare le cose mentre l'oggetto viene costruito e possibilmente pulire le cose come l'oggetto viene eliminato.
+Negli esempi precedenti abbiamo definito una classe (template) e l'abbiamo utilizzata per creare un'istanza (oggetto) che poi abbiamo utilizzato fino al termine del programma, momento in cui tutte le variabili sono state eliminate.  Di solito non pensiamo molto alla creazione e distruzione delle variabili ma capita spesso che, quando i nostri oggetti diventano più complessi, dobbiamo agire all'interno dell'oggetto per sistemare le cose mentre l'oggetto viene costruito e possibilmente pulire le cose prima che esso sia eliminato.
 
-Se vogliamo che il nostro oggetto si renda conto di questi momenti di costruzione e distruzione, aggiungeremo metodi con una denominazione speciale al nostro oggetto:
+Se vogliamo che il nostro oggetto si renda conto di questi momenti di costruzione e distruzione, dobbiamo aggiungere dei metodi che hanno una denominazione speciale:
 
 \VerbatimInput{../code3/party4.py}
 
-Quando questo programma viene eseguito, produce il seguente output:
+Questo programma dará luogo al seguente output:
 
     I am contructed
     So far 1
@@ -233,23 +233,37 @@ Quando questo programma viene eseguito, produce il seguente output:
     I am destructed 2
     an contains 42
 
-Poichè Python sta costruendo il nostro oggetto, chiama il nostro metodo `__init__` per darci la possibilità di impostare alcuni valori iniziali o predefiniti per l'oggetto. Quando Python incontra la riga:
+Appena Python inizia a costruire il nostro oggetto, chiama il nostro metodo `__init__` per darci la possibilità di impostare alcuni valori iniziali o predefiniti da passare all'oggetto. Quando Python incontra la riga:
 
 ~~~~
 an = 42
 ~~~~
 
 
-In effetti "butta via il nostro oggetto" in modo da poter riutilizzare la variabile `an` per memorizzare il valore `42`.  Proprio nel momento in cui il nostro oggetto `an` viene "distrutto", viene chiamato il nostro codice distruttore (` __del__`).  Non possiamo impedire che la nostra variabile venga distrutta, ma possiamo fare qualsiasi operazione di pulizia necessaria prima che il nostro oggetto non esista più.  Quando si sviluppano oggetti, è abbastanza comune aggiungere un costruttore a un oggetto per impostarne i valori iniziali, è relativamente raro che sia necessario un distruttore per un oggetto.
+In effetti "cestina il nostro oggetto" in modo da poter riutilizzare la variabile `an` per memorizzare il valore `42`. Proprio nel momento in cui il nostro oggetto `an` viene "distrutto" viene chiamato il codice distruttore (` __del__`).  Non possiamo impedire che la nostra variabile venga distrutta ma possiamo fare ogni operazione di pulizia necessaria prima che il nostro oggetto non esista più.
+
+Durante lo sviluppo di oggetti è abbastanza comune aggiungere un costruttore a un oggetto per impostarne i valori iniziali ed è relativamente altrettanto raro che sia necessario impostarne un distruttore.
 
 Molte istanze
 --------------
 
-Finora, abbiamo definito una classe, creato un singolo oggetto, usato quell'oggetto che infine abbiamo eliminato.   Ma la vera forza della programmazione orientata agli oggetti si rivela quando facciamo molte istanze della nostra classe.  Quando realizziamo oggetti multipli dalla nostra classe, potremmo voler impostare diversi valori iniziali per ciascuno degli oggetti.   Possiamo passare i dati nei costruttori per assegnare a ciascun oggetto un diverso valore iniziale:
+Finora, abbiamo definito una classe, creato un singolo oggetto che abbiamo usato ed infine eliminato. Ma la vera potenza della programmazione orientata agli oggetti si rivela quando utilizziamo molte istanze della nostra classe.
+
+Quando creiamo piú oggetti dalla nostra classe potremmo aver bisogno di impostare valori iniziali diversi per ciascuno di essi. Ciò é possibile passando i dati nei costruttori per assegnare a ciascun oggetto un diverso valore iniziale:
 
 \VerbatimInput{../code3/party5.py}
 
-Il costruttore ha sia un parametro `self` che punta all'istanza dell'oggetto e quindi altri parametri che vengono passati al costruttore mentre l'oggetto viene costruito: s = PartyAnimal('Sally') All'interno del costruttore, la riga: self.name = nam Copia il parametro passato (`nam`) nell'attributo `name` all'interno dell'istanza dell'oggetto.  L'output del programma mostra che ognuno degli oggetti (`s` e `j`) contiene le proprie copie indipendenti di `x` e `nam`:
+Il costruttore ha sia un parametro `self` che punta all'istanza dell'oggetto sia altri parametri che vengono passati al costruttore mentre l'oggetto viene costruito:
+
+`s = PartyAnimal('Sally')` 
+
+la riga presente all'interno del costruttore: 
+
+`self.name = nam`
+
+Copia il parametro passato in (`nam`) nell'attributo `name` all'interno dell'istanza dell'oggetto.
+
+L'output del programma mostra che ognuno degli oggetti (`s` e `j`) contiene le proprie copie indipendenti di `x` e `nam`:
 
     Sally constructed
     Sally party count 1
@@ -260,15 +274,21 @@ Il costruttore ha sia un parametro `self` che punta all'istanza dell'oggetto e q
 Ereditarietà
 -----------
 
-Un'altra potente caratteristica della programmazione orientata agli oggetti è la possibilità di creare una nuova classe estendendo una classe esistente.  Quando estendiamo una classe, chiamiamo la classe originale la 'classe genitore' e la nuova classe come 'classe figlia'.  Per questo esempio, sposteremo la nostra classe `PartyAnimal` nel suo file:
+Un'altra caratteristica potente della programmazione orientata agli oggetti è la possibilità di creare una nuova classe estendendone una giá esistente.  Quando estendiamo una classe, chiamiamo la classe originale 'classe genitore' e la nuova 'classe figlia'.  
+
+In questo esempio sposteremo la nostra classe `PartyAnimal` nel suo file:
 
 \VerbatimInput{../code3/party.py}
 
-Quindi, possiamo 'importare' la classe `PartyAnimal` in un nuovo file ed estenderla come segue:
+Quindi abbiamo la possibilitá di 'importare' la classe `PartyAnimal` in un nuovo file ed estenderla come segue:
 
 \VerbatimInput{../code3/party6.py}
 
-Quando definiamo l'oggetto `CricketFan`, indichiamo che stiamo estendendo la classe `PartyAnimal`.  Ciò significa che tutte le variabili (`x`) e i metodi (`party`) della classe `PartyAnimal` sono ereditate dalla classe `CricketFan`.  Potete vedere che all'interno del metodo `six` nella classe `CricketFan`, possiamo chiamare il metodo `party` dalla classe `PartyAnimal`.  Le variabili e i metodi della classe genitore sono *uniti* nella classe figlio.  Mentre il programma viene eseguito, possiamo vedere che `s` e `j` sono istanze indipendenti di `PartyAnimal` e `CricketFan`.  L'oggetto `j` ha capacità aggiuntive rispetto all'oggetto `s`.
+Nel definire l'oggetto `CricketFan` abbiamo indicato che stiamo estendendo la classe `PartyAnimal`: tutte le variabili (`x`) e i metodi (`party`) della classe `PartyAnimal` sono ereditate dalla classe `CricketFan`.
+
+Puoi vedere che all'interno del metodo `six` nella classe `CricketFan` possiamo chiamare il metodo `party` dalla classe `PartyAnimal`.  Le variabili e i metodi della classe genitore sono *uniti* nella classe figlio.
+
+Durante l'esecuzione del programma possiamo vedere che `s` e `j` sono istanze indipendenti di `PartyAnimal` e `CricketFan`.  L'oggetto `j` ha capacità aggiuntive rispetto all'oggetto `s`.
 
     Sally constructed
     Sally party count 1
@@ -279,19 +299,22 @@ Quando definiamo l'oggetto `CricketFan`, indichiamo che stiamo estendendo la cla
     ['__class__', '__delattr__', ... '__weakref__',
     'name', 'party', 'points', 'six', 'x']
 
-Nell'output `dir` per l'oggetto `j` (istanza della classe `CricketFan`) potete vedere che entrambi hanno gli attributi e i metodi della classe genitore così come gli attributi e i metodi che sono stati aggiunti quando la classe è stata estesa per creare la classe `CricketFan`.
+Nell'output `dir` per l'oggetto `j` (istanza della classe `CricketFan`) puoi vedere che entrambi hanno sia gli attributi e i metodi della classe genitore sia gli attributi e i metodi che sono stati aggiunti quando la classe è stata estesa per creare la classe `CricketFan`.
 
 Sommario
 -------
 
-Questa è un'introduzione molto rapida alla programmazione orientata agli oggetti che si concentra principalmente sulla terminologia e sulla sintassi della definizione e sull'utilizzo degli oggetti. Rivediamo rapidamente il codice che abbiamo visto all'inizio del capitolo. A questo punto dovreste capire appieno cosa sta succedendo.
+Ti ho dato un'introduzione molto basilare sulla programmazione ad oggetti dove mi sono concentrato principalmente sulla terminologia e sulla sintassi  utilizzate nella definizione ed utilizzo degli oggetti.
+
+Diamo ora una rapida occhiata al codice che abbiamo utilizzato dall'inizio di questo capitolo. A questo punto dovresti riuscire a capire appieno cosa stia succedendo.
 
 \VerbatimInput{../code3/party1.py}
 
-La prima riga costruisce un *oggetto* `list`.  Quando Python crea l'oggetto `list`, chiama il metodo *constructor* (chiamato `__init__`) per impostare gli attributi dei dati interni che verranno utilizzati per memorizzare i dati dell'elenco.  
-Grazie all'*incapsulamento* non abbiamo bisogno di sapere, né di preoccuparci di come sono organizzati questi attributi dei dati interni.  
+La prima riga costruisce un *oggetto* `list`.  Durante la sua costruzione viene chiamato il metodo *constructor* (chiamato `__init__`) per impostare gli attributi dei dati interni che verranno utilizzati per memorizzare i dati dell'elenco. Grazie all'*incapsulamento* non abbiamo bisogno di sapere o di preoccuparci di come siano organizzati questi attributi dei dati interni.  
 
-Non passiamo alcun parametro al *costruttore* e quando il costruttore ritorna, usiamo la variabile `stuff` per puntare all'istanza restituita della classe `list`.  La seconda e la terza riga chiamano il metodo `append` con un parametro per aggiungere un nuovo elemento alla fine dell'elenco aggiornando gli attributi all'interno di `stuff`.  Quindi nella quarta riga, chiamiamo il metodo `sort` senza parametri per ordinare i dati all'interno dell'oggetto `stuff`.  
+Non stiamo passando alcun parametro al *costruttore* e quando il costruttore ritorna, usiamo la variabile `stuff` per puntare all'istanza restituita della classe `list`.
+
+La seconda e la terza riga chiamano il metodo `append` con un parametro per aggiungere un nuovo elemento alla fine dell'elenco tramite l'aggiornamento degli attributi all'interno di `stuff`.  Nella quarta riga viene chiamiato il metodo `sort`, senza parametri, per ordinare i dati all'interno dell'oggetto `stuff`.  
 
 Quindi stampiamo il primo elemento nell'elenco usando le parentesi quadre che sono una scorciatoia per chiamare il metodo `__getitem__` all'interno dell'*oggetto* `stuff`.  E questo equivale a chiamare il metodo `__getitem__` nella *classe* `list` passando l'oggetto `stuff` come primo parametro e la posizione che stiamo cercando come secondo parametro.  Alla fine del programma l'oggetto `stuff` viene scartato ma non prima di chiamare il *destructor* (chiamato` __del__`) in modo che l'oggetto possa ripulire le estremità libere se necessario.  
 
