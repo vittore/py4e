@@ -106,7 +106,7 @@ L'espressione booleana dopo l'istruzione `if` è chiamata *condizione*. Al termi
 \index{compound statement}
 \index{statement!compound}
 
-Le istruzioni `if` hanno la stessa struttura delle definizioni di funzione o cicli `for`^[Impareremo a conoscere funzioni e cicli rispettivamente nel Capitolo 4 e 5.]. L'istruzione è composta da una riga di intestazione che termina con i due punti (:) seguita da un blocco indentato. Istruzioni come questa sono definite *composte* perché si estendono su più righe. Pur non essendoci alcun limite al numero di istruzioni che possono apparire nel blocco, deve esserne presente almeno una: Ad esempio, è utile avere un blocco senza istruzioni (sempre come segnaposto per codice non ancora scritto). In tal caso, puoi usare l'istruzione `pass`, che non produce alcun effetto.
+Le istruzioni `if` hanno la stessa struttura delle definizioni di funzione o cicli `for`^[Impareremo a conoscere funzioni e cicli rispettivamente nel Capitolo 4 e 5.]. L'istruzione è composta da una riga di intestazione che termina con i due punti (:) seguita da un blocco indentato. Istruzioni come questa sono definite *composte* perché si estendono su più righe. Pur non essendoci alcun limite al numero di istruzioni che possono apparire nel blocco, deve esserne presente almeno una. Ad esempio, è utile avere un blocco senza istruzioni (sempre come segnaposto per codice non ancora scritto). In tal caso, puoi usare l'istruzione `pass`, che non produce alcun effetto.
 \index{pass statement}
 \index{statement!pass}
 
@@ -228,7 +228,7 @@ La condizione esterna contiene due branch. Il primo contiene una semplice istruz
 
 ![Condizioni nidificate](height=2.0in@../images/nested)
 
-Nonostante l'indentazione delle istruzioni renda la struttura visivamente più intuitiva, le *condizioni nidificate* diventano molto rapidamente difficili da comprendere. In generale, è meglio evitarli quando possibile. Gli operatori logici forniscono spesso un modo per semplificare le istruzioni nidificate. Ad esempio, possiamo riscrivere lo script seguente usando una singola condizione:
+Nonostante l'indentazione delle istruzioni renda la struttura visivamente più intuitiva, le *condizioni nidificate* diventano molto rapidamente difficili da comprendere. In generale, è meglio evitarle quando possibile. Gli operatori logici forniscono spesso un modo per semplificare le istruzioni nidificate. Ad esempio, possiamo riscrivere lo script seguente usando una singola condizione:
 
 ~~~~ {.python}
 if 0 < x:
@@ -292,7 +292,7 @@ ValueError: could not convert string to float: 'fred'
 ~~~~
 
 
-Per gestire questi tipi di errori previsti e inaspettati esiste una funzione condizionale incorporata in Python chiamata "try / except". La finalità di `try` e `except` è collegata al sapere in anticipo che alcune sequenze di istruzioni potrebbero incontrare problemi. Pertanto si possono aggiungere alcune istruzioni alternative da eseguire in caso di errore. Queste istruzioni aggiuntive (il blocco except) verranno ignorate se non si verificano errori. Potresti pensare alla funzione `try` e `except` in Python come ad una "polizza assicurativa" su una sequenza di istruzioni. Ad esempio, possiamo riscrivere il codice del nostro convertitore di temperatura come segue:
+Per gestire questi tipi di errori previsti e inaspettati esiste una funzione condizionale incorporata in Python chiamata "try/except". La finalità di `try` e `except` è collegata al sapere in anticipo che alcune sequenze di istruzioni potrebbero incontrare problemi. Pertanto si possono aggiungere alcune istruzioni alternative da eseguire in caso di errore. Queste istruzioni aggiuntive (il blocco except) verranno ignorate se non si verificano errori. Potresti pensare alla funzione `try` e `except` in Python come ad una "polizza assicurativa" su una sequenza di istruzioni. Ad esempio, possiamo riscrivere il codice del nostro convertitore di temperatura come segue:
 
 \VerbatimInput{../code3/fahren2.py}
 
