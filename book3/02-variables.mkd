@@ -127,7 +127,7 @@ SyntaxError: invalid syntax
 ~~~~
 
 
-Il nome `76trombones` non è valido perché inizia con un numero, `more@`, invece, perché contiene il carattere non ammesso '@'. Ma cosa c'è di errato in `class`? 
+Il nome `76trombones` non è valido perché inizia con un numero, `more@`, invece, perché contiene il carattere non ammesso '@'. Ma cosa c'è di errato in `class`?
 Risulta che `class` è una delle *parole riservate* di Python. L'interprete utilizza queste parole per riconoscere la struttura del programma, quindi non possono essere assegnate alle variabili.
 \index{keyword}
 Python si riserva 33 parole chiave:
@@ -148,10 +148,7 @@ E' meglio tenere questo elenco a portata di mano: se l'interprete si lamenta del
 Istruzioni
 ----------
 
-L'*istruzione* è un'unità minima di codice che può essere eseguita dall'interprete di Python. Abbiamo visto due tipi di istruzioni: Print utilizzato sia come istruzione di un'espressione sia come un'assegnazione.
-\index{statement}
-\index{interactive mode}
-\index{script mode}
+L'*istruzione* è un'unità minima di codice che può essere eseguita dall'interprete di Python. Abbiamo visto due tipi di istruzioni: Print utilizzato sia come istruzione di un'espressione sia come un'assegnazione.\index{statement}\index{interactive mode}\index{script mode}
 Quando digiti un'istruzione in modalità interattiva, l'interprete la esegue e, nel caso esista, ne visualizza il risultato.
 Generalmente uno script contiene una sequenza di istruzioni. Se c'è più di un'istruzione i risultati vengono visualizzati uno alla volta mano a mano che le istruzioni vengono eseguite. Ad esempio:
 
