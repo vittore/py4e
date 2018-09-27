@@ -24,7 +24,7 @@ Per esempio leggere i primi tre paragrafi di questo capitolo ed individuare quan
     to 16
 ~~~~
 
-Il nostro "assistente personale per l'analisi delle informazioni" ci ha rapidamente detto che la parola "a" è stata usata sedici volte nei primi tre paragrafi di questo capitolo.
+Il nostro "assistente personale per l'analisi delle informazioni" ci ha rapidamente detto che la parola "to" è stata usata sedici volte nei primi tre paragrafi di questo capitolo.
 
 Il fatto che i computer siano bravi in attività in cui gli umani non lo sono, è il motivo per cui è necessario che tu diventi abile nel parlare un "linguaggio informatico". Una volta che avrai imparato questa nuova lingua, potrai delegare al tuo partner (il computer) i compiti banali, ritagliandoti più tempo per le attività per cui sei piú portato. In altre parole, tu apporti a questa collaborazione creatività, intuizione ed invettiva.
 
@@ -32,7 +32,7 @@ Creatività e motivazione
 -------------------------
 
 Sebbene questo libro non sia destinato a programmatori professionisti, la programmazione può essere un lavoro molto gratificante sia dal punto di vista finanziario sia da quello personale.
-Scrivere programmi utili, eleganti e intelligenti affinchè possano essere utilizzati da altri è un'attività molto creativa. Il tuo computer o il tuo Assistente Personale Digitale (PDA) di solito ha al suo interno molti programmi scritti da svariati team di sviluppatori, ciascuno dei quali in competizione per conquistare la tua attenzione ed interesse. Fanno del loro meglio per soddisfare le tue esigenze e fornirti, nel contempo, una meravigliosa esperienza utente. In alcune situazioni, quando si sceglie uno specifico software, i programmatori sono direttamente gratificati dalla tua scelta.
+Scrivere programmi utili, eleganti e intelligenti affinchè possano essere utilizzati da altri è un'attività molto creativa. Il tuo computer o il tuo Assistente Personale Digitale (PDA) di solito ha al suo interno molti programmi scritti da svariati team di sviluppatori, ciascuno dei quali in competizione per conquistare la tua attenzione ed interesse. Fanno del loro meglio per soddisfare le tue esigenze e fornirti, nel contempo, una meravigliosa esperienza d'uso. In alcune situazioni, quando si sceglie uno specifico software, i programmatori sono direttamente gratificati dalla tua scelta.
 
 Se pensiamo ai programmi come alla produzione creativa di team di programmatori, probabilmente la seguente immagine è una visione più ragionevole del nostro PDA:
 
@@ -98,7 +98,7 @@ Parole e frasi
 A differenza della nostra lingua, il vocabolario di Python è in realtà piuttosto limitato.
 Chiameremo questo "vocabolario" *parole riservate*. Queste sono parole che hanno un significato molto speciale per Python. Quando le incontra in un suo script, per Python hanno un solo ed unico significato. Più tardi, quando scriverai codice, avrai la possibilità di creare altre parole cui assegnare un preciso significato: le *variabili*. Avrai una grande libertà nello scegliere i nomi per le variabili, ma comunque non potrai usare nessuna delle parole riservate come nome per una variabile.
 
-Nell'addestramento di un cane, vengono utilizzate parole speciali come "sit", "stay", "fetch", ecc. Quando parli con un cane e non utilizzi nessuna delle parole riservate, ti guarderà in faccia con uno sguardo interrogativo fino a quando non sentirà una parola riservata. Ad esempio, se dici "Ogni giorno Luigi cammina per almeno due chilometri", la maggior parte dei cani probabilmente capirà solo "bla bla bla *cammina* bla bla bla bla." Questo perché solo "cammina" è una parola riservata nel linguaggio del cane. D'altro conto molti suggeriscono che il linguaggio tra umani e gatti non abbia parole riservate^[<http://xkcd.com/231/>].
+Nell'addestramento di un cane, vengono utilizzate parole speciali come "seduto", "resta", "porta", ecc. Quando parli con un cane e non utilizzi nessuna delle parole riservate, ti guarderà in faccia con uno sguardo interrogativo fino a quando non sentirà una parola riservata. Ad esempio, se dici "Ogni giorno Luigi fa una passeggiata per almeno due chilometri", la maggior parte dei cani probabilmente capirà solo "bla bla bla *passeggiata* bla bla bla bla." Questo perché solo "passeggiata" è una parola riservata nel linguaggio del cane. D'altro conto molti suggeriscono che il linguaggio tra umani e gatti non abbia parole riservate^[<http://xkcd.com/231/>].
 
 Tornando a Python, le parole riservate includono:
 
@@ -115,7 +115,7 @@ Cioè, a differenza di un cane, Python è già stato completamente addestrato. Q
 A tempo debito impareremo l'utilizzo di queste parole riservate. Per ora ci concentreremo sull'equivalente in Python di "parlare" (in linguaggio uomo-cane). Il bello di dire a Python di parlare è che possiamo persino indicargli cosa dire includendo un messaggio tra virgolette:
 
 ~~~~ {.python}
-    print('Ciao Mondo!')
+    print('Hello World!')
 ~~~~
 
 Abbiamo persino scritto il nostro primo comando Python sintatticamente corretto. La frase inizia con la funzione *print* seguita da una stringa di testo a nostra scelta racchiusa tra virgolette singole. Le stringhe nelle istruzioni di stampa sono racchiuse tra le virgolette. Le virgolette singole e le virgolette doppie hanno la stessa funzione; la maggior parte delle persone utilizza le virgolette singole tranne in casi come questo in cui una virgoletta singola (che è anche un apostrofo) appare nella stringa.
@@ -178,7 +178,7 @@ Questo è molto più chiaro, quindi prova a comunicare ancora:
     >>>
 ~~~~
 
-La conversazione stava andando così bene, poi quando hai fatto l'errore più piccolo che si possa fare usando il linguaggio Python, "lui" ha tirato nuovamente fuori le lance.
+La conversazione stava andando così bene, poi quando hai fatto l'errore più piccolo che si possa fare usando il linguaggio Python, "lui" ha tirato nuovamente fuori gli artigli.
 
 
 A questo punto, dovresti esserti reso conto che mentre Python è incredibilmente complesso, potente e schizzinoso sulla sintassi da utilizzare per comunicare con "lui", Python *non* è affatto intelligente. In realtà stai solo avendo una conversazione con te stesso, ma usando una sintassi corretta.
@@ -275,7 +275,7 @@ Quindi Python è esso stesso un programma compilato in linguaggio macchina. Quan
     C:\Python35\python.exe
 ~~~~
 
-Questo è più di quanto tu abbia davvero bisogno di sapere per essere un programmatore Python, ma a volte paga rispondere subito a quelle piccole fastidiose domande.
+Questo è più di quanto tu abbia davvero bisogno di sapere per essere un programmatore Python, ma a volte è utile rispondere subito a quelle piccole fastidiose domande.
 
 Scrivere un programma
 -----------------
@@ -320,7 +320,7 @@ Ad esempio, considera il seguente testo riguardante un clown e una macchina. Gua
     and the tent fell down on the clown and the car
 ~~~~
 
-Quindi immagina di svolgere questo compito guardando milioni di righe di testo. Francamente, è più rapido imparare Python e scrivere un programma per contare le parole, di quanto non sia fare la scansione manuale delle parole.
+Quindi immagina di svolgere questo compito guardando milioni di righe di testo. Onestamente, è più rapido imparare Python e scrivere un programma per contare le parole, di quanto non sia fare la scansione manuale delle parole.
 
 
 La notizia ancora migliore è che ho già creato un semplice programma per trovare la parola più comune in un file di testo. L'ho scritto, l'ho testato e adesso te lo sto dando per usarlo e risparmiare un po' di tempo.
