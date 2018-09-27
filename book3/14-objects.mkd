@@ -9,25 +9,25 @@ Gestione di programmi più grandi
 
 \index{object-oriented}
 
-All'inizio di questo libro, abbiamo visto quattro schemi di programmazione di base che usiamo per costruire programmi:
+All'inizio di questo libro, abbiamo visto quattro modelli di programmazione di base utilizzati per scrivere programmi:
 
 * Codice sequenziale
 * Codice condizionale (istruzioni if)
 * Codice ripetitivo (cicli)
 * Memorizza e riutilizza (funzioni).
 
-Nei capitoli seguenti, abbiamo trattato le variabili semplici e le strutture di raccolta di dati come elenchi, tuple e dizionari.  
+Negli capitoli precedenti abbiamo esplorato l'uso delle variabili semplici e delle strutture di gestione dati come elenchi, tuple e dizionari.  
 
-Mentre costruiamo programmi, progettiamo strutture dati e scriviamo codice per manipolarle.   Esistono molti modi per scrivere programmi e, a questo punto, probabilmente avete scritto alcuni programmi "non così eleganti" e altri "più eleganti".   Anche se i vostri programmi potrebbero essere piccoli, state iniziando a vedere come ci sia un po' di "arte" ed "estetica" nello scrivere un codice.  
+Durante lo sviluppo programmi, progettiamo le strutture con cui conserviamo i dati e scriviamo il codice necessario per manipolarle.   Esistono molti modi per scrivere programmi e, a questo punto, probabilmente avrai scritto alcuni script "non particolarmente eleganti" e altri "più eleganti".   Anche se i tuoi script sono di dimensioni abbastanza contenute, stai iniziando a capire come ci sia un po' di "arte" ed "estetica" nello sviluppare codice.  
 
-Poiché i programmi diventano lunghi milioni di righe, diventa sempre più importante scrivere codice che sia facile da capire.  Se state lavorando su un programma di milioni di righe, non potrete mai tenere in mente l'intero programma allo stesso tempo. Quindi abbiamo bisogno di modi per spezzare il programma in più pezzi di minore dimensione in modo da risolvere problemi, correggere un bug o aggiungere una nuova caratteristica a cui dobbiamo guardare meno.  
+Mano a mano che i programmi raggiungono i milioni di righe diventa sempre più importante scrivere codice che sia facile da interpretare.  Se stai lavorando su un programma di milioni di righe, non potrai mai tenere in mente allo stesso tempo l'intero programma. Abbiamo bisogno di trovare modi per spezzare il programma in più pezzi in modo che risolvere problemi, correggere un bug o aggiungere una nuova caratteristica sia il piú semplice possibile.  
 
-In un certo senso, la programmazione orientata agli oggetti è un modo per disporre il codice per poter eseguire lo zoom su 500 righe di codice e capirlo ignorando le altre 999.500 righe di codice per il momento.  
+In un certo senso, la programmazione ad oggetti è un modo per organizzare il codice in modo tale da poter concentrare la nostra attenzione su 500 righe di codice ignorando momentaneamente le altre 999.500.  
 
-Iniziamo
+Come Iniziare
 ---------------
 
-Come molti aspetti della programmazione, è necessario imparare i concetti della programmazione orientata agli oggetti prima di poterla utilizzare in modo efficace. Quindi, consultate questo capitolo come un modo per imparare alcuni termini e concetti e lavorare attraverso alcuni semplici esempi, per gettare le basi per l'apprendimento futuro. Nel resto del libro useremo gli oggetti in molti programmi, ma non costruiremo i nostri nuovi oggetti.  
+Come capita per molti aspetti della programmazione, è necessario imparare i concetti della programmazione orientata agli oggetti prima di poterla utilizzare in modo efficace. Quindi, consultate questo capitolo come un modo per imparare alcuni termini e concetti e lavorare attraverso alcuni semplici esempi, per gettare le basi per l'apprendimento futuro. Nel resto del libro useremo gli oggetti in molti programmi, ma non costruiremo i nostri nuovi oggetti.  
 
 Il risultato chiave di questo capitolo è avere una conoscenza di base di come gli oggetti siano costruiti e come funzionano e, soprattutto, come facciamo a sfruttare le capacità degli oggetti che ci vengono fornite da Python e dalle librerie Python.
 
