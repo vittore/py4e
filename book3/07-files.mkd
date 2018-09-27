@@ -84,7 +84,7 @@ Per suddividere il file in righe, c'è un carattere speciale che rappresenta la 
 
 \index{newline}
 
-In Python, il carattere *newline* viene rappresentato con backslash-n (\n) tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Prendi in considerazione il seguente listato. Il contenuto che stiamo per inserendo nella variabile "stuff" nell'interprete, ci mostra che la stringa contiene i caratteri `\n`. Quando però la stampiamo tramite il comando `print`, puoi notare che la stringa viene mostrata su due righe, spezzata nel punto dove è presente newline.
+In Python, il carattere *newline* viene rappresentato con backslash-n (\\n) tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Prendi in considerazione il seguente listato. Il contenuto che stiamo per inserendo nella variabile "stuff" nell'interprete, ci mostra che la stringa contiene i caratteri `\\n`. Quando però la stampiamo tramite il comando `print`, puoi notare che la stringa viene mostrata su due righe, spezzata nel punto dove è presente newline.
 
     >>> stuff = 'Hello\nWorld!'
     >>> stuff
@@ -357,7 +357,7 @@ In questi casi la funzione integrata `repr` può tornarti utile. Prende qualsias
 
 Ciò può essere utile per il debug.
 
-Un altro problema che potresti incontrare è che sistemi diversi usano caratteri diversi per indicare la fine di una riga. Alcuni sistemi usano un carattere newline (`\n`). Altri usano un carattere di ritorno (`\r`). Alcuni usano entrambi. Se si spostano file tra sistemi diversi, queste incoerenze potrebbero causare problemi.
+Un altro problema che potresti incontrare è che sistemi diversi usano caratteri diversi per indicare la fine di una riga. Alcuni sistemi usano un carattere newline (`\\n`). Altri usano un carattere di ritorno (`\r`). Alcuni usano entrambi. Se si spostano file tra sistemi diversi, queste incoerenze potrebbero causare problemi.
 
 \index{end of line character}
 
@@ -371,7 +371,7 @@ catch
 \index{catch}
 
 newline
-: un carattere speciale ('\n') utilizzato nei file e nelle stringhe per indicare la fine di una riga.
+: un carattere speciale ('\\n') utilizzato nei file e nelle stringhe per indicare la fine di una riga.
 \index{newline}
 
 Pythonic
