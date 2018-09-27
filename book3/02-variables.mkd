@@ -299,7 +299,7 @@ L'operatore `+` opera con le stringhe, senza essere un'addizione in senso strett
 
 
 L'output di questo script è `100150`.
-L'operatore `*` lavora anche con le stringhe moltiplicando il contenuto di una stringa per un numero intero. Per esempio:
+L'operatore `*` funziona anche con le stringhe moltiplicando il contenuto di una stringa per un numero intero. Per esempio:
 
 ~~~~ {.python}
 >>> first = 'Test '
@@ -579,7 +579,7 @@ variabile
 Esercizi
 ---------
 
-**Esercizio 2:** Scrivi un programma che usi `input` per chiedere all'utente il proprio nome e poi dia loro il benvenuto.
+**Esercizio 2:** Scrivi un programma che usi `input` per chiedere all'utente il proprio nome e poi dia il benvenuto.
 
 ~~~~
 Enter your name: Chuck
@@ -587,7 +587,7 @@ Hello Chuck
 ~~~~
 
 
-**Esercizio 3:** Scrivi un programma per richiedere all'utente ore di lavoro e tariffe orarie per calcolare la retribuzione lorda.
+**Esercizio 3:** Scrivi un programma per richiedere all'utente quante ore di lavoro e tariffe orarie per calcolare la retribuzione lorda.
 
 ~~~~
 Enter Hours: 35
@@ -620,4 +620,4 @@ Per ciascuna delle seguenti espressioni, scrivi il valore dell'espressione e il 
 
 Utilizza l'interprete Python per verificare le tue risposte.
 
-**Esercizio 5:** Scrivi un programma che, richiesta all'utente una temperatura in gradi Celsius, la converta in Fahrenheit e poi la visualizzi.
+**Esercizio 5:** Scrivi un programma che, richiesta all'utente una temperatura in gradi Celsius, la converta in gradi Fahrenheit e poi la visualizzi.
