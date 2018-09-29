@@ -42,19 +42,27 @@ Ecco un semplice script le cui prime poche righe dovrebbero sembrarti molto semp
 
 \VerbatimInput{../code3/party1.py}
 
-Piuttosto che concentrarci su ciò che potresti ottenere tramite queste poche righe di codice, vediamo cosa sta realmente accadendo dal punto di vista della programmazione ad oggetti. Non preoccupatevi se i seguenti paragrafi non hanno senso la prima volta che li leggete perché non abbiamo ancora definito tutti questi termini.  La prima riga sta *costruendo* un oggetto di tipo *lista*, la seconda e la terza linea chiamano il *metodo* `append()`, la quarta riga chiama il *metodo* `sort()`, e la quinta riga sta ottenendo l'elemento alla posizione 0.  La sesta riga chiama il metodo `__getitem __()` nell'elenco `stuff` con parametro zero.
+Piuttosto che concentrarci su ciò che potresti ottenere tramite queste poche righe di codice, vediamo cosa sta realmente accadendo dal punto di vista della programmazione ad oggetti. Non preoccuparti se la prima volta che leggi i prosismi paragrafi ti sembra che non abbiamo molto senso dato che non ti ho ancora spiegato il significato di molti dei termini presenti.
+
+La prima riga sta *costruendo* un oggetto di tipo *lista*, la seconda e la terza linea chiamano il *metodo* `append()`, la quarta riga chiama il *metodo* `sort()` e la quinta riga sta ottenendo l'elemento in posizione 0.
+
+La sesta riga chiama il metodo `__getitem __()` nell'elenco `stuff` con parametro zero.
 
 ~~~~ {.python}
 print (stuff.__getitem__(0))
 ~~~~
 
-La settima riga è un modo ancora più dettagliato di recuperare l'elemento zero nell'elenco.
+La settima riga è un modo ancora più dettagliato di recuperare l'elemento che occupa la posizione zero nell'elenco.
 
 ~~~~ {.python}
 print (list.__getitem__(stuff,0))
 ~~~~
 
-In questo codice, vogliamo chiamare il metodo `__getitem__` nella classe `list` e passare nella lista (`stuff`) e l'elemento che vogliamo recuperato dalla lista come parametri.  Le ultime tre righe del programma sono completamente equivalenti, ma è più semplice utilizzare semplicemente la sintassi con le parentesi quadre per cercare un elemento in una posizione particolare in un elenco.  Possiamo dare un'occhiata alle capacità di un oggetto osservando l'output della funzione `dir()`:     
+In questo script, chiamiamo il metodo `__getitem__` della classe `list`, lo passiamo nella lista (`stuff`) con l'elemento che vogliamo recuperare dalla lista come secondo parametro.
+
+Le ultime tre righe del programma sono completamente equivalenti, ma è più semplice utilizzare la sintassi con le parentesi quadre per cercare un elemento in una posizione specifica di un elenco.
+
+Possiamo dare un'occhiata alle potenzialità di un oggetto studiando l'output della funzione `dir()`:     
 
     >>> stuff = list()
     >>> dir (stuff)
@@ -74,18 +82,22 @@ Più precisamente `dir()` elenca i *metodi* e gli *attributi* di un oggetto.
 
 Il resto di questo capitolo ti fornirà una definizione più precisa di tutti i termini già riportati, quindi, dopo aver completato questo capitolo, rileggi i paragrafi precedenti per verificare quanto to abbia veramente appreso.  
 
-Iniziare con i programmi
+I primi script
 ----------------------
 
-Un programma nella sua forma più semplice richiede qualche input, fa qualche elaborazione e produce un output.  Il nostro programma di conversione degli esponenti si mostra molto breve ma completo e che illustra tutti e tre i passaggi.
+Un programma nella sua forma più semplice richiede uno o più input, fa qualche elaborazione e produce un output.  Il seguente script per la conversione dei numeri di piano in un ascensore é molto breve ma completo e presenta tutti e tre questi passaggi.
 
 \VerbatimInput{../code3/elev.py}
 
-Se pensiamo un po' di più a questo programma, c'è il "mondo esterno" e il programma.  Gli aspetti di input e di output sono dove il programma interagisce con il mondo esterno.  All'interno del programma abbiamo codice e dati per svolgere il compito che il programma è progettato per risolvere.
+Se ci concentriamo un po' di più su questo programma: possiamo vedere che convivono il "mondo esterno" e quello interno al programma stesso.  Le operazioni di input e l'output rappresentanto il modo con cui programma interagisce con il mondo esterno.  All'interno del programma abbiamo il codice e dati necessari per svolgere il compito per cui é stato progettato.
 
 ![A Program](height=1.20in@../images/program)
 
-Quando siamo "dentro" il programma, abbiamo alcune interazioni definite con il mondo "esterno", ma quelle interazioni sono ben definite e generalmente non sono qualcosa su cui ci focalizziamo.  Mentre stiamo scrivendo del codice, ci preoccupiamo solo dei dettagli "all'interno del programma".  Un modo per pensare alla programmazione orientata agli oggetti è che stiamo separando il nostro programma in più "zone".  Ogni "zona" contiene codice e dati (come un programma) e ha interazioni ben definite con il mondo esterno e con le altre zone all'interno del programma.  Se guardiamo indietro all'applicazione di estrazione dei collegamenti in cui abbiamo usato la libreria BeautifulSoup, possiamo vedere un programma che viene costruito collegando insieme diversi oggetti per svolgere un compito:
+All'interno del programma hanno luogo alcune interazioni ben definite con il mondo "esterno" che generalmente non sono qualcosa su cui ci focalizziamo.  Quando scriviamo del codice ci preoccupiamo solo dei dettagli "all'interno del programma".
+
+![A Program as Network of Objects](height=1.50in@../images/program-oo)
+
+Un modo per pensare alla programmazione orientata agli oggetti è che stiamo separando il nostro programma in più "zone".  Ogni "zona" contiene codice e dati (come un programma) e ha interazioni ben definite con il mondo esterno e con le altre zone all'interno del programma.  Se guardiamo indietro all'applicazione di estrazione dei collegamenti in cui abbiamo usato la libreria BeautifulSoup, possiamo vedere un programma che viene costruito collegando insieme diversi oggetti per svolgere un compito:
 
 \index{BeautifulSoup}
 \index{HTML}
@@ -97,7 +109,7 @@ L'URL viene richiesto come stringa, poi passato in `urllib` per il recupero dei 
 
 Possiamo rappressentare con la seguente immagine l'interazione degli oggetti di questo programma appena descritta.  
 
-![A Program as Network of Objects](height=1.50in@../images/program-oo)
+
 
 
 
