@@ -1,7 +1,7 @@
 
 %
 
-Programmazione orientata agli oggetti
+Programmazione ad oggetti
 =====================================
 
 Gestione di programmi più grandi
@@ -27,20 +27,22 @@ In un certo senso, la programmazione ad oggetti è un modo per organizzare il co
 Come Iniziare
 ---------------
 
-Come capita per molti aspetti della programmazione, è necessario imparare i concetti della programmazione orientata agli oggetti prima di poterla utilizzare in modo efficace. Quindi, consultate questo capitolo come un modo per imparare alcuni termini e concetti e lavorare attraverso alcuni semplici esempi, per gettare le basi per l'apprendimento futuro. Nel resto del libro useremo gli oggetti in molti programmi, ma non costruiremo i nostri nuovi oggetti.  
+Come capita per molti aspetti della programmazione è necessario imparare i concetti di base della programmazione ad oggetti prima di poterla utilizzare in modo efficace. Quindi considera questo capitolo come un modo per studiare alcuni termini e concetti elementari illustrati attraverso alcuni semplici esempi con lo scopo di gettare le basi per l'apprendimento futuro. Anche se nel resto del libro adotteremo la programmazione ad oggetti in molti programmi non ne svilupperemo di nuovi.  
 
-Il risultato chiave di questo capitolo è avere una conoscenza di base di come gli oggetti siano costruiti e come funzionano e, soprattutto, come facciamo a sfruttare le capacità degli oggetti che ci vengono fornite da Python e dalle librerie Python.
+Quello che vogliamo ottenere con questo capitolo è una conoscenza di base di come siano fatti gli oggetti,  di funzionano e, soprattutto, come sfruttarne le possibilitá offerte dalle librerie di Python.
 
-Utilizzo degli oggetti
+Utilizzare gli oggetti
 -------------
 
-Scopriremo che abbiamo utilizzato gli oggetti durante tutto il corso.  Python ci fornisce molti oggetti integrati. Ecco un semplice codice in cui le prime poche righe dovrebbero sembrarvi molto semplici e naturali.
+Realizzarerai che in realtà abbiamo utilizzato gli oggetti durante tutto il corso:  Python ci mette a disposizione molti oggetti già integrati al suo interno. 
+
+Ecco un semplice script le cui prime poche righe dovrebbero sembrarti molto semplici e familiari.
 
 \index{list object}
 
 \VerbatimInput{../code3/party1.py}
 
-Ma invece di concentrarci su ciò che queste righe realizzano, vediamo cosa sta realmente accadendo dal punto di vista della programmazione orientata agli oggetti. Non preoccupatevi se i seguenti paragrafi non hanno senso la prima volta che li leggete perché non abbiamo ancora definito tutti questi termini.  La prima riga sta *costruendo* un oggetto di tipo *lista*, la seconda e la terza linea chiamano il *metodo* `append()`, la quarta riga chiama il *metodo* `sort()`, e la quinta riga sta ottenendo l'elemento alla posizione 0.  La sesta riga chiama il metodo `__getitem __()` nell'elenco `stuff` con parametro zero.
+Piuttosto che concentrarci su ciò che potresti ottenere tramite queste poche righe di codice, vediamo cosa sta realmente accadendo dal punto di vista della programmazione ad oggetti. Non preoccupatevi se i seguenti paragrafi non hanno senso la prima volta che li leggete perché non abbiamo ancora definito tutti questi termini.  La prima riga sta *costruendo* un oggetto di tipo *lista*, la seconda e la terza linea chiamano il *metodo* `append()`, la quarta riga chiama il *metodo* `sort()`, e la quinta riga sta ottenendo l'elemento alla posizione 0.  La sesta riga chiama il metodo `__getitem __()` nell'elenco `stuff` con parametro zero.
 
 ~~~~ {.python}
 print (stuff.__getitem__(0))
