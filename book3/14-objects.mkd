@@ -120,22 +120,22 @@ In questo momento la cosa piú importante non è comprendere appieno il funziona
 Suddividere un problema - l'incapsulamento
 -------------------------------------
 
-Uno dei vantaggi dell'approccio orientato agli oggetti è che può ridurre la complessità di uno script: ad esempio, mentre hai bisogno di sapere come sfruttare `urllib` e BeautifulSoup, non hai bisogno di sapere come funzionino internamente tali librerie.  Ciò ti consente di concentrarti sulla parte del problema che devi risolvere e ignorare le altre parti del programma.
+Uno dei vantaggi dell'approccio della programmazione ad oggetti è che la possibilità di ridurre la complessità di uno script: anche se hai la necessità di sapere come sfruttare `urllib` e BeautifulSoup, non hai bisogno di sapere come funzionino internamente tali librerie. Ciò ti consente di concentrarti sulla parte del problema che devi risolvere lasciando perdere altree altre parti del programma.
 
 ![Ignoring Detail When Using an Object](height=1.50in@../images/program-oo-code)
 
-Questa capacità di concentrarci sulla parte di un programma che ci interessa e ignorare il resto del programma è utile anche per gli sviluppatori degli oggetti:  ad esempio, i programmatori che curano lo sviluppo BeautifulSoup non hanno bisogno di sapere o preoccuparsi di come tu recuperio la pagina HTML da analizzare, quali parti tu voglia leggere o cosa tu intenda fare con i dati estratti.
+Questa capacità di concentrarci sulla parte di un programma che ci interessa ignorando il resto del programma è utile anche per gli sviluppatori degli oggetti stessi:  ad esempio, i programmatori che curano lo sviluppo BeautifulSoup non hanno bisogno di sapere o preoccuparsi di come tu abbia recuperato la pagina HTML da analizzare, quali parti tu voglia leggere o cosa tu intenda fare con i dati che hai estratto.
 
 ![Ignoring Detail When Building an Object](height=1.50in@../images/program-oo-bs4)
 
 \index{encapsulation}
 
-C'é Un'altra parola che usiamo per rendere l'idea che ignoriamo il funzionamento interno degli oggetti che usiamo, questa è "incapsulamento".  In altre parole significa che possiamo sapere come utilizzare un oggetto senza essere realmente a conoscenza di come funzioni al suo interno.  
+C'é un'altra parola che viene comunemente utilizzata per rendere l'idea che stiamo ignorando il funzionamento interno degli oggetti che usiamo: "incapsulamento".  In altre parole significa che possiamo sapere come utilizzare un oggetto senza essere realmente a conoscenza di come funzioni al suo interno.  
 
 Il nostro primo oggetto Python
 -----------------------
 
-Semplificando al massimo, un oggetto è codice con proprie strutture di dati che è di dimensioni minori di un intero programma. Il definire una funzione ci consente di archiviare un po' di codice, dargli un nome e successivamente invocarla usando solo il nome che gli abbiamo assegnato.
+Semplificando al massimo, un oggetto è una porzione codice con proprie strutture di dati di dimensioni minori di un intero programma. Il definire una funzione ci consente riconoscere tramite un nome una porzione di codice ben definita che possiamo invocare a successivamente secondo le nostre necessitá utilizzando solo il nome che le abbiamo assegnato.
 
 Un oggetto può contenere un certo numero di funzioni (che chiamiamo "metodi") e i dati utilizzati da tali funzioni. Definiamo dati gli elementi che compongono degli "attributi" dell'oggetto.
 
