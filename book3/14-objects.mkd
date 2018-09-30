@@ -97,7 +97,7 @@ All'interno del programma hanno luogo alcune interazioni ben definite con il mon
 
 ![A Program as Network of Objects](height=1.50in@../images/program-oo)
 
-Un modo per pensare alla programmazione orientata agli oggetti è che stiamo separando il nostro programma in più "zone".  Ogni "zona" contiene codice e dati (come un programma) e ha interazioni ben definite con il mondo esterno e con le altre zone all'interno del programma.  Se guardiamo indietro all'applicazione di estrazione dei collegamenti in cui abbiamo usato la libreria BeautifulSoup, possiamo vedere un programma che viene costruito collegando insieme diversi oggetti per svolgere un compito:
+Un modo per pensare alla programmazione orientata agli oggetti è il voler cercare di separare il nostro programma in più "zone".  Ogni "zona" é composta da codice e dati (come se fosse un programma a se stante) e ha interazioni ben definite con il mondo esterno e con le altre zone all'interno del programma.  Se riprendiamo in considerazione lo script di estrazione dei collegamenti in cui abbiamo usato la libreria BeautifulSoup possiamo vedere un programma costituito da più oggetti che interagiscono tra loro per svolgere un compito:
 
 \index{BeautifulSoup}
 \index{HTML}
@@ -113,7 +113,7 @@ Possiamo rappressentare con la seguente immagine l'interazione degli oggetti di 
 
 
 
-La chiave qui non è comprendere appieno come funziona questo programma, ma vedere come costruiamo una rete di oggetti che interagiscono e orchestrare lo scambio di informazioni tra gli oggetti per creare un programma.  
+In questo momento la cosa piú importante non è comprendere appieno il funzionamento di questo programma, quanto piuttosto vedere com'é stato strutturato questo insieme di oggetti e di come ne viene orchestrato lo scambio di informazioni.  
 
 È anche importante notare che quando studiavi il funzionamento di uno scritp presente nei primi capitoli di questo libro, eri in grado di capire appieno cosa stava succedendo senza nemmeno renderti conto che il programma stava "gestendo il movimento dei dati tra gli oggetti presenti". Allora per te erano solo righe di codice che portavano a termine il lavoro.
 
