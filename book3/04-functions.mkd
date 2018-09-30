@@ -7,7 +7,7 @@ Chiamate di funzione
 
 
 \index{function call}
-Nel contesto della programmazione, una *funzione* è una sequenza di istruzioni, cui è stato attribuito un nome, che esegue un calcolo. Quando si definisce una funzione, si specifica il nome e la sequenza di istruzioni. Successivamente è possibile "chiamare" la funzione per mezzo del suo nome. Abbiamo già visto un esempio di una *chiamata di funzione*:
+Quando si parla di programmazione, per *funzione* intendiamo una sequenza specifica di istruzioni a cui è stato attribuito un nome, che ha lo scopo di eseguire un'operazione o calcolo particolare. Una volta definita, è possibile "chiamare" una funzione per mezzo del suo nome. In precedenza abbiamo già visto un esempio di una *chiamata di funzione*:
 
 ~~~~ {.python}
 >>> type(32)
@@ -15,17 +15,17 @@ Nel contesto della programmazione, una *funzione* è una sequenza di istruzioni,
 ~~~~
 
 
-Il nome della funzione è `type`. L'espressione tra parentesi è chiamata *argomento* della funzione. L'argomento è un valore o una variabile che stiamo passando alla funzione come input della funzione. Il risultato della funzione `type` è il tipo di dato dell'argomento.
+Il nome della funzione è `type` mentre l'espressione tra parentesi è definita *argomento* della funzione. Quest'ultimo è un valore o una variabile che stiamo passando alla funzione come input. In questo caso specifico il risultato della funzione `type` è il tipo di dato dell'argomento.
 \index{parentheses!argument in}
 
-È normale dire che una funzione "accetta" un argomento e "restituisce" un risultato. Quest'ultimo è chiamato *valore di ritorno*.
+È normale dire che una funzione "accetta" un argomento e "restituisce" un *valore di ritorno*.
 \index{argument}
 \index{return value}
 
 Funzioni integrate
 ------------------
 
-Python fornisce una serie di importanti funzioni integrate che possiamo usare senza doverle definire. I creatori di Python hanno scritto una serie di funzioni per risolvere problemi comuni, includendole in Python per essere utilizzate.  Le funzioni `max` e `min` ci forniscono rispettivamente i valori più grandi e più piccoli di un elenco:
+Python sono integrate un gran numero di importanti funzioni, create per risolvere problemi comuni, che possiamo usare senza doverle definire. Ad esempio le funzioni `max` e `min` ci forniscono rispettivamente i valori più grandi e più piccoli di un elenco:
 
 ~~~~ {.python}
 >>> max('Hello world')
@@ -36,7 +36,7 @@ Python fornisce una serie di importanti funzioni integrate che possiamo usare se
 ~~~~
 
 
-La funzione `max` ci indica il "carattere più grande" nella stringa (che si rivela essere la lettera "w") e la funzione `min` ci mostra il carattere più piccolo (che si rivela essere uno spazio).  Un'altra funzione incorporata molto comune è la funzione `len`, che ci dice quanti oggetti ci sono nel suo argomento. Se l'argomento di `len` è una stringa, viene restituito il numero di caratteri nella stringa.
+La funzione `max` ci indica che il "carattere più grande" nella stringa é la lettera "w" mentre `min` ci mostra che il carattere più piccolo é lo spazio.  Un'altra funzione molto utilizzata è la funzione `len` che ci dice quanti oggetti ci sono nel suo argomento. Nell'esempio seguente l'argomento di `len` è una stringa e perciò viene restituito il numero di caratteri nella stringa.
 
 ~~~~ {.python}
 >>> len('Hello world')
@@ -46,14 +46,14 @@ La funzione `max` ci indica il "carattere più grande" nella stringa (che si riv
 
 
 
-Queste funzioni non sono fatte solo per esaminare stringhe. Possono operare su un qualsiasi insieme di valori, come vedremo nei prossimi capitoli.  È necessario trattare i nomi delle funzioni integrate come parole riservate (ad esempio, evitate di utilizzare "max" come nome di variabile).
+Come vedremo nei prossimi capitoli, queste funzioni non sono fatte solo per lavorare con stringhe ma possono operare su un qualsiasi insieme di valori. Voglio ricordarti che anche i nome di funzioni vanno trattare come parole riservate (ad esempio, evita di utilizzare "max" come nome di variabile).
 
 Funzioni di conversione dei tipi di dato
 -------------------------
 
 \index{conversion!type}
 \index{type conversion}
-Python fornisce anche funzioni integrate che convertono i valori da un tipo ad un altro. La funzione `int` accetta qualsiasi valore e lo converte in un numero intero, se possibile, in caso contrario si lamenta:
+Python fornisce anche funzioni integrate che convertono i valori da un tipo ad un altro: ad esempio la funzione `int` accetta qualsiasi valore e, se possibile, lo converte in un numero intero. In caso contrario si lamenta visualizzando un messaggio d'errore:
 \index{int function}
 \index{function!int}
 
@@ -66,7 +66,7 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 ~~~~
 
 
-`int` può convertire valori in virgola mobile in numeri interi, ma non arrotonda il dato ma elimina solo la parte frazionaria:
+`int` può convertire valori in virgola mobile in numeri interi eliminando semplicemente la parte frazionaria senza arrotondare il dato:
 
 ~~~~ {.python}
 >>> int(3.99999)
@@ -89,7 +89,7 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 ~~~~
 
 
-Infine, `str` converte il suo argomento in una stringa:
+Infine `str` converte il suo argomento in una stringa:
 \index{str function}
 \index{function!str}
 
@@ -109,14 +109,15 @@ Funzioni matematiche
 \index{function, math}
 \index{module}
 \index{module object}
-Python ha un modulo `math` che fornisce la maggior parte delle comuni funzioni matematiche. Prima di poter usare il modulo, dobbiamo importarlo:
+In Python é presente il modulo `math` che ti mette a disposizione la maggior parte delle più comuni funzioni matematiche. 
+Essendo un modulo, prima di poterlo utilizzare dobbiamo importarlo:
 
 ~~~~ {.python}
 >>> import math
 ~~~~
 
 
-Questa istruzione crea un *oggetto modulo* chiamato math. Se si stampa l'oggetto modulo, si ottengono alcune informazioni su di esso:
+Questa istruzione crea un *oggetto modulo* chiamato math. tramite il comando print ti é possibile ottenere alcune informazioni di base:
 
 ~~~~ {.python}
 >>> print(math)
@@ -124,7 +125,7 @@ Questa istruzione crea un *oggetto modulo* chiamato math. Se si stampa l'oggetto
 ~~~~
 
 
-L'oggetto modulo contiene le funzioni e le variabili definite nel modulo. Per accedere a una delle funzioni, è necessario specificare il nome del modulo e il nome della funzione, separati da un punto. Questo formato è chiamato *notazione punto*.
+Per accedere a una delle funzioni gestite da questo modulo, è necessario specificare il nome del modulo e il nome della funzione separati da un punto. Questo particolare formato viene chiamato *notazione punto*.
 \index{dot notation}
 
 
@@ -137,7 +138,7 @@ L'oggetto modulo contiene le funzioni e le variabili definite nel modulo. Per ac
 ~~~~
 
 
-Il primo esempio calcola il logaritmo in base 10 del rapporto segnale/rumore. Il modulo math fornisce anche una funzione chiamata `log` che calcola i logaritmi in base `e`.
+Nel primo esempio viene calcolato il logaritmo in base 10 del rapporto segnale/rumore. Il modulo math è dodato anche di una funzione chiamata `log` che calcola i logaritmi in base `e`.
 \index{log function}
 \index{function!log}
 \index{sine function}
@@ -145,7 +146,8 @@ Il primo esempio calcola il logaritmo in base 10 del rapporto segnale/rumore. Il
 \index{trigonometric function}
 \index{function, trigonometric}
 
-Il secondo esempio calcola il seno in `radianti`. Il nome della variabile suggerisce che `sin` e le altre funzioni trigonometriche (`cos`, `tan`, ecc.) accettano argomenti in radianti. Per convertire da gradi a radianti, occorre dividere per 360 e moltiplicare per $2\pi$:
+Nel secondo esempio é stato calcolato il seno in `radianti`. Il nome della variabile ti dovrebbe suggerire che `sin` e le altre funzioni trigonometriche (`cos`, `tan`, ecc.) accettano argomenti in radianti.
+Per convertire i gradi in radianti, dovrai dividere  il dato in ingresso per 360 e moltiplicare per $2\pi$:
 
 
 ~~~~ {.python}
@@ -156,10 +158,10 @@ Il secondo esempio calcola il seno in `radianti`. Il nome della variabile sugger
 ~~~~
 
 
-L'espressione `math.pi` ricava la variabile `pi` dal modulo math. Il valore di questa variabile è un'approssimazione di $\pi$, con una precisione di circa 15 cifre.
+L'espressione `math.pi` richiama la variabile `pi` dal modulo math il cui valore è un'approssimazione di $\pi$ con una precisione di circa 15 cifre.
 \index{pi}
 
-Conoscendo la trigonometria, si può controllare il risultato precedente confrontandolo con la radice quadrata di due divisa per due:
+Se ne capisci di trigonometria, puoi controllare il risultato precedente confrontandolo con la radice quadrata di due fratto due:
 \index{sqrt function}
 \index{function!sqrt}
 
@@ -502,15 +504,15 @@ Glossario
 --------
 
 algoritmo
-: un processo generale per risolvere una categoria di problemi.
+: un processo generale destinato a risolvere una categoria di problemi.
 \index{algorithm}
 
 argomento
-: un valore fornito a una funzione quando questa viene chiamata. Questo valore è assegnato al parametro corrispondente nella funzione.
+: il valore fornito a una funzione quando questa viene chiamata. Questo valore è assegnato al parametro corrispondente nella funzione.
 \index{argument}
 
 corpo
-: la sequenza di istruzioni all'interno di una definizione di funzione.
+: la sequenza di istruzioni contenute in una definizione di funzione.
 \index{body}
 
 composizione
@@ -518,11 +520,11 @@ composizione
 \index{composition}
 
 deterministico
-: pertinente a un programma che produce lo stesso risultato ogni volta che viene eseguito, con gli stessi input.
+: pertinente a un programma che, dati gli stessi input, produce lo stesso risultato ogni volta che viene eseguito.
 \index{deterministic}
 
 notazione del punto
-: la sintassi per chiamare una funzione in un altro modulo specificando il nome del modulo seguito da un punto e il nome della funzione.
+: la sintassi per chiamare una funzione gestita da un modulo specificando il nome del modulo seguito da un punto e dal nome della funzione stessa.
 \index{dot notation}
 
 flusso di esecuzione
@@ -534,32 +536,32 @@ funzione produttiva
 \index{fruitful function}
 
 funzione
-: una sequenza di istruzioni provvista di nome che esegue alcune operazioni utili.     Le funzioni possono accettare o non accettare argomenti e possono o meno produrre un risultato.
+: sequenza di istruzioni provvista di nome che svolge alcune operazioni utili. Le funzioni possono accettare o non accettare argomenti e possono o meno produrre un risultato.
 \index{function}
 
 chiamata di funzione
-: un'istruzione che esegue una funzione. Consiste del nome della funzione seguito da un elenco di argomenti.
+: l'istruzione che esegue una funzione. É composta dal nome della funzione seguito da un elenco di argomenti.
 \index{function call}
 
-definizione della funzione
-: un'istruzione che crea una nuova funzione, specificandone il nome, i parametri e le istruzioni che esegue.
+definizione di funzione
+: l'istruzione che da luogo ad una nuova funzione, specificandone il nome, i parametri e le istruzioni che esegue.
 \index{function definition}
 
 oggetto funzione
-: un valore creato da una definizione di funzione. Il nome della funzione è una variabile che fa riferimento a un oggetto funzione.
+: il valore creato dalla definizione di funzione. Il nome della funzione è una variabile che fa riferimento a un oggetto funzione.
 \index{function definition}
 
-intestazione
+header
 : la prima riga di una definizione di funzione.
 \index{header}
 
 istruzione import
-: un'istruzione che legge un file del modulo e crea un oggetto modulo.
+: un'istruzione che legge un modulo e crea un oggetto modulo.
 \index{import statement}
 \index{statement!import}
 
 oggetto modulo
-: un valore creato da un'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
+: il valore creato da l'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
 \index{module}
 
 parametro
@@ -567,7 +569,7 @@ parametro
 \index{parameter}
 
 pseudo-casuale
-: pertinente a una sequenza di numeri che sembrano casuali, ma sono generati da un programma deterministico.
+: sequenza di numeri apparentemente casuali generati da un programma deterministico.
 \index{pseudorandom}
 
 valore di ritorno
@@ -575,21 +577,21 @@ valore di ritorno
 \index{return value}
 
 funzione vuota
-: una funzione che non restituisce alcun valore.
+: funzione che non restituisce alcun valore.
 \index{void function}
 
 Esercizi
 ---------
 
-**Esercizio 4:** Quale è lo scopo della parola chiave "def" in Python?
+**Esercizio 4:** A cosa serve la parola chiave "def" in Python?
 
-a) È gergale, significa "il seguente codice è veramente bello".\
+a) È gergale e significa "il codice seguente è veramente fico".\
 b) Indica l'inizio di una funzione.\
 c) Indica che la seguente sezione di codice indentata deve essere memorizzata per uno scopo successivo.\
-d) b e c sono entrambi veri.\
-e) Nessuno dei precedenti.
+d) b e c sono entrambe vere.\
+e) Nessuno delle precedenti.
 
-**Esercizio 5:** cosa stamperà il seguente programma Python?
+**Esercizio 5:** Cosa visualzzerà il seguente script Python?
 
 ~~~~ {.python}
 def fred():
@@ -610,7 +612,7 @@ c) ABC Zap jane \
 d) ABC Zap ABC \
 e) Zap Zap Zap
 
-**Esercizio 6:** Riscrivete il calcolo della vostra retribuzione con gli straordinari pagati il 50% in più e create una funzione chiamata `computepay` che richiede due parametri (`hours` e `rate`).
+**Esercizio 6:** Riscrivi il calcolo della tua retribuzione con gli straordinari pagati il 50% in più creando una funzione chiamata `computepay` che richieda i due parametri `hours` e `rate`.
 
 ~~~~
 Enter Hours: 45
@@ -619,7 +621,7 @@ Pay: 475.0
 ~~~~
 
 
-**Esercizio 7:** Riscrivete il programma di valutazione del capitolo precedente usando una funzione chiamata `computegrade` che accetta un punteggio come parametro e restituisce un voto sotto forma di stringa.
+**Esercizio 7:** Riscrivi lo script del capitolo precedente creando una funzione chiamata `computegrade` che accetta un punteggio come parametro e restituisce un voto sotto forma di stringa.
 
 ~~~~
  Score   Grade
@@ -671,4 +673,4 @@ F
 ~~~~
 
 
-Eseguite ripetutamente il programma per testare i diversi valori di input.
+Prova ripetutamente lo script per testare diversi valori in input.
