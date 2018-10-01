@@ -422,7 +422,7 @@ False
 
 
 
-Noterai che `startswith` richiede che ci sia un'esatta corrispondenza tra lettere maiuscole e minuscole. Può quindi tornare utile prendere una stringa e convertirla tutta in minuscolo tramite il metodo `lower`. 
+Noterai che `startswith` richiede che ci sia un'esatta corrispondenza tra lettere maiuscole e minuscole. Può quindi tornare utile prendere una stringa e convertirla tutta in minuscolo tramite il metodo `lower`.
 
 ~~~~ {.python}
 >>> line = 'Have a nice day'
@@ -468,7 +468,6 @@ In primo luogo, dobbiamo trovare la posizione del simbolo chiocciola (@) nella s
 uct.ac.za
 >>>
 ~~~~
-
 
 
 Usiamo una applicazione del metodo `find` che ci permette di specificare la posizione nella stringa da cui vogliamo che `find` inizi a guardare. Dividiamo, estraiamo i caratteri ddalla posizione successiva al simbolo chiocciola fino a quello che precede lo spazio vuoto *escluso*.  
