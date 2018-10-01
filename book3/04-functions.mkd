@@ -7,7 +7,9 @@ Chiamate di funzione
 
 
 \index{function call}
-Quando si parla di programmazione, per *funzione* intendiamo una sequenza specifica di istruzioni a cui è stato attribuito un nome, che ha lo scopo di eseguire un'operazione o calcolo particolare. Una volta definita, è possibile "chiamare" una funzione per mezzo del suo nome. In precedenza abbiamo già visto un esempio di una *chiamata di funzione*:
+Quando si parla di programmazione, per *funzione* intendiamo una sequenza specifica di istruzioni a cui è stato attribuito un nome, che ha lo scopo di eseguire un'operazione o calcolo particolare. Una volta definita, è possibile "chiamare" una funzione per mezzo del suo nome.
+
+In precedenza abbiamo già visto un esempio di una *chiamata di funzione*:
 
 ~~~~ {.python}
 >>> type(32)
@@ -15,17 +17,20 @@ Quando si parla di programmazione, per *funzione* intendiamo una sequenza specif
 ~~~~
 
 
-Il nome della funzione è `type` mentre l'espressione tra parentesi è definita *argomento* della funzione. Quest'ultimo è un valore o una variabile che stiamo passando alla funzione come input. In questo caso specifico il risultato della funzione `type` è il tipo di dato dell'argomento.
+in questo esempio il nome della funzione è `type` mentre il numero `32` tra parentesi è l'*argomento* della funzione. L'argomento può essere un valore o una variabile che stiamo passando alla funzione come input. 
+In questo caso specifico il risultato della funzione `type` è il tipo di dato dell'argomento: <class 'int'>.
+
 \index{parentheses!argument in}
 
-È normale dire che una funzione "accetta" un argomento e "restituisce" un *valore di ritorno*.
+Nel gergo informatico si dice che una funzione "accetta" un argomento e "restituisce" un *valore di ritorno*.
 \index{argument}
 \index{return value}
 
 Funzioni integrate
 ------------------
 
-Python sono integrate un gran numero di importanti funzioni, create per risolvere problemi comuni, che possiamo usare senza doverle definire. Ad esempio le funzioni `max` e `min` ci forniscono rispettivamente i valori più grandi e più piccoli di un elenco:
+In Python sono integrate un gran numero di funzioni utili, create per svolgere le attività più comuni, che possiamo usare senza doverle definire.
+Ad esempio le funzioni `max` e `min` ci forniscono rispettivamente i valori più grandi e più piccoli di un elenco:
 
 ~~~~ {.python}
 >>> max('Hello world')
@@ -36,7 +41,7 @@ Python sono integrate un gran numero di importanti funzioni, create per risolver
 ~~~~
 
 
-La funzione `max` ci indica che il "carattere più grande" nella stringa é la lettera "w" mentre `min` ci mostra che il carattere più piccolo é lo spazio.  Un'altra funzione molto utilizzata è la funzione `len` che ci dice quanti oggetti ci sono nel suo argomento. Nell'esempio seguente l'argomento di `len` è una stringa e perciò viene restituito il numero di caratteri nella stringa.
+La funzione `max` ci indica che il "carattere più grande" nella stringa é la lettera "w" mentre `min` ci mostra che il carattere più piccolo é lo spazio.  Un'altra funzione molto utilizzata è la funzione `len` che ci dice quanti oggetti ci sono nell'argomento analizzato. Nell'esempio seguente l'argomento di `len` è una stringa e perciò viene restituito il numero di caratteri nella stringa.
 
 ~~~~ {.python}
 >>> len('Hello world')
@@ -46,14 +51,14 @@ La funzione `max` ci indica che il "carattere più grande" nella stringa é la l
 
 
 
-Come vedremo nei prossimi capitoli, queste funzioni non sono fatte solo per lavorare con stringhe ma possono operare su un qualsiasi insieme di valori. Voglio ricordarti che anche i nome di funzioni vanno trattare come parole riservate (ad esempio, evita di utilizzare "max" come nome di variabile).
+Come vedremo nei prossimi capitoli queste funzioni non sono progettate per operare solo con le stringhe ma possono essere applicate su un qualsiasi insieme di valori. Voglio ricordarti che anche i nome di funzioni vanno trattati come parole riservate (ad esempio, evita di utilizzare "max" come nome di variabile).
 
 Funzioni di conversione dei tipi di dato
 -------------------------
 
 \index{conversion!type}
 \index{type conversion}
-Python fornisce anche funzioni integrate che convertono i valori da un tipo ad un altro: ad esempio la funzione `int` accetta qualsiasi valore e, se possibile, lo converte in un numero intero. In caso contrario si lamenta visualizzando un messaggio d'errore:
+Altre funzioni integrate in Python ti permettono di convertire i valori da un tipo ad un altro: ad esempio la funzione `int` accetta qualsiasi valore e, qualora sia possibile, lo converte in un numero intero. In caso contrario si "lamenta" visualizzando un messaggio d'errore:
 \index{int function}
 \index{function!int}
 
@@ -89,7 +94,7 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 ~~~~
 
 
-Infine `str` converte il suo argomento in una stringa:
+`str` converte l'argomento in una stringa:
 \index{str function}
 \index{function!str}
 
