@@ -495,10 +495,12 @@ Debug
 ---------
 
 \index{debugging}
-Se usate un editor di testo per scrivere i vostri script, potreste avere problemi con spazi e tabulazioni. Il modo migliore per evitare questi problemi è utilizzare esclusivamente gli spazi (senza tabulazioni). La maggior parte degli editor di testo che conoscono Python lo fanno per impostazione predefinita, ma altri no.
+Anche se la maggior parte degli editor di testo sono in grado di riconoscere nativamente il codice Python, se usi un editor di testo per scrivere i tuoi script, potresti avere delle noie con spazi e tabulazioni. Il modo migliore per evitare questi problemi è utilizzare esclusivamente gli spazi (senza tabulazioni).
+
 \index{whitespace}
 
-Le tabulazioni e gli spazi sono generalmente invisibili, il che ne rende difficile il debug, quindi provate a trovare un editor che gestisca l'indentazione per voi.  Inoltre, non dimenticate di salvare il programma prima di eseguirlo, alcuni ambienti di sviluppo lo fanno automaticamente, ma altri no. In tal caso, il programma che state guardando nell'editor di testo non è lo stesso del programma che state utilizzando.  Il debug può richiedere molto tempo se si continua a ripetere lo stesso programma errato più e più volte!  Assicuratevi che il codice che state esaminando sia il codice che state utilizzando. Se non siete sicuri, mettete qualcosa come `print (" ciao ")` all'inizio del programma ed eseguitelo di nuovo. Se non vedete `ciao`, non state eseguendo il programma giusto!  
+Spesso il debug é reso piú complicato dal fatto che le tabulazioni e spazi sono generalmente invisibili. Per mitigare questo problema  prova ad utilizzare un editor che gestisca automaticamente l'indentazione. 
+Non dimenticare inoltre di salvare sempre il tuo script prima di eseguirlo, non tutti gli ambienti di sviluppo lo fanno automaticamente, in modo che il codice che stai guardando nell'editor di testo sia lo stesso che stai facendo girare. Il debug può richiedere molto più tempo se continui a ripetere più e più volte lo stesso script bacato! Assicurati sempre di eseguire l'ultima versione del codice che stai esaminando. Nel caso avessi dei dubbi, inserisci una riga simile a `print (" ciao ")` all'inizio del programma prima di eseguirlo nuovamente. Se non vedi apparire `ciao` ... non stai facendo girare la versione giusta!  
 
 Glossario
 --------
