@@ -166,7 +166,7 @@ Per convertire i gradi in radianti, dovrai dividere  il dato in ingresso per 360
 L'espressione `math.pi` richiama la variabile `pi` dal modulo math il cui valore è un'approssimazione di $\pi$ con una precisione di circa 15 cifre.
 \index{pi}
 
-Se ne capisci di trigonometria, puoi controllare il risultato precedente confrontandolo con la radice quadrata di due fratto due:
+Se sei in possesso di rubimenti di trigonometria, puoi controllare il risultato precedente confrontandolo con la radice quadrata di due fratto due:
 \index{sqrt function}
 \index{function!sqrt}
 
@@ -184,7 +184,9 @@ Numeri casuali
 \index{number, random}
 \index{deterministic}
 \index{pseudorandom}
-Dati gli stessi input, la maggior parte dei programmi per computer genera sempre gli stessi output, quindi si dice che sono *deterministici*. Il determinismo di solito è una buona cosa, poiché ci aspettiamo che lo stesso calcolo produca lo stesso risultato. Per alcune applicazioni, tuttavia, desideriamo che il computer sia imprevedibile. I giochi sono un ovvio esempio, ma ce ne sono altri.  Realizzare un programma veramente non deterministico risulta non essere così facile, ma ci sono modi per farlo almeno sembrare non deterministico. Uno di questi è usare *algoritmi* che generano numeri *pseudo-casuali*. I numeri pseudo-casuali non sono veramente casuali perché sono generati da un calcolo deterministico, ma guardando solo i numeri è quasi impossibile distinguerli da quelli casuali.
+Dato il medesimo input, la maggior parte dei programmi per computer genera sempre lo stesso output. Per tale motivo vengono classificati come *deterministici*. Il determinismo di solito è una cosa auspicabile poiché ci aspettiamo che lo stesso calcolo produca sempre lo stesso risultato. Ci sono casi in cui, tuttavia, desideriamo che il computer sia imprevedibile. I giochi sono un ovvio esempio, ma ce ne sono altri.
+
+Realizzare un programma veramente non deterministico non é così semplice come potrebbe sembrare a prima vista anche se esistono modi per farlo almeno sembrare non deterministico. Uno di questi è usare *algoritmi* che generano numeri *pseudo-casuali*. I numeri pseudo-casuali non sono veramente casuali perché sono generati da un calcolo deterministico, ma guardando solo i numeri è quasi impossibile distinguerli da quelli casuali.
 
 \index{random module}
 \index{module!random}
