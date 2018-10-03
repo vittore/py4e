@@ -130,7 +130,7 @@ Questa istruzione crea un *oggetto modulo* chiamato math. Tramite il comando pri
 ~~~~
 
 
-Per accedere a una delle funzioni gestite da questo modulo è necessario specificare i nomi del modulo e della funzione separati da un punto. Questo particolare formato viene chiamato *notazione punto*.
+Per accedere a una delle funzioni gestite da questo modulo è necessario specificare il nome del modulo e della funzione desiderata separati da un punto. Questo particolare formato viene chiamato *notazione punto*.
 \index{dot notation}
 
 
@@ -152,7 +152,7 @@ Nel primo esempio viene calcolato il logaritmo in base 10 del rapporto segnale/r
 \index{function, trigonometric}
 
 Nel secondo esempio é stato calcolato il seno in `radianti`. Il nome della variabile ti dovrebbe suggerire che `sin` e le altre funzioni trigonometriche (`cos`, `tan`, ecc.) accettano un argomento in radianti.
-Per convertire i gradi in radianti, dovrai dividere il dato in ingresso per 360 e moltiplicare per $2\pi$:
+Per convertire i gradi in radianti, dovrai dividere il dato in ingresso per 360 e moltiplicarlo per $2\pi$:
 
 
 ~~~~ {.python}
@@ -163,7 +163,7 @@ Per convertire i gradi in radianti, dovrai dividere il dato in ingresso per 360 
 ~~~~
 
 
-L'espressione `math.pi` richiama la variabile `pi` dal modulo math il cui valore è un'approssimazione di $\pi$ con una precisione di circa 15 cifre.
+L'espressione `math.pi` richiama la variabile `pi` dal modulo math il cui valore è un'approssimazione di $\pi$ a circa 15 cifre.
 \index{pi}
 
 Se mastichi un po' di trigonometria, puoi controllare il risultato precedente confrontandolo con la radice quadrata di due fratto due:
@@ -184,7 +184,7 @@ Numeri casuali
 \index{number, random}
 \index{deterministic}
 \index{pseudorandom}
-Dato il medesimo input, la maggior parte dei programmi per computer genera sempre lo stesso output. Per tale motivo vengono classificati come *deterministici*. Il determinismo di solito è una cosa auspicabile poiché ci aspettiamo che lo stesso calcolo produca sempre lo medesimo risultato. Ci sono casi in cui, tuttavia, desideriamo che il computer sia imprevedibile. I giochi sono un ovvio esempio, ma ce ne sono altri.
+Dato il medesimo input, la maggior parte dei programmi per computer genera sempre lo stesso output. Per tale motivo vengono detti *deterministici*. Il determinismo di solito è una cosa auspicabile poiché ci aspettiamo che lo stesso calcolo produca sempre lo medesimo risultato. Ci sono casi in cui, tuttavia, desideriamo che il computer sia imprevedibile come accade ad esempio nei giochi.
 
 Realizzare un programma veramente non deterministico non é così semplice come potrebbe sembrare a prima vista anche se esistono modi per farlo almeno sembrare tale. Uno di questi è usare *algoritmi* che generano numeri *pseudo-casuali*. I numeri pseudo-casuali non sono veramente casuali perché sono generati da un calcolo deterministico, ma osservando solo i numeri è quasi impossibile distinguerli da quelli casuali.
 
@@ -195,7 +195,7 @@ Il modulo `random` fornisce funzioni che generano numeri pseudo-casuali (che chi
 \index{random function}
 \index{function!random}
 
-La funzione `random` restituisce un numero decimale casuale compreso tra 0.0 e 1.0 (comprendendo 0.0 ma non 1.0). Ogni volta che evochi `random`, otterai il numero successivo di una lunga serie. Prova a far girare questo ciclo:
+La funzione `random` restituisce un numero decimale casuale compreso tra 0.0 e 1.0 (comprendendo 0.0 ma non 1.0). Ogni volta che evochi `random`, ottieni il numero successivo di una lunga serie. Prova a far girare questo ciclo:
 
 ~~~~ {.python}
 import random
@@ -206,7 +206,7 @@ for i in range(10):
 ~~~~
 
 
-Questo programma produrrá l'elenco seguente di 10 numeri casuali tra 0.0 e 1.0 (1.0 escluso).
+Questo programma ti fornirá il seguente elenco di 10 numeri casuali compresio tra 0.0 e 1.0 (1.0 escluso).
 
 ~~~~
 0.11132867921152356
@@ -222,9 +222,11 @@ Questo programma produrrá l'elenco seguente di 10 numeri casuali tra 0.0 e 1.0 
 ~~~~
 
 
-**Esercizio 1:** esegui lo script precedente sul tuo sistema per vedere quali numeri otterrai. Ripeti l'operazione più volte per vedere quali numeri otterrai.
+**Esercizio 1:**: Esegui lo script precedente sul tuo sistema per vedere quali numeri otterrai. Ripeti l'operazione più volte e confroenta i risultati.
 
-La funzione `random` è solo una delle molte funzioni che gestiscono i numeri casuali: `randint` accetta i parametri `low` e `high` e restituisce un intero compreso tra i due (inclusi).
+La funzione `random` è solo una delle molte funzioni che gestiscono i numeri casuali.
+
+`randint` accetta i parametri `low` e `high` e restituisce un intero compreso tra i due (inclusi) estremi.
 \index{randint function}
 \index{function!randint}
 
@@ -252,15 +254,17 @@ Tramite `choice` puoi scegliere un elemento da una sequenza casuale:
 
 
 
-Il modulo `random` fornisce anche funzioni per generare valori casuali da distribuzioni continue tra cui la gaussiana, l'esponenziale, la gamma e altre.
+Il modulo `random` fornisce anche funzioni per generare valori casuali da distribuzioni continue come la gaussiana, l'esponenziale, la gamma, ecc.
 
 Aggiungere nuove funzioni
 --------------------
 
-Finora, abbiamo solo usato le funzioni fornite con Python, ma è anche possibile aggiungere nuove funzioni. Una *definizione di funzione* specifica il nome di una nuova funzione e la sequenza di istruzioni che vengono eseguite quando la funzione viene chiamata. Una volta definita una funzione, possiamo riutilizzarla più e più volte nel nostro programma.
+Anche se finora abbiamo solo usato le funzioni giá presenti in Python, è anche possibile aggiungerne di nuove funzioni.
+Una *definizione di funzione* ti permette di specificare il nome di una nuova funzione e di assegnarle una sequenza di istruzioni. Una volta definita una funzione, possiamo richimarla e riutilizzarla a piacimento nel nostro programma.
 \index{function}
 \index{function definition}
 \index{definition!function}
+
 Ecco un esempio:
 
 ~~~~ {.python}
@@ -270,23 +274,23 @@ def print_lyrics():
 ~~~~
 
 
-`def` è una parola chiave che indica che questa è una definizione di funzione. Il nome della funzione è `print_lyrics`. Le regole per i nomi delle funzioni sono le stesse dei nomi delle variabili: lettere, numeri e alcuni segni di punteggiatura sono consentiti, ma il primo carattere non può essere un numero. Non potete utilizzare una parola chiave come nome di una funzione e dovreste evitare di avere una variabile e una funzione con lo stesso nome.
+`def` è la parola chiave che indica che questa è una funzione il cui nome è `print_lyrics`. Per i nomi delle funzioni valgono le stesse regole dei nomi delle variabili: sono consentiti lettere, numeri e alcuni segni di punteggiatura ma il primo carattere non può mai essere un numero. Non puoi utilizzare una parola chiave come nome di una funzione e dovresti evitare di dare lo stesso nome ad una variabile ed una funzione.
 
 \index{def keyword}
 \index{keyword!def}
 \index{argument}
 
-Le parentesi vuote dopo il nome indicano che questa funzione non riceve argomenti. Più tardi costruiremo delle funzioni che ricevono degli argomenti come input.
+Le parentesi vuote dopo il nome indicano che questa funzione non accetta argomenti. Nei capitoli seguenti ti insegnerò a costruire delle funzioni che ricevono degli argomenti come input.
 \index{parentheses!empty}
 \index{header}
 \index{body}
 \index{indentation}
 \index{colon}
 
-La prima riga della definizione di funzione è chiamata *header*; il resto è chiamato *corpo*. L'header deve terminare con due punti e il corpo deve essere indentato. Per convenzione, il rientro è sempre di quattro spazi. Il corpo può contenere un numero qualsiasi di istruzioni.
+La prima riga della funzione è chiamata *header* mentre il resto viene chiamato *corpo*. L'header deve terminare con due punti e il corpo, che deve essere indentato per convenzione di quattro spazi, può contenere un numero qualsiasi di istruzioni.
 \index{ellipses}
 
-Se scrivete una definizione di funzione in modalità interattiva, l'interprete stampa i punti di sospensione (* ... *) per indicare che la definizione non è completa:
+Se scrivi una definizione di funzione in modalità interattiva, l'interprete visualizzerà i punti di sospensione (*...*) fino a quando la definizione non sarà completa:
 
 ~~~~ {.python}
 >>> def print_lyrics():
@@ -296,7 +300,9 @@ Se scrivete una definizione di funzione in modalità interattiva, l'interprete s
 ~~~~
 
 
-Per terminare la funzione, dovete inserire una riga vuota (non è necessario in uno script).  La definizione di una funzione crea una variabile con lo stesso nome.
+Per completare la funzione, devi inserire una riga vuota (operazione non necessaria in uno script).
+
+La definizione di una funzione crea una variabile con lo stesso nome.
 
 ~~~~ {.python}
 >>> print(print_lyrics)
@@ -306,10 +312,11 @@ Per terminare la funzione, dovete inserire una riga vuota (non è necessario in 
 ~~~~
 
 
-Il valore di `print_lyrics` è un *oggetto funzione *, di tipo "funzione".
+Il valore di `print_lyrics` è un *oggetto funzione*, di tipo "funzione".
 \index{function object}
 \index{object!function}
-La sintassi per chiamare la nuova funzione è la stessa delle funzioni integrate:
+
+La sintassi per chiamare la nuova funzione è la stessa utilizzata per le funzioni integrate:
 
 ~~~~ {.python}
 >>> print_lyrics()
@@ -318,7 +325,8 @@ I sleep all night and I work all day.
 ~~~~
 
 
-Una volta che avete definito una funzione, potrete utilizzarla all'interno di un'altra funzione. Ad esempio, per ripetere il ritornello precedente, potremmo scrivere una funzione chiamata `repeat_lyrics`:
+Una volta che avrai definito una funzione, potrai utilizzarla all'interno di un'altra funzione.
+Ad esempio, per ripetere il ritornello precedente, potremmo scrivere una funzione chiamata `repeat_lyrics`:
 
 ~~~~ {.python}
 def repeat_lyrics():
@@ -327,7 +335,7 @@ def repeat_lyrics():
 ~~~~
 
 
-E poi chiamare `repeat_lyrics`:
+Chiamando la funzione `repeat_lyrics` otterremo questo risultato:
 
 ~~~~ {.python}
 >>> repeat_lyrics()
@@ -338,24 +346,24 @@ I sleep all night and I work all day.
 ~~~~
 
 
-Ma la canzone non fa proprio così.
+Ammetto che la canzone non faccia proprio così ma non é importante per ora.
 
 Definizioni e usi
 --------------------
 
 \index{function definition}
-Raggruppando i frammenti di codice dalla sezione precedente, l'intero programma si presenterà come segue:
+se mettiamo insieme i frammenti di codice della sezione precedente, dovremmo ottenere il seguente script:
 
 \VerbatimInput{../code3/lyrics.py}
 
-Questo programma contiene due definizioni di funzioni: `print_lyrics` e `repeat_lyrics`. Le definizioni delle funzioni vengono eseguite come le altre istruzioni, ma l'effetto è creare oggetti funzione. Le istruzioni all'interno della funzione non vengono eseguite finché non viene chiamata la funzione e la definizione di una funzione non genera alcun output.
+Questo script contiene due definizioni di funzione: `print_lyrics` e `repeat_lyrics` che daranno luogo inizialmente a degli oggetti funzione le cui istruzioni non generano alcun output finché non viene eseguita l'ultima riga.
 \index{use before def}
 
-Come ci si potrebbe aspettare, è necessario creare una funzione prima di poterla eseguire. In altre parole, la definizione della funzione deve essere effettuata prima della prima chiamata.
+Come ormai avrai capito, è necessario creare una funzione prima di poterla eseguire. In altre parole, la definizione della funzione deve essere effettuata prima della prima chiamata.
 
-**Esercizio 2:** spostate l'ultima riga di questo programma in cima, in modo tale da far apparire la chiamata della funzione prima delle definizioni. Eseguite il programma e vedete quale messaggio di errore ricevete.
+**Esercizio 2**: Sposta l'ultima riga di questo script all'inizio, in modo tale da far eseguire la chiamata della funzione prima delle due definizioni. Esegui il programma per verificare quale messaggio di errore riceverai.
 
-**Esercizio 3:** spostate di nuovo la chiamata della funzione in basso e spostate la definizione di `print_lyrics` dopo la definizione di `repeat_lyrics`. Cosa succede quando si esegue questo programma?
+**Esercizio 3**: sposta di nuovo la chiamata della funzione in fondo allo script ed inverti la posizione della definizione di `print_lyrics` e `repeat_lyrics`. Cosa succede quando esegue questo programma?
 
 Flusso di esecuzione
 -----------------
