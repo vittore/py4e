@@ -363,13 +363,25 @@ Come ormai avrai capito, è necessario creare una funzione prima di poterla eseg
 
 **Esercizio 2**: Sposta l'ultima riga di questo script all'inizio, in modo tale da far eseguire la chiamata della funzione prima delle due definizioni. Esegui il programma per verificare quale messaggio di errore riceverai.
 
-**Esercizio 3**: sposta di nuovo la chiamata della funzione in fondo allo script ed inverti la posizione della definizione di `print_lyrics` e `repeat_lyrics`. Cosa succede quando esegue questo programma?
+**Esercizio 3**: sposta di nuovo la chiamata della funzione in fondo allo script ed inverti la posizione della definizione di `print_lyrics` e `repeat_lyrics`. Cosa succede quando esegui questo programma?
 
 Flusso di esecuzione
 -----------------
 
 \index{flow of execution}
-Per garantire che una funzione venga definita prima del suo primo utilizzo, è necessario che conosciate l'ordine in cui vengono eseguite le istruzioni, chiamato il *flusso di esecuzione*.  L'esecuzione inizia sempre dalla prima istruzione del programma. Le istruzioni vengono eseguite una alla volta, in ordine dall'alto verso il basso.  Le definizioni di *funzione* non alterano il flusso di esecuzione del programma, ma ricordate che le istruzioni all'interno della funzione non vengono eseguite fino a quando la funzione non viene chiamata.  Una chiamata di funzione è come una deviazione nel flusso di esecuzione. Invece di passare all'istruzione successiva, il flusso salta al corpo della funzione, esegue tutte le istruzioni contenute e quindi torna indietro per riprendere da dove era stato interrotto.  Sembra abbastanza semplice, finché non vi ricordate che una funzione può chiamarne un'altra. Mentre si trova nel mezzo di una funzione, il programma potrebbe dover eseguire le istruzioni di un'altra funzione. Ma mentre si esegue quella nuova funzione, il programma potrebbe dover eseguire un'altra funzione!  Fortunatamente Python è bravo a tenere traccia di dove si trova, quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione. Quando arriva alla fine del programma, questo termina.  Qual è la morale di questa sordida storia? Quando leggete un programma, non sempre volete leggerlo da cima a fondo. A volte ha più senso se seguite il flusso dell'esecuzione.
+Per garantire che una funzione venga definita prima del suo primo utilizzo, è necessario che conosca l'ordine in cui vengono eseguite le istruzioni, il così detto *flusso di esecuzione*. 
+
+L'esecuzione, che inizia sempre dalla prima istruzione dello script, prevede che le istruzioni vengano eseguite una alla volta, dall'alto verso il basso.
+
+Anche se le *definizioni di funzione* non alterano il flusso di esecuzione del programma, ricorda che le istruzioni contenute nella funzione non vengono eseguite fino a quando non venga chiamata la funzione.
+
+Dovrei pensare ad Una chiamata di funzione come una deviazione nel flusso di esecuzione. Invece di passare all'istruzione successiva, il flusso salta al corpo della funzione, esegue tutte le istruzioni contenute e quindi torna indietro per riprendere da dove era stato interrotto.
+
+Sembra abbastanza semplice, finché non vi ricordate che una funzione può chiamarne un'altra. Mentre si trova nel mezzo di una funzione, il programma potrebbe dover eseguire le istruzioni di un'altra funzione. Ma mentre si esegue quella nuova funzione, il programma potrebbe dover eseguire un'altra funzione!
+
+Fortunatamente Python è bravo a tenere traccia di dove si trova, quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione. Quando arriva alla fine del programma, questo termina. 
+
+Qual è la morale di questa sordida storia? Quando leggete un programma, non sempre volete leggerlo da cima a fondo. A volte ha più senso se seguite il flusso dell'esecuzione.
 
 Parametri e argomenti
 ------------------------
