@@ -114,15 +114,15 @@ Funzioni matematiche
 \index{function, math}
 \index{module}
 \index{module object}
-In Python é presente il modulo `math` che ti mette a disposizione la maggior parte delle più comuni funzioni matematiche. 
-Essendo un modulo, prima di poterlo utilizzare dobbiamo importarlo:
+Il modulo `math` di Python ti permette di eseguire la maggior parte delle più comuni funzioni matematiche. 
+Essendo un modulo, va importato prima di poterlo utilizzare:
 
 ~~~~ {.python}
 >>> import math
 ~~~~
 
 
-Questa istruzione crea un *oggetto modulo* chiamato math. tramite il comando print ti é possibile ottenere alcune informazioni di base:
+Questa istruzione crea un *oggetto modulo* chiamato math. Tramite il comando print ti é possibile ottenerne alcune informazioni di base:
 
 ~~~~ {.python}
 >>> print(math)
@@ -130,7 +130,7 @@ Questa istruzione crea un *oggetto modulo* chiamato math. tramite il comando pri
 ~~~~
 
 
-Per accedere a una delle funzioni gestite da questo modulo, è necessario specificare il nome del modulo e il nome della funzione separati da un punto. Questo particolare formato viene chiamato *notazione punto*.
+Per accedere a una delle funzioni gestite da questo modulo è necessario specificare i nomi del modulo e della funzione separati da un punto. Questo particolare formato viene chiamato *notazione punto*.
 \index{dot notation}
 
 
@@ -143,7 +143,7 @@ Per accedere a una delle funzioni gestite da questo modulo, è necessario specif
 ~~~~
 
 
-Nel primo esempio viene calcolato il logaritmo in base 10 del rapporto segnale/rumore. Il modulo math è dodato anche di una funzione chiamata `log` che calcola i logaritmi in base `e`.
+Nel primo esempio viene calcolato il logaritmo in base 10 del rapporto segnale/rumore. Il modulo math è dotato anche di una funzione chiamata `log` che calcola i logaritmi in base `e`.
 \index{log function}
 \index{function!log}
 \index{sine function}
@@ -151,8 +151,8 @@ Nel primo esempio viene calcolato il logaritmo in base 10 del rapporto segnale/r
 \index{trigonometric function}
 \index{function, trigonometric}
 
-Nel secondo esempio é stato calcolato il seno in `radianti`. Il nome della variabile ti dovrebbe suggerire che `sin` e le altre funzioni trigonometriche (`cos`, `tan`, ecc.) accettano argomenti in radianti.
-Per convertire i gradi in radianti, dovrai dividere  il dato in ingresso per 360 e moltiplicare per $2\pi$:
+Nel secondo esempio é stato calcolato il seno in `radianti`. Il nome della variabile ti dovrebbe suggerire che `sin` e le altre funzioni trigonometriche (`cos`, `tan`, ecc.) accettano un argomento in radianti.
+Per convertire i gradi in radianti, dovrai dividere il dato in ingresso per 360 e moltiplicare per $2\pi$:
 
 
 ~~~~ {.python}
@@ -166,7 +166,7 @@ Per convertire i gradi in radianti, dovrai dividere  il dato in ingresso per 360
 L'espressione `math.pi` richiama la variabile `pi` dal modulo math il cui valore è un'approssimazione di $\pi$ con una precisione di circa 15 cifre.
 \index{pi}
 
-Se sei in possesso di rubimenti di trigonometria, puoi controllare il risultato precedente confrontandolo con la radice quadrata di due fratto due:
+Se mastichi un po' di trigonometria, puoi controllare il risultato precedente confrontandolo con la radice quadrata di due fratto due:
 \index{sqrt function}
 \index{function!sqrt}
 
@@ -184,9 +184,9 @@ Numeri casuali
 \index{number, random}
 \index{deterministic}
 \index{pseudorandom}
-Dato il medesimo input, la maggior parte dei programmi per computer genera sempre lo stesso output. Per tale motivo vengono classificati come *deterministici*. Il determinismo di solito è una cosa auspicabile poiché ci aspettiamo che lo stesso calcolo produca sempre lo stesso risultato. Ci sono casi in cui, tuttavia, desideriamo che il computer sia imprevedibile. I giochi sono un ovvio esempio, ma ce ne sono altri.
+Dato il medesimo input, la maggior parte dei programmi per computer genera sempre lo stesso output. Per tale motivo vengono classificati come *deterministici*. Il determinismo di solito è una cosa auspicabile poiché ci aspettiamo che lo stesso calcolo produca sempre lo medesimo risultato. Ci sono casi in cui, tuttavia, desideriamo che il computer sia imprevedibile. I giochi sono un ovvio esempio, ma ce ne sono altri.
 
-Realizzare un programma veramente non deterministico non é così semplice come potrebbe sembrare a prima vista anche se esistono modi per farlo almeno sembrare non deterministico. Uno di questi è usare *algoritmi* che generano numeri *pseudo-casuali*. I numeri pseudo-casuali non sono veramente casuali perché sono generati da un calcolo deterministico, ma guardando solo i numeri è quasi impossibile distinguerli da quelli casuali.
+Realizzare un programma veramente non deterministico non é così semplice come potrebbe sembrare a prima vista anche se esistono modi per farlo almeno sembrare tale. Uno di questi è usare *algoritmi* che generano numeri *pseudo-casuali*. I numeri pseudo-casuali non sono veramente casuali perché sono generati da un calcolo deterministico, ma osservando solo i numeri è quasi impossibile distinguerli da quelli casuali.
 
 \index{random module}
 \index{module!random}
@@ -195,7 +195,7 @@ Il modulo `random` fornisce funzioni che generano numeri pseudo-casuali (che chi
 \index{random function}
 \index{function!random}
 
-La funzione `random` restituisce un numero decimale casuale compreso tra 0.0 e 1.0 (compreso 0.0 ma non 1.0). Ogni volta che si evoca `random`, si ottiene il numero successivo di una lunga serie. Per vedere un esempio, eseguite questo ciclo:
+La funzione `random` restituisce un numero decimale casuale compreso tra 0.0 e 1.0 (comprendendo 0.0 ma non 1.0). Ogni volta che evochi `random`, otterai il numero successivo di una lunga serie. Prova a far girare questo ciclo:
 
 ~~~~ {.python}
 import random
@@ -206,7 +206,7 @@ for i in range(10):
 ~~~~
 
 
-Questo programma produce il seguente elenco di 10 numeri casuali tra 0.0 e 1.0 (1.0 escluso).
+Questo programma produrrá l'elenco seguente di 10 numeri casuali tra 0.0 e 1.0 (1.0 escluso).
 
 ~~~~
 0.11132867921152356
@@ -222,9 +222,9 @@ Questo programma produce il seguente elenco di 10 numeri casuali tra 0.0 e 1.0 (
 ~~~~
 
 
-**Esercizio 1:** eseguite il programma sul vostro sistema per vedere quali numeri si ottengono. Eseguite il programma più di una volta e vedete quali numeri si ottengono.
+**Esercizio 1:** esegui lo script precedente sul tuo sistema per vedere quali numeri otterrai. Ripeti l'operazione più volte per vedere quali numeri otterrai.
 
-La funzione `random` è solo una delle molte funzioni che gestiscono numeri casuali. La funzione `randint` accetta i parametri `low` e `high` e restituisce un intero compreso tra i due (inclusi).
+La funzione `random` è solo una delle molte funzioni che gestiscono i numeri casuali: `randint` accetta i parametri `low` e `high` e restituisce un intero compreso tra i due (inclusi).
 \index{randint function}
 \index{function!randint}
 
@@ -237,7 +237,7 @@ La funzione `random` è solo una delle molte funzioni che gestiscono numeri casu
 ~~~~
 
 
-Per scegliere un elemento da una sequenza casuale, potete usare `choice`:
+Tramite `choice` puoi scegliere un elemento da una sequenza casuale:
 \index{choice function}
 \index{function!choice}
 
