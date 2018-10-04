@@ -259,8 +259,8 @@ Il modulo `random` fornisce anche funzioni per generare valori casuali da distri
 Aggiungere nuove funzioni
 --------------------
 
-Anche se finora abbiamo solo usato le funzioni giá presenti in Python, è anche possibile aggiungerne di nuove funzioni.
-Una *definizione di funzione* ti permette di specificare il nome di una nuova funzione e di assegnarle una sequenza di istruzioni. Una volta definita una funzione, possiamo richimarla e riutilizzarla a piacimento nel nostro programma.
+Anche se finora abbiamo solo usato le funzioni giá presenti in Python, tieni a mente che è possibile aggiungerne di nuove.
+Tramite la *definizione di funzione* puoi specificare il nome di una nuova funzione composta da una sequenza di istruzioni. Una volta definita, puoi richiamarla e riutilizzarla a piacimento all'interno del tuo programma.
 \index{function}
 \index{function definition}
 \index{definition!function}
@@ -274,7 +274,7 @@ def print_lyrics():
 ~~~~
 
 
-`def` è la parola chiave che indica che questa è una funzione il cui nome è `print_lyrics`. Per i nomi delle funzioni valgono le stesse regole dei nomi delle variabili: sono consentiti lettere, numeri e alcuni segni di punteggiatura ma il primo carattere non può mai essere un numero. Non puoi utilizzare una parola chiave come nome di una funzione e dovresti evitare di dare lo stesso nome ad una variabile ed una funzione.
+`def` è la parola chiave che indica che il nome di questa funzione è `print_lyrics`. Per i nomi delle funzioni valgono le stesse regole dei nomi delle variabili: sono consentiti lettere, numeri e alcuni segni di punteggiatura ma il primo carattere non può mai essere un numero. Non puoi utilizzare una parola chiave come nome di una funzione e dovresti evitare di dare lo stesso nome ad una variabile ed una funzione.
 
 \index{def keyword}
 \index{keyword!def}
