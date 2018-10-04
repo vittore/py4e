@@ -437,9 +437,9 @@ Spam Spam Spam Spam
 ~~~~
 
 
-L'argomento viene valutato prima che la funzione venga chiamata, quindi negli esempi le espressioni `Spam '* 4` e` math.cos (math.pi) `vengono valutate solo una volta.
+L'argomento viene valutato prima che venga chiamata la funzione, quindi negli esempi precedenti le espressioni `Spam '* 4` e `math.cos (math.pi) `vengono valutate una sola volta.
 \index{argument}
-Potete anche usare una variabile come argomento:
+Potete utilizzare inoltre una variabile come argomento:
 
 ~~~~ {.python}
 >>> michael = 'Eric, the half a bee.'
@@ -449,7 +449,7 @@ Eric, the half a bee.
 ~~~~
 
 
-Il nome della variabile che passiamo come argomento (`michael`) non ha nulla a che fare con il nome del parametro (` bruce`). Non importa quale sia il nome valore (nel chiamante); qui in `print_twice`, chiamiamo tutti `bruce`.
+Il nome della variabile che passiamo come argomento (`michael`) non ha nulla a che fare con il nome del parametro (`bruce`). Non importa quale sia il nome valore (nel chiamante); qui in `print_twice`, chiamiamo tutti `bruce`.
 
 Funzioni produttive e funzioni vuote
 -------------------------------------
@@ -458,7 +458,9 @@ Funzioni produttive e funzioni vuote
 \index{void function}
 \index{function, fruitful}
 \index{function, void}
-Alcune delle funzioni che stiamo usando, come le funzioni matematiche, restituiscono dei risultati; per mancanza di un nome migliore, le chiamiamo *funzioni produttive*. Altre funzioni, come `print_twice`, poichè eseguono un'azione ma non restituiscono alcun valore vengono chiamate *funzioni vuote*.  Quando chiamate una funzione produttiva, quasi sempre dovete utilizzarne il risultato; ad esempio, potreste assegnarlo a una variabile o usarlo come parte di un'espressione:
+Alcune delle funzioni che stiamo usando, come ad esempio le funzioni matematiche, restituiscono dei risultati; e, per mancanza di un nome migliore, vengono chiamate chiamiamo *funzioni produttive*. Altre funzioni, come `print_twice`, vengono chiamate *funzioni vuote* poichè eseguono un'azione ma non restituiscono alcun valore.
+
+Quando chiamate una funzione produttiva, quasi sempre avete bisogno di utilizzarne il risultato: ad esempio potreste assegnarlo a una variabile o usarlo come parte di un'espressione.
 
 ~~~~ {.python}
 x = math.cos(radians)
@@ -466,7 +468,7 @@ golden = (math.sqrt(5) + 1) / 2
 ~~~~
 
 
-Quando si chiama una funzione in modalità interattiva, Python visualizza il risultato:
+Quando chiami una funzione in modalità interattiva, Python ne visualizza subito il risultato:
 
 ~~~~ {.python}
 >>> math.sqrt(5)
@@ -474,14 +476,14 @@ Quando si chiama una funzione in modalità interattiva, Python visualizza il ris
 ~~~~
 
 
-Ma in uno script, se si chiama una funzione produttiva e non si memorizza il risultato della funzione in una variabile, il valore di ritorno scompare nella nebbia!
+in uno script la storia cambia completamente: se chiami una funzione produttiva e non ne memorizzi il risultato in una variabile, il valore di ritorno scomparirá rapidamente nella nebbia!
 
 ~~~~ {.python}
 math.sqrt(5)
 ~~~~
 
 
-Questo script calcola la radice quadrata di 5, ma poiché non memorizza il risultato in una variabile e non mostra il risultato, non è molto utile.
+credo che questo script sia molto utile: é vero che calcola la radice quadrata di 5 ma non ne visualizza il risultato ne lo memorizza in una variabile.
 \index{interactive mode}
 \index{script mode}
 
