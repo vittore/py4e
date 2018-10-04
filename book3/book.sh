@@ -45,7 +45,7 @@ else
     latex tmp
     dvipdf tmp.dvi x.pdf
 fi
-
+#exit
 if [[ "$OSTYPE" == "darwin"* ]]; then
   open x.pdf
 elif [[ "$OSTYPE" == "linux-gnu" && -n "$DISPLAY" ]]; then
@@ -54,4 +54,4 @@ else
   echo "Output on x.pdf"
 fi
 
-rm tmp.*
+#rm tmp.*
