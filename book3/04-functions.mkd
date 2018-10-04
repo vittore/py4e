@@ -345,7 +345,7 @@ I sleep all night and I work all day.
 ~~~~
 
 
-Ammetto che la canzone non faccia proprio così ma non é importante per ora.
+Ammetto che la canzone non faccia proprio così ma non è importante per ora.
 
 Definizioni e usi
 --------------------
@@ -355,12 +355,12 @@ se mettiamo insieme i frammenti di codice della sezione precedente, dovremmo ott
 
 \VerbatimInput{../code3/lyrics.py}
 
-Questo script contiene due definizioni di funzione: `print_lyrics` e `repeat_lyrics` che daranno luogo inizialmente a degli oggetti funzione le cui istruzioni non generano alcun output finché non viene eseguita l'ultima riga.
+Questo script contiene due definizioni di funzione, `print_lyrics` e `repeat_lyrics`, che daranno luogo inizialmente a degli oggetti funzione le cui istruzioni non generano alcun output finché non viene eseguita l'ultima riga dello script.
 \index{use before def}
 
 Come ormai avrai capito, è necessario creare una funzione prima di poterla eseguire. In altre parole, la definizione della funzione deve essere effettuata prima della prima chiamata.
 
-**Esercizio 2**: Sposta l'ultima riga di questo script all'inizio, in modo tale da far eseguire la chiamata della funzione prima delle due definizioni. Esegui il programma per verificare quale messaggio di errore riceverai.
+**Esercizio 2**: Sposta l'ultima riga di questo script all'inizio, in modo tale da far eseguire la chiamata della funzione prima delle due definizioni. Avvia il programma per verificare quale messaggio di errore riceverai.
 
 **Esercizio 3**: sposta nuovamente la chiamata della funzione in fondo allo script ed inverti la posizione della definizione di `print_lyrics` e `repeat_lyrics`. Cosa succede quando esegui questo programma?
 
@@ -376,11 +376,13 @@ Anche se le *definizioni di funzione* non alterano il flusso di esecuzione del p
 
 Potresti paragonare una chiamata di funzione ad una deviazione nel flusso di esecuzione: invece di passare all'istruzione successiva, il flusso salta al corpo della funzione, esegue tutte le istruzioni contenute e quindi ritorna al punto in cui si era interrotto dove riprende la normale esecuzione.
 
-Sembra abbastanza semplice vero? ti ricordi vero che una funzione può chiamarne un'altra? Mentre si trova nel mezzo di una funzione, il programma potrebbe dover eseguire le istruzioni di un'altra funzione. Ma mentre si esegue quella nuova funzione, il programma potrebbe dover eseguire un'altra funzione!
+Sembra abbastanza semplice vero?
+Sicuro? ti ricordi vero che una funzione può chiamarne un'altra?
+Il programma che stai analizzando, durante la sua esecuzione potrebbe dover eseguire le istruzioni di un'altra funzione esterna che a sua volta potrebbe eseguire un'altra funzione ancora!
 
-Fortunatamente Python è bravo a tenere traccia di dove si trova, quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione. Quando arriva alla fine del programma, questo termina. 
+Fortunatamente Python è bravo a tenere traccia di dove è arrivato con l'esecuzione. Quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione fino a giungere alla fine del programma dove verrà terminerà la sua attività. 
 
-Qual è la morale di questa sordida storia? Quando leggete un programma, non sempre volete leggerlo da cima a fondo. A volte ha più senso se seguite il flusso dell'esecuzione.
+Qual è la morale di questa sordida storia? Quando leggi un programma non cercare di leggerlo da cima a fondo senza interruzioni ma ricorda il principio che a volte ha più senso seguire il flusso dell'esecuzione.
 
 Parametri e argomenti
 ------------------------
@@ -389,7 +391,10 @@ Parametri e argomenti
 \index{function parameter}
 \index{argument}
 \index{function argument}
-Alcune delle funzioni integrate che abbiamo visto richiedono degli argomenti. Ad esempio, quando chiamate `math.sin` passate un numero come argomento. Alcune funzioni richiedono più di un argomento: `math.pow` ne prende due, la base e l'esponente.  All'interno della funzione, gli argomenti sono assegnati a variabili chiamate *parametri*. Ecco un esempio di una funzione definita dall'utente che riceve un argomento:
+Alcune delle funzioni integrate che abbiamo visto richiedono degli argomenti: `math.sin` ad esempio ha bisogno di un numero come argomento. Altre funzioni richiedono più di un argomento: `math.pow` ne prende due, la base e l'esponente.
+
+All'interno della funzione, gli argomenti sono assegnati a variabili chiamate *parametri*.
+Ecco un esempio di una funzione definita dall'utente che riceve un argomento:
 \index{parentheses!parameters in}
 
 
@@ -400,7 +405,9 @@ def print_twice(bruce):
 ~~~~
 
 
-Questa funzione assegna l'argomento ad un parametro chiamato `bruce`. Quando viene chiamata la funzione, questa stampa due volte il valore del parametro (qualunque esso sia).  Questa funzione opera con qualsiasi valore che può essere stampato.
+Questa funzione assegna l'argomento ad un parametro chiamato `bruce`. Quando viene chiamata la funzione, questa stampa due volte il valore del parametro (qualunque esso sia).
+
+Questa funzione opera con qualsiasi valore che possa essere visualizzato.
 
 ~~~~ {.python}
 >>> print_twice('Spam')
@@ -416,7 +423,7 @@ Spam
 ~~~~
 
 
-Le stesse regole di composizione che si applicano alle funzioni integrate si applicano anche alle funzioni definite dall'utente, quindi possiamo usare qualsiasi tipo di espressione come argomento per `print_twice`:
+Dato che Le regole di composizione che si applicano alle funzioni integrate si applicano anche a quelle definite dall'utente, possiamo usare qualsiasi tipo di espressione come argomento per `print_twice`:
 \index{composition}
 
 
