@@ -1,12 +1,16 @@
 
 %
 
-Visualizzazione dei dati
+Visualizzare i dati
 ========================
 
-Finora abbiamo imparato il linguaggio Python e abbiamo quindi imparato come usare Python, la rete e i database per manipolare i dati.  In questo capitolo, daremo un'occhiata a tre applicazioni complete che riuniscono tutti questi strumenti per gestire e visualizzare i dati. Potreste usare queste applicazioni come esempi in grado di fornire un aiuto per iniziare a risolvere un problema del mondo reale.  Ciascuna applicazione è un file ZIP che potete scaricare, estrarre sul vostro computer ed eseguire.
+Finora abbiamo studiato il linguaggio Python per capirne le logiche interne, le funzioni che offre per la interagire con la rete o i database per manipolare dati.
 
-Costruire una mappa di Google a partire da dati geocodificati.
+In questo capitolo, studieremo tre applicazioni dotate delle capacità di gestire e visualizzare i dati. Considerarle degli spunti da cui partire e risolvere problemi reali.  
+
+Ciascuna applicazione è contenuta in un file ZIP che potrai scaricare, estrarre sul tuo computer ed eseguire.
+
+Costruire un Google map a partire da dati geocodificati
 ----------------------------------------
 
 \index{Google!map}
