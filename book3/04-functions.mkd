@@ -483,11 +483,11 @@ math.sqrt(5)
 ~~~~
 
 
-credo che questo script sia molto utile: é vero che calcola la radice quadrata di 5 ma non ne visualizza il risultato ne lo memorizza in una variabile.
+Credo che questo script non sia molto utile: é vero che calcola la radice quadrata di 5 ma non ne visualizza il risultato ne lo memorizza in una variabile.
 \index{interactive mode}
 \index{script mode}
 
-Le funzioni vuote potrebbero visualizzare qualcosa sullo schermo o avere qualche altro effetto, ma non hanno alcun valore di ritorno. Se si tenta di assegnare il risultato a una variabile, si ottiene un valore speciale chiamato "None".
+Le funzioni vuote possono visualizzare qualcosa sullo schermo o avere qualche altro effetto, ma non hanno alcun valore di ritorno. Se tenti di assegnare il risultato a una variabile otterrai un valore speciale chiamato "None".
 \index{None special value}
 \index{special value!None}
 
@@ -501,7 +501,7 @@ None
 ~~~~
 
 
-Il valore `None` non è uguale alla stringa "None". È un valore speciale che ha un suo tipo:
+Il valore `None` non è uguale alla stringa "None": è un valore speciale che ha un suo proprio tipo.
 
 ~~~~ {.python}
 >>> print(type(None))
@@ -509,33 +509,40 @@ Il valore `None` non è uguale alla stringa "None". È un valore speciale che ha
 ~~~~
 
 
-Per restituire un risultato da una funzione, utilizziamo l'istruzione `return` nella nostra funzione. Ad esempio, potremmo creare una funzione molto semplice chiamata "addtwo" che unisce due numeri e restituisce un risultato.
+Tramite  l'istruzione `return` inserita nella nostra funzione, hai la possibilitá di ottenere il risultato. Ad esempio potremmo creare una funzione molto semplice chiamata "addtwo" che somma due numeri e restituisce il risultato.
 
 \VerbatimInput{../code3/addtwo.py}
 
-Quando questo script viene eseguito, l'istruzione `print` stamperà" 8 "perché la funzione `addtwo` è stata chiamata passando gli argomenti 3 e 5. All'interno della funzione, i parametri `a` e` b` erano rispettivamente 3 e 5. La funzione calcola la somma dei due numeri e la colloca nella variabile di funzione locale chiamata `added`. Quindi ha usato l'istruzione `return` per inviare il valore calcolato al codice chiamante come risultato della funzione, che è stato assegnato alla variabile `x` e quindi stampato.
+Quando questo script viene eseguito, l'istruzione `print` visualizza "8" perché la funzione `addtwo` è stata chiamata passandole gli argomenti 3 e 5. All'interno della funzione i parametri `a` e` b` hanno assunto rispettivamente il valore 3 e 5. La funzione calcola la somma dei due numeri e la inserisce nella variabile di funzione locale `added`. infine traminte l'istruzione `return` il valore calcolato viene inviato al codice chiamante come risultato della funzione, assegnato alla variabile `x` e quindi visualizzato.
 
 Perché le funzioni?
 --------------
 
 \index{function, reasons for}
-Potrebbe non essere chiaro il motivo per cui vale la pena di dividere un programma in funzioni. Ci sono diversi motivi:
+Potrebbe non esserti chiaro il motivo per cui vale la pena di suddividere un programma in funzioni. I motivi sono diversi:
 
-- la creazione di una nuova funzione vi dà l'opportunità di dare un nome a un gruppo di istruzioni, il che facilita la lettura, la comprensione e il debug del vostro programma;
-- le funzioni possono rendere un programma più piccolo, eliminando il codice ripetitivo. Successivamente, se apportate un cambiamento, dovete farlo solo in un posto;
-- dividere un programma lungo in funzioni, consente di eseguire il debug delle parti una alla volta e quindi assemblarle in un insieme funzionante;
-- le funzioni ben progettate sono spesso utili per molti programmi. Una volta che le scrivete e ne fate il debug, potete riutilizzarle.  Per il resto del libro, spesso useremo una definizione di funzione per spiegare un concetto. Parte della capacità di creare e utilizzare le funzioni è di avere una funzione per cogliere correttamente un'idea come "trovate il valore più piccolo in un elenco di valori". Successivamente vi mostreremo il codice che trova il valore più piccolo in un elenco di valori e ve lo presenteremo come una funzione chiamata `min`, che prende come argomento un elenco di valori e restituisce il valore più piccolo dell'elenco.  
+- la creazione di una nuova funzione ti dà l'opportunità di dare un nome a un insieme di istruzioni, facilitandoti la lettura, la comprensione e il debug del tuo programma;
+- le funzioni possono ridurre le dimensioni di un programma, eliminando la necessità di inserire lo stesso codice piú volte. Se vuoi apporti un cambiamento o una correzione, devi farlo solo in un posto;
+- dividere in funzioni un programma esteso, ti consente di eseguire il debug delle singole parti e solo dopo assemblarle in un insieme funzionante;
+- le funzioni ben progettate sono spesso riutilizzabili in molti programmi: una volta che scritte e verificate le puoi riutilizzare ovunque credi.
+
+Nel resto del libro, spesso useró una definizione di funzione per spiegare un concetto. Parte della capacità di creare e utilizzare le funzioni è di avere una funzione che interpreti correttamente una singola idea come "trova il valore più piccolo in un elenco di valori". Successivamente ti mostrerò il codice che trova il valore più piccolo in un elenco di valori e te lo presenterò come una funzione chiamata `min` che prende come argomento un elenco di valori e restituisce il valore più piccolo dell'elenco.  
 
 Debug
 ---------
 
 \index{debugging}
-Anche se la maggior parte degli editor di testo sono in grado di riconoscere nativamente il codice Python, se usi un editor di testo per scrivere i tuoi script, potresti avere delle noie con spazi e tabulazioni. Il modo migliore per evitare questi problemi è utilizzare esclusivamente gli spazi (senza tabulazioni).
+Nonostante il fatto che la maggior parte degli editor di testo sono in grado di riconoscere nativamente il codice Python, se usi un editor di testo per scrivere i tuoi script, potresti avere delle noie con spazi e tabulazioni. Il modo migliore per evitare questi problemi è utilizzare esclusivamente gli spazi evitando le tabulazioni.
 
 \index{whitespace}
 
 Spesso il debug é reso piú complicato dal fatto che le tabulazioni e spazi sono generalmente invisibili. Per mitigare questo problema  prova ad utilizzare un editor che gestisca automaticamente l'indentazione. 
-Non dimenticare inoltre di salvare sempre il tuo script prima di eseguirlo, non tutti gli ambienti di sviluppo lo fanno automaticamente, in modo che il codice che stai guardando nell'editor di testo sia lo stesso che stai facendo girare. Il debug può richiedere molto più tempo se continui a ripetere più e più volte lo stesso script bacato! Assicurati sempre di eseguire l'ultima versione del codice che stai esaminando. Nel caso avessi dei dubbi, inserisci una riga simile a `print (" ciao ")` all'inizio del programma prima di eseguirlo nuovamente. Se non vedi apparire `ciao` ... non stai facendo girare la versione giusta!  
+
+Non dimenticare inoltre di salvare sempre il tuo script prima di eseguirlo dato che non tutti gli ambienti di sviluppo lo fanno automaticamente. In questo modo il codice che stai guardando nell'editor di testo sarà lo stesso che stai facendo girare.
+
+Il debug può richiedere molto più tempo se continui a ripetere più e più volte lo stesso script bacato!
+
+Assicurati sempre di eseguire l'ultima versione del codice che stai esaminando. Nel caso ti venissero dei dubbi, inserisci una riga tipo `print (" ciao ")` all'inizio del programma prima di eseguirlo nuovamente. Se non vedi apparire `ciao` ... non stai facendo girare la versione giusta!  
 
 Glossario
 --------
