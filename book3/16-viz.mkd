@@ -286,7 +286,9 @@ Range of counts: 33229 129
 Output written to gword.js
 ~~~~
 
-Questo produce il file *gword.js* che potete visualizzare usando *gword.htm* per produrre una nuvola di parole simile a quella mostrata all'inizio di questa sezione.  Una seconda visualizzazione è prodotta da *gline.py*. Calcola la partecipazione alle e-mail da parte delle organizzazioni nel tempo.
+Il risultato viene salvato nel file *gword.js* che potete visualizzare usando *gword.htm* per produrre una nuvola di parole simile a quella mostrata all'inizio di questa sezione.
+
+Una seconda visualizzazione è prodotta da *gline.py*. Calcola la partecipazione alle e-mail da parte delle organizzazioni nel tempo.
 
 ~~~~
 Loaded messages= 51330 subjects= 25033 senders= 1584
@@ -297,8 +299,8 @@ Top 10 Oranizations
 Output written to gline.js
 ~~~~
 
-Il suo output è scritto in *gline.js* che viene visualizzato usando *gline.htm*.
+L'output viene salvato in *gline.js* che viene visualizzato usando *gline.htm*.
 
 ![Sakai Mail Activity by Organization](../images/mailorg)
 
-Questa è un'applicazione relativamente complessa e sofisticata e dispone di funzionalità per recuperare, ordinare e visualizzare dati reali.
+Questa applicazione, relativamente complessa e sofisticata, ti mette a dispone di funzionalità per recuperare, ordinare e visualizzare dati reali.
