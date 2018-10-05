@@ -10,7 +10,7 @@ In questo capitolo, studieremo tre applicazioni dotate delle capacità di gestir
 
 Ciascuna applicazione è contenuta in un file ZIP che potrai scaricare, estrarre sul tuo computer ed eseguire.
 
-Costruire un Google map a partire da dati geocodificati
+Costruire una Google map a partire da dati geocodificati
 ----------------------------------------
 
 \index{Google!map}
