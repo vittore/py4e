@@ -7,7 +7,7 @@ Valori e tipi
 \index{value}
 \index{type}
 \index{string}
-Un *valore*, come una lettera o un numero, è un elemento basilare che permette ad un programma di funzionare. I valori che abbiamo visto finora sono `1`, `2` e "Hello, World!". Questi valori appartengono a diversi *tipi*: `2` è un numero intero mentre "Hello, World!" è una *stringa*, così chiamata perché composta da una "stringa" di lettere. Tu (e l'interprete) puoi identificare le stringhe poiché racchiuse tra virgolette.\index{quotation mark}
+Un *valore*, come una lettera o un numero, è un elemento basilare che permette ad un programma di funzionare. I valori che abbiamo visto finora sono `1`, `2` e "Hello, World!". Questi valori appartengono a diversi *tipi*: `2` è un numero intero mentre "Hello, World!" è una *stringa*, così chiamata perché composta da una "stringa" di lettere. Tu (insieme all'interprete) puoi identificare le stringhe poiché racchiuse tra virgolette.\index{quotation mark}
 L'istruzione `print` funziona anche con i numeri interi, tramite il comando `python` è possibile avviare l'interprete.
 
 ~~~~ {.python}
@@ -167,7 +167,7 @@ Operatori e operandi
 ----------------------
 
 \index{operator, arithmetic}\index{arithmetic operator}\index{operand}\index{expression}
-Gli *operatori* sono simboli speciali che rappresentano calcoli come l'addizione e la moltiplicazione. I valori a cui è applicato l'operatore sono chiamati *operandi*. Gli operatori `+`, `-`, `*`, `/`, e `**` eseguono rispettivamente le operazioni di addizione, sottrazione, moltiplicazione, divisione, e l'elevamento a potenza, come illustrato negli esempi seguenti:
+Gli *operatori* sono simboli speciali che rappresentano calcoli come l'addizione e la moltiplicazione. I valori a cui è applicato l'operatore sono chiamati *operandi*. Gli operatori `+`, `-`, `*`, `/`, e `**` eseguono rispettivamente le operazioni di addizione, sottrazione, moltiplicazione, divisione, ed elevamento a potenza, come illustrato negli esempi seguenti:
 
 ~~~~ {.python}
 20+32   hour-1   hour*60+minute   minute/60   5**2   (5+9)*(15-7)
@@ -262,7 +262,7 @@ Operatore modulo
 
 \index{modulus operator}
 \index{operator!modulus}
-L'operatore *modulo* viene applicato a numeri interi e fornisce come risultato il resto quando il primo operando viene diviso per il secondo. In Python, l'operatore modulo è il carattere percentuale (`%`). La sintassi è la stessa degli altri operatori:
+L'operatore *modulo* viene applicato a numeri interi e fornisce come risultato il resto di quando il primo operando viene diviso per il secondo. In Python, l'operatore modulo è il carattere percentuale (`%`). La sintassi è la stessa degli altri operatori:
 
 ~~~~ {.python .trinket height="240"}
 >>> quotient = 7 // 3
@@ -338,7 +338,7 @@ Chuck
 ~~~~
 
 
-La sequenza `\n` alla fine del prompt indica un andare *a capo*, che è un carattere speciale che causa l'interruzione della linea. Ecco perché l'input dell'utente appare sotto il prompt.\index{newline}
+La sequenza `\n` alla fine del prompt indica un andare *a capo* ed è un carattere speciale che causa l'interruzione della linea. Ecco perché l'input dell'utente appare sotto il prompt.\index{newline}
 Se ti aspetti che l'utente digiti un intero, è possibile provare a convertire il valore restituito in `int` usando la funzione `int()`.
 
 ~~~~ {.python}
@@ -453,13 +453,13 @@ for slice in pizza:
 ~~~~
 
 
-Per il programmatore alle prime armi è più facile leggere questo script per sapere quali parti siano parole riservate di Python e quali parti siano semplicemente variabili. È abbastanza chiaro che Python non conosce la nozione di pizza e trancio (slice) e che una pizza sia composta da un insieme di uno o più tranci. Ma se il nostro programma riguarda veramente la lettura di dati e la ricerca di parole nei dati, `pizza` e `slice` non sono per niente nomi mnemonici di variabili. Sceglierli come nomi variabili ci distrae dallo scopo del programma. Dopo un breve periodo di tempo, conoscerai le più comuni parole riservate e inizieranno a saltarti agli occhi: <pre> <b>for</b> word <b>in</b> words<b>:</b> <b>print</b> word </pre> Le parti del codice definite da Python (`for`, `in`, `print`, e `:`) sono in grassetto, contrariamente alle variabili scelte dallo sviluppatore (`word` e `words`). Molti editor di testo riconoscono la sintassi di Python e colorano le parole riservate in modo diverso mettendole in evidenza rispetto alle variabili. Dopo un po' di pratica nel leggere Python sarai in grado di capire rapidamente quale sia una variabile e quale una parola riservata.
+Per il programmatore alle prime armi è più facile leggere questo script per sapere quali parti siano parole riservate di Python e quali parti siano semplicemente variabili. È abbastanza chiaro che Python non conosce la nozione di pizza e trancio (slice) e che una pizza sia composta da un insieme di uno o più tranci. Ma se il nostro programma riguarda veramente la lettura di dati e la ricerca di parole nei dati, `pizza` e `slice` non sono per niente nomi mnemonici di variabili. Sceglierli come nomi di variabili ci distrae dallo scopo del programma. Dopo un breve periodo di tempo, conoscerai le più comuni parole riservate e inizieranno a saltarti agli occhi: <pre> <b>for</b> word <b>in</b> words<b>:</b> <b>print</b> word </pre> Le parti del codice definite da Python (`for`, `in`, `print`, e `:`) sono in grassetto, contrariamente alle variabili scelte dallo sviluppatore (`word` e `words`). Molti editor di testo riconoscono la sintassi di Python e colorano le parole riservate in modo diverso mettendole in evidenza rispetto alle variabili. Dopo un po' di pratica nel leggere Python sarai in grado di capire rapidamente quale sia una variabile e quale una parola riservata.
 
 Debug
 ---------
 
 \index{debugging}
-A questo punto, l'errore di sintassi più probabile che tu possa fare è scegliere un nome di variabile non consentito, come `class` e `yield`, che sono parole chiave, o `odd~job` e` US$ `, che contiene caratteri non consentiti.\index{syntax error}\index{error!syntax}
+A questo punto, l'errore di sintassi più probabile che tu possa fare è scegliere un nome di variabile non consentito, come `class` e `yield`, che sono parole chiave, o `odd~job` e` US$ `, che contengono caratteri non consentiti.\index{syntax error}\index{error!syntax}
 Se inserisci uno spazio nel nome di variabile, Python riterrà che si tratti di due operandi senza un operatore:
 
 ~~~~ {.python}
@@ -523,7 +523,7 @@ espressione
 \index{expression}
 
 virgola mobile
-: tipodi dato composto da numeri con le parti frazionarie.
+: tipo di dato composto da numeri con le parti frazionarie.
 \index{floating-point}
 
 interi
