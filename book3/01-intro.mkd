@@ -412,7 +412,7 @@ Errori di logica:
 
 
 Errori di Semantica
-: Un errore semantico si verifica quando la descrizione dei passaggi da eseguire è sintatticamente perfetta e nel giusto ordine, ma c'è un errore nel programma. Il programma è completamente corretto ma non fa ciò che *intendi* fargli fare. Un semplice esempio potrebbe essere il dare ad una persona le indicazioni per un ristorante dicendo: "... quando raggiungi l'incrocio con la stazione di benzina, gira a sinistra e procedi per 1 km. Il ristorante è l'edificio rosso sulla sinistra." Il tuo amico è molto in ritardo e ti chiama per dirti di trovarsi in una fattoria e che si sta aggirando dietro un granaio, senza trovare alcuna traccia del ristorante. "Ma hai girato a sinistra o a destra alla stazione di servizio?" e lui risponde "ho seguito le tue indicazioni alla lettera, le ho perfino annotate: dicono di girare a sinistra dal distributore di benzina e procedere per un km." "Mi dispiace molto, perché nonostante le mie istruzioni fossero sintatticamente corrette, purtroppo contenevano un piccolo errore semantico ma non rilevato".
+: Un errore semantico si verifica quando la descrizione dei passaggi da eseguire è sintatticamente perfetta e nel giusto ordine, ma c'è un errore nel programma. Il programma è completamente corretto ma non fa ciò che *intendi* fargli fare. Un semplice esempio potrebbe essere il dare ad una persona le indicazioni per un ristorante dicendo: "... quando raggiungi l'incrocio con la stazione di benzina, gira a sinistra e procedi per 1 km. Il ristorante è l'edificio rosso sulla sinistra." Il tuo amico è molto in ritardo e ti chiama per dirti di trovarsi in una fattoria e che si sta aggirando dietro un granaio, senza trovare alcuna traccia del ristorante. "Ma hai girato a sinistra o a destra alla stazione di servizio?" e lui risponde "ho seguito le tue indicazioni alla lettera, le ho perfino annotate: dicono di girare a sinistra dal distributore di benzina e procedere per un km." "Mi dispiace molto, perché nonostante le mie istruzioni fossero sintatticamente corrette, purtroppo contenevano un piccolo errore semantico non rilevato".
 
 Ribadisco che in tutte e tre le tipologie di errori, Python sta semplicemente facendo del suo meglio per fare esattamente quello che gli hai chiesto.
 
@@ -567,6 +567,6 @@ b) 44\
 c) x + 1\
 d) Errore perché x = x + 1 non è matematicamente possibile
 
-**Esercizio 8:** Illustra ognuno dei seguenti esempi usando come esempio una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual è l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
+**Esercizio 8:** Illustra ognuno dei seguenti esempi facendo deiparagoni con una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual è l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
 
 **Esercizio 9:** Come si corregge un "Syntax Error"?
