@@ -274,7 +274,7 @@ def print_lyrics():
 ~~~~
 
 
-`def` è la parola chiave che indica che il nome di questa funzione è `print_lyrics`. Fai attenzione che per i nomi delle funzioni valgono le stesse regole in vigore per i nomi delle variabili: sono consentiti lettere, numeri e alcuni segni di punteggiatura ma il primo carattere non può mai essere un numero. Inoltre, non puoi utilizzare una parola chiave come nome di una funzione, e evita di dare lo stesso nome ad una variabile ed una funzione.
+`def` è la parola chiave che indica che il nome di questa funzione è `print_lyrics`. Fai attenzione che per i nomi delle funzioni valgono le stesse regole in vigore per i nomi delle variabili: sono consentiti lettere, numeri e alcuni segni di punteggiatura ma il primo carattere non può mai essere un numero. Inoltre, non puoi utilizzare una parola chiave come nome di una funzione, e evita di dare lo stesso nome ad una variabile e ad una funzione.
 
 \index{def keyword}
 \index{keyword!def}
@@ -380,7 +380,7 @@ Sembra abbastanza semplice vero?
 Sicuro? ti ricordi vero che una funzione può chiamarne un'altra?
 Il programma che stai analizzando, durante la sua esecuzione potrebbe dover eseguire le istruzioni di un'altra funzione esterna che a sua volta potrebbe eseguire un'altra funzione ancora!
 
-Fortunatamente Python è bravo a tenere traccia di dove è arrivato con l'esecuzione. Quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione fino a giungere alla fine del programma dove verrà terminerà la sua attività. 
+Fortunatamente Python è bravo a tenere traccia di dove è arrivato con l'esecuzione. Quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione fino a giungere alla fine del programma dove terminerà la sua attività. 
 
 Qual è la morale di questa sordida storia? Quando leggi un programma non cercare di leggerlo da cima a fondo senza interruzioni ma ricorda il principio che a volte ha più senso seguire il flusso dell'esecuzione.
 
@@ -423,7 +423,7 @@ Spam
 ~~~~
 
 
-Dato che Le regole di composizione che si applicano alle funzioni integrate si applicano anche a quelle definite dall'utente, possiamo usare qualsiasi tipo di espressione come argomento per `print_twice`:
+Dato che le regole di composizione che si applicano alle funzioni integrate si applicano anche a quelle definite dall'utente, possiamo usare qualsiasi tipo di espressione come argomento per `print_twice`:
 \index{composition}
 
 
@@ -458,7 +458,7 @@ Funzioni produttive e funzioni vuote
 \index{void function}
 \index{function, fruitful}
 \index{function, void}
-Alcune delle funzioni che stiamo usando, come ad esempio le funzioni matematiche, restituiscono dei risultati; e, per mancanza di un nome migliore, vengono chiamate chiamiamo *funzioni produttive*. Altre funzioni, come `print_twice`, vengono chiamate *funzioni vuote* poichè eseguono un'azione ma non restituiscono alcun valore.
+Alcune delle funzioni che stiamo usando, come ad esempio le funzioni matematiche, restituiscono dei risultati; e, per mancanza di un nome migliore, vengono chiamate *funzioni produttive*. Altre funzioni, come `print_twice`, vengono chiamate *funzioni vuote* poichè eseguono un'azione ma non restituiscono alcun valore.
 
 Quando chiamate una funzione produttiva, quasi sempre avete bisogno di utilizzarne il risultato: ad esempio potreste assegnarlo a una variabile o usarlo come parte di un'espressione.
 
@@ -476,14 +476,14 @@ Quando chiami una funzione in modalità interattiva, Python ne visualizza subito
 ~~~~
 
 
-in uno script la storia cambia completamente: se chiami una funzione produttiva e non ne memorizzi il risultato in una variabile, il valore di ritorno scomparirá rapidamente nella nebbia!
+in uno script la storia cambia completamente: se chiami una funzione produttiva e non ne memorizzi il risultato in una variabile, il valore di ritorno scomparirà rapidamente nella nebbia!
 
 ~~~~ {.python}
 math.sqrt(5)
 ~~~~
 
 
-Credo che questo script non sia molto utile: é vero che calcola la radice quadrata di 5 ma non ne visualizza il risultato ne lo memorizza in una variabile.
+Credo che questo script non sia molto utile: è vero che calcola la radice quadrata di 5 ma non ne visualizza il risultato nè lo memorizza in una variabile.
 \index{interactive mode}
 \index{script mode}
 
@@ -513,7 +513,7 @@ Tramite  l'istruzione `return` inserita nella nostra funzione, hai la possibilit
 
 \VerbatimInput{../code3/addtwo.py}
 
-Quando questo script viene eseguito, l'istruzione `print` visualizza "8" perché la funzione `addtwo` è stata chiamata passandole gli argomenti 3 e 5. All'interno della funzione i parametri `a` e` b` hanno assunto rispettivamente il valore 3 e 5. La funzione calcola la somma dei due numeri e la inserisce nella variabile di funzione locale `added`. infine traminte l'istruzione `return` il valore calcolato viene inviato al codice chiamante come risultato della funzione, assegnato alla variabile `x` e quindi visualizzato.
+Quando questo script viene eseguito, l'istruzione `print` visualizza "8" perché la funzione `addtwo` è stata chiamata passandole gli argomenti 3 e 5. All'interno della funzione i parametri `a` e` b` hanno assunto rispettivamente il valore 3 e 5. La funzione calcola la somma dei due numeri e la inserisce nella variabile di funzione locale `added`. Infine traminte l'istruzione `return` il valore calcolato viene inviato al codice chiamante come risultato della funzione, assegnato alla variabile `x` e quindi visualizzato.
 
 Perché le funzioni?
 --------------
@@ -526,7 +526,7 @@ Potrebbe non esserti chiaro il motivo per cui vale la pena di suddividere un pro
 - dividere in funzioni un programma esteso, ti consente di eseguire il debug delle singole parti e solo dopo assemblarle in un insieme funzionante;
 - le funzioni ben progettate sono spesso riutilizzabili in molti programmi: una volta che scritte e verificate le puoi riutilizzare ovunque credi.
 
-Nel resto del libro, spesso useró una definizione di funzione per spiegare un concetto. Parte della capacità di creare e utilizzare le funzioni è di avere una funzione che interpreti correttamente una singola idea come "trova il valore più piccolo in un elenco di valori". Successivamente ti mostrerò il codice che trova il valore più piccolo in un elenco di valori e te lo presenterò come una funzione chiamata `min` che prende come argomento un elenco di valori e restituisce il valore più piccolo dell'elenco.  
+Nel resto del libro, spesso userò una definizione di funzione per spiegare un concetto. Parte della capacità di creare e utilizzare le funzioni è di avere una funzione che interpreti correttamente una singola idea come "trova il valore più piccolo in un elenco di valori". Successivamente ti mostrerò il codice che trova il valore più piccolo in un elenco di valori e te lo presenterò come una funzione chiamata `min` che prende come argomento un elenco di valori e restituisce il valore più piccolo dell'elenco.  
 
 Debug
 ---------
@@ -584,7 +584,7 @@ funzione
 \index{function}
 
 chiamata di funzione
-: l'istruzione che esegue una funzione. É composta dal nome della funzione seguito da un elenco di argomenti.
+: l'istruzione che esegue una funzione. È composta dal nome della funzione seguito da un elenco di argomenti.
 \index{function call}
 
 definizione di funzione
@@ -605,7 +605,7 @@ istruzione import
 \index{statement!import}
 
 oggetto modulo
-: il valore creato da l'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
+: il valore creato dall'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
 \index{module}
 
 parametro
