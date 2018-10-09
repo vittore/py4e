@@ -1,4 +1,4 @@
-%
+
 
 Dizionari
 ============
@@ -110,7 +110,7 @@ L'operatore `in` utilizza algoritmi diversi per elenchi e dizionari. Per gli ele
 
 **Esercizio 1:**
 
-Scarica una copia del file: 
+Scarica una copia del file:
 [www.py4e.com/code3/words.txt](http://www.py4e.com/code3/words.txt)
 
 \index{set membership}

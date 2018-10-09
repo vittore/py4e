@@ -470,7 +470,7 @@ Analisi di righe
 Di solito, quando analizziamo un file, vogliamo fare qualcosa di diverso dalla semplice visualizzazione di riga per riga. Spesso vogliamo trovare le "righe interessanti" e poi *analizzare* la riga per trovare la *parte* che stiamo cercando della riga stessa.
 E se volessimo estrarre il giorno della settimana da quelle righe che iniziano con "From"?  
 
-`From stephen.marquard@uct.ac.za `*` Sat`*` Jan 5 09:14:16 2008`
+`From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008`
 
 Il metodo `split` è molto efficace nel risolvere questo tipo di problema. Possiamo scrivere un piccolo programma che cerca le righe che iniziano con "From ", le "divide" in parole e poi ne visualizza la terza parola:
 
@@ -483,11 +483,11 @@ Abbiamo usato anche la forma contratta dell'istruzione `if` e messo `continue` s
 
 Il programma produce il seguente output:
 
-Sat
-Fri
-Fri
-Fri
-...
+    Sat
+    Fri
+    Fri
+    Fri
+    ...
 
 In seguito impareremo tecniche sempre più sofisticate per scegliere le righe su cui lavorare e come smontarle per trovare l'informazione precisa che stiamo cercando.
 
@@ -515,7 +515,7 @@ Nel primo caso `a` e `b` si riferiscono a due oggetti diversi che hanno lo stess
 \index{is operator}
 \index{operator!is}
 
-Puoi usare l'operatore `is` per verificare se due variabili si riferiscono allo stesso oggetto. 
+Puoi usare l'operatore `is` per verificare se due variabili si riferiscono allo stesso oggetto.
 
 ~~~~ {.python .trinket}
 >>> a = 'banana'
@@ -614,7 +614,7 @@ Ecco come puoi utilizzarlo:
 ['b', 'c']
 ~~~~
 
-Il parametro `t` e la variabile `letters` sono alias dello stesso oggetto. 
+Il parametro `t` e la variabile `letters` sono alias dello stesso oggetto.
 
 È importante distinguere tra operazioni che modificano elenchi e operazioni che creano nuovi elenchi. Nel prossimo esempio, il metodo `append` modifica un elenco, mentre l'operatore `+` ne crea uno nuovo:
 
@@ -687,13 +687,15 @@ Ecco alcuni problemi comuni e suggerimenti sul come evitarli:
 1.  Non dimenticare che la maggior parte dei metodi applicabili agli elenchi modificano l'argomento e restituiscono `None`.
     Questo è l'opposto del comportamento dei metodi di stringa che restituiscono una nuova stringa e lasciano immutato l'originale.
 
-    Se sei abituato a scrivere codice per le stringhe come questo:
+    Stai attento se sei abituato a scrivere codice per le stringhe come questo:
 
 
     ~~~~ {.python}
         word = word.strip ()
     ~~~~
-    It is tempting to write list code like this:
+
+    perché allora sarai tentato di scrivere codice come questo:
+
     ~~~~ {.python}
         t = t.sort()           # ERRATO!
     ~~~~
@@ -755,7 +757,7 @@ Ecco alcuni problemi comuni e suggerimenti sul come evitarli:
 
     Riprendiamo il programma che cerca il giorno della settimana nelle righe del nostro file:
 
-    `From stephen.marquard@uct.ac.za `**` Sat`**` Jan  5 09:14:16 2008`
+    `From stephen.marquard@uct.ac.za  Sat Jan  5 09:14:16 2008`
 
     Considerato che stiamo dividendo in parole questa frase, potremmo fare a meno dell'uso di `startswith` ed esaminare semplicemente la prima parola per determinare se ci interessa questa riga. Possiamo usare `continue` per saltare le righe che non hanno "From" come prima parola:
 
@@ -779,7 +781,7 @@ Ecco alcuni problemi comuni e suggerimenti sul come evitarli:
             IndexError: list index out of range
     ~~~~
 
-    Sembra funzionare dato che riusciamo a visualizzare il giorno della settimana della prima riga (Sat) ma poi il programma fallisce mostrando un errore di traceback. Cosa è andato storto? Quali dati incasinati hanno causato il blocco del nostro programma elegante, intelligente e molto "Pythonic"?
+    Sembra funzionare dato che riusciamo a visualizzare il giorno della settimana della prima riga (Sat) ma poi il programma fallisce mostrando un errore di traceback. Cosa è andato storto? Quali dati hanno causato il blocco del nostro programma elegante, intelligente e molto "Pythonic"?
 
     Potresti fissarlo a lungo scervellandoti o chiedere aiuto a qualcuno, ma l'approccio più rapido e intelligente è quello di aggiungere un'istruzione `print`. Il posto migliore per aggiungerla è proprio prima della riga in cui il programma ha dato errore e visualizzare i dati che sembrano causare l'errore.
 
@@ -816,7 +818,7 @@ Ecco alcuni problemi comuni e suggerimenti sul come evitarli:
             Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772
     ~~~~
 
-    L'errore si verifica quando il nostro programma incappa in una riga vuota! Perché non abbiamo pensato quando stavamo scrivendo il codice che, ovviamente, ci sono "zero parole" su una riga vuota? In altrre parole non abbiamo previsto che quando il codice cerca in una riga vuota la prima parola (`word [0]`) per verificare se corrisponde a "From", si blocca ed otteniamo l'errore "index out of range".
+    L'errore si verifica quando il nostro programma incappa in una riga vuota! Perché non abbiamo pensato quando stavamo scrivendo il codice che, ovviamente, ci sono "zero parole" su una riga vuota? In altre parole non abbiamo previsto che quando il codice cerca in una riga vuota la prima parola (`word [0]`) per verificare se corrisponde a "From", si blocca ed otteniamo l'errore "index out of range".
 
     Questo è ovviamente il posto perfetto per aggiungere un codice *guardiano* per evitare di controllare la prima parola se questa non è presente. Pur esistendo molti modi per proteggere questo codice, noi sceglieremo di verificare il numero di parole, prima di leggere la prima parola:
 
