@@ -38,7 +38,7 @@ Puoi scaricare questo file da [www.py4e.com/code3/mbox.txt](http://www.py4e.com/
 \index{file handle}
 
 
-Se l'operazione `Open` ha successo, il sistema operativo ci restituisce un *file handle*. L'handle del file non rappresenta il dato reale contenuto nel file, ma piuttosto una "maniglia" che possiamo usare per leggere i dati. Viene fornito un handle che indica che il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
+Se l'operazione `Open` ha successo, il sistema operativo ci restituisce un *file handle*. L’handle del file non rappresenta il dato reale contenuto nel file, ma piuttosto un “gestore” che possiamo usare per leggere i dati. Viene fornito un gestore (handle) che indica che il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
 
 ![A File Handle](height=2.0in@../images/handle)
 
@@ -180,7 +180,7 @@ Quando eseguirai questo programma, otterrai il seguente output:
     From: cwen@iupui.edu
     ...  
 
-Man mano che i tuoi script di manipolazione file diventano più complessi, potresti voler strutturare i cicli di ricerca utilizzando `continue`. L'idea di base del ciclo di ricerca è che stai cercando le righe "interessanti" e ignorando quelle "non interessanti". E, quando trovi una riga interessante, tu voglia farci qualcosa. Potresti strutturare questo tipo di ciclo come nell'esempio seguente:
+Man mano che i tuoi script di gestione dei file diventano più complessi, potresti voler strutturare i cicli di ricerca utilizzando `continue`. L'idea di base del ciclo di ricerca è che stai cercando le righe "interessanti" e ignorando quelle "non interessanti"; inoltre quando trovi una riga interessante, tu voglia farci qualcosa. Potresti strutturare questo tipo di ciclo come nell'esempio seguente:
 
 \VerbatimInput{../code3/search3.py}
 \begin{trinketfiles}
@@ -212,7 +212,7 @@ Che produce il seguente output:
 Far scegliere all'utente il nome del file
 -------------------------------------
 
-Non è il caso di modificare il nostro codice Python ogni volta che vogliamo elaborare un file diverso. È più utile chiedere all'utente di inserire il nome del file ogni volta che il programma viene eseguito. In questo modo è possibile usare il nostro programma su file diversi senza modificare continuamente il codice.  
+Non è il caso di modificare il nostro codice Python ogni volta che vogliamo elaborare un file diverso: è più utile chiedere all'utente di inserire il nome del file ogni volta che il programma viene eseguito. In questo modo è possibile usare il nostro programma su file diversi senza modificare continuamente il codice.  
 
 È una modifica abbastanza semplice da implementare: l'utente potrà inserire il nome del file utilizzando la funzione `input`:
 
@@ -276,6 +276,7 @@ Tornando al nostro script, una volta individuato il difetto nel programma, possi
 \end{trinketfiles}
 
 La funzione `exit` termina immediatamente il programma. È una funzione che possiamo definire non reversibile. Ora, quando il nostro utente (o il team controllo qualità) digita un nome incompleto o errato, li "intercettiamo" e recuperiamo con eleganza:
+
     python search7.py
     Inserisci il nome del file: mbox.txt
     There were 1797 subject lines in mbox.txt
