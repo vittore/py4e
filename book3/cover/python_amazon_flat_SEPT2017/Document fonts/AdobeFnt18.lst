@@ -1,0 +1,333 @@
+%!Adobe-FontList 1.18
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:AvenirLTStd-Black
+FamilyName:Avenir LT Std
+StyleName:95 Black
+MenuName:Avenir LT Std 65 Medium
+StyleBits:2
+WeightClass:750
+WidthClass:5
+AngleClass:0
+FullName:Avenir LT Std 95 Black
+WritingScript:Roman
+OutlineFileName:\AvenirLTStd-Black.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:27912
+FileModTime:1052763444
+NameArray:0,Mac,4,Avenir LT Std 95 Black
+NameArray:0,Win,1,Avenir LT Std 65 Medium
+NameArray:0,Win,16,Avenir LT Std
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:AvenirLTStd-Heavy
+FamilyName:Avenir LT Std
+StyleName:85 Heavy
+MenuName:Avenir LT Std 55 Roman
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Avenir LT Std 85 Heavy
+WritingScript:Roman
+OutlineFileName:\AvenirLTStd-Heavy.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:27640
+FileModTime:1052763444
+NameArray:0,Mac,4,Avenir LT Std 85 Heavy
+NameArray:0,Win,1,Avenir LT Std 55 Roman
+NameArray:0,Win,16,Avenir LT Std
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:AvenirLTStd-Light
+FamilyName:Avenir LT Std
+StyleName:35 Light
+MenuName:Avenir LT Std 35 Light
+StyleBits:0
+WeightClass:300
+WidthClass:5
+AngleClass:0
+FullName:Avenir LT Std 35 Light
+WritingScript:Roman
+OutlineFileName:\AvenirLTStd-Light.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:27240
+FileModTime:1052763444
+NameArray:0,Mac,4,Avenir LT Std 35 Light
+NameArray:0,Win,1,Avenir LT Std 35 Light
+NameArray:0,Win,16,Avenir LT Std
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:AvenirLTStd-Medium
+FamilyName:Avenir LT Std
+StyleName:65 Medium
+MenuName:Avenir LT Std 65 Medium
+StyleBits:0
+WeightClass:600
+WidthClass:5
+AngleClass:0
+FullName:Avenir LT Std 65 Medium
+WritingScript:Roman
+OutlineFileName:\AvenirLTStd-Medium.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:27264
+FileModTime:1052763444
+NameArray:0,Mac,4,Avenir LT Std 65 Medium
+NameArray:0,Win,1,Avenir LT Std 65 Medium
+NameArray:0,Win,16,Avenir LT Std
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:AvenirLTStd-Roman
+FamilyName:Avenir LT Std
+StyleName:55 Roman
+MenuName:Avenir LT Std 55 Roman
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Avenir LT Std 55 Roman
+WritingScript:Roman
+OutlineFileName:\AvenirLTStd-Roman.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:27176
+FileModTime:1052763444
+NameArray:0,Mac,4,Avenir LT Std 55 Roman
+NameArray:0,Win,1,Avenir LT Std 55 Roman
+NameArray:0,Win,16,Avenir LT Std
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+MenuName:Minion Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Minion Pro
+WritingScript:Roman
+OutlineFileName:\MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:218392
+FileModTime:1429626316
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Univers-CondensedBold
+FamilyName:Univers
+StyleName:67 Bold Condensed
+MenuName:Univers 47 CondensedLight
+StyleBits:2
+WeightClass:700
+WidthClass:3
+AngleClass:0
+FullName:Univers 67 Condensed Bold
+WritingScript:Roman
+OutlineFileName:\UniveConBol
+DataFormat:POSTResource
+UsesStandardEncoding:yes
+isCFF:no
+hasSVG:no
+FileLength:29357
+FileModTime:1326401914
+DesignSize:-1
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedBold
+OutlineFileName:\Univers Condensed
+ResourceID:14874
+MacStyle:0
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedBoldOblique
+OutlineFileName:\Univers Condensed
+ResourceID:14874
+MacStyle:2
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedOblique
+OutlineFileName:\Univers Condensed
+ResourceID:14875
+MacStyle:0
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-Condensed
+OutlineFileName:\Univers Condensed
+ResourceID:14876
+MacStyle:0
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedOblique
+OutlineFileName:\Univers Condensed
+ResourceID:14876
+MacStyle:2
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedLightOblique
+OutlineFileName:\Univers Condensed
+ResourceID:14877
+MacStyle:0
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedBoldOblique
+OutlineFileName:\Univers Condensed
+ResourceID:14877
+MacStyle:1
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedLight
+OutlineFileName:\Univers Condensed
+ResourceID:14878
+MacStyle:0
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedBold
+OutlineFileName:\Univers Condensed
+ResourceID:14878
+MacStyle:1
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedLightOblique
+OutlineFileName:\Univers Condensed
+ResourceID:14878
+MacStyle:2
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedBoldOblique
+OutlineFileName:\Univers Condensed
+ResourceID:14878
+MacStyle:3
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Suitcase
+FontName:Univers-CondensedBoldOblique
+OutlineFileName:\Univers Condensed
+ResourceID:16369
+MacStyle:0
+FileLength:149143
+FileModTime:1326401914
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:UniversLTStd-Black
+FamilyName:Univers LT Std
+StyleName:75 Black
+MenuName:Univers LT Std 55
+StyleBits:2
+WeightClass:850
+WidthClass:5
+AngleClass:0
+FullName:Univers LT Std 75 Black
+WritingScript:Roman
+OutlineFileName:\UniversLTStd-Black.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+FileLength:34856
+FileModTime:1052763520
+NameArray:0,Mac,4,Univers LT Std 75 Black
+NameArray:0,Win,1,Univers LT Std 55
+NameArray:0,Win,16,Univers LT Std
+%EndFont
+
