@@ -9,26 +9,28 @@ Cos'è un database?
 
 \index{database}
 
-Un *database* è un file progettato per la conservazione di dati. La maggior parte dei database è organizzata come un dizionario, nel senso che viene creata una correlazione tra chiavi e valori. La differenza principale è che il database è conservato su disco (o su altro tipo di memoria permanente), quindi i dati permangono anche quando il programma viene chiuso. Poiché un database è archiviato in una memoria permanente, può conservare molti più dati rispetto ad un dizionario, che è limitato dalle dimensioni della memoria nel computer.
+Un *database* è un file progettato per la conservazione di dati. La maggior parte dei database è organizzata come un dizionario, nel senso che viene creata una correlazione tra chiavi e valori. La differenza principale è che il database è conservato su disco (o su altro tipo di memoria permanente), per questo i dati permangono anche quando il programma viene chiuso. Inoltre il fatto che un database sia archiviato in una memoria permanente permette di conservare molti più dati rispetto ad un dizionario che è limitato dalle dimensioni della memoria nel computer.
 
 \index{database!indexes}
 
 Come un dizionario, il database è stato progettato per garantire un'elevata velocità d'inserimento e di accesso ai dati, anche per grandi quantità degli stessi. Il software del database mantiene le sue prestazioni aggiornando gli *indici* durante l'inserimento di nuovi dati in modo da consentire al computer di accedere rapidamente a una determinata voce.  
-Esistono diverse tipologie di database che vengono utilizzati per una vasta gamma di scopi tra cui: Oracle, MySQL, Microsoft SQL Server, PostgreSQL e SQLite. In questo libro ci concentreremo su SQLite, in quanto molto comune e già integrato in Python. SQLite è progettato per essere *integrato* in altre applicazioni per fornire supporto nella gestione dei dati. Ad esempio, in modo simile a molti altri prodotti, anche il browser Firefox utilizza internamente il database SQLite . <http://sqlite.org/> SQLite si adatta bene ad alcuni dei problemi di manipolazione dei dati che incontriamo in Informatica come l'applicazione di spider in Twitter che descriveremo in questo capitolo.
+Esistono diversi sistemi di database che vengono utilizzati per una vasta gamma di scopi tra cui. Alcuni di questi sistemi sono: Oracle, MySQL, Microsoft SQL Server, PostgreSQL e SQLite. In questo libro ci concentreremo su SQLite, perché molto comune e già integrato in Python. SQLite è progettato per essere *integrato* in altre applicazioni per fornire supporto nella gestione dei dati. Ad esempio anche il browser Firefox utilizza internamente il database SQLite in modo simile a molti altri prodotti,  
+
+SQLite (<http://sqlite.org/>) si adatta bene ad alcuni dei problemi di manipolazione dei dati che incontriamo in informatica come l'applicazione che scansiona Twitter e che descriveremo in questo capitolo.
 
 Fondamenti di Database
 -----------------
 
-Quando esaminate per la prima volta un database, sembra un foglio di calcolo con più schede. Le strutture di dati primarie di un database sono: *tabelle*, *righe* e *colonne*.
+Quando esaminate per la prima volta un database sembra un foglio di calcolo con più schede. Le strutture di dati primarie di un database sono: *tabelle*, *righe* e *colonne*. La presenza di relazioni tra queste strutture primarie ha dato il nome di "database relazionali".
 
-![Relational Databases](height=2.0in@../images/relational)
+![Database relazionale](height=2.0in@../images/relational)
 
 Nelle descrizioni tecniche dei database relazionali i concetti di tabella, riga e colonna sono più formalmente indicati rispettivamente come *relazione*, *tupla* ed *attributo*. In questo capitolo noi utilizzeremo i termini meno formali.
 
 Browser di database per SQLite
 ---------------------------
 
-Seppure questo capitolo si concentrerà sull'uso di Python per la manipolazione di dati contenuti in database SQLite, molte operazioni possono essere fatte più agevolmente utilizzando un software chiamato *Browser di database per SQLite*, liberamente scaricabile da: <http://sqlitebrowser.org/>
+Seppure questo capitolo si concentri sull'uso di Python per la manipolazione di dati contenuti in database SQLite, molte operazioni possono essere fatte più agevolmente utilizzando un software chiamato *Browser di database per SQLite*, liberamente scaricabile da: <http://sqlitebrowser.org/>
 
 Utilizzando questo programma è possibile creare facilmente tabelle, inserire dati, modificare dati o eseguire semplici query SQL.  In un certo senso, il comportamento del Database Browser è simile a quello di un editor di testo. Quando volete eseguire una o poche operazioni su un file di testo, è sufficiente aprirlo in un editor e apportare le modifiche desiderate. Se dovete eseguire molte modifiche in un file di testo, è meglio scrivere un semplice programma in Python. Lo stesso modello si applica al lavoro con i database. Svolgerete le operazioni piú semplici nel gestore di database, mentre quelle più complesse saranno eseguite più comodamente tramite Python.
 
