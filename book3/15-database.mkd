@@ -1,7 +1,7 @@
 
 %
 
-Utilizzo di database e SQL
+Utilizzo dei database e SQL
 ==========================
 
 Cos'è un database?
@@ -18,7 +18,7 @@ Esistono diversi sistemi di database che vengono utilizzati per una vasta gamma 
 
 SQLite (<http://sqlite.org/>) si adatta bene ad alcuni dei problemi di manipolazione dei dati che incontriamo in informatica come l'applicazione che scansiona Twitter e che descriveremo in questo capitolo.
 
-Fondamenti di Database
+Fondamenti sui database
 -----------------
 
 Quando esaminate per la prima volta un database sembra un foglio di calcolo con più schede. Le strutture di dati primarie di un database sono: *tabelle*, *righe* e *colonne*. La presenza di relazioni tra queste strutture primarie ha dato il nome di "database relazionali".
@@ -37,7 +37,7 @@ Utilizzando questo programma è possibile creare facilmente tabelle, inserire da
 Creazione di una tabella
 -------------------------
 
-I database richiedono una struttura più definita rispetto agli elenchi o ai dizionari Python ^[Anche se in realtà SQLite consente una certa flessibilità nel tipo di dati memorizzati in una colonna, in questo capitolo manterremo una rigorosa distinzione dei nostri tipi di dati in modo che i concetti si possano applicare anche ad altre tipologie di database come MySQL.].  Quando creiamo una *tabella* del database dobbiamo comunicare in anticipo al database i nomi di ciascuna delle *colonne* nella tabella e il tipo di dati che stiamo pianificando di memorizzare in ognuna di esse. Quando il database è a conoscenza del tipo di dati presente in ogni colonna, può scegliere il modo più efficiente per archiviarli e ricercarli.  
+I database richiedono una struttura più definita rispetto agli elenchi o ai dizionari Python ^[Anche se in realtà SQLite consente una certa flessibilità nel tipo di dati memorizzati in una colonna, in questo capitolo manterremo una rigorosa distinzione dei nostri tipi di dati in modo che i concetti si possano applicare anche ad altre tipologie di database come MySQL.].  Quando creiamo una *tabella* nel database dobbiamo comunicare in anticipo al database i nomi di ciascuna delle *colonne* nella tabella e il tipo di dati che stiamo pianificando di memorizzare in ognuna di esse. Quando il database è a conoscenza del tipo di dati presente in ogni colonna, può scegliere il modo più efficiente per archiviarli e ricercarli.  
 
 Per conoscere i vari tipi di dati supportati da SQLite potete consultare il seguente indirizzo: <http://www.sqlite.org/datatypes.html>
 
@@ -53,9 +53,9 @@ Definire fin dall'inizio la struttura dei vostri dati può sembrare scomodo nei 
 \index{cursor function}
 \index{function!cursor}
 
-L'operazione `connect` effettua una "connessione" al database memorizzato nel file `music.sqlite3` nella cartella corrente. Se il file non esiste, verrà creato. Il motivo per cui si chiama "connessione" è che a volte il database è memorizzato su un "server di database" separato dalla macchina su cui stiamo eseguendo la nostra applicazione. Nei nostri semplici esempi il database sarà sempre un file in locale nella stessa directory del codice Python che stiamo usando.  Un *cursore* è come un handle di file che possiamo usare per eseguire operazioni sui dati memorizzati nel database. Evocare `cursor()` è concettualmente molto simile a chiamare `open()` quando si tratta di file di testo.
+L'operazione `connect` effettua una "connessione" al database memorizzato nel file `music.sqlite3` nella cartella corrente. Se il file non esiste, verrà creato. Il motivo per cui si chiama "connessione" è che a volte il database è memorizzato su un "server di database" separato dalla macchina su cui stiamo eseguendo la nostra applicazione. Nei nostri semplici esempi il database sarà sempre un file locale nella stessa directory del codice Python che stiamo eseguendo.  Un *cursore* è come un handle di file che possiamo usare per eseguire operazioni sui dati memorizzati nel database. Richiamare la funzione `cursor()` è concettualmente molto simile a richiamare la funzione `open()` quando si tratta di file di testo.
 
-![A Database Cursor](height=2.0in@../images/cursor)
+![Cursore su un database](height=2.0in@../images/cursor)
 
 Una volta ottenuto il cursore, possiamo iniziare a eseguire comandi sui contenuti del database usando il metodo `execute()`.  I comandi del database sono espressi in un linguaggio speciale che è stato standardizzato da molti diversi fornitori di database per permetterci di imparare un solo linguaggio per database.
 
