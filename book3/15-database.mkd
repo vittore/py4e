@@ -53,7 +53,7 @@ Definire fin dall'inizio la struttura dei vostri dati può sembrare scomodo nei 
 \index{cursor function}
 \index{function!cursor}
 
-L'operazione `connect` effettua una "connessione" al database memorizzato nel file `music.sqlite3` nella cartella corrente. Se il file non esiste, verrà creato. Il motivo per cui si chiama "connessione" è che a volte il database è memorizzato su un "server di database" separato dalla macchina su cui stiamo eseguendo la nostra applicazione. Nei nostri semplici esempi il database sarà sempre un file locale nella stessa directory del codice Python che stiamo eseguendo.  Un *cursore* è come un handle di file che possiamo usare per eseguire operazioni sui dati memorizzati nel database. Richiamare la funzione `cursor()` è concettualmente molto simile a richiamare la funzione `open()` quando si tratta di file di testo.
+L'operazione `connect` effettua una "connessione" al database memorizzato nel file `music.sqlite3` nella cartella corrente. Se il file non esiste, verrà creato. Il motivo per cui si chiama "connessione" è che a volte il database è memorizzato su un "server di database" separato dalla macchina su cui stiamo eseguendo la nostra applicazione. Nei nostri semplici esempi il database sarà sempre un file locale nella stessa directory del codice Python che stiamo eseguendo.  Un *cursore* è come un handle di file che possiamo usare per eseguire operazioni sui dati memorizzati nel database. Richiamare il metodo `cursor()` è concettualmente molto simile a richiamare il metodo `open()` quando si tratta di un file di testo.
 
 ![Cursore su un database](height=2.0in@../images/cursor)
 
@@ -61,7 +61,7 @@ Una volta ottenuto il cursore, possiamo iniziare a eseguire comandi sui contenut
 
 Il linguaggio del database è chiamato *Structured Query Language*, in breve: *SQL*. <http://en.wikipedia.org/wiki/SQL>
 
-Nel nostro esempio, stiamo eseguendo due comandi SQL nel nostro database. Per convenzione, mostreremo le parole chiave SQL in maiuscolo e le parti del comando che stiamo aggiungendo (come i nomi di tabelle e colonne) in minuscolo.  Il primo comando SQL rimuove la tabella `Tracks` dal database, se esiste. Questo schema serve semplicemente a permetterci di eseguire lo stesso programma per creare la tabella `Tracks` più e più volte senza causare errori. Notare che il comando `DROP TABLE` cancella la tabella e tutti i suoi contenuti dal database (in altri termini, non è possibile premere il tasto "annulla").
+Nel nostro esempio, stiamo eseguendo due comandi SQL nel nostro database. Per convenzione, mostreremo le parole chiave SQL in maiuscolo e le parti del comando che stiamo aggiungendo (come i nomi di tabelle e colonne) in minuscolo.  Il primo comando SQL rimuove la tabella `Tracks` dal database, se esiste. Questo schema serve semplicemente a permetterci di eseguire lo stesso programma per creare la tabella `Tracks` più e più volte senza causare errori. Notare che il comando `DROP TABLE` cancella la tabella e tutti i dati da lei contenuti dal database (in altri termini, non è possibile premere il tasto "annulla").
 
 ~~~~ {.python}
 cur.execute('DROP TABLE IF EXISTS Tracks ')
@@ -79,9 +79,9 @@ Ora che abbiamo creato una tabella chiamata `Tracks`, possiamo inserirvi alcuni 
 
 Per prima cosa inseriamo due righe nella nostra tabella e usiamo `commit()` per effettuare la scrittura dei dati nel file di database.
 
-![Rows in a Table](height=1.5in@../images/tracks)
+![Righe in una tabella](height=1.5in@../images/tracks)
 
-Quindi usiamo il comando `SELECT` per recuperare le righe che abbiamo appena inserito dalla tabella. Nel comando `SELECT`, indichiamo quali colonne selezionare `(title, plays)` e indichiamo da quale tabella vogliamo recuperare i dati. Dopo aver eseguito l'istruzione `SELECT`, è possibile far scorrere il cursore con un'istruzione `for`. Per necessità di efficienza, il cursore non legge tutti i dati dal database quando eseguiamo l'istruzione `SELECT`. I dati vengono invece letti su richiesta mentre scorriamo le righe con l'istruzione `for`.  L'output del programma è il seguente:
+Quindi usiamo il comando `SELECT` per recuperare le righe che abbiamo appena inserito dalla tabella. Nel comando `SELECT`, indichiamo quali colonne selezionare `(title, plays)` e indichiamo da quale tabella vogliamo recuperare i dati. Dopo aver eseguito l'istruzione `SELECT`, è possibile far scorrere il cursore con un'istruzione `for`. Per migliorare l'efficienza, il cursore non legge tutti i dati dal database quando eseguiamo l'istruzione `SELECT`. I dati vengono invece letti su richiesta mentre scorriamo le righe con l'istruzione `for`.  L'output del programma è il seguente:
 
 ~~~~
 Tracks:
@@ -93,7 +93,7 @@ Tracks:
 
 Il nostro ciclo `for` trova due righe, e ogni riga è una tupla Python con il primo valore come `title` e il secondo valore come numero di `plays`.  
 
- *Nota: potreste vedere stringhe che iniziano con "u" in altri libri o su Internet.  Si trattava di un'indicazione in Python 2 che specificava che le stringhe sono *stringhe Unicode* in grado di memorizzare set di caratteri non latini. Per impostazione predefinita, in Python 3 tutte le stringhe sono unicode.*
+ *Nota: potreste vedere stringhe che iniziano con "u" in altri libri o su Internet.  Si trattava di un'indicazione utilizzata in Python 2 che specificava che le stringhe sono *stringhe Unicode* in grado di memorizzare set di caratteri non latini. Per impostazione predefinita, in Python 3 tutte le stringhe sono unicode.*
 
  Alla fine del programma, eseguiamo un comando SQL per "CANCELLARE" le righe che abbiamo appena creato in modo da poter eseguire il programma più e più volte. Il comando `DELETE` contiene l'uso di una clausola `WHERE` che ci consente di applicare un criterio di selezione in modo da poter chiedere al database di applicare il comando solo alle righe che rispettano il criterio. In questo esempio il criterio si applica a tutte le righe, quindi svuotiamo la tabella in modo da essere in grado di eseguire il programma ripetutamente. Dopo aver eseguito `DELETE`, chiamiamo anche `commit()` per rendere effettiva la rimozione dei dati dal database.
 
@@ -124,7 +124,7 @@ L'uso di `*` indica che si desidera che il database restituisca tutte le colonne
 SELECT title,plays FROM Tracks ORDER BY title
 ~~~~
 
-Per rimuovere una riga, occorre usare una clausola `WHERE` in un'istruzione SQL `DELETE`. La clausola `WHERE` determina quali righe devono essere cancellate:
+Per rimuovere una riga occorre usare una clausola `WHERE` in un'istruzione SQL `DELETE`. La clausola `WHERE` determina quali righe devono essere cancellate:
 
 ~~~~ {.sql}
 DELETE FROM Tracks WHERE title = 'My Way'
@@ -138,12 +138,12 @@ UPDATE Tracks SET plays = 16 WHERE title = 'My Way'
 
 L'istruzione `UPDATE` specifica una tabella e quindi un elenco di campi e valori da modificare dopo la parola chiave `SET` e quindi una clausola `WHERE` facoltativa per selezionare le righe che devono essere aggiornate. Una singola istruzione `UPDATE` modificherà tutte le righe che corrispondono alla clausola `WHERE`. Se non viene specificata una clausola `WHERE`, `UPDATE` viene eseguito su tutte le righe nella tabella.  Questi quattro basilari comandi SQL (INSERT, SELECT, UPDATE e DELETE) consentono le quattro operazioni di base necessarie per creare e conservare i dati.
 
-Effettuare uno spider su Twitter utilizzando un database
+Uno spider su Twitter utilizzando un database
 ----------------------------------
 
 In questa sezione creeremo un semplice programma di spider che scorrerà gli account di Twitter e ne costruirà un database. *Da notare: fate molta attenzione quando eseguite questo programma. Non è possibile estrarre troppi dati o eseguire il programma troppo a lungo, altrimenti si può incorrere nell'interruzione dell'accesso a Twitter.*
 
-Uno dei problemi di qualsiasi tipo di programma di spider è che questo deve poter essere fermato e riavviato molte volte e non si devono perdere i dati recuperati fino a quel punto. Per non dover sempre riavviare il recupero dei dati dall'inizio, è necessario archiviare i dati mentre vengono recuperati, in modo che il nostro programma possa effettuare un back up e riprendere da dove era stato interrotto.  Inizieremo recuperando gli amici di una persona su Twitter e i loro stati, scorrendo l'elenco degli amici e aggiungendo ciascuno degli amici in un database che sarà recuperato successivamente.
+Uno dei problemi di qualsiasi tipo di programma di spider è che questo deve poter essere fermato e riavviato molte volte e non si devono perdere i dati recuperati fino a quel punto. Per non dover sempre riavviare il recupero dei dati dall'inizio, è necessario archiviare i dati mentre vengono recuperati in modo che il nostro programma possa effettuare un back up e riprendere da dove era stato interrotto.  Inizieremo recuperando gli amici di una persona su Twitter e i loro stati, scorrendo l'elenco degli amici e aggiungendo ciascuno degli amici in un database che sarà recuperato successivamente.
 
 Dopo aver elaborato gli amici su Twitter di una persona, controlliamo nel nostro database e recuperiamo uno degli amici dell'amico. Lo faremo ripetutamente, scegliendo una persona "non visitata" e recuperando il suo elenco di amici, aggiungendo nel nostro elenco gli amici che non abbiamo ancora esaminato, in vista di un futuro esame.  Monitoriamo anche quante volte abbiamo visto un particolare amico nel database per avere un'idea della loro "popolarità".  Se immagazziniamo il nostro elenco di account conosciuti e se memorizziamo in un database sul disco del computer l'aver recuperato o meno un account e di quanto questo è popolare, possiamo interrompere e riavviare il nostro programma tutte le volte che vogliamo.  Questo programma è un po' complesso. Si basa sul codice dell'esercizio precedente che utilizza l'API di Twitter.  
 
