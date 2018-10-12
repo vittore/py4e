@@ -44,7 +44,7 @@ b
 
 Quindi `b` è la lettera 0 ("zero") di "banana", `a` è la 1^ lettera ("prima"), e `n` è la 2^ lettera ("seconda") .
 
-![String Indexes](height=0.75in@../images/string)
+![Indice di una stringa](height=0.75in@../images/string)
 
 \index{index!starting at zero}
 \index{zero, index starting at}

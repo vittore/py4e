@@ -15,7 +15,7 @@ Persistenza
 Finora, abbiamo imparato come scrivere programmi e comunicare le nostre intenzioni all'*unità di elaborazione centrale* usando l'esecuzione condizionale, le funzioni e le iterazioni. Abbiamo anche imparato come creare e utilizzare strutture di dati nella *memoria principale*. La CPU e la memoria RAM sono i luoghi dove il nostro software lavora e funziona.
 È dove si forma tutto il "pensiero".  Ma se ricordate le nostre discussioni sull'architettura hardware, una volta che l'alimentazione viene tolta, qualsiasi cosa memorizzata nella CPU o nella memoria principale viene cancellata. Praticamente, i nostri programmi sono stati solo fugaci esercizi divertenti per imparare Python.
 
-![Secondary Memory](height=2.5in@../images/arch)
+![Memoria secondaria](height=2.5in@../images/arch)
 
 In questo capitolo, iniziamo a lavorare con i file nella *Memoria Secondaria* che, come scritto, non viene cancellata quando si spegne il pc o, nel caso di utilizzo di un'unità flash USB, i dati prodotti dai nostri script possono essere rimossi dal sistema e trasportati su un altro sistema.  
 Ci concentreremo principalmente sulla lettura e la scrittura di file di testo simile a quelli che creiamo in un editor di testo. Più avanti vedremo come lavorare con i file di database che sono file binari, progettati specificamente per essere letti e scritti tramite programmi di database.
@@ -40,7 +40,7 @@ Puoi scaricare questo file da [www.py4e.com/code3/mbox.txt](http://www.py4e.com/
 
 Se l'operazione `Open` ha successo, il sistema operativo ci restituisce un *file handle*. L’handle del file non rappresenta il dato reale contenuto nel file, ma piuttosto un “gestore” che possiamo usare per leggere i dati. Viene fornito un gestore (handle) che indica che il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
 
-![A File Handle](height=2.0in@../images/handle)
+![Gestore (handler) di un file](height=2.0in@../images/handle)
 
 Se il file non esiste, `open` fallirà visualizzando un traceback e non avrai un handle che ti permetta di accedere ai contenuti del file:
 

@@ -508,7 +508,7 @@ sappiamo che `a` e `b` si riferiscono entrambi a una stringa, ma non sappiamo se
 
 \index{aliasing}
 
-![Variables and Objects](height=0.5in@../images/list1)
+![Variabili e oggetti](height=0.5in@../images/list1)
 
 Nel primo caso `a` e `b` si riferiscono a due oggetti diversi che hanno lo stesso valore mentre nel secondo caso si riferiscono allo stesso oggetto.
 
