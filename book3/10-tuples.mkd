@@ -12,21 +12,21 @@ Le tuple sono immutabili
 \index{type!tuple}
 \index{sequence}
 
-Una tupla ^ [Curiosità: la parola "tupla" deriva dai nomi dati a sequenze di numeri di lunghezza variabile: singola, doppie, triple, quadruple, quintuple, sestuple, settuple, ecc.] È una sequenza di valori molto simile a un elenco. I valori memorizzati in una tupla possono essere di qualsiasi tipo e sono indicizzati tramite numeri interi. La differenza fondamentale è che le tuple sono *immutabili*.
-Anche le tuple sono *paragonabili* e *hashabili*, e perciò possiamo ordinare gli elenchi di tuple e queste ultime possono essere utilizzate come valori chiave nei dizionari Python.
+La tupla ^ [Curiosità: la parola "tupla" deriva dai nomi dati a sequenze di numeri di lunghezza variabile: singola, doppie, triple, quadruple, quintuple, sestuple, settuple, ecc.] è una sequenza di valori molto simile a un elenco. I valori memorizzati in una tupla possono essere di qualsiasi tipo e vengono indicizzati tramite numeri interi. La caratteristica fondamentale delle tuple è l'essere *immutabili*.
+Sulle tuple è possibile effettuare operazioni di comparazione e hash, possiamo quindi ordinare gli elenchi delle tuple e utilizzare queste ultime come valori chiave nei dizionari Python.
 
 \index{mutability}
 \index{hashable}
 \index{comparable}
 \index{immutability}
 
-Sintatticamente, una tupla è un elenco di valori separati da virgole:
+Sintatticamente la tupla è un elenco di valori separati da virgole:
 
 ~~~~ {.python}
 >>> t = 'a', 'b', 'c', 'd', 'e'
 ~~~~
 
-Sebbene non sia necessario, è convenzione racchiudere le tuple tra parentesi tonde per identificarle rapidamente quando esaminiamo del codice Python:
+Anche se non necessario è convenzione racchiudere le tuple tra parentesi tonde per identificarle rapidamente quando esaminiamo uno script di Python:
 
 \index{parentheses!tuples in}
 
@@ -34,7 +34,7 @@ Sebbene non sia necessario, è convenzione racchiudere le tuple tra parentesi to
 >>> t = ('a', 'b', 'c', 'd', 'e')
 ~~~~
 
-Per creare una tupla con un singolo elemento, occorre aggiungere una virgola dopo l'elemento:
+Per creare una tupla contenente un singolo elemento, scrivere l'elemento tra virgolette seguito da una virgola:
 
 \index{singleton}
 \index{tuple!singleton}
@@ -45,7 +45,7 @@ Per creare una tupla con un singolo elemento, occorre aggiungere una virgola dop
 <type 'tuple'>
 ~~~~
 
-Senza la virgola, Python considera `('a')` come un'espressione contenente una stringa tra parentesi che valuta come una stringa:
+In assenza della virgola, Python considera `('a')` come un'espressione contenente una stringa tra parentesi:
 
 ~~~~ {.python}
 >>> t2 = ('a')
@@ -53,7 +53,7 @@ Senza la virgola, Python considera `('a')` come un'espressione contenente una st
 <type 'str'>
 ~~~~
 
-Un altro modo per costruire una tupla è usare la funzione incorporata `tuple`. Priva di argomenti, crea una tupla vuota:
+Un altro modo per costruire una tupla è usare la funzione `tuple`. In assenza di argomenti, viene creata una tupla vuota:
 
 \index{tuple function}
 \index{function!tuple}
@@ -64,7 +64,7 @@ Un altro modo per costruire una tupla è usare la funzione incorporata `tuple`. 
 ()
 ~~~~
 
-Se l'argomento è una sequenza (stringa, elenco o tupla), il risultato della chiamata di `tuple` è una tupla con gli elementi della sequenza:
+Utilizzando come argomento di tuple una sequenza (stringa, elenco o tupla), il risultato che otterrai sarà a sua volta una tupla composta dagli elementi della sequenza:
 
 ~~~~ {.python .trinket}
 >>> t = tuple('lupins')
@@ -72,7 +72,7 @@ Se l'argomento è una sequenza (stringa, elenco o tupla), il risultato della chi
 ('l', 'u', 'p', 'i', 'n', 's')
 ~~~~
 
-Poiché `tuple` è il nome di una funzione predefinita, è necessario evitare di usarlo come nome di variabile.  La maggior parte degli operatori degli elenchi funziona anche sulle tuple. L'operatore parentesi quadra indicizza un elemento:
+Dato che `tuple` è il nome di una funzione predefinita, è necessario evitare di usarlo come nome di variabile.  La maggior parte degli operatori degli elenchi funziona anche sulle tuple. L'operatore parentesi quadra indicizza un elemento:
 
 \index{bracket operator}
 \index{operator!bracket}
