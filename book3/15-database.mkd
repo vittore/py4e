@@ -93,7 +93,7 @@ Tracks:
 
 Il nostro ciclo `for` trova due righe, e ogni riga è una tupla Python con il primo valore come `title` e il secondo valore come numero di `plays`.  
 
- *Nota: potreste vedere stringhe che iniziano con "u" in altri libri o su Internet.  Si trattava di un'indicazione utilizzata in Python 2 che specificava che le stringhe sono *stringhe Unicode* in grado di memorizzare set di caratteri non latini. Per impostazione predefinita, in Python 3 tutte le stringhe sono unicode.*
+ *Nota: potreste vedere stringhe che iniziano con "u" in altri libri o su Internet.  Si trattava di un'indicazione utilizzata in Python 2 che specificava che le stringhe sono **stringhe Unicode** in grado di memorizzare set di caratteri non latini. Per impostazione predefinita, in Python 3 tutte le stringhe sono unicode.*
 
  Alla fine del programma, eseguiamo un comando SQL per "CANCELLARE" le righe che abbiamo appena creato in modo da poter eseguire il programma più e più volte. Il comando `DELETE` contiene l'uso di una clausola `WHERE` che ci consente di applicare un criterio di selezione in modo da poter chiedere al database di applicare il comando solo alle righe che rispettano il criterio. In questo esempio il criterio si applica a tutte le righe, quindi svuotiamo la tabella in modo da essere in grado di eseguire il programma ripetutamente. Dopo aver eseguito `DELETE`, chiamiamo anche `commit()` per rendere effettiva la rimozione dei dati dal database.
 
@@ -141,7 +141,9 @@ L'istruzione `UPDATE` specifica una tabella e quindi un elenco di campi e valori
 Uno spider su Twitter utilizzando un database
 ----------------------------------
 
-In questa sezione creeremo un semplice programma di spider che scorrerà gli account di Twitter e ne costruirà un database. *Da notare: fate molta attenzione quando eseguite questo programma. Non è possibile estrarre troppi dati o eseguire il programma troppo a lungo, altrimenti si può incorrere nell'interruzione dell'accesso a Twitter.*
+In questa sezione creeremo un semplice programma di spider che scorrerà gli account di Twitter e ne costruirà un database.
+
+*Da notare: fate molta attenzione quando eseguite questo programma. Non è possibile estrarre troppi dati o eseguire il programma troppo a lungo, altrimenti si può incorrere nell'interruzione dell'accesso a Twitter.*
 
 Uno dei problemi di qualsiasi tipo di programma di spider è che questo deve poter essere fermato e riavviato molte volte e non si devono perdere i dati recuperati fino a quel punto. Per non dover sempre riavviare il recupero dei dati dall'inizio, è necessario archiviare i dati mentre vengono recuperati in modo che il nostro programma possa effettuare un back up e riprendere da dove era stato interrotto.  Inizieremo recuperando gli amici di una persona su Twitter e i loro stati, scorrendo l'elenco degli amici e aggiungendo ciascuno degli amici in un database che sarà recuperato successivamente.
 
@@ -292,7 +294,7 @@ CREATE TABLE People
 ~~~~
 
 
-Si noti che non stiamo più memorizzando un conteggio delle amicizie in ogni riga della tabella `Persone'. Quando selezioniamo "INTEGER PRIMARY KEY" come formato della nostra colonna `id`, stiamo indicando che vogliamo che SQLite gestisca questa colonna assegnando automaticamente una chiave numerica unica per ogni riga che inseriamo. Aggiungiamo anche la parola chiave UNIQUE per indicare che non consentiremo a SQLite di inserire due righe con lo stesso valore in `name`.  Adesso, invece di creare la precedente tabella `Pals`, creiamo una tabella chiamata `Follows` con due colonne numeriche `from_id` e `to_id` e un vincolo sulla tabella che indica che la *combinazione* di `from_id` e `to_id` deve essere unica (cioè, non possiamo inserire righe duplicate) nel nostro database.
+Si noti che non stiamo più memorizzando un conteggio delle amicizie in ogni riga della tabella `Persone`. Quando selezioniamo "INTEGER PRIMARY KEY" come formato della nostra colonna `id`, stiamo indicando che vogliamo che SQLite gestisca questa colonna assegnando automaticamente una chiave numerica unica per ogni riga che inseriamo. Aggiungiamo anche la parola chiave UNIQUE per indicare che non consentiremo a SQLite di inserire due righe con lo stesso valore in `name`.  Adesso, invece di creare la precedente tabella `Pals`, creiamo una tabella chiamata `Follows` con due colonne numeriche `from_id` e `to_id` e un vincolo sulla tabella che indica che la *combinazione* di `from_id` e `to_id` deve essere unica (cioè, non possiamo inserire righe duplicate) nel nostro database.
 
 ~~~~ {.sql}
 CREATE TABLE Follows
@@ -301,7 +303,7 @@ CREATE TABLE Follows
 
 Quando aggiungiamo la clausola `UNIQUE` alle nostre tabelle, indichiamo al database un insieme di regole da applicare quando proviamo ad inserire i record. Stiamo creando queste regole nei nostri programmi per comodità, come vedremo tra un momento. Le regole ci impediscono di commettere errori e rendono più semplice scrivere parte del nostro codice.  In sostanza, nel creare questa tabella `Follows`, modelliamo una "relazione" in cui una persona "segue" qualcun altro e la rappresentiamo con una coppia di numeri che indica sia che (a) le persone sono connesse che (b) la direzione del rapporto.
 
-![Relationships Between Tables](height=3.5in@figs2/twitter)
+![Relazione tra tabelle](height=3.5in@figs2/twitter)
 
 Programmazione con più tabelle
 --------------------------------
@@ -313,7 +315,7 @@ Ora riscriveremo il programma spider di Twitter usando due tabelle, le chiavi pr
 Questo programma sta iniziando a diventare un po' complicato, ma illustra gli schemi che dobbiamo usare quando usiamo le chiavi numeriche per collegare le tabelle. Lo schema di base è il seguente:
 
 1.  Creare tabelle con chiavi primarie e vincoli.
-2.   Quando abbiamo una chiave logica per una persona (ad esempio, il nome dell'account) e abbiamo bisogno del valore `id` per la persona, a seconda che la persona sia già nella tabella `Persone' o meno, abbiamo bisogno di: (1) cercare la persona nella tabella `Persone` e recuperare il valore `id` per la persona o (2) aggiungere la persona alla tabella `Persone` e ottenere il valore `id` per la riga appena aggiunta.
+2.   Quando abbiamo una chiave logica per una persona (ad esempio, il nome dell'account) e abbiamo bisogno del valore `id` per la persona, a seconda che la persona sia già nella tabella `Persone` o meno, abbiamo bisogno di: (1) cercare la persona nella tabella `Persone` e recuperare il valore `id` per la persona o (2) aggiungere la persona alla tabella `Persone` e ottenere il valore `id` per la riga appena aggiunta.
 3.   Inserire la riga che cattura la relazione "follows"  Esamineremo ognuna di queste operazioni.
 
 ### Vincoli nelle tabelle del database
@@ -411,7 +413,7 @@ Follows:
 60 rows.
 ~~~~
 
-Potete vedere i campi `id`,`name` e 'visited` nella tabella `People` e i conteggi di entrambe le estremità della relazione nella tabella `Follows`. Nella tabella "People", possiamo vedere che le prime tre persone sono state visitate e i loro dati sono stati recuperati. I dati nella tabella `Follows` indicano che `drchuck` (utente 1) è amico di tutte le persone mostrate nelle prime cinque righe. Questo ha senso, perché i primi dati che abbiamo recuperato e archiviato sono stati gli amici di Twitter di "drchuck". Se dovessimo visualizzare più righe dalla tabella `Follows`, vedremmo anche gli amici degli utenti 2 e 3.
+Potete vedere i campi `id`,`name` e `visited` nella tabella `People` e i conteggi di entrambe le estremità della relazione nella tabella `Follows`. Nella tabella `People`, possiamo vedere che le prime tre persone sono state visitate e i loro dati sono stati recuperati. I dati nella tabella `Follows` indicano che `drchuck` (utente 1) è amico di tutte le persone mostrate nelle prime cinque righe. Questo ha senso, perché i primi dati che abbiamo recuperato e archiviato sono stati gli amici di Twitter di "drchuck". Se dovessimo visualizzare più righe dalla tabella `Follows`, vedremmo anche gli amici degli utenti 2 e 3.
 
 Tre tipi di chiavi
 -------------------
@@ -437,7 +439,7 @@ SELECT * FROM Follows JOIN People
 
 La clausola `JOIN` indica che stiamo selezionando dei campi fra le tabelle `Follows` e `People`. La clausola `ON` indica come le due tabelle devono essere unite: prendiamo le righe da `Follows` e aggiungiamo la riga da `People` quando il campo `from_id` in `Follows` è lo stesso valore di ` id` nella tabella `People`.
 
-![Connecting Tables Using JOIN](height=3.5in@figs2/join)
+![Connettere tabelle usando JOIN](height=3.5in@figs2/join)
 
 Il risultato dell'operazione JOIN consiste nel creare "metarighe" lunghissime che contengono sia i campi da "People" che i campi corrispondenti di "Follows". Quando c'è più di una corrispondenza tra il campo `id` di `People` e `from_id` di `People`, JOIN crea una metariga per *ciascuna* delle coppie di righe corrispondenti, duplicando i dati secondo necessità.  Il seguente codice mostra i dati che avremo nel database dopo che il (precedente) programma multitabella spider di Twitter è stato eseguito più volte.
 
