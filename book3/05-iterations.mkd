@@ -66,7 +66,7 @@ Puoi quasi leggere l'istruzione `while` come se fosse scritta in inglese: "Mentr
 
 \index{flow of execution}
 
-Più formalmente, ecco il flusso di esecuzione per un'istruzione `while`: 1. Valuta la condizione, ottenendo come risultato `True` o `False`.  2. Se la condizione è falsa, esci dall'istruzione `while` e prosegui con l'istruzione successiva.  3. Se la condizione è vera, esegui il blocco e torna al passaggio 1. Questo tipo di flusso è chiamato *loop* o ciclo perché il terzo step ricomincia dall'inizio del ciclo. Ogni esecuzione del blocco incluso nel ciclo viene chiamata *iterazione*. Per il ciclo precedente, diremmo che "aveva cinque iterazioni", in altre parole il blocco del loop è stato eseguito cinque volte.
+Più formalmente, ecco il flusso di esecuzione per un'istruzione `while`: 1. Valuta la condizione, ottenendo come risultato `True` o `False`.  2. Se la condizione è falsa, esci dall'istruzione `while` e prosegui con l'istruzione successiva.  3. Se la condizione è vera, esegui il blocco e torna al passaggio 1. Questo tipo di flusso è chiamato *loop* o ciclo perché il terzo step ricomincia dall'inizio del ciclo. Ogni esecuzione del blocco incluso nel ciclo viene chiamata *iterazione*. Per il ciclo precedente, diremo che "aveva cinque iterazioni", in altre parole il blocco del loop è stato eseguito cinque volte.
 
 \index{condition}
 \index{loop}
@@ -101,12 +101,12 @@ print('Done!')
 ~~~~
 
 
-Se commetti l'errore di eseguire questo codice, imparerai rapidamente a fermare un processo Python in esecuzione sul tuo sistema o a trovare il pulsante di spegnimento sul tuo computer. Questo programma verrà eseguito per sempre o fino a quando la tua batteria si esaurirà perché l'espressione logica nella parte superiore del ciclo è sempre vera in virtù del fatto che l'espressione è il valore costante `True`.  Anche se questo è un ciclo infinito disfunzionale, possiamo ancora usare questo schema per costruire cicli utili, a patto di aggiungere con cura codice al blocco del ciclo per uscirne esplicitamente usando `break` quando abbiamo raggiunto la condizione di uscita.
+Se commetti l'errore di eseguire questo codice, imparerai rapidamente a fermare un processo Python in esecuzione sul tuo sistema o a trovare il pulsante di spegnimento sul tuo computer. Questo programma verrà eseguito per sempre o fino a quando la tua batteria si esaurirà perché l'espressione logica nella parte superiore del ciclo è sempre vera in virtù del fatto che l'espressione è il valore costante `True`.  Anche se questo è un ciclo infinito disfunzionale, possiamo ancora usare questo schema per costruire cicli utili, a patto di aggiungere con cura del codice al blocco del ciclo per uscirne esplicitamente usando `break` quando abbiamo raggiunto la condizione di uscita.
 Ad esempio, supponiamo di voler ricevere dati dall'utente fino a quando non digita `done`. Potresti scrivere:
 
 \VerbatimInput{../code3/copytildone1.py}
 
-La condizione del ciclo è `True`, che è sempre vera, quindi il ciclo viene ripetuto finché non incontra l'istruzione `break`. Ogni volta viene mostrato il prompt all'utente con una parentesi angolare. Se l'utente digita `fatto`, l'istruzione `break` interrompe il ciclo, Altrimenti il programma ripete a pappagallo qualsiasi cosa scriva l'utente e torna all'inizio del ciclo.
+La condizione del ciclo è `True`, che è sempre vera, quindi il ciclo viene ripetuto finché non incontra l'istruzione `break`. Ogni volta viene mostrato il prompt all'utente con una parentesi angolare. Se l'utente digita `done`, l'istruzione `break` interrompe il ciclo, Altrimenti il programma ripete a pappagallo qualsiasi cosa scriva l'utente e torna all'inizio del ciclo.
 Ecco un esempio di esecuzione:
 
 ~~~~
@@ -230,7 +230,7 @@ Né il ciclo di conteggio né il ciclo di somma sono particolarmente utili nella
 \index{None special value}
 \index{special value!None}
 
-Per trovare il valore più grande in un elenco o sequenza, proviamo ad utilizzare il seguente script:
+Per trovare il valore più grande in un elenco o in una sequenza, proviamo ad utilizzare il seguente script:
 
 ~~~~ {.python}
 largest = None
