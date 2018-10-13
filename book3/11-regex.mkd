@@ -1,27 +1,26 @@
 %
 
-﻿Espressioni regolari
+Espressioni regolari
 ====================
 
 
-Finora abbiamo letto i file, cercato modelli ed estratto varie parti di righe ritenute interessanti. Abbiamo usato
-
-metodi di stringa come `split` e `find`, oltre all'uso di elenchi e frazionamento delle stringhe per estrarre parti delle righe.
+Finora abbiamo letto file, cercato modelli ed estratto porzioni di righe ritenute interessanti. Abbiamo usato metodi di stringa come `split` e `find`, o il frazionamento di elenchi e stringhe per estrarre parti delle righe.
 
 \index{regular expressions}
 \index{regex}
 \index{re module}
 
-Questo compito di ricerca ed estrazione è così comune al punto che Python ha una libreria molto potente chiamata *espressoni regolari* che gestisce molte di queste attività in modo abbastanza elegante. La ragione per cui non abbiamo introdotto le espressioni regolari in precedenza nel libro è perché, sebbene siano molto potenti, sono un po' complicate e la loro sintassi richiede un po' di tempo per essere padroneggiata.
-Le espressioni regolari sono quasi un piccolo linguaggio di programmazione per la ricerca e l'analisi delle stringhe. In effetti, sono stati scritti interi libri sul tema delle espressioni regolari. In questo capitolo, tratteremo solo le basi delle espressioni regolari.
-Per maggiori dettagli sulle espressioni regolari, consultate:
+la funzione di ricerca ed estrazione è talmente popolare che è stata sviluppata per Python la libreria *espressoni regolari* che gestisce con grande eleganza molte di queste attività. La ragione per cui non abbiamo presentato prima le espressioni regolari nel libro è perché, sebbene siano molto potenti, sono un po' complicate e il padroneggiare la loro sintassi richiede del tempo.
+
+Le espressioni regolari sono quasi un piccolo linguaggio di programmazione dedicato alla ricerca e l'analisi delle stringhe. In effetti sono stati scritti interi libri sul tema delle espressioni regolari. In questo capitolo, parleremo solo delle basi delle espressioni regolari.
+Per maggiori dettagli sulle espressioni regolari, consulta:
 
 <http://en.wikipedia.org/wiki/Regular_expression>
 
 <https://docs.python.org/3.5/library/re.html>
 
-La libreria delle espressioni regolari `re` deve essere importata nel vostro programma prima che possiate usarla. L'uso più semplice della libreria di espressioni regolari è la funzione `search()`.
-Il seguente programma illustra un uso banale della funzione di ricerca.
+La libreria delle espressioni regolari `re` deve essere importata nel tuo programma prima che tu possa usarla. L'uso più semplice della libreria di espressioni regolari è la funzione `search()`.
+Questo programma presenta un uso banale della funzione di ricerca:
 
 \index{regex!search}
 
@@ -30,44 +29,60 @@ Il seguente programma illustra un uso banale della funzione di ricerca.
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Apriamo il file, passiamo con un ciclo su ogni riga e usiamo l'espressione regolare `search()` per visualizzare solo le righe che contengono la stringa "From:". Questo programma non sfrutta il vero potere delle espressioni regolari, dal momento che avremmo potuto usare altrettanto facilmente `line.find()` per ottenere lo stesso risultato.
+Il file viene aperto e viene letta ogni riga tramite un ciclo in cui viene utilizzata l'espressione regolare `search()` per visualizzare solo che contengono la stringa "From:". Questo programma non sfrutta il vero potere delle espressioni regolari: avremmo potuto usare altrettanto facilmente `line.find()` per ottenere lo stesso risultato.
 
 \index{string!find}
 
-La potenza delle espressioni regolari arriva quando aggiungiamo caratteri speciali alla stringa di ricerca che ci consente di controllare più precisamente quali righe corrispondono alla stringa. L'aggiunta di questi caratteri speciali alla nostra espressione regolare ci consente di eseguire abbinamenti ed estrazioni sofisticate tramite la stesura di un codice molto piccolo.  Ad esempio, il carattere di accento viene utilizzato nelle espressioni regolari per confrontare "all'inizio" di una riga. Potremmo cambiare il nostro programma per confrontare solo le righe in cui "From:" si trova all'inizio della riga come segue:
+La potenza delle espressioni regolari viene raggiunta quando utilizzi i caratteri speciali nella stringa di ricerca che ti consentono di controllare con più precisione quali righe corrispondono alla stringa di ricerca. L'aggiunta di questi caratteri speciali alla nostra espressione regolare ci consente di eseguire abbinamenti ed estrazioni sofisticate tramite la stesura di un codice molto ridotto.
+
+Ad esempio, l'accento ^ viene utilizzato nelle espressioni regolari per trovare l'inizio di una riga. Potremmo modificare il nostro script per confrontare solo le righe in cui "From:" si trova all'inizio della riga, proprio come nell'esempio seguente:
 
 \VerbatimInput{../code3/re02.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Ora confronteremo solo le righe che *iniziano con* la stringa "From:". Questo è davvero un esempio molto semplice che avremmo potuto fare in modo equivalente con il metodo `startswith()` incluso nella libreria delle stringhe. Ma serve a introdurre la nozione per cui le espressioni regolari contengono caratteri per azioni speciali che ci danno più controllo su ciò che confronterà l'espressione regolare.
+Ora lavora solo le righe che *iniziano con* la stringa "From:". Questo è un esempio molto elementare che avremmo potuto riprodurre utilizzando con il metodo `startswith()` incluso nella libreria delle stringhe. Ma serve per introdurre il concetto secondo cui le espressioni regolari possono contenere caratteri speciali che ci danno più controllo su ciò che confronterà l'espressione regolare.
 
 \index{string!startswith}
 
 Confronto di caratteri nelle espressioni regolari
 -----------------------------------------
 
-Ci sono un certo numero di altri caratteri speciali che ci permettono di costruire espressioni regolari ancora più potenti. Il carattere speciale più comunemente usato è il punto, che corrisponde a qualsiasi carattere.
+Hai a disposizione un certo numero di caratteri speciali che ti permettono di costruire espressioni regolari molto potenti. Il carattere speciale più comunemente usato è il punto (.), che corrisponde a un qualsiasi carattere.
 
 \index{wild card}
 \index{regex!wild card}
 
-Nell'esempio seguente, l'espressione regolare "F..m:" corrisponderebbe a qualsiasi stringa "From:", "Fxxm:", "F12m:" o "F!@m:" poiché il carattere punto nell'espressione regolare corrisponde a qualsiasi carattere.
+Nell'esempio seguente, l'espressione regolare "F..m:" indica una qualsiasi stringa, come ad esempio "From:", "Fxxm:", "F12m:" o "F!@m:", data la presenza di due punti consecutivi (..).
 
 \VerbatimInput{../code3/re03.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Questo è particolarmente potente se combinato con la capacità di indicare che un carattere può essere ripetuto un numero qualsiasi di volte usando i caratteri "\*" o "+" nell'espressione regolare. Questi caratteri speciali fanno sì che invece di corrispondere a un singolo carattere nella stringa di ricerca, corrispondono a zero o più caratteri (nel caso dell'asterisco) o uno o più caratteri (nel caso del segno più) .  Possiamo restringere ulteriormente le righe che confrontiamo usando un carattere *wild card* ripetuto, come nel seguente esempio:
+È una funzione particolarmente potente se combinata con la capacità di indicare che un carattere può essere ripetuto un numero qualsiasi di volte inserendo i caratteri "\*" o "+" nell'espressione regolare. Questi caratteri speciali fanno sì che invece di corrispondere a un singolo carattere nella stringa di ricerca, corrispondono a zero o più caratteri (nel caso dell'asterisco) o uno o più caratteri (nel caso del segno più).
+
+Possiamo ridurre ulteriormente le righe da controllare usando un carattere *wild card* ripetuto, come nel seguente esempio:
 
 \VerbatimInput{../code3/re04.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-La stringa di ricerca "`^`From:.+@" corrisponderà correttamente alle righe che iniziano con "From:", seguite da uno o più caratteri (".+"), seguiti da un carattere chiocciola. Quindi questo corrisponderà alla seguente riga: *`From:stephen.marquard@`*`uct.ac.za` Potete pensare al carattere wildcard ".+" come all'estensione del confronto tra tutti i caratteri inclusi tra il carattere due punti e la chiocciola.  *`From :.+ @ `* È bene pensare ai caratteri più e asterisco come "invadenti". Ad esempio, la stringa seguente corrisponderebbe all'ultimo carattere chiocciola mentre ".+" andrebbe oltre, come mostrato di seguito: *`From: stephen.marquard@uct.ac.za, csev@umich.edu, e cwen @ `*` iupui.edu` È possibile far sì che l'asterisco o il segno più non siano così "avidi" aggiungendo un altro carattere. Vedere la documentazione dettagliata per informazioni su come disattivare questo comportamento avido.
+La stringa di ricerca "`^`From:.+@" restringe l'analisi alle righe che iniziano con correttamente alle righe che iniziano con "From:", seguite da uno o più caratteri (".+"), dal carattere chiocciola, come nell'esempio seguente:
+
+*`From:stephen.marquard@`*`uct.ac.za`
+
+Puoi pensare al carattere wildcard ".+" come all'estensione del controllo di tutti i caratteri inclusi tra i due punti e la chiocciola.
+
+*`From :.+ @ `* 
+
+È bene pensare ai caratteri più e asterisco come "invadenti". Ad esempio, la stringa seguente corrisponderebbe all'ultimo carattere chiocciola mentre ".+" andrebbe oltre, come mostrato di seguito:
+
+*`From: stephen.marquard@uct.ac.za, csev@umich.edu, e cwen @ `*` iupui.edu`
+
+È possibile far sì che l'asterisco o il segno più non siano così "avidi" aggiungendo un altro carattere. Fai riferimento alla documentazione dettagliata per informazioni su come disattivare questo avido comportamento.
 
 \index{greedy}
 
