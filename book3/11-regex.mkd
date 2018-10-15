@@ -89,7 +89,7 @@ Puoi pensare al carattere wildcard ".+" come all'estensione del controllo di tut
 Estrazione dei dati utilizzando le espressioni regolari
 -----------------------------------------
 
-Se vogliamo estrarre dei dati da una stringa in Python possiamo usare il metodo `findall()` per estrarre tutte le sottostringhe che corrispondono a un'espressione regolare. Pensiamo, ad esempio, di voler estrarre qualsiasi cosa che assomigli ad un indirizzo email da qualsiasi riga indipendentemente dal formato. Ad esempio, vogliamo estrarre gli indirizzi email da ognuna delle seguenti righe:
+Se vogliamo estrarre dei dati da una stringa in Python possiamo usare il metodo `findall()` per selezionare tutte le sottostringhe che corrispondono a un'espressione regolare. Pensiamo, ad esempio, di voler estrarre qualsiasi cosa che assomigli ad un indirizzo email da qualsiasi riga indipendentemente dalla posizione. Ad esempio vogliamo estrarre gli indirizzi email contenuti in ognuna delle seguenti righe:
 
 ~~~~
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
@@ -99,7 +99,7 @@ Received: (from apache@localhost)
 Author: stephen.marquard@uct.ac.za
 ~~~~
 
-Non vogliamo scrivere del codice per ciascuno dei tipi di righe suddividendo e segmentando in modo diverso ogni riga. Questo programma seguente usa `findall()` per trovare le righe con indirizzi e-mail al loro interno ed estrarre uno o più indirizzi da ognuna delle righe.
+Chiaramente non vogliamo scrivere del codice per ciascun caso suddividendo e segmentando in modo diverso ogni riga. Questo programma seguente usa `findall()` per trovare le righe contenenti al loro interno indirizzi e-mail e ne estraggano quest'ultima.
 
 \index{findall}
 \index{regex!findall}
@@ -109,20 +109,24 @@ Non vogliamo scrivere del codice per ciascuno dei tipi di righe suddividendo e s
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Il metodo `findall()` ricerca la stringa nel secondo argomento e restituisce un elenco di tutte le stringhe che somigliano a indirizzi email. Stiamo usando una sequenza di due caratteri che corrisponde a un carattere diverso dall spazio (`\`S).  L'output del programma sarebbe:
+Il metodo `findall()` ricerca la stringa nel secondo argomento e restituisce un elenco di tutte le stringhe che sembrano indirizzi email. Stiamo usando una sequenza di due caratteri che corrisponde a un carattere diverso da spazio (`\`S). L'output dello script sarà:
 
 ~~~~
 ['csev@umich.edu', 'cwen@iupui.edu']
 ~~~~
 
-Traducendo l'espressione regolare, stiamo cercando sottostringhe con almeno un carattere diverso dallo spazio, seguito da un carattere chiocciola, seguito da almeno un altro carattere diverso dallo spazio. "'\'S+" corrisponde a quanti più caratteri possibile che siano diversi dallo spazio.  L'espressione regolare troverebbe corrispondenze due volte (csev@umich.edu e cwen@iupui.edu), ma non corrisponderebbe alla stringa "@2PM" perché non ci sono caratteri diversi dallo spazio *prima* del carattere chiocciola. Possiamo usare questa espressione regolare in un programma per leggere tutte le righe in un file e visualizzare qualsiasi cosa che somigli ad un indirizzo email come segue:
+Parafrasando l'espressione regolare stiamo cercando delle sottostringhe con almeno un carattere diverso da spazio seguito da un carattere chiocciola e da almeno un altro carattere diverso dallo spazio. "'\'S+" corrisponde a quanti più caratteri possibile diversi dallo spazio.
+
+L'espressione regolare ha trovato due corrispondenze (csev@umich.edu e cwen@iupui.edu), ma ha scartato la stringa "@2PM" perché non sono presenti caratteri diversi dallo spazio *prima* del carattere chiocciola. Possiamo usare questa espressione regolare in un programma per leggere tutte le righe di un file e visualizzare qualsiasi cosa simile ad un indirizzo email come nell'esempio seguente:
 
 \VerbatimInput{../code3/re06.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Leggiamo ogni riga e quindi estraiamo tutte le sottostringhe che corrispondono alla nostra espressione regolare. Poiché `findall()` restituisce un elenco, controlliamo semplicemente se il numero di elementi nel nostro elenco risultante è maggiore di zero per visualizzare solo le righe in cui abbiamo trovato almeno una sottostringa che somigli ad un indirizzo email.  Se eseguiamo il programma su `mbox.txt` otterremo il seguente risultato:
+Viene letta ogni riga e quindi estratte tutte le sottostringhe che corrispondono alla nostra espressione regolare. Poiché `findall()` restituisce un elenco, controlliamo se il numero di elementi nel nostro elenco è maggiore di zero per visualizzare solo le righe in cui abbiamo trovato almeno una sottostringa che somigli ad un indirizzo email.
+
+Se utilizziamo il programma con `mbox.txt` otterremo il seguente risultato:
 
 ~~~~
 ['wagnermr@iupui.edu']
@@ -136,13 +140,17 @@ Leggiamo ogni riga e quindi estraiamo tutte le sottostringhe che corrispondono a
 ['source@collab.sakaiproject.org;']
 ~~~~
 
-Alcuni dei nostri indirizzi email presentano caratteri non corretti come "`<`" o ";" all'inizio o alla fine. Dobbiamo indicare che siamo interessati solo alla parte della stringa che inizia e finisce con una lettera o un numero.  Per fare ciò, usiamo un'altra caratteristica delle espressioni regolari. Le parentesi quadre sono utilizzate per indicare un insieme di più caratteri accettabili che siamo disposti a considerare coincidenti. In un certo senso, "'\'S" sta chiedendo di confrontare l'insieme di "caratteri diversi dallo spazio". Ora saremo un po' più espliciti in termini di caratteri che confronteremo.  Ecco la nostra nuova espressione regolare:
+Alcuni degli indirizzi email presentano all'inizio o alla fine caratteri non corretti come "`<`" o ";". Ora dobbiamo indicare che siamo interessati solo alle stringhe che iniziano e finiscono con una lettera o un numero.
+
+Per fare ciò sfruttiamo un'altra caratteristica delle espressioni regolari: le parentesi quadre. Queste vengono utilizzate per indicare un insieme di più caratteri accettabili che siamo disposti a considerare corrispondenti. In un certo senso, "'\'S" chiede di confrontare l'insieme di "caratteri diversi dallo spazio". Ora saremo un po' più espliciti in termini di caratteri che confronteremo.
+
+Ecco la nostra nuova espressione regolare:
 
 ~~~~
 [a-zA-Z0-9]\S*@\S*[a-zA-Z]
 ~~~~
 
-Sta diventando tutto un po' complicato e potete cominciare a capire perché le espressioni regolari sono loro stesse un piccolo linguaggio. Traducendo questa espressione regolare, cerchiamo sottostringhe che iniziano con un carattere *singola* lettera minuscola, lettera maiuscola o un numero "[a-zA-Z0-9]", seguito da zero o più caratteri non vuoti ("`\'S'\*"), seguito da una chiocciola, seguito da zero o più caratteri non vuoti ("`\'S\*"), seguito da una lettera maiuscola o minuscola. Notate che siamo passati da "+" a "\*" per indicare zero o più caratteri non vuoti poiché "[a-zA-Z0-9]" è già un carattere non vuoto. Ricordate che "\*" o "+" si applicano al singolo carattere immediatamente a sinistra del segno più o dell'asterisco.
+Sta diventando tutto un po' complicato e puoi iniziare a capire perché le espressioni regolari vanno considerate loro stesse un piccolo linguaggio. Per tradurre questa espressione regolare, cerchiamo sottostringhe che iniziano con un carattere *singola* lettera minuscola, lettera maiuscola o un numero "[a-zA-Z0-9]", seguito da zero o più caratteri non vuoti ("`\'S'\*"), seguito da una chiocciola, seguito da zero o più caratteri non vuoti ("`\'S\*"), seguito da una lettera maiuscola o minuscola. Notate che siamo passati da "+" a "\*" per indicare zero o più caratteri non vuoti poiché "[a-zA-Z0-9]" è già un carattere non vuoto. Ricordate che "\*" o "+" si applicano al singolo carattere immediatamente a sinistra del segno più o dell'asterisco.
 
 \index{regex!character sets(brackets)}
 
