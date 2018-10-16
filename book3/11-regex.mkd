@@ -150,7 +150,7 @@ Ecco la nostra nuova espressione regolare:
 [a-zA-Z0-9]\S*@\S*[a-zA-Z]
 ~~~~
 
-Sta diventando tutto un po' complicato e puoi iniziare a capire perché le espressioni regolari vanno considerate loro stesse un piccolo linguaggio. Per tradurre questa espressione regolare, cerchiamo sottostringhe che iniziano con un carattere *singola* lettera minuscola, lettera maiuscola o un numero "[a-zA-Z0-9]", seguito da zero o più caratteri non vuoti ("`\'S'\*"), seguito da una chiocciola, seguito da zero o più caratteri non vuoti ("`\'S\*"), seguito da una lettera maiuscola o minuscola. Notate che siamo passati da "+" a "\*" per indicare zero o più caratteri non vuoti poiché "[a-zA-Z0-9]" è già un carattere non vuoto. Ricordate che "\*" o "+" si applicano al singolo carattere immediatamente a sinistra del segno più o dell'asterisco.
+Sta diventando tutto un po' complicato e puoi iniziare a capire perché le espressioni regolari vanno considerate loro stesse un piccolo linguaggio. Per tradurre questa espressione regolare: cerchiamo sottostringhe che inizino con una *singola* lettera minuscola o maiuscola o un numero "[a-zA-Z0-9]", seguito da zero o più caratteri non vuoti ("\'S'\*"), da una chiocciola, da zero o più caratteri non vuoti ("\'S*"), da una lettera maiuscola o minuscola. Nota che siamo passati da "+" a "\*" per indicare zero o più caratteri non vuoti dato che "[a-zA-Z0-9]" è già considerato un carattere non vuoto. Ricorda che "\*" o "+" si applicano al singolo carattere immediatamente a sinistra del segno stesso.
 
 \index{regex!character sets(brackets)}
 
@@ -173,32 +173,34 @@ Se usiamo questa espressione nel nostro programma, i nostri dati appariranno mol
 ['apache@localhost']
 ~~~~
 
-Si noti che sulle righe "source@collab.sakaiproject.org", la nostra espressione regolare ha eliminato due lettere alla fine della stringa ("`>`;"). Questo perché quando accodiamo "[a-zA-Z]" alla fine della nostra espressione regolare, vogliamo che qualsiasi stringa trovata dal analizzatore di espressioni regolari debba terminare con una lettera. Quindi, quando vede il carattere "'>'" dopo "sakaiproject.org`>`;" si ferma semplicemente sull'ultima lettera "corrispondente" che ha trovato (ovvero, la "g" era l'ultima corrispondenza valida).  Si noti inoltre che l'output del programma è un elenco Python che ha una stringa come unico elemento dello stesso.
+Nota che "source@collab.sakaiproject.org", la nostra espressione regolare ha eliminato due lettere ("`>`;") alla fine delle stringhe. Questo perché quando accodiamo "[a-zA-Z]" alla fine della nostra espressione regolare, vogliamo che qualsiasi stringa trovata debba terminare con una lettera. In altre parole, il carattere "'>'" dopo "sakaiproject.org`>`;" viene ignorato perchè il sistema si ferma sull'ultima lettera che rispetti i parametri di ricerca (ovvero "g" è l'ultima corrispondenza valida). Ricorda inoltre che l'output del programma è un elenco composto da un'unica.
 
 Combinare ricerca ed estrazione
 ----------------------------------
 
-Se vogliamo trovare i numeri sulle righe che iniziano con la stringa "X-" come:
+Immagina che si debbano trovare i numeri contenuti nelle righe che iniziano con "X-" come, ad esempio:
 
 ~~~~
 X-DSPAM-Confidence: 0.8475
 X-DSPAM-Probability: 0.0000
 ~~~~
 
-non vogliamo solo i numeri in virgola mobile da qualsiasi riga. Vogliamo soltanto estrarre i numeri dalle righe che hanno la sintassi sopra indicata.  Possiamo costruire la seguente espressione regolare per selezionare le righe:
+insomma non vogliamo i numeri in virgola mobile provenienti da una qualsiasi riga; vogliamo soltanto i numeri contenuti nelle righe che hanno la sintassi sopra indicata. Possiamo costruire la seguente espressione regolare per selezionare le righe che ci interessano:
 
 ~~~~
 ^X-.*: [0-9.]+
 ~~~~
 
-Traducendo questo, stiamo dicendo che vogliamo le righe che iniziano con "X-", seguite da zero o più caratteri (".\*"), seguiti da due punti (":") e quindi da uno spazio. Dopo lo spazio, cerchiamo uno o più caratteri che siano una cifra (0-9) o un punto "[0-9.]+". Notate che all'interno delle parentesi quadre, il punto corrisponde a un punto effettivo (cioè, non è un carattere wildcard tra parentesi quadre).  Questa è un'espressione molto stringente che corrisponderà quasi solo alle righe che ci interessano come segue:
+In altre parole, stiamo dicendo al pc che stiamo cercando le righe che iniziano con "X-", seguite da zero o più caratteri (".\*"), da due punti (":") e da uno spazio. Dopo lo spazio, cerchiamo uno o più caratteri numerici (0-9) o un punto "[0-9.]+". Nota che all'interno delle parentesi quadre il punto corrisponde a un punto (in altre parole non è un carattere wildcard tra parentesi quadre).
+
+Questa è un'espressione molto stringente che corrisponderà quasi solo alle righe che ci interessano:
 
 \VerbatimInput{../code3/re10.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Quando eseguiamo il programma, vedremo i dati filtrati per mostrare solo le righe che stiamo cercando.
+Quando eseguirai il programma, vedrai che verranno visualizzate solo le righe che stiamo cercando.
 
 ~~~~
 X-DSPAM-Confidence: 0.8475
@@ -207,23 +209,25 @@ X-DSPAM-Confidence: 0.6178
 X-DSPAM-Probability: 0.0000
 ~~~~
 
-Ma ora dobbiamo risolvere il problema dell'estrazione dei numeri. Mentre sarebbe abbastanza semplice usare `split`, possiamo usare un'altra caratteristica delle espressioni regolari per cercare e analizzare la riga allo stesso tempo.
+Ora dobbiamo risolvere il problema dell'estrazione dei numeri. Anche se sarebbe abbastanza semplice usare `split`, possiamo sfruttare un'altra caratteristica delle espressioni regolari per cercare e analizzare allo stesso tempo le righe.
 
 \index{string!split}
 
-Le parentesi sono un altro carattere speciale nelle espressioni regolari. Quando aggiungete le parentesi a un'espressione regolare, queste vengono ignorate durante il confronto della stringa. Ma quando state usando `findall()`, le parentesi indicano che mentre volete confrontare l'intera espressione, vi interessa solo estrarre una porzione della sottostringa che corrisponda all'espressione regolare.
+Le parentesi sono considerate un altro carattere speciale nelle espressioni regolari. Se aggiungi le parentesi a un'espressione regolare, queste vengono ignorate durante le operazioni di ricerca delle stringhe. Se però utilizzi `findall()`, le parentesi indicano che non solo vuoi effettuare una ricerca, ma vuoi estrarre la porzione di riga che corrisponde all'espressione regolare.
 
 \index{regex!parentheses}
 \index{parentheses!regular expression}
 
-Quindi apportiamo la seguente modifica al nostro programma:
+Apportiamo ora la seguente modifica al nostro script:
 
 \VerbatimInput{../code3/re11.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Invece di chiamare `search()`, aggiungiamo le parentesi attorno alla parte dell'espressione regolare che rappresenta il numero in virgola mobile per indicare che vogliamo che `findall()` ci restituisca solo la parte in virgola mobile della stringa confrontata.  L'output di questo programma è il seguente:
+Invece di utilizzare `search()`, aggiungendo le parentesi attorno alla parte dell'espressione regolare che rappresenta il numero in virgola mobile, vogliamo che `findall()` ci restituisca solo la parte in virgola mobile della stringa confrontata.
+
+L'output di questo programma sarà il seguente:
 
 ~~~~
 ['0.8475']
@@ -235,14 +239,20 @@ Invece di chiamare `search()`, aggiungiamo le parentesi attorno alla parte dell'
 ..
 ~~~~
 
-I numeri sono ancora in un elenco e devono essere convertiti da stringhe a numeri in virgola mobile, ma abbiamo usato il potere delle espressioni regolari per cercare ed estrarre le informazioni che abbiamo trovato interessanti.  Come un altro esempio di questa tecnica, se guardate il file ci sono un certo numero di righe del form: Dettagli: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772 Se volessimo estrarre tutti i numeri di revisione (i numeri interi alla fine delle righe) utilizzando la stessa tecnica di cui sopra, potremmo scrivere il seguente programma:
+Anche se i numeri sono ancora parte di un elenco e devono essere convertiti da stringhe a numeri in virgola mobile, grazie al potere delle espressioni regolari abbiamo potuto cercare ed estrarre le informazioni che ci interessano.
+
+Voglio farti un altro esempio di questa tecnica: se dai un'occhiata al file, vedrai un certo numero di righe simili alla seguente:
+
+Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772
+
+Se volessimo estrarre tutti i numeri delle versioni (i numeri interi alla fine della riga) utilizzando la tecnica precedente, potremmo scrivere lo script seguente:
 
 \VerbatimInput{../code3/re12.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Traducendo la nostra espressione regolare, stiamo cercando le righe che iniziano con "Details:", seguito da un numero qualsiasi di caratteri (".\*"), seguito da "rev =", e quindi da una o più cifre. Vogliamo trovare le righe che combacino con l'intera espressione ma ci interessa solo estrarre il numero intero alla fine della riga, perciò racchiudiamo "[0-9] +" tra parentesi.  Quando eseguiamo il programma, otteniamo il seguente risultato:
+Lasciami tradurre la nostra espressione regolare: stiamo cercando le righe che iniziano con "Details:", seguito da un numero qualsiasi di caratteri (".\*"), seguito da "rev=", e quindi da una o più cifre. Vogliamo trovare le righe che combacino con l'intera espressione ma deve essere estratto il numero intero presente alla fine della riga, come indicato da "[0-9] +" racchiuso tra parentesi. Quando eseguiamo il programma, otteniamo il seguente risultato:
 
 ~~~~
 ['39772']
@@ -252,32 +262,38 @@ Traducendo la nostra espressione regolare, stiamo cercando le righe che iniziano
 ...
 ~~~~
 
-Ricordate che "[0-9] +" è "avido" e tenta di creare una stringa di cifre il più ampia possibile prima di estrarre tali cifre. Questo comportamento "avido" è il motivo per cui otteniamo tutte e cinque le cifre per ogni numero. La libreria di espressioni regolari si espande in entrambe le direzioni fino a quando non incontra un carattere non numerico o l'inizio o la fine di una riga.  Ora possiamo usare le espressioni regolari per ripetere un esercizio visto in precedenza nel libro in cui eravamo interessati all'ora del giorno di ciascuna mail. Abbiamo cercato le righe del form:
+Ricorda che "[0-9] +" è "avido" e tenta di includere quante più cifre nella stringa prima di estrarla. Questo comportamento "avido" è il motivo per cui otteniamo tutte e cinque le cifre per ogni numero. La libreria di espressioni regolari si espande in entrambe le direzioni fino a quando non incontra un carattere non numerico o l'inizio o la fine di una riga.
+
+Ora puoi utilizzare le espressioni regolari per rifare un esercizio visto in precedenza in cui eravamo interessati all'ora del giorno di ciascuna mail. Abbiamo cercato questo tipo di righe:
 
 ~~~~
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
 ~~~~
 
-e volevamo estrarre l'ora del giorno per ogni riga. In precedenza lo abbiamo fatto con due chiamate a `split`. Per prima cosa la riga è stata divisa in parole e poi abbiamo estratto la quinta parola e diviso nuovamente la riga sul carattere due punti per tirare fuori i due caratteri di interesse.  Nonostante ciò abbia funzionato, in realtà otteniamo un codice piuttosto fragile che presuppone che le righe siano ben formattate. Se dovessimo aggiungere abbastanza controlli degli errori (o un grande blocco try/except) per assicurarsi che il programma non si blocchi quando incontra righe formattate in modo errato, il codice si espanderebbe di 10-15 righe e sarebbe piuttosto difficile da leggere.  Possiamo farlo in un modo molto più semplice con la seguente espressione regolare:
+ed in ognuna abbiamo estratto l'ora del giorno. In precedenza abbiamo utilizzato due chiamate a `split`: per prima cosa la riga è stata divisa in parole e poi abbiamo estratto la quinta parola e diviso nuovamente la riga al carattere due punti per tirare fuori i due caratteri che ci interessavano. Nonostante abbia funzionato, in realtà il nostro codice è piuttosto fragile: dato che presuppone che le righe siano ben formattate. Se dovessimo aggiungere un numero congruo di controlli degli errori (o un grande blocco try/except) per assicurarci che il programma non si blocchi quando incontra righe formattate in modo errato, il codice si espanderebbe di almeno 10-15 righe diventando piuttosto difficile da leggere.
+
+Possiamo farlo in un modo molto più semplice tramite la seguente espressione regolare:
 
 ~~~~
 ^From .* [0-9][0-9]:
 ~~~~
 
-La traduzione di questa espressione regolare è che stiamo cercando le righe che inizino con "From " (notate lo spazio), seguito da un numero qualsiasi di caratteri (".\*"), seguito da uno spazio, seguito da due cifre "[0-9][0-9] ", seguito da un carattere di due punti. Questa è la definizione delle tipologie di righe che stiamo cercando.  Per estrarre solo l'ora usando `findall()`, aggiungiamo le parentesi attorno alle due cifre come segue:
+Con questa espressione regolare stiamo cercando le righe che inizino con "From " (nota lo spazio), seguito da un numero qualsiasi di caratteri (".\*"), poi da uno spazio, da due cifre "[0-9][0-9] ", ed infine un carattere di due punti. Questa però è solo la definizione del tipo di righe che stiamo cercando.
+
+Per estrarre l'ora abbiamo bisogno di utilizzare `findall()`, e di aggiungere le parentesi attorno alle due cifre come indicato qui sotto:
 
 ~~~~
 ^From .* ([0-9][0-9]):
 ~~~~
 
-Ciò si potrà vedere nel seguente programma:
+Ora possiamo scrivere il nostro script:
 
 \VerbatimInput{../code3/re13.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Quando il programma viene eseguito, produce il seguente output:
+Una volta eseguito il programma, produrrà il seguente output:
 
 ~~~~
 ['09']
@@ -287,10 +303,12 @@ Quando il programma viene eseguito, produce il seguente output:
 ...
 ~~~~
 
-Carattere di escape
+Carattere Escape
 ----------------
 
-Poiché utilizziamo caratteri speciali nelle espressioni regolari per confrontare l'inizio o la fine di una riga o specificare i caratteri wild card, abbiamo bisogno di un modo per indicare che questi caratteri sono "normali" e vogliamo confrontarli con un carattere reale come un segno di dollaro o un accento circonflesso.  Possiamo indicare che vogliamo semplicemente abbinare un carattere anteponendo a quel carattere un backslash. Ad esempio, possiamo individuare gli importi in denaro con la seguente espressione regolare.
+Dato che utilizziamo caratteri speciali nelle espressioni regolari per indicare l'inizio o la fine di una riga o specificare i caratteri wild card, abbiamo bisogno di un modo per indicare che questi sono caratteri "normali" e vogliamo confrontarli con caratteri reali come il segno di dollaro o un accento circonflesso.
+
+Possiamo indicare questa intenzione anteponendo backslash al carattere che ci interessa. Ad esempio, possiamo individuare gli importi in denaro tramite la seguente espressione regolare.
 
 ~~~~ {.python}
 import re
@@ -298,22 +316,26 @@ x = 'We just received $10.00 for cookies.'
 y = re.findall('\$[0-9.]+',x)
 ~~~~
 
-Dal momento che facciamo precedere il simbolo del dollaro da un backslash, esso corrisponde effettivamente al simbolo del dollaro nella stringa di input anziché corrispondere alla "fine della riga" e il resto dell'espressione regolare corrisponderà a una o più cifre o al carattere del punto. *Nota:* All'interno di parentesi quadre, i caratteri non sono "speciali". Quindi quando diciamo "[0-9.]", indichiamo davvero le cifre o il punto. Al di fuori delle parentesi quadre, un punto è un carattere "wild card" e corrisponde a qualsiasi carattere. All'interno di parentesi quadre, il punto è un punto.
+Dal momento che facciamo precedere backslash al simbolo del dollaro, questo verrà interpretato come simbolo del dollaro anziché "fine della riga". Il resto dell'espressione regolare corrisponderà a una o più cifre o al carattere del punto.
+
+*Nota:* All'interno di parentesi quadre, i caratteri non sono considerati "speciali". Quindi quando diciamo "[0-9.]", indichiamo effettivamente numeri o il punto. Al di fuori delle parentesi quadre, il punto è visto come un carattere "wild card" che corrisponde a qualsiasi carattere. Te lo ripeto: all'interno delle parentesi quadre il punto è solo un punto.
 
 Sommario
 -------
 
-Anche se abbiamo solo grattato la superficie delle espressioni regolari, abbiamo imparato un po' il loro linguaggio. Sono stringhe di ricerca contenenti caratteri speciali che comunicano i vostri desideri al sistema di espressioni regolari in merito a cosa definire "coincidente" e cosa estrarre dalle stringhe corrispondenti. Ecco alcuni di quei caratteri speciali e sequenze di caratteri:
+Anche se abbiamo solo scalfito la superficie del mondo delle espressioni regolari, ora hai un po' imparato la struttura del loro linguaggio. Sono stringhe di ricerca contenenti caratteri speciali che comunicano i tuoi desideri al sistema delle espressioni regolari definendo cosa è "coincidente" e cosa va estratto dalle stringhe corrispondenti.
 
-`^` Corrisponde all'inizio della riga.
+Ecco alcuni di quei caratteri speciali e sequenze di caratteri:
 
-`$` Corrisponde alla fine della riga.
+`^` Corrisponde all'inizio riga.
+
+`$` Corrisponde alla fine riga.
 
 . Corrisponde a qualsiasi carattere (un carattere wild-card).
 
-`\'s corrisponde a un carattere di spazio.
+\'s corrisponde a uno spazio.
 
-`\'S corrisponde a un carattere diverso dallo spazio (opposto a `\`s).
+\'S corrisponde a un carattere diverso dallo spazio (opposto a `\`s).
 
 `*` Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti.
 
