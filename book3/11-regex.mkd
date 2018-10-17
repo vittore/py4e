@@ -331,11 +331,11 @@ Ecco alcuni di quei caratteri speciali e sequenze di caratteri:
 
 `$` Corrisponde alla fine riga.
 
-. Corrisponde a qualsiasi carattere (un carattere wild-card).
+`.` Corrisponde a qualsiasi carattere (un carattere wild-card).
 
-\s corrisponde a uno spazio.
+`\s` corrisponde a uno spazio.
 
-\S corrisponde a un carattere diverso dallo spazio (opposto a \s).
+`\S` corrisponde a un carattere diverso dallo spazio (opposto a `\s`).
 
 `*` Si applica al carattere immediatamente precedente e indica zero o più dei ripetizioni dello stesso.
 
@@ -345,13 +345,13 @@ Ecco alcuni di quei caratteri speciali e sequenze di caratteri:
 
 `+?` Si applica al carattere immediatamente precedente e indica uno o più dei caratteri precedenti in "modalità non avida".
 
-[aeiou] Corrisponde a un singolo carattere fintanto che quel carattere si trova nell'insieme specificato. In questo esempio, ricercherebbe "a", "e", "i", "o" o "u" e nessun altro carattere.
+`[aeiou]` Corrisponde a un singolo carattere fintanto che quel carattere si trova nell'insieme specificato. In questo esempio, ricercherebbe "a", "e", "i", "o" o "u" e nessun altro carattere.
 
-[a-z0-9] È possibile specificare intervalli di caratteri utilizzando il segno meno (-). In questo esempio si tratta di un singolo carattere che deve essere una lettera minuscola o una cifra.
+`[a-z0-9]` È possibile specificare intervalli di caratteri utilizzando il segno meno (-). In questo esempio si tratta di un singolo carattere che deve essere una lettera minuscola o una cifra.
 
-[`^`A-Za-z] Quando il primo carattere nella notazione è un accento circonflesso, si inverte la logica. In questo esempio viene ricercato un qualsiasi singolo carattere *diverso da* una lettera maiuscola o minuscola.
+`[`^`A-Za-z]` Quando il primo carattere nella notazione è un accento circonflesso, si inverte la logica. In questo esempio viene ricercato un qualsiasi singolo carattere *diverso da* una lettera maiuscola o minuscola.
 
-() Quando le parentesi vengono aggiunte a un'espressione regolare vengono ignorate ai fini della ricerca, ma consentono di estrarre un particolare sottoinsieme della stringa desiderata, diversamente da quanto accade con `findall()` dove viene considerata l'intera riga.
+`()` Quando le parentesi vengono aggiunte a un'espressione regolare vengono ignorate ai fini della ricerca, ma consentono di estrarre un particolare sottoinsieme della stringa desiderata, diversamente da quanto accade con `findall()` dove viene considerata l'intera riga.
 
 `\`b Corrisponde alla stringa vuota ma solo all'inizio o alla fine di una parola.
 
