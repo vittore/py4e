@@ -349,7 +349,7 @@ Ecco alcuni di quei caratteri speciali e sequenze di caratteri:
 
 `[a-z0-9]` È possibile specificare intervalli di caratteri utilizzando il segno meno (-). In questo esempio si tratta di un singolo carattere che deve essere una lettera minuscola o una cifra.
 
-`[`^`A-Za-z]` Quando il primo carattere nella notazione è un accento circonflesso, si inverte la logica. In questo esempio viene ricercato un qualsiasi singolo carattere *diverso da* una lettera maiuscola o minuscola.
+`[^A-Za-z]` Quando il primo carattere nella notazione è un accento circonflesso, si inverte la logica. In questo esempio viene ricercato un qualsiasi singolo carattere *diverso da* una lettera maiuscola o minuscola.
 
 `()` Quando le parentesi vengono aggiunte a un'espressione regolare vengono ignorate ai fini della ricerca, ma consentono di estrarre un particolare sottoinsieme della stringa desiderata, diversamente da quanto accade con `findall()` dove viene considerata l'intera riga.
 
@@ -460,7 +460,7 @@ mbox.txt had 4218 lines that matched java$
 `New Revision: 39772`
 ~~~~
 
-ne estragga il numero da ciascuna tramite l'uso del metodo `findall()` e di una espressione regolare. Calcola e visualizza la media dei numeri.  
+provvedendo ad estrarre il numero da ciascuna tramite l'uso del metodo `findall()` e di una espressione regolare. Calcola e visualizza la media dei numeri.  
 
 ~~~~
 Enter file:mbox.txt
