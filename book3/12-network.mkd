@@ -1,27 +1,35 @@
 %
 
-Programmi per la rete
+Programmi per Internet
 =====================
 
 
 
-Mentre molti degli esempi in questo libro si sono concentrati sulla lettura di file e sulla ricerca di dati negli stessi, abbiamo molte altre fonti di
-informazione quando consideriamo Internet.
-In questo capitolo faremo finta di essere un browser Web e recupereremo le pagine Web utilizzando l'HyperText Transfer Protocol (HTTP). Quindi leggeremo i dati presenti nelle pagine web e li analizzeremo.
+Molti degli esempi in questo libro si sono concentrati sulla lettura di file e sulla ricerca di dati al loro interno, ma in rete abbiamo molte altre fonti di informazione da cui attingere.
+In questo capitolo faremo finta di essere un browser Web e recupereremo le pagine Web utilizzando l'HyperText Transfer Protocol (HTTP). Quindi leggeremo ed analizzeremo i dati presenti in esse contenuti.
 
 HyperText Transfer Protocol - HTTP
 -----------------------------------
 
-Il protocollo di rete su cui si basa il web è in realtà piuttosto semplice e in Python c'è un supporto integrato chiamato `sockets` che rende molto facile creare connessioni di rete e ottenere i dati su questi socket in un programma Python.
-Un *socket* è molto simile a un file, tranne per il fatto che un singolo socket prevede una connessione a due vie tra due programmi. Potete leggere e scrivere nello stesso socket. Se scrivete qualcosa su un socket, viene inviato al programma all'altra estremità del socket. Se leggete dal socket, otterrete i dati inviati dall'altra applicazione.
-Ma se provate a leggere un socket quando il programma all'altra estremità non ha inviato alcun dato, potete sedervi e aspettare. Se i programmi su entrambe le estremità del socket stanno semplicemente aspettando dati senza inviare nulla, attenderanno per molto tempo.
-Quindi una parte importante dei programmi che comunicano su Internet è avere un qualche tipo di protocollo. Un protocollo è un insieme di regole precise che determinano chi può andare per primo, cosa fare, e poi quali sono le risposte a un messaggio, chi invia il prossimo, e così via. In un certo senso le due applicazioni alle due estremità del socket stanno ballando, facendo attenzione a non pestarsi i piedi l'un l'altro.
-Ci sono molti documenti che descrivono questi protocolli di rete. L'HyperText Transfer Protocol è descritto nel seguente:
+Il protocollo di rete su cui si basa il web è in realtà piuttosto semplice ed il supporto integrato di Python chiamato `sockets` rende molto facile creare connessioni di rete e ottenere i dati su questi socket.
+
+Un *socket* è molto simile a un file, tranne per il fatto che un singolo socket prevede una connessione a due vie tra due programmi. Il dato scritto in un socket viene inviato all'altro programma collegato.
+
+Se avvii un processo di scrittura nel socket, otterrai i dati inviati dall'altra applicazione.
+
+Se provi a leggere un socket senza che il programma all'altra estremità abbia inviato alcun dato, potrai solo sederti e aspettare. Se entrambi i programmi collegati alle estremità di un socket semplicemente aspettano dati senza inviare nulla, probabilmente attenderanno per molto tempo.
+
+Quindi una componente importante dei programmi che comunicano in Internet è l'avere un qualche tipo di protocollo. Un protocollo è un insieme di regole precise che determinano chi può spedire dati per primo, cosa fanno, e poi quali sono le risposte a un messaggio, chi invia il prossimo, e così via. In un certo senso le due applicazioni alle due estremità del socket stanno ballando insieme, facendo attenzione a non pestarsi i piedi l'un l'altro.
+
+C'è un'ampia letteratura che descrive questi protocolli di rete. Ad esempio l'HyperText Transfer Protocol è descritto nel seguente:
 
 <http://www.w3.org/Protocols/rfc2616/rfc2616.txt>
 
-Questo è un documento lungo e complesso di 176 pagine con tanti dettagli. Se lo trovate interessante, sentitevi liberi di leggerlo tutto. Ma se date un'occhiata alla pagina 36 di RFC2616 troverete la sintassi per la richiesta GET. Per richiedere un documento da un server web, facciamo una connessione al server `www.pr4e.org` sulla porta 80, e quindi inviamo una riga del modulo `GET http://data.pr4e.org/romeo.txt HTTP / 1.0 `
-in cui il secondo parametro indica la pagina web che stiamo richiedendo e poi inviamo una riga vuota. Il server web risponderà con alcune informazioni di intestazione riguardanti il documento e una riga vuota seguita dal contenuto del documento.
+Avrai modo di vedere che è un documento lungo e complesso di 176 pagine contenente molti dettagli. Se lo trovi interessante, sentiti libero di leggerlo tutto. Per ora, dai un'occhiata a pagina 36 di RFC2616 dove troverai la sintassi per la richiesta GET. Proviamo a richiedere un documento da un server web: colleghiamoci al server `www.pr4e.org` sulla porta 80 e inviamo la seguente richiesta
+
+`GET http://data.pr4e.org/romeo.txt HTTP / 1.0 `
+
+il cui secondo parametro indica la pagina web che stiamo richiedendo, inviamo poi anche una riga vuota. Il server web risponderà con alcune informazioni di intestazione riguardanti il documento, una riga vuota e il contenuto del documento richiesto.
 
 Il browser Web più semplice del mondo
 --------------------------------
