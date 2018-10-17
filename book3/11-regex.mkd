@@ -333,42 +333,42 @@ Ecco alcuni di quei caratteri speciali e sequenze di caratteri:
 
 . Corrisponde a qualsiasi carattere (un carattere wild-card).
 
-\'s corrisponde a uno spazio.
+\s corrisponde a uno spazio.
 
-\'S corrisponde a un carattere diverso dallo spazio (opposto a `\`s).
+\S corrisponde a un carattere diverso dallo spazio (opposto a \s).
 
-`*` Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti.
+`*` Si applica al carattere immediatamente precedente e indica zero o più dei ripetizioni dello stesso.
 
-`*?` Si applica al carattere immediatamente precedente e indica di corrispondere a zero o più dei caratteri precedenti in "modalità non avida".
+`*?` Si applica al carattere immediatamente precedente e indica zero o più dei ripetizioni dello stesso in "modalità non avida".
 
-`+` Si applica al carattere immediatamente precedente e indica di corrispondere a uno o più dei caratteri precedenti.
+`+` Si applica al carattere immediatamente precedente e indica uno o più dei caratteri precedenti.
 
-`+?` Si applica al carattere immediatamente precedente e indica di corrispondere a uno o più dei caratteri precedenti in "modalità non avida".
+`+?` Si applica al carattere immediatamente precedente e indica uno o più dei caratteri precedenti in "modalità non avida".
 
-[aeiou] Corrisponde a un singolo carattere fintanto che quel carattere si trova nell'insieme specificato. In questo esempio, confronterebbe con "a", "e", "i", "o" o "u", e nessun altro carattere.
+[aeiou] Corrisponde a un singolo carattere fintanto che quel carattere si trova nell'insieme specificato. In questo esempio, ricercherebbe "a", "e", "i", "o" o "u" e nessun altro carattere.
 
-[a-z0-9] È possibile specificare intervalli di caratteri utilizzando il segno meno. In questo esempio si tratta di un singolo carattere che deve essere una lettera minuscola o una cifra.
+[a-z0-9] È possibile specificare intervalli di caratteri utilizzando il segno meno (-). In questo esempio si tratta di un singolo carattere che deve essere una lettera minuscola o una cifra.
 
-[`^`A-Za-z] Quando il primo carattere nella notazione impostata è un accento circonflesso, inverte la logica. In questo esempio corrisponde a un qualsiasi singolo carattere che è *diverso da* una lettera maiuscola o minuscola.
+[`^`A-Za-z] Quando il primo carattere nella notazione è un accento circonflesso, si inverte la logica. In questo esempio viene ricercato un qualsiasi singolo carattere *diverso da* una lettera maiuscola o minuscola.
 
-() Quando le parentesi vengono aggiunte a un'espressione regolare, vengono ignorate ai fini della confronto, ma consentono di estrarre un particolare sottoinsieme della stringa confrontata piuttosto che l'intera stringa quando si utilizza `findall()`.
+() Quando le parentesi vengono aggiunte a un'espressione regolare vengono ignorate ai fini della ricerca, ma consentono di estrarre un particolare sottoinsieme della stringa desiderata, diversamente da quanto accade con `findall()` dove viene considerata l'intera riga.
 
-`\`b Corrisponde alla stringa vuota, ma solo all'inizio o alla fine di una parola.
+`\`b Corrisponde alla stringa vuota ma solo all'inizio o alla fine di una parola.
 
-`\`B Corrisponde alla stringa vuota, ma non all'inizio o alla fine di una parola.
+`\`B Corrisponde alla stringa vuota ma non all'inizio o alla fine di una parola.
 
-`\`d Corrisponde a qualsiasi cifra decimale; è equivalente all'insieme [0-9].
+`\`d Corrisponde a qualsiasi cifra decimale compresa nell'insieme [0-9].
 
-`\`D Corrisponde a qualsiasi carattere non numerico; è equivalente al set [`^`0-9].  
+`\`D Corrisponde a qualsiasi carattere non numerico ed è equivalente al set [`^`0-9].  
 
 Sezione bonus per utenti Unix/Linux
 ------------------------------------
 
-Il supporto per la ricerca di file tramite espressioni regolari è stato incorporato nel sistema operativo Unix sin dagli anni '60 ed è disponibile in quasi tutti i linguaggi di programmazione in una forma o in un'altra.
+Il supporto per la ricerca di file tramite espressioni regolari è stato incorporato nel sistema operativo Unix sin dagli anni '60 ed è disponibile, in una forma o in un'altra, in quasi tutti i linguaggi di programmazione.
 
 \index{grep}
 
-Di fatto, esiste un programma per riga di comando incorporato in Unix chiamato *grep* (Generalized Regular Expression Parser) che funziona più o meno come negli esempi di `search()` in questo capitolo. Quindi se avete un sistema Macintosh o Linux, potete provare i seguenti comandi nella finestra della riga di comando.
+Esiste infatti un programma a riga di comando incorporato in Unix chiamato *grep* (Generalized Regular Expression Parser) che funziona più o meno come mostrato negli esempi di `search()` di questo capitolo. Quindi se usi un sistema Macintosh o Linux, puoi provare questo comando nella finestra della riga di comando:
 
 ~~~~ {.shell}
 $ grep '^From:' mbox-short.txt
@@ -378,12 +378,12 @@ From: zqian@umich.edu
 From: rjlowe@iupui.edu
 ~~~~
 
-Questo dice a `grep` di mostrare le righe che iniziano con la stringa "From:" nel file `mbox-short.txt`. Se sperimentate un po' con il comando `grep` e leggete la documentazione di `grep`, troverete alcune sottili differenze tra il supporto delle espressioni regolari in Python e il supporto delle espressioni regolari in `grep`. Ad esempio, `grep` non supporta il carattere non vuoto "`\`S", quindi dovrete usare una notazione per gli insiemi leggermente più complessa "['^']", che indica semplicemente di individuare un carattere diverso da uno spazio.  
+`Grep` mostra le righe che iniziano con la stringa "From:" presenti nel file `mbox-short.txt`. Quando farai un po' di pratica con il comando `grep` e studierai la sua documentazione, noterai alcune sottili differenze tra il funzionamento delle espressioni regolari in Python e in `grep`. Ad esempio, `grep` non supporta il carattere non vuoto "\S", quindi per ottenere lo stesso risultato dovrai usare una notazione per gli insiemi leggermente più complessa: "['^']" che indica di individuare un carattere diverso da uno spazio.  
 
 Debug
 ---------
 
-Python ha una documentazione integrata semplice e rudimentale che può essere molto utile se avete bisogno di un rapido aggiornamento per rinfrescare la vostra memoria sul nome esatto di un particolare metodo. Questa documentazione può essere visualizzata nell'interprete Python in modalità interattiva.  Potete visualizzare una guida interattiva usando `help()`.
+Python è dotato di una documentazione integrata semplice e rudimentale che può essere molto utile se hai bisogno di un rapido aggiornamento per rinfrescare la memoria sul nome di un particolare metodo. Questa documentazione può essere visualizzata in modalità interattiva nell'interprete Python. Tramite il comando `help()`.
 
 ~~~~
 >>> help()
@@ -391,7 +391,7 @@ Python ha una documentazione integrata semplice e rudimentale che può essere mo
 help> modules
 ~~~~
 
-Se sapete quale modulo volete usare, potete usare il comando `dir()` per trovare i metodi nel modulo come segue:
+Se sai già quale modulo vuoi utilizzare, puoi usare il comando `dir()` per ottenere un elenco dei metodi disponibili nel modulo come nell'esempio sottostante:
 
 ~~~~ {.python .trinket}
 >>> import re
@@ -401,7 +401,7 @@ Se sapete quale modulo volete usare, potete usare il comando `dir()` per trovare
 'sre_parse', 'sub', 'subn', 'sys', 'template']
 ~~~~
 
-È inoltre possibile, utilizzando il comando dir, ottenere una piccola documentazione su un particolare metodo.
+Utilizzando il comando dir è inoltre possibile ottenere una documentazione ridotta su uno specifico metodo.
 
 ~~~~ {.python .trinket}
 >>> help (re.search)
@@ -414,34 +414,31 @@ search(pattern, string, flags=0)
 ~~~~
 
 
-La documentazione integrata non è molto ampia, ma può essere utile quando si ha fretta o non si ha accesso a un browser Web o ad un motore di ricerca.
+La documentazione integrata non è molto ampia ma può essere comunque utile quando hai fretta o non hai accesso a un browser Web o ad un motore di ricerca.
 
 Glossario
 --------
 
-codice fragile
-: codice che funziona quando i dati di input sono in un formato particolare ma è soggetto a rotture se c'è qualche deviazione dal formato corretto. Chiamiamo questo "codice fragile" perché si rompe facilmente.
-corrispondenza avida: la nozione per indicare che i caratteri "+" e "\*" in un'espressione regolare si espandono verso l'esterno per corrispondere alla stringa più grande possibile.
+**codice fragile**: codice che funziona quando i dati di input sono in un formato particolare ma è soggetto a malfunzionamenti se c'è qualche variazione rispetto al formato corretto. Lo chiamiamo "codice fragile" perché si "rompe" facilmente.
+
+**corrispondenza avida**: la nozione per indicare che in un'espressione regolare i caratteri "+" e "\*" si espandono verso l'esterno per corrispondere alla stringa più grande possibile.
 
 \index{greedy}
 \index{greedy matching}
 
-grep
-: un comando disponibile nella maggior parte dei sistemi Unix che cerca tra i file di testo alla ricerca di righe che soddisfino le espressioni regolari. Il nome del comando sta per "Generalized Regular Expression Parser".
+**grep**: comando disponibile nella maggior parte dei sistemi Unix che permette la ricerca nei file di testo di righe che soddisfino le espressioni regolari impostate dall'utente. Il nome del comando è l'acronimo di "Generalized Regular Expression Parser".
 
 \index{grep}
 
-espressione regolare
-: un linguaggio per esprimere stringhe di ricerca più complesse. Un'espressione regolare può contenere caratteri speciali che indicano che una ricerca corrisponde solo all'inizio o alla fine di una riga o molte altre funzionalità simili.
+**espressione regolare**: linguaggio per impostare ricerche complesse di stringhe. Un'espressione regolare può contenere caratteri speciali che indicano parametri come il focalizzare una ricerca solo all'inizio o alla fine di una riga e/o molte altre funzionalità simili.
 
-wild-card
-: un carattere speciale che corrisponde a qualsiasi carattere. Nelle espressioni regolari il carattere wild-card è il punto.
+**wild-card**: un carattere speciale che indica qualsiasi carattere. Nelle espressioni regolari il carattere wild-card è il punto (.).
 
 \index{wild card}
 
 Esercizi
 ---------
-**Esercizio 1:** Scrivete un semplice programma per simulare l'operazione del comando `grep` su Unix. Chiedete all'utente di immettere un'espressione regolare e di contare il numero di righe che corrispondono all'espressione regolare:
+**Esercizio 1:** Scrivi un semplice programma che simuli il comportamento del comando `grep` di Unix. Fai che richieda all'utente l'inserimento di un'espressione regolare e poi ritorni il numero di righe che corrispondono alle specifiche della ricerca.
 
 ~~~~
 $ python grep.py
@@ -457,13 +454,13 @@ Enter a regular expression: java$
 mbox.txt had 4218 lines that matched java$
 ~~~~
 
-**Esercizio 2:** Scrivete un programma per cercare le righe del form
+**Esercizio 2:** Scrivi un programma per trovare le stringhe contenenti:
 
 ~~~~
 `New Revision: 39772`
 ~~~~
 
-ed estrarre il numero da ciascuna delle righe usando un'espressione regolare e il metodo `findall()`. Calcolate la media dei numeri e visualizzatela.  
+ne estragga il numero da ciascuna tramite l'uso del metodo `findall()` e di una espressione regolare. Calcola e visualizza la media dei numeri.  
 
 ~~~~
 Enter file:mbox.txt
