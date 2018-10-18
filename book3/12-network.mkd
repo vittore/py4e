@@ -34,16 +34,17 @@ il cui secondo parametro indica la pagina web che stiamo richiedendo, inviamo po
 Il browser Web più semplice del mondo
 --------------------------------
 
-Forse il modo più facile per mostrare come funziona il protocollo HTTP è scrivere un semplice programma Python che effettui una connessione a un server web e che segua le regole del protocollo HTTP per richiedere un documento e visualizzare ciò che il server rispedisce.
+Forse il modo più facile per mostrare come funziona il protocollo HTTP è scrivere un semplice script Python che effettui una connessione a un server web e che, seguendo le regole del protocollo HTTP, richieda un documento e visualizzi ciò che il server ci restituisce.
 
 \VerbatimInput{../code3/socket1.py}
 
-Innanzitutto il programma effettua una connessione alla porta 80 sul server [www.py4e.com] (http://www.py4e.com). Dato che il nostro programma sta svolgendo il ruolo di "browser web", il protocollo HTTP prevede che dobbiamo inviare il comando GET seguito da una riga vuota.
+Per prima cosa il programma effettua una connessione alla porta 80 del server [www.py4e.com] (http://www.py4e.com). Dato che il nostro programma sta impersonando un "browser web", il protocollo HTTP prevede che il comando GET sia seguito da una riga vuota.
 
 ![A Socket Connection](height=2.0in@../images/socket)
 
-Una volta che inviamo quella riga vuota, scriviamo un loop che riceve dati in blocchi da 512 caratteri dal socket e li visualizza fino a quando non ci sono più dati da leggere (cioè, recv() restituisce una stringa vuota).
-Il programma produce il seguente output:
+Una volta inviata la riga vuota, scriviamo un ciclo che riceva dal socket dati in blocchi da 512 caratteri e li visualizzi fino a quando non ci sono più dati da leggere (cioè quando recv() restituisce una stringa vuota).
+
+Il programma produrrà l'output seguente:
 
 ~~~~
 HTTP/1.1 200 OK
@@ -63,10 +64,13 @@ Who is already sick and pale with grief
 ~~~~
 
 
-L'output inizia con l'intestazione inviata dal server Web per descrivere il documento. Ad esempio, l'intestazione `Content-Type` indica che il documento è un documento di testo (`text/plain`).
-Dopo che il server ci ha inviato le intestazioni, aggiunge una riga vuota per indicare la fine delle intestazioni e quindi ci invia i dati effettivi del file `romeo.txt`.
-Questo esempio mostra come realizzare una connessione di rete di basso livello con i socket. I socket possono essere utilizzati per comunicare con un server Web o con un server di posta o con molti altri tipi di server. Tutto ciò che serve è trovare il documento che descrive il protocollo e scrivere il codice per inviare e ricevere i dati rispettando il protocollo.
-Tuttavia, dal momento che il protocollo che usiamo più comunemente è il protocollo web HTTP, Python ha una libreria speciale appositamente progettata per supportarlo per il recupero di documenti e dati sul web.
+L'output inizia con l'invio dell'intestazione dal server Web che descrive il documento. Ad esempio, l'intestazione `Content-Type` indica che il documento è un documento di testo (`text/plain`).
+
+Dopo che il server ci ha fornito l'intestazione, viene mandata una riga vuota che indica la fine delle intestazioni e viene iniziato l'invio del file `romeo.txt`.
+
+Questo esempio è servito per mostrarti come realizzare una connessione di rete di basso livello con un socket. I socket possono essere utilizzati per comunicare con un server Web, con un server di posta o con molti altri tipi di server. Tutto ciò che serve è trovare il documento che descrive il protocollo da utilizzare e scrivere il codice per inviare e ricevere i dati rispettando quanto indicato.
+
+Dal momento che il protocollo più comunemente utilizzato è l'HTTP, Python è dotato di una libreria appositamente progettata per supportare il recupero di documenti e dati dal web.
 
 Recupero di un'immagine tramite HTTP
 -----------------------------
@@ -75,11 +79,11 @@ Recupero di un'immagine tramite HTTP
 \index{image!jpg}
 \index{jpg}
 
-Nell'esempio sopra, abbiamo recuperato un file di testo semplice che conteneva dei "ritorni a capo" e abbiamo semplicemente copiato i dati sullo schermo durante l'esecuzione del programma. Possiamo usare un programma simile per recuperare un'immagine attraverso l'uso di HTTP. Invece di copiare i dati sullo schermo mentre il programma viene eseguito, accumuliamo i dati in una stringa, tagliamo le intestazioni e salviamo i dati dell'immagine in un file come segue:
+Nell'esempio precedente abbiamo recuperato un semplice file di testo che conteneva dei "ritorni a capo" e abbiamo semplicemente visualizzato i dati sullo schermo durante la sua esecuzione. Possiamo usare un programma simile per recuperare un'immagine attraverso l'uso di HTTP. Invece di mostrare i dati sullo schermo mentre il programma viene eseguito, stavolta immagazziniamo i dati in una stringa, eliminiamo le intestazioni ed infine salviamo i dati dell'immagine in un file:
 
 \VerbatimInput{../code3/urljpeg.py}
 
-Quando viene eseguito il programma, produce il seguente output:
+Quando esegui il programma, otterrai il seguente output:
 
 ~~~~
 $ python urljpeg.py
@@ -105,14 +109,16 @@ Connection: close
 Content-Type: image/jpeg
 ~~~~
 
-Potete notare che per questo url, l'intestazione `Content-Type` indica che il corpo del documento è un'immagine (`image/jpeg`). Una volta che il programma termina, è possibile visualizzare i dati dell'immagine aprendo il file `stuff.jpg` in un visualizzatore di immagini.
-Mentre il programma è in esecuzione, potete notare che non riceviamo 5120 caratteri ogni volta che chiamiamo il metodo `recv()`. Otteniamo il numero di caratteri che sono stati trasferiti attraverso la rete dal server Web dal momento in cui chiamiamo `recv()`. In questo esempio, otteniamo 1460 o 2920 caratteri ogni volta che inviamo la richiesta fino a 5120 caratteri di dati.
-I risultati potrebbero essere diversi a seconda della velocità della vostra rete. Si noti inoltre che nell'ultima chiamata a `recv()` otteniamo 1681 byte, che è la fine del flusso di dati, e nella successiva chiamata a `recv()` riceviamo una stringa di lunghezza zero che ci dice che il server ha chiamato `close()` sulla sua estremità del socket e non ci sono più dati in arrivo.
+Noterai che l'intestazione di questo url, `Content-Type`, indica che il corpo del documento è un'immagine (`image/jpeg`). Al termine del programma, è possibile visualizzare l'immagine aprendo il file `stuff.jpg` con un visualizzatore di immagini.
+
+Mentre il programma è in esecuzione potrai notare che non riceviamo solo 5120 caratteri ad ogni chiamata del metodo `recv()`: in realtà riceviamo il numero di caratteri trasferiti attraverso la rete dal server Web dalla chiamata di `recv()`. In questo esempio, abbiamo ottenuto 1460 o 2920 caratteri ogni volta che abbiamo richiesto fino a 5120 caratteri.
+
+I risultati potrebbero variare a seconda della velocità della tua connessione. Ti prego di notare inoltre che nell'ultima chiamata a `recv()` otteniamo 1681 byte, la fine del flusso di dati, e nella successiva chiamata a `recv()` riceviamo una stringa di lunghezza zero che ci avvisa che il server ha chiamato `close()` al socket e non vi sono più dati in arrivo.
 
 \index{time}
 \index{time.sleep}
 
-Possiamo rallentare le nostre successive chiamate `recv()` rimuovendo il commento alla chiamata a `time.sleep()`. In questo modo, aspettiamo un quarto di secondo dopo ogni chiamata cosicché il server possa "anticiparci" e inviarci più dati prima che richiamiamo di nuovo `recv()`. Con il delay, il programma viene eseguito come segue:
+Possiamo rallentare le nostre successive chiamate `recv()` rimuovendo il segno di commento alla chiamata `time.sleep()`. In questo modo, possiamo ritardare di un quarto di secondo ogni chiamata per permettere al server di "anticiparci" e inviarci più dati prima di richiamare nuovamente `recv()`. Il programma ora si comporterà nel modo seguente:
 
 ~~~~
 $ python urljpeg.py
@@ -135,18 +141,19 @@ Connection: close
 Content-Type: image/jpeg
 ~~~~
 
-Ora oltre alla prima e all'ultima chiamata a `recv()`, riceviamo 5120 caratteri ogni volta che richiediamo nuovi dati.
+Ora, tranne che nella prima e l'ultima chiamata a `recv()`, abbiamo ricevuto 5120 caratteri ad ogni richiesta di nuovi dati.
 
-Tra il server che fa richieste `send()` e la nostra applicazione che effettua richieste `recv()` c'è un buffer. Quando eseguiamo il programma con il delay impostato, a un certo punto il server potrebbe riempire il buffer nel socket ed essere costretto a sospendere l'invio di dati fino a quando il nostro programma inizia a svuotare il buffer. La sospensione dell'applicazione di invio o dell'applicazione ricevente si chiama "controllo di flusso".
+Tra le richieste `send()` inviate dal server e le richieste `recv()` provenienti dalla nostra applicazione c'è un buffer. Se il programma è con il delay attivo, il server potrebbe riempire il buffer del socket ed essere costretto a sospendere l'invio di ulteriori dati fino a quando il nostro script inizia a svuotare il buffer. La sospensione di invio o ricezione di dati viene chiamato "controllo di flusso".
 
 \index{flow control}
 
 Recupero di pagine Web con `urllib`
 ---------------------------------------------
 
-Mentre possiamo inviare e ricevere manualmente i dati tramite HTTP utilizzando la libreria socket, c'è un modo molto più semplice per eseguire questa comune attività in Python usando la libreria `urllib`.
-Usando `urllib`, potete trattare una pagina web come un file. Basta indicare quale pagina web si desidera recuperare e 'urllib` gestisce tutti i dettagli del protocollo HTTP e dell'intestazione.
-Il codice equivalente per leggere il file `romeo.txt` dal web usando `urllib` è il seguente:
+Anche se possiamo inviare e ricevere manualmente dati via HTTP utilizzando la libreria socket, esiste un modo molto più semplice per eseguire questa attività in Python appoggiandosi alla libreria `urllib`.
+`urllib` ti permette di trattare una pagina web come se fosse un file. Basta indicare quale pagina web si desidera recuperare e `urllib` gestisce tutti i dettagli del protocollo HTTP e dell'intestazione.
+
+Il codice per leggere il file `romeo.txt` dal web usando `urllib` è il seguente:
 
 \VerbatimInput{../code3/urllib1.py}
 
