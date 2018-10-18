@@ -157,8 +157,9 @@ Il codice per leggere il file `romeo.txt` dal web usando `urllib` è il seguente
 
 \VerbatimInput{../code3/urllib1.py}
 
-Una volta che la pagina web è stata aperta con `urllib.urlopen`, possiamo trattarla come un file e leggerla usando un ciclo `for`.
-Quando il programma è in esecuzione, vediamo solo l'output del contenuto del file. Le intestazioni vengono ancora inviate, ma il codice 'urllib` rimuove le intestazioni e ci restituisce solo i dati.
+Una volta che la pagina web è stata aperta con `urllib.urlopen`, possiamo trattarla come un file e leggerne il contenuto usando un ciclo `for`.
+
+Quando il programma è in esecuzione, vediamo solo il contenuto del file. Le intestazioni che sono state inviate vengono rimosse dal `urllib` e vengono restituiti solo i dati.
 
 ~~~~
 But soft what light through yonder window breaks
@@ -167,11 +168,11 @@ Arise fair sun and kill the envious moon
 Who is already sick and pale with grief
 ~~~~
 
-Ad esempio, possiamo scrivere un programma per recuperare i dati di `romeo.txt` e calcolare la frequenza di ogni parola nel file come segue:
+Ad esempio, possiamo scrivere un programma per recuperare `romeo.txt` e calcolare la frequenza di ogni parola presente nel file come rappresentato nel seguente script:
 
 \VerbatimInput{../code3/urlwords.py}
 
-Di nuovo, una volta che abbiamo aperto la pagina Web, possiamo leggerla come un file locale.
+Ancora una volta tengo a ripeterti che dopo aver avuto accesso alla pagina Web, possiamo leggerla come se si trattasse di un file locale.
 
 Analisi dell'HTML e raccolta dati dal Web
 ---------------------------------
@@ -179,16 +180,18 @@ Analisi dell'HTML e raccolta dati dal Web
 \index{web!scraping}
 \index{parsing HTML}
 
-Uno degli usi comuni che viene fatto della funzionalità `urllib` in Python è * raschiare * il web. Con raschiare il Web ci riferiamo allo scrivere un programma che finge di essere un browser Web e recupera delle pagine, quindi esamina i dati in queste pagine alla ricerca di pattern.
+Uno degli usi più comuni delle funzionalità di `urllib` è lo *scraping* dei contenuti presenti nel web. Con la parola *scraping* del Web ci riferiamo allo scrivere un programma che, fingendo di essere un browser Web, recuperi delle pagine, ne esamini i dati contenuti alla ricerca di precisi pattern.
 
-Ad esempio, un motore di ricerca come Google esaminerà l'origine di una pagina Web, estrarrà i collegamenti ad altre pagine e recupererà quelle pagine, estrarrà altri collegamenti e così via. Usando questa tecnica, gli * spider * di Google si fanno strada attraverso quasi tutte le pagine sul web.
+Ad esempio, un motore di ricerca come Google esaminerà l'origine di una pagina Web, ne estrarrà i collegamenti ad altre pagine, le recupererà e ne estrarrà altri collegamenti e così via. Usando questa tecnica, gli *spider* di Google riescono a farsi strada attraverso quasi tutte le pagine sul web.
 
-Google utilizza anche la frequenza dei link che trova in una determinata pagina come misura di quanto sia "importante" una pagina e quanto in alto deve apparire nei risultati di ricerca.
+Google utilizza anche la frequenza dei link che trova in una determinata pagina per stabilire quanto sia "importante" quella pagina e quanto in alto debba apparire nei risultati di ricerca.
 
 Analisi dell'HTML utilizzando le espressioni regolari
 --------------------------------------
 
-Un modo semplice per analizzare l'HTML consiste nell'utilizzare le espressioni regolari per cercare ed estrarre ripetutamente sottostringhe che corrispondono a un particolare modello.  Ecco una semplice pagina web:
+Un modo semplice per analizzare l'HTML consiste nell'utilizzare le espressioni regolari per cercare ed estrarre ripetutamente sottostringhe che corrispondono a un particolare pattern.
+
+Ecco una semplice pagina web:
 
 ~~~~ {.html}
 <h1>The First Page</h1>
@@ -199,25 +202,29 @@ Second Page</a>.
 </p>
 ~~~~
 
-Possiamo costruire un'espressione regolare ben formata per confrontare ed estrarre i valori del collegamento dal testo sopra come segue:
+Possiamo progettare un'espressione regolare per confrontare ed estrarre i valori del collegamento dal testo precedente come segue:
 
 ~~~~
 href="http://.+?"
 ~~~~
 
-La nostra espressione regolare cerca stringhe che iniziano con "href ="http://", seguito da uno o più caratteri (".+?"), seguito da altre doppie virgolette. Il punto interrogativo aggiunto al ".+?" indica che il confronto deve essere fatto in un modo "non avido" invece che "avido". Un confronto non avido cerca di trovare la stringa corrispondente * più piccola * possibile mentre un confronto avido cerca di trovare la stringa corrispondente * più grande * possibile.
+La nostra espressione regolare va alla ricerca di stringhe che iniziano con "href="http://", seguito da uno o più caratteri (".+?") e da altre doppie virgolette. Il punto interrogativo aggiunto al ".+?" indica che il confronto deve essere fatto in un modo "non avido". Un confronto non avido cerca la stringa corrispondente *più piccola* possibile mentre un confronto avido cerca la stringa corrispondente *più grande* possibile.
 
 \index{greedy}
 \index{non-greedy}
 
-Aggiungiamo le parentesi alla nostra espressione regolare per indicare quale parte della nostra stringa confrontata vorremmo estrarre e produrre il seguente programma:
+Le parentesi aggiunte alla nostra espressione regolare indicano quale parte della stringa vorremmo estrarre.
+
+Potremmo scrivere il seguente script:
 
 \index{regex!parentheses}
 \index{parentheses!regular expression}
 
 \VerbatimInput{../code3/urlregex.py}
 
-Il metodo per le espressione regolare `findall` ci darà un elenco di tutte le stringhe che corrispondono alla nostra espressione regolare, restituendo solo il testo del link tra le doppie virgolette.  Quando eseguiamo il programma, otteniamo il seguente risultato:
+Il metodo `findall` fornisce un elenco di tutte le stringhe che corrispondono alla nostra espressione regolare, restituendoci solo il testo del link compreso tra le doppie virgolette.
+
+Quando eseguiamo il programma, otteniamo il seguente risultato:
 
 ~~~~
 python urlregex.py
@@ -235,18 +242,22 @@ http://www.lib.umich.edu/espresso-book-machine
 http://www.py4e.com/py4inf-slides.zip
 ~~~~
 
-Le espressioni regolari funzionano molto bene quando il vostro HTML è ben formattato e prevedibile. Ma dal momento che ci sono molte pagine HTML "danneggiate", una soluzione che utilizza solo espressioni regolari potrebbe perdere alcuni collegamenti validi o terminare con dati non validi.  Questo può essere risolto utilizzando una libreria ben fatta di analisi HTML.
+Le espressioni regolari funzionano molto bene quando il codice HTML è ben formattato e prevedibile. Ma dal momento che ci sono molte pagine HTML "danneggiate", una soluzione che utilizzi solo espressioni regolari potrebbe non riportare alcuni collegamenti validi o fornire dati non validi.
+
+Questo problema può essere risolto utilizzando una robusta libreria per analisi HTML.
 
 Analisi dell'HTML con BeautifulSoup
 --------------------------------
 
 \index{BeautifulSoup}
-Esistono numerose librerie Python che possono aiutarci ad analizzare l'HTML ed estrarre i dati dalle pagine. Ciascuna delle librerie ha i suoi punti di forza e di debolezza e potete sceglierne una in base alle vostre esigenze.
-Ad esempio, analizzeremo semplicemente alcuni input HTML ed estrarremo i collegamenti usando la libreria * BeautifulSoup *. Potete scaricare e installare il codice della libreria BeautifulSoup da:
+Esistono numerose librerie Python che possono aiutarti ad analizzare pagine HTML ed estrarne i dati. Dal momento che ciascuna di queste librerie ha punti di forza e di debolezza, dovrai sceglierle in base alle tue esigenze.
+
+Nelle pagine seguenti eseguiremo delle semplici analisi su del codice HTML e ne estrarremo i collegamenti usando la libreria *BeautifulSoup*. Puoi scaricare la libreria BeautifulSoup da:
 
 <http://www.crummy.com/software/>
 
-È possibile scaricare e "installare" BeautifulSoup o semplicemente salvareil file `BeautifulSoup.py` nella stessa cartella dell'applicazione.
+Hai la possibilità di "installare" BeautifulSoup (NOTA: Puoi utilizzare il comando "pip install beautifulsoup") o semplicemente salvare il file `BeautifulSoup.py` nella stessa cartella dell'applicazione.
+
 Anche se l'HTML assomiglia al formato XML^ [Il formato XML è descritto nel prossimo capitolo.] e alcune pagine sono costruite appositamente per essere XML, la maggior parte degli HTML è generalmente danneggiata in modi che fanno sì che un parser XML rigetti l'intera pagina di HTML come formattata in modo improprio. BeautifulSoup tollera HTML altamente difettoso e vi consente comunque di estrarre facilmente i dati di cui avete bisogno.
 
 Useremo `urllib` per leggere la pagina e poi useremo` BeautifulSoup` per estrarre gli attributi `href` dai tag ancora (`a`).
