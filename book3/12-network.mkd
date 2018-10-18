@@ -316,23 +316,26 @@ capiterà che tu voglia scaricare un file non di testo (o binario) come un'immag
 
 \index{binary file}
 
-Lo schema consiste nell'aprire l'URL e utilizzare `read` per scaricare l'intero contenuto del documento in una variabile stringa (`img`), quindi scrivere tali informazioni in un file locale come segue:
+Lo schema consiste nell'aprire l'URL e tramite `read` scaricare l'intero contenuto del documento in una variabile stringa (`img`) e scrivere tali informazioni in un file locale come in questo esempio:
 
 \VerbatimInput{../code3/curl1.py}
 
-Questo programma legge in una volta tutti i dati in remoto, li memorizza nella variabile `img` nella memoria principale del computer, quindi apre il file` cover.jpg` e scrive i dati sul disco. Questo funzionerà se la dimensione del file è inferiore alla dimensione della memoria del vostro computer.
-Tuttavia, se si tratta di un file audio o video di grandi dimensioni, questo programma potrebbe crashare o, per lo meno, funzionare lentamente quando il computer esaurisce la memoria. Per evitare di esaurire la memoria, raccogliamo i dati in blocchi (o buffer) e quindi scriviamo ciascun blocco sul disco prima di ottenere il blocco successivo. In questo modo il programma può leggere file di qualsiasi dimensione senza utilizzare tutta la memoria di cui disponete nel vostro computer.
+Questo programma legge in una sola volta tutti i dati in remoto, li memorizza temporaneamente nella ram del computer nella variabile `img`, quindi apre il file `cover.jpg` e salva i dati su disco. Questa operazione funzionerà se la dimensione del file è inferiore a quella della memoria del tuo computer.
+
+Quindi, se l'obiettivo è un file audio o video di grandi dimensioni, questo script potrebbe crashare o rallentare sensibilmente qualora il computer esaurisca la memoria. Per evitare di saturare la memoria, scarichiamo i dati in singoli blocchi (o buffer), scriviamo su disco prima di ottenere il successivo. In questo modo il programma può leggere file di qualsiasi dimensione senza utilizzare tutta la memoria ram di cui disponi nel computer.
 
 \VerbatimInput{../code3/curl2.py}
 
-In questo esempio, leggiamo solo 100.000 caratteri alla volta e poi li scriviamo nel file `cover.jpg` prima di recuperare i successivi 100.000 caratteri dal web.  Questo programma funziona come segue:
+In questo esempio stiamo leggendo solo 100.000 caratteri alla volta che poi scriviamo nel file `cover.jpg` prima di recuperare i successivi 100.000 caratteri dal web.
+
+Questo programma funziona come puoi vedere di seguito:
 
 ~~~~
 python curl2.py
 568248 characters copied.
 ~~~~
 
-Se avete un computer Unix o Macintosh, probabilmente avete un comando integrato nel tuo sistema operativo che esegue questa operazione, come segue:
+Se hai un sistema Unix o Macintosh, probabilmente hai a disposizione un comando che può svolgere questa operazione in modo simile a quanto segue:
 
 \index{curl}
 
@@ -340,45 +343,40 @@ Se avete un computer Unix o Macintosh, probabilmente avete un comando integrato 
 curl -O http://www.py4e.com/cover.jpg
 ~~~~
 
-Il comando `curl` è l'abbreviazione di "copy URL" e quindi questi due esempi sono giustamente chiamati `curl1.py` e `curl2.py` su [www.py4e.com/code3](http://www.py4e. com / code3) in quanto implementano funzionalità simili al comando `curl`. Esiste anche un programma di esempio `curl3.py` che esegue questa operazione un po 'più efficacemente, nel caso in cui vogliate effettivamente utilizzare questo modello in un programma che state scrivendo.
+Il comando `curl` è l'abbreviazione di "copy URL" da cui ho diligentemente tratto il nome di questi due esempi `curl1.py` e `curl2.py` disponibili su [www.py4e.com/code3](http://www.py4e. com / code3) dato che implementano funzionalità simili. Esiste anche uno script `curl3.py` che esegue un po 'più efficacemente questa operazione, nel caso in cui tu desideri davvero utilizzare questo pattern in un tuo programma.
 
 Glossario
 --------
 
-BeautifulSoup
-: una libreria Python per l'analisi di documenti HTML e per l'estrazione di dati da documenti HTML che compensa la maggior parte delle imperfezioni nell'HTML che i browser generalmente ignorano. Potete scaricare il codice BeautifulSoup da [www.crummy.com] (http://www.crummy.com).
+**BeautifulSoup**: libreria Python per l'analisi ed estrazione dati da documenti HTML che compensa molte delle imperfezioni nell'HTML che i browser generalmente ignorano. Puoi scaricare il codice BeautifulSoup da [www.crummy.com] (http://www.crummy.com).
 
 \index{BeautifulSoup}
 
-porta
-: un numero che indica in genere l'applicazione che state contattando quando si effettua una connessione socket a un server. Ad esempio, il traffico Web di solito utilizza la porta 80 mentre il traffico e-mail utilizza la porta 25.
+**porta**: un numero che indica in genere quale applicazione state contattando quando effettuate una connessione socket a un server. Ad esempio il traffico Web di solito utilizza la porta 80 mentre il traffico e-mail utilizza la 25.
 
 \index{port}
 
-scrape
-: quando un programma fa finta di essere un browser web e recupera una pagina web, guardandone il contenuto. Spesso i programmi seguono i collegamenti in una pagina per trovare la pagina successiva in modo che possano scorrere una rete di pagine o un social network.
+**scrape**: indica il comportamento di un programma che fa finta di essere un browser web, recupera una pagina web e ne osserva il contenuto. Spesso i programmi seguono i collegamenti presenti in una pagina per trovare la pagina successiva in modo da poter scorrere all'interno di una rete di pagine o di un social network.
 
 \index{socket}
 
-socket
-: una connessione di rete tra due applicazioni in cui le queste possono inviare e ricevere dati in entrambe le direzioni.
+**socket**: una connessione di rete tra due applicazioni tramite cui queste possono inviare e ricevere dati in entrambe le direzioni.
 
 \index{socket}
 
-spider
-: l'atto di un motore di ricerca web di recuperare una pagina e quindi tutte le pagine collegate a questa e così via fino a quasi tutte le pagine su Internet e utilizzarle per costruire il suo indice di ricerca.
+**spider**: l'atto di un motore di ricerca web di recuperare una pagina e successivamente tutte le pagine collegate a questa fino a raggiungere quasi tutte le pagine in rete e utilizzarle per costruire il proprio indice di ricerca.
 
 \index{spider}
 
 Esercizi
 ---------
 
-**Esercizio 1:** Modificate il programma socket `socket1.py` per richiedere all'utente l'URL in modo che possa leggere qualsiasi pagina web. Potete usare `split('/')` per suddividere l'URL nelle sue componenti in modo da poter estrarre il nome host per la chiamata `connect` del socket. Aggiungete il controllo degli errori usando `try` ed `except` per gestire la condizione in cui l'utente inserisca un URL non formattato o inesistente.
+**Esercizio 1:** Modifica il programma socket `socket1.py` in modo da richiedere all'utente l'URL rendendolo quindi in grado di leggere qualsiasi pagina web. Puoi usare `split('/')` per suddividere l'URL nelle sue componenti in modo da poter estrarre il nome host per la chiamata `connect` del socket. Aggiungi il controllo degli errori usando `try` ed `except` per gestire la condizione in cui l'utente inserisca un URL non formattato correttamente o sia inesistente.
 
-**Esercizio 2:** Modificate il vostro programma socket in modo che conti il ​​numero di caratteri che ha ricevuto e interrompa la visualizzazione di qualsiasi testo dopo che ha mostrato 3000 caratteri. Il programma dovrebbe recuperare l'intero documento, contare il numero totale di caratteri e visualizzare il conteggio del numero di caratteri alla fine del documento.
+**Esercizio 2:** Modifica il tuo programma socket in modo che conti il numero di caratteri che ha ricevuto e interrompa la visualizzazione di qualsiasi testo dopo che ne ha mostrato 3000. Il programma dovrà inoltre accettare l'intero documento, contare il numero totale di caratteri e visualizzarne il numero.
 
-**Esercizio 3:** Utilizzate 'urllib` per replicare l'esercizio precedente per (1) recuperare il documento da un URL, (2) visualizzare fino a 3000 caratteri e (3) contare il numero complessivo di caratteri nel documento. Non preoccupatevi delle intestazioni per questo esercizio, mostrate semplicemente i primi 3000 caratteri contenuti nel documento.
+**Esercizio 3:** Utilizza `urllib` per replicare l'esercizio precedente per (1) recuperare il documento da un URL, (2) visualizzare i primi 3000 caratteri e (3) contarne il numero complessivo. Non preoccuparti delle intestazioni per questo esercizio, per ora è sufficiente mostrare semplicemente i primi 3000 caratteri contenuti nel documento.
 
-**Esercizio 4:** Modifica il programma `urllinks.py` per estrarre e contare i tag di paragrafo (p) dal documento HTML ottenuto e visualizzate il conteggio dei paragrafi come output del vostro programma. Non visualizzate il testo del paragrafo, contateli solo. Mettete alla prova il vostro programma su diverse piccole pagine Web e su pagine web più grandi.
+**Esercizio 4:** Modifica il programma `urllinks.py` per estrarre e contare i tag di paragrafo (p) dal documento HTML scaricato e visualizza il conteggio dei paragrafi come output del programma. Non visualizzare il testo del paragrafo: è sufficiente contarli. Metti alla prova il programma con diverse pagine Web e di varie dimensioni.
 
-**Esercizio 5:** (Avanzato) Modificate il programma socket in modo che mostri solo i dati dopo che siano state ricevute le intestazioni e una riga vuota. Ricordate che `recv` sta ricevendo caratteri (inclusi caratteri newline e tutti gli altri), non righe.
+**Esercizio 5:** (Avanzato) Modifica il programma socket in modo che mostri i dati solo dopo che siano state ricevute le intestazioni e una riga vuota. Ricorda che `recv` sta ricevendo caratteri (inclusi caratteri newline e tutti gli altri) e non righe.
