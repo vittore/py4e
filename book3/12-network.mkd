@@ -256,11 +256,11 @@ Nelle pagine seguenti eseguiremo delle semplici analisi su del codice HTML e ne 
 
 <http://www.crummy.com/software/>
 
-Hai la possibilità di "installare" BeautifulSoup (NOTA: Puoi utilizzare il comando "pip install beautifulsoup") o semplicemente salvare il file `BeautifulSoup.py` nella stessa cartella dell'applicazione.
+Hai la possibilità di "installare" BeautifulSoup^ [Puoi utilizzare il comando "pip install beautifulsoup".] o semplicemente salvare il file `BeautifulSoup.py` nella stessa cartella dell'applicazione.
 
-Anche se l'HTML assomiglia al formato XML^ [Il formato XML è descritto nel prossimo capitolo.] e alcune pagine sono costruite appositamente per essere XML, la maggior parte degli HTML è generalmente danneggiata in modi che fanno sì che un parser XML rigetti l'intera pagina di HTML come formattata in modo improprio. BeautifulSoup tollera HTML altamente difettoso e vi consente comunque di estrarre facilmente i dati di cui avete bisogno.
+Anche se l'HTML ha molto in comune con il formato XML^ [Il formato XML verrà affrontato nel prossimo capitolo.] e alcune pagine sono scritte appositamente per essere codice XML, la maggior parte del codice HTML è scritto in modi che fanno sì che un parser XML rigetti l'intera pagina di HTML in quanto formattata in modo improprio. BeautifulSoup tollera codice HTML scritto molto male consentendoti comunque di estrarre i dati di cui hai bisogno.
 
-Useremo `urllib` per leggere la pagina e poi useremo` BeautifulSoup` per estrarre gli attributi `href` dai tag ancora (`a`).
+Useremo `urllib` per leggere una pagina e poi useremo `BeautifulSoup` per estrarre gli attributi `href` dagli "anchor tags" (`a`).
 
 \index{BeautifulSoup}
 \index{HTML}
@@ -268,8 +268,13 @@ Useremo `urllib` per leggere la pagina e poi useremo` BeautifulSoup` per estrarr
 
 \VerbatimInput{../code3/urllinks.py}
 
-Il programma richiede un indirizzo Web, quindi apre la pagina Web, legge i dati e li passa al parser BeautifulSoup, quindi recupera tutti i tag ancora e visualizza l'attributo `href` per ciascun tag.
-Quando il programma viene eseguito, viene visualizzato quanto segue:
+Il programma ti richiede un indirizzo Web, quindi:
+- ne apre la pagina Web,
+- ne legge i dati e li passa al parser BeautifulSoup,
+- recupera tutti gli anchor tags,
+- visualizza l'attributo `href` per ciascun tag.
+
+Quando il programma viene eseguito visualizza quanto segue:
 
 ~~~~
 python urllinks.py
@@ -288,7 +293,7 @@ http://www.py4e.com/code
 http://www.py4e.com/
 ~~~~
 
-Potete utilizzare BeautifulSoup per estrarre varie parti di ciascun tag come segue:
+Puoi utilizzare BeautifulSoup per estrarre varie parti di ciascun tag come indicato nelle pagine seguenti:
 
 \VerbatimInput{../code3/urllink2.py}
 
@@ -302,12 +307,12 @@ Content: ['\nSecond Page']
 Attrs: [('href', 'http://www.dr-chuck.com/page2.htm')]
 ~~~~
 
-Questi esempi iniziano solo a mostrare la potenza di BeautifulSoup quando viene analizzato l'HTML.
+Questi esempi iniziano solo a mostrarti la potenza di BeautifulSoup nell'analizzare del codice HTML.
 
-Leggere file binari usando urllib
+Leggere file binari tramite urllib
 ---------------------------------
 
-A volte vogliamo recuperare un file non di testo (o binario) come un'immagine o un file video. I dati in questi file generalmente non sono utili se visualizzati, ma potete facilmente fare una copia di un URL su un file locale sul vostro hard disk usando 'urllib`.
+capiterà che tu voglia scaricare un file non di testo (o binario) come un'immagine o un video. Generalmente è meglio evitare di visualizzare i dati di questi file durante lo scaricamento, essendo meglio creare una copia locale tramite `urllib`.
 
 \index{binary file}
 
@@ -315,7 +320,7 @@ Lo schema consiste nell'aprire l'URL e utilizzare `read` per scaricare l'intero 
 
 \VerbatimInput{../code3/curl1.py}
 
-Questo programma legge in una volta tutti i dati dalla rete e li memorizza nella variabile `img` nella memoria principale del computer, quindi apre il file` cover.jpg` e scrive i dati sul disco. Questo funzionerà se la dimensione del file è inferiore alla dimensione della memoria del vostro computer.
+Questo programma legge in una volta tutti i dati in remoto, li memorizza nella variabile `img` nella memoria principale del computer, quindi apre il file` cover.jpg` e scrive i dati sul disco. Questo funzionerà se la dimensione del file è inferiore alla dimensione della memoria del vostro computer.
 Tuttavia, se si tratta di un file audio o video di grandi dimensioni, questo programma potrebbe crashare o, per lo meno, funzionare lentamente quando il computer esaurisce la memoria. Per evitare di esaurire la memoria, raccogliamo i dati in blocchi (o buffer) e quindi scriviamo ciascun blocco sul disco prima di ottenere il blocco successivo. In questo modo il programma può leggere file di qualsiasi dimensione senza utilizzare tutta la memoria di cui disponete nel vostro computer.
 
 \VerbatimInput{../code3/curl2.py}
