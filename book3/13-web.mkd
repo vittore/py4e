@@ -5,13 +5,20 @@ Utilizzo di servizi Web
 =======================
 
 
-Ora che è diventato semplice ottenere i documenti via HTTP e analizzarli utilizzando i programmi, non è stato necessario molto tempo per sviluppare un approccio in cui abbiamo iniziato a produrre documenti realizzati specificamente per essere utilizzati da altri programmi (ossia non HTML da visualizzare in un browser ).
-Esistono due formati comuni che utilizziamo per scambiare dati sul Web. L'eXtensible Markup Language o XML è in uso da molto tempo ed è più adatto per lo scambio di dati in stile documento. Quando i programmi vogliono solo scambiare dizionari, elenchi o altre informazioni interne tra loro, viene utilizzata la JavaScript Object Notation o JSON (si veda [www.json.org] (http://www.json.org)). Analizzeremo entrambi i formati.
+Una volta che fu più semplice scambiare i documenti via HTTP e analizzarli utilizzando appositi script, non passò molto tempo prima che venissero sviluppati e prodotti documenti realizzati specificamente per essere utilizzati da altri programmi (ovvero pagine HTML destinate ad essere visualizzate in un browser).
+
+Esistono due formati principali che utilizziamo per scambiare dati sul Web:
+1. L'eXtensible Markup Language o XML, in uso da molto tempo, è più adatto per lo scambio di dati in stile documento.
+2. Quando i programmi devono scambiare solo dizionari, elenchi o altre informazioni interne, viene preferita la JavaScript Object Notation o JSON (si veda [www.json.org] (http://www.json.org)).
+
+Noi daremo un'occhiata ad entrambi i formati.
 
 eXtensible Markup Language - XML
 --------------------------------
 
-XML si presenta molto simile all'HTML, ma XML è più strutturato. Ecco un esempio di un documento XML:
+XML è molto simile all'HTML, anche se è più strutturato di quest'ultimo.
+
+Ecco un esempio di un documento XML:
 
 ~~~~ {.xml}
 <person>
@@ -23,7 +30,7 @@ XML si presenta molto simile all'HTML, ma XML è più strutturato. Ecco un esemp
 </person>
 ~~~~
 
-Spesso è utile pensare a un documento XML come una struttura ad albero in cui è presente un tag 'person` in alto e altri tag inseriti come `phone`, rappresentati come figli dei loro nodi padre.
+Ti suggerisco di pensare questo documento XML come una struttura ad albero in cui è presente un tag principale `person` e altri tag secondari come `phone`, rappresentati come figli dei nodi padre.
 
 ![A Tree Representation of XML](height=2.0in@../images/xml-tree)
 
@@ -34,18 +41,20 @@ Analizzare XML
 \index{ElementTree!fromstring}
 \index{ElementTree!find}
 
-Ecco una semplice applicazione che analizza alcuni XML e ne estrae alcuni elementi:
+Ecco un semplice script che analizza documenti XML e ne estrae alcuni elementi:
 
 \VerbatimInput{../code3/xml1.py}
 
-Chiamando `fromstring` convertiamo la rappresentazione a stringa dell'XML in un "albero" di nodi XML. Quando l'XML è ad albero, abbiamo una serie di metodi che possiamo chiamare per estrarre dati dall'XML.  La funzione `find` cerca attraverso l'albero XML e recupera un *nodo* che corrisponde al tag specificato. Ogni nodo può avere un testo, degli attributi (come hide) e alcuni nodi "figli". Ogni nodo può essere a sua volta la cima di un albero di nodi.
+Tramite la chiamata a `fromstring` abbiamo convertito la rappresentazione a stringa dell'XML in un "albero" di nodi. In questo modo possiamo utilizzare vari metodi che possiamo chiamare per estrarre dati dall'XML.
+
+Ad esempio la funzione `find` scorre l'albero XML e recupera i *nodi* che corrispondono al tag specificato. Ogni nodo può contenere testo, degli attributi (come hide) e alcuni nodi "figli", può contenere a sua volta un altro albero di nodi.
 
 ~~~~
 Name: Chuck
 Attr: yes
 ~~~~
 
-L'utilizzo di un parser XML come `ElementTree` ha il vantaggio che anche se l'XML in questo esempio è piuttosto semplice, risulta avere molte regole riguardanti XML valido e l'uso di `ElementTree` ci consente di estrarre dati dall'XML senza preoccuparci delle regole della sintassi.
+È possibile utilizzare un parser XML come `ElementTree` anche con file XML molto più complessi di quello utilizzato in questo esempio, avendo a disposizione molte regole per l'interpretazione del codice XML e l'estrazione di dati senza preoccuparci troppo delle regole della sintassi.
 
 Cicli con i nodi degli XML
 ---------------------
@@ -53,11 +62,11 @@ Cicli con i nodi degli XML
 \index{ElementTree!findall}
 \index{ElementTree!get}
 
-Spesso un XML ha più nodi e abbiamo bisogno di scrivere un ciclo per elaborarli tutti. Nel seguente programma, passiamo scorrere tutti i nodi `user`:
+Spesso abbiamo bisogno di scrivere un ciclo che elabori i vari nodi presenti in XML. Nello script seguente, abbiamo la possibilità di applicare un loop a tutti i nodi `user`:
 
 \VerbatimInput{../code3/xml2.py}
 
-Il metodo `findall` recupera una lista di Python fatta di sottoalberi che rappresentano le strutture `user` nell'albero XML. Quindi possiamo scrivere un ciclo `for` che esamini ciascuno dei nodi user, e visualizzi gli elementi di testo `name` e `id` come pure l'attributo `x` dal nodo `utente`.
+Il metodo `findall` produce un elenco composto da sottoalberi che rappresentano le strutture `user` nel file XML. Quindi tramite un ciclo `for` possiamo esaminare ciascuno dei nodi user e visualizzare gli elementi di testo `name`, `id` e l'attributo `x` del nodo `user`.
 
 ~~~~
 User count: 2
@@ -75,8 +84,9 @@ JavaScript Object Notation - JSON
 \index{JSON}
 \index{JavaScript Object Notation}
 
-Il formato JSON è stato ispirato dai formati oggetto e array utilizzato nel linguaggio JavaScript. Ma poiché Python è stato inventato prima di JavaScript, la sintassi di Python per i dizionari e le liste ha influenzato la sintassi di JSON. Quindi il formato di JSON è quasi identico a una combinazione di elenchi e dizionari Python.
-Di seguito una codifica JSON che è approssimativamente equivalente al semplice XML di cui sopra:
+Il formato JSON si rifà ai formati oggetto e array utilizzati nel linguaggio JavaScript. Ma poiché Python è stato inventato prima di JavaScript, la sua sintassi utilizzata per i dizionari e le liste ha influenzato quelle di JSON. In altre parole il formato di JSON è praticamente una combinazione di quello degli elenchi e dei dizionari Python.
+
+Qui sotto puoi vedere una codifica JSON che è approssimativamente equivalente al XML visto in precedenza:
 
 ~~~~ {.json}
 {
@@ -91,20 +101,24 @@ Di seguito una codifica JSON che è approssimativamente equivalente al semplice 
 }
 ~~~~
 
-Noterete alcune differenze. Innanzitutto, nel formato XML possiamo aggiungere attributi come "intl" al tag "phone". Con il formato JSON, abbiamo semplicemente coppie chiave-valore. Anche il tag XML "person" è scomparso, sostituito da una serie di parentesi graffe.
-In generale, le strutture JSON sono più semplici di XML perché JSON dispone di meno funzionalità rispetto ad essa. Ma il formato JSON ha il vantaggio di mappare *direttamente* alcune combinazioni di dizionari ed elenchi. E poiché quasi tutti i linguaggi di programmazione hanno qualcosa di equivalente ai dizionari e agli elenchi di Python, JSON è un formato molto naturale in cui far scambiare dati a due programmi cooperanti.
-JSON sta rapidamente diventando il formato scelto per quasi tutti gli scambi di dati tra le applicazioni a causa della relativa semplicità rispetto al formato XML.
+Avrai notato alcune differenze: per prima cosa, nel formato XML possiamo aggiungere attributi come "intl" al tag "phone", mentre con il formato JSON ciò non è possibile: abbiamo solo coppie chiave-valore. Anche il tag XML "person" è scomparso, sostituito da una serie di parentesi graffe.
 
-Analizzare JSON
+In generale le strutture JSON sono più semplici perché JSON dispone di meno funzionalità rispetto al linguaggio XML. Il formato JSON ha però il vantaggio di mappare *direttamente* alcune combinazioni di dizionari ed elenchi di Python. Poiché quasi tutti i linguaggi di programmazione hanno qualcosa di equivalente ai dizionari e agli elenchi di Python, JSON è un formato ideale con cui far scambiare dati a due programmi.
+
+Esso sta rapidamente diventando il formato scelto per quasi tutti gli scambi di dati tra applicazioni grazie alla sua relativa semplicità rispetto al formato XML.
+
+Analizzare codice JSON
 ------------
 
-Costruiamo il nostro JSON annidando dizionari (oggetti) ed elenchi in base alle necessità. In questo esempio, rappresentiamo un elenco di utenti in cui ogni utente è un insieme di coppie chiave-valore (cioè un dizionario). Quindi abbiamo un elenco di dizionari.
-Nel seguente programma, usiamo la libreria integrata *json* per analizzare il JSON e leggerne i dati. Mettete a confronto i corrispondenti dati in XML e il codice precedente. Il JSON ha meno dettagli, quindi dobbiamo sapere in anticipo che stiamo ottenendo una lista e che la lista è di utenti e che ogni utente è un insieme di coppie chiave-valore. Il JSON è più succinto (un vantaggio) ma è anche meno descrittivo (uno svantaggio).
+Costruiamo il nostro codice JSON annidando dizionari (oggetti) ed elenchi in base alle nostre necessità. In questo esempio vogliamo rappresentare un elenco di utenti in cui ogni utente è una coppia chiave-valore (es.: un dizionario). Quindi abbiamo un elenco di dizionari.
+
+Nel seguente programma usiamo la libreria *json* per analizzare il codice JSON e leggerne i dati. Prova a confrontare i corrispondenti dati in XML e il codice precedente. Il JSON, dato che ha meno dettagli, dobbiamo sapere in anticipo che stiamo ottenendo una lista di utenti e che ogni utente è un set di coppie chiave-valore. Il JSON è più succinto (un vantaggio) ma è anche meno descrittivo (uno svantaggio).
 
 \VerbatimInput{../code3/json2.py}
 
-Se confrontate il codice per estrarre i dati dal JSON e dall'XML analizzati, vedrete che ciò che otteniamo da *json.loads()* è un elenco Python che scorriamo con un ciclo `for`, e ogni elemento all'interno di tale elenco è un dizionario Python. Una volta analizzato il JSON, possiamo usare l'operatore dell'indice Python per estrarre i vari bit di dati per ciascun utente. Non dobbiamo usare la libreria JSON per cercare all'interno del JSON analizzato, dal momento che i dati restituiti sono semplicemente strutture native di Python.
-L'output di questo programma è esattamente lo stesso della versione XML di cui sopra.
+Se confronti il codice per estrarre i dati dal JSON e dall'XML, vedrai che ciò che otteniamo da *json.loads()* è un elenco Python, che possiamo scorrere con un ciclo `for`, in cui ogni elemento è un dizionario Python. Una volta analizzato il JSON, possiamo usare l'operatore indice per estrarre i vari dati di ciascun utente. Non abbiamo bisogno di utilizzare la libreria JSON per effettuare una ricerca all'interno del JSON analizzato, dal momento che i dati restituiti sono strutture native di Python.
+
+L'output di questo programma è esattamente lo stesso di quello estratto dall'XML precedentemente analizzato.
 
 ~~~~
 User count: 2
@@ -116,7 +130,7 @@ Id 009
 Attribute 7
 ~~~~
 
-In generale, per i servizi web c'è una tendenza ad allontanarsi dal formato XML verso il formato JSON. Poiché il formato JSON è più semplice e più direttamente associabile a strutture di dati nativamente che ritroviamo già presenti nei linguaggi di programmazione, il codice di analisi e di estrazione dei dati è in genere più semplice e diretto quando si utilizza il JSON. Ma l'XML è più auto-descrittivo del JSON e quindi ci sono alcune applicazioni in cui XML mantiene un vantaggio. Ad esempio, la maggior parte dei word processor memorizza i documenti internamente utilizzando il formato XML piuttosto che il JSON.
+In generale per i servizi web c'è una tendenza ad abbandonare il formato XML in favore del formato JSON; dato che il formato JSON è più semplice e più direttamente associabile alle strutture di dati native che troviamo già presenti nei linguaggi di programmazione, l'analisi e l'estrazione dei dati sono in genere più semplici e dirette. D'altro canto l'XML è più auto-descrittivo e per questo ci sono alcune applicazioni in cui XML risulta essere la scelta migliore. Ad esempio, la maggior parte dei word processor memorizza internamente i documenti utilizzando il formato XML piuttosto che il JSON.
 
 Interfacce per la programmazione di applicazioni
 ----------------------------------
