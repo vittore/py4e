@@ -364,36 +364,34 @@ scweeker
 Enter Twitter Account:
 ~~~~
 
-L'ultima parte dell'output contiene il ciclo for che legge i cinque "amici" più recenti dell'account Twitter *drchuck* e visualizziamo lo stato più recente per ciascun amico. Vi sono molti più dati disponibili nel JSON restituito. Se si guarda l'output del programma, è anche possibile vedere che il "trova gli amici" di un determinato account ha una diversa velocità in base al numero di query sulla cronologia che è possibile eseguire per ogni periodo di tempo.
-Queste chiavi API sicure consentono a Twitter di sapere con certezza chi sta usando le sue API e i suoi dati e a che livello. L'approccio sulla limitazione della velocità ci consente di eseguire semplici raccolte di dati personali, ma non ci consente di creare un prodotto che estragga i dati dalle API milioni di volte al giorno.
+L'ultima parte dell'output contiene il ciclo for che legge i cinque "amici" più recenti dell'account Twitter *drchuck* e ne visualizza lo stato più recente per ciascuno di questi. Nel JSON che tiu viene restituito sono contenuti molti più dati.
+
+Se guardi l'output del programma, è anche possibile vedere che il "trova gli amici" di un determinato account ha una diversa velocità in base al numero di query sulla cronologia che è possibile eseguire per ogni periodo di tempo.
+
+Queste chiavi API sicure consentono a Twitter di sapere con certezza chi sta usando le sue API e i suoi dati. La limitazione della velocità ci consente di eseguire semplici raccolte di dati personali, impedendoci di creare un prodotto che estragga dati dalle API milioni di volte al giorno.
 
 Glossario
 --------
 
-API
-: Application Program Interface - Un contratto tra le applicazioni che definisce i modelli di interazione tra due componenti di un'applicazione.
+**API**: Application Program Interface - Una forma di contratto che definisce le modalità di interazione tra le componenti di una o più applicazioni.
 
 \index{API}
 
-ElementTree
-: una libreria Python integrata utilizzata per analizzare i dati XML.
+**ElementTree**: una libreria di Python utilizzata per analizzare i dati XML.
 
 \index{ElementTree}
 
-JSON
-: JavaScript Object Notation. Un formato che consente il markup dei dati strutturati in base alla sintassi degli oggetti JavaScript.
+**JSON**: JavaScript Object Notation. Un formato che consente il markup di dati strutturati sulla base della sintassi degli oggetti JavaScript.
 
 \index{JSON}
 \index{JavaScript Object Notation}
 
-SOA
-: Service-Oriented Architecture. Quando un'applicazione è fatta di componenti connessi attraverso una rete.
+**SOA**: Service-Oriented Architecture. Indica un'applicazione composta da componenti connessi attraverso una rete.
 
 \index{SOA}
 \index{Service Oriented Architecture}
 
-XML
-: eXtensible Markup Language. Un formato che consente il markup dei dati strutturati.
+**XML**: eXtensible Markup Language. Un metalinguaggio per la definizione del markup di dati strutturati.
 
 \index{XML}
 \index{eXtensible Markup Language}
@@ -401,5 +399,5 @@ XML
 Esercizi
 ---------
 
-**Esercizio 1:** Modificate [www.py4e.com/code3/geojson.py](http://www.py4e.com/code3/geojson.py) o [www.py4e.com/code3/ geoxml.py] (http://www.py4e.com/code3/geoxml.py) per visualizzare il codice paese di due caratteri dai dati recuperati.
-Aggiungete il controllo degli errori in modo che il vostro programma non esegua il traceback se il codice del paese non è presente. Una volta che ha funzionato, cercate "Atlantic Ocean" e assicuratevi che possa gestire luoghi che non si trovano in nessun paese.
+**Esercizio 1:** Modifica uno degli script [www.py4e.com/code3/geojson.py](http://www.py4e.com/code3/geojson.py) o [www.py4e.com/code3/ geoxml.py] (http://www.py4e.com/code3/geoxml.py) in modo da visualizzare i die caratteri del codice paese inseriti dai dati recuperati.
+Aggiungi il controllo degli errori in modo che il tuo script non vada in errore se il codice del paese non è presente. Una volta completato con successo questo compito, fagli cercare "Atlantic Ocean" e assicurati che possa gestire luoghi che non si trovano in nessun paese.
