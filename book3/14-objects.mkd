@@ -339,39 +339,30 @@ Queste sono le basi e la terminologia della programmazione ad oggetti. Ci sono m
 Glossario
 --------
 
-attributo
-: una variabile che fa parte di una classe.
+**attributo**: una variabile che fa parte di una classe.
 \index{attribute}
 
-classe
-: un modello che può essere utilizzato per costruire un oggetto.  Definisce gli attributi e i metodi che compongono l'oggetto.
+**classe**: un modello che può essere utilizzato per costruire un oggetto.  Definisce gli attributi e i metodi che compongono l'oggetto.
 \index{class}
 
-classe figlia
-: una nuova classe creata quando viene estesa una classe genitore.  La classe figlia eredita tutti gli attributi e i metodi della classe genitore.
+**classe figlia**: una nuova classe creata quando viene estesa una classe genitore.  La classe figlia eredita tutti gli attributi e i metodi della classe genitore.
 \index{child class}
 
-costruttore
-: un metodo opzionale con un nome speciale (`__init__`) chiamato nel momento in cui una classe viene usata per costruire un oggetto. Di solito viene utilizzato per impostare i valori iniziali dell'oggetto.
+**costruttore**: un metodo opzionale con un nome speciale (`__init__`) chiamato nel momento in cui una classe viene usata per costruire un oggetto. Di solito viene utilizzato per impostare i valori iniziali dell'oggetto.
 \index{constructor}
 
-destructor
-: usato raramente, un metodo opzionale con un nome speciale (`__del__`) che viene chiamato appena prima che un oggetto venga distrutto. 
+**destructor**: usato raramente, un metodo opzionale con un nome speciale (`__del__`) che viene chiamato appena prima che un oggetto venga distrutto. 
 \index{destructor}
 
-ereditarietà
-: l'atto di estendere una classe esistente (genitore) tramite la creazione di una nuova classe (figlia). La classe figlia ha tutti gli attributi e i metodi della classe genitore più ulteriori attributi e metodi definiti.
+**ereditarietà**: l'atto di estendere una classe esistente (genitore) tramite la creazione di una nuova classe (figlia). La classe figlia ha tutti gli attributi e i metodi della classe genitore più ulteriori attributi e metodi definiti.
 \index{inheritance}
 
-metodo
-: una funzione che è contenuta all'interno di una classe e degli oggetti costruiti dalla classe. Alcuni modelli orientati agli oggetti usano la parola 'messaggio' invece di 'metodo' per descrivere questo concetto.
+**metodo**: una funzione che è contenuta all'interno di una classe e degli oggetti costruiti dalla classe. Alcuni modelli orientati agli oggetti usano la parola 'messaggio' invece di 'metodo' per descrivere questo concetto.
 \index{method}
 \index{message}
 
-oggetto
-: un'istanza costruita di una classe.  Un oggetto contiene tutti gli attributi e i metodi definiti dalla classe. Alcuni documenti orientati agli oggetti usano il termine 'istanza' in modo intercambiabile con 'oggetto'.
+**oggetto**: un'istanza costruita di una classe.  Un oggetto contiene tutti gli attributi e i metodi definiti dalla classe. Alcuni documenti orientati agli oggetti usano il termine 'istanza' in modo intercambiabile con 'oggetto'.
 \index{method}
 
-classe genitore
-: la classe che viene estesa per creare una nuova classe figlia. La classe genitore contribuisce con tutti i suoi metodi e attributi alla nuova classe figlia.
+**classe genitore**: la classe che viene estesa per creare una nuova classe figlia. La classe genitore contribuisce con tutti i suoi metodi e attributi alla nuova classe figlia.
 \index{parent class}
