@@ -32,7 +32,7 @@ a
 
 
 
-Per la maggior parte delle persone, la prima lettera di "banana" è `b`, non `a`. Ma in Python, l'indice indica una posizione dall'inizio della stringa e la posizione della prima lettera è zero.
+Per la maggior parte delle persone, la prima lettera di "banana" è `b`, non `a`. Ma in Python, l'indice indica la posizione uno dall'inizio della stringa mentre la posizione della prima lettera è zero.
 
 ~~~~ {.python}
 >>> letter = fruit[0]
@@ -126,7 +126,7 @@ while index < len(fruit):
 
 
 
-Questo ciclo scorre la stringa e mostra una singola lettera su una riga separata. La condizione del ciclo è `index < len(fruit)`, quindi quando `index` è uguale alla lunghezza della stringa, la condizione è false e il corpo del ciclo non viene più eseguito. L'ultimo carattere a cui si accede è quello con l'indice uguale a `len(fruit)-1`, che è l'ultimo carattere nella stringa.  
+Questo ciclo scorre la stringa e mostra una singola lettera su una riga separata. La condizione del ciclo è `index < len(fruit)`, quindi quando `index` è uguale alla lunghezza della stringa, la condizione è falsa e il corpo del ciclo non viene più eseguito. L'ultimo carattere a cui si accede è quello con l'indice uguale a `len(fruit)-1`, che è l'ultimo carattere nella stringa.  
 
 **Esercizio 1:** Scrivi un ciclo `while` che inizi dall'ultimo carattere della stringa e proceda fino al primo carattere della stringa, visualizzando ogni lettera su una riga separata, tranne che all'indietro.
 
@@ -161,7 +161,7 @@ Python
 
 
 
-L'operatore restituisce la parte della stringa dal carattere indicato con il primo indice (incluso) al carattere indicato con indice (escluso). Se si omette il primo parametro (prima dei due punti), il segmento parte dall'inizio della stringa. Se invece si omette il secondo, il segmento arriva alla fine della stringa:
+L'operatore restituisce la parte della stringa dal carattere indicato con il primo indice (incluso) al carattere indicato con il secondo indice (escluso). Se si omette il primo parametro (prima dei due punti), il segmento parte dall'inizio della stringa. Se invece si omette il secondo, il segmento arriva alla fine della stringa:
 
 ~~~~ {.python}
 >>> fruit = 'banana'
@@ -470,7 +470,7 @@ uct.ac.za
 ~~~~
 
 
-Usiamo una applicazione del metodo `find` che ci permette di specificare la posizione nella stringa da cui vogliamo che `find` inizi a guardare. Dividiamo, estraiamo i caratteri ddalla posizione successiva al simbolo chiocciola fino a quello che precede lo spazio vuoto *escluso*.  
+Usiamo una applicazione del metodo `find` che ci permette di specificare la posizione nella stringa da cui vogliamo che `find` inizi a guardare. Dividiamo, estraiamo i caratteri dalla posizione successiva al simbolo chiocciola fino a quello che precede lo spazio vuoto *escluso*.  
 La documentazione per `find` è disponibile all'indirizzo <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.
 
 Operatore di formato
@@ -516,7 +516,7 @@ Nell'esempio seguente viene utilizzato "%d" per formattare un numero intero, "%g
 
 
 
-Il numero e tipi degli elementi nella tupla devono corrispondere al numero e al tipo di sequenze di formato indicate:
+Il numero e il tipo degli elementi nella tupla devono corrispondere al numero e al tipo di sequenze di formato indicate:
 \index{exception!TypeError}
 \index{TypeError}
 
