@@ -848,48 +848,48 @@ Usa invece un'espressione logica composta dall'operatore `and` e una singola ist
 Glossario
 --------
 
-alias
+**alias**
 : circostanza in cui due o più variabili si riferiscono allo stesso oggetto.
 \index{aliasing}
 
-delimitatore
+**delimitatore**
 : un carattere o una stringa utilizzata per indicare il punto in cui deve essere divisa una stringa.
 \index{delimiter}
 
-elemento
+**elemento**
 : uno dei valori in un elenco (o altra sequenza); viene chiamato anche oggetto.
 \index{element}
 
-equivalente
+**equivalente**
 : avere lo stesso valore.
 \index{equivalent}
 
-indice
+**indice**
 : un valore intero che indica la posizione di un elemento in un elenco.
 \index{index}
 \index{}
 
-identico
+**identico**
 : essere lo stesso oggetto (che implica l'equivalenza).
 \index{identical}
 
-elenco
+**elenco**
 : una sequenza di valori.
 \index{list}
 
-elaborazione trasversale
+**elaborazione trasversale**
 : accesso sequenziale a ciascun elemento in un elenco.
 \index{list!traversal}
 
-elenco annidato
+**elenco annidato**
 : un elenco contenuto all'interno di un altro elenco.
 \index{nested list}
 
-oggetto
+**oggetto**
 : qualcosa a cui una variabile può riferirsi. Un oggetto è caratterizzato da un tipo e un valore.
 \index{object}
 
-riferimento
+**riferimento**
 : l'associazione tra una variabile e il suo valore.
 \index{reference}
 

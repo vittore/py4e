@@ -367,24 +367,24 @@ Esistono applicazioni per la conversione da un formato all'altro nella maggior p
 Glossario
 --------
 
-catch
+**catch**
 : impedire che un'eccezione termini un programma tramite le istruzioni `try` e `except`.
 \index{catch}
 
-newline
+**newline**
 : un carattere speciale ('\\n') utilizzato nei file e nelle stringhe per indicare la fine di una riga.
 \index{newline}
 
-Pythonic
+**pythonic**
 : una tecnica che che segue la "filosofia Python". "Usare try e except è il modo *Pythonic* di risolvere l'errore dovuto a file non trovato".
 \index{Pythonic}
 
-Controllo qualità
+**controllo qualità**
 : Persona o team focalizzato sull'assicurazione della qualità complessiva di un software. Il controllo qualità è solitamente impegnato nella verifica e nell'identificazione dei problemi/bug di un prodotto prima che lo stesso venga rilasciato.
 \index{Quality Assurance}
 \index{QA}
 
-File di testo
+**file di testo**
 : una sequenza di caratteri memorizzati nella memoria permanente (es. disco rigido).
 \index{text file}
 

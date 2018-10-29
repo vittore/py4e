@@ -503,76 +503,76 @@ Dato che la divisione viene effettuata per prima, otterrai $\pi / 2$ che non è 
 Glossario
 --------
 
-Istruzione
+**istruzione**
 : Istruzione che assegna un valore a una variabile.
 \index{assignment}
 
-concatenare
+**concatenare**
 : Unire due operandi tra di loro.
 \index{concatenation}
 
-commento
+**commento**
 : informazione in un programma destinato ad altri programmatori (o a chiunque stia leggendo il codice sorgente) e non ha alcun effetto sull'esecuzione del programma.
 \index{comment}
 
-calcolare
+**calcolare**
 : Semplificare un'espressione eseguendo le operazioni in modo da ottenere un unico valore.
 
-espressione
+**espressione**
 : Combinazione di variabili, operatori e valori che fornisce un singolo valore come risultato.
 \index{expression}
 
-virgola mobile
+**virgola mobile**
 : tipo di dato composto da numeri con le parti frazionarie.
 \index{floating-point}
 
-interi
+**interi**
 : tipo di dato composto da numeri interi.
 \index{integer}
 
-parola chiave o riservata
+**parola chiave o riservata**
 : Una parola riservata che viene utilizzata dal compilatore per analizzare un programma; non potete utilizzare parole chiave come `if`, `def` e `while` come nomi di variabili.
 \index{keyword}
 
-mnemonico
+**mnemonico**
 : Un aiuto mnemonico: spesso diamo alle variabili nomi mnemonici per aiutarci a ricordare cosa è memorizzato nella variabile.
 \index{mnemonic}
 
-operatore modulo
+**operatore modulo**
 : Un operatore, rappresentato con il segno di percentuale (`%`), che funziona con numeri interi e restituisce il resto quando un numero è diviso per un altro.
 \index{modulus operator}
 \index{operator!modulus}
 
-operando
+**operando**
 : uno dei valori su cui viene applicato un operatore.
 \index{operand}
 
-operatore
+**operatore**
 : Simbolo speciale che rappresenta un semplice calcolo come addizioni, moltiplicazioni o concatenazioni di stringhe.
 \index{operator}
 
-regole di precedenza
+**regole di precedenza**
 : Insieme di regole che disciplinano l'ordine in cui vengono calcolate le espressioni che coinvolgono molteplici operatori e operandi.
 \index{rules of precedence}
 \index{precedence}
 
-istruzione
+**istruzione**
 : una sezione di codice che rappresenta un comando o un'azione. Finora le istruzioni che abbiamo visto sono assegnazioni e istruzioni di stampa.
 \index{statement}
 
-stringa
+**stringa**
 : Un tipo di dato composto da una sequenza di caratteri.
 \index{string}
 
-tipo
+**tipo**
 : Una categoria di valori. I tipi visti fino ad ora sono gli interi (tipo `int`), i numeri a virgola mobile (tipo `float`) e le stringhe (tipo `str`).
 \index{type}
 
-valore
+**valore**
 : una delle unità di base dei dati, come numeri o stringhe, che possono essere manipolate da un programma.
 \index{value}
 
-variabile
+**variabile**
 : Un nome assegnato ad un valore.
 \index{variable}
 

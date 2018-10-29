@@ -432,81 +432,81 @@ Di solito è inutile restare svegli tutta la notte a fissare qualcosa che sembra
 Glossario
 --------
 
-bug
+**bug**
 : Un errore in un programma.
 \index{bug}
 
-central processing unit
+**central processing unit**
 : Chiamato anche "CPU" o "processore". È il cuore di qualsiasi computer ed è ciò che gestisce il codice che scriviamo.
 \index{central processing unit}
 \index{CPU}
 
-compilare
+**compilare**
 : Tradurre completamente in una sola volta un programma scritto in un linguaggio di alto livello in un linguaggio di basso livello, in preparazione per l'esecuzione successiva.
 \index{compilare}
 
-linguaggio di alto livello
+**linguaggio di alto livello**
 : Un linguaggio di programmazione come Python progettato per essere facilmente letto e scritto dagli umani.
 \index{linguaggio di alto livello}
 
-modalità interattiva
+**modalità interattiva**
 : Un modo di utilizzare l'interprete Python digitando singoli comandi e espressioni al prompt.
 \index{modalità interattiva}
 
-interprete
+**interprete**
 : Eseguire un programma scritto in un linguaggio di alto livello traducendo una riga alla volta.
 \index{interprete}
 
-linguaggio di basso livello
+**linguaggio di basso livello**
 : Un linguaggio di programmazione progettato per essere eseguito da un computer; è chiamato anche "codice macchina" o "linguaggio assembly".
 \index{linguaggio di basso livello}
 
-codice macchina
+**codice macchina**
 : Il linguaggio di livello più basso, è il linguaggio che viene eseguito direttamente dall'unità di elaborazione centrale (CPU).
 \index{codice macchina}
 
-memoria principale
+**memoria principale**
 : Conserva programmi e dati. La memoria principale perde le sue informazioni memorizzate quando il computer viene spento.
 \index{memoria principale}
 
-analizzare
+**analizzare**
 : Esaminare un programma e analizzare la struttura sintattica.
 \index{analizzare}
 
-portabilità
+**portabilità**
 : Proprietà di un programma che gli permette di essere eseguito su più di un tipo di computer.
 \index{portabilità}
 
-funzione di stampa
+**funzione di stampa**
 : Istruzione che fa in modo che l'interprete Python visualizzi un valore su schermo.
 \index{funzione di stampa}
 \index{funzione!stampa}
 
-risoluzione dei problemi
+**risoluzione dei problemi**
 : Il processo composto da formulare un problema, ricercare una soluzione e fornire la soluzione.
 \index{risoluzione dei problemi}
 
-programma
+**programma**
 : Un set di istruzioni che specifica un calcolo.
 \index{programma}
 
-prompt
+**prompt**
 : Si verifica quando un programma visualizza un messaggio a schermo e si interrompe affinché l'utente possa digitare un input destinato al programma.
 \index{prompt}
 
-memoria secondaria
+**memoria secondaria**
 : Generalmente più lenta della memoria principale, memorizza programmi e dati e ne conserva le informazioni anche quando viene tolta l'alimentazione. Esempi includono l'unità disco o la memoria flash nelle chiavette USB.
 \index{memoria secondaria}
 
-semantica
+**semantica**
 : Il significato di un programma.
 \index{semantica}
 
-errore semantico
+**errore semantico**
 : Errore in un programma che gli fa fare qualcosa di diverso da quello previsto dallo sviluppatore.
 \index{errore semantico}
 
-codice sorgente
+**codice sorgente**
 : Un programma scritto in un linguaggio di alto livello.
 \index{codice sorgente}
 

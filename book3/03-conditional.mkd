@@ -397,59 +397,60 @@ In questo esempio, la seconda riga è rientrata di uno spazio, ma il messaggio d
 Glossario
 --------
 
-blocco
+**blocco**
 : la sequenza di istruzioni presenti all'interno di un'istruzione composta.
 \index{body}
 
-espressione booleana
+**espressione booleana**
 : espressione che può assumere il valore Vero o Falso.
 \index{boolean expression}
 \index{expression!boolean}
 
-branch
+**branch**
 : una delle sequenze di istruzioni alternative di un'istruzione condizionale.
 \index{branch}
 
-condizione concatenata
+**condizione concatenata**
 : un'istruzione condizionale con una serie di branch alternativi.
 \index{chained conditional}
 \index{conditional!chained}
 
-operatore di comparazione
+**operatore di comparazione**
 : operatore che permette di confrontare due operandi: `==`, `!=`, `>`, `<`, `>=` e `<=`.
 
-istruzione condizionale
+**istruzione condizionale**
 : una istruzione che controlla il flusso di esecuzione in base alle condizioni impostate dallo sviluppatore.
 \index{conditional statement}
 \index{statement!conditional}
 
-condizione
+**condizione**
 : l'espressione booleana in un'istruzione condizionale che determina quale branch debba essere eseguito.
 \index{condition}
 
-compound statement
+**compound statement**
 : Un'istruzione composta da un'intestazione e che termina con due punti (:) ed un corpo rientrato rispetto all'intestazione.
 \index{compound statement}
 
-schema del guardiano
+**schema del guardiano**
 : espressione logica che, con comparazioni aggiuntive, sfruttare il comportamento definito *cortocircuito della valutazione*.
 \index{guardian pattern}
 \index{pattern!guardian}
 
-operatore logico
+**operatore logico**
 : uno degli operatori che combina espressioni booleane: `and`, `or`, e `not`.
 \index{logical operator}
 \index{operator!logical}
 
-condizionale nidificato: un'istruzione condizionale che appare in uno dei branch di un'altra istruzione condizionale.
+**condizionale nidificato**
+: un'istruzione condizionale che appare in uno dei branch di un'altra istruzione condizionale.
 \index{nested conditional}
 \index{conditional!nested}
 
-traceback
+**traceback**
 : elenco delle funzioni in esecuzione che viene visualizzato quando si verifica un'eccezione.
 \index{traceback}
 
-cortocircuito
+**cortocircuito**
 : si verifica quando Python, a metà strada nel calcolo di un'espressione logica, interrompe il calcolo perché conosce il valore finale dell'espressione senza dover calcolare il resto delle operazioni.
 \index{short circuit}
 

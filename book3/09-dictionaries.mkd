@@ -131,7 +131,7 @@ Supponiamo di avere una stringa di cui vuoi contare quante volte appaia ogni let
 
 3.   Potresti creare un dizionario con caratteri come chiavi e contatori come valori corrispondenti. La prima volta che trovi un nuovo carattere, dovrai aggiungere un elemento al dizionario. Successivamente, dovresti incrementerare il valore di un elemento esistente.
 
-Ognuna di queste opzioni esegue lo stesso calcolo, ma ognuna di esse lo implementa in una maniera diversa.
+Ognuna di queste opzioni esegue lo stesso calcolo, ma ognuna di esse lo implementa in un modo diverso.
 
 \index{implementation}
 
@@ -311,7 +311,7 @@ chuck 1
 jan 100
 ~~~~
 
-Per prima cosa vedrai la lista delle chiavi in maniera non ordinata che otteniamo dal metodo `keys`. Quindi vedrai le coppie chiave-valore ordinate dal ciclo `for`.  
+Per prima cosa vedrai la lista delle chiavi in modo non ordinato che otteniamo dal metodo `keys`. Quindi vedrai le coppie chiave-valore ordinate dal ciclo `for`.  
 
 Analisi avanzata del testo
 ---------------------
@@ -336,9 +336,9 @@ Il metodo `translate` è il più subdolo. Ecco la documentazione del metodo `tra
 
 `line.translate(str.maketrans(fromstr, tostr, deletestr))`
 
-*Sostituisce i caratteri in `fromstr` con il carattere nella stessa posizione in `tostr` ed elimina tutti i caratteri che sono in `deletestr`. `Fromstr` e `tostr` possono essere stringhe vuote e il parametro `deletestr` può essere omesso.
+*Sostituisce i caratteri in `fromstr` con il carattere nella stessa posizione in `tostr` ed elimina tutti i caratteri che sono in `deletestr`. `Fromstr` e `tostr` possono essere stringhe vuote e il parametro `deletestr` può essere omesso.*
 
-*Non specificheremo la `tostr`, ma useremo il parametro `deletestr` per eliminare tutta la punteggiatura. Lasceremo persino che Python ci fornisca la lista dei caratteri che considera "punteggiatura":
+Non specificheremo la `tostr`, ma useremo il parametro `deletestr` per eliminare tutta la punteggiatura. Lasceremo persino che Python ci fornisca la lista dei caratteri che considera "punteggiatura":
 
 ~~~~ {.python}
 >>> import string
@@ -401,58 +401,47 @@ Glossario
 
 **dizionario**
 : una correlazione tra una serie di chiavi e i corrispondenti valori.
-
 \index{dictionary}
 
-**Tabella di hash**
+**tabella di hash**
 : l'algoritmo utilizzato per implementare i dizionari Python.
-
 \index{hashtable}
 
-**Funzione di hash**
+**funzione di hash**
 : una funzione utilizzata da una tabella di hash per calcolare la posizione di una chiave.
-
 \index{hash function}
 
 **istogramma**
 : una serie di contatori.
-
 \index{histogram}
 
 **implementazione**
 : il modo utilizzato per eseguire un calcolo.
-
 \index{implementation}
 
 **elemento**
 : un altro nome utilizzato per una coppia chiave-valore.
-
 \index{item!dictionary}
 
 **chiave**
 : l'oggetto che appare in un dizionario come prima parte di una coppia chiave-valore.
-
 \index{key}
 
 **coppia chiave-valore**
 : la rappresentazione della correlazione da una chiave a un valore.
-
 \index{key-value pair}
 
 **ricerca**
 : l'operazione nel dizionario che permette di trovare una chiave e il valore corrispondente.
-
 \index{lookup}
 
 **cicli annidati**
 : uno o più cicli contenuti "all'interno" di un altro ciclo. Il ciclo interno viene completato ogni volta che viene eseguito il ciclo esterno.
-
 \index{nested loops}
 \index{loop!nested}
 
 **valore**
 : l'oggetto che appare in un dizionario come seconda parte di una coppia chiave-valore. Questo è un modo più specifico di utilizzare la parola "valore".
-
 \index{value}
 
 Esercizi
@@ -487,7 +476,7 @@ Enter file name: mbox-short.txt
 
 **Esercizio 4:** Aggiungi del codice allo script dell'esercizio precedente che indichi chi ha il maggior numero di messaggi nel file.
 
-Dopo che sono stati analizzati tutti i dati ed i risultati sono salvati nel dizionario sono stati letti e il dizionario è stato creato, tramite un ciclo "massimo" (vedi Sezione [maximumloop]) trova chi ha più messaggi e visualizzane il numero.
+Dopo che sono stati analizzati tutti i dati ed i risultati sono salvati nel dizionario sono stati letti e il dizionario è stato creato, tramite un ciclo "massimo" (vedi nel capitolo 5  la sezione 5.7.2 per limitare i cicli) trova chi ha più messaggi e visualizzane il numero.
 
 ~~~~
 Enter a file name: mbox-short.txt

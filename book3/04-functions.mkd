@@ -17,7 +17,7 @@ In precedenza abbiamo già visto un esempio di una *chiamata di funzione*:
 ~~~~
 
 
-in questo esempio il nome della funzione è `type` mentre il numero `32` tra parentesi è l'*argomento* della funzione. L'argomento può essere un valore o una variabile che stiamo passando alla funzione come input. 
+in questo esempio il nome della funzione è `type` mentre il numero `32` tra parentesi è l'*argomento* della funzione. L'argomento può essere un valore o una variabile che stiamo passando alla funzione come input.
 In questo caso specifico il risultato della funzione `type` è il tipo di dato dell'argomento: <class 'int'>.
 
 \index{parentheses!argument in}
@@ -114,7 +114,7 @@ Funzioni matematiche
 \index{function, math}
 \index{module}
 \index{module object}
-Il modulo `math` di Python ti permette di eseguire la maggior parte delle più comuni funzioni matematiche. 
+Il modulo `math` di Python ti permette di eseguire la maggior parte delle più comuni funzioni matematiche.
 Essendo un modulo, va importato prima di poterlo utilizzare:
 
 ~~~~ {.python}
@@ -368,7 +368,7 @@ Flusso di esecuzione
 -----------------
 
 \index{flow of execution}
-Per garantire che una funzione venga definita prima del suo primo utilizzo, è necessario che tu conosca l'ordine in cui vengono eseguite le istruzioni, il così detto *flusso di esecuzione*. 
+Per garantire che una funzione venga definita prima del suo primo utilizzo, è necessario che tu conosca l'ordine in cui vengono eseguite le istruzioni, il così detto *flusso di esecuzione*.
 
 L'esecuzione, che inizia sempre dalla prima istruzione dello script, prevede che le istruzioni vengano eseguite una alla volta dall'alto verso il basso.
 
@@ -380,7 +380,7 @@ Sembra abbastanza semplice vero?
 Sicuro? ti ricordi vero che una funzione può chiamarne un'altra?
 Il programma che stai analizzando, durante la sua esecuzione potrebbe dover eseguire le istruzioni di un'altra funzione esterna che a sua volta potrebbe eseguire un'altra funzione ancora!
 
-Fortunatamente Python è bravo a tenere traccia di dove è arrivato con l'esecuzione. Quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione fino a giungere alla fine del programma dove terminerà la sua attività. 
+Fortunatamente Python è bravo a tenere traccia di dove è arrivato con l'esecuzione. Quindi ogni volta che una funzione viene completata, il programma riprende da dove era stato interrotto dalla chiamata di funzione fino a giungere alla fine del programma dove terminerà la sua attività.
 
 Qual è la morale di questa sordida storia? Quando leggi un programma non cercare di leggerlo da cima a fondo senza interruzioni ma ricorda il principio che a volte ha più senso seguire il flusso dell'esecuzione.
 
@@ -536,7 +536,7 @@ Nonostante il fatto che la maggior parte degli editor di testo sono in grado di 
 
 \index{whitespace}
 
-Spesso il debug é reso piú complicato dal fatto che le tabulazioni e spazi sono generalmente invisibili. Per mitigare questo problema  prova ad utilizzare un editor che gestisca automaticamente l'indentazione. 
+Spesso il debug é reso piú complicato dal fatto che le tabulazioni e spazi sono generalmente invisibili. Per mitigare questo problema  prova ad utilizzare un editor che gestisca automaticamente l'indentazione.
 
 Non dimenticare inoltre di salvare sempre il tuo script prima di eseguirlo dato che non tutti gli ambienti di sviluppo lo fanno automaticamente. In questo modo il codice che stai guardando nell'editor di testo sarà lo stesso che stai facendo girare.
 
@@ -547,80 +547,80 @@ Assicurati sempre di eseguire l'ultima versione del codice che stai esaminando. 
 Glossario
 --------
 
-algoritmo
+**algoritmo**
 : un processo generale destinato a risolvere una categoria di problemi.
 \index{algorithm}
 
-argomento
+**argomento**
 : il valore fornito a una funzione quando questa viene chiamata. Questo valore è assegnato al parametro corrispondente nella funzione.
 \index{argument}
 
-corpo
+**corpo**
 : la sequenza di istruzioni contenute in una definizione di funzione.
 \index{body}
 
-composizione
+**composizione**
 : utilizzo di un'espressione come parte di un'espressione più grande o di un'istruzione come parte di un'istruzione più ampia.
 \index{composition}
 
-deterministico
+**deterministico**
 : pertinente a un programma che, dati gli stessi input, produce lo stesso risultato ogni volta che viene eseguito.
 \index{deterministic}
 
-notazione del punto
+**notazione del punto**
 : la sintassi per chiamare una funzione gestita da un modulo specificando il nome del modulo seguito da un punto e dal nome della funzione stessa.
 \index{dot notation}
 
-flusso di esecuzione
+**flusso di esecuzione**
 : l'ordine in cui le istruzioni vengono eseguite durante l'esecuzione di un programma.
 \index{flow of execution}
 
-funzione produttiva
+**funzione produttiva**
 : una funzione che restituisce un valore.
 \index{fruitful function}
 
-funzione
+**funzione**
 : sequenza di istruzioni provvista di nome che svolge alcune operazioni utili. Le funzioni possono accettare o non accettare argomenti e possono o meno produrre un risultato.
 \index{function}
 
-chiamata di funzione
+**chiamata di funzione**
 : l'istruzione che esegue una funzione. È composta dal nome della funzione seguito da un elenco di argomenti.
 \index{function call}
 
-definizione di funzione
+**definizione di funzione**
 : l'istruzione che da luogo ad una nuova funzione, specificandone il nome, i parametri e le istruzioni che esegue.
 \index{function definition}
 
-oggetto funzione
+**oggetto funzione**
 : il valore creato dalla definizione di funzione. Il nome della funzione è una variabile che fa riferimento a un oggetto funzione.
 \index{function definition}
 
-header
+**header**
 : la prima riga di una definizione di funzione.
 \index{header}
 
-istruzione import
+**istruzione import**
 : un'istruzione che legge un modulo e crea un oggetto modulo.
 \index{import statement}
 \index{statement!import}
 
-oggetto modulo
+**oggetto modulo**
 : il valore creato dall'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
 \index{module}
 
-parametro
+**parametro**
 : un nome utilizzato all'interno di una funzione per fare riferimento al valore passato come argomento.
 \index{parameter}
 
-pseudo-casuale
+**pseudo-casuale**
 : sequenza di numeri apparentemente casuali generati da un programma deterministico.
 \index{pseudorandom}
 
-valore di ritorno
+**valore di ritorno**
 : il risultato di una funzione. Se una chiamata di funzione viene utilizzata come espressione, il valore restituito è il valore dell'espressione.
 \index{return value}
 
-funzione vuota
+**funzione vuota**
 : funzione che non restituisce alcun valore.
 \index{void function}
 
