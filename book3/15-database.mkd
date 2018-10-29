@@ -490,48 +490,48 @@ Uno schema comune quando si sviluppa un programma Python per connettersi a un da
 Glossario
 --------
 
-**attributo**
-: uno dei valori all'interno di una tupla. Più comunemente chiamato "colonna" o "campo".
+**Attributo**
+: Uno dei valori all'interno di una tupla. Più comunemente chiamato "colonna" o "campo".
 \index{attribute}
 
-**vincolo**
-: quando diciamo al database di applicare una regola su un campo o una riga in una tabella. Un vincolo comune è quello di stabilire che non ci possono essere valori duplicati in un campo particolare (cioè, tutti i valori devono essere unici).
+**Vincolo**
+: Quando diciamo al database di applicare una regola su un campo o una riga in una tabella. Un vincolo comune è quello di stabilire che non ci possono essere valori duplicati in un campo particolare (cioè, tutti i valori devono essere unici).
 \index{constraint}
 
-**cursore**
-: un cursore consente di eseguire comandi SQL in un database e recuperare i dati dal database. Un cursore è simile a un socket o un handle di file per connessioni di rete e file, rispettivamente.
+**Cursore**
+: Un cursore consente di eseguire comandi SQL in un database e recuperare i dati dal database. Un cursore è simile a un socket o un handle di file per connessioni di rete e file, rispettivamente.
 \index{cursor}
 
-**browser del database**
-: un software che consente di connettersi direttamente a un database e manipolare il database direttamente senza scrivere un programma.
+**Browser del database**
+: Un software che consente di connettersi direttamente a un database e manipolare il database direttamente senza scrivere un programma.
 \index{database browser}
 
-**chiave esterna**
-: una chiave numerica che punta alla chiave primaria di una riga in un'altra tabella. Le chiavi esterne stabiliscono relazioni tra righe memorizzate in tabelle diverse.
+**Chiave esterna**
+: Una chiave numerica che punta alla chiave primaria di una riga in un'altra tabella. Le chiavi esterne stabiliscono relazioni tra righe memorizzate in tabelle diverse.
 \index{foreign key}
 
-**indice**
-: dati aggiuntivi che il software del database conserva come righe e inserisce in una tabella per rendere le ricerche molto veloci.
+**Indice**
+: Dati aggiuntivi che il software del database conserva come righe e inserisce in una tabella per rendere le ricerche molto veloci.
 \index{index}
 \index{}
 
 **Chiave logica**
-: una chiave che il "mondo esterno" utilizza per cercare una particolare riga. Ad esempio in una tabella di account utente, l'indirizzo email di una persona potrebbe essere un buon candidato come chiave logica per i dati dell'utente.
+: Una chiave che il "mondo esterno" utilizza per cercare una particolare riga. Ad esempio in una tabella di account utente, l'indirizzo email di una persona potrebbe essere un buon candidato come chiave logica per i dati dell'utente.
 \index{logical key}
 
-**normalizzazione**
-: progettazione di un modello di dati in modo che nessun dato sia replicato. Archiviamo ogni elemento di dati in un posto nel database e facciamo altrove riferimento ad essi utilizzando una chiave esterna.
+**Normalizzazione**
+: Progettazione di un modello di dati in modo che nessun dato sia replicato. Archiviamo ogni elemento di dati in un posto nel database e facciamo altrove riferimento ad essi utilizzando una chiave esterna.
 \index{normalization}
 \index{database normalization}
 
-**chiave primaria**
-: una chiave numerica assegnata a ciascuna riga che viene utilizzata per fare riferimento a una riga in una tabella da un'altra tabella. Spesso il database è configurato per assegnare automaticamente le chiavi primarie quando vengono inserite le righe.
+**Chiave primaria**
+: Una chiave numerica assegnata a ciascuna riga che viene utilizzata per fare riferimento a una riga in una tabella da un'altra tabella. Spesso il database è configurato per assegnare automaticamente le chiavi primarie quando vengono inserite le righe.
 \index{primary key}
 
-**relazione**
-: un'area all'interno di un database che contiene tuple e attributi. Più comunemente chiamata "tabella".
+**Relazione**
+: Un'area all'interno di un database che contiene tuple e attributi. Più comunemente chiamata "tabella".
 \index{relation}
 
-**tupla**
-: una singola voce in una tabella di database che è un insieme di attributi. Più comunemente chiamata "riga".
+**Tupla**
+: Una singola voce in una tabella di database che è un insieme di attributi. Più comunemente chiamata "riga".
 \index{tuple}

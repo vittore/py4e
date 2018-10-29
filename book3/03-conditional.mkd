@@ -397,61 +397,61 @@ In questo esempio, la seconda riga è rientrata di uno spazio, ma il messaggio d
 Glossario
 --------
 
-**blocco**
-: la sequenza di istruzioni presenti all'interno di un'istruzione composta.
+**Blocco**
+: La sequenza di istruzioni presenti all'interno di un'istruzione composta.
 \index{body}
 
-**espressione booleana**
-: espressione che può assumere il valore Vero o Falso.
+**Espressione booleana**
+: Espressione che può assumere il valore Vero o Falso.
 \index{boolean expression}
 \index{expression!boolean}
 
-**branch**
-: una delle sequenze di istruzioni alternative di un'istruzione condizionale.
+**Branch**
+: Una delle sequenze di istruzioni alternative di un'istruzione condizionale.
 \index{branch}
 
-**condizione concatenata**
-: un'istruzione condizionale con una serie di branch alternativi.
+**Condizione concatenata**
+: Un'istruzione condizionale con una serie di branch alternativi.
 \index{chained conditional}
 \index{conditional!chained}
 
-**operatore di comparazione**
-: operatore che permette di confrontare due operandi: `==`, `!=`, `>`, `<`, `>=` e `<=`.
+**Operatore di comparazione**
+: Operatore che permette di confrontare due operandi: `==`, `!=`, `>`, `<`, `>=` e `<=`.
 
-**istruzione condizionale**
-: una istruzione che controlla il flusso di esecuzione in base alle condizioni impostate dallo sviluppatore.
+**Istruzione condizionale**
+: Una istruzione che controlla il flusso di esecuzione in base alle condizioni impostate dallo sviluppatore.
 \index{conditional statement}
 \index{statement!conditional}
 
-**condizione**
-: l'espressione booleana in un'istruzione condizionale che determina quale branch debba essere eseguito.
+**Condizione**
+: L'espressione booleana in un'istruzione condizionale che determina quale branch debba essere eseguito.
 \index{condition}
 
-**compound statement**
+**Compound statement**
 : Un'istruzione composta da un'intestazione e che termina con due punti (:) ed un corpo rientrato rispetto all'intestazione.
 \index{compound statement}
 
-**schema del guardiano**
-: espressione logica che, con comparazioni aggiuntive, sfruttare il comportamento definito *cortocircuito della valutazione*.
+**Schema del guardiano**
+: Espressione logica che, con comparazioni aggiuntive, sfruttare il comportamento definito *cortocircuito della valutazione*.
 \index{guardian pattern}
 \index{pattern!guardian}
 
-**operatore logico**
-: uno degli operatori che combina espressioni booleane: `and`, `or`, e `not`.
+**Operatore logico**
+: Uno degli operatori che combina espressioni booleane: `and`, `or`, e `not`.
 \index{logical operator}
 \index{operator!logical}
 
-**condizionale nidificato**
-: un'istruzione condizionale che appare in uno dei branch di un'altra istruzione condizionale.
+**Condizionale nidificato**
+: Un'istruzione condizionale che appare in uno dei branch di un'altra istruzione condizionale.
 \index{nested conditional}
 \index{conditional!nested}
 
-**traceback**
-: elenco delle funzioni in esecuzione che viene visualizzato quando si verifica un'eccezione.
+**Traceback**
+: Elenco delle funzioni in esecuzione che viene visualizzato quando si verifica un'eccezione.
 \index{traceback}
 
-**cortocircuito**
-: si verifica quando Python, a metà strada nel calcolo di un'espressione logica, interrompe il calcolo perché conosce il valore finale dell'espressione senza dover calcolare il resto delle operazioni.
+**Cortocircuito**
+: Si verifica quando Python, a metà strada nel calcolo di un'espressione logica, interrompe il calcolo perché conosce il valore finale dell'espressione senza dover calcolare il resto delle operazioni.
 \index{short circuit}
 
 Esercizi

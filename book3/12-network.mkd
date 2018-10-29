@@ -348,24 +348,24 @@ Il comando `curl` è l'abbreviazione di "copy URL" da cui ho diligentemente trat
 Glossario
 --------
 
-**BeautifulSoup**: libreria Python per l'analisi ed estrazione dati da documenti HTML che compensa molte delle imperfezioni nell'HTML che i browser generalmente ignorano. Puoi scaricare il codice BeautifulSoup da [www.crummy.com] (http://www.crummy.com).
-
+**BeautifulSoup**
+: Libreria Python per l'analisi ed estrazione dati da documenti HTML che compensa molte delle imperfezioni nell'HTML che i browser generalmente ignorano. Puoi scaricare il codice BeautifulSoup da [www.crummy.com] (http://www.crummy.com).
 \index{BeautifulSoup}
 
-**porta**: un numero che indica in genere quale applicazione state contattando quando effettuate una connessione socket a un server. Ad esempio il traffico Web di solito utilizza la porta 80 mentre il traffico e-mail utilizza la 25.
-
+**Porta**:
+Un numero che indica in genere quale applicazione state contattando quando effettuate una connessione socket a un server. Ad esempio il traffico Web di solito utilizza la porta 80 mentre il traffico e-mail utilizza la 25.
 \index{port}
 
-**scrape**: indica il comportamento di un programma che fa finta di essere un browser web, recupera una pagina web e ne osserva il contenuto. Spesso i programmi seguono i collegamenti presenti in una pagina per trovare la pagina successiva in modo da poter scorrere all'interno di una rete di pagine o di un social network.
+**Scrape**
+: Indica il comportamento di un programma che fa finta di essere un browser web, recupera una pagina web e ne osserva il contenuto. Spesso i programmi seguono i collegamenti presenti in una pagina per trovare la pagina successiva in modo da poter scorrere all'interno di una rete di pagine o di un social network.
+\index{scrape}
 
+**Socket**
+: Una connessione di rete tra due applicazioni tramite cui queste possono inviare e ricevere dati in entrambe le direzioni.
 \index{socket}
 
-**socket**: una connessione di rete tra due applicazioni tramite cui queste possono inviare e ricevere dati in entrambe le direzioni.
-
-\index{socket}
-
-**spider**: l'atto di un motore di ricerca web di recuperare una pagina e successivamente tutte le pagine collegate a questa fino a raggiungere quasi tutte le pagine in rete e utilizzarle per costruire il proprio indice di ricerca.
-
+**Spider**
+: L'atto di un motore di ricerca web di recuperare una pagina e successivamente tutte le pagine collegate a questa fino a raggiungere quasi tutte le pagine in rete e utilizzarle per costruire il proprio indice di ricerca.
 \index{spider}
 
 Esercizi

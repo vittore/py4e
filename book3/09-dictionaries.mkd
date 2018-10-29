@@ -399,48 +399,48 @@ Ancora una volta, il tempo speso per la costruzione di impalcature (scaffolding)
 Glossario
 --------
 
-**dizionario**
-: una correlazione tra una serie di chiavi e i corrispondenti valori.
+**Dizionario**
+: Una correlazione tra una serie di chiavi e i corrispondenti valori.
 \index{dictionary}
 
-**tabella di hash**
-: l'algoritmo utilizzato per implementare i dizionari Python.
+**Tabella di hash**
+: L'algoritmo utilizzato per implementare i dizionari Python.
 \index{hashtable}
 
-**funzione di hash**
-: una funzione utilizzata da una tabella di hash per calcolare la posizione di una chiave.
+**Funzione di hash**
+: Una funzione utilizzata da una tabella di hash per calcolare la posizione di una chiave.
 \index{hash function}
 
-**istogramma**
-: una serie di contatori.
+**Istogramma**
+: Una serie di contatori.
 \index{histogram}
 
-**implementazione**
-: il modo utilizzato per eseguire un calcolo.
+**Implementazione**
+: Il modo utilizzato per eseguire un calcolo.
 \index{implementation}
 
-**elemento**
-: un altro nome utilizzato per una coppia chiave-valore.
+**Elemento**
+: Un altro nome utilizzato per una coppia chiave-valore.
 \index{item!dictionary}
 
-**chiave**
-: l'oggetto che appare in un dizionario come prima parte di una coppia chiave-valore.
+**Chiave**
+: L'oggetto che appare in un dizionario come prima parte di una coppia chiave-valore.
 \index{key}
 
-**coppia chiave-valore**
-: la rappresentazione della correlazione da una chiave a un valore.
+**Coppia chiave-valore**
+: La rappresentazione della correlazione da una chiave a un valore.
 \index{key-value pair}
 
-**ricerca**
-: l'operazione nel dizionario che permette di trovare una chiave e il valore corrispondente.
+**Ricerca**
+: L'operazione nel dizionario che permette di trovare una chiave e il valore corrispondente.
 \index{lookup}
 
-**cicli annidati**
-: uno o più cicli contenuti "all'interno" di un altro ciclo. Il ciclo interno viene completato ogni volta che viene eseguito il ciclo esterno.
+**Cicli annidati**
+: Uno o più cicli contenuti "all'interno" di un altro ciclo. Il ciclo interno viene completato ogni volta che viene eseguito il ciclo esterno.
 \index{nested loops}
 \index{loop!nested}
 
-**valore**
+**Valore**
 : l'oggetto che appare in un dizionario come seconda parte di una coppia chiave-valore. Questo è un modo più specifico di utilizzare la parola "valore".
 \index{value}
 

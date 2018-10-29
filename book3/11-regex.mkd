@@ -76,7 +76,7 @@ La stringa di ricerca "`^`From:.+@" restringe l'analisi alle righe che iniziano 
 
 Puoi pensare al carattere wildcard ".+" come all'estensione del controllo di tutti i caratteri inclusi tra i due punti e la chiocciola.
 
-*`From :.+ @ `* 
+*`From :.+ @ `*
 
 È bene pensare ai caratteri più e asterisco come "invadenti". Ad esempio, la stringa seguente corrisponderebbe all'ultimo carattere chiocciola mentre ".+" andrebbe oltre, come mostrato di seguito:
 
@@ -419,25 +419,28 @@ La documentazione integrata non è molto ampia ma può essere comunque utile qua
 Glossario
 --------
 
-**codice fragile**: codice che funziona quando i dati di input sono in un formato particolare ma è soggetto a malfunzionamenti se c'è qualche variazione rispetto al formato corretto. Lo chiamiamo "codice fragile" perché si "rompe" facilmente.
+**Codice fragile**
+: Codice che funziona quando i dati di input sono in un formato particolare ma è soggetto a malfunzionamenti se c'è qualche variazione rispetto al formato corretto. Lo chiamiamo "codice fragile" perché si "rompe" facilmente.
 
-**corrispondenza avida**: la nozione per indicare che in un'espressione regolare i caratteri "+" e "\*" si espandono verso l'esterno per corrispondere alla stringa più grande possibile.
-
+**Corrispondenza avida**
+: La nozione per indicare che in un'espressione regolare i caratteri "+" e "\*" si espandono verso l'esterno per corrispondere alla stringa più grande possibile.
 \index{greedy}
 \index{greedy matching}
 
-**grep**: comando disponibile nella maggior parte dei sistemi Unix che permette la ricerca nei file di testo di righe che soddisfino le espressioni regolari impostate dall'utente. Il nome del comando è l'acronimo di "Generalized Regular Expression Parser".
-
+**Grep**
+: Comando disponibile nella maggior parte dei sistemi Unix che permette la ricerca nei file di testo di righe che soddisfino le espressioni regolari impostate dall'utente. Il nome del comando è l'acronimo di "Generalized Regular Expression Parser".
 \index{grep}
 
-**espressione regolare**: linguaggio per impostare ricerche complesse di stringhe. Un'espressione regolare può contenere caratteri speciali che indicano parametri come il focalizzare una ricerca solo all'inizio o alla fine di una riga e/o molte altre funzionalità simili.
+**Espressione regolare**
+: Linguaggio per impostare ricerche complesse di stringhe. Un'espressione regolare può contenere caratteri speciali che indicano parametri come il focalizzare una ricerca solo all'inizio o alla fine di una riga e/o molte altre funzionalità simili.
 
-**wild-card**: un carattere speciale che indica qualsiasi carattere. Nelle espressioni regolari il carattere wild-card è il punto (.).
-
+**Wild-card**
+: Un carattere speciale che indica qualsiasi carattere. Nelle espressioni regolari il carattere wild-card è il punto (.).
 \index{wild card}
 
 Esercizi
 ---------
+
 **Esercizio 1:** Scrivi un semplice programma che simuli il comportamento del comando `grep` di Unix. Fai che richieda all'utente l'inserimento di un'espressione regolare e poi ritorni il numero di righe che corrispondono alle specifiche della ricerca.
 
 ~~~~

@@ -34,7 +34,7 @@ Quello che vogliamo ottenere con questo capitolo è una conoscenza di base di co
 Utilizzare gli oggetti
 -------------
 
-Realizzarerai che in realtà abbiamo utilizzato gli oggetti durante tutto il corso:  Python ci mette a disposizione molti oggetti già integrati al suo interno. 
+Realizzarerai che in realtà abbiamo utilizzato gli oggetti durante tutto il corso:  Python ci mette a disposizione molti oggetti già integrati al suo interno.
 
 Ecco un semplice script le cui prime poche righe dovrebbero sembrarti molto semplici e familiari.
 
@@ -170,7 +170,7 @@ counts = dict()
 
 Qui stiamo dicendo a Python di creare un oggetto usando il template `dict` (già presente nel linguaggio), restituire l'istanza del dizionario e assegnarla alla variabile `counts`.
 
-Quando vogliamo utilizzare la classe PartyAnimal per costruire un oggetto, la variabile `an` ci permette di puntare a quell'oggetto, accedere al codice e ai dati che quella particolare istanza di un oggetto PartyAnimal contiene. 
+Quando vogliamo utilizzare la classe PartyAnimal per costruire un oggetto, la variabile `an` ci permette di puntare a quell'oggetto, accedere al codice e ai dati che quella particolare istanza di un oggetto PartyAnimal contiene.
 
 Ogni oggetto/istanza Partyanimal contiene al suo interno una variabile `x` e un metodo/funzione `party`che viene richiamato in questa riga:
 
@@ -269,9 +269,9 @@ Quando creiamo piú oggetti dalla nostra classe potremmo aver bisogno di imposta
 
 Il costruttore ha sia un parametro `self` che punta all'istanza dell'oggetto sia altri parametri che vengono passati al costruttore mentre l'oggetto viene costruito:
 
-`s = PartyAnimal('Sally')` 
+`s = PartyAnimal('Sally')`
 
-la riga presente all'interno del costruttore: 
+la riga presente all'interno del costruttore:
 
 `self.name = nam`
 
@@ -339,30 +339,39 @@ Queste sono le basi e la terminologia della programmazione ad oggetti. Ci sono m
 Glossario
 --------
 
-**attributo**: una variabile che fa parte di una classe.
+**Attributo**
+: Una variabile che fa parte di una classe.
 \index{attribute}
 
-**classe**: un modello che può essere utilizzato per costruire un oggetto.  Definisce gli attributi e i metodi che compongono l'oggetto.
+**Classe**
+: Un modello che può essere utilizzato per costruire un oggetto.  Definisce gli attributi e i metodi che compongono l'oggetto.
 \index{class}
 
-**classe figlia**: una nuova classe creata quando viene estesa una classe genitore.  La classe figlia eredita tutti gli attributi e i metodi della classe genitore.
+**Classe figlia**
+: Una nuova classe creata quando viene estesa una classe genitore.  La classe figlia eredita tutti gli attributi e i metodi della classe genitore.
 \index{child class}
 
-**costruttore**: un metodo opzionale con un nome speciale (`__init__`) chiamato nel momento in cui una classe viene usata per costruire un oggetto. Di solito viene utilizzato per impostare i valori iniziali dell'oggetto.
+**Costruttore**
+: Un metodo opzionale con un nome speciale (`__init__`) chiamato nel momento in cui una classe viene usata per costruire un oggetto. Di solito viene utilizzato per impostare i valori iniziali dell'oggetto.
 \index{constructor}
 
-**destructor**: usato raramente, un metodo opzionale con un nome speciale (`__del__`) che viene chiamato appena prima che un oggetto venga distrutto. 
+**Destructor**
+: Usato raramente, un metodo opzionale con un nome speciale (`__del__`) che viene chiamato appena prima che un oggetto venga distrutto.
 \index{destructor}
 
-**ereditarietà**: l'atto di estendere una classe esistente (genitore) tramite la creazione di una nuova classe (figlia). La classe figlia ha tutti gli attributi e i metodi della classe genitore più ulteriori attributi e metodi definiti.
+**Ereditarietà**
+: L'atto di estendere una classe esistente (genitore) tramite la creazione di una nuova classe (figlia). La classe figlia ha tutti gli attributi e i metodi della classe genitore più ulteriori attributi e metodi definiti.
 \index{inheritance}
 
-**metodo**: una funzione che è contenuta all'interno di una classe e degli oggetti costruiti dalla classe. Alcuni modelli orientati agli oggetti usano la parola 'messaggio' invece di 'metodo' per descrivere questo concetto.
+**Metodo**
+: Una funzione che è contenuta all'interno di una classe e degli oggetti costruiti dalla classe. Alcuni modelli orientati agli oggetti usano la parola 'messaggio' invece di 'metodo' per descrivere questo concetto.
 \index{method}
 \index{message}
 
-**oggetto**: un'istanza costruita di una classe.  Un oggetto contiene tutti gli attributi e i metodi definiti dalla classe. Alcuni documenti orientati agli oggetti usano il termine 'istanza' in modo intercambiabile con 'oggetto'.
+**Oggetto**
+: Un'istanza costruita di una classe.  Un oggetto contiene tutti gli attributi e i metodi definiti dalla classe. Alcuni documenti orientati agli oggetti usano il termine 'istanza' in modo intercambiabile con 'oggetto'.
 \index{method}
 
-**classe genitore**: la classe che viene estesa per creare una nuova classe figlia. La classe genitore contribuisce con tutti i suoi metodi e attributi alla nuova classe figlia.
+**Classe genitore**
+: La classe che viene estesa per creare una nuova classe figlia. La classe genitore contribuisce con tutti i suoi metodi e attributi alla nuova classe figlia.
 \index{parent class}

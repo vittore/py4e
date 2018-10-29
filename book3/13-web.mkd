@@ -373,26 +373,26 @@ Queste chiavi API sicure consentono a Twitter di sapere con certezza chi sta usa
 Glossario
 --------
 
-**API**: Application Program Interface - Una forma di contratto che definisce le modalità di interazione tra le componenti di una o più applicazioni.
-
+**API**
+: Application Program Interface - Una forma di contratto che definisce le modalità di interazione tra le componenti di una o più applicazioni.
 \index{API}
 
-**ElementTree**: una libreria di Python utilizzata per analizzare i dati XML.
-
+**ElementTree**
+: Una libreria di Python utilizzata per analizzare i dati XML.
 \index{ElementTree}
 
-**JSON**: JavaScript Object Notation. Un formato che consente il markup di dati strutturati sulla base della sintassi degli oggetti JavaScript.
-
+**JSON**
+: JavaScript Object Notation. Un formato che consente il markup di dati strutturati sulla base della sintassi degli oggetti JavaScript.
 \index{JSON}
 \index{JavaScript Object Notation}
 
-**SOA**: Service-Oriented Architecture. Indica un'applicazione composta da componenti connessi attraverso una rete.
-
+**SOA**
+: Service-Oriented Architecture. Indica un'applicazione composta da componenti connessi attraverso una rete.
 \index{SOA}
 \index{Service Oriented Architecture}
 
-**XML**: eXtensible Markup Language. Un metalinguaggio per la definizione del markup di dati strutturati.
-
+**XML**
+: eXtensible Markup Language. Un metalinguaggio per la definizione del markup di dati strutturati.
 \index{XML}
 \index{eXtensible Markup Language}
 

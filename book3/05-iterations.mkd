@@ -296,31 +296,31 @@ Un modo per ridurre il tempo di debug è effettuare un "debug per bisezione". Ad
 Glossario
 --------
 
-**accumulatore**
-: una variabile utilizzata in un ciclo per sommare o accumulare un risultato.
+**Accumulatore**
+: Una variabile utilizzata in un ciclo per sommare o accumulare un risultato.
 \index{accumulator}
 
-**contatore**
-: una variabile utilizzata in un ciclo per contare il numero di volte in cui si è verificato qualcosa. Un contatore viene impostato su zero e quindi incrementato ogni volta che vogliamo "contare" qualcosa.
+**Contatore**
+: Una variabile utilizzata in un ciclo per contare il numero di volte in cui si è verificato qualcosa. Un contatore viene impostato su zero e quindi incrementato ogni volta che vogliamo "contare" qualcosa.
 \index{counter}
 
-**decremento**
-: un aggiornamento che riduce il valore di una variabile.
+**Decremento**
+: Un aggiornamento che riduce il valore di una variabile.
 \index{decrement}
 
-**inizializzare**
-: l'assegnazione che fornisce un valore iniziale a una variabile che verrà aggiornata.
+**Inizializzare**
+: L'assegnazione che fornisce un valore iniziale a una variabile che verrà aggiornata.
 
-**incremento**
-: un aggiornamento che aumenta il valore di una variabile (spesso di uno).
+**Incremento**
+: Un aggiornamento che aumenta il valore di una variabile (spesso di uno).
 \index{increment}
 
-**ciclo infinito**
-: un ciclo in cui la condizione di fine non è mai soddisfatta o per il quale non esiste una tale condizione.
+**Ciclo infinito**
+: Un ciclo in cui la condizione di fine non è mai soddisfatta o per il quale non esiste una tale condizione.
 \index{infinite loop}
 
-**iterazione**
-: esecuzione ripetuta di un insieme di istruzioni utilizzando una funzione che evoca se stessa o un ciclo.
+**Iterazione**
+: Esecuzione ripetuta di un insieme di istruzioni utilizzando una funzione che evoca se stessa o un ciclo.
 \index{iteration}
 
 Esercizi

@@ -473,54 +473,44 @@ Per trovare e correggere un bug particolarmente ostico occorre leggere, correre,
 
 Glossario
 --------
-**comparabile**
-: un tipo di dato di cui è possibile controllare il valore per vedere se è maggiore, minore o uguale a un altro dello stesso tipo. I tipi che sono comparabili possono essere messi in un elenco e ordinati.
-
+**Comparabile**
+: Un tipo di dato di cui è possibile controllare il valore per vedere se è maggiore, minore o uguale a un altro dello stesso tipo. I tipi che sono comparabili possono essere messi in un elenco e ordinati.
 \index{comparable}
 
-**struttura di dati**
-: una raccolta di valori correlati, spesso organizzati in elenchi, dizionari, tuple, ecc.
-
+**Struttura di dati**
+: Una raccolta di valori correlati, spesso organizzati in elenchi, dizionari, tuple, ecc.
 \index{data structure}
 
 **DSU**
-: abbreviazione di "decorare-ordinare-rimuovere la decorazione", un modello che comporta la creazione di un elenco di tuple, il successivo ordinamento e l'estrazione parziale del risultato.
-
+: Abbreviazione di "decorare-ordinare-rimuovere la decorazione", un modello che comporta la creazione di un elenco di tuple, il successivo ordinamento e l'estrazione parziale del risultato.
 \index{DSU pattern}
 
-**gather**
-: l'operazione di assemblaggio di una tupla di argomenti a lunghezza variabile.
-
+**Gather**
+: L'operazione di assemblaggio di una tupla di argomenti a lunghezza variabile.
 \index{gather}
 
-**hashabile**
-: un tipo di dato a cui è applicabile una funzione di hash. I tipi immutabili come gli interi, virgola mobile e stringhe sono hashabili, mentre quelli mutabili come gli elenchi e i dizionari non lo sono.
-
+**Hashabile**
+: Un tipo di dato a cui è applicabile una funzione di hash. I tipi immutabili come gli interi, virgola mobile e stringhe sono hashabili, mentre quelli mutabili come gli elenchi e i dizionari non lo sono.
 \index{hashable}
 
-**scatter**
-: l'operazione di trattare una sequenza come un elenco di argomenti.
-
+**Scatter**
+: L'operazione di trattare una sequenza come un elenco di argomenti.
 \index{scatter}
 
-**formato (di una struttura dati)**
-: un riepilogo del tipo, delle dimensioni e della composizione di una struttura di dati.
-
+**Formato (di una struttura dati)**
+: Un riepilogo del tipo, delle dimensioni e della composizione di una struttura di dati.
 \index{shape}
 
-**singleton**
-: un elenco (o altra sequenza) composto da un singolo elemento.
-
+**Singleton**
+: Un elenco (o altra sequenza) composto da un singolo elemento.
 \index{singleton}
 
-**tupla**
-: una sequenza immutabile di elementi.
-
+**Tupla**
+: Una sequenza immutabile di elementi.
 \index{tuple}
 
-**assegnazione di tupla**
-: una assegnazione con una sequenza sul lato destro e una tupla di variabili sul lato sinistro. Il lato destro viene valutato e quindi i suoi elementi vengono assegnati alle variabili di sinistra.
-
+**Assegnazione di tupla**
+: Una assegnazione con una sequenza sul lato destro e una tupla di variabili sul lato sinistro. Il lato destro viene valutato e quindi i suoi elementi vengono assegnati alle variabili di sinistra.
 \index{tuple assignment}
 \index{assignment!tuple}
 

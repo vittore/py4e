@@ -547,81 +547,81 @@ Assicurati sempre di eseguire l'ultima versione del codice che stai esaminando. 
 Glossario
 --------
 
-**algoritmo**
-: un processo generale destinato a risolvere una categoria di problemi.
+**Algoritmo**
+: Un processo generale destinato a risolvere una categoria di problemi.
 \index{algorithm}
 
-**argomento**
-: il valore fornito a una funzione quando questa viene chiamata. Questo valore è assegnato al parametro corrispondente nella funzione.
+**Argomento**
+: Il valore fornito a una funzione quando questa viene chiamata. Questo valore è assegnato al parametro corrispondente nella funzione.
 \index{argument}
 
-**corpo**
-: la sequenza di istruzioni contenute in una definizione di funzione.
+**Corpo**
+: La sequenza di istruzioni contenute in una definizione di funzione.
 \index{body}
 
-**composizione**
-: utilizzo di un'espressione come parte di un'espressione più grande o di un'istruzione come parte di un'istruzione più ampia.
+**Composizione**
+: Utilizzo di un'espressione come parte di un'espressione più grande o di un'istruzione come parte di un'istruzione più ampia.
 \index{composition}
 
-**deterministico**
-: pertinente a un programma che, dati gli stessi input, produce lo stesso risultato ogni volta che viene eseguito.
+**Deterministico**
+: Pertinente a un programma che, dati gli stessi input, produce lo stesso risultato ogni volta che viene eseguito.
 \index{deterministic}
 
-**notazione del punto**
-: la sintassi per chiamare una funzione gestita da un modulo specificando il nome del modulo seguito da un punto e dal nome della funzione stessa.
+**Notazione del punto**
+: La sintassi per chiamare una funzione gestita da un modulo specificando il nome del modulo seguito da un punto e dal nome della funzione stessa.
 \index{dot notation}
 
-**flusso di esecuzione**
-: l'ordine in cui le istruzioni vengono eseguite durante l'esecuzione di un programma.
+**Flusso di esecuzione**
+: L'ordine in cui le istruzioni vengono eseguite durante l'esecuzione di un programma.
 \index{flow of execution}
 
-**funzione produttiva**
-: una funzione che restituisce un valore.
+**Funzione produttiva**
+: Una funzione che restituisce un valore.
 \index{fruitful function}
 
-**funzione**
-: sequenza di istruzioni provvista di nome che svolge alcune operazioni utili. Le funzioni possono accettare o non accettare argomenti e possono o meno produrre un risultato.
+**Funzione**
+: Sequenza di istruzioni provvista di nome che svolge alcune operazioni utili. Le funzioni possono accettare o non accettare argomenti e possono o meno produrre un risultato.
 \index{function}
 
-**chiamata di funzione**
-: l'istruzione che esegue una funzione. È composta dal nome della funzione seguito da un elenco di argomenti.
+**Chiamata di funzione**
+: L'istruzione che esegue una funzione. È composta dal nome della funzione seguito da un elenco di argomenti.
 \index{function call}
 
-**definizione di funzione**
-: l'istruzione che da luogo ad una nuova funzione, specificandone il nome, i parametri e le istruzioni che esegue.
+**Definizione di funzione**
+: L'istruzione che da luogo ad una nuova funzione, specificandone il nome, i parametri e le istruzioni che esegue.
 \index{function definition}
 
-**oggetto funzione**
-: il valore creato dalla definizione di funzione. Il nome della funzione è una variabile che fa riferimento a un oggetto funzione.
+**Oggetto funzione**
+: Il valore creato dalla definizione di funzione. Il nome della funzione è una variabile che fa riferimento a un oggetto funzione.
 \index{function definition}
 
-**header**
-: la prima riga di una definizione di funzione.
+**Header**
+: La prima riga di una definizione di funzione.
 \index{header}
 
-**istruzione import**
-: un'istruzione che legge un modulo e crea un oggetto modulo.
+**Istruzione import**
+: Un'istruzione che legge un modulo e crea un oggetto modulo.
 \index{import statement}
 \index{statement!import}
 
-**oggetto modulo**
-: il valore creato dall'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
+**Oggetto modulo**
+: Il valore creato dall'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
 \index{module}
 
-**parametro**
-: un nome utilizzato all'interno di una funzione per fare riferimento al valore passato come argomento.
+**Parametro**
+: Un nome utilizzato all'interno di una funzione per fare riferimento al valore passato come argomento.
 \index{parameter}
 
-**pseudo-casuale**
-: sequenza di numeri apparentemente casuali generati da un programma deterministico.
+**Pseudo-casuale**
+: Sequenza di numeri apparentemente casuali generati da un programma deterministico.
 \index{pseudorandom}
 
-**valore di ritorno**
-: il risultato di una funzione. Se una chiamata di funzione viene utilizzata come espressione, il valore restituito è il valore dell'espressione.
+**Valore di ritorno**
+: Il risultato di una funzione. Se una chiamata di funzione viene utilizzata come espressione, il valore restituito è il valore dell'espressione.
 \index{return value}
 
-**funzione vuota**
-: funzione che non restituisce alcun valore.
+**Funzione vuota**
+: Funzione che non restituisce alcun valore.
 \index{void function}
 
 Esercizi
