@@ -8,8 +8,9 @@ Utilizzo di servizi Web
 Una volta che fu più semplice scambiare i documenti via HTTP e analizzarli utilizzando appositi script, non passò molto tempo prima che venissero sviluppati e prodotti documenti realizzati specificamente per essere utilizzati da altri programmi (ovvero pagine HTML destinate ad essere visualizzate in un browser).
 
 Esistono due formati principali che utilizziamo per scambiare dati sul Web:
+
 1. L'eXtensible Markup Language o XML, in uso da molto tempo, è più adatto per lo scambio di dati in stile documento.
-2. Quando i programmi devono scambiare solo dizionari, elenchi o altre informazioni interne, viene preferita la JavaScript Object Notation o JSON (si veda [www.json.org] (http://www.json.org)).
+2. Quando i programmi devono scambiare solo dizionari, elenchi o altre informazioni interne, viene preferita la JavaScript Object Notation o JSON (si veda [www.json.org](http://www.json.org)).
 
 Noi daremo un'occhiata ad entrambi i formati.
 
@@ -32,7 +33,7 @@ Ecco un esempio di un documento XML:
 
 Ti suggerisco di pensare questo documento XML come una struttura ad albero in cui è presente un tag principale `person` e altri tag secondari come `phone`, rappresentati come figli dei nodi padre.
 
-![A Tree Representation of XML](height=2.0in@../images/xml-tree)
+![XML rappresentato come albero](height=2.0in@../images/xml-tree)
 
 Analizzare XML
 -----------
@@ -143,7 +144,7 @@ Quando iniziamo a progettare dei programmi dotati di funzionalità che prevedono
 
 Puoi vedere molti esempi di SOA quando navighi in rete: da un unico sito web puoi prenotare viaggi aerei, hotel e automobili. Naturalmente i dati per gli hotel non sono memorizzati nei computer delle compagnie aeree: piuttosto i server delle compagnie aeree contattano i servizi sui computer dell'hotel e recuperano i dati che poi presentano all'utente. Quando l'utente accetta di effettuare una prenotazione alberghiera utilizzando il sito della compagnia aerea, il sito della compagnia aerea utilizza un altro servizio Web dei sistemi dell'hotel per effettuare concretamente la prenotazione. Quando arriva il momento di addebitare il costo sulla tua carta di credito per l'intera transazione vengono coinvolti anche altri computer.
 
-![Service Oriented Architecture](height=3.0in@../images/soa)
+![Architettura orientata ai servizi (SOA)](height=3.0in@../images/soa)
 
 Un'architettura orientata ai servizi (SOA) presenta molti vantaggi tra cui: (1) mantiene sempre una sola copia di dati (questo è particolarmente importante in casi come prenotazioni di hotel in cui non vogliamo sovrapporre azioni) e (2) i proprietari dei dati possono gestire le regole sull'uso dei propri dati. Con questi vantaggi, un sistema SOA deve essere progettato oculatamente per avere buone prestazioni e soddisfare le esigenze dell'utente.
 
@@ -239,7 +240,7 @@ Sicurezza e utilizzo delle API
 
 A volte, dopo aver ottenuto la chiave API, è sufficiente includere la chiave come parte dei dati POST o forse come parametro nell'URL di chiamata all'API.
 
-Altre volte, i venditori desiderano una maggiore garanzia sulla fonte delle richieste e quindi pretendono di ricevere messaggi firmati utilizzando chiavi crittografiche condivise segrete. Una tecnologia molto comune utilizzata per firmare le richieste su Internet è *OAuth*. Puoi leggere ulteriori informazioni sul protocollo OAuth su [www.oauth.net] (http://www.oauth.net).
+Altre volte, i venditori desiderano una maggiore garanzia sulla fonte delle richieste e quindi pretendono di ricevere messaggi firmati utilizzando chiavi crittografiche condivise segrete. Una tecnologia molto comune utilizzata per firmare le richieste su Internet è *OAuth*. Puoi leggere ulteriori informazioni sul protocollo OAuth su [www.oauth.net](http://www.oauth.net).
 
 Man mano che l'API di Twitter diventava sempre più preziosa, Twitter è passato da un'API pubblica e aperta a un'API che richiedeva l'uso delle firme OAuth per ogni richiesta. Fortunatamente ci sono ancora un certo numero di librerie OAuth convenienti e gratuite, che ti permettono di evitare di scrivere un'implementazione OAuth da zero. Queste librerie hanno complessità variabile e hanno vari gradi di completezza. Il sito web OAuth contiene informazioni su varie librerie OAuth.
 
@@ -399,5 +400,5 @@ Glossario
 Esercizi
 ---------
 
-**Esercizio 1:** Modifica uno degli script [www.py4e.com/code3/geojson.py](http://www.py4e.com/code3/geojson.py) o [www.py4e.com/code3/ geoxml.py] (http://www.py4e.com/code3/geoxml.py) in modo da visualizzare i die caratteri del codice paese inseriti dai dati recuperati.
+**Esercizio 1:** Modifica uno degli script [www.py4e.com/code3/geojson.py](http://www.py4e.com/code3/geojson.py) o [www.py4e.com/code3/ geoxml.py](http://www.py4e.com/code3/geoxml.py) in modo da visualizzare i die caratteri del codice paese inseriti dai dati recuperati.
 Aggiungi il controllo degli errori in modo che il tuo script non vada in errore se il codice del paese non è presente. Una volta completato con successo questo compito, fagli cercare "Atlantic Ocean" e assicurati che possa gestire luoghi che non si trovano in nessun paese.
