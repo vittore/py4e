@@ -1,4 +1,3 @@
-%
 
 
 Tuple
@@ -12,7 +11,7 @@ Le tuple sono immutabili
 \index{type!tuple}
 \index{sequence}
 
-La tupla ^ [Curiosità: la parola "tupla" deriva dai nomi dati a sequenze di numeri di lunghezza variabile: singola, doppie, triple, quadruple, quintuple, sestuple, settuple, ecc.] è una sequenza di valori molto simile a un elenco. I valori memorizzati in una tupla possono essere di qualsiasi tipo e vengono indicizzati tramite numeri interi. La caratteristica fondamentale delle tuple è l'essere *immutabili*.
+La tupla^[Curiosità: la parola "tupla" deriva dai nomi dati a sequenze di numeri di lunghezza variabile: singola, doppie, triple, quadruple, quintuple, sestuple, settuple, ecc.] è una sequenza di valori molto simile a un elenco. I valori memorizzati in una tupla possono essere di qualsiasi tipo e vengono indicizzati tramite numeri interi. La caratteristica fondamentale delle tuple è l'essere *immutabili*.
 Sulle tuple è possibile effettuare operazioni di comparazione e hash, possiamo quindi ordinare gli elenchi delle tuple e utilizzare queste ultime come valori chiave nei dizionari Python.
 
 \index{mutability}
@@ -138,13 +137,13 @@ La funzione `sort` funziona allo stesso modo: di base ordina iniziando dal primo
 
 Questa caratteristica torna utile nel modello chiamato *DSU* per
 
-Decorate (decorare)
+decorare (decorate)
 : una sequenza costruendo un elenco di tuple con una o più chiavi di ordinamento che precedono gli elementi della sequenza,
 
-Sort (ordinare)
+ordinare (sort)
 : l'elenco di tuple usando il `sort` incorporato in Python, e
 
-Undecorate (eliminare)
+eliminare (undecorate)
 : la decorazione estraendo gli elementi della sequenza, una volta ordinati.
 
 \index{DSU pattern}
@@ -382,7 +381,7 @@ Usare tuple come chiavi nei dizionari
 
 dato che le tuple sono *hashabili*, a differenza degli elenchi, se vogliamo creare una chiave *composta* da usare in un dizionario dobbiamo utilizzare una tupla.
 
-Abbiamo bisogno di una chiave composta per creare una rubrica telefonica che associ le coppie cognome / nome a numeri di telefono. Supponendo di aver definito le variabili `last`, `first` e `number`, potremmo scrivere un'istruzione di assegnazione del dizionario come la seguente:
+Abbiamo bisogno di una chiave composta per creare una rubrica telefonica che associ le coppie cognome/nome a numeri di telefono. Supponendo di aver definito le variabili `last`, `first` e `number`, potremmo scrivere un'istruzione di assegnazione del dizionario come la seguente:
 
 ~~~~ {.python}
 directory[last,first] = number
@@ -416,9 +415,11 @@ In molti casi, i diversi tipi di sequenze (stringhe, elenchi e tuple) possono es
 Ovviamente, le stringhe sono più limitate di altre sequenze perché gli elementi devono essere caratteri, per di più immutabili. Se hai bisogno della possibilità di cambiare i caratteri in una stringa (invece di crearne una nuova), potresti piuttosto usare un elenco di caratteri.
 
 Gli elenchi sono usati più frequentemente delle tuple soprattutto perché sono modificabili. Ma ci sono alcuni casi in cui sono preferibili le tuple:
+
 1.  In alcuni contesti, come in un'istruzione `return`, è sintatticamente più semplice creare una tupla anziché un elenco. In altri contesti potrebbe essere preferibile un elenco.
 2.   Se devi utilizzare una sequenza come chiave di un dizionario, è necessario utilizzare un tipo immutabile le tuple o le stringhe.
 3.   Se devi passare una sequenza come argomento di una funzione, l'utilizzo di tuple riduce le possibilità di comportamenti imprevisti dovuti agli alias.
+
 Poiché le tuple sono immutabili, non sono disponibili metodi come `sort` e `reverse`, che possono modificare elenchi esistenti. Comunque Python ti mette a disposizione le funzioni integrate `sorted` e `reversed`, che accettano qualsiasi sequenza come parametro e restituiscono una nuova sequenza composta dagli stessi elementi ordinati diversamente.
 
 \index{sorted function}
@@ -440,13 +441,16 @@ Ad esempio, un programma che si aspetta un elenco contenente un numero intero e 
 
 Quando esegui il debug di un programma, specialmente se stai lavorando su un bug particolarmente ostico, ci sono quattro cose da provare:
 
-**lettura**: esamina il tuo codice, rileggilo a te stesso e controlla che faccia quello che volevi facesse.
+**lettura**
+: esamina il tuo codice, rileggilo a te stesso e controlla che faccia quello che volevi facesse.
 
-**esecuzione**: sperimenta apportando modifiche e eseguendo versioni diverse. Spesso se indichi la cosa giusta nel posto giusto del programma, il problema diventa ovvio. A volte dovrai passare un po' di tempo per costruire un'impalcatura (scaffolding).
+**esecuzione**
+: sperimenta apportando modifiche e eseguendo versioni diverse. Spesso se indichi la cosa giusta nel posto giusto del programma, il problema diventa ovvio. A volte dovrai passare un po' di tempo per costruire un'impalcatura (scaffolding).
 
 **riflessione**: prenditi un po' di tempo per pensare di che tipo di errore parliamo: sintassi, runtime, semantica? Quali informazioni puoi ottenere dai messaggi di errore o dall'output del programma? Che tipo di errore potrebbe causare il problema che stai osservando? Cosa hai cambiato per ultimo, prima che apparisse il problema?
 
-**ritirata**: a volte la cosa migliore da fare è tornare indietro, annullare le modifiche recenti, fino a quando non torni a un programma funzionante e che comprendi, da cui iniziare la ricostruzione.
+**ritirata**
+: a volte la cosa migliore da fare è tornare indietro, annullare le modifiche recenti, fino a quando non torni a un programma funzionante e che comprendi, da cui iniziare la ricostruzione.
 
 Gli sviluppatori principianti a volte rimangono bloccati in una di queste attività, dimenticando le altre. Ognuna di queste attività ha il suo modo di portarti al disastro.
 

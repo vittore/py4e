@@ -1,5 +1,5 @@
 
-%
+
 
 Utilizzo di servizi Web
 =======================

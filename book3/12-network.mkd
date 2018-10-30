@@ -1,4 +1,4 @@
-%
+
 
 Programmi per Internet
 =====================
@@ -38,9 +38,9 @@ Forse il modo più facile per mostrare come funziona il protocollo HTTP è scriv
 
 \VerbatimInput{../code3/socket1.py}
 
-Per prima cosa il programma effettua una connessione alla porta 80 del server [www.py4e.com] (http://www.py4e.com). Dato che il nostro programma sta impersonando un "browser web", il protocollo HTTP prevede che il comando GET sia seguito da una riga vuota.
+Per prima cosa il programma effettua una connessione alla porta 80 del server [www.py4e.com](http://www.py4e.com). Dato che il nostro programma sta impersonando un "browser web", il protocollo HTTP prevede che il comando GET sia seguito da una riga vuota.
 
-![A Socket Connection](height=2.0in@../images/socket)
+![Connessione attraverso socket ](height=2.0in@../images/socket)
 
 Una volta inviata la riga vuota, scriviamo un ciclo che riceva dal socket dati in blocchi da 512 caratteri e li visualizzi fino a quando non ci sono più dati da leggere (cioè quando recv() restituisce una stringa vuota).
 
@@ -256,9 +256,9 @@ Nelle pagine seguenti eseguiremo delle semplici analisi su del codice HTML e ne 
 
 <http://www.crummy.com/software/>
 
-Hai la possibilità di "installare" BeautifulSoup^ [Puoi utilizzare il comando "pip install beautifulsoup".] o semplicemente salvare il file `BeautifulSoup.py` nella stessa cartella dell'applicazione.
+Hai la possibilità di "installare" BeautifulSoup^[Puoi utilizzare il comando "pip install beautifulsoup".] o semplicemente salvare il file `BeautifulSoup.py` nella stessa cartella dell'applicazione.
 
-Anche se l'HTML ha molto in comune con il formato XML^ [Il formato XML verrà affrontato nel prossimo capitolo.] e alcune pagine sono scritte appositamente per essere codice XML, la maggior parte del codice HTML è scritto in modi che fanno sì che un parser XML rigetti l'intera pagina di HTML in quanto formattata in modo improprio. BeautifulSoup tollera codice HTML scritto molto male consentendoti comunque di estrarre i dati di cui hai bisogno.
+Anche se l'HTML ha molto in comune con il formato XML^[Il formato XML verrà affrontato nel prossimo capitolo.] e alcune pagine sono scritte appositamente per essere codice XML, la maggior parte del codice HTML è scritto in modi che fanno sì che un parser XML rigetti l'intera pagina di HTML in quanto formattata in modo improprio. BeautifulSoup tollera codice HTML scritto molto male consentendoti comunque di estrarre i dati di cui hai bisogno.
 
 Useremo `urllib` per leggere una pagina e poi useremo `BeautifulSoup` per estrarre gli attributi `href` dagli "anchor tags" (`a`).
 
@@ -349,11 +349,11 @@ Glossario
 --------
 
 **BeautifulSoup**
-: Libreria Python per l'analisi ed estrazione dati da documenti HTML che compensa molte delle imperfezioni nell'HTML che i browser generalmente ignorano. Puoi scaricare il codice BeautifulSoup da [www.crummy.com] (http://www.crummy.com).
+: Libreria Python per l'analisi ed estrazione dati da documenti HTML che compensa molte delle imperfezioni nell'HTML che i browser generalmente ignorano. Puoi scaricare il codice BeautifulSoup da [www.crummy.com](http://www.crummy.com).
 \index{BeautifulSoup}
 
-**Porta**:
-Un numero che indica in genere quale applicazione state contattando quando effettuate una connessione socket a un server. Ad esempio il traffico Web di solito utilizza la porta 80 mentre il traffico e-mail utilizza la 25.
+**Porta**
+: Un numero che indica in genere quale applicazione state contattando quando effettuate una connessione socket a un server. Ad esempio il traffico Web di solito utilizza la porta 80 mentre il traffico e-mail utilizza la 25.
 \index{port}
 
 **Scrape**
