@@ -2,12 +2,12 @@
 
 
 
-Visualizzare i dati
+Come visualizzare dati
 ========================
 
-Finora abbiamo studiato il linguaggio Python per capirne le logiche interne, le funzioni che offre per la interagire con la rete o i database per manipolare dati.
+Finora abbiamo studiato il linguaggio Python per capirne come utilizzarlo per interagire con internet o i database per manipolare dati.
 
-In questo capitolo, studieremo tre applicazioni dotate delle capacità di gestire e visualizzare i dati. Considerarle degli spunti da cui partire e risolvere problemi reali.  
+In questo capitolo, daremo un'occhiata a tre applicazioni che combinano tutti gli aspetti precedenti per gestire e visualizzare dati. Puoi utilzzare queste applicazioni come spunto per affrontare i problemi reali che potresti dover affrontare.  
 
 Ciascuna applicazione è contenuta in un file ZIP che potrai scaricare, estrarre sul tuo computer ed eseguire.
 
@@ -17,15 +17,24 @@ Costruire una Google map a partire da dati geocodificati
 \index{Google!map}
 \index{Visualization!map}
 
-In questo progetto, utilizziamo l'API di geocodifica di Google per riordinare alcune posizioni geografiche di nomi di università immesse dall'utente e inserire quindi i dati su una mappa di Google.
+In questo progetto, utilizziamo l'API di geocodifica di Google per gestire la posizione geografica di alcune università inserite da un utente visualizzandole successivamente su una mappa di Google.
 
 ![A Google Map](../images/google-map)
 
-Per iniziare, scaricate l'applicazione da: [www.py4e.com/code3/geodata.zip](http://www.py4e.com/code3/geodata.zip). Il primo problema da risolvere è dato dal fatto che la geocodifica gratuita dell'API di Google è limitata a un determinato numero di richieste al giorno. Se si dispone di molti dati, potrebbe essere necessario interrompere e riavviare il processo di ricerca diverse volte. Suddividiamo pertanto il problema in due fasi.
+Per iniziare, scarica l'applicazione da:
+[www.py4e.com/code3/geodata.zip](http://www.py4e.com/code3/geodata.zip). 
+
+Il primo problema da risolvere è dato dal fatto che le richieste gratuite di geocodifica gratuita all'API di Google sono limitate a un determinato numero. Se devi verificare molti dati, potresti essere obbligato ad interrompere e riavviare il processo di ricerca diverse volte. É meglio quindi dividere il problema in due fasi.
 
 \index{cache}
 
-Nella prima fase prendiamo il nostro input "survey" nel file *where.data* e lo leggiamo una riga alla volta, recuperiamo le informazioni geocodificate da Google e le archiviamo in un database *geodata.sqlite*. Prima di utilizzare l'API di geocodifica per ogni posizione inserita dall'utente, eseguiamo un semplice controllo per vedere se abbiamo già dati per quella particolare riga di input. Il database funziona come una "cache" locale dei nostri dati di geocodifica per non chiedere mai a Google gli stessi dati due volte.  È possibile riavviare il processo in qualsiasi momento cancellando il file *geodata.sqlite*.  Eseguite il programma *geoload.py*. Questo programma leggerà le righe di input in *where.data* e per ogni riga controllerà se è già presente nel database. Se non disponiamo dei dati della posizione, il programma chiamerà l'API di geocodifica per recuperare i dati e archiviarli nel database.  Ecco un esempio di esecuzione dopo che sono già stati inseriti alcuni dati nel database:
+Nella prima fase prendiamo il nostro input "survey" nel file *where.data*, ne leggiamo una riga alla volta e dopo aver recuperato le informazioni geocodificate da Google, le archiviamo nel database *geodata.sqlite*. Prima di utilizzare l'API di geocodifica per ogni posizione inserita dall'utente, eseguiremo un semplice controllo per verificare se siamo già in possesso di dati per quella particolare riga di input. Il database si comporta come se fosse una "cache" locale dei nostri dati di geocodifica in modo da evitare di chiedere a Google due volte gli stessi dati.
+
+Ti sarà possibile riavviare il processo in qualsiasi momento eliminando il file *geodata.sqlite*.
+
+Avvia il programma *geoload.py*. Questo script leggerà le righe di input in *where.data* e verificherà se sono già presente nel database. Se non disponiamo della posizione richiesta, il programma farà una chiamata all'API di google per recuperare i dati e sarvarli nel database.
+
+Ecco un esempio di come si comporti lo script nel caso il database già contenga dei dati:
 
 ~~~~
 Found in database  Northeastern University
@@ -49,7 +58,13 @@ Retrieved 1749 characters {    "results" : [
 ...
 ~~~~
 
-Le prime cinque posizioni sono già nel database e quindi vengono saltate. Il programma esegue la scansione fino al punto in cui trova nuove posizioni e inizia a recuperarle.  Il programma *geoload.py* può essere interrotto in qualsiasi momento e esiste un contatore che è possibile utilizzare per limitare il numero di chiamate all'API di geocodifica per ciascuna esecuzione. Dato che *where.data* ha solo poche centinaia di elementi di dati, non dovreste esaurire il limite giornaliero, ma se disponete di più dati potrebbero essere necessarie più esecuzioni per diversi giorni per far sì che il vostro database contenga tutti i dati di geocodificazione relativi al vostro input.  Dopo aver caricato alcuni dati in *geodata.sqlite*, è possibile visualizzarli utilizzando il programma *geodump.py*. Questo programma legge il database e scrive il file *where.js* contenente la posizione, la latitudine e la longitudine sotto forma di codice JavaScript eseguibile.  Una esecuzione del programma *geodump.py* fornisce i seguenti dati:
+Le prime cinque posizioni sono già presenti nel database e quindi vengono saltate. Il programma continua la verifica fino al punto in cui trova delle posizioni mancanti e ne inizia il recupero.
+
+Il programma *geoload.py*, che può essere interrotto in qualsiasi momento.  é dotato di un contatore che è possibile utilizzare per limitare il numero di chiamate all'API di geocodifica in ciascuna esecuzione. Dato che *where.data* contiene solo poche centinaia di elementi di dati, non dovresti superare il limite giornaliero. Nel caso tu disponga di più dati da verificare potrebbe essere necessario eseguire più volte il programma in giorni diversi per far sì che tu riesca ad avere tutti i dati che ti servono.
+
+Tramite lo script *geodump.py* ti é visualizzare  i dati già caricati nel database *geodata.sqlite*. Questo programma prepara il file JavaScript eseguibile *where.js* contenente l'indirizzo, la latitudine e la longitudine di ogni posizione utilizzando i dati contenuti nel tuo database.
+
+Questo é un esempio di output del programma *geodump.py*:
 
 ~~~~
 Northeastern University, ... Boston, MA 02115, USA 42.3396998 -71.08975
@@ -63,7 +78,7 @@ Kokshetau, Kazakhstan 53.2833333 69.3833333
 Open where.html to view the data in a browser
 ~~~~
 
-Il file *where.html* è costituito da linguaggi HTML e JavaScript per visualizzare una mappa di Google. Legge i dati più recenti in *where.js* per visualizzare i dati. Ecco il formato del file *where.js*:
+Il file *where.html*, costituito da codice HTML e JavaScript, permette di visualizzare in una mappa di Google i dati più recenti contenuti in *where.js*. Questo é un esempio del formato del file *where.js*:
 
 ~~~~ {.js}
 myData = [
@@ -74,20 +89,24 @@ myData = [
 ];
 ~~~~
 
-Questa è una variabile JavaScript che contiene un elenco di elenchi. La sintassi per le costanti dell'elenco JavaScript è molto simile a quella di Python, quindi dovrebbe esservi familiare.  Aprite semplicemente *where.html* in un browser per vedere le posizioni. Potete passare con il mouse su ciascun simbolo della mappa per trovare la posizione che l'API di geocodifica ha restituito per l'input inserito dall'utente. Se non riuscite a vedere alcun dato quando aprite il file *where.html*, potrebbe essere necessario controllare il codice JavaScript o la console di sviluppo del vostro browser.
+Questa è una variabile JavaScript che contiene un elenco di elenchi. La sintassi per le costanti dell'elenco JavaScript dovrebbe esserti familiare in quanto molto simile a quella di Python.
 
-Visualizzazione di reti e interconnessioni
+Apri *where.html* in un browser per visualizzare le posizioni. Passando con il mouse su ciascun marker della mappa vedrai la posizione che restituita dall'API di geocodifica. Se aprendo il file *where.html* non riesci a vedere alcun dato, prova a verifcare il codice  console JavaScript o sviluppatore del tuo browser.
+
+Visualizzare reti e interconnessioni
 -----------------------------------------
 
 \index{Google!page rank}
 \index{Visualization!networks}
 \index{Visualization!page rank}
 
-In questa applicazione eseguiremo alcune delle funzioni di un motore di ricerca. Per prima cosa analizzeremo un piccolo sottoinsieme del web ed eseguiremo una versione semplificata dell'algoritmo della classificazione delle pagine di Google per determinare quali pagine sono maggiormente connesse e quindi visualizzare la classifica della pagina e la connettività del nostro piccolo angolo di web. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per produrre l'output da visualizzare.  Potete scaricare ed estrarre questa applicazione da: [www.py4e.com/code3/pagerank.zip](http://www.py4e.com/code3/pagerank.zip)
+Tramite questa applicazione sperimenteremo alcune funzioni tipiche di un motore di ricerca. Per prima cosa analizzeremo una piccola porzione del web e, tramite una versione semplificata dell'algoritmo di classificazione delle pagine di Google, determineremo quali pagine siano maggiormente connesse. Infine visualizzeremo il rank delle singole pagine e la connessione del nostro piccolo angolo di Rete. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per rappresentare visivamente l'output.
+
+Puoi scaricare ed estrarre questa applicazione da: [www.py4e.com/code3/pagerank.zip](http://www.py4e.com/code3/pagerank.zip)
 
 ![A Page Ranking](height=3.5in@../images/pagerank)
 
-Il primo programma (*spider.py*) esegue la scansione di un sito Web e inserisce una serie di pagine nel database (*spider.sqlite*), registrando i collegamenti tra le pagine. È possibile riavviare il processo in qualsiasi momento cancellando il file *spider.sqlite* e rieseguendo *spider.py*.
+Il primo script (*spider.py*) esegue la scansione di un sito Web e inserisce la serie di pagine nel database (*spider.sqlite*), registrandone i collegamenti. È possibile riavviare il processo in qualsiasi momento eliminando il file *spider.sqlite* ed eseguendo nuovamente *spider.py*.
 
 ~~~~
 Enter web url or enter: http://www.dr-chuck.com/
@@ -98,7 +117,7 @@ How many pages:2
 How many pages:
 ~~~~
 
-In questa sessione di esempio, abbiamo richiesto di eseguire la scansione di un sito Web e recuperare due pagine. Se si riavvia il programma e gli si dice di eseguire la scansione di più pagine, non eseguirà nuovamente la scansione delle pagine già presenti nel database. Al riavvio passa a una pagina casuale non scansionata e inizia da lì. Ogni successiva esecuzione di *spider.py* è quindi additiva.
+In questo esempio, abbiamo indicato al programma di eseguire la scansione di un sito Web specifico (http://www.dr-chuck.com/) e di recuperarne due pagine. Se dovessi riavviare lo script, non verranno prese in considerazione le pagine già presenti nel database; lo spider invece avvierá il processo di acquisizione partendo da una pagina scelta in modo casuale tra quelle non ancora acquisite. Ogni successiva esecuzione di *spider.py* è quindi da considerare incrementale.
 
 ~~~~
 Enter web url or enter: http://www.dr-chuck.com/
@@ -110,7 +129,9 @@ How many pages:3
 How many pages:
 ~~~~
 
-Possiamo avere più punti di partenza nello stesso database, all'interno del programma, sono chiamati "griglie". Lo spider sceglie casualmente tra tutti i link non visitati nel web la successiva pagina da elaborare.  Per scaricare il contenuto del file *spider.sqlite*, potete eseguire *spdump.py* nel seguente modo:
+Puoi quindi avere più punti di partenza presenti nello stesso database, all'interno del programma, chiamati "webs". Lo spider sceglie casualmente la successiva pagina da elaborare tra tutti i link non ancora visitati.
+
+Tramite *spdump.py* puoi copiare il contenuto del file *spider.sqlite*:
 
 ~~~~
 (5, None, 1.0, 3, 'http://www.dr-chuck.com/csev-blog')
@@ -120,7 +141,9 @@ Possiamo avere più punti di partenza nello stesso database, all'interno del pro
 4 rows.
 ~~~~
 
-Viene visualizzato il numero di collegamenti in entrata, la precedente classificazione della pagina, quella nuova, l'identificativo e l'indirizzo della pagina. Il programma *spdump.py* mostra solo le pagine che contengono almeno un collegamento in entrata.  Una volta che alcune pagine hanno popolato il database, potete eseguire ila classificazione delle pagine usando il programma *sprank.py*. Dovete semplicemente indicare quante iterazioni di classificazione di pagine eseguire.
+Viene visualizzato il numero di collegamenti in entrata, la precedente classificazione della pagina, la nuova, l'identificativo e l'indirizzo della pagina. Il programma *spdump.py* mostra solo le pagine che contengono almeno un collegamento in entrata.
+
+Una volta che avrai popolato il database con un numero sufficiente di pagine, puoi calcolare il rank delle pagine tramite *sprank.py*. devi semplicemente indicargli quante iterazioni di classificazione delle pagine eseguire.
 
 ~~~~
 How many iterations:2
@@ -129,7 +152,7 @@ How many iterations:2
 [(1, 0.559), (2, 0.659), (3, 0.985), (4, 2.135), (5, 0.659)]
 ~~~~
 
-Potete scaricare nuovamente il database per vedere che la classificazione delle pagine è stata aggiornata:
+Puoi copiare nuovamente il contenuto del database per vedere se la classificazione delle pagine è stata aggiornata:
 
 ~~~~
 (5, 1.0, 0.985, 3, 'http://www.dr-chuck.com/csev-blog')
@@ -139,7 +162,9 @@ Potete scaricare nuovamente il database per vedere che la classificazione delle 
 4 rows.
 ~~~~
 
-Potete eseguire *sprank.py* a volontà: ogni volta che verrà eseguito, verrà semplicemente raffinata la classificazione delle pagine. Potete anche eseguire *sprank.py* un paio di volte e poi fare uno spidering di alcune pagine con *spider.py* e quindi eseguire *sprank.py* per ricontrollare i valori della classificazione delle pagine. Generalmente un motore di ricerca esegue sia la scansione sia i programmi di classificazione contemporaneamente.  Se si desidera riavviare i calcoli della classificazione della pagina senza effettuare nuovamente lo spidering delle pagine Web, è possibile utilizzare *spreset.py* e quindi riavviare *sprank.py*.
+Puoi eseguire *sprank.py* a volontà: ad ogni esecuzione verrà raffinata la classificazione delle pagine. Puoi anche eseguire *sprank.py* un paio di volte, acquisire alcune altre pagine con *spider.py* e quindi eseguire *sprank.py* per ricontrollare il rank delle pagine. Generalmente un motore di ricerca esegue la scansione e rank delle pagine contemporaneamente.
+
+Se desideri resettare il rank delle pagine senza effettuare nuovamente lo "spidering" delle pagine Web avviando prima *spreset.py* e quindi *sprank.py*.
 
 ~~~~
 How many iterations:50
@@ -162,7 +187,9 @@ How many iterations:50
 [(512, 0.0296), (1, 12.79), (2, 28.93), (3, 6.808), (4, 13.46)]
 ~~~~
 
-Per ogni iterazione dell'algoritmo di classificazione delle pagine, viene visualizzata la variazione media della classificazione per pagina. La rete inizialmente è abbastanza sbilanciata e quindi i singoli valori di classificazione delle pagine cambiano moltissimo nel corso delle iterazioni. Ma in poche brevi iterazioni, la classificazione delle pagine si stabilizza. Dovreste eseguire *sprank.py* abbastanza a lungo da far stabilizzare i valori della classificazione delle pagine.  Se desiderate visualizzare le pagine attualmente in cima alla classifica, eseguite *spjson.py* per leggere il database e scrivere i dati delle pagine maggiormente collegate in formato JSON, in modo da visualizzarli in un browser.
+Ad ogni iterazione dell'algoritmo di rank delle pagine viene visualizzata la variazione media del rank della pagina. La rete è inizialmente abbastanza sbilanciata, comportando una grossa variazione del rank delle pagine nel corso delle iterazioni. Ma in poche brevi iterazioni, questo valore si stabilizza. Dove eseguire *sprank.py* abbastanza a lungo da far stabilizzare i valori della classificazione delle pagine.
+
+Se desiderate visualizzare le pagine attualmente in cima alla classifica, eseguite *spjson.py* per leggere il database e scrivere i dati delle pagine maggiormente collegate in formato JSON, in modo da visualizzarli in un browser.
 
 ~~~~
 Creating JSON output on spider.json...
@@ -170,12 +197,16 @@ How many nodes? 30
 Open force.html in a browser to view the visualization
 ~~~~
 
-Potete visualizzare questi dati aprendo il file *force.html* nel vostro browser. Questo visualizza automaticamente la struttura dei nodi e dei collegamenti. Potete fare clic e trascinare qualsiasi nodo e potete anche fare doppio clic su un nodo per trovare l'URL rappresentato dal nodo.  Se si eseguono nuovamente le altre utilità, rieseguite *spjson.py* e aggiornate il browser per ottenere i nuovi dati da *spider.json*.
+Potete visualizzare questi dati aprendo il file *force.html* nel vostro browser. Questo visualizza automaticamente la struttura dei nodi e dei collegamenti. Potete fare clic e trascinare qualsiasi nodo e potete anche fare doppio clic su un nodo per trovare l'URL rappresentato dal nodo.
+
+Se si eseguono nuovamente le altre utilità, rieseguite *spjson.py* e aggiornate il browser per ottenere i nuovi dati da *spider.json*.
 
 Visualizzazione dei dati della posta elettronica
 ---------------------
 
-Fino a questo punto del libro, avete acquisito una buona familiarità con i nostri file di dati *mbox-short.txt* e *mbox.txt*. Ora è il momento di portare la nostra analisi dei dati di posta elettronica al livello successivo.  Nel mondo reale, a volte è necessario estrarre i dati della posta dai server. Ciò potrebbe richiedere un po' di tempo e i dati potrebbero essere incoerenti, pieni di errori e potrebbe essere necessario un riordino e molte rettifiche. In questa sezione, lavoreremo con un'applicazione che è la più complessa di quelle finora esaminate e acquisiremo e visualizzeremo quasi un gigabyte di dati.
+Fino a questo punto del libro, avete acquisito una buona familiarità con i nostri file di dati *mbox-short.txt* e *mbox.txt*. Ora è il momento di portare la nostra analisi dei dati di posta elettronica al livello successivo.
+
+Nel mondo reale, a volte è necessario estrarre i dati della posta dai server. Ciò potrebbe richiedere un po' di tempo e i dati potrebbero essere incoerenti, pieni di errori e potrebbe essere necessario un riordino e molte rettifiche. In questa sezione, lavoreremo con un'applicazione che è la più complessa di quelle finora esaminate e acquisiremo e visualizzeremo quasi un gigabyte di dati.
 
 ![A Word Cloud from the Sakai Developer List](height=3.5in@../images/wordcloud)
 
@@ -300,8 +331,8 @@ Top 10 Oranizations
 Output written to gline.js
 ~~~~
 
-L'output viene salvato in *gline.js* che viene visualizzato usando *gline.htm*.
+L'output viene salvato in *gline.js* visualizzabile tramite *gline.htm*.
 
 ![Sakai Mail Activity by Organization](../images/mailorg)
 
-Questa applicazione, relativamente complessa e sofisticata, ti mette a dispone di funzionalità per recuperare, ordinare e visualizzare dati reali.
+Questa applicazione é relativamente complessa e sofisticata e ti mette a disposizione le funzionalità di recupero, riordino e visualizzazione di dati reali.
