@@ -22,7 +22,7 @@ In questo progetto, utilizziamo l'API di geocodifica di Google per gestire la po
 ![A Google Map](../images/google-map)
 
 Per iniziare, scarica l'applicazione da:
-[www.py4e.com/code3/geodata.zip](http://www.py4e.com/code3/geodata.zip). 
+[www.py4e.com/code3/geodata.zip](http://www.py4e.com/code3/geodata.zip).
 
 Il primo problema da risolvere è dato dal fatto che le richieste gratuite di geocodifica gratuita all'API di Google sono limitate a un determinato numero. Se devi verificare molti dati, potresti essere obbligato ad interrompere e riavviare il processo di ricerca diverse volte. É meglio quindi dividere il problema in due fasi.
 
@@ -32,7 +32,7 @@ Nella prima fase prendiamo il nostro input "survey" nel file *where.data*, ne le
 
 Ti sarà possibile riavviare il processo in qualsiasi momento eliminando il file *geodata.sqlite*.
 
-Avvia il programma *geoload.py*. Questo script leggerà le righe di input in *where.data* e verificherà se sono già presente nel database. Se non disponiamo della posizione richiesta, il programma farà una chiamata all'API di google per recuperare i dati e sarvarli nel database.
+Avvia il programma *geoload.py*. Questo script leggerà le righe di input in *where.data* e verificherà se sono già presente nel database. Se non disponiamo della posizione richiesta, il programma farà una chiamata all'API di Google per recuperare i dati e salvarli nel database.
 
 Ecco un esempio di come si comporti lo script nel caso il database già contenga dei dati:
 
@@ -91,7 +91,7 @@ myData = [
 
 Questa è una variabile JavaScript che contiene un elenco di elenchi. La sintassi per le costanti dell'elenco JavaScript dovrebbe esserti familiare in quanto molto simile a quella di Python.
 
-Apri *where.html* in un browser per visualizzare le posizioni. Passando con il mouse su ciascun marker della mappa vedrai la posizione che restituita dall'API di geocodifica. Se aprendo il file *where.html* non riesci a vedere alcun dato, prova a verifcare il codice  console JavaScript o sviluppatore del tuo browser.
+Apri *where.html* in un browser per visualizzare le posizioni. Passando con il mouse su ciascun marker della mappa vedrai la posizione che restituita dall'API di geocodifica. Se aprendo il file *where.html* non riesci a vedere alcun dato, prova a verificare il codice  console JavaScript o sviluppatore del tuo browser.
 
 Visualizzare reti e interconnessioni
 -----------------------------------------
@@ -164,7 +164,7 @@ Puoi copiare nuovamente il contenuto del database per vedere se la classificazio
 
 Puoi eseguire *sprank.py* a volontà: ad ogni esecuzione verrà raffinata la classificazione delle pagine. Puoi anche eseguire *sprank.py* un paio di volte, acquisire alcune altre pagine con *spider.py* e quindi eseguire *sprank.py* per ricontrollare il rank delle pagine. Generalmente un motore di ricerca esegue la scansione e rank delle pagine contemporaneamente.
 
-Se desideri resettare il rank delle pagine senza effettuare nuovamente lo "spidering" delle pagine Web avviando prima *spreset.py* e quindi *sprank.py*.
+Se desideri, avviando prima *spreset.py* e quindi *sprank.py*, puoi resettare il rank delle pagine senza effettuare nuovamente lo "spidering" delle pagine Web.
 
 ~~~~
 How many iterations:50
@@ -187,9 +187,9 @@ How many iterations:50
 [(512, 0.0296), (1, 12.79), (2, 28.93), (3, 6.808), (4, 13.46)]
 ~~~~
 
-Ad ogni iterazione dell'algoritmo di rank delle pagine viene visualizzata la variazione media del rank della pagina. La rete è inizialmente abbastanza sbilanciata, comportando una grossa variazione del rank delle pagine nel corso delle iterazioni. Ma in poche brevi iterazioni, questo valore si stabilizza. Dove eseguire *sprank.py* abbastanza a lungo da far stabilizzare i valori della classificazione delle pagine.
+Ad ogni iterazione di questo algoritmo viene visualizzata la variazione media del rank della pagina. Dato che all'inizio la rete è piuttosto sbilanciata, potrai notare una notevole variazione iniziale del rank delle pagine che, nel corso delle varie iterazioni tenderà a stabilizzarsi. È il caso che tu esegua *sprank.py* fino a quando noti che questo valore si stabilizza.
 
-Se desiderate visualizzare le pagine attualmente in cima alla classifica, eseguite *spjson.py* per leggere il database e scrivere i dati delle pagine maggiormente collegate in formato JSON, in modo da visualizzarli in un browser.
+Grazie a *spjson.py* potrai visualizzare le pagine attualmente in cima alla classifica: i loro valori verranno estratti dal database e salvati in un formato JSON.
 
 ~~~~
 Creating JSON output on spider.json...
@@ -197,9 +197,9 @@ How many nodes? 30
 Open force.html in a browser to view the visualization
 ~~~~
 
-Potete visualizzare questi dati aprendo il file *force.html* nel vostro browser. Questo visualizza automaticamente la struttura dei nodi e dei collegamenti. Potete fare clic e trascinare qualsiasi nodo e potete anche fare doppio clic su un nodo per trovare l'URL rappresentato dal nodo.
+Potrai visualizzare la struttura dei nodi e dei collegamenti relativi a questi dati aprendo il file *force.html* in un browser: tramite un clic potrai trascinare qualsiasi nodo e tramite il doppio clic su un nodo verrà visualizzato il relativo URL.
 
-Se si eseguono nuovamente le altre utilità, rieseguite *spjson.py* e aggiornate il browser per ottenere i nuovi dati da *spider.json*.
+Se nel frattempo utilizzi una delle precedenti funzioni, potrai consultare i nuovi dati rieseguendo nuovamente *spjson.py* e visualizzando i dati aggiornati contenuti in *spider.json* sul browser premendo F5.
 
 Visualizzazione dei dati della posta elettronica
 ---------------------
