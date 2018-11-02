@@ -180,10 +180,10 @@ Se nel frattempo utilizzi una delle funzioni precedenti, potrai consultare i dat
 
 ## Visualizzazione dei dati della posta elettronica
 
-Arrivato a questo punto del libro, dovresti aver acquisito una discreta familiarità con i file _mbox-short.txt_ e _mbox.txt_. Ora è il momento di portare al livello successivo la nostra capacità di analisi dei dati di posta elettronica che vi sono contenuti.
+Arrivato a questo punto del libro, dovresti aver acquisito una discreta familiarità con i file _mbox-short.txt_ e _mbox.txt_. Ora è il momento di portare ad un livello superiore la tua capacità di analisi dei dati di posta elettronica.
 
-Nel mondo reale, a volte è necessario estrarre i dati delle Email dai server di posta elettronica. Questa operazione può richiedere tempo e i dati ottenuti potrebbero essere incoerenti, pieni di errori e potrebbe richiedere attività di normalizzazione o rettifica.
-In questa sezione, lavoreremo con l'applicazione più complessa tra quelle finora esaminate che ci permetterà di acquisire e Visualizzare quasi un gigabyte di dati.
+Nel mondo reale potrebbe capitarti di dover estrarre i dati di email dai server di posta elettronica. Questa operazione può richiedere tempo e i dati ottenuti potrebbero essere incoerenti, pieni di errori al punto da richiedere attività di normalizzazione o rettifica.
+In questa sezione, lavoreremo con l'applicazione più complessa tra quelle finora esaminate che ti permetterà di acquisire e visualizzare quasi un gigabyte di dati.
 
 ![A Word Cloud from the Sakai Developer List](height=3.5in@../images/wordcloud)
 
@@ -191,15 +191,15 @@ In questa sezione, lavoreremo con l'applicazione più complessa tra quelle finor
 
 [www.py4e.com/code3/gmane.zip](http://www.py4e.com/code3/gmane.zip).
 
-Utilizzeremo i dati di un servizio gratuito di archiviazione di elenchi di posta elettronica chiamato [www.gmane.org](http://www.gmane.org). Questo servizio è molto popolare fra i progetti open source perché fornisce un archivio consultabile della loro attività di posta elettronica. Ha anche una politica molto liberale sull'accesso ai loro dati attraverso la loro API. Non hanno limiti di velocità nella consultazione, ma richiedono di non sovraccaricare il loro servizio e di prelevare solo i dati necessari. Potrai leggere i termini e le condizioni di gmane in questa pagina:
+Utilizzeremo i dati di un servizio gratuito di archiviazione di elenchi di posta elettronica chiamato [www.gmane.org](http://www.gmane.org). Questo servizio è molto popolare fra i progetti open source sia perché fornisce un archivio consultabile della loro attività di posta elettronica sia perché ha anche una politica molto liberale sull'accesso ai dati attraverso la loro API. Non hanno limiti di velocità nella consultazione, ma richiedono di non sovraccaricare il loro servizio e di prelevare solo i dati necessari. Potrai leggere i termini e le condizioni di gmane in questa pagina:
 
 <http://gmane.org/export.php>.
 
 _È molto importante usare responsabilmente i dati di gmane.org inserendo delle pause durante l'accesso ai loro servizi e distribuendo i compiti più prolungati in un arco di tempo più lungo. Non abusare di questo servizio gratuito e non rovinarlo a discapito di tutti noi._
 
-L'estrazione i dati delle e-mail di Sakai tramite il nostro spider, richiederà oltre un diversi giorni ed alla fine essi occuperanno quasi un gigabyte di spazio. Il file _README.txt_ contenuto nello ZIP sopra riportato dovrebbe contenere istruzioni su come scaricare una copia parziale del file _content.sqlite_ contenente la maggior parte dell'insieme delle e-mail di Sakai che ti eviterin modo da non dover far eseguire lo spider per cinque giorni solo per eseguire i programmi. Se scaricate il contenuto di pre-esame, dovreste comunque eseguire il processo di spidering per recuperare i messaggi più recenti.  
+L'estrazione dei dati delle e-mail di Sakai tramite il nostro spider richiederà diversi giorni ed alla fine essi occuperanno quasi un gigabyte di spazio. Il file _README.txt_ contenuto nello ZIP sopra riportato dovrebbe contenere istruzioni su come scaricare una copia parziale del file _content.sqlite_ contenente la maggior parte dell'insieme delle e-mail di Sakai che ti eviterà di dover passare quasi una settimana a scaricare dati. anche se scarichi questo file, dovrai comunque far girare lo spider per recuperare i messaggi più recenti.  
 
-Il primo passo è quello di lanciare lo spider sul repository gmane. L'URL di base è inserito direttamente in _gmane.py_ ed è inserito nell'elenco degli sviluppatori di Sakai. Potete esaminare un altro repository cambiando l'url di base. Assicuratevi di cancellare il file _content.sqlite_ se cambiate l'URL di base.  
+Il primo passo è quello di lanciare lo spider sul repository gmane. L'URL di base è inserito direttamente in _gmane.py_ ed è presente nell'elenco degli sviluppatori di Sakai. Puoi esaminare in qualunque momento un altro repository cambiando l'url di base ed assicurandoti di eliminare il file _content.sqlite_.  
 
 Il file _gmane.py_ opera come uno spider di cache responsabile in quanto viene eseguito lentamente e recupera un messaggio di posta elettronica al secondo in modo da evitare di essere limitato da gmane. Memorizza tutti i suoi dati in un database e può essere interrotto e riavviato tutte le volte che è necessario. Potrebbero essere necessarie molte ore per scaricare tutti i dati, potrebbe quindi essere necessario riavviare più volte.  Ecco una serie di _gmane.py_ che recupera gli ultimi cinque messaggi dell'elenco degli sviluppatori di Sakai:
 
