@@ -34,7 +34,7 @@ Ti sarà possibile riavviare il processo in qualsiasi momento eliminando il file
 
 Avvia il programma *geoload.py*. Questo script leggerà le righe di input in *where.data* e verificherà se sono già presente nel database. Se non disponiamo della posizione richiesta, il programma farà una chiamata all'API di google per recuperare i dati e sarvarli nel database.
 
-Ecco un esempio di come si comporti lo script nel caso il database contenga già dei dati:
+Ecco un esempio di come si comporti lo script nel caso il database già contenga dei dati:
 
 ~~~~
 Found in database  Northeastern University
@@ -100,11 +100,13 @@ Visualizzare reti e interconnessioni
 \index{Visualization!networks}
 \index{Visualization!page rank}
 
-In questa applicazione sono presenti alcune funzioni tipiche di un motore di ricerca. Per prima cosa analizzeremo un piccolo sottoinsieme del web e, tramite una versione semplificata dell'algoritmo della classificazione delle pagine di Google, determineremo quali pagine siano maggiormente connesse. Infine visualizzeremo il rank della pagina e la connettività del nostro piccolo angolo di web. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per produrre l'output da visualizzare.  Potete scaricare ed estrarre questa applicazione da: [www.py4e.com/code3/pagerank.zip](http://www.py4e.com/code3/pagerank.zip)
+Tramite questa applicazione sperimenteremo alcune funzioni tipiche di un motore di ricerca. Per prima cosa analizzeremo una piccola porzione del web e, tramite una versione semplificata dell'algoritmo di classificazione delle pagine di Google, determineremo quali pagine siano maggiormente connesse. Infine visualizzeremo il rank delle singole pagine e la connessione del nostro piccolo angolo di Rete. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per rappresentare visivamente l'output.
+
+Puoi scaricare ed estrarre questa applicazione da: [www.py4e.com/code3/pagerank.zip](http://www.py4e.com/code3/pagerank.zip)
 
 ![A Page Ranking](height=3.5in@../images/pagerank)
 
-Il primo programma (*spider.py*) esegue la scansione di un sito Web e inserisce una serie di pagine nel database (*spider.sqlite*), registrando i collegamenti tra le pagine. È possibile riavviare il processo in qualsiasi momento cancellando il file *spider.sqlite* e rieseguendo *spider.py*.
+Il primo script (*spider.py*) esegue la scansione di un sito Web e inserisce la serie di pagine nel database (*spider.sqlite*), registrandone i collegamenti. È possibile riavviare il processo in qualsiasi momento eliminando il file *spider.sqlite* ed eseguendo nuovamente *spider.py*.
 
 ~~~~
 Enter web url or enter: http://www.dr-chuck.com/
@@ -115,7 +117,7 @@ How many pages:2
 How many pages:
 ~~~~
 
-In questa sessione di esempio, abbiamo richiesto di eseguire la scansione di un sito Web e recuperare due pagine. Se si riavvia il programma e gli si dice di eseguire la scansione di più pagine, non eseguirà nuovamente la scansione delle pagine già presenti nel database. Al riavvio passa a una pagina casuale non scansionata e inizia da lì. Ogni successiva esecuzione di *spider.py* è quindi additiva.
+In questo esempio, abbiamo indicato al programma di eseguire la scansione di un sito Web specifico (http://www.dr-chuck.com/) e di recuperarne due pagine. Se dovessi riavviare lo script indicandogli di eseguire la scansione di ulteriori pagine, quelle già presenti nel database non verranno prese in considerazione; lo spider invece sceglierà in modo casuale una pagina tra quelle non ancora analizzate da cui avviare il processo. Ogni successiva esecuzione di *spider.py* è quindi da considerare incrementale.
 
 ~~~~
 Enter web url or enter: http://www.dr-chuck.com/
@@ -127,7 +129,7 @@ How many pages:3
 How many pages:
 ~~~~
 
-Possiamo avere più punti di partenza nello stesso database, all'interno del programma, sono chiamati "griglie". Lo spider sceglie casualmente tra tutti i link non visitati nel web la successiva pagina da elaborare.  Per scaricare il contenuto del file *spider.sqlite*, potete eseguire *spdump.py* nel seguente modo:
+Possiamo quindi avere più punti di partenza nello stesso database, all'interno del programma, sono chiamati "griglie". Lo spider sceglie casualmente tra tutti i link non visitati nel web la successiva pagina da elaborare.  Per scaricare il contenuto del file *spider.sqlite*, potete eseguire *spdump.py* nel seguente modo:
 
 ~~~~
 (5, None, 1.0, 3, 'http://www.dr-chuck.com/csev-blog')
