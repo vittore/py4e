@@ -24,15 +24,17 @@ In questo progetto, utilizziamo l'API di geocodifica di Google per gestire la po
 Per iniziare, scarica l'applicazione da:
 [www.py4e.com/code3/geodata.zip](http://www.py4e.com/code3/geodata.zip). 
 
-Il primo problema da risolvere è dato dal fatto che le richieste gratuite di geocodifica gratuita all'API di Google sono limitate a un determinato numero. Se disponi di molti dati, potresti essere obbligato ad interrompere e riavviare il processo di ricerca diverse volte. É meglio quindi dividere il problema in due fasi.
+Il primo problema da risolvere è dato dal fatto che le richieste gratuite di geocodifica gratuita all'API di Google sono limitate a un determinato numero. Se devi verificare molti dati, potresti essere obbligato ad interrompere e riavviare il processo di ricerca diverse volte. É meglio quindi dividere il problema in due fasi.
 
 \index{cache}
 
-Nella prima fase prendiamo il nostro input "survey" nel file *where.data*, ne leggiamo una riga alla volta, recuperiamo le informazioni geocodificate da Google che poi archiviamo nel database *geodata.sqlite*. Prima di utilizzare l'API di geocodifica per ogni posizione inserita dall'utente, eseguiamo un semplice controllo per vedere se siamo già in possesso di dati per quella particolare riga di input. Il database funziona come se fosse una "cache" locale dei nostri dati di geocodifica in modo da evitare di chiedere a Google gli stessi dati due volte.
+Nella prima fase prendiamo il nostro input "survey" nel file *where.data*, ne leggiamo una riga alla volta e dopo aver recuperato le informazioni geocodificate da Google, le archiviamo nel database *geodata.sqlite*. Prima di utilizzare l'API di geocodifica per ogni posizione inserita dall'utente, eseguiremo un semplice controllo per verificare se siamo già in possesso di dati per quella particolare riga di input. Il database si comporta come se fosse una "cache" locale dei nostri dati di geocodifica in modo da evitare di chiedere a Google due volte gli stessi dati.
 
-Ti è possibile riavviare il processo in qualsiasi momento cancellando il file *geodata.sqlite*.
+Ti sarà possibile riavviare il processo in qualsiasi momento eliminando il file *geodata.sqlite*.
 
-Esegui il programma *geoload.py*. Questo programma leggerà le righe di input in *where.data* e per ogni riga controllerà se è già presente nel database. Se non disponiamo dei dati della posizione, il programma chiamerà l'API di geocodifica per recuperare i dati e archiviarli nel database.  Ecco un esempio di esecuzione dopo che sono già stati inseriti alcuni dati nel database:
+Avvia il programma *geoload.py*. Questo script leggerà le righe di input in *where.data* e verificherà se sono già presente nel database. Se non disponiamo della posizione richiesta, il programma farà una chiamata all'API di google per recuperare i dati e sarvarli nel database.
+
+Ecco un esempio di come si comporti lo script nel caso il database contenga già dei dati:
 
 ~~~~
 Found in database  Northeastern University
@@ -56,7 +58,13 @@ Retrieved 1749 characters {    "results" : [
 ...
 ~~~~
 
-Le prime cinque posizioni sono già nel database e quindi vengono saltate. Il programma esegue la scansione fino al punto in cui trova nuove posizioni e inizia a recuperarle.  Il programma *geoload.py* può essere interrotto in qualsiasi momento e esiste un contatore che è possibile utilizzare per limitare il numero di chiamate all'API di geocodifica per ciascuna esecuzione. Dato che *where.data* ha solo poche centinaia di elementi di dati, non dovreste esaurire il limite giornaliero, ma se disponete di più dati potrebbero essere necessarie più esecuzioni per diversi giorni per far sì che il vostro database contenga tutti i dati di geocodificazione relativi al vostro input.  Dopo aver caricato alcuni dati in *geodata.sqlite*, è possibile visualizzarli utilizzando il programma *geodump.py*. Questo programma legge il database e scrive il file *where.js* contenente la posizione, la latitudine e la longitudine sotto forma di codice JavaScript eseguibile.  Una esecuzione del programma *geodump.py* fornisce i seguenti dati:
+Le prime cinque posizioni sono già presenti nel database e quindi vengono saltate. Il programma continua la verifica fino al punto in cui trova delle posizioni mancanti e ne inizia il recupero.
+
+Il programma *geoload.py*, che può essere interrotto in qualsiasi momento.  é dotato di un contatore che è possibile utilizzare per limitare il numero di chiamate all'API di geocodifica in ciascuna esecuzione. Dato che *where.data* contiene solo poche centinaia di elementi di dati, non dovresti superare il limite giornaliero. Nel caso tu disponga di più dati da verificare potrebbe essere necessario eseguire più volte il programma in giorni diversi per far sì che tu riesca ad avere tutti i dati che ti servono.
+
+Tramite lo script *geodump.py* ti é visualizzare  i dati già caricati nel database *geodata.sqlite*. Questo programma prepara il file JavaScript eseguibile *where.js* contenente l'indirizzo, la latitudine e la longitudine di ogni posizione utilizzando i dati contenuti nel tuo database.
+
+Questo é un esempio di output del programma *geodump.py*:
 
 ~~~~
 Northeastern University, ... Boston, MA 02115, USA 42.3396998 -71.08975
@@ -70,7 +78,7 @@ Kokshetau, Kazakhstan 53.2833333 69.3833333
 Open where.html to view the data in a browser
 ~~~~
 
-Il file *where.html* è costituito da linguaggi HTML e JavaScript per visualizzare una mappa di Google. Legge i dati più recenti in *where.js* per visualizzare i dati. Ecco il formato del file *where.js*:
+Il file *where.html*, costituito da codice HTML e JavaScript, permette di visualizzare in una mappa di Google i dati più recenti contenuti in *where.js*. Questo é un esempio del formato del file *where.js*:
 
 ~~~~ {.js}
 myData = [
@@ -81,9 +89,11 @@ myData = [
 ];
 ~~~~
 
-Questa è una variabile JavaScript che contiene un elenco di elenchi. La sintassi per le costanti dell'elenco JavaScript è molto simile a quella di Python, quindi dovrebbe esservi familiare.  Aprite semplicemente *where.html* in un browser per vedere le posizioni. Potete passare con il mouse su ciascun simbolo della mappa per trovare la posizione che l'API di geocodifica ha restituito per l'input inserito dall'utente. Se non riuscite a vedere alcun dato quando aprite il file *where.html*, potrebbe essere necessario controllare il codice JavaScript o la console di sviluppo del vostro browser.
+Questa è una variabile JavaScript che contiene un elenco di elenchi. La sintassi per le costanti dell'elenco JavaScript dovrebbe esserti familiare in quanto molto simile a quella di Python.
 
-Visualizzazione di reti e interconnessioni
+Apri *where.html* in un browser per visualizzare le posizioni. Passando con il mouse su ciascun marker della mappa vedrai la posizione che restituita dall'API di geocodifica. Se aprendo il file *where.html* non riesci a vedere alcun dato, prova a verifcare il codice  console JavaScript o sviluppatore del tuo browser.
+
+Visualizzare reti e interconnessioni
 -----------------------------------------
 
 \index{Google!page rank}
