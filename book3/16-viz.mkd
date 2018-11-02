@@ -2,12 +2,12 @@
 
 
 
-Visualizzare i dati
+Come visualizzare dati
 ========================
 
-Finora abbiamo studiato il linguaggio Python per capirne le logiche interne, le funzioni che offre per la interagire con la rete o i database per manipolare dati.
+Finora abbiamo studiato il linguaggio Python per capirne come utilizzarlo per interagire con internet o i database per manipolare dati.
 
-In questo capitolo, studieremo tre applicazioni dotate delle capacità di gestire e visualizzare i dati. Considerarle degli spunti da cui partire e risolvere problemi reali.  
+In questo capitolo, daremo un'occhiata a tre applicazioni che combinano tutti gli aspetti precedenti per gestire e visualizzare dati. Puoi utilzzare queste applicazioni come spunto per affrontare i problemi reali che potresti dover affrontare.  
 
 Ciascuna applicazione è contenuta in un file ZIP che potrai scaricare, estrarre sul tuo computer ed eseguire.
 
@@ -17,15 +17,22 @@ Costruire una Google map a partire da dati geocodificati
 \index{Google!map}
 \index{Visualization!map}
 
-In questo progetto, utilizziamo l'API di geocodifica di Google per riordinare alcune posizioni geografiche di nomi di università immesse dall'utente e inserire quindi i dati su una mappa di Google.
+In questo progetto, utilizziamo l'API di geocodifica di Google per gestire la posizione geografica di alcune università inserite da un utente visualizzandole successivamente su una mappa di Google.
 
 ![A Google Map](../images/google-map)
 
-Per iniziare, scaricate l'applicazione da: [www.py4e.com/code3/geodata.zip](http://www.py4e.com/code3/geodata.zip). Il primo problema da risolvere è dato dal fatto che la geocodifica gratuita dell'API di Google è limitata a un determinato numero di richieste al giorno. Se si dispone di molti dati, potrebbe essere necessario interrompere e riavviare il processo di ricerca diverse volte. Suddividiamo pertanto il problema in due fasi.
+Per iniziare, scarica l'applicazione da:
+[www.py4e.com/code3/geodata.zip](http://www.py4e.com/code3/geodata.zip). 
+
+Il primo problema da risolvere è dato dal fatto che le richieste gratuite di geocodifica gratuita all'API di Google sono limitate a un determinato numero. Se disponi di molti dati, potresti essere obbligato ad interrompere e riavviare il processo di ricerca diverse volte. É meglio quindi dividere il problema in due fasi.
 
 \index{cache}
 
-Nella prima fase prendiamo il nostro input "survey" nel file *where.data* e lo leggiamo una riga alla volta, recuperiamo le informazioni geocodificate da Google e le archiviamo in un database *geodata.sqlite*. Prima di utilizzare l'API di geocodifica per ogni posizione inserita dall'utente, eseguiamo un semplice controllo per vedere se abbiamo già dati per quella particolare riga di input. Il database funziona come una "cache" locale dei nostri dati di geocodifica per non chiedere mai a Google gli stessi dati due volte.  È possibile riavviare il processo in qualsiasi momento cancellando il file *geodata.sqlite*.  Eseguite il programma *geoload.py*. Questo programma leggerà le righe di input in *where.data* e per ogni riga controllerà se è già presente nel database. Se non disponiamo dei dati della posizione, il programma chiamerà l'API di geocodifica per recuperare i dati e archiviarli nel database.  Ecco un esempio di esecuzione dopo che sono già stati inseriti alcuni dati nel database:
+Nella prima fase prendiamo il nostro input "survey" nel file *where.data*, ne leggiamo una riga alla volta, recuperiamo le informazioni geocodificate da Google che poi archiviamo nel database *geodata.sqlite*. Prima di utilizzare l'API di geocodifica per ogni posizione inserita dall'utente, eseguiamo un semplice controllo per vedere se siamo già in possesso di dati per quella particolare riga di input. Il database funziona come se fosse una "cache" locale dei nostri dati di geocodifica in modo da evitare di chiedere a Google gli stessi dati due volte.
+
+Ti è possibile riavviare il processo in qualsiasi momento cancellando il file *geodata.sqlite*.
+
+Esegui il programma *geoload.py*. Questo programma leggerà le righe di input in *where.data* e per ogni riga controllerà se è già presente nel database. Se non disponiamo dei dati della posizione, il programma chiamerà l'API di geocodifica per recuperare i dati e archiviarli nel database.  Ecco un esempio di esecuzione dopo che sono già stati inseriti alcuni dati nel database:
 
 ~~~~
 Found in database  Northeastern University
