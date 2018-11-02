@@ -19,7 +19,7 @@ Costruire una Google map a partire da dati geocodificati
 
 In questo progetto, utilizziamo l'API di geocodifica di Google per gestire la posizione geografica di alcune università inserite da un utente visualizzandole successivamente su una mappa di Google.
 
-![A Google Map](../images/google-map)
+![Una mappa di Google](../images/google-map)
 
 Per iniziare, scarica l'applicazione da:
 [www.py4e.com/code3/geodata.zip](http://www.py4e.com/code3/geodata.zip).
@@ -83,8 +83,9 @@ Il file *where.html*, costituito da codice HTML e JavaScript, permette di visual
 ~~~~ {.js}
 myData = [
 [42.3396998,-71.08975, 'Northeastern Uni ... Boston, MA 02115'],
-[40.6963857,-89.6160811, 'Bradley University, ... Peoria, IL 61625, USA'],
-[32.7775,35.0216667, 'Technion, Viazman 87, Kesalsaba, 32000, Israel'],
+[40.6963857,-89.6160811, 'Bradley University, ... Peoria,
+IL 61625, USA'], [32.7775,35.0216667, 'Technion, Viazman 87,
+Kesalsaba, 32000, Israel'],
    ...
 ];
 ~~~~

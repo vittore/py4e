@@ -16,7 +16,7 @@ All'inizio di questo libro, abbiamo visto quattro modelli di programmazione di b
 * Codice ripetitivo (cicli)
 * Memorizza e riutilizza (funzioni).
 
-Negli capitoli precedenti abbiamo esplorato l'uso delle variabili semplici e delle strutture di gestione dati come elenchi, tuple e dizionari.  
+Negli capitoli precedenti abbiamo esplorato l'uso delle variabili semplici e delle strutture per la gestione dei dati come elenchi, tuple e dizionari.  
 
 Durante lo sviluppo programmi, progettiamo le strutture con cui conserviamo i dati e scriviamo il codice necessario per manipolarle.   Esistono molti modi per scrivere programmi e, a questo punto, probabilmente avrai scritto alcuni script "non particolarmente eleganti" e altri "più eleganti".   Anche se i tuoi script sono di dimensioni abbastanza contenute, stai iniziando a capire come ci sia un po' di "arte" ed "estetica" nello sviluppare codice.  
 
@@ -29,7 +29,7 @@ Come Iniziare
 
 Come capita per molti aspetti della programmazione è necessario imparare i concetti di base della programmazione ad oggetti prima di poterla utilizzare in modo efficace. Quindi considera questo capitolo come un modo per studiare alcuni termini e concetti elementari illustrati attraverso alcuni semplici esempi con lo scopo di gettare le basi per l'apprendimento futuro. Anche se nel resto del libro adotteremo la programmazione ad oggetti in molti programmi non ne svilupperemo di nuovi.  
 
-Quello che vogliamo ottenere con questo capitolo è una conoscenza di base di come siano fatti gli oggetti,  di funzionano e, soprattutto, come sfruttarne le possibilitá offerte dalle librerie di Python.
+Quello che vogliamo ottenere con questo capitolo è una conoscenza di base di come siano fatti gli oggetti,  di funzionano e, soprattutto, come sfruttarne le possibilità offerte dalle librerie di Python.
 
 Utilizzare gli oggetti
 -------------
@@ -91,11 +91,11 @@ Un programma nella sua forma più semplice richiede uno o più input, fa qualche
 
 Se ci concentriamo un po' di più su questo programma: possiamo vedere che convivono il "mondo esterno" e quello interno al programma stesso.  Le operazioni di input e l'output rappresentanto il modo con cui programma interagisce con il mondo esterno.  All'interno del programma abbiamo il codice e dati necessari per svolgere il compito per cui é stato progettato.
 
-![A Program](height=1.20in@../images/program)
+![Un programma](height=1.20in@../images/program)
 
 All'interno del programma hanno luogo alcune interazioni ben definite con il mondo "esterno" che generalmente non sono qualcosa su cui ci focalizziamo.  Quando scriviamo del codice ci preoccupiamo solo dei dettagli "all'interno del programma".
 
-![A Program as Network of Objects](height=1.50in@../images/program-oo)
+![Un programma come rete di oggetti](height=1.50in@../images/program-oo)
 
 Un modo per pensare alla programmazione orientata agli oggetti è il voler cercare di separare il nostro programma in più "zone".  Ogni "zona" é composta da codice e dati (come se fosse un programma a se stante) e ha interazioni ben definite con il mondo esterno e con le altre zone all'interno del programma.  Se riprendiamo in considerazione lo script di estrazione dei collegamenti in cui abbiamo usato la libreria BeautifulSoup possiamo vedere un programma costituito da più oggetti che interagiscono tra loro per svolgere un compito:
 
@@ -122,11 +122,11 @@ Suddividere un problema - l'incapsulamento
 
 Uno dei vantaggi dell'approccio della programmazione ad oggetti è che la possibilità di ridurre la complessità di uno script: anche se hai la necessità di sapere come sfruttare `urllib` e BeautifulSoup, non hai bisogno di sapere come funzionino internamente tali librerie. Ciò ti consente di concentrarti sulla parte del problema che devi risolvere lasciando perdere altree altre parti del programma.
 
-![Ignoring Detail When Using an Object](height=1.50in@../images/program-oo-code)
+![Ignorare i dettagli quando si usa un oggetto](height=1.50in@../images/program-oo-code)
 
 Questa capacità di concentrarci sulla parte di un programma che ci interessa ignorando il resto del programma è utile anche per gli sviluppatori degli oggetti stessi:  i programmatori che curano lo sviluppo BeautifulSoup non hanno bisogno di sapere o preoccuparsi di come tu abbia recuperato la pagina HTML da analizzare, quali parti tu voglia leggere o cosa tu intenda fare con i dati che hai estratto.
 
-![Ignoring Detail When Building an Object](height=1.50in@../images/program-oo-bs4)
+![Ignorare i dettagli quando si costruisce un oggetto](height=1.50in@../images/program-oo-bs4)
 
 \index{encapsulation}
 
@@ -149,7 +149,7 @@ Ogni metodo che ha l'aspetto di una funzione, inizia con la parola chiave `def` 
 
 Proprio come la parola chiave `def` non provoca l'esecuzione del codice della funzione, la parola chiave `class` non crea un oggetto.  Piuttosto la parola chiave `class` definisce un modello che indica quali dati e codice saranno contenuti in ogni oggetto di tipo `PartyAnimal`.  Potresti pensare che la classe sia uno stampino per biscotti e che gli oggetti creati utilizzando la classe siano i biscotti^[Cookie immagine copyright CC-BY https://www.flickr.com/photos/dinnerseries/23570475099]. Nel preparare i biscotti, sai che la  glassa non va messa sullo stampino quanto piuttosto sui biscotti e hai sempre la possibilità di mettere una glassa diversa su ciascun biscotto.
 
-![A Class and Two Objects](height=2.0in@../photos/cookie_cutter_flickr_Didriks)
+![Una classe e due oggetti](height=2.0in@../photos/cookie_cutter_flickr_Didriks)
 
 Ma ora continuiamo ad analizzare il codice di esempio. Osserva la prima riga di codice eseguibile:
 
@@ -205,7 +205,7 @@ So far 4
 
 L'oggetto è stato costituito e il metodo `party` è chiamato quattro volte, incrementando e visualizzando il valore di `x` all'interno l'oggetto `an`.
 
-Classi come tipi
+Le classi come tipi
 ----------------
 
 \index{dir}
@@ -239,7 +239,7 @@ Se vogliamo che il nostro oggetto si renda conto di questi momenti di costruzion
 
 \VerbatimInput{../code3/party4.py}
 
-Questo programma dará luogo al seguente output:
+Questo programma darà luogo al seguente output:
 
     I am contructed
     So far 1
@@ -288,13 +288,13 @@ L'output del programma mostra che ognuno degli oggetti (`s` e `j`) contiene le p
 Ereditarietà
 -----------
 
-Un'altra caratteristica potente della programmazione orientata agli oggetti è la possibilità di creare una nuova classe estendendone una giá esistente.  Quando estendiamo una classe, chiamiamo la classe originale 'classe genitore' e la nuova 'classe figlia'.  
+Un'altra caratteristica potente della programmazione orientata agli oggetti è la possibilità di creare una nuova classe estendendone una già esistente.  Quando estendiamo una classe, chiamiamo la classe originale 'classe genitore' e la nuova 'classe figlia'.  
 
 In questo esempio sposteremo la nostra classe `PartyAnimal` nel suo file:
 
 \VerbatimInput{../code3/party.py}
 
-Quindi abbiamo la possibilitá di 'importare' la classe `PartyAnimal` in un nuovo file ed estenderla come segue:
+Quindi abbiamo la possibilità di 'importare' la classe `PartyAnimal` in un nuovo file ed estenderla come segue:
 
 \VerbatimInput{../code3/party6.py}
 
@@ -334,7 +334,7 @@ Quindi visualizziamo il primo elemento nell'elenco usando le parentesi quadre ch
 
 Al termine del programma, prima che venga scartato l'oggetto `stuff`, viene chiamato il *distruttore* (denominato `__del__`) in modo che l'oggetto possa eliminare qualsiasi questione rimasta in sospeso.  
 
-Queste sono le basi e la terminologia della programmazione ad oggetti. Ci sono molti dettagli aggiuntivi su come utilizzare al meglio questo approccio durante lo sviluppo di applicazioni e librerie di grandi dimensioni ma ciò va oltre lo scopo di questo capitolo.^ [Se sei curioso di sapere dove è definita la classe list, dai un'occhiata (speriamo che l'URL non sia cambiato!) https://github.com/python/cpython/blob/master/Objects/listobject.c - la classe "list" è scritta nel linguaggio C.  Se ti senti attratto da quel tipo di codice sorgente, prendi in considerazione l'idea di esplorare altri corsi di informatica.]
+Queste sono le basi e la terminologia della programmazione ad oggetti. Ci sono molti dettagli aggiuntivi su come utilizzare al meglio questo approccio durante lo sviluppo di applicazioni e librerie di grandi dimensioni ma ciò va oltre lo scopo di questo capitolo.^[Se sei curioso di sapere dove è definita la classe list, dai un'occhiata (speriamo che l'URL non sia cambiato!) https://github.com/python/cpython/blob/master/Objects/listobject.c - la classe "list" è scritta nel linguaggio C.  Se ti senti attratto da quel tipo di codice sorgente, prendi in considerazione l'idea di esplorare altri corsi di informatica.]
 
 Glossario
 --------
@@ -355,7 +355,7 @@ Glossario
 : Un metodo opzionale con un nome speciale (`__init__`) chiamato nel momento in cui una classe viene usata per costruire un oggetto. Di solito viene utilizzato per impostare i valori iniziali dell'oggetto.
 \index{constructor}
 
-**Destructor**
+**Distruttore**
 : Usato raramente, un metodo opzionale con un nome speciale (`__del__`) che viene chiamato appena prima che un oggetto venga distrutto.
 \index{destructor}
 
