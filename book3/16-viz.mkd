@@ -204,7 +204,7 @@ Se nel frattempo utilizzi una delle funzioni precedenti, potrai consultare i dat
 Visualizzazione dei dati della posta elettronica
 ---------------------
 
-Arrivato a questo punto del libro, dovresti aver acquisito una discreta familiarità con i file *mbox-short.txt* e *mbox.txt*. Ora è il momento di portare al livello successivo la nostra analisi dei dati di posta elettronica che vi sono contenuti.
+Arrivato a questo punto del libro, dovresti aver acquisito una discreta familiarità con i file *mbox-short.txt* e *mbox.txt*. Ora è il momento di portare al livello successivo la nostra capacita` di analisi dei dati di posta elettronica che vi sono contenuti.
 
 Nel mondo reale, a volte è necessario estrarre i dati della posta dai server. Ciò potrebbe richiedere un po' di tempo e i dati potrebbero essere incoerenti, pieni di errori e potrebbe essere necessario un riordino e molte rettifiche. In questa sezione, lavoreremo con un'applicazione che è la più complessa di quelle finora esaminate e acquisiremo e visualizzeremo quasi un gigabyte di dati.
 
