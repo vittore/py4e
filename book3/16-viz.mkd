@@ -117,7 +117,7 @@ How many pages:2
 How many pages:
 ~~~~
 
-In questo esempio, abbiamo indicato al programma di eseguire la scansione di un sito Web specifico (http://www.dr-chuck.com/) e di recuperarne due pagine. Se dovessi riavviare lo script indicandogli di eseguire la scansione di ulteriori pagine, quelle già presenti nel database non verranno prese in considerazione; lo spider invece sceglierà in modo casuale una pagina tra quelle non ancora analizzate da cui avviare il processo. Ogni successiva esecuzione di *spider.py* è quindi da considerare incrementale.
+In questo esempio, abbiamo indicato al programma di eseguire la scansione di un sito Web specifico (http://www.dr-chuck.com/) e di recuperarne due pagine. Se dovessi riavviare lo script, non verranno prese in considerazione le pagine già presenti nel database; lo spider invece avvierá il processo di acquisizione partendo da una pagina scelta in modo casuale tra quelle non ancora acquisite. Ogni successiva esecuzione di *spider.py* è quindi da considerare incrementale.
 
 ~~~~
 Enter web url or enter: http://www.dr-chuck.com/
@@ -129,7 +129,9 @@ How many pages:3
 How many pages:
 ~~~~
 
-Possiamo quindi avere più punti di partenza nello stesso database, all'interno del programma, sono chiamati "griglie". Lo spider sceglie casualmente tra tutti i link non visitati nel web la successiva pagina da elaborare.  Per scaricare il contenuto del file *spider.sqlite*, potete eseguire *spdump.py* nel seguente modo:
+Puoi quindi avere più punti di partenza presenti nello stesso database, all'interno del programma, chiamati "webs". Lo spider sceglie casualmente la successiva pagina da elaborare tra tutti i link non ancora visitati.
+
+Tramite *spdump.py* puoi copiare il contenuto del file *spider.sqlite*:
 
 ~~~~
 (5, None, 1.0, 3, 'http://www.dr-chuck.com/csev-blog')
@@ -139,7 +141,9 @@ Possiamo quindi avere più punti di partenza nello stesso database, all'interno 
 4 rows.
 ~~~~
 
-Viene visualizzato il numero di collegamenti in entrata, la precedente classificazione della pagina, quella nuova, l'identificativo e l'indirizzo della pagina. Il programma *spdump.py* mostra solo le pagine che contengono almeno un collegamento in entrata.  Una volta che alcune pagine hanno popolato il database, potete eseguire ila classificazione delle pagine usando il programma *sprank.py*. Dovete semplicemente indicare quante iterazioni di classificazione di pagine eseguire.
+Viene visualizzato il numero di collegamenti in entrata, la precedente classificazione della pagina, la nuova, l'identificativo e l'indirizzo della pagina. Il programma *spdump.py* mostra solo le pagine che contengono almeno un collegamento in entrata.
+
+Una volta che avrai popolato il database con un numero sufficiente di pagine, puoi calcolare il rank delle pagine tramite *sprank.py*. devi semplicemente indicargli quante iterazioni di classificazione delle pagine eseguire.
 
 ~~~~
 How many iterations:2
@@ -148,7 +152,7 @@ How many iterations:2
 [(1, 0.559), (2, 0.659), (3, 0.985), (4, 2.135), (5, 0.659)]
 ~~~~
 
-Potete scaricare nuovamente il database per vedere che la classificazione delle pagine è stata aggiornata:
+Puoi copiare nuovamente il contenuto del database per vedere se la classificazione delle pagine è stata aggiornata:
 
 ~~~~
 (5, 1.0, 0.985, 3, 'http://www.dr-chuck.com/csev-blog')
@@ -158,7 +162,9 @@ Potete scaricare nuovamente il database per vedere che la classificazione delle 
 4 rows.
 ~~~~
 
-Potete eseguire *sprank.py* a volontà: ogni volta che verrà eseguito, verrà semplicemente raffinata la classificazione delle pagine. Potete anche eseguire *sprank.py* un paio di volte e poi fare uno spidering di alcune pagine con *spider.py* e quindi eseguire *sprank.py* per ricontrollare i valori della classificazione delle pagine. Generalmente un motore di ricerca esegue sia la scansione sia i programmi di classificazione contemporaneamente.  Se si desidera riavviare i calcoli della classificazione della pagina senza effettuare nuovamente lo spidering delle pagine Web, è possibile utilizzare *spreset.py* e quindi riavviare *sprank.py*.
+Puoi eseguire *sprank.py* a volontà: ad ogni esecuzione verrà raffinata la classificazione delle pagine. Puoi anche eseguire *sprank.py* un paio di volte, acquisire alcune altre pagine con *spider.py* e quindi eseguire *sprank.py* per ricontrollare il rank delle pagine. Generalmente un motore di ricerca esegue la scansione e rank delle pagine contemporaneamente.
+
+Se desideri resettare il rank delle pagine senza effettuare nuovamente lo "spidering" delle pagine Web avviando prima *spreset.py* e quindi *sprank.py*.
 
 ~~~~
 How many iterations:50
@@ -181,7 +187,9 @@ How many iterations:50
 [(512, 0.0296), (1, 12.79), (2, 28.93), (3, 6.808), (4, 13.46)]
 ~~~~
 
-Per ogni iterazione dell'algoritmo di classificazione delle pagine, viene visualizzata la variazione media della classificazione per pagina. La rete inizialmente è abbastanza sbilanciata e quindi i singoli valori di classificazione delle pagine cambiano moltissimo nel corso delle iterazioni. Ma in poche brevi iterazioni, la classificazione delle pagine si stabilizza. Dovreste eseguire *sprank.py* abbastanza a lungo da far stabilizzare i valori della classificazione delle pagine.  Se desiderate visualizzare le pagine attualmente in cima alla classifica, eseguite *spjson.py* per leggere il database e scrivere i dati delle pagine maggiormente collegate in formato JSON, in modo da visualizzarli in un browser.
+Ad ogni iterazione dell'algoritmo di rank delle pagine viene visualizzata la variazione media del rank della pagina. La rete è inizialmente abbastanza sbilanciata, comportando una grossa variazione del rank delle pagine nel corso delle iterazioni. Ma in poche brevi iterazioni, questo valore si stabilizza. Dove eseguire *sprank.py* abbastanza a lungo da far stabilizzare i valori della classificazione delle pagine.
+
+Se desiderate visualizzare le pagine attualmente in cima alla classifica, eseguite *spjson.py* per leggere il database e scrivere i dati delle pagine maggiormente collegate in formato JSON, in modo da visualizzarli in un browser.
 
 ~~~~
 Creating JSON output on spider.json...
@@ -189,12 +197,16 @@ How many nodes? 30
 Open force.html in a browser to view the visualization
 ~~~~
 
-Potete visualizzare questi dati aprendo il file *force.html* nel vostro browser. Questo visualizza automaticamente la struttura dei nodi e dei collegamenti. Potete fare clic e trascinare qualsiasi nodo e potete anche fare doppio clic su un nodo per trovare l'URL rappresentato dal nodo.  Se si eseguono nuovamente le altre utilità, rieseguite *spjson.py* e aggiornate il browser per ottenere i nuovi dati da *spider.json*.
+Potete visualizzare questi dati aprendo il file *force.html* nel vostro browser. Questo visualizza automaticamente la struttura dei nodi e dei collegamenti. Potete fare clic e trascinare qualsiasi nodo e potete anche fare doppio clic su un nodo per trovare l'URL rappresentato dal nodo.
+
+Se si eseguono nuovamente le altre utilità, rieseguite *spjson.py* e aggiornate il browser per ottenere i nuovi dati da *spider.json*.
 
 Visualizzazione dei dati della posta elettronica
 ---------------------
 
-Fino a questo punto del libro, avete acquisito una buona familiarità con i nostri file di dati *mbox-short.txt* e *mbox.txt*. Ora è il momento di portare la nostra analisi dei dati di posta elettronica al livello successivo.  Nel mondo reale, a volte è necessario estrarre i dati della posta dai server. Ciò potrebbe richiedere un po' di tempo e i dati potrebbero essere incoerenti, pieni di errori e potrebbe essere necessario un riordino e molte rettifiche. In questa sezione, lavoreremo con un'applicazione che è la più complessa di quelle finora esaminate e acquisiremo e visualizzeremo quasi un gigabyte di dati.
+Fino a questo punto del libro, avete acquisito una buona familiarità con i nostri file di dati *mbox-short.txt* e *mbox.txt*. Ora è il momento di portare la nostra analisi dei dati di posta elettronica al livello successivo.
+
+Nel mondo reale, a volte è necessario estrarre i dati della posta dai server. Ciò potrebbe richiedere un po' di tempo e i dati potrebbero essere incoerenti, pieni di errori e potrebbe essere necessario un riordino e molte rettifiche. In questa sezione, lavoreremo con un'applicazione che è la più complessa di quelle finora esaminate e acquisiremo e visualizzeremo quasi un gigabyte di dati.
 
 ![A Word Cloud from the Sakai Developer List](height=3.5in@../images/wordcloud)
 
