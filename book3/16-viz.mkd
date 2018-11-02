@@ -50,11 +50,11 @@ Ecco un esempio di come si comporti lo script nel caso il database già contenga
     {'status': 'OK', 'results': ... }
     ...
 
-Le prime cinque posizioni sono già presenti nel database e quindi vengono saltate. Il programma continua la verifica fino al punto in cui trova delle posizioni mancanti e ne inizia il recupero.
+Le prime cinque entità sono state saltate poiché erano già presenti nel database. Il programma ha continuato la verifica fino a quando ha trovato una entità con la posizione mancante e ne ha iniziato il recupero.
 
-Il programma _geoload.py_, che può essere interrotto in qualsiasi momento.  é dotato di un contatore che è possibile utilizzare per limitare il numero di chiamate all'API di geocodifica in ciascuna esecuzione. Dato che _where.data_ contiene solo poche centinaia di elementi di dati, non dovresti superare il limite giornaliero. Nel caso tu disponga di più dati da verificare potrebbe essere necessario eseguire più volte il programma in giorni diversi per far sì che tu riesca ad avere tutti i dati che ti servono.
+Il programma _geoload.py_, che può essere interrotto in qualsiasi momento, é dotato di un contatore che permette di limitare il numero di chiamate all'API di Google in ciascuna esecuzione. Dato che _where.data_ contiene solo poche centinaia di elementi di dati non dovresti superare il limite giornaliero. Nel caso tu disponga di più entità da verificare potrebbe essere necessario eseguire più volte il programma in giorni diversi prima di ottenere tutti i dati che ti servono.
 
-Tramite lo script _geodump.py_ ti é visualizzare  i dati già caricati nel database _geodata.sqlite_. Questo programma prepara il file JavaScript eseguibile _where.js_ contenente l'indirizzo, la latitudine e la longitudine di ogni posizione utilizzando i dati contenuti nel tuo database.
+Tramite lo script _geodump.py_ ti é visualizzare  i dati già caricati nel database _geodata.sqlite_. Questo programma crea il file JavaScript eseguibile _where.js_ contenente l'indirizzo, la latitudine e la longitudine di ogni entità utilizzando i dati contenuti nel tuo database.
 
 Questo é un esempio di output del programma _geodump.py_:
 
@@ -68,7 +68,8 @@ Questo é un esempio di output del programma _geodump.py_:
     12 records written to where.js
     Open where.html to view the data in a browser
 
-Il file _where.html_, costituito da codice HTML e JavaScript, permette di visualizzare in una mappa di Google i dati più recenti contenuti in _where.js_. Questo é un esempio del formato del file _where.js_:
+Il file _where.html_, costituito da codice HTML e JavaScript, permette di visualizzare in una Google Map i dati più recenti contenuti in _where.js_.
+Questo é un esempio della struttura del file _where.js_:
 
 ```{.js}
 myData = [
@@ -82,7 +83,7 @@ Kesalsaba, 32000, Israel'],
 
 Questa è una variabile JavaScript che contiene un elenco di elenchi. La sintassi per le costanti dell'elenco JavaScript dovrebbe esserti familiare in quanto molto simile a quella di Python.
 
-Apri _where.html_ in un browser per visualizzare le posizioni. Passando con il mouse su ciascun marker della mappa vedrai la posizione che restituita dall'API di geocodifica. Se aprendo il file _where.html_ non riesci a vedere alcun dato, prova a verificare il codice  console JavaScript o sviluppatore del tuo browser.
+Per poter verdere le posizioni geografiche delle ent devi aprire _where.html_ in un browser. Passando con il mouse su ciascun marker della mappa vedrai la posizione che restituita dall'API di geocodifica. Se aprendo il file _where.html_ non riesci a vedere alcun dato, prova a verificare le impostazioni della console JavaScript o sviluppatore del tuo browser.
 
 ## Visualizzare reti e interconnessioni
 
@@ -90,13 +91,13 @@ Apri _where.html_ in un browser per visualizzare le posizioni. Passando con il m
 \\index{Visualization!networks}
 \\index{Visualization!page rank}
 
-Tramite questa applicazione sperimenteremo alcune funzioni tipiche di un motore di ricerca. Per prima cosa analizzeremo una piccola porzione del web e, tramite una versione semplificata dell'algoritmo di classificazione delle pagine di Google, determineremo quali pagine siano maggiormente connesse. Infine visualizzeremo il rank delle singole pagine e la connessione del nostro piccolo angolo di Rete. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per rappresentare visivamente l'output.
+Tramite questa applicazione sperimenteremo alcune funzioni tipiche di un motore di ricerca. Per prima cosa analizzeremo una piccola porzione del web e, tramite una versione semplificata dell'algoritmo di ranking delle pagine di Google, determineremo quali pagine siano maggiormente connesse. Infine visualizzeremo il rank delle singole pagine e la connessioni del nostro piccolo angolo di Rete. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per rappresentare visivamente l'output.
 
 Puoi scaricare ed estrarre questa applicazione da: [www.py4e.com/code3/pagerank.zip](http://www.py4e.com/code3/pagerank.zip)
 
 ![A Page Ranking](height=3.5in@../images/pagerank)
 
-Il primo script (_spider.py_) esegue la scansione di un sito Web e inserisce la serie di pagine nel database (_spider.sqlite_), registrandone i collegamenti. È possibile riavviare il processo in qualsiasi momento eliminando il file _spider.sqlite_ ed eseguendo nuovamente _spider.py_.
+Il primo script (_spider.py_) esegue la scansione di un sito Web e inserisce la serie di pagine nel database (_spider.sqlite_), registrando anche i collegamenti tra le singole pagine. È possibile riavviare da zero il processo in qualsiasi momento eliminando il file _spider.sqlite_ ed eseguendo nuovamente _spider.py_.
 
     Enter web url or enter: http://www.dr-chuck.com/
     ['http://www.dr-chuck.com']
@@ -105,7 +106,7 @@ Il primo script (_spider.py_) esegue la scansione di un sito Web e inserisce la 
     2 http://www.dr-chuck.com/csev-blog/ 57
     How many pages:
 
-In questo esempio, abbiamo indicato al programma di eseguire la scansione di un sito Web specifico (<http://www.dr-chuck.com/>) e di recuperarne due pagine. Se dovessi riavviare lo script, non verranno prese in considerazione le pagine già presenti nel database; lo spider invece avvierá il processo di acquisizione partendo da una pagina scelta in modo casuale tra quelle non ancora acquisite. Ogni successiva esecuzione di _spider.py_ è quindi da considerare incrementale.
+In questo esempio, abbiamo indicato al programma di eseguire la scansione di un sito Web specifico (<http://www.dr-chuck.com/>) e di recuperarne due pagine. Se dovessi riavviare lo script per controllare altre pagine, ricorda che quelle già presenti nel database non verranno prese in considerazione; lo spider invece avvierà il processo di acquisizione partendo da una pagina scelta in modo casuale tra quelle non ancora acquisite. Ogni successiva esecuzione di _spider.py_ è quindi da considerare incrementale rispetto alle precedenti.
 
     Enter web url or enter: http://www.dr-chuck.com/
     ['http://www.dr-chuck.com']
@@ -115,9 +116,9 @@ In questo esempio, abbiamo indicato al programma di eseguire la scansione di un 
     5 http://www.dr-chuck.com/dr-chuck/resume/index.htm 13
     How many pages:
 
-Puoi quindi avere più punti di partenza presenti nello stesso database, all'interno del programma, chiamati "webs". Lo spider sceglie casualmente la successiva pagina da elaborare tra tutti i link non ancora visitati.
+in altre parole nello stesso database/programma possono essere presenti più punti di partenza potenziali, chiamati "webs". Lo spider sceglie casualmente la successiva pagina da elaborare tra tutti i link non ancora visitati.
 
-Tramite _spdump.py_ puoi copiare il contenuto del file _spider.sqlite_:
+Tramite _spdump.py_ puoi scaricare il contenuto del file _spider.sqlite_:
 
     (5, None, 1.0, 3, 'http://www.dr-chuck.com/csev-blog')
     (3, None, 1.0, 4, 'http://www.dr-chuck.com/dr-chuck/resume/speaking.htm')
@@ -125,16 +126,16 @@ Tramite _spdump.py_ puoi copiare il contenuto del file _spider.sqlite_:
     (1, None, 1.0, 5, 'http://www.dr-chuck.com/dr-chuck/resume/index.htm')
     4 rows.
 
-Viene visualizzato il numero di collegamenti in entrata, la precedente classificazione della pagina, la nuova, l'identificativo e l'indirizzo della pagina. Il programma _spdump.py_ mostra solo le pagine che contengono almeno un collegamento in entrata.
+Questo comando ti permette di visualizzare il numero di collegamenti in entrata, la precedente e la nuova classificazione della pagina, il suo identificativo ed il  suo indirizzo. Nota che _spdump.py_ mostra solo le pagine che contengono almeno un collegamento in entrata.
 
-Una volta che avrai popolato il database con un numero sufficiente di pagine, puoi calcolare il rank delle pagine tramite _sprank.py_. devi semplicemente indicargli quante iterazioni di classificazione delle pagine eseguire.
+Una volta che avrai popolato il database con un numero sufficiente di pagine, puoi calcolare il rank delle pagine tramite _sprank.py_. Devi semplicemente indicargli quante iterazioni di classificazione delle pagine eseguire.
 
     How many iterations:2
     1 0.546848992536
     2 0.226714939664
     [(1, 0.559), (2, 0.659), (3, 0.985), (4, 2.135), (5, 0.659)]
 
-Puoi copiare nuovamente il contenuto del database per vedere se la classificazione delle pagine è stata aggiornata:
+Puoi scaricare nuovamente il contenuto del database per vedere se la classificazione delle pagine è stata modificata:
 
     (5, 1.0, 0.985, 3, 'http://www.dr-chuck.com/csev-blog')
     (3, 1.0, 2.135, 4, 'http://www.dr-chuck.com/dr-chuck/resume/speaking.htm')
@@ -142,9 +143,9 @@ Puoi copiare nuovamente il contenuto del database per vedere se la classificazio
     (1, 1.0, 0.659, 5, 'http://www.dr-chuck.com/dr-chuck/resume/index.htm')
     4 rows.
 
-Puoi eseguire _sprank.py_ a volontà: ad ogni esecuzione verrà raffinata la classificazione delle pagine. Puoi anche eseguire _sprank.py_ un paio di volte, acquisire alcune altre pagine con _spider.py_ e quindi eseguire _sprank.py_ per ricontrollare il rank delle pagine. Generalmente un motore di ricerca esegue la scansione e rank delle pagine contemporaneamente.
+Puoi eseguire _sprank.py_ a volontà: ad ogni esecuzione verrà raffinata la classificazione delle pagine. Puoi anche eseguire _sprank.py_ un paio di volte, acquisire altre pagine con _spider.py_ e quindi eseguire nuovamente _sprank.py_ per ricontrollare il rank delle pagine. Generalmente un motore di ricerca esegue  contemporaneamente la scansione ed il rank delle pagine.
 
-Se desideri, avviando prima _spreset.py_ e quindi _sprank.py_, puoi resettare il rank delle pagine senza effettuare nuovamente lo "spidering" delle pagine Web.
+Se desideri, avviando prima _spreset.py_ e successivamente _sprank.py_, puoi resettare il rank delle pagine senza effettuare nuovamente lo "spidering" delle pagine Web.
 
     How many iterations:50
     1 0.546848992536
@@ -165,17 +166,17 @@ Se desideri, avviando prima _spreset.py_ e quindi _sprank.py_, puoi resettare il
     50 5.10410499467e-05
     [(512, 0.0296), (1, 12.79), (2, 28.93), (3, 6.808), (4, 13.46)]
 
-Ad ogni iterazione di questo algoritmo viene visualizzata la variazione media del rank della pagina. Dato che all'inizio la rete è piuttosto sbilanciata, potrai notare una notevole variazione iniziale del rank delle pagine che, nel corso delle varie iterazioni tenderà a stabilizzarsi. È il caso che tu esegua _sprank.py_ fino a quando noti che questo valore si stabilizza.
+Ad ogni iterazione di questo algoritmo viene visualizzata la variazione media del rank della pagina. Dato che all'inizio la rete è piuttosto sbilanciata, potrai notare una notevole variazione iniziale del rank delle pagine che, nel corso delle varie iterazioni tenderà successivamente a stabilizzarsi. È il caso che tu esegua _sprank.py_ fino a quando noti che questo valore non subisce variazioni significative.
 
-Grazie a _spjson.py_ potrai visualizzare le pagine attualmente in cima alla classifica: i loro valori verranno estratti dal database e salvati in un formato JSON.
+Grazie a _spjson.py_ potrai visualizzare le pagine attualmente con rank maggiore: i loro valori verranno estratti dal database e salvati in un formato JSON.
 
     Creating JSON output on spider.json...
     How many nodes? 30
     Open force.html in a browser to view the visualization
 
-Potrai visualizzare la struttura dei nodi e dei collegamenti relativi a questi dati aprendo il file _force.html_ in un browser: tramite un clic potrai trascinare qualsiasi nodo e tramite il doppio clic su un nodo verrà visualizzato il relativo URL.
+Potrai visualizzare la struttura dei nodi e dei collegamenti relativi a questi dati aprendo il file _force.html_ in un browser. una volta aperto il file ti sarà possibile, tramite un clic, trascinare qualsiasi nodo e, tramite il doppio clic, visualizzare l'URL di un nodo specifico.
 
-Se nel frattempo utilizzi una delle funzioni precedenti, potrai consultare i dati aggiornati contenuti in _spider.json_ rieseguendo nuovamente _spjson.py_ e premendo f5 una volta ritornato sul browser.
+Se nel frattempo utilizzi una delle funzioni precedenti, potrai consultare i dati aggiornati contenuti in _spider.json_ rieseguendo nuovamente _spjson.py_ e premendo F5 una volta ritornato sul browser.
 
 ## Visualizzazione dei dati della posta elettronica
 
