@@ -100,7 +100,7 @@ Visualizzare reti e interconnessioni
 \index{Visualization!networks}
 \index{Visualization!page rank}
 
-In questa applicazione eseguiremo alcune delle funzioni di un motore di ricerca. Per prima cosa analizzeremo un piccolo sottoinsieme del web ed eseguiremo una versione semplificata dell'algoritmo della classificazione delle pagine di Google per determinare quali pagine sono maggiormente connesse e quindi visualizzare la classifica della pagina e la connettività del nostro piccolo angolo di web. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per produrre l'output da visualizzare.  Potete scaricare ed estrarre questa applicazione da: [www.py4e.com/code3/pagerank.zip](http://www.py4e.com/code3/pagerank.zip)
+In questa applicazione sono presenti alcune funzioni tipiche di un motore di ricerca. Per prima cosa analizzeremo un piccolo sottoinsieme del web e, tramite una versione semplificata dell'algoritmo della classificazione delle pagine di Google, determineremo quali pagine siano maggiormente connesse. Infine visualizzeremo il rank della pagina e la connettività del nostro piccolo angolo di web. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per produrre l'output da visualizzare.  Potete scaricare ed estrarre questa applicazione da: [www.py4e.com/code3/pagerank.zip](http://www.py4e.com/code3/pagerank.zip)
 
 ![A Page Ranking](height=3.5in@../images/pagerank)
 
@@ -317,8 +317,8 @@ Top 10 Oranizations
 Output written to gline.js
 ~~~~
 
-L'output viene salvato in *gline.js* che viene visualizzato usando *gline.htm*.
+L'output viene salvato in *gline.js* visualizzabile tramite *gline.htm*.
 
 ![Sakai Mail Activity by Organization](../images/mailorg)
 
-Questa applicazione, relativamente complessa e sofisticata, ti mette a dispone di funzionalità per recuperare, ordinare e visualizzare dati reali.
+Questa applicazione é relativamente complessa e sofisticata e ti mette a disposizione le funzionalità di recupero, riordino e visualizzazione di dati reali.
