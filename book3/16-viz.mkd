@@ -206,7 +206,7 @@ Visualizzazione dei dati della posta elettronica
 
 Arrivato a questo punto del libro, dovresti aver acquisito una discreta familiarità con i file *mbox-short.txt* e *mbox.txt*. Ora è il momento di portare al livello successivo la nostra capacita` di analisi dei dati di posta elettronica che vi sono contenuti.
 
-Nel mondo reale, a volte è necessario estrarre i dati della posta dai server. Ciò potrebbe richiedere un po' di tempo e i dati potrebbero essere incoerenti, pieni di errori e potrebbe essere necessario un riordino e molte rettifiche. In questa sezione, lavoreremo con un'applicazione che è la più complessa di quelle finora esaminate e acquisiremo e visualizzeremo quasi un gigabyte di dati.
+Nel mondo reale, a volte è necessario estrarre i dati delle Email dai server di posta elettronica. Questa operazione potrebbe richiedere del tempo e i dati ottenuti potrebbero essere incoerenti, pieni di errori e potrebbe richiedere attività di normalizzazione o rettifica. In questa sezione, lavoreremo con l'applicazione più complessa tra quelle finora esaminate che ci permetterà di acquisire e Visualizzare quasi un gigabyte di dati.
 
 ![A Word Cloud from the Sakai Developer List](height=3.5in@../images/wordcloud)
 
@@ -214,7 +214,7 @@ Nel mondo reale, a volte è necessario estrarre i dati della posta dai server. C
 
 [www.py4e.com/code3/gmane.zip](http://www.py4e.com/code3/gmane.zip).
 
-Utilizzeremo i dati di un servizio gratuito di archiviazione di elenchi di posta elettronica chiamato [www.gmane.org] (http://www.gmane.org). Questo servizio è molto popolare fra i progetti open source perché fornisce un archivio consultabile della propria attività di posta elettronica. Hanno anche una politica molto liberale per quanto riguarda l'accesso ai loro dati attraverso la loro API. Non hanno limiti di velocità, ma richiedono di non sovraccaricare il loro servizio e di prelevare solo i dati necessari. Potete leggere i termini e le condizioni di gmane in questa pagina:
+Utilizzeremo i dati di un servizio gratuito di archiviazione di elenchi di posta elettronica chiamato [www.gmane.org] (http://www.gmane.org). Questo servizio è molto popolare fra i progetti open source perché fornisce un archivio consultabile della loro attività di posta elettronica. Ha anche una politica molto liberale sull'accesso ai loro dati attraverso la loro API. Non hanno limiti di velocità nella consultazione, ma richiedono di non sovraccaricare il loro servizio e di prelevare solo i dati necessari. Potrai leggere i termini e le condizioni di gmane in questa pagina:
 
 <http://gmane.org/export.php>.
 
