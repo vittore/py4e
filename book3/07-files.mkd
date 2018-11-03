@@ -17,7 +17,7 @@ Finora, abbiamo imparato come scrivere programmi e comunicare le nostre intenzio
 
 ![Memoria secondaria](height=2.5in@../images/arch)
 
-In questo capitolo, iniziamo a lavorare con i file nella *Memoria Secondaria* che, come scritto, non viene cancellata quando si spegne il pc o, nel caso di utilizzo di un'unità flash USB, i dati prodotti dai nostri script possono essere rimossi dal sistema e trasportati su un altro sistema.  
+In questo capitolo, iniziamo a lavorare con i file nella *Memoria Secondaria* che, come scritto, non viene cancellata quando si spegne il pc e, nel caso di utilizzo di un'unità flash USB, consente di rimuovere dal sistema i dati prodotti dai nostri script e trasportarli su un altro sistema.
 Ci concentreremo principalmente sulla lettura e la scrittura di file di testo simile a quelli che creiamo in un editor di testo. Più avanti vedremo come lavorare con i file di database che sono file binari, progettati specificamente per essere letti e scritti tramite programmi di database.
 
 Aprire i file
@@ -42,7 +42,7 @@ Se l'operazione `Open` ha successo, il sistema operativo ci restituisce un *file
 
 ![Gestore (handler) di un file](height=2.0in@../images/handle)
 
-Se il file non esiste, `open` fallirà visualizzando un traceback e non avrai un handle che ti permetta di accedere ai contenuti del file:
+Se il file non esiste, `open` fallirà visualizzando un traceback e verrà fornito alcun handle che permetta di accedere ai contenuti del file:
 
     >>> fhand = open ('stuff.txt')
     Traceback (most recent call last) :
@@ -84,7 +84,7 @@ Per suddividere il file in righe, c'è un carattere speciale che rappresenta la 
 
 \index{newline}
 
-In Python, il carattere *newline* viene rappresentato con backslash-n (\\n) tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Prendi in considerazione il seguente listato. Il contenuto che stiamo per inserendo nella variabile "stuff" nell'interprete, ci mostra che la stringa contiene i caratteri `\\n`. Quando però la stampiamo tramite il comando `print`, puoi notare che la stringa viene mostrata su due righe, spezzata nel punto dove è presente newline.
+In Python, il carattere *newline* viene rappresentato con backslash-n (\\n) tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Prendi in considerazione il seguente listato. Il contenuto che stiamo inserendo nella variabile "stuff" nell'interprete, ci mostra che la stringa contiene i caratteri `\\n`. Quando però la stampiamo tramite il comando `print`, puoi notare che la stringa viene mostrata su due righe, spezzata nel punto dove è presente newline.
 
     >>> stuff = 'Hello\nWorld!'
     >>> stuff
@@ -180,7 +180,7 @@ Quando eseguirai questo programma, otterrai il seguente output:
     From: cwen@iupui.edu
     ...  
 
-Man mano che i tuoi script di gestione dei file diventano più complessi, potresti voler strutturare i cicli di ricerca utilizzando `continue`. L'idea di base del ciclo di ricerca è che stai cercando le righe "interessanti" e ignorando quelle "non interessanti"; inoltre quando trovi una riga interessante, tu voglia farci qualcosa. Potresti strutturare questo tipo di ciclo come nell'esempio seguente:
+Man mano che i tuoi script di gestione dei file diventano più complessi, potresti voler strutturare i cicli di ricerca utilizzando `continue`. L'idea di base del ciclo di ricerca è che stai cercando le righe "interessanti" e ignorando quelle "non interessanti"; inoltre, quando trovi una riga interessante, che tu voglia farci qualcosa. Potresti strutturare questo tipo di ciclo come nell'esempio seguente:
 
 \VerbatimInput{../code3/search3.py}
 \begin{trinketfiles}
@@ -221,7 +221,7 @@ Non è il caso di modificare il nostro codice Python ogni volta che vogliamo ela
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Il nome del file inserito dell'utente viene salvato nella variabile `fname` e successivamente aperto. Ora è possibile eseguire il programma su file diversi senza alterarne continuamente il codice.
+Il nome del file inserito dall'utente viene salvato nella variabile `fname` e successivamente aperto. Ora è possibile eseguire il programma su file diversi senza alterarne continuamente il codice.
 
     python search6.py
     Enter the file name: mbox.txt
@@ -328,7 +328,7 @@ Quando hai finito di scrivere, devi chiudere il file per assicurarti che l'ultim
     >>> fout.close ()
 
 
-Potremmo chiudere anche i file che apriamo anche per leggerli, ma possiamo essere un po' approssimativi se apriamo solo alcuni file dato che Python si assicura che tutti i file aperti vengano chiusi quando il programma termina . Quando scriviamo dei file, vogliamo chiudere esplicitamente i file in modo da non lasciare nulla al caso.
+Potremmo chiudere i file che apriamo anche per leggerli, ma possiamo essere un po' approssimativi se apriamo solo alcuni file dato che Python si assicura che tutti i file aperti vengano chiusi quando il programma termina . Quando scriviamo dei file, vogliamo chiudere esplicitamente i file in modo da non lasciare nulla al caso.
 
 
 \index{close method}
@@ -340,7 +340,7 @@ Debug
 \index{debugging}
 \index{whitespace}
 
-Quando leggi e scrivi il contenuto di files, potresti incontrare dei problemi con gli spazi bianchi. Questi errori possono essere difficili da risolvere perché gli spazi, le schede e gli a capo sono normalmente invisibili:
+Quando leggi e scrivi il contenuto di file, potresti incontrare dei problemi con gli spazi bianchi. Questi errori possono essere difficili da risolvere perché gli spazi, le schede e gli a capo sono normalmente invisibili:
 
     >>> s = '1 2\t 3\n 4'
     >>> print (s)
@@ -362,7 +362,7 @@ Un altro problema che potresti incontrare è che sistemi diversi usano caratteri
 
 \index{end of line character}
 
-Esistono applicazioni per la conversione da un formato all'altro nella maggior parte dei sistemi operativi. Potete trovarle (e leggere ulteriori informazioni su questo problema) Presso [wikipedia.org/wiki/Newline](wikipedia.org/wiki/Newline) ne puoi trovare un elenco, oltre a ulteriori informazioni sui questa questione. Niente ti vieta di svilupparne una tua!
+Esistono applicazioni per la conversione da un formato all'altro nella maggior parte dei sistemi operativi. Potete trovarle (e leggere ulteriori informazioni su questo problema) presso [wikipedia.org/wiki/Newline](wikipedia.org/wiki/Newline), oltre a ulteriori informazioni su questa questione. Niente ti vieta di svilupparne una tua!
 
 Glossario
 --------
@@ -423,7 +423,7 @@ Quando raggiungi la fine del file, visualizza la media dei valori di spam confid
 Metti alla prova il tuo script sui file `mbox.txt` e `mbox-short.txt`.  
 
 
-**Esercizio 3:** Capita che quando gli sviluppatori si annoiano o vogliono divertirsi, aggiungano un innocuo *Easter Egg* al loro programma. Modifica lo script precedente in modo che visualizzi un messaggio divertente nel caso quando l'utente inserisca quale nome del file "na na boo boo".
+**Esercizio 3:** Capita che quando gli sviluppatori si annoiano o vogliono divertirsi, aggiungano un innocuo *Easter Egg* al loro programma. Modifica lo script precedente in modo che visualizzi un messaggio divertente nel caso l'utente inserisca quale nome del file "na na boo boo".
 
 Il programma dovrebbe comportarsi normalmente in tutti gli altri casi (con file esistente o meno). Ecco un esempio del programma:
 
