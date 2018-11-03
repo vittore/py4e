@@ -206,7 +206,7 @@ for i in range(10):
 ~~~~
 
 
-Questo programma ti fornirá il seguente elenco di 10 numeri casuali compresio tra 0.0 e 1.0 (1.0 escluso).
+Questo programma ti fornirà il seguente elenco di 10 numeri casuali compresi tra 0.0 e 1.0 (1.0 escluso).
 
 ~~~~
 0.11132867921152356
@@ -222,7 +222,7 @@ Questo programma ti fornirá il seguente elenco di 10 numeri casuali compresio t
 ~~~~
 
 
-**Esercizio 1:**: Esegui lo script precedente sul tuo sistema per vedere quali numeri otterrai. Ripeti l'operazione più volte e confroenta i risultati.
+**Esercizio 1:**: Esegui lo script precedente sul tuo sistema per vedere quali numeri otterrai. Ripeti l'operazione più volte e confronta i risultati.
 
 La funzione `random` è solo una delle molte funzioni che gestiscono i numeri casuali.
 
@@ -259,7 +259,7 @@ Il modulo `random` fornisce anche funzioni per generare valori casuali da distri
 Aggiungere nuove funzioni
 --------------------
 
-Anche se finora abbiamo solo usato le funzioni giá presenti in Python, tieni a mente che è possibile aggiungerne di nuove.
+Anche se finora abbiamo solo usato le funzioni già presenti in Python, tieni a mente che è possibile aggiungerne di nuove.
 Tramite la *definizione di funzione* puoi specificare il nome di una nuova funzione composta da una sequenza di istruzioni. Una volta definita, puoi richiamarla e riutilizzarla a piacimento all'interno del tuo programma.
 \index{function}
 \index{function definition}
@@ -290,7 +290,7 @@ Le parentesi vuote dopo il nome indicano che questa funzione non accetta argomen
 Una funzione è composta da un *header*, la prima riga della funzione, ed un *corpo* composto dal resto delle istruzioni. L'header deve sempre terminare con due punti e il corpo, che deve essere indentato per convenzione di quattro spazi, può contenere un numero qualsiasi di istruzioni.
 \index{ellipses}
 
-Se decidi di scrivere una definizione di funzione in modalità interattiva, l'interprete continuerà a visualizzare tre punti di sospensione (*...*) fino a quando non inserirai una riga vuota per indicare che hai compleato il corpo:
+Se decidi di scrivere una definizione di funzione in modalità interattiva, l'interprete continuerà a visualizzare tre punti di sospensione (*...*) fino a quando non inserirai una riga vuota per indicare che hai completato il corpo:
 
 ~~~~ {.python}
 >>> def print_lyrics():
@@ -458,7 +458,7 @@ Funzioni produttive e funzioni vuote
 \index{void function}
 \index{function, fruitful}
 \index{function, void}
-Alcune delle funzioni che stiamo usando, come ad esempio le funzioni matematiche, restituiscono dei risultati; e, per mancanza di un nome migliore, vengono chiamate *funzioni produttive*. Altre funzioni, come `print_twice`, vengono chiamate *funzioni vuote* poichè eseguono un'azione ma non restituiscono alcun valore.
+Alcune delle funzioni che stiamo usando, come ad esempio le funzioni matematiche, restituiscono dei risultati; e, per mancanza di un nome migliore, vengono chiamate *funzioni produttive*. Altre funzioni, come `print_twice`, vengono chiamate *funzioni vuote* poiché eseguono un'azione ma non restituiscono alcun valore.
 
 Quando chiamate una funzione produttiva, quasi sempre avete bisogno di utilizzarne il risultato: ad esempio potreste assegnarlo a una variabile o usarlo come parte di un'espressione.
 
@@ -509,7 +509,7 @@ Il valore `None` non è uguale alla stringa "None": è un valore speciale che ha
 ~~~~
 
 
-Tramite  l'istruzione `return` inserita nella nostra funzione, hai la possibilitá di ottenere il risultato. Ad esempio potremmo creare una funzione molto semplice chiamata "addtwo" che somma due numeri e restituisce il risultato.
+Tramite  l'istruzione `return` inserita nella nostra funzione, hai la possibilità di ottenere il risultato. Ad esempio potremmo creare una funzione molto semplice chiamata "addtwo" che somma due numeri e restituisce il risultato.
 
 \VerbatimInput{../code3/addtwo.py}
 
@@ -522,7 +522,7 @@ Perché le funzioni?
 Potrebbe non esserti chiaro il motivo per cui vale la pena di suddividere un programma in funzioni. I motivi sono diversi:
 
 - la creazione di una nuova funzione ti dà l'opportunità di dare un nome a un insieme di istruzioni, facilitandoti la lettura, la comprensione e il debug del tuo programma;
-- le funzioni possono ridurre le dimensioni di un programma, eliminando la necessità di inserire lo stesso codice piú volte. Se vuoi apporti un cambiamento o una correzione, devi farlo solo in un posto;
+- le funzioni possono ridurre le dimensioni di un programma, eliminando la necessità di inserire lo stesso codice più volte. Se vuoi apporti un cambiamento o una correzione, devi farlo solo in un posto;
 - dividere in funzioni un programma esteso, ti consente di eseguire il debug delle singole parti e solo dopo assemblarle in un insieme funzionante;
 - le funzioni ben progettate sono spesso riutilizzabili in molti programmi: una volta che scritte e verificate le puoi riutilizzare ovunque credi.
 
@@ -536,7 +536,7 @@ Nonostante il fatto che la maggior parte degli editor di testo sono in grado di 
 
 \index{whitespace}
 
-Spesso il debug é reso piú complicato dal fatto che le tabulazioni e spazi sono generalmente invisibili. Per mitigare questo problema  prova ad utilizzare un editor che gestisca automaticamente l'indentazione.
+Spesso il debug é reso più complicato dal fatto che le tabulazioni e spazi sono generalmente invisibili. Per mitigare questo problema  prova ad utilizzare un editor che gestisca automaticamente l'indentazione.
 
 Non dimenticare inoltre di salvare sempre il tuo script prima di eseguirlo dato che non tutti gli ambienti di sviluppo lo fanno automaticamente. In questo modo il codice che stai guardando nell'editor di testo sarà lo stesso che stai facendo girare.
 
@@ -635,7 +635,7 @@ c) Indica che la seguente sezione di codice indentata deve essere memorizzata pe
 d) b e c sono entrambe vere.\
 e) Nessuno delle precedenti.
 
-**Esercizio 5:** Cosa visualzzerà il seguente script Python?
+**Esercizio 5:** Cosa visualizzerà il seguente script Python?
 
 ~~~~ {.python}
 def fred():

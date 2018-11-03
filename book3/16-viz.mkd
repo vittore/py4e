@@ -83,7 +83,7 @@ Kesalsaba, 32000, Israel'],
 
 Questa è una variabile JavaScript che contiene un elenco di elenchi. La sintassi per le costanti dell'elenco JavaScript dovrebbe esserti familiare in quanto molto simile a quella di Python.
 
-Per poter verdere le posizioni geografiche delle ent devi aprire _where.html_ in un browser. Passando con il mouse su ciascun marker della mappa vedrai la posizione che restituita dall'API di geocodifica. Se aprendo il file _where.html_ non riesci a vedere alcun dato, prova a verificare le impostazioni della console JavaScript o sviluppatore del tuo browser.
+Per poter vedere le posizioni geografiche delle entità devi aprire _where.html_ in un browser. Passando con il mouse su ciascun marker della mappa vedrai la posizione che restituita dall'API di geocodifica. Se aprendo il file _where.html_ non riesci a vedere alcun dato, prova a verificare le impostazioni della console JavaScript o sviluppatore del tuo browser.
 
 ## Visualizzare reti e interconnessioni
 
@@ -116,7 +116,7 @@ In questo esempio, abbiamo indicato al programma di eseguire la scansione di un 
     5 http://www.dr-chuck.com/dr-chuck/resume/index.htm 13
     How many pages:
 
-in altre parole nello stesso database/programma possono essere presenti più punti di partenza potenziali, chiamati "webs". Lo spider sceglie casualmente la successiva pagina da elaborare tra tutti i link non ancora visitati.
+in altre parole nello stesso database/programma possono essere presenti più punti di partenza potenziali, chiamati "web". Lo spider sceglie casualmente la successiva pagina da elaborare tra tutti i link non ancora visitati.
 
 Tramite _spdump.py_ puoi scaricare il contenuto del file _spider.sqlite_:
 

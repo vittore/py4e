@@ -20,7 +20,7 @@ Negli capitoli precedenti abbiamo esplorato l'uso delle variabili semplici e del
 
 Durante lo sviluppo programmi, progettiamo le strutture con cui conserviamo i dati e scriviamo il codice necessario per manipolarle.   Esistono molti modi per scrivere programmi e, a questo punto, probabilmente avrai scritto alcuni script "non particolarmente eleganti" e altri "più eleganti".   Anche se i tuoi script sono di dimensioni abbastanza contenute, stai iniziando a capire come ci sia un po' di "arte" ed "estetica" nello sviluppare codice.  
 
-Mano a mano che i programmi raggiungono i milioni di righe diventa sempre più importante scrivere codice che sia facile da interpretare.  Se stai lavorando su un programma di milioni di righe, non potrai mai tenere in mente allo stesso tempo l'intero programma. Abbiamo bisogno di trovare modi per spezzare il programma in più pezzi in modo che risolvere problemi, correggere un bug o aggiungere una nuova caratteristica sia il piú semplice possibile.  
+Mano a mano che i programmi raggiungono i milioni di righe diventa sempre più importante scrivere codice che sia facile da interpretare.  Se stai lavorando su un programma di milioni di righe, non potrai mai tenere in mente allo stesso tempo l'intero programma. Abbiamo bisogno di trovare modi per spezzare il programma in più pezzi in modo che risolvere problemi, correggere un bug o aggiungere una nuova caratteristica sia il più semplice possibile.  
 
 In un certo senso, la programmazione ad oggetti è un modo per organizzare il codice in modo tale da poter concentrare la nostra attenzione su 500 righe di codice ignorando momentaneamente le altre 999.500.  
 
@@ -34,7 +34,7 @@ Quello che vogliamo ottenere con questo capitolo è una conoscenza di base di co
 Utilizzare gli oggetti
 -------------
 
-Realizzarerai che in realtà abbiamo utilizzato gli oggetti durante tutto il corso:  Python ci mette a disposizione molti oggetti già integrati al suo interno.
+Realizzerai che in realtà abbiamo utilizzato gli oggetti durante tutto il corso: Python ci mette a disposizione molti oggetti già integrati al suo interno.
 
 Ecco un semplice script le cui prime poche righe dovrebbero sembrarti molto semplici e familiari.
 
@@ -42,7 +42,7 @@ Ecco un semplice script le cui prime poche righe dovrebbero sembrarti molto semp
 
 \VerbatimInput{../code3/party1.py}
 
-Piuttosto che concentrarci su ciò che potresti ottenere tramite queste poche righe di codice, vediamo cosa sta realmente accadendo dal punto di vista della programmazione ad oggetti. Non preoccuparti se la prima volta che leggi i prosismi paragrafi ti sembra che non abbiamo molto senso dato che non ti ho ancora spiegato il significato di molti dei termini presenti.
+Piuttosto che concentrarci su ciò che potresti ottenere tramite queste poche righe di codice, vediamo cosa sta realmente accadendo dal punto di vista della programmazione ad oggetti. Non preoccuparti se la prima volta che leggi i prossimi paragrafi ti sembra che non abbiamo molto senso dato che non ti ho ancora spiegato il significato di molti dei termini presenti.
 
 La prima riga sta *costruendo* un oggetto di tipo *lista*, la seconda e la terza linea chiamano il *metodo* `append()`, la quarta riga chiama il *metodo* `sort()` e la quinta riga sta ottenendo l'elemento in posizione 0.
 
@@ -85,11 +85,11 @@ Il resto di questo capitolo ti fornirà una definizione più precisa di tutti i 
 I primi script
 ----------------------
 
-Un programma nella sua forma più semplice richiede uno o più input, fa qualche elaborazione e produce un output.  Il seguente script per la conversione dei numeri di piano in un ascensore é molto breve ma completo e presenta tutti e tre questi passaggi.
+Un programma nella sua forma più semplice richiede uno o più input, fa qualche elaborazione e produce un output. lo script seguente per la conversione dei numeri di piano in un ascensore é molto breve ma completo e presenta tutti e tre questi passaggi.
 
 \VerbatimInput{../code3/elev.py}
 
-Se ci concentriamo un po' di più su questo programma: possiamo vedere che convivono il "mondo esterno" e quello interno al programma stesso.  Le operazioni di input e l'output rappresentanto il modo con cui programma interagisce con il mondo esterno.  All'interno del programma abbiamo il codice e dati necessari per svolgere il compito per cui é stato progettato.
+Se ci concentriamo un po' di più su questo programma: possiamo vedere che convivono il "mondo esterno" e quello interno al programma stesso.  Le operazioni di input e l'output rappresentato il modo con cui programma interagisce con il mondo esterno.  All'interno del programma abbiamo il codice e dati necessari per svolgere il compito per cui é stato progettato.
 
 ![Un programma](height=1.20in@../images/program)
 
@@ -113,14 +113,14 @@ Possiamo rappressentare con la seguente immagine l'interazione degli oggetti di 
 
 
 
-In questo momento la cosa piú importante non è comprendere appieno il funzionamento di questo programma, quanto piuttosto vedere com'é stato strutturato questo insieme di oggetti e di come ne viene orchestrato lo scambio di informazioni.  
+In questo momento la cosa più importante non è comprendere appieno il funzionamento di questo programma, quanto piuttosto vedere com'é stato strutturato questo insieme di oggetti e di come ne viene orchestrato lo scambio di informazioni.  
 
-È anche importante notare che quando studiavi il funzionamento di uno scritp presente nei primi capitoli di questo libro, eri in grado di capire appieno cosa stava succedendo senza nemmeno renderti conto che il programma stava "gestendo il movimento dei dati tra gli oggetti presenti". Allora per te erano solo righe di codice che portavano a termine il lavoro.
+È anche importante notare che quando studiavi il funzionamento di uno script presente nei primi capitoli di questo libro, eri in grado di capire appieno cosa stava succedendo senza nemmeno renderti conto che il programma stava "gestendo il movimento dei dati tra gli oggetti presenti". Allora per te erano solo righe di codice che portavano a termine il lavoro.
 
 Suddividere un problema - l'incapsulamento
 -------------------------------------
 
-Uno dei vantaggi dell'approccio della programmazione ad oggetti è che la possibilità di ridurre la complessità di uno script: anche se hai la necessità di sapere come sfruttare `urllib` e BeautifulSoup, non hai bisogno di sapere come funzionino internamente tali librerie. Ciò ti consente di concentrarti sulla parte del problema che devi risolvere lasciando perdere altree altre parti del programma.
+Uno dei vantaggi dell'approccio della programmazione ad oggetti è che la possibilità di ridurre la complessità di uno script: anche se hai la necessità di sapere come sfruttare `urllib` e BeautifulSoup, non hai bisogno di sapere come funzionino internamente tali librerie. Ciò ti consente di concentrarti sulla parte del problema che devi risolvere lasciando perdere altre parti del programma.
 
 ![Ignorare i dettagli quando si usa un oggetto](height=1.50in@../images/program-oo-code)
 
@@ -172,7 +172,7 @@ Qui stiamo dicendo a Python di creare un oggetto usando il template `dict` (già
 
 Quando vogliamo utilizzare la classe PartyAnimal per costruire un oggetto, la variabile `an` ci permette di puntare a quell'oggetto, accedere al codice e ai dati che quella particolare istanza di un oggetto PartyAnimal contiene.
 
-Ogni oggetto/istanza Partyanimal contiene al suo interno una variabile `x` e un metodo/funzione `party`che viene richiamato in questa riga:
+Ogni oggetto/istanza Partyanimal contiene al suo interno una variabile `x` e un metodo/funzione `party` che viene richiamato in questa riga:
 
 ~~~~ {.python}
 an.party()
@@ -263,7 +263,7 @@ Molte istanze
 
 Finora, abbiamo definito una classe, creato un singolo oggetto che abbiamo usato ed infine eliminato. Ma la vera potenza della programmazione orientata agli oggetti si rivela quando utilizziamo molte istanze della nostra classe.
 
-Quando creiamo piú oggetti dalla nostra classe potremmo aver bisogno di impostare valori iniziali diversi per ciascuno di essi. Ciò é possibile passando i dati nei costruttori per assegnare a ciascun oggetto un diverso valore iniziale:
+Quando creiamo più oggetti dalla nostra classe potremmo aver bisogno di impostare valori iniziali diversi per ciascuno di essi. Ciò é possibile passando i dati nei costruttori per assegnare a ciascun oggetto un diverso valore iniziale:
 
 \VerbatimInput{../code3/party5.py}
 
@@ -328,7 +328,7 @@ La prima riga costruisce un *oggetto* `list`.  Durante la sua costruzione viene 
 
 Non stiamo passando alcun parametro al *costruttore* e quando il costruttore ritorna, usiamo la variabile `stuff` per puntare all'istanza restituita della classe `list`.
 
-La seconda e la terza riga chiamano il metodo `append` con un parametro per aggiungere un nuovo elemento alla fine dell'elenco tramite l'aggiornamento degli attributi all'interno di `stuff`.  Nella quarta riga viene chiamiato il metodo `sort`, senza parametri, per ordinare i dati all'interno dell'oggetto `stuff`.  
+La seconda e la terza riga chiamano il metodo `append` con un parametro per aggiungere un nuovo elemento alla fine dell'elenco tramite l'aggiornamento degli attributi all'interno di `stuff`.  Nella quarta riga viene chiamato il metodo `sort`, senza parametri, per ordinare i dati all'interno dell'oggetto `stuff`.  
 
 Quindi visualizziamo il primo elemento nell'elenco usando le parentesi quadre che sono una scorciatoia per chiamare il metodo `__getitem__` all'interno dell'*oggetto* `stuff`. Questo equivale a chiamare il metodo `__getitem__` nella *classe* `list` passando l'oggetto `stuff` come primo parametro e la posizione che stiamo cercando come secondo parametro.
 

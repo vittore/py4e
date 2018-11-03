@@ -26,13 +26,13 @@ Per esempio leggere i primi tre paragrafi di questo capitolo ed individuare quan
 
 Il nostro "assistente personale per l'analisi delle informazioni" ci ha rapidamente detto che la parola "to" è stata usata sedici volte nei primi tre paragrafi di questo capitolo.
 
-Il fatto che i computer siano bravi in attività in cui gli umani non lo sono, è il motivo per cui è necessario che tu diventi abile nel parlare un "linguaggio informatico". Una volta che avrai imparato questa nuova lingua, potrai delegare al tuo partner (il computer) i compiti banali, ritagliandoti più tempo per le attività per cui sei piú portato. In altre parole, tu apporti a questa collaborazione creatività, intuizione ed invettiva.
+Il fatto che i computer siano bravi in attività in cui gli umani non lo sono, è il motivo per cui è necessario che tu diventi abile nel parlare un "linguaggio informatico". Una volta che avrai imparato questa nuova lingua, potrai delegare al tuo partner (il computer) i compiti banali, ritagliandoti più tempo per le attività per cui sei più portato. In altre parole, tu apporti a questa collaborazione creatività, intuizione ed invettiva.
 
 Creatività e motivazione
 -------------------------
 
 Sebbene questo libro non sia destinato a programmatori professionisti, la programmazione può essere un lavoro molto gratificante sia dal punto di vista finanziario sia da quello personale.
-Scrivere programmi utili, eleganti e intelligenti affinchè possano essere utilizzati da altri è un'attività molto creativa. Il tuo computer o il tuo Assistente Personale Digitale (PDA) di solito ha al suo interno molti programmi scritti da svariati team di sviluppatori, ciascuno dei quali in competizione per conquistare la tua attenzione ed interesse. Fanno del loro meglio per soddisfare le tue esigenze e fornirti, nel contempo, una meravigliosa esperienza d'uso. In alcune situazioni, quando si sceglie uno specifico software, i programmatori sono direttamente gratificati dalla tua scelta.
+Scrivere programmi utili, eleganti e intelligenti affinché possano essere utilizzati da altri è un'attività molto creativa. Il tuo computer o il tuo Assistente Personale Digitale (PDA) di solito ha al suo interno molti programmi scritti da svariati team di sviluppatori, ciascuno dei quali in competizione per conquistare la tua attenzione ed interesse. Fanno del loro meglio per soddisfare le tue esigenze e fornirti, nel contempo, una meravigliosa esperienza d'uso. In alcune situazioni, quando si sceglie uno specifico software, i programmatori sono direttamente gratificati dalla tua scelta.
 
 Se pensiamo ai programmi come alla produzione creativa di team di programmatori, probabilmente la seguente immagine è una visione più ragionevole del nostro PDA:
 
@@ -56,7 +56,7 @@ Le definizioni di alto livello di quelle parti sono le seguenti:
 
 - La *Memoria principale* viene utilizzata per memorizzare le informazioni di cui la CPU ha bisogno nel minore tempo possibile. La memoria principale è veloce quasi quanto la CPU ma le informazioni vengono memorizzate solo fino allo spegnimento del computer.
 
-- Anche la *Memoria secondaria* è utilizzata per conservare informazioni ma è molto più lenta di quella principale. Il vantaggio della memoria secondaria è che può conservare le informazioni anche quando il computer è spento. Esempi di memorie secondarie sono i dischi rigidi o le memorie flash (generalmente pendrive USB e lettori multimediali portatili).
+- Anche la *Memoria secondaria* è utilizzata per conservare informazioni ma è molto più lenta di quella principale. Il vantaggio della memoria secondaria è che può conservare le informazioni anche quando il computer è spento. Esempi di memorie secondarie sono i dischi rigidi o le memorie flash (generalmente pennette USB e lettori multimediali portatili).
 
 - I *Dispositivi di Input ed Output* sono lo schermo, la tastiera, il mouse, il microfono, gli altoparlanti, il touchpad, ecc.. in altre parole  tutti i dispositivi con cui interagisci per comunicare con il computer.
 
@@ -124,7 +124,7 @@ Conversare con Python
 
 Ora che conosciamo una parola e una frase semplice in Python, abbiamo bisogno di sapere come avviare una conversazione con Python per testare le nostre nuove abilità linguistiche.
 
-Prima di poter dialogare con Python, dovresti installare il software Python sul tuo computer e imparare come avviarlo.
+Prima di poter dialogare con Python, dovresti installare il software Python nel tuo computer e imparare come avviarlo.
 Questa procedura è troppo dettagliata per essere inclusa in questo capitolo, quindi ti suggerisco di consultare [www.py4e.com] (http://www.py4e.com) dove ho scritto istruzioni dettagliate e screencast dell'installazione e dell'avvio di Python su sistemi Macintosh e Windows.
 Ad un certo punto, potrai aprire un terminale o una finestra di comando e, digitando *python*, si avvierà l'interprete Python in modalità interattiva e verrà visualizzato qualcosa del genere:
 
@@ -226,7 +226,7 @@ Dato che il linguaggio macchina è legato all'hardware del computer, tale lingua
 Questi traduttori di linguaggi di programmazione si dividono in due categorie generali: (1) *interpreti* e (2) *compilatori*.
 
 Un *interprete* legge il codice sorgente del programma così come è stato scritto dal programmatore: analizza il codice sorgente e interpreta le istruzioni al volo.
-Python è un interprete, quando lo avviamo in modalitá interattiva, digitiamo una riga (una frase) e Python la elabora immediatamente, rimanendo poi in attesa della successiva riga di Python.
+Python è un interprete, quando lo avviamo in modalità interattiva, digitiamo una riga (una frase) e Python la elabora immediatamente, rimanendo poi in attesa della successiva riga di Python.
 
 Alcune delle righe di Python avvisano Python che vuoi che lui ricordi un valore per un secondo momento. Va quindi scelto un nome per quel valore da ricordare e da utilizzare per recuperarlo in un secondo momento. Con il termine *variabile* facciamo riferimento alle etichette che usiamo per riferirci a questi dati memorizzati.
 
@@ -248,7 +248,7 @@ In questo esempio, stiamo chiedendo a Python di:
 
 Anche se stiamo digitando questi comandi una riga alla volta, Python li tratta come una sequenza ordinata di istruzioni permettendo alle  successive istruzioni di essere in grado di recuperare i dati creati precedentemente. Noi abbiamo scritto il nostro primo semplice paragrafo composto di quattro frasi in un ordine logico e che abbia un significato.
 
-L'instaurare una conversazione interattiva simile alla precendente è nella natura di un *interprete*. Un *compilatore* invece necessita di avere l'intero codice sorgente di alto livello prima di avviare il processo di traduzione e successivo salvataggio in un file eseguibile per l'esecuzione.
+L'instaurare una conversazione interattiva simile alla precedente è nella natura di un *interprete*. Un *compilatore* invece necessita di avere l'intero codice sorgente di alto livello prima di avviare il processo di traduzione e successivo salvataggio in un file eseguibile per l'esecuzione.
 
 Nel sistema Windows, spesso questi eseguibili hanno un suffisso ".exe" o ".dll" che indicano rispettivamente "eseguibile" o libreria DLL. In Linux e MacOsx, non esiste un suffisso che contrassegni in modo univoco un file come eseguibile.
 
@@ -566,6 +566,6 @@ b) 44\
 c) x + 1\
 d) Errore perché x = x + 1 non è matematicamente possibile
 
-**Esercizio 8:** Illustra ognuno dei seguenti esempi facendo deiparagoni con una capacitá degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual è l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
+**Esercizio 8:** Illustra ognuno dei seguenti esempi facendo dei paragoni con una capacità degli uomini: (1) Unità centrale di elaborazione, (2) Memoria principale, (3) Memoria secondaria, (4) Dispositivo di input e (5) Dispositivo di Output. Ad esempio, "Qual è l'equivalente nell'uomo di una "Unità di elaborazione centrale"?
 
 **Esercizio 9:** Come si corregge un "Syntax Error"?

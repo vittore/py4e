@@ -32,7 +32,7 @@ Browser di database per SQLite
 
 Seppure questo capitolo si concentri sull'uso di Python per la manipolazione di dati contenuti in database SQLite, molte operazioni possono essere fatte più agevolmente utilizzando un software chiamato *Browser di database per SQLite*, liberamente scaricabile da: <http://sqlitebrowser.org/>
 
-Utilizzando questo programma è possibile creare facilmente tabelle, inserire dati, modificare dati o eseguire semplici query SQL.  In un certo senso, il comportamento del Database Browser è simile a quello di un editor di testo. Quando volete eseguire una o poche operazioni su un file di testo, è sufficiente aprirlo in un editor e apportare le modifiche desiderate. Se dovete eseguire molte modifiche in un file di testo, è meglio scrivere un semplice programma in Python. Lo stesso modello si applica al lavoro con i database. Svolgerete le operazioni piú semplici nel gestore di database, mentre quelle più complesse saranno eseguite più comodamente tramite Python.
+Utilizzando questo programma è possibile creare facilmente tabelle, inserire dati, modificare dati o eseguire semplici query SQL.  In un certo senso, il comportamento del Database Browser è simile a quello di un editor di testo. Quando volete eseguire una o poche operazioni su un file di testo, è sufficiente aprirlo in un editor e apportare le modifiche desiderate. Se dovete eseguire molte modifiche in un file di testo, è meglio scrivere un semplice programma in Python. Lo stesso modello si applica al lavoro con i database. Svolgerete le operazioni più semplici nel gestore di database, mentre quelle più complesse saranno eseguite più comodamente tramite Python.
 
 Creazione di una tabella
 -------------------------

@@ -18,7 +18,7 @@ Dettagli sul copyright
 
 Copyright ~2009- Charles Severance.
 
-Quest’opera è rilasciata sotto licenza Creative Common Attribution-Non Commercial-Share Alike 3.0 Unported. 
+Quest’opera è rilasciata sotto licenza Creative Common Attribution-Non Commercial-Share Alike 3.0 Unported.
 Questa licenza è disponibile all'indirizzo:
 
 http://creativecommons.org/licenses/by-nc-sa/3.0/
@@ -41,14 +41,14 @@ Non avendo mai trovato un libro su Python che fosse perfettamente orientato alla
 
 La struttura complessiva del libro è stata modificata per arrivare a gestire i problemi di analisi dei dati il più rapidamente possibile e per fornire una serie di esercizi ed esempi sull'analisi dei dati fin dall'inizio.
 
-I capitoli 2-10 sono simili al libro *Think Python* nonostante siano state fatte importanti modifiche. Gli esempi e gli esercizi orientati alla gestione di numeri sono stati sostituiti con esercitazioni orientate ai dati. Gli argomenti sono presentati in un ordine tale da fornire soluzioni di analisi dei dati via via sempre più sofisticate. Alcuni argomenti come "try" e "except" sono stati anticipati e presentati come parte del capitolo sull'esecuzione condizionale. Piuttosto che essere trattate già dall'inizio in maniera astratta, le funzioni sono state trattate più superficialmente sino al momento in cui sono diventate necessarie per gestire la complessità dei programmi. 
+I capitoli 2-10 sono simili al libro *Think Python* nonostante siano state fatte importanti modifiche. Gli esempi e gli esercizi orientati alla gestione di numeri sono stati sostituiti con esercitazioni orientate ai dati. Gli argomenti sono presentati in un ordine tale da fornire soluzioni di analisi dei dati via via sempre più sofisticate. Alcuni argomenti come "try" e "except" sono stati anticipati e presentati come parte del capitolo sull'esecuzione condizionale. Piuttosto che essere trattate già dall'inizio in maniera astratta, le funzioni sono state trattate più superficialmente sino al momento in cui sono diventate necessarie per gestire la complessità dei programmi.
 Quasi tutte le funzioni definibili dall'utente sono state rimosse dai codici di esempio ed esercitazione al di fuori del Capitolo 4. La parola "ricorsivo"^[Ad eccezione, ovviamente, di questa riga.] non viene mai utilizzata in alcuna parte del libro.
 
-Tutto il materiale nei capitoli 1 e 11-16 è nuovo di zecca, ed è focalizzato sull'uso di Python in applicazioni del mondo reale e fornisce semplici esempi per l'analisi dei dati, comprendendo espressioni regolari per la ricerca e l'analisi, l'automatizzazione delle attività sul computer, il recupero dei dati attraverso la rete, il prelievo di dati da pagine web, l'utilizzo di servizi web, l'analisi di dati in formato XML e JSON, la creazione e l'utilizzo di database utilizzando lo Structured Query Languagee la rappresentazione di dati.
+Tutto il materiale nei capitoli 1 e 11-16 è nuovo di zecca, ed è focalizzato sull'uso di Python in applicazioni del mondo reale e fornisce semplici esempi per l'analisi dei dati, comprendendo espressioni regolari per la ricerca e l'analisi, l'automatizzazione delle attività sul computer, il recupero dei dati attraverso la rete, il prelievo di dati da pagine web, l'utilizzo di servizi web, l'analisi di dati in formato XML e JSON, la creazione e l'utilizzo di database utilizzando lo Structured Query Language e la rappresentazione di dati.
 
 L'obiettivo finale di tutti questi cambiamenti è quello di includere in un corso di primo livello solo quegli argomenti che potranno tornare utili anche a coloro che non sceglieranno di diventare programmatori professionisti.
 
-Gli studenti che trovrano questo libro interessante e che vogliano esplorare ulteriormente l'argomento, dovrebbero considerare il libro *Think Python* di Allen B. Downey. Date le molte sovrapposizioni tra i due libri, gli studenti saranno in grado di acquisire rapidamente alcune ulteriori competenze nelle ulteriori aree della tecnica di programmazione e del pensiero algoritmico che sono parte di *Think Python*. Inoltre, dato che i due libri hanno uno stile di scrittura simile, per loro sarà facile muoversi all'interno di *Think Python*.
+Gli studenti che troveranno questo libro interessante e che vogliano esplorare ulteriormente l'argomento, dovrebbero considerare il libro *Think Python* di Allen B. Downey. Date le molte sovrapposizioni tra i due libri, gli studenti saranno in grado di acquisire rapidamente alcune ulteriori competenze nelle ulteriori aree della tecnica di programmazione e del pensiero algoritmico che sono parte di *Think Python*. Inoltre, dato che i due libri hanno uno stile di scrittura simile, per loro sarà facile muoversi all'interno di *Think Python*.
 
 \index{Creative Commons License}
 \index{CC-BY-SA}

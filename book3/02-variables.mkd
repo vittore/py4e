@@ -249,7 +249,7 @@ Ordine delle operazioni
 Quando appare più di un operatore in un'espressione, l'ordine di calcolo è regolato dalle *regole di precedenza*. Per quanto riguarda gli operatori matematici, Python segue le convenzioni matematiche. L'acronimo *PEMDAS* è utile per ricordare le regole:
 \index{parentheses!overriding precedence}
 
-- *P*arentesi: hanno la precedenza più alta e possono essere utilizzate per costringere il computer a svolgere un'espressione nell'ordine desiderato. Poiché le espressioni tra parentesi vengono valutate per prime: `2 * (3-1)` è uguale a 4 e `(1 + 1) ** (5-2)` a 8. Potete anche utilizzare le parentesi per rendere l'espressione più leggibile, come in `(minuto * 100) / 60`, senza che ciò cambi il risultato.
+- *P*arentesi: hanno la precedenza più alta e possono essere utilizzate per costringere il computer a svolgere un'espressione nell'ordine desiderato. Poiché le espressioni tra parentesi vengono valutate per prime: `2 * (3-1)` è uguale a 4 e `(1 + 1) ** (5-2)` a 8. Puoi anche utilizzare le parentesi per rendere l'espressione più leggibile, come in `(minuto * 100) / 60`, senza che ciò cambi il risultato.
 - L'*E*levamento a potenza ha il livello di precedenza immediatamente successivo, pertanto
     `2 ** 1 + 1` è pari a 3 e non a 4, e `3 * 1 ** 3` è uguale a 3 e non 27.
 - Le *M*oltiplicazioni e le *D*ivisioni hanno
@@ -325,7 +325,7 @@ Some silly stuff
 ~~~~
 
 
-Prima di ricevere input dall'utente, è una buona idea visualizzare un prompt che informi l'utente sul cosa inserire. È possibile indicare una stringa alla funzione `input` affinché venga visualizzata prima della pausa d'attesa dell'input:
+Prima di ricevere input dall'utente, è solitamente una buona idea visualizzare un prompt che informi l'utente sul cosa inserire. È possibile indicare una stringa alla funzione `input` affinché venga visualizzata prima della pausa d'attesa dell'input:
 \index{prompt}
 
 
@@ -372,7 +372,7 @@ Commenti
 --------
 
 \index{comment}
-Man mano che i programmi diventano più grandi e complessi, questi diventano più difficili da leggere. I linguaggi formali sono condensati ed è spesso difficile esaminare un pezzo di codice e capire cosa o perché faccia qualcosa.  Per questo motivo, è una buona idea aggiungere alcune note ai vostri programmi per spiegare in linguaggio naturale cosa stia facendo il programma. Queste note sono chiamate *commenti*, e in Python iniziano con il simbolo `#`:
+Man mano che i programmi diventano più grandi e complessi, questi diventano più difficili da leggere. I linguaggi formali sono condensati ed è spesso difficile esaminare un pezzo di codice e capire cosa o perché faccia qualcosa.  Per questo motivo, è una buona idea aggiungere alcune note ai vostri programmi per spiegare in linguaggio naturale cosa stia facendo il programma. Queste note, che in Python iniziano con il simbolo `#`, sono chiamate *commenti*:
 
 ~~~~ {.python}
 # compute the percentage of the hour that has elapsed

@@ -140,7 +140,7 @@ Ora hai la possibilità di scambiare dati tra applicazioni utilizzando l'HyperTe
 
 Il prossimo passo è iniziare a definire e documentare "contratti" tra le applicazioni che utilizzano queste tecniche. Il nome generico per questi contratti tra applicazioni è *Application Program Interfaces* o API. Quando usiamo un'API generalmente un programma rende disponibili alcuni *servizi* per altre applicazioni e pubblica le API (cioè le "regole") che devono essere seguite per accedervi.
 
-Quando iniziamo a progettare dei programmi dotati di funzionalità che prevedono l'accesso ai servizi forniti da altri programmi, stiamo utilizzando un approccio chiamato *Service-Oriented Architecture* o SOA. L'approccio non è "SOA" quando abbiamo una singola applicazione standalone che contiene tutto il codice necessario per far funzionare l'applicazione.
+Quando iniziamo a progettare dei programmi dotati di funzionalità che prevedono l'accesso ai servizi forniti da altri programmi, stiamo utilizzando un approccio chiamato *Service-Oriented Architecture* o SOA. L'approccio non è "SOA" quando abbiamo una singola applicazione stand-alone che contiene tutto il codice necessario per far funzionare l'applicazione.
 
 Puoi vedere molti esempi di SOA quando navighi in rete: da un unico sito web puoi prenotare viaggi aerei, hotel e automobili. Naturalmente i dati per gli hotel non sono memorizzati nei computer delle compagnie aeree: piuttosto i server delle compagnie aeree contattano i servizi sui computer dell'hotel e recuperano i dati che poi presentano all'utente. Quando l'utente accetta di effettuare una prenotazione alberghiera utilizzando il sito della compagnia aerea, il sito della compagnia aerea utilizza un altro servizio Web dei sistemi dell'hotel per effettuare concretamente la prenotazione. Quando arriva il momento di addebitare il costo sulla tua carta di credito per l'intera transazione vengono coinvolti anche altri computer.
 
@@ -365,7 +365,7 @@ scweeker
 Enter Twitter Account:
 ~~~~
 
-L'ultima parte dell'output contiene il ciclo for che legge i cinque "amici" più recenti dell'account Twitter *drchuck* e ne visualizza lo stato più recente per ciascuno di questi. Nel JSON che tiu viene restituito sono contenuti molti più dati.
+L'ultima parte dell'output contiene il ciclo for che legge i cinque "amici" più recenti dell'account Twitter *drchuck* e ne visualizza lo stato più recente per ciascuno di questi. Nel JSON che ti viene restituito sono contenuti molti più dati.
 
 Se guardi l'output del programma, è anche possibile vedere che il "trova gli amici" di un determinato account ha una diversa velocità in base al numero di query sulla cronologia che è possibile eseguire per ogni periodo di tempo.
 

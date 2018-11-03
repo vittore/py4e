@@ -129,7 +129,7 @@ Supponiamo di avere una stringa di cui vuoi contare quante volte appaia ogni let
 
 2.   Potresti creare una lista con 26 elementi per poi convertire ciascuno in un numero (utilizzando la funzione `ord`), infine utilizzare il numero come indice nell'elenco e incrementare il contatore appropriato.
 
-3.   Potresti creare un dizionario con caratteri come chiavi e contatori come valori corrispondenti. La prima volta che trovi un nuovo carattere, dovrai aggiungere un elemento al dizionario. Successivamente, dovresti incrementerare il valore di un elemento esistente.
+3.   Potresti creare un dizionario con caratteri come chiavi e contatori come valori corrispondenti. La prima volta che trovi un nuovo carattere, dovrai aggiungere un elemento al dizionario. Successivamente, dovresti incrementare il valore di un elemento esistente.
 
 Ognuna di queste opzioni esegue lo stesso calcolo, ma ognuna di esse lo implementa in un modo diverso.
 

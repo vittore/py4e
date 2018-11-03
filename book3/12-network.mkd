@@ -343,7 +343,7 @@ Se hai un sistema Unix o Macintosh, probabilmente hai a disposizione un comando 
 curl -O http://www.py4e.com/cover.jpg
 ~~~~
 
-Il comando `curl` è l'abbreviazione di "copy URL" da cui ho diligentemente tratto il nome di questi due esempi `curl1.py` e `curl2.py` disponibili su [www.py4e.com/code3](http://www.py4e. com / code3) dato che implementano funzionalità simili. Esiste anche uno script `curl3.py` che esegue un po 'più efficacemente questa operazione, nel caso in cui tu desideri davvero utilizzare questo pattern in un tuo programma.
+Il comando `curl` è l'abbreviazione di "copy URL" da cui ho diligentemente tratto il nome di questi due esempi `curl1.py` e `curl2.py` disponibili su [www.py4e.com/code3](http://www.py4e. com / code3) dato che implementano funzionalità simili. Esiste anche uno script `curl3.py` che esegue un po' più efficacemente questa operazione, nel caso in cui tu desideri davvero utilizzare questo pattern in un tuo programma.
 
 Glossario
 --------
