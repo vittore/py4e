@@ -201,7 +201,9 @@ L'estrazione dei dati delle e-mail di Sakai tramite il nostro spider richiederà
 
 Il primo passo è quello di lanciare lo spider sul repository gmane. L'URL di base è inserito direttamente in _gmane.py_ ed è presente nell'elenco degli sviluppatori di Sakai. Puoi esaminare in qualunque momento un altro repository cambiando l'url di base ed assicurandoti di eliminare il file _content.sqlite_.  
 
-Il file _gmane.py_ opera come uno spider di cache responsabile in quanto viene eseguito lentamente e recupera un messaggio di posta elettronica al secondo in modo da evitare di essere limitato da gmane. Memorizza tutti i suoi dati in un database e può essere interrotto e riavviato tutte le volte che è necessario. Potrebbero essere necessarie molte ore per scaricare tutti i dati, potrebbe quindi essere necessario riavviare più volte.  Ecco una serie di _gmane.py_ che recupera gli ultimi cinque messaggi dell'elenco degli sviluppatori di Sakai:
+Il file _gmane.py_ opera come uno spider responsabile dato che la sua velocità di esecuzione é lenta: recupera un messaggio di posta elettronica al secondo in modo da evitare di essere limitato da gmane. Memorizza tutti i  dati in un database e può essere interrotto e riavviato tutte le volte che sia necessario. Dato che probabilmente saranno necessarie molte ore per scaricare tutti i dati, potrebbe  essere necessario riavviare più volte questo script più volte.
+
+Ecco un esempio dell'esecuzione di _gmane.py_ durante il recupero degli ultimi cinque messaggi dalla lista degli sviluppatori di Sakai:
 
     How many messages:10
     http://download.gmane.org/gmane.comp.cms.sakai.devel/51410/51411 9460
@@ -218,7 +220,7 @@ Il file _gmane.py_ opera come uno spider di cache responsabile in quanto viene e
 
     Does not start with From
 
-Il programma esegue la scansione di _content.sqlite_ da uno fino al primo numero di messaggio non già esaminato e inizia la ricerca automatica da quel messaggio. Continua a lavorare fino a quando non ha esaminato il numero desiderato di messaggi o raggiunge una pagina che non somiglia a un messaggio formattato correttamente.  
+Il programma esegue il controllo di _content.sqlite_ dal primo messaggio fino a quello non ancora esaminato e inizia la ricerca automatica da quel messaggio. Continua a lavorare fino a quando non ha esaminato il numero desiderato di messaggi o raggiunge una pagina che non somiglia a un messaggio formattato correttamente.  
 
 A volte in [gmane.org](gmane.org) manca un messaggio. Forse gli amministratori possono cancellare messaggi o forse si perdono. Se il vostro spider si ferma e sembra che abbia raggiunto una posizione con un messaggio mancante, andate in SQLite Manager e aggiungete una riga con l'id mancante lasciando vuoti tutti gli altri campi e riavviate _gmane.py_. Questo sbloccherà il processo di spidering e gli permetterà di continuare. Questi messaggi vuoti verranno ignorati nella fase successiva del processo.  
 
@@ -235,7 +237,9 @@ Ogni volta che _gmodel.py_ esegue, cancella e ricostruisce _index.sqlite_, vi co
     751 2006-01-24T11:13:28-08:00 vrajgopalan@ucmerced.edu
     ...
 
-Il programma _gmodel.py_ gestisce una serie di attività di pulizia dei dati.  I nomi di dominio sono troncati su due livelli per .com, .org, .edu e .net. Altri nomi di dominio sono troncati su tre livelli. Quindi si.umich.edu diventa umich.edu e caret.cam.ac.uk diventa cam.ac.uk. Gli indirizzi di posta elettronica sono anche trasformati in lettere minuscole e alcuni degli indirizzi di @gmane.org come questi:
+Il programma _gmodel.py_ gestisce una serie di attività di pulizia dei dati.
+
+I nomi di dominio sono troncati su due livelli per .com, .org, .edu e .net. Altri nomi di dominio sono troncati su tre livelli. Quindi si.umich.edu diventa umich.edu e caret.cam.ac.uk diventa cam.ac.uk. Gli indirizzi di posta elettronica sono anche trasformati in lettere minuscole e alcuni degli indirizzi di @gmane.org come questi:
 
     arwhyte-63aXycvo3TyHXe+LvDLADg@public.gmane.org
 
@@ -254,7 +258,9 @@ Possiamo aggiungere due voci alla tabella Mapping in _content.sqlite_ così _gmo
 
     iupui.edu -> indiana.edu
 
-così tutti gli account dei vari campus della Indiana University sono tracciati insieme.  È possibile eseguire _gmodel.py_ ripetutamente mentre si esaminano i dati e aggiungere mappature per avere i dati sempre più in ordine. Al termine, avrete una versione ben indicizzata delle email in _index.sqlite_. Questo è il file da utilizzare per eseguire l'analisi dei dati. Con questo file, l'analisi dei dati sarà molto veloce.  La prima semplice analisi dei dati è determinare "chi ha inviato la maggior parte della posta?" e "quale organizzazione ha inviato la maggior parte della posta"? Questo viene fatto usando _gbasic.py_:
+così tutti gli account dei vari campus della Indiana University sono tracciati insieme.  È possibile eseguire _gmodel.py_ ripetutamente mentre si esaminano i dati e aggiungere mappature per avere i dati sempre più in ordine. Al termine, avrete una versione ben indicizzata delle email in _index.sqlite_. Questo è il file da utilizzare per eseguire l'analisi dei dati. Con questo file, l'analisi dei dati sarà molto veloce.
+
+La prima semplice analisi dei dati è determinare "chi ha inviato la maggior parte della posta?" e "quale organizzazione ha inviato la maggior parte della posta"? Questo viene fatto usando _gbasic.py_:
 
     How many to dump? 5
     Loaded messages= 51330 subjects= 25033 senders= 1584
@@ -273,7 +279,9 @@ così tutti gli account dei vari campus della Indiana University sono tracciati 
     indiana.edu 2258
     unicon.net 2055
 
-Notate quanto più rapidamente _gbasic.py_ viene eseguito rispetto a _gmane.py_ o anche _gmodel.py_. Stanno tutti lavorando sugli stessi dati, ma _gbasic.py_ sta usando i dati compressi e normalizzati in _index.sqlite_. Se dovete gestire molti dati, un processo a più fasi come quello di questa applicazione potrebbe richiedere un po' più di tempo per svilupparsi, ma vi farà risparmiare un sacco di tempo quando iniziate veramente a esplorare e visualizzare i vostri dati.  Potete produrre una semplice visualizzazione della frequenza delle parole nelle righe dell'oggetto nel file _gword.py_:
+Notate quanto più rapidamente _gbasic.py_ viene eseguito rispetto a _gmane.py_ o anche _gmodel.py_. Stanno tutti lavorando sugli stessi dati, ma _gbasic.py_ sta usando i dati compressi e normalizzati in _index.sqlite_. Se dovete gestire molti dati, un processo a più fasi come quello di questa applicazione potrebbe richiedere un po' più di tempo per svilupparsi, ma vi farà risparmiare un sacco di tempo quando iniziate veramente a esplorare e visualizzare i vostri dati.
+
+Puoi ottenere una semplice visualizzazione della frequenza delle parole nelle righe dell'oggetto nel file _gword.py_:
 
     Range of counts: 33229 129
     Output written to gword.js
