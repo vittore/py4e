@@ -60,7 +60,7 @@ Gli elenchi sono mutabili
 \index{}
 \index{bracket operator}
 \index{operator!bracket}
-La sintassi per accedere agli elementi di un elenco è la stessa usata per i caratteri di una stringa: l'operatore rappresentato dalle parentesi. L'espressione tra parentesi specifica l'indice. Ricorda che anche l'indice inizia da 0:
+La sintassi per accedere agli elementi di un elenco è la stessa usata per i caratteri di una stringa: l'operatore rappresentato dalle parentesi. L'espressione tra parentesi specifica l'indice. Ricorda che l'indice inizia da 0:
 
 ~~~~ {.python}
 >>> print(cheeses[0])
@@ -155,7 +155,7 @@ for x in empty:
 ~~~~
 
 
-Come ti ho scritto, un elenco può contenere un altro elenco, che comunque conta se fosse un singolo elemento. Per farti un esempio, la lunghezza di questo elenco è pari a quattro:
+Come ti ho scritto, un elenco può contenere un altro elenco, che comunque conta come se fosse un singolo elemento. Per farti un esempio, la lunghezza di questo elenco è pari a quattro:
 \index{nested list}
 \index{list!nested}
 
@@ -384,7 +384,7 @@ Esistono numerose funzioni integrate dedicate agli elenchi che consentono di sco
 ~~~~
 
 Puoi utilizzare la funzione `sum()` che funziona solo se tutti gli elementi dell'elenco sono numeri. Le altre funzioni (`max()`, `len()`, ecc.) funzionano con stringhe e altri elementi che possano essere comparati.  
-Potremmo riscrivere un programma visto in precedenza che calcolava la media di un insieme di numeri immessi dall'utente, utilizzando, stavolta, un elenco.  
+Potremmo riscrivere un programma visto in precedenza che calcolava la media di un insieme di numeri immessi dall'utente utilizzando, stavolta, un elenco.  
 Innanzitutto ecco lo script che abbiamo scritto per calcolare la media dei numeri inseriti:
 
 \VerbatimInput{../code3/avenum.py}
@@ -524,7 +524,7 @@ Puoi usare l'operatore `is` per verificare se due variabili si riferiscono allo 
 True
 ~~~~
 
-In questo esempio, Python ha creato un unico oggetto stringa a chi fanno riferimento sia `a` che `b`.
+In questo esempio, Python ha creato un unico oggetto stringa a cui fanno riferimento sia `a` che `b`.
 
 Se invece crei due elenchi, otterrai due oggetti:
 
@@ -682,7 +682,7 @@ Debug
 
 L'uso incauto degli elenchi (e di altri oggetti mutabili) può portarti a passare lunghe ore nelle operazioni di debug.
 
-Ecco alcuni problemi comuni e suggerimenti sul come evitarli:
+Ecco alcuni problemi comuni e dei suggerimenti su come evitarli:
 
 1.  Non dimenticare che la maggior parte dei metodi applicabili agli elenchi modificano l'argomento e restituiscono `None`.
     Questo è l'opposto del comportamento dei metodi di stringa che restituiscono una nuova stringa e lasciano immutato l'originale.
@@ -753,7 +753,7 @@ Ecco alcuni problemi comuni e suggerimenti sul come evitarli:
 
 4.  Elenchi, `split` e file
 
-    Quando leggiamo e analizziamo file ci sono molte opportunità di imbattersi in input che possano mandare in crash il nostro programma, è quindi una buona idea rivisitare lo schema del *guardiano* quando capita di scrivere programmi che leggono cercando il classico "ago nel pagliaio".
+    Quando leggiamo e analizziamo file ci sono molte opportunità di imbattersi in input che possano mandare in crash il nostro programma, quindi è una buona idea rivisitare lo schema del *guardiano* quando capita di scrivere programmi che leggono cercando il classico "ago nel pagliaio".
 
     Riprendiamo il programma che cerca il giorno della settimana nelle righe del nostro file:
 
