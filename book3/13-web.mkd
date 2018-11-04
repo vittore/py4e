@@ -365,17 +365,17 @@ scweeker
 Enter Twitter Account:
 ~~~~
 
-L'ultima parte dell'output contiene il ciclo for che legge i cinque "amici" più recenti dell'account Twitter *drchuck* e ne visualizza lo stato più recente per ciascuno di questi. Nel JSON che ti viene restituito sono contenuti molti più dati.
+Nella parte finale dell'output é contenuto il ciclo for che legge i cinque "amici" più recenti dell'account Twitter *drchuck* e ne visualizza l'ultimo stato anche se nel JSON che ti viene restituito sono contenuti molti più dati.
 
-Se guardi l'output del programma, è anche possibile vedere che il "trova gli amici" di un determinato account ha una diversa velocità in base al numero di query sulla cronologia che è possibile eseguire per ogni periodo di tempo.
+Se osservi l'output del programma noterai che il "trova gli amici" di un determinato account ha una diversa velocità in base al numero di query sulla cronologia che ti è possibile eseguire per ogni periodo di tempo.
 
-Queste chiavi API sicure consentono a Twitter di sapere con certezza chi sta usando le sue API e i suoi dati. La limitazione della velocità ci consente di eseguire semplici raccolte di dati personali, impedendoci di creare un prodotto che estragga dati dalle API milioni di volte al giorno.
+Queste chiavi API sicure consentono a Twitter di conoscere con certezza chi sta usando le sue API e i suoi dati. Le limitazioni della velocità ci consentono di eseguire semplici query dei dati personali, impedendoci di creare un prodotto che raccolga massivamente dati interrogando le API milioni di volte al giorno.
 
 Glossario
 --------
 
 **API**
-: Application Program Interface - Una forma di contratto che definisce le modalità di interazione tra le componenti di una o più applicazioni.
+: Application Program Interface - Una sorta di contratto che definisce le modalità di interazione tra le componenti di una o più applicazioni.
 \index{API}
 
 **ElementTree**
