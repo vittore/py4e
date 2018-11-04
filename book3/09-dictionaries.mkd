@@ -51,7 +51,7 @@ Questo formato di output è anche un formato di input. Ad esempio, puoi creare u
 
 L'ordine delle coppie chiave-valore non è lo stesso. Se digiti lo stesso esempio sul tuo computer, potresti ottenere un risultato ancora diverso. In generale, l'ordine degli elementi in un dizionario è imprevedibile.
 
-Ma questo non è un problema perché gli elementi di un dizionario non sono mai indicizzati con indici interi. Invece, usate le chiavi per cercare i valori corrispondenti:
+Ma questo non è un problema perché gli elementi di un dizionario non sono mai indicizzati con indici interi. Invece, vanno usate le chiavi per cercare i valori corrispondenti:
 
 ~~~~ {.python}
 >>> print(eng2sp['two'])
@@ -215,7 +215,7 @@ Scriveremo un programma Python per leggere le righe del file, suddividerle in un
 \index{nested loops}
 \index{loop!nested}
 
-Vedrai che avremo bisogno di due cicli `for`. Il ciclo esterno legge ognuna delle righe del file e il ciclo interno si ripete su ciascuna delle parole presenti in quella particolare riga. Questo è un esempio dello uno schema chiamato *cicli annidati* in quanto uno dei cicli è il ciclo *esterno* e l'altro il ciclo *interno*. Poiché il ciclo interno esegue tutte le sue iterazioni ogni volta che il ciclo esterno effettua una singola iterazione, pensiamo come se il ciclo interno iterasse "più rapidamente" e il ciclo esterno iterasse più lentamente.
+Vedrai che avremo bisogno di due cicli `for`. Il ciclo esterno legge ognuna delle righe del file e il ciclo interno si ripete su ciascuna delle parole presenti in quella particolare riga. Questo è un esempio dello schema chiamato *cicli annidati* in quanto uno dei cicli è il ciclo *esterno* e l'altro il ciclo *interno*. Poiché il ciclo interno esegue tutte le sue iterazioni ogni volta che il ciclo esterno effettua una singola iterazione, pensiamo come se il ciclo interno iterasse "più rapidamente" e il ciclo esterno iterasse più lentamente.
 
 \index{Romeo and Juliet}
 
@@ -372,9 +372,9 @@ Debug
 
 \index{debugging}
 
-Nel lavorare con insiemi più grandi di dati può risultare poco pratico eseguire il debug visualizzando e controllando i dati manualmente. Ecco alcuni suggerimenti per il debug di insiemi di dati di grandi dimensioni:
+Nel lavorare con insiemi di dati più grandi può risultare poco pratico eseguire il debug visualizzando e controllando i dati manualmente. Ecco alcuni suggerimenti per il debug di insiemi di dati di grandi dimensioni:
 
-Ridimensionare l'input: se possibile, ridurre la dimensione del dataset. Ad esempio, se il programma deve analizzare un file di testo, inizialo con solo le prime 10 righe o con il campione più piccolo che riesci a trovare. Puoi quindi modificare il file stesso o (meglio) lo script in modo che legga solo le prime `n` righe.
+Ridimensionare l'input: se possibile, ridurre la dimensione del dataset. Ad esempio, se il programma deve analizzare un file di testo, inizia con solo le prime 10 righe o con il campione più piccolo che riesci a trovare. Puoi quindi modificare il file stesso o (meglio) lo script in modo che legga solo le prime `n` righe.
 
 Se c'è un errore, riduci `n` al numero minore di righe in cui si manifesta l'errore, poi aumentalo gradualmente man mano che trovi e correggi gli errori che si presentano.
 
