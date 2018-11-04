@@ -1,6 +1,4 @@
 
-
-
 Utilizzo dei database e SQL
 ==========================
 
