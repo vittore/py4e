@@ -2,16 +2,16 @@
 Elenchi
 =====
 
-\index{elenco}
-\index{tipo!elenco}
+\index{list}
+\index{type!list}
 
 Un elenco è una sequenza
 ------------------------
 
 Similmente ad una stringa, un *elenco* è una sequenza di valori. Ma mentre in una stringa i valori sono costituiti solo da caratteri, in un elenco questi possono essere di qualsiasi tipo e sono chiamati *elementi* o talvolta *oggetti*.
 
-\index{elemento}
-\index{sequenza}
+\index{element}
+\index{sequence}
 \index{item}
 
 Esistono diversi modi per creare un elenco; il più semplice è racchiudere gli elementi tra parentesi quadre (`[` e `]`):
@@ -30,12 +30,12 @@ Il primo esempio è un elenco di quattro numeri interi, il secondo è un elenco 
 
 
 Un elenco contenuto all'interno di un altro elenco è definito elenco *nidificato*.
-\index{lista annidata}
-\index{elenco!inestata}
+\index{nested list}
+\index{list!nested}
 
 Un elenco senza elementi è chiamato elenco vuoto: puoi crearne uno semplicemente scrivendo due parentesi quadre vuote: `[]`.
-\index{elenco vuoto}
-\index{elenco!vuoto}
+\index{empty list}
+\index{list!empty}
 
 Come puoi immaginare, puoi assegnare un elenco a una variabile:
 
@@ -49,17 +49,17 @@ Come puoi immaginare, puoi assegnare un elenco a una variabile:
 
 
 
-\index{assegnazione}
+\index{assignment}
 
 Gli elenchi sono mutabili
 -----------------
 
-\index{elenco!elemento}
-\index{accesso}
-\index{indice}
-
-\index{operatore parentesi}
-\index{operatore!parentesi}
+\index{list!element}
+\index{access}
+\index{index}
+\index{}
+\index{bracket operator}
+\index{operator!bracket}
 La sintassi per accedere agli elementi di un elenco è la stessa usata per i caratteri di una stringa: l'operatore rappresentato dalle parentesi. L'espressione tra parentesi specifica l'indice. Ricorda che l'indice inizia da 0:
 
 ~~~~ {.python}
@@ -70,7 +70,7 @@ Cheddar
 
 A differenza delle stringhe, gli elenchi sono modificabili in quanto è possibile modificare l'ordine degli elementi in un elenco o riassegnare un elemento in un elenco. Quando la parentesi è visualizzata sul lato sinistro di un'assegnazione, identifica l'elemento dell'elenco che verrà modificato.
 
-\index{mutabilità}
+\index{mutability}
 
 
 ~~~~ {.python .trinket}
@@ -83,28 +83,28 @@ A differenza delle stringhe, gli elenchi sono modificabili in quanto è possibil
 
 L'elemento di indice uno di `numbers`, 123, è stato sostituito da 5.
 
-\index{indice!partenza da zero}
-\index{zero, partenza dell'indice da}
+\index{index!starting at zero}
+\index{zero, index starting at}
 
 Gli elenchi possono essere immaginati come una relazione tra indici ed elementi. Questa relazione è chiamata *mappatura*; ogni indice "mappa" uno degli elementi.
 
-\index{assegnazione di un item}
-\index{assegnazione!item}
+\index{item assignment}
+\index{assignment!item}
 
 Gli indici degli elenchi funzionano allo stesso modo di quelli delle stringhe:
 
 - Qualsiasi espressione di tipo intero può essere utilizzata come indice.
 
 - Se provi a leggere o scrivere un elemento che non esiste, otterrai un 'IndexError`;
-\index{eccezione!IndexError}
+\index{exception!IndexError}
 \index{IndexError}
 
 - Con un indice negativo, il conteggio inizia a ritroso partendo dalla fine dell'elenco.
-\index{elenco!indice}
-\index{elenco!membership}
+\index{list!index}
+\index{list!membership}
 \index{membership!list}
-\index{operatore in}
-\index{operatore!in}
+\index{in operator}
+\index{operator!in}
 L'operatore `in` funziona anche sugli elenchi:
 
 ~~~~ {.python .trinket}
@@ -119,11 +119,11 @@ False
 Scorrere un elenco
 -----------------
 
-\index{elenco!traversal}
+\index{list!traversal}
 \index{traversal!list}
-\index{ciclo for}
-\index{ciclo!for}
-\index{istruzione!for}
+\index{for loop}
+\index{loop!for}
+\index{statement!for}
 Il modo più comune di scorrere gli elementi di un elenco è un ciclo `for`. La sintassi è la stessa delle stringhe:
 
 ~~~~ {.python}
@@ -133,8 +133,8 @@ for cheese in cheeses:
 
 Funziona bene solo se devi leggere gli elementi di un elenco. Se vuoi scrivere o aggiornare degli elementi, devi lavorare con gli indici. Un modo comune per farlo è combinare le funzioni `range` e `len`:
 
-\index{ciclo!con indici}
-\index{indice!looping con}
+\index{looping!with indices}
+\index{index!looping with}
 
 
 ~~~~ {.python}
@@ -145,7 +145,7 @@ for i in range(len(numbers)):
 
 Questo ciclo scorre l'elenco e aggiorna ciascun elemento. `len` restituisce il numero di elementi dell'elenco. `range` restituisce un elenco di indici da 0 a $n-1$, dove $n$ è la lunghezza dell'elenco. Ad ogni ripetizione del ciclo, `i` assume l'indice dell'elemento successivo. L'istruzione di assegnazione nel corpo usa `i` per leggere il vecchio valore dell'elemento e assegnare quello nuovo.
 
-\index{aggiornamento di un item}
+\index{item update}
 \index{update!item}
 Un ciclo `for` su una lista vuota non esegue mai il blocco:
 
@@ -156,8 +156,8 @@ for x in empty:
 
 
 Come ti ho scritto, un elenco può contenere un altro elenco, che comunque conta come se fosse un singolo elemento. Per farti un esempio, la lunghezza di questo elenco è pari a quattro:
-\index{lista annidata}
-\index{elenco!inestata}
+\index{nested list}
+\index{list!nested}
 
 
 ~~~~ {.python}
@@ -168,12 +168,12 @@ Come ti ho scritto, un elenco può contenere un altro elenco, che comunque conta
 Operazioni sugli elenchi
 ---------------
 
-\index{elenco!operazione}
+\index{list!operation}
 
 L'operatore `+` concatena gli elenchi:
 
-\index{concatezione!list}
-\index{elenco!concantenazione}
+\index{concatenation!list}
+\index{list!concatenation}
 
 
 ~~~~ {.python .trinket}
@@ -187,8 +187,8 @@ L'operatore `+` concatena gli elenchi:
 
 L'operatore `*` ripete un elenco un dato numero di volte:
 
-\index{ripetizione!lista}
-\index{elenco!ripetizione}
+\index{repetition!list}
+\index{list!repetition}
 
 
 ~~~~ {.python .trinket}
@@ -204,11 +204,11 @@ Nel primo esempio 0 viene ripetuto quattro volte, nel secondo l'elenco viene rip
 Slicing degli elenchi
 -----------
 
-\index{operatore slice}
-\index{operatore!slice}
-\index{indice!divisione}
-\index{elenco!slice}
-\index{tagliare!list}
+\index{slice operator}
+\index{operator!slice}
+\index{index!slice}
+\index{list!slice}
+\index{slice!list}
 
 L'operatore slice può essere utilizzato anche con gli elenchi:
 
@@ -225,9 +225,9 @@ L'operatore slice può essere utilizzato anche con gli elenchi:
 
 Se ometti il primo indice, lo slicing comincia dall'inizio. Se ometti il secondo, lo slicing termina alla fine. Di conseguenza se mancano entrambi, lo slicing è una copia dell'intero elenco.
 
-\index{elenco!copia}
-\index{tagliare!copy}
-\index{copia!slice}
+\index{list!copy}
+\index{slice!copy}
+\index{copy!slice}
 
 ~~~~ {.python}
 >>> t[:]
@@ -237,11 +237,11 @@ Se ometti il primo indice, lo slicing comincia dall'inizio. Se ometti il secondo
 
 Poiché gli elenchi sono editabili, spesso è utile farne prima una copia e poi eseguire operazioni che le aggreghino, le invertano o le tronchino.
 
-\index{mutabilità}
+\index{mutability}
 
 Un operatore di slicing posto sul lato sinistro di un'assegnazione ti permette di aggiornare più elementi:
 
-\index{tagliare!aggiornamento}
+\index{slice!update}
 \index{update!slice}
 
 ~~~~ {.python .trinket}
@@ -254,13 +254,13 @@ Un operatore di slicing posto sul lato sinistro di un'assegnazione ti permette d
 Metodi degli elenchi
 ------------
 
-\index{elenco!metodo}
-\index{metodo!list}
+\index{list!method}
+\index{method, list}
 
 Python ti mette a disposizione diversi metodi per operare sugli elenchi. Ad esempio tramite `append` puoi aggiungere un nuovo elemento alla fine di un elenco:
 
-\index{metodo append}
-\index{metodo!append}
+\index{append method}
+\index{method!append}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c']
@@ -271,8 +271,8 @@ Python ti mette a disposizione diversi metodi per operare sugli elenchi. Ad esem
 
 `extend` accetta un elenco come argomento e ne accoda tutti gli elementi all'elenco specificato:
 
-\index{metodo extend}
-\index{metodo!extend}
+\index{extend method}
+\index{method!extend}
 
 ~~~~ {.python .trinket}
 >>> t1 = ['a', 'b', 'c']
@@ -286,8 +286,8 @@ In questo esempio l'elenco `t2` rimane immutato.
 
 Tramite `sort` puoi ordinare gli elementi dell'elenco in ordine crescente:
 
-\index{metodo sort}
-\index{metodo!sort}
+\index{sort method}
+\index{method!sort}
 
 ~~~~ {.python .trinket}
 >>> t = ['d', 'c', 'e', 'b', 'a']
@@ -299,21 +299,21 @@ Tramite `sort` puoi ordinare gli elementi dell'elenco in ordine crescente:
 La maggior parte dei metodi applicabili agli elenchi non accettano argomenti: modificano l'elenco e restituiscono `None`.
 Se scrivessi accidentalmente `t = t.sort()`, rimarresti molto deluso dal risultato.
 
-\index{metodo void}
-\index{metodo!nullo}
-\index{Valore speciale!None}
-\index{valore speciale!None}
+\index{void method}
+\index{method!void}
+\index{None special value}
+\index{special value!None}
 
 Eliminazione di elementi
 -----------------
 
-\index{cancellazione elemento}
-\index{cancellare, elemento di una lista}
+\index{element deletion}
+\index{deletion, element of list}
 
 Esistono diversi modi per eliminare elementi da un elenco: Se conosci l'indice dell'elemento desiderato, puoi usare `pop`:
 
-\index{metodo pop}
-\index{metodo!pop}
+\index{pop method}
+\index{method!pop}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c']
@@ -326,8 +326,8 @@ b
 
 `pop` modifica l'elenco e restituisce l'elemento rimosso. Se non fornisci un indice, il metodo elimina e restituisce l'ultimo elemento dell'elenco. Se non ti serve il valore rimosso, puoi usare l'operatore `del`:
 
-\index{operatore del}
-\index{operatore!del}
+\index{del operator}
+\index{operator!del}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c']
@@ -338,8 +338,8 @@ b
 
 Se conosci l'elemento da rimuovere (ma non l'indice), puoi utilizzare `remove`:
 
-\index{metodo remove}
-\index{metodo!remove}
+\index{remove method}
+\index{method!remove}
 
 ~~~~ {.python .trinket}
 >>> t = ['a', 'b', 'c']
@@ -350,8 +350,8 @@ Se conosci l'elemento da rimuovere (ma non l'indice), puoi utilizzare `remove`:
 
 Il valore restituito da `remove` è `None`.
 
-\index{Valore speciale!None}
-\index{valore speciale!None}
+\index{None special value}
+\index{special value!None}
 
 Per rimuovere più di un elemento, utilizza `del` con un indice di slicing:
 
@@ -400,14 +400,14 @@ nell'esempio precedente abbiamo creato un elenco vuoto prima che inizi il ciclo,
 Elenchi e stringhe
 -----------------
 
-\index{elenco}
-\index{stringa}
-\index{sequenza}
+\index{list}
+\index{string}
+\index{sequence}
 
 Ti ho già scritto che una stringa ed un elenco non sono la stessa cosa: una stringa è una sequenza di caratteri mentre un elenco è una sequenza di valori. Per convertire una stringa in un elenco di caratteri, puoi usare `list`:
 
-\index{elenco!funzione}
-\index{funzione!list}
+\index{list!function}
+\index{function!list}
 
 ~~~~ {.python .trinket}
 >>> s = 'spam'
@@ -419,8 +419,8 @@ Ti ho già scritto che una stringa ed un elenco non sono la stessa cosa: una str
 dato che `list` è un nome riservato, evita di usarlo come nome per una variabile. Ti consiglio anche di evitare la lettera `l` perché assomiglia troppo al numero `1`. Personalmente preferisco la `t`.  
 La funzione `list` suddivide una stringa in singole lettere. Se invece vuoi dividere una stringa in singole parole, ti torna utile il metodo `split`:
 
-\index{metodo split}
-\index{metodo!split}
+\index{split method}
+\index{method!split}
 
 ~~~~ {.python .trinket}
 >>> s = 'pining for the fjords'
@@ -435,9 +435,9 @@ the
 Dopo aver usato `split` per spezzare la stringa in un elenco di parole, puoi usare l'operatore indice (parentesi quadre) per cercare una particolare parola nell'elenco.  
 Puoi chiamare `split` con un argomento opzionale chiamato *delimitatore* che specifica quali caratteri usare come separatore delle parole. Nell'esempio seguente viene utilizzato un trattino come delimitatore:
 
-\index{argomento opzionale}
-\index{argomento!opzionale}
-\index{delimitatore}
+\index{optional argument}
+\index{argument!optional}
+\index{delimiter}
 
 ~~~~ {.python .trinket}
 >>> s = 'spam-spam-spam'
@@ -448,9 +448,9 @@ Puoi chiamare `split` con un argomento opzionale chiamato *delimitatore* che spe
 
 `join` è l'inverso di `split`. Prende un elenco di stringhe e ne concatena gli elementi. `join` è un metodo delle stringhe, quindi lo devi richiamare per mezzo del delimitatore passando l'elenco come parametro:
 
-\index{metodo join}
-\index{metodo!join}
-\index{concatenazione}
+\index{join method}
+\index{method!join}
+\index{concatenation}
 
 ~~~~ {.python .trinket}
 >>> t = ['pining', 'for', 'the', 'fjords']
@@ -461,8 +461,8 @@ Puoi chiamare `split` con un argomento opzionale chiamato *delimitatore* che spe
 
 In questo caso il delimitatore è uno spazio, perciò `join` ne aggiunge uno tra le varie parole. Se dovessi aver bisogno di concatenare delle stringhe senza spazi, puoi usare come delimitatore una stringa vuota "".
 
-\index{stringa vuota}
-\index{stringa!vuota}
+\index{empty string}
+\index{string!empty}
 
 Analisi di righe
 -------------
@@ -494,8 +494,8 @@ In seguito impareremo tecniche sempre più sofisticate per scegliere le righe su
 Oggetti e valori
 ------------------
 
-\index{oggetto}
-\index{valore}
+\index{object}
+\index{value}
 
 Se eseguiamo queste istruzioni di assegnazione:
 
@@ -512,8 +512,8 @@ sappiamo che `a` e `b` si riferiscono entrambi a una stringa, ma non sappiamo se
 
 Nel primo caso `a` e `b` si riferiscono a due oggetti diversi che hanno lo stesso valore mentre nel secondo caso si riferiscono allo stesso oggetto.
 
-\index{operatore is}
-\index{operatore!is}
+\index{is operator}
+\index{operator!is}
 
 Puoi usare l'operatore `is` per verificare se due variabili si riferiscono allo stesso oggetto.
 
@@ -537,19 +537,19 @@ False
 
 In questo caso, potremmo dire che i due elenchi sono *equivalenti*, dato che contengono gli stessi elementi, ma non *identici*, perché non sono lo stesso oggetto. Se due oggetti sono identici sono anche equivalenti, ma se sono equivalenti non sono necessariamente identici.
 
-\index{equivalenza}
-\index{identità}
+\index{equivalence}
+\index{identity}
 
 Anche se fino ad ora abbiamo usato "oggetto" e "valore" in modo intercambiabile, è più preciso dire che un oggetto ha un valore. Se esegui `a = [1,2,3]`, `a` si riferisce ad un oggetto elenco il cui valore è una particolare sequenza di elementi. Se un altro elenco ha gli stessi elementi diremo che ha lo stesso valore.
 
-\index{oggetto}
-\index{valore}
+\index{object}
+\index{value}
 
 Alias
 --------
 
 \index{aliasing}
-\index{riferimento!aliasing}
+\index{reference!aliasing}
 
 Se `a` si riferisce ad un oggetto e assegni `b = a`, allora entrambe le variabili si riferiscono allo stesso oggetto:
 
@@ -562,11 +562,11 @@ True
 
 L'associazione tra una variabile e un oggetto è chiamata *riferimento*. In questo esempio, ci sono due riferimenti allo stesso oggetto.
 
-\index{riferimento}
+\index{reference}
 
 Quando un oggetto ha più di un riferimento, ha di conseguenza più di un nome, che chiameremo *alias*.
 
-\index{mutabilità}
+\index{mutability}
 
 Se l'oggetto con alias è modificabile, le modifiche apportate su un alias si riflettono sugli altri:
 
@@ -578,7 +578,7 @@ Se l'oggetto con alias è modificabile, le modifiche apportate su un alias si ri
 
 Sebbene questo comportamento possa essere utile, è spesso fonte di errori. In generale, è meglio evitare gli alias quando si lavora con oggetti mutabili.
 
-\index{immutabile}
+\index{immutability}
 
 Nel caso di oggetti immutabili come le stringhe gli alias non sono un problema. In questo esempio non fa quasi mai differenza se `a` e `b` si riferiscono alla stessa stringa o meno:
 
@@ -591,11 +591,11 @@ b = 'banana'
 Elenchi come argomenti
 --------------
 
-\index{elenco!come argomento}
-\index{argomento}
-\index{argomento!elenco}
-\index{riferimento}
-\index{parametro}
+\index{list!as argument}
+\index{argument}
+\index{argument!list}
+\index{reference}
+\index{parameter}
 
 Quando passate un elenco a una funzione, questa ottiene un riferimento all'elenco. Se la funzione modifica un parametro dell'elenco, il chiamante vede la modifica. Ad esempio `delete_head` rimuove il primo elemento di un elenco:
 
@@ -618,10 +618,10 @@ Il parametro `t` e la variabile `letters` sono alias dello stesso oggetto.
 
 È importante distinguere tra operazioni che modificano elenchi e operazioni che creano nuovi elenchi. Nel prossimo esempio, il metodo `append` modifica un elenco, mentre l'operatore `+` ne crea uno nuovo:
 
-\index{metodo append}
-\index{metodo!append}
-\index{elenco!concantenazione}
-\index{concatezione!list}
+\index{append method}
+\index{method!append}
+\index{list!concatenation}
+\index{concatenation!list}
 
 ~~~~ {.python .trinket}
 >>> t1 = [1, 2]
@@ -650,8 +650,8 @@ def bad_delete_head(t):
 L'operatore slice crea un nuovo elenco e l'assegnazione fa in modo che "t" si riferisca ad esso, senza che tutto questo abbia effetto sull'elenco che è stato passato come argomento.
 
 
-\index{operatore slice}
-\index{operatore!slice}
+\index{slice operator}
+\index{operator!slice}
 
 
 Un'alternativa è scrivere una funzione che crei e restituisca un nuovo elenco. Ad esempio `tail` restituisce tutti gli elementi di un
@@ -700,8 +700,8 @@ Ecco alcuni problemi comuni e dei suggerimenti su come evitarli:
         t = t.sort()           # ERRATO!
     ~~~~
 
-    \index{metodo sort}
-    \index{metodo!sort}
+    \index{sort method!}
+    \index{methodsort}
 
     Poiché `sort` restituisce `None`, la successiva operazione che eseguirai su `t` probabilmente fallirà.
 
@@ -713,7 +713,7 @@ Ecco alcuni problemi comuni e dei suggerimenti su come evitarli:
 
 2.  Scegliere sempre un solo idioma.
 
-    \index{idioma}
+    \index{idiom}
 
     Parte dei problemi che hai con gli elenchi deriva dal fatto che ci sono troppi modi per fare le stesse cose.
     Ad esempio, per rimuovere un elemento da un elenco, puoi usare `pop`, `remove`, `del`, o anche lo slice.
@@ -739,8 +739,8 @@ Ecco alcuni problemi comuni e dei suggerimenti su come evitarli:
 
 3.  Fare delle copie per evitare gli alias.
 
-    \index{aliasing!copiare per evitare}
-    \index{copia!per evitare aliasing}
+    \index{aliasing!copying to avoid}
+    \index{copy!to avoid aliasing}
 
     Se vuoi utilizzare un metodo come `sort` per modificare l'argomento ma hai la necessità di mantenere inalterato l'elenco originale, puoi farne una copia.
 
@@ -854,44 +854,44 @@ Glossario
 
 **Delimitatore**
 : Un carattere o una stringa utilizzata per indicare il punto in cui deve essere divisa una stringa.
-\index{delimitatore}
+\index{delimiter}
 
 **Elemento**
 : Uno dei valori in un elenco (o altra sequenza); viene chiamato anche oggetto.
-\index{elemento}
+\index{element}
 
 **Equivalente**
 : Avere lo stesso valore.
-\index{equivalente}
+\index{equivalent}
 
 **Indice**
 : Un valore intero che indica la posizione di un elemento in un elenco.
-\index{indice}
-
+\index{index}
+\index{}
 
 **Identico**
 : Essere lo stesso oggetto (che implica l'equivalenza).
-\index{identico}
+\index{identical}
 
 **Elenco**
 : Una sequenza di valori.
-\index{elenco}
+\index{list}
 
 **Elaborazione trasversale**
 : Accesso sequenziale a ciascun elemento in un elenco.
-\index{elenco!traversal}
+\index{list!traversal}
 
 **Elenco annidato**
 : Un elenco contenuto all'interno di un altro elenco.
-\index{lista annidata}
+\index{nested list}
 
 **Oggetto**
 : Qualcosa a cui una variabile può riferirsi. Un oggetto è caratterizzato da un tipo e un valore.
-\index{oggetto}
+\index{object}
 
 **Riferimento**
 : L'associazione tra una variabile e il suo valore.
-\index{riferimento}
+\index{reference}
 
 Esercizi
 ---------
@@ -899,7 +899,7 @@ Esercizi
 **Esercizio 4:** scarica una copia del file
 [www.py4e.com/code3/romeo.txt](http://www.py4e.com/code3/romeo.txt)
 
-\index{Romeo e Giulietta}
+\index{Romeo and Juliet}
 
 Scrivi un programma che lo apra e lo legga riga per riga. Dividi la riga in un elenco di parole usando la funzione `split`.
 

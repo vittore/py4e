@@ -2,22 +2,22 @@
 Dizionari
 ============
 
-\index{dizionario}
-\index{dizionario}
+\index{dictionary}
+\index{dictionary}
 
-\index{tipo!dict}
-\index{chiave}
-\index{coppia chiave-valore}
-\index{indice}
-
+\index{type!dict}
+\index{key}
+\index{key-value pair}
+\index{index}
+\index{}
 
 Un *dizionario* è come un elenco, ma più generico: in un elenco gli indici di posizione devono essere numeri interi; in un dizionario gli indici possono essere (più o meno) di qualsiasi tipo. Puoi pensare a un dizionario come una correlazione tra un insieme di indici (chiamati *chiavi*) e un insieme di valori.
 Ogni chiave viene associata ad un valore. Questa associazione è chiamata *coppia chiave-valore* o talvolta *elemento*.  
 Ad esempio, costruiremo un dizionario che associ parole inglesi e spagnole dove, quindi, le chiavi e i valori saranno tutte stringhe.  
 Puoi creare un dizionario vuoto tramite la funzione `dict`. Poiché `dict` è il nome di una funzione integrata, dovresti evitare di usarlo come nome di variabile.
 
-\index{funzione dict}
-\index{funzione!dict}
+\index{dict function}
+\index{function!dict}
 
 ~~~~ {.python .trinket}
 >>> eng2sp = dict()
@@ -27,8 +27,8 @@ Puoi creare un dizionario vuoto tramite la funzione `dict`. Poiché `dict` è il
 
 Le parentesi graffe `{}`, rappresentano un dizionario vuoto. Per aggiungere elementi al dizionario, puoi usare le parentesi quadre:
 
-\index{parentesi ondulata}
-\index{parentesi ondulata}
+\index{squiggly bracket}
+\index{bracket!squiggly}
 
 ~~~~ {.python}
 >>> eng2sp['one'] = 'uno'
@@ -60,7 +60,7 @@ Ma questo non è un problema perché gli elementi di un dizionario non sono mai 
 
 La chiave `'two'` si associa sempre al valore "dos" in modo che l'ordine degli oggetti non abbia importanza. Se provi a visualizzare una chiave non presente nel dizionario, otterrai un'eccezione:
 
-\index{eccezione!KeyError}
+\index{exception!KeyError}
 \index{KeyError}
 
 ~~~~ {.python}
@@ -70,8 +70,8 @@ KeyError: 'four'
 
 La funzione `len` può essere utilizzata sui dizionari: restituisce il numero di coppie chiave-valore:
 
-\index{funzione len}
-\index{funzione!len}
+\index{len function}
+\index{function!len}
 
 ~~~~ {.python}
 >>> len(eng2sp)
@@ -81,8 +81,8 @@ La funzione `len` può essere utilizzata sui dizionari: restituisce il numero di
 L'operatore `in` lavora sui dizionari: ti dice se quello che cerchi risulta essere una *chiave* del dizionario (non è sufficiente che risulti come un valore).
 
 \index{membership!dictionary}
-\index{operatore in}
-\index{operatore!in}
+\index{in operator}
+\index{operator!in}
 
 ~~~~ {.python}
 >>> 'one' in eng2sp
@@ -93,8 +93,8 @@ False
 
 Per vedere se qualcosa risulta come valore in un dizionario, puoi usare il metodo `values`, che restituisce i valori come un elenco e successivamente l'operatore `in`:
 
-\index{metodo values}
-\index{metodo!valori}
+\index{values method}
+\index{method!values}
 
 ~~~~ {.python}
 >>> vals = list(eng2sp.values())
@@ -105,7 +105,7 @@ True
 L'operatore `in` utilizza algoritmi diversi per elenchi e dizionari. Per gli elenchi, utilizza un algoritmo di ricerca lineare. Man mano che l'elenco si allunga, il tempo di ricerca si allunga in proporzione diretta alla dimensione dello stesso. Per i dizionari Python utilizza un algoritmo chiamato *tabella degli hash* che ha una proprietà notevole: l'operatore `in` richiede circa la stessa quantità di tempo indipendentemente dal numero di elementi presenti in un dizionario. Non ti spiegherò perché le funzioni di hash siano così magiche, ma puoi ottenere ulteriori informazioni da
 [wikipedia.org/wiki/Hash\_table](wikipedia.org/wiki/Hash_table).
 
-\index{tabella hash}
+\index{hash table}
 
 **Esercizio 1:**
 
@@ -120,7 +120,7 @@ Scrivi un programma che legga le parole in `words.txt` e le memorizzi come chiav
 Dizionario come insieme di contatori
 -------------------------------
 
-\index{contatore}
+\index{counter}
 
 Supponiamo di avere una stringa di cui vuoi contare quante volte appaia ogni lettera. Ci sono diversi modi per farlo:
 
@@ -132,7 +132,7 @@ Supponiamo di avere una stringa di cui vuoi contare quante volte appaia ogni let
 
 Ognuna di queste opzioni esegue lo stesso calcolo, ma ognuna di esse lo implementa in un modo diverso.
 
-\index{implementazione}
+\index{implementation}
 
 Un'*implementazione* è un modo di eseguire un calcolo; alcune sono migliori di altre. Ad esempio, un vantaggio dell'adozione di un dizionario è che non dobbiamo sapere in anticipo quali lettere saranno presenti nella stringa ma dobbiamo solo far spazio per quelle che appariranno.
 
@@ -151,13 +151,13 @@ print(d)
 
 Stiamo in realtà calcolando un *istogramma*, che è un termine statistico per un insieme di contatori (o frequenze).
 
-\index{istogramma}
-\index{frequenza}
+\index{histogram}
+\index{frequency}
 \index{traversal}
 
 Il ciclo `for` analizza la stringa: ogni volta che viene eseguito il ciclo, se il carattere contenuto nella variabile `c` non è nel dizionario, viene creato un nuovo elemento con la chiave `c` e con valore iniziale 1 (poiché abbiamo visto questa lettera una sola volta). Se `c` è già presente nel dizionario incrementiamo `d[c]`.
 
-\index{istogramma}
+\index{histogram}
 
 Ecco l'output del programma:
 
@@ -167,8 +167,8 @@ Ecco l'output del programma:
 
 L'istogramma indica che le lettere "a" e "b" compaiono una sola volta; "o" appare due volte e così via.
 
-\index{metodo get}
-\index{metodo!get}
+\index{get method}
+\index{method!get}
 
 I dizionari hanno un metodo chiamato `get` che riceve una chiave e un valore predefinito. Se la chiave è presente nel dizionario, `get` restituisce il valore corrispondente, altrimenti restituisce il valore predefinito.
 
@@ -194,7 +194,7 @@ print(d)
 
 L'uso del metodo `get` per semplificare questo ciclo di conteggio sarà un "idioma" usato molto comunemente in Python e lo vedrai molte altre volte nel resto del libro. Quindi dovresti fermarti un momento e confrontare il ciclo che utilizza l'istruzione `if` e l'operatore `in` con il ciclo che utilizza il metodo `get`. Fanno esattamente la stessa cosa, ma il secondo è più conciso.
 
-\index{idioma}
+\index{idiom}
 
 Dizionari e file
 ----------------------
@@ -212,12 +212,12 @@ Who is already sick and pale with grief`
 
 Scriveremo un programma Python per leggere le righe del file, suddividerle in un elenco di parole, quindi contare ogni parola presente utilizzando un dizionario.
 
-\index{cicli annidati}
-\index{ciclo!inestato}
+\index{nested loops}
+\index{loop!nested}
 
 Vedrai che avremo bisogno di due cicli `for`. Il ciclo esterno legge ognuna delle righe del file e il ciclo interno si ripete su ciascuna delle parole presenti in quella particolare riga. Questo è un esempio dello schema chiamato *cicli annidati* in quanto uno dei cicli è il ciclo *esterno* e l'altro il ciclo *interno*. Poiché il ciclo interno esegue tutte le sue iterazioni ogni volta che il ciclo esterno effettua una singola iterazione, pensiamo come se il ciclo interno iterasse "più rapidamente" e il ciclo esterno iterasse più lentamente.
 
-\index{Romeo e Giulietta}
+\index{Romeo and Juliet}
 
 La combinazione dei due cicli annidati garantisce che conteremo ogni parola di ogni riga del file in input.
 
@@ -245,8 +245,8 @@ Enter the file name: romeo.txt
 Cicli e dizionari
 ------------------------
 
-\index{dictionary!looping con}
-\index{ciclo!con dizionari}
+\index{dictionary!looping with}
+\index{looping!with dictionaries}
 \index{traversal}
 
 Quando utilizzi un dizionario come argomento in un'istruzione `for`, tutte le chiavi contenute nel dizionario verranno controllate dal ciclo. Questo ciclo visualizza ogni chiave ed il suo corrispondente valore:
@@ -267,7 +267,7 @@ annie 42
 
 Anche qui le chiavi non seguono alcun ordine particolare.
 
-\index{idioma}
+\index{idiom}
 
 Possiamo usare questo schema per implementare i vari cicli idiomatici che abbiamo descritto in precedenza. Ad esempio, se volessimo trovare tutte le voci in un dizionario con un valore superiore a dieci, potremmo scrivere il seguente codice:
 
@@ -287,8 +287,8 @@ annie 42
 
 Vediamo solo le voci con un valore superiore a 10.
 
-\index{metodo keys}
-\index{metodo!chiavi}
+\index{keys method}
+\index{method!keys}
 
 Se desiderassi visualizzare le chiavi in ordine alfabetico, sarebbe necessario prima creare un elenco delle chiavi nel dizionario utilizzando il metodo `keys`, quindi ordinare l'elenco e scorrere l'elenco ordinato, cercando ogni chiave e visualizzando l'elenco ordinato delle coppie chiave-valore come segue:
 
@@ -315,7 +315,7 @@ Per prima cosa vedrai la lista delle chiavi in modo non ordinato che otteniamo d
 Analisi avanzata del testo
 ---------------------
 
-\index{Romeo e Giulietta}
+\index{Romeo and Juliet}
 
 Nell'esempio precedente, utilizzando il file `romeo.txt`, abbiamo reso il file il più semplice possibile rimuovendo manualmente tutti i segni di punteggiatura. Il testo reale ha molta punteggiatura, come puoi vedere qui sotto.
 
@@ -384,8 +384,8 @@ Una causa comune negli errori di runtime è un valore del tipo errato. Per esegu
 
 Inserire autocontrolli: a volte puoi scrivere del codice per verificare automaticamente i possibili errori. Ad esempio, se si calcola la media di un elenco di numeri, è possibile verificare che il risultato non sia più grande o più piccolo di tutti gli elementi presenti. Questo viene definito "controllo di integrità" perché individua risultati "completamente illogici".
 
-\index{controllo della sanità}
-\index{controllo della consistenza}
+\index{sanity check}
+\index{consistency check}
 
 Un altro tipo di controllo confronta i risultati di due diversi calcoli per verificare se sono coerenti. Questo è chiamato "controllo di coerenza".
 
@@ -393,55 +393,55 @@ Visualizzare bene l'output: la formattazione dell'output di debug può rendere p
 
 Ancora una volta, il tempo speso per la costruzione di impalcature (scaffolding) può ridurre il tempo che dovrai spendere nel debugging.
 
-\index{impalcatura}
+\index{scaffolding}
 
 Glossario
 --------
 
 **Dizionario**
 : Una correlazione tra una serie di chiavi e i corrispondenti valori.
-\index{dizionario}
+\index{dictionary}
 
 **Tabella di hash**
 : L'algoritmo utilizzato per implementare i dizionari Python.
-\index{tabella hash}
+\index{hashtable}
 
 **Funzione di hash**
 : Una funzione utilizzata da una tabella di hash per calcolare la posizione di una chiave.
-\index{funzione hash}
+\index{hash function}
 
 **Istogramma**
 : Una serie di contatori.
-\index{istogramma}
+\index{histogram}
 
 **Implementazione**
 : Il modo utilizzato per eseguire un calcolo.
-\index{implementazione}
+\index{implementation}
 
 **Elemento**
 : Un altro nome utilizzato per una coppia chiave-valore.
-\index{item!dizionario}
+\index{item!dictionary}
 
 **Chiave**
 : L'oggetto che appare in un dizionario come prima parte di una coppia chiave-valore.
-\index{chiave}
+\index{key}
 
 **Coppia chiave-valore**
 : La rappresentazione della correlazione da una chiave a un valore.
-\index{coppia chiave-valore}
+\index{key-value pair}
 
 **Ricerca**
 : L'operazione nel dizionario che permette di trovare una chiave e il valore corrispondente.
-\index{ricerca}
+\index{lookup}
 
 **Cicli annidati**
 : Uno o più cicli contenuti "all'interno" di un altro ciclo. Il ciclo interno viene completato ogni volta che viene eseguito il ciclo esterno.
-\index{cicli annidati}
-\index{ciclo!inestato}
+\index{nested loops}
+\index{loop!nested}
 
 **Valore**
 : l'oggetto che appare in un dizionario come seconda parte di una coppia chiave-valore. Questo è un modo più specifico di utilizzare la parola "valore".
-\index{valore}
+\index{value}
 
 Esercizi
 ---------

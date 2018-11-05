@@ -6,17 +6,17 @@ Tuple
 Le tuple sono immutabili
 --------------------
 
-\index{tupla}
-\index{tipo!tupla}
-\index{sequenza}
+\index{tuple}
+\index{type!tuple}
+\index{sequence}
 
 La tupla^[Curiosità: la parola "tupla" deriva dai nomi dati a sequenze di numeri di lunghezza variabile: singola, doppie, triple, quadruple, quintuple, sestuple, settuple, ecc.] è una sequenza di valori molto simile a un elenco. I valori memorizzati in una tupla possono essere di qualsiasi tipo e vengono indicizzati tramite numeri interi. La caratteristica fondamentale delle tuple è l'essere *immutabili*.
 Sulle tuple è possibile effettuare operazioni di comparazione e hash, possiamo quindi ordinare gli elenchi delle tuple e utilizzare queste ultime come valori chiave nei dizionari Python.
 
-\index{mutabilità}
+\index{mutability}
 \index{hashable}
-\index{comparabile}
-\index{immutabile}
+\index{comparable}
+\index{immutability}
 
 Sintatticamente la tupla è un elenco di valori separati da virgole:
 
@@ -26,7 +26,7 @@ Sintatticamente la tupla è un elenco di valori separati da virgole:
 
 Anche se non necessario è convenzione racchiudere le tuple tra parentesi tonde per identificarle rapidamente quando esaminiamo uno script di Python:
 
-\index{parentesi!tuple in}
+\index{parentheses!tuples in}
 
 ~~~~ {.python}
 >>> t = ('a', 'b', 'c', 'd', 'e')
@@ -53,8 +53,8 @@ In assenza della virgola, Python considera `('a')` come un'espressione contenent
 
 Un altro modo per costruire una tupla è usare la funzione `tuple`. In assenza di argomenti, viene creata una tupla vuota:
 
-\index{funzione tupla}
-\index{funzione!tuple}
+\index{tuple function}
+\index{function!tuple}
 
 ~~~~ {.python .trinket}
 >>> t = tuple()
@@ -74,8 +74,8 @@ Dato che `tuple` è il nome di una funzione di Python, devi evitare di usarlo co
 
 La maggior parte degli operatori degli elenchi funziona anche sulle tuple. L'operatore parentesi quadra permette di indicare la posizione di un elemento:
 
-\index{operatore parentesi}
-\index{operatore!parentesi}
+\index{bracket operator}
+\index{operator!bracket}
 
 ~~~~ {.python .trinket}
 >>> t = ('a', 'b', 'c', 'd', 'e')
@@ -85,10 +85,10 @@ La maggior parte degli operatori degli elenchi funziona anche sulle tuple. L'ope
 
 L'operatore slice ti permette di indicare un intervallo di elementi.
 
-\index{operatore slice}
-\index{operatore!slice}
+\index{slice operator}
+\index{operator!slice}
 \index{tuple!slice}
-\index{tagliare!tupla}
+\index{slice!tuple}
 
 ~~~~ {.python}
 >>> print(t[1:3])
@@ -97,10 +97,10 @@ L'operatore slice ti permette di indicare un intervallo di elementi.
 
 Se cerchi però di modificare uno degli elementi della tupla, tutto quello che otterrai è un messaggio di errore:
 
-\index{eccezione!TypeError}
+\index{exception!TypeError}
 \index{TypeError}
-\index{assegnazione di un item}
-\index{assegnazione!item}
+\index{item assignment}
+\index{assignment!item}
 
 ~~~~ {.python}
 >>> t[0] = 'A'
@@ -118,10 +118,10 @@ Pur non essendo possibile modificare gli elementi di una tupla, puoi sostituirla
 Confronto tra tuple
 ----------------
 
-\index{comparazione!tupla}
-\index{tuple!comparazione}
-\index{metodo sort}
-\index{metodo!sort}
+\index{comparison!tuple}
+\index{tuple!comparison}
+\index{sort method}
+\index{method!sort}
 
 Gli operatori di confronto funzionano con le tuple e le altre sequenze. Python inizia con il confrontare il primo elemento di ogni sequenza, se sono uguali, passa all'elemento successivo, e così via, finché non ne trova due diversi. Gli elementi successivi non vengono considerati (anche se sono molto grandi).
 
@@ -149,7 +149,7 @@ eliminare (undecorate)
 \index{pattern!DSU}
 \index{decorate-sort-undecorate pattern}
 \index{pattern!decorate-sort-undecorate}
-\index{Romeo e Giulietta}
+\index{Romeo and Juliet}
 
 Ad esempio, supponi di avere un elenco di parole da ordinare dalla più lunga alla più corta:
 
@@ -158,8 +158,8 @@ Ad esempio, supponi di avere un elenco di parole da ordinare dalla più lunga al
 Il primo ciclo crea un elenco di tuple, ognuna delle quali è una parola preceduta da un numero che indica la sua lunghezza. `sort` confronta il primo elemento, la lunghezza, mentre il secondo elemento viene preso in considerazione solo se necessario per superare i casi in cui la lunghezza sia la stessa.
 L'argomento `reverse = True` imposta l'esecuzione di `sort` in ordine decrescente.
 
-\index{parola chiave argument}
-\index{argomento!parola chiave}
+\index{keyword argument}
+\index{argument!keyword}
 \index{traversal}
 
 Il secondo ciclo scorre l'elenco di tuple e crea un elenco delle parole in ordine decrescente di lunghezza. Le parole di quattro caratteri sono ordinate in ordine alfabetico *inverso*: "what" apparirà prima di "soft" nell'elenco che segue.
@@ -176,8 +176,8 @@ Ovviamente i versi perdono molto del loro impatto poetico quando sono trasformat
 Assegnazione di tupla
 ----------------
 
-\index{tuple!assegnamento}
-\index{assegnazione!tupla}
+\index{tuple!assignment}
+\index{assignment!tuple}
 \index{swap pattern}
 \index{pattern!swap}
 
@@ -230,7 +230,7 @@ Entrambi i lati di questa istruzione sono tuple: sul lato sinistro c'è una tupl
 
 Il numero di variabili a sinistra e il numero di valori a destra devono essere uguali:
 
-\index{eccezione!ValueError}
+\index{exception!ValueError}
 \index{ValueError}
 
 ~~~~ {.python}
@@ -240,9 +240,9 @@ ValueError: too many values to unpack
 
 Più in generale, il lato destro può contenere un qualsiasi tipo di sequenza (stringa, elenco o tupla). Ad esempio, per suddividere un indirizzo email in nome utente e dominio, è possibile scrivere:
 
-\index{metodo split}
-\index{metodo!split}
-\index{indirizzo email}
+\index{split method}
+\index{method!split}
+\index{email address}
 
 ~~~~ {.python}
 >>> addr = 'monty@python.org'
@@ -261,10 +261,10 @@ python.org
 Dizionari e tuple
 -----------------------
 
-\index{dizionario}
-\index{metodo items}
-\index{metodo!item}
-\index{coppia chiave-valore}
+\index{dictionary}
+\index{items method}
+\index{method!items}
+\index{key-value pair}
 
 I dizionari supportano un metodo chiamato `items` che restituisce un elenco di tuple, in cui ogni tupla è una coppia chiave-valore:
 
@@ -295,7 +295,7 @@ Assegnazione multipla con dizionari
 -------------------------------------
 
 \index{traverse!dictionary}
-\index{dictionary!attraversamento}
+\index{dictionary!traversal}
 
 Combinando `items`, assegnazione di tuple e `for` è possibile individuare un modello di codice molto carino che scorra le chiavi e i valori di un dizionario in un singolo ciclo:
 
@@ -340,7 +340,7 @@ Costruendo attentamente l'elenco di tuple in modo da avere il valore come primo 
 Le parole più comuni
 ---------------------
 
-\index{Romeo e Giulietta}
+\index{Romeo and Juliet}
 
 Torniamo al testo di *Romeo e Giulietta* Atto 2 - Scena 2: in questo modo possiamo implementare il nostro programma per utilizzare questa tecnica per visualizzare le dieci parole più comuni contenute nel testo:
 
@@ -375,7 +375,7 @@ Il fatto che questa complessa analisi dei dati possa essere eseguita con un prog
 Usare tuple come chiavi nei dizionari
 ------------------------------------
 
-\index{tuple!come chiave in un dizionario}
+\index{tuple!as key in dictionary}
 \index{hashable}
 
 dato che le tuple sono *hashabili*, a differenza degli elenchi, se vogliamo creare una chiave *composta* da usare in un dizionario dobbiamo utilizzare una tupla.
@@ -399,17 +399,17 @@ Questo ciclo scorre le chiavi in `directory`, che in realtà sono tuple. Assegna
 Sequenze: stringhe, elenchi e tuple - Oh cavolo!
 --------------------------------------------
 
-\index{sequenza}
+\index{sequence}
 
 Ci siamo concentrati su elenchi di tuple, ma quasi tutti gli esempi in questo capitolo funzionano anche con elenchi di elenchi, tuple di tuple e tuple di elenchi. Per evitare di elencare le possibili combinazioni a volte è più semplice parlare di sequenze di sequenze.
 
 In molti casi, i diversi tipi di sequenze (stringhe, elenchi e tuple) possono essere utilizzati in modo intercambiabile. Quindi come e perché sceglierne uno rispetto agli altri?
 
-\index{stringa}
-\index{elenco}
-\index{tupla}
-\index{mutabilità}
-\index{immutabile}
+\index{string}
+\index{list}
+\index{tuple}
+\index{mutability}
+\index{immutability}
 
 Ovviamente, le stringhe sono più limitate di altre sequenze perché gli elementi devono essere caratteri, per di più immutabili. Se hai bisogno della possibilità di cambiare i caratteri in una stringa (invece di crearne una nuova), potresti piuttosto usare un elenco di caratteri.
 
@@ -421,17 +421,17 @@ Gli elenchi sono usati più frequentemente delle tuple soprattutto perché sono 
 
 Poiché le tuple sono immutabili, non sono disponibili metodi come `sort` e `reverse`, che possono modificare elenchi esistenti. Comunque Python ti mette a disposizione le funzioni integrate `sorted` e `reversed`, che accettano qualsiasi sequenza come parametro e restituiscono una nuova sequenza composta dagli stessi elementi ordinati diversamente.
 
-\index{funzione ordinamento}
-\index{funzione!sorted}
-\index{funzione inversa}
-\index{funzione!reversed}
+\index{sorted function}
+\index{function!sorted}
+\index{reversed function}
+\index{function!reversed}
 
 Debug
 ---------
 
 \index{debugging}
-\index{struttura dei dati}
-\index{errore di forma}
+\index{data structure}
+\index{shape error}
 \index{error!shape}
 
 Elenchi, dizionari e tuple sono conosciuti genericamente come *strutture di dati*. In questo capitolo abbiamo iniziato ad esaminare strutture di dati composte, come elenchi di tuple o dizionari che contengono tuple come chiavi ed elenchi come valori. Le strutture di dati composti sono utili ma sono soggette a ciò che chiamiamo *errori di formato*: errori, cioè, causati dal fatto che una struttura di dati è di tipo, dimensione o struttura sbagliati. Capita che mentre scrivi codice ti possa dimenticare del formato dei dati e possa introdurre un errore.
@@ -453,11 +453,11 @@ Quando esegui il debug di un programma, specialmente se stai lavorando su un bug
 
 Gli sviluppatori principianti a volte rimangono bloccati in una di queste attività, dimenticando le altre. Ognuna di queste attività ha il suo modo di portarti al disastro.
 
-\index{errore tipografico}
+\index{typographical error}
 
 Ad esempio, leggere il codice potrebbe essere d'aiuto se il problema è un errore tipografico, ma non serve se il problema è un errore concettuale. Se non capisci cosa fa esattamente il tuo programma, puoi leggerlo 100 volte e non vedere mai l'errore, perché l'errore è nella tua testa.
 
-\index{debugging sperimentale}
+\index{experimental debugging}
 
 Fare esperimenti può essere d'aiuto, specialmente se si eseguono test semplici e circoscritti. Ma se fai esperimenti senza pensare o leggere il tuo codice, potresti cadere in uno schema che chiamo **"programmazione per mezzo di una passeggiata aleatoria"** che consiste nel processo di apportare modifiche casuali fino a quando il programma non fa la cosa giusta. Inutile dire che questo tipo di attività può richiedere molto tempo.
 
@@ -478,11 +478,11 @@ Glossario
 --------
 **Comparabile**
 : Un tipo di dato di cui è possibile controllare il valore per vedere se è maggiore, minore o uguale a un altro dello stesso tipo. I tipi che sono comparabili possono essere messi in un elenco e ordinati.
-\index{comparabile}
+\index{comparable}
 
 **Struttura di dati**
 : Una raccolta di valori correlati, spesso organizzati in elenchi, dizionari, tuple, ecc.
-\index{struttura dei dati}
+\index{data structure}
 
 **DSU**
 : Abbreviazione di "decorare-ordinare-rimuovere la decorazione", un modello che comporta la creazione di un elenco di tuple, il successivo ordinamento e l'estrazione parziale del risultato.
@@ -490,7 +490,7 @@ Glossario
 
 **Gather**
 : L'operazione di assemblaggio di una tupla di argomenti a lunghezza variabile.
-\index{raccogliere}
+\index{gather}
 
 **Hashabile**
 : Un tipo di dato a cui è applicabile una funzione di hash. I tipi immutabili come gli interi, virgola mobile e stringhe sono hashabili, mentre quelli mutabili come gli elenchi e i dizionari non lo sono.
@@ -502,7 +502,7 @@ Glossario
 
 **Formato (di una struttura dati)**
 : Un riepilogo del tipo, delle dimensioni e della composizione di una struttura di dati.
-\index{forma}
+\index{shape}
 
 **Singleton**
 : Un elenco (o altra sequenza) composto da un singolo elemento.
@@ -510,12 +510,12 @@ Glossario
 
 **Tupla**
 : Una sequenza immutabile di elementi.
-\index{tupla}
+\index{tuple}
 
 **Assegnazione di tupla**
 : Una assegnazione con una sequenza sul lato destro e una tupla di variabili sul lato sinistro. Il lato destro viene valutato e quindi i suoi elementi vengono assegnati alle variabili di sinistra.
-\index{assegnazione tuple}
-\index{assegnazione!tupla}
+\index{tuple assignment}
+\index{assignment!tuple}
 
 Esercizi
 ---------
@@ -557,5 +557,5 @@ Enter a file name: mbox-short.txt
 **Esercizio 3:** Scrivi un programma che legga un file e visualizzi *le lettere* in ordine di frequenza decrescente. Il tuo programma dovrebbe convertire tutti gli input in lettere minuscole e contare solo le lettere dalla a alla z. Il programma non dovrebbe contare spazi, cifre, segni di punteggiatura o altro oltre alle lettere dalla a alla z. Trova esempi di testo in diverse lingue e scopri come varia la frequenza delle lettere in base alla lingua in esame. Confronta i risultati con le tabelle presenti in
 [wikipedia.org/wiki/Letter\_frequencies](wikipedia.org/wiki/Letter_frequencies).
 
-\index{frequenza della lettera}
-\index{frequenza!lettera}
+\index{letter frequency}
+\index{frequency!letter}

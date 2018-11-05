@@ -5,7 +5,7 @@ Programmazione ad oggetti
 Gestione di programmi più grandi
 ------------------------
 
-\index{ad oggetti}
+\index{object-oriented}
 
 All'inizio di questo libro, abbiamo visto quattro modelli di programmazione di base utilizzati per scrivere programmi:
 
@@ -36,7 +36,7 @@ Realizzerai che in realtà abbiamo utilizzato gli oggetti durante tutto il corso
 
 Ecco un semplice script le cui prime poche righe dovrebbero sembrarti molto semplici e familiari.
 
-\index{oggetto elenco}
+\index{list object}
 
 \VerbatimInput{../code3/party1.py}
 
@@ -126,7 +126,7 @@ Questa capacità di concentrarci sulla parte di un programma che ci interessa ig
 
 ![Ignorare i dettagli quando si costruisce un oggetto](height=1.50in@../images/program-oo-bs4)
 
-\index{incapsulamento}
+\index{encapsulation}
 
 C'é un'altra parola che viene comunemente utilizzata per rendere l'idea che stiamo ignorando il funzionamento interno degli oggetti che usiamo: "incapsulamento".  In altre parole significa che possiamo sapere come utilizzare un oggetto senza essere realmente a conoscenza di cosa realmente capiti al suo interno.  
 
@@ -137,7 +137,7 @@ Semplificando al massimo, un oggetto è una porzione codice con proprie struttur
 
 Un oggetto può contenere un certo numero di funzioni (che chiamiamo "metodi") e i dati utilizzati da tali funzioni. Definiamo dati gli elementi che compongono degli "attributi" dell'oggetto.
 
-\index{keyword!class}
+\index{class keyword}
 
 La parola chiave `class` viene utilizzata per definire i dati e il codice che compongo ciascuno degli oggetti. class include inoltre il nome della classe e inizia con un blocco di codice indentato in cui includiamo gli attributi (dati) e i metodi (codice).
 
@@ -156,9 +156,9 @@ an = PartyAnimal()
 ~~~~
 
 \index{construct}
-\index{oggetto}
-\index{istanza}
-\index{classe}
+\index{object}
+\index{instance}
+\index{class}
 
 questo è il punto in cui indichiamo a Python dove costruire (ad es. creare) un *oggetto* o "l'istanza della classe denominata PartyAnimal".  Sembra una chiamata di funzione alla classe stessa e Python costruisce l'oggetto con i dati e i metodi corretti e restituisce l'oggetto che viene quindi assegnato alla variabile `an`.  In un certo senso tutto questo è abbastanza simile alla riga che abbiamo usato fin dall'inizio:
 
@@ -207,7 +207,7 @@ Le classi come tipi
 ----------------
 
 \index{dir}
-\index{tipo}
+\index{type}
 
 Come abbiamo visto, in Python tutte le variabili hanno un `type` che possiamo esaminare tramite la funzione integrata `dir`. queste funzionalità sono estese alle classi che creiamo.
 
@@ -227,9 +227,9 @@ Puoi notare che abbiamo creato un nuovo type utilizzando la parola chiave `class
 Ciclo di vita dell'oggetto
 ----------------
 
-\index{costruttore}
+\index{constructor}
 \index{destructor}
-\index{ciclo di vita dell'oggetto}
+\index{object lifecycle}
 
 Negli esempi precedenti abbiamo definito una classe (template) e l'abbiamo utilizzata per creare un'istanza (oggetto) che poi abbiamo utilizzato fino al termine del programma, momento in cui tutte le variabili sono state eliminate.  Di solito non pensiamo molto alla creazione e distruzione delle variabili ma capita spesso che, quando i nostri oggetti diventano più complessi, dobbiamo agire all'interno dell'oggetto per sistemare le cose mentre l'oggetto viene costruito e possibilmente pulire le cose prima che esso sia eliminato.
 
@@ -339,19 +339,19 @@ Glossario
 
 **Attributo**
 : Una variabile che fa parte di una classe.
-\index{attributo}
+\index{attribute}
 
 **Classe**
 : Un modello che può essere utilizzato per costruire un oggetto.  Definisce gli attributi e i metodi che compongono l'oggetto.
-\index{classe}
+\index{class}
 
 **Classe figlia**
 : Una nuova classe creata quando viene estesa una classe genitore.  La classe figlia eredita tutti gli attributi e i metodi della classe genitore.
-\index{classe figlia}
+\index{child class}
 
 **Costruttore**
 : Un metodo opzionale con un nome speciale (`__init__`) chiamato nel momento in cui una classe viene usata per costruire un oggetto. Di solito viene utilizzato per impostare i valori iniziali dell'oggetto.
-\index{costruttore}
+\index{constructor}
 
 **Distruttore**
 : Usato raramente, un metodo opzionale con un nome speciale (`__del__`) che viene chiamato appena prima che un oggetto venga distrutto.
@@ -359,17 +359,17 @@ Glossario
 
 **Ereditarietà**
 : L'atto di estendere una classe esistente (genitore) tramite la creazione di una nuova classe (figlia). La classe figlia ha tutti gli attributi e i metodi della classe genitore più ulteriori attributi e metodi definiti.
-\index{ereditarietà}
+\index{inheritance}
 
 **Metodo**
 : Una funzione che è contenuta all'interno di una classe e degli oggetti costruiti dalla classe. Alcuni modelli orientati agli oggetti usano la parola 'messaggio' invece di 'metodo' per descrivere questo concetto.
-\index{metodo}
-\index{messaggio}
+\index{method}
+\index{message}
 
 **Oggetto**
 : Un'istanza costruita di una classe.  Un oggetto contiene tutti gli attributi e i metodi definiti dalla classe. Alcuni documenti orientati agli oggetti usano il termine 'istanza' in modo intercambiabile con 'oggetto'.
-\index{metodo}
+\index{method}
 
 **Classe genitore**
 : La classe che viene estesa per creare una nuova classe figlia. La classe genitore contribuisce con tutti i suoi metodi e attributi alla nuova classe figlia.
-\index{classe genitore}
+\index{parent class}

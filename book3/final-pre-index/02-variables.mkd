@@ -4,10 +4,10 @@ Variabili, espressioni ed istruzioni
 Valori e tipi
 ----------------
 
-\index{valore}
-\index{tipo}
-\index{stringa}
-Un *valore*, come una lettera o un numero, è un elemento basilare che permette ad un programma di funzionare. I valori che abbiamo visto finora sono `1`, `2` e "Hello, World!". Questi valori appartengono a diversi *tipi*: `2` è un numero intero mentre "Hello, World!" è una *stringa*, così chiamata perché composta da una "stringa" di lettere. Tu (insieme all'interprete) puoi identificare le stringhe poiché racchiuse tra virgolette.\index{virgolette}
+\index{value}
+\index{type}
+\index{string}
+Un *valore*, come una lettera o un numero, è un elemento basilare che permette ad un programma di funzionare. I valori che abbiamo visto finora sono `1`, `2` e "Hello, World!". Questi valori appartengono a diversi *tipi*: `2` è un numero intero mentre "Hello, World!" è una *stringa*, così chiamata perché composta da una "stringa" di lettere. Tu (insieme all'interprete) puoi identificare le stringhe poiché racchiuse tra virgolette.\index{quotation mark}
 L'istruzione `print` funziona anche con i numeri interi, tramite il comando `python` è possibile avviare l'interprete.
 
 ~~~~ {.python}
@@ -28,13 +28,13 @@ Se non sei sicuro a quale tipo appartenga uno specifico valore, puoi consultare 
 
 
 Non c’è da sorprendersi se le stringhe appartengono al tipo `str` e i numeri interi appartengono al tipo `int`. È meno ovvio che i numeri con un punto decimale appartengano al tipo chiamato `float`. Ciò è dovuto al fatto che questi numeri siano rappresentati in un formato chiamato a *virgola mobile*.
-\index{tipo}
-\index{tipo stringa}
-\index{classe!str}
-\index{tipo int}
-\index{classe!int}
-\index{tipo float}
-\index{classe!float}
+\index{type}
+\index{string type}
+\index{class!str}
+\index{int type}
+\index{class!int}
+\index{float type}
+\index{class!float}
 
 
 ~~~~ {.python .trinket height="120"}
@@ -44,7 +44,7 @@ Non c’è da sorprendersi se le stringhe appartengono al tipo `str` e i numeri 
 
 
 E per quanto riguarda valori come "17" e "3.2"? Pur sembrando numeri sono racchiusi tra virgolette come le stringhe.
-\index{virgolette}
+\index{quotation mark}
 
 
 ~~~~ {.python .trinket  height="160"}
@@ -64,15 +64,15 @@ Quando inserisci un numero intero di grandi dimensioni, come "1,000,000", potres
 ~~~~
 
 
-Beh, non è per niente quello che ci aspettavamo! Python interpreta `1,000,000` come se fosse una sequenza di numeri interi separati da virgole, che visualizza inserendo uno spazio in corrispondenza della virgola.\index{errore semantico}\index{errore!semantico}\index{messaggio d'errore}
+Beh, non è per niente quello che ci aspettavamo! Python interpreta `1,000,000` come se fosse una sequenza di numeri interi separati da virgole, che visualizza inserendo uno spazio in corrispondenza della virgola.\index{semantic error}\index{error!semantic}\index{error message}
 Questo è il primo esempio di errore semantico che vediamo: il codice viene eseguito senza visualizzare messaggi di errore ma non fa l'operazione per la quale pensavamo di averlo progettato.  
 
 Variabili
 ---------
 
-\index{variabile}
-\index{istruzione assegnazione}
-\index{istruzione!assegnazione}
+\index{variable}
+\index{assignment statement}
+\index{statement!assignment}
 Una delle più potenti funzionalità di un linguaggio di programmazione è la capacità di manipolare *variabili*. Una variabile è un nome assegnato ad un valore. Tramite un'*istruzione di assegnazione* hai la capacità di creare nuove variabili ed assegnare loro un valore:
 
 ~~~~ {.python}
@@ -108,8 +108,8 @@ Il tipo di una variabile è il tipo di valore a cui essa è collegata.
 Nomi delle variabili e parole chiavi
 ---------------------------
 
-\index{parola chiave}
-Normalmente i programmatori scelgono nomi per le loro variabili che siano significativi e documentino l'utilizzo della variabile.  Questi nomi, di lunghezza arbitraria, possono contenere sia lettere sia numeri ma non possono iniziare con un numero. Anche se è possibile utilizzare lettere maiuscole, è preferibile iniziare i nomi delle variabili con una lettera minuscola (in seguito ne vedremo il motivo). Il carattere underscore (`_`) appare nel nome di una variabile ed è spesso utilizzato in nomi composti da più parole, come `my_name` o `airspeed_of_unladen_swallow`. I nomi delle variabili possono iniziare con il carattere underscore, ma generalmente evitiamo di farlo a meno che il codice che stiamo scrivendo sia contenuto in librerie che verranno utilizzate da altri.\index{carattere underscore}
+\index{keyword}
+Normalmente i programmatori scelgono nomi per le loro variabili che siano significativi e documentino l'utilizzo della variabile.  Questi nomi, di lunghezza arbitraria, possono contenere sia lettere sia numeri ma non possono iniziare con un numero. Anche se è possibile utilizzare lettere maiuscole, è preferibile iniziare i nomi delle variabili con una lettera minuscola (in seguito ne vedremo il motivo). Il carattere underscore (`_`) appare nel nome di una variabile ed è spesso utilizzato in nomi composti da più parole, come `my_name` o `airspeed_of_unladen_swallow`. I nomi delle variabili possono iniziare con il carattere underscore, ma generalmente evitiamo di farlo a meno che il codice che stiamo scrivendo sia contenuto in librerie che verranno utilizzate da altri.\index{underscore character}
 Se assegni ad una variabile un nome non valido, provocherai un errore di sintassi:
 
 ~~~~ {.python .trinket height="450"}
@@ -123,7 +123,7 @@ SyntaxError: invalid syntax
 
 
 Il nome `76trombones` non è valido perché inizia con un numero, `more@`, invece, perché contiene il carattere non ammesso '@'. Ma cosa c'è di errato in `class`?
-Risulta che `class` è una delle *parole riservate* di Python. L'interprete utilizza queste parole per riconoscere la struttura del programma, quindi non possono essere assegnate alle variabili.\index{parola chiave}
+Risulta che `class` è una delle *parole riservate* di Python. L'interprete utilizza queste parole per riconoscere la struttura del programma, quindi non possono essere assegnate alle variabili.\index{keyword}
 
 Python si riserva 33 parole chiave:
 
@@ -143,7 +143,7 @@ E' meglio tenere questo elenco a portata di mano: se l'interprete si lamenta del
 Istruzioni
 ----------
 
-L'*istruzione* è un'unità minima di codice che può essere eseguita dall'interprete di Python. Abbiamo visto due tipi di istruzioni: Print utilizzato sia come istruzione di un'espressione sia come un'assegnazione.\index{istruzione}\index{modalità interativa}\index{modalità script}
+L'*istruzione* è un'unità minima di codice che può essere eseguita dall'interprete di Python. Abbiamo visto due tipi di istruzioni: Print utilizzato sia come istruzione di un'espressione sia come un'assegnazione.\index{statement}\index{interactive mode}\index{script mode}
 Quando digiti un'istruzione in modalità interattiva, l'interprete la esegue e, nel caso esista, ne visualizza il risultato.
 Generalmente uno script contiene una sequenza di istruzioni. Se c'è più di un'istruzione i risultati vengono visualizzati uno alla volta mano a mano che le istruzioni vengono eseguite. Ad esempio:
 
@@ -166,7 +166,7 @@ Ricorda che le istruzioni di assegnazione non producono output.
 Operatori e operandi
 ----------------------
 
-\index{operatore aritmetico}\index{operatore artimetico}\index{operando}\index{espressione}
+\index{operator, arithmetic}\index{arithmetic operator}\index{operand}\index{expression}
 Gli *operatori* sono simboli speciali che rappresentano calcoli come l'addizione e la moltiplicazione. I valori a cui è applicato l'operatore sono chiamati *operandi*. Gli operatori `+`, `-`, `*`, `/`, e `**` eseguono rispettivamente le operazioni di addizione, sottrazione, moltiplicazione, divisione, ed elevamento a potenza, come illustrato negli esempi seguenti:
 
 ~~~~ {.python}
@@ -203,15 +203,15 @@ Per ottenere lo stesso risultato in Python 3.x, bisogna utilizzare la divisione 
 In Python 3.x la divisione integer funziona molto più similmente a come ci si aspetterebbe se si inserisse l'espressione su una calcolatrice.
 \index{Python 3.0}
 \index{Python 2.0}
-\index{divisione a virgola mobile}
-\index{divisione!floating-point}
+\index{floating-point division}
+\index{division!floating-point}
 
 Espressioni
 -----------
 
 L'*espressione* è una combinazione di valori, variabili e operatori. Sia un unico valore o una variabile sono considerati un'espressione. Pertanto le seguenti sono tutte espressioni corrette (posto che sia stato assegnato un valore alla variabile `x`)
-\index{espressione}
-\index{valutazione}
+\index{expression}
+\index{evaluate}
 
 
 ~~~~ {.python}
@@ -243,11 +243,11 @@ x + 1
 Ordine delle operazioni
 -------------------
 
-\index{ordine delle operazioni}
-\index{regola della predenza}
+\index{order of operations}
+\index{rules of precedence}
 \index{PEMDAS}
 Quando appare più di un operatore in un'espressione, l'ordine di calcolo è regolato dalle *regole di precedenza*. Per quanto riguarda gli operatori matematici, Python segue le convenzioni matematiche. L'acronimo *PEMDAS* è utile per ricordare le regole:
-\index{parentesi!sovrascrittura della precedenza}
+\index{parentheses!overriding precedence}
 
 - *P*arentesi: hanno la precedenza più alta e possono essere utilizzate per costringere il computer a svolgere un'espressione nell'ordine desiderato. Poiché le espressioni tra parentesi vengono valutate per prime: `2 * (3-1)` è uguale a 4 e `(1 + 1) ** (5-2)` a 8. Puoi anche utilizzare le parentesi per rendere l'espressione più leggibile, come in `(minuto * 100) / 60`, senza che ciò cambi il risultato.
 - L'*E*levamento a potenza ha il livello di precedenza immediatamente successivo, pertanto
@@ -260,8 +260,8 @@ Quando appare più di un operatore in un'espressione, l'ordine di calcolo è reg
 Operatore modulo
 ----------------
 
-\index{operatore modulo}
-\index{operatore!modulo}
+\index{modulus operator}
+\index{operator!modulus}
 L'operatore *modulo* viene applicato a numeri interi e fornisce come risultato il resto di quando il primo operando viene diviso per il secondo. In Python, l'operatore modulo è il carattere percentuale (`%`). La sintassi è la stessa degli altri operatori:
 
 ~~~~ {.python .trinket height="240"}
@@ -274,16 +274,16 @@ L'operatore *modulo* viene applicato a numeri interi e fornisce come risultato i
 ~~~~
 
 
-Quindi 7 diviso per 3 fa 2 con il resto di 1. L'operatore modulo si può rivelare sorprendentemente utile. Per esempio, è possibile verificare se un numero è divisibile per un altro: se `x%y` fa zero, allora `x` è divisibile per `y`.\index{divisibilità}
+Quindi 7 diviso per 3 fa 2 con il resto di 1. L'operatore modulo si può rivelare sorprendentemente utile. Per esempio, è possibile verificare se un numero è divisibile per un altro: se `x%y` fa zero, allora `x` è divisibile per `y`.\index{divisibility}
 È inoltre possibile ricavare da un numero quale sia il valore della cifra o delle cifre più a destra. Per esempio, `x % 10` restituisce la cifra più a destra di `x` (in base 10). In modo simile, `x% 100` restituisce le ultime due cifre.  
 
 Operazioni con le stringhe
 -----------------
 
-\index{stringa!operazione}
-\index{operatore!stringa}
+\index{string!operation}
+\index{operator!string}
 L'operatore `+` opera con le stringhe, senza essere un'addizione in senso strettamente matematico. Esegue invece una  *concatenazione*: unisce insieme le stringhe collegando la seconda dopo l'ultimo carattere della prima. Per esempio:
-\index{concatenazione}
+\index{concatenation}
 
 
 ~~~~ {.python}
@@ -312,7 +312,7 @@ Test Test Test
 Chiedere un valore in input all'utente
 -------------------------
 
-\index{input da tastiera}
+\index{keyboard input}
 A volte potrebbe essere necessario richiedere all'utente di inserire il valore di una variabile. Python è dotato di una funzione chiamata `input` in grado di ricevere input dalla tastiera^[In Python 2.0, questa funzione era `raw_input`.]. Quando si utilizza questa funzione il programma si arresta in attesa che l'utente digiti qualcosa. Quando l'utente preme `Invio` o `Enter`, l'esecuzione del programma riprende e `input` restituisce come stringa ciò che l'utente ha digitato.
 \index{Python 2.0}
 
@@ -338,7 +338,7 @@ Chuck
 ~~~~
 
 
-La sequenza `\n` alla fine del prompt indica un andare *a capo* ed è un carattere speciale che causa l'interruzione della linea. Ecco perché l'input dell'utente appare sotto il prompt.\index{a capo}
+La sequenza `\n` alla fine del prompt indica un andare *a capo* ed è un carattere speciale che causa l'interruzione della linea. Ecco perché l'input dell'utente appare sotto il prompt.\index{newline}
 Se ti aspetti che l'utente digiti un intero, è possibile provare a convertire il valore restituito in `int` usando la funzione `int()`.
 
 ~~~~ {.python}
@@ -366,12 +366,12 @@ ValueError: invalid literal for int() with base 10:
 
 Vedremo in seguito come gestire questo tipo di errore.
 \index{ValueError}
-\index{eccezione!ValueError}
+\index{exception!ValueError}
 
 Commenti
 --------
 
-\index{commento}
+\index{comment}
 Man mano che i programmi diventano più grandi e complessi, questi diventano più difficili da leggere. I linguaggi formali sono condensati ed è spesso difficile esaminare un pezzo di codice e capire cosa o perché faccia qualcosa.  Per questo motivo, è una buona idea aggiungere alcune note ai vostri programmi per spiegare in linguaggio naturale cosa stia facendo il programma. Queste note, che in Python iniziano con il simbolo `#`, sono chiamate *commenti*:
 
 ~~~~ {.python}
@@ -406,7 +406,7 @@ Assegnare nomi adeguati alle variabili può ridurre la necessità di commenti, m
 Scegliere nomi mnemonici delle variabili
 --------------------------------
 
-\index{mnemonico}
+\index{mnemonic}
 Finché seguirai le semplici regole di denominazione delle variabili evitando le parole riservate, avrai ampia libertà d'azione nella scelta del loro nome. All'inizio questa scelta può essere fonte di confusione quando leggi o scrivi un programma. Ad esempio, i tre script seguenti seppur identici in termini di funzionalità, sembrano molto diversi quando li leggi e provi a capirne il funzionamento.
 
 ~~~~ {.python}
@@ -459,7 +459,7 @@ Debug
 ---------
 
 \index{debugging}
-A questo punto, l'errore di sintassi più probabile che tu possa fare è scegliere un nome di variabile non consentito, come `class` e `yield`, che sono parole chiave, o `odd~job` e` US$ `, che contengono caratteri non consentiti.\index{syntax error}\index{errore!sintassi}
+A questo punto, l'errore di sintassi più probabile che tu possa fare è scegliere un nome di variabile non consentito, come `class` e `yield`, che sono parole chiave, o `odd~job` e` US$ `, che contengono caratteri non consentiti.\index{syntax error}\index{error!syntax}
 Se inserisci uno spazio nel nome di variabile, Python riterrà che si tratti di due operandi senza un operatore:
 
 ~~~~ {.python}
@@ -479,7 +479,7 @@ SyntaxError: invalid token
 ~~~~
 
 
-Per quanto riguarda gli errori di sintassi, bisogna dire che i messaggi di errore non sono di grande aiuto. I messaggi più comuni, `SyntaxError: invalid syntax` e `SyntaxError: invalid token`, sono entrambi poco esplicativi.\index{messaggio d'errore}\index{uso prima di def}\index{eccezione}\index{runtime error}\index{errore!runtime}
+Per quanto riguarda gli errori di sintassi, bisogna dire che i messaggi di errore non sono di grande aiuto. I messaggi più comuni, `SyntaxError: invalid syntax` e `SyntaxError: invalid token`, sono entrambi poco esplicativi.\index{error message}\index{use before def}\index{exception}\index{runtime error}\index{error!runtime}
 L'errore di runtime più comune è "use before def;": cioè l'utilizzo di una variabile prima di averle assegnato un valore. Questo può verificarsi se viene scritta una variabile in modo errato:
 
 ~~~~ {.python}
@@ -489,7 +489,7 @@ NameError: name 'principle' is not defined
 ~~~~
 
 
-I nomi delle variabili sono case-sensitive: `LaTeX` non è lo stesso di `latex`.\index{case-sensitivity, nomi delle variabili}\index{errore semantico}\index{errore!semantico}
+I nomi delle variabili sono case-sensitive: `LaTeX` non è lo stesso di `latex`.\index{case-sensitivity, variable names}\index{semantic error}\index{error!semantic}
 A questo punto la causa più probabile di un errore semantico è l'ordine delle operazioni. Ad esempio, per calcolare $1/2\pi$, potresti essere tentato di scrivere:
 
 ~~~~ {.python}
@@ -498,83 +498,83 @@ A questo punto la causa più probabile di un errore semantico è l'ordine delle 
 
 
 Dato che la divisione viene effettuata per prima, otterrai $\pi / 2$ che non è la stessa cosa! Poiché Python non ha modo di sapere cosa volessi realmente scrivere, non riceverai un messaggio di errore ma solo un risultato errato.
-\index{ordine delle operazioni}
+\index{order of operations}
 
 Glossario
 --------
 
 **Istruzione**
 : Istruzione che assegna un valore a una variabile.
-\index{assegnazione}
+\index{assignment}
 
 **Concatenare**
 : Unire due operandi tra di loro.
-\index{concatenazione}
+\index{concatenation}
 
 **Commento**
 : Informazione in un programma destinato ad altri programmatori (o a chiunque stia leggendo il codice sorgente) e non ha alcun effetto sull'esecuzione del programma.
-\index{commento}
+\index{comment}
 
 **Calcolare**
 : Semplificare un'espressione eseguendo le operazioni in modo da ottenere un unico valore.
 
 **Espressione**
 : Combinazione di variabili, operatori e valori che fornisce un singolo valore come risultato.
-\index{espressione}
+\index{expression}
 
 **Virgola mobile**
 : Tipo di dato composto da numeri con le parti frazionarie.
-\index{virgola mobile}
+\index{floating-point}
 
 **Interi**
 : Tipo di dato composto da numeri interi.
-\index{intero}
+\index{integer}
 
 **Parola chiave o riservata**
 : Una parola riservata che viene utilizzata dal compilatore per analizzare un programma; non potete utilizzare parole chiave come `if`, `def` e `while` come nomi di variabili.
-\index{parola chiave}
+\index{keyword}
 
 **Mnemonico**
 : Un aiuto mnemonico: spesso diamo alle variabili nomi mnemonici per aiutarci a ricordare cosa è memorizzato nella variabile.
-\index{mnemonico}
+\index{mnemonic}
 
 **Operatore modulo**
 : Un operatore, rappresentato con il segno di percentuale (`%`), che funziona con numeri interi e restituisce il resto quando un numero è diviso per un altro.
-\index{operatore modulo}
-\index{operatore!modulo}
+\index{modulus operator}
+\index{operator!modulus}
 
 **Operando**
 : Uno dei valori su cui viene applicato un operatore.
-\index{operando}
+\index{operand}
 
 **Operatore**
 : Simbolo speciale che rappresenta un semplice calcolo come addizioni, moltiplicazioni o concatenazioni di stringhe.
-\index{operatore}
+\index{operator}
 
 **Regole di precedenza**
 : Insieme di regole che disciplinano l'ordine in cui vengono calcolate le espressioni che coinvolgono molteplici operatori e operandi.
-\index{regola della predenza}
-\index{precedenza}
+\index{rules of precedence}
+\index{precedence}
 
 **Istruzione**
 : Una sezione di codice che rappresenta un comando o un'azione. Finora le istruzioni che abbiamo visto sono assegnazioni e istruzioni di stampa.
-\index{istruzione}
+\index{statement}
 
 **Stringa**
 : Un tipo di dato composto da una sequenza di caratteri.
-\index{stringa}
+\index{string}
 
 **Tipo**
 : Una categoria di valori. I tipi visti fino ad ora sono gli interi (tipo `int`), i numeri a virgola mobile (tipo `float`) e le stringhe (tipo `str`).
-\index{tipo}
+\index{type}
 
 **Valore**
 : Una delle unità di base dei dati, come numeri o stringhe, che possono essere manipolate da un programma.
-\index{valore}
+\index{value}
 
 **Variabile**
 : Un nome assegnato ad un valore.
-\index{variabile}
+\index{variable}
 
 Esercizi
 ---------

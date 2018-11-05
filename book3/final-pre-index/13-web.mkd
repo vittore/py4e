@@ -153,7 +153,7 @@ Servizio web di geocodifica di Google
 
 \index{Google}
 \index{geocoding}
-\index{servizio web}
+\index{web service}
 
 Google ha un eccellente servizio web che ti consente di utilizzare il suo ampio database di informazioni geografiche. Possiamo inviare una stringa di ricerca geografica come "Ann Arbor, MI" alla sua API di geocodifica e ricevere da Google l'ipotesi migliore su dove potremmo trovare in una mappa il nostro target ed ottenere informazioni sui punti di riferimento circostanti.
 
@@ -161,7 +161,7 @@ Il servizio di geocodifica è gratuito ma limitato, rendendo impossibile l'utili
 
 *Quando utilizzi un'API gratuita come l'API di geocodifica di Google, è necessario essere rispettosi nell'uso di queste risorse. Se troppe persone abusano del servizio Google potrebbe abbandonare o ridurre significativamente le funzionalità del suo servizio gratuito.*
 
-\index{limitazione del flusso}
+\index{rate limiting}
 
 Puoi leggere la documentazione online di questo servizio, che è abbastanza semplice e puoi persino testarlo digitando in un browser il seguente URL:
 
@@ -232,7 +232,7 @@ Sicurezza e utilizzo delle API
 ----------------------
 
 \index{OAuth}
-\index{API!chiave}
+\index{API!key}
 
 È abbastanza comune che sia richiesta un qualche tipo di "chiave API" per utilizzare l'API di un vendor. L'idea generale è che vogliono sapere chi e quanto stia usando i loro servizi. Potrebbero offrire degli account gratuiti e a pagamento dei loro servizi o potrebbero avere la politica di limitare il numero di richieste che un singolo individuo può effettuare durante un determinato arco di tempo.
 

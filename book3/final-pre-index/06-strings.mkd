@@ -5,10 +5,10 @@ Stringhe
 Una stringa è una sequenza
 ----------------------
 
-\index{sequenza}
-\index{carattere}
-\index{operatore parentesi}
-\index{operatore!parentesi}
+\index{sequence}
+\index{character}
+\index{bracket operator}
+\index{operator!bracket}
 
 Una stringa è una *sequenza* di caratteri a cui puoi accedere, uno alla volta, con l'operatore parentesi quadre:
 
@@ -19,8 +19,8 @@ Una stringa è una *sequenza* di caratteri a cui puoi accedere, uno alla volta, 
 
 
 
-\index{indice}
-
+\index{index}
+\index{}
 
 La seconda istruzione estrae il carattere nella posizione 1 dalla stringa contenuta nella variabile `fruit` e la assegna alla variabile `letter`. L'espressione tra parentesi è denominata *indice* e indica quale carattere della sequenza vogliamo (da cui il nome). Ma potrai non ottenere ciò che ti aspetti:
 
@@ -45,14 +45,14 @@ Quindi `b` è la lettera 0 ("zero") di "banana", `a` è la 1^ lettera ("prima"),
 
 ![Indice di una stringa](height=0.75in@../images/string)
 
-\index{indice!partenza da zero}
-\index{zero, partenza dell'indice da}
+\index{index!starting at zero}
+\index{zero, index starting at}
 
 Potrai utilizzare qualsiasi espressione, comprese variabili e operatori, come indice, ma il valore dell'indice dovrà essere un numero intero. Altrimenti otterrai:
 
-\index{indice}
-
-\index{eccezione!TypeError}
+\index{index}
+\index{}
+\index{exception!TypeError}
 \index{TypeError}
 
 
@@ -66,8 +66,8 @@ TypeError: string indices must be integers
 Ottenere la lunghezza di una stringa usando `len`
 -----------------------------------------------------
 
-\index{funzione len}
-\index{funzione!len}
+\index{len function}
+\index{function!len}
 
 `len` è una funzione che restituisce il numero di caratteri in una stringa:
 
@@ -80,7 +80,7 @@ Ottenere la lunghezza di una stringa usando `len`
 
 
 Per ottenere l'ultima lettera di una stringa, potresti essere tentato di provare qualcosa del genere:
-\index{eccezione!IndexError}
+\index{exception!IndexError}
 \index{IndexError}
 
 
@@ -101,17 +101,17 @@ a
 
 
 In alternativa, puoi usare indici negativi, che partono a contare dalla fine della stringa. L'espressione `fruit [-1]` ci darà l'ultima lettera, `fruit [-2]` ci darà la penultima, e così via.
-\index{indice!negativo}
-\index{indice negativo}
+\index{index!negative}
+\index{negative index}
 
 Scorrere una stringa con un ciclo
 ---------------------------------------
 
 \index{traversal}
-\index{ciclo!trasversale}
-\index{ciclo for}
-\index{ciclo!for}
-\index{istruzione!for}
+\index{loop!traversal}
+\index{for loop}
+\index{loop!for}
+\index{statement!for}
 \index{traversal}
 Molti calcoli comportano l'elaborazione di un carattere alla volta di una stringa. Spesso cominciano dall'inizio, selezionano ciascun carattere a turno, fanno qualcosa e continuano fino alla fine. Questo modello di elaborazione è chiamato *traversale*. Un modo per codificare uno scorrimento consiste nell'utilizzare un ciclo `while`:
 
@@ -143,11 +143,11 @@ Ogni volta che viene eseguito il ciclo, viene assegnato alla variabile `char` il
 Segmenti di stringhe
 -------------
 
-\index{operatore slice}
-\index{operatore!slice}
-\index{indice!divisione}
+\index{slice operator}
+\index{operator!slice}
+\index{index!slice}
 \index{string!slice}
-\index{tagliare!stringa}
+\index{slice!string}
 Il segmento di una stringa è chiamato *slice*. La selezione di un segmento è simile alla selezione di un carattere:
 
 ~~~~ {.python}
@@ -173,7 +173,7 @@ L'operatore restituisce la parte della stringa dal carattere indicato con il pri
 
 
 Se il primo parametro è maggiore o uguale al secondo, otterrai una *stringa vuota*, rappresentata da due virgolette:
-\index{virgolette}
+\index{quotation mark}
 
 
 ~~~~ {.python}
@@ -187,19 +187,19 @@ Una stringa vuota è uguale a qualsiasi altra stringa nonostante non contenga ca
 
 **Esercizio 2:** Dato che `fruit` è una stringa, cosa significa `fruit[:]`?
 
-\index{copia!slice}
-\index{tagliare!copy}
+\index{copy!slice}
+\index{slice!copy}
 
 Le stringhe sono immutabili
 ---------------------
 
-\index{mutabilità}
-\index{immutabile}
-\index{stringa!immutabile}
+\index{mutability}
+\index{immutability}
+\index{string!immutable}
 
 Potresti essere tentato di utilizzare l'operatore sul lato sinistro di un'assegnazione con l'intenzione di cambiare un carattere in una stringa. Per esempio:
 \index{TypeError}
-\index{eccezione!TypeError}
+\index{exception!TypeError}
 
 
 ~~~~ {.python}
@@ -211,10 +211,10 @@ TypeError: 'str' object does not support item assignment
 
 L'"object" in questione è la stringa e l'"item" è il carattere che avete provato ad assegnare. Per ora, un *oggetto* coincide con un valore, ma perfezioneremo questa definizione più avanti. Un *elemento* è uno dei valori di una sequenza.
 
-\index{oggetto}
-\index{assegnazione di un item}
-\index{assegnazione!item}
-\index{immutabile}
+\index{object}
+\index{item assignment}
+\index{assignment!item}
+\index{immutability}
 
 Il motivo dell'errore è che le stringhe sono *immutabili*, cioè non è possibile modificare una stringa esistente. La cosa migliore che puoi fare è creare una nuova stringa che sia una variante dell'originale:
 
@@ -228,15 +228,15 @@ Jello, world!
 
 
 Questo esempio concatena una nuova  lettera su un segmento di `greeting` senza avere alcun effetto sulla stringa originale.
-\index{concatenazione}
+\index{concatenation}
 
 Cicli e conteggi
 --------------------
 
-\index{contatore}
-\index{conteggio e loop}
-\index{cicli e conteggi}
-\index{ciclo!con stringhe}
+\index{counter}
+\index{counting and looping}
+\index{looping and counting}
+\index{looping!with strings}
 
 Il seguente programma conta il numero di volte in cui la lettera `a` si ripete in una stringa:
 
@@ -251,17 +251,17 @@ print(count)
 
 
 Questo programma dimostra un altro schema denominato *contatore*. La variabile `count` è inizializzata a 0 e viene poi incrementata ogni volta che viene rilevata una `a`. Quando il ciclo termina, `count` conterrà il risultato: il numero totale di `a` nella stringa analizzata.
-\index{incapsulamento}
+\index{encapsulation}
 
 **Esercizio 3:** Incorpora questo codice in una funzione chiamata "count" e rendila in grado di accettare stringhe e lettere come argomenti.
 
 L'operatore `in`
 ----------------------------
 
-\index{operatore in}
-\index{operatore!in}
-\index{operatore booleano}
-\index{operatore!booleano}
+\index{in operator}
+\index{operator!in}
+\index{boolean operator}
+\index{operator!boolean}
 
 La parola `in` è un operatore booleano che prende due stringhe e restituisce `True` se la prima è contenuta nella seconda:
 
@@ -277,8 +277,8 @@ False
 Comparazione di stringhe
 -----------------
 
-\index{stringa!comparazione}
-\index{comparazione!stringa}
+\index{string!comparison}
+\index{comparison!string}
 
 Gli operatori di comparazione funzionano anche sulle stringhe. Per verificare se due stringhe sono uguali puoi usare questo script:
 
@@ -347,11 +347,11 @@ capitalize(...)
 Ti ho scritto che tramite la funzione `dir` otterrai un elenco di metodi, di cui, tramite la funzione `help` puoi ottenere una semplice documentazione; esiste però una migliore fonte di documentazione riguardo i metodi: <https://docs.python.org/3.5/library/stdtypes.html#string-methods>.  
 Chiamare un *metodo* è simile al chiamare una funzione, cioè riceve argomenti e restituisce un valore, con una sintassi diversa. Chiamiamo un metodo facendo precedere il nome a quello della variabile usando un punto come delimitatore.  
 Ad esempio, il metodo `upper` prende una stringa in input e restituisce una nuova stringa con tutte le lettere maiuscole:
-\index{metodo}
-\index{stringa!metodo}
+\index{method}
+\index{string!method}
 
 Non va utilizzata la sintassi `upper(word)`, ma piuttosto `word.upper()`.
-\index{notazione puntata}
+\index{dot notation}
 
 
 ~~~~ {.python}
@@ -363,10 +363,10 @@ BANANA
 
 
 Questa forma di notazione con il punto specifica il nome del metodo (`upper`) e il nome della stringa (`word`) a cui applicare il metodo. Le parentesi vuote indicano che questo metodo non accetta argomenti.
-\index{parentesi!vuoto}
+\index{parentheses!empty}
 
 La chiamata di un metodo è chiamata *invocazione*: nel caso precedente diremo che stiamo invocando `upper` sulla stringa `word`.
-\index{invocazione}
+\index{invocation}
 
 Ad esempio, esiste un metodo per le stringhe chiamato "find" che cerca l'eventuale posizione di una stringa o segmento all'interno di un'altra:
 
@@ -389,8 +389,8 @@ In questo esempio, hai invocato `find` su `word` e passato come parametro la let
 
 
 Questa funzione può ricevere, come secondo argomento, l'indice da cui dovrebbe iniziare la ricerca:
-\index{argomento opzionale}
-\index{argomento!opzionale}
+\index{optional argument}
+\index{argument!optional}
 
 
 ~~~~ {.python}
@@ -436,8 +436,8 @@ True
 
 
 Nell'ultimo esempio, viene chiamato il metodo `lower` e quindi `startswith` per vedere se la stringa risultante inizia con la lettera "h". Finché facciamo attenzione all'ordine, possiamo effettuare più chiamate diverse in una singola espressione.
-\index{metodo count}
-\index{metodo!count}
+\index{count method}
+\index{method!count}
 
 **Esercizio 4:** esiste un metodo per le stringhe chiamato `count` simile alla funzione dell'esercizio precedente.
 
@@ -475,16 +475,16 @@ La documentazione per `find` è disponibile all'indirizzo <https://docs.python.o
 Operatore di formato
 ---------------
 
-\index{operatore format}
-\index{operatore!formato}
+\index{format operator}
+\index{operator!format}
 
 L'*operatore di formato* (%) ci consente di costruire stringhe, sostituendo parti di esse con i dati memorizzati nelle variabili. Se applicato a numeri interi, `%` rappresenta l'operatore modulo, se invece il primo operando è una stringa, `%` rappresenta l'operatore di formato.
 
-\index{formato stringa}
+\index{format string}
 
 Il primo operando è detto *stringa di formato*, che contiene una o più *sequenze di formato* che specificano il formato del secondo operando.
 Il risultato è una stringa.
-\index{sequenza di formato}
+\index{format sequence}
 
 Ad esempio, la sequenza di formato "%d" significa che il secondo operando dovrebbe essere nel formato di numero intero (`d` sta per  "in base decimale"):
 
@@ -516,7 +516,7 @@ Nell'esempio seguente viene utilizzato "%d" per formattare un numero intero, "%g
 
 
 Il numero e il tipo degli elementi nella tupla devono corrispondere al numero e al tipo di sequenze di formato indicate:
-\index{eccezione!TypeError}
+\index{exception!TypeError}
 \index{TypeError}
 
 
@@ -568,7 +568,7 @@ La prima è semplicemente usare il metodo `startswith` che restituirà `False` s
 
 
 
-\index{pattern del guardiano}
+\index{guardian pattern}
 \index{pattern!guardian}
 Un altra soluzione è l'utilizzo precauzionale dell'istruzione `if` adottando lo schema del *guardiano* per assicurarsi che la seconda espressione logica sia valutata solo se è presente almeno un carattere nella stringa:
 
@@ -584,24 +584,24 @@ Glossario
 
 **Contatore**
 : Una variabile utilizzata per contare qualcosa; è solitamente inizializzata a zero e poi incrementata.
-\index{contatore}
+\index{counter}
 
 **Stringa vuota**
 : Una stringa senza caratteri e con lunghezza pari a 0, rappresentata da due virgolette.
-\index{stringa vuota}
+\index{empty string}
 
 **Operatore di formato**
 : Un operatore `%` che riceve una stringa di formato e una tupla e genera una stringa che include gli elementi della tupla formattata come specificato dalla stringa di formato.
-\index{operatore format}
-\index{operatore!formato}
+\index{format operator}
+\index{operator!format}
 
 **Sequenza di formato**
 : Una sequenza di caratteri in una stringa di formato (es. `%d`) che specifica come deve essere formattato un dato.
-\index{sequenza di formato}
+\index{format sequence}
 
 **Stringa di formato**
 : Una stringa utilizzata con l'operatore di formattazione che contiene sequenze di formato.
-\index{formato stringa}
+\index{format string}
 
 **Flag**
 : Una variabile booleana utilizzata per indicare se una condizione è vera o falsa.
@@ -609,16 +609,16 @@ Glossario
 
 **Invocazione**
 : Un'istruzione che serve per chiamare un metodo.
-\index{invocazione}
+\index{invocation}
 
 **Immutabile**
 : La proprietà della sequenza i cui elementi non possono essere alterati.
-\index{immutabile}
+\index{immutability}
 
 **Indice**
 : Un valore intero utilizzato per selezionare un elemento in una sequenza, ad esempio un carattere in una stringa.
-\index{indice}
-
+\index{index}
+\index{}
 
 **Item**
 : Uno dei valori in una sequenza.
@@ -626,24 +626,24 @@ Glossario
 
 **Metodo**
 : Una funzione associata a un oggetto e chiamata utilizzando la notazione punto.
-\index{metodo}
+\index{method}
 
 **Oggetto**
 : Qualcosa a cui può riferirsi una variabile. Per ora, puoi usare "oggetto" e "valore" in modo intercambiabile.
-\index{oggetto}
+\index{object}
 
 **Ricerca**
 : Uno sistema di scorrimento che si ferma quando trova ciò che sta cercando.
-\index{modello di ricerca}
+\index{search pattern}
 \index{pattern!search}
 
 **Sequenza**
 : Un insieme ordinato ovvero un insieme di valori in cui ogni valore è identificato da un indice intero.
-\index{sequenza}
+\index{sequence}
 
 **Segmento**
 : Parte di una stringa specificata da un intervallo di indici.
-\index{tagliare}
+\index{slice}
 
 **Traverse**
 : Scorrere gli elementi di una sequenza, eseguendo un'operazione simile su ognuno.
@@ -659,8 +659,8 @@ Esercizi
 
 Usa `find` e la segmentazione delle stringhe per estrarre la porzione di stringa dopo il carattere ":" e utilizza la funzione `float` per convertire la stringa estratta in un numero a virgola mobile.
 
-\index{metodo string}
-\index{metodo!stringa}
+\index{string method}
+\index{method!string}
 
 **Esercizio 6:** leggi la documentazione dei metodi di stringa su
 <https://docs.python.org/3.5/library/stdtypes.html#string-methods>

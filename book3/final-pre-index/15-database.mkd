@@ -9,7 +9,7 @@ Cos'è un database?
 
 Un *database* è un file progettato per la conservazione di dati. La maggior parte dei database è organizzata come un dizionario, nel senso che viene creata una correlazione tra chiavi e valori. La differenza principale è che il database è conservato su disco (o su altro tipo di memoria permanente), per questo i dati permangono anche quando il programma viene chiuso. Inoltre il fatto che un database sia archiviato in una memoria permanente permette di conservare molti più dati rispetto ad un dizionario che è limitato dalle dimensioni della memoria nel computer.
 
-\index{database!indici}
+\index{database!indexes}
 
 Come un dizionario, il database è stato progettato per garantire un'elevata velocità d'inserimento e di accesso ai dati, anche per grandi quantità degli stessi. Il software del database mantiene le sue prestazioni aggiornando gli *indici* durante l'inserimento di nuovi dati in modo da consentire al computer di accedere rapidamente a una determinata voce.  
 Esistono diversi sistemi di database che vengono utilizzati per una vasta gamma di scopi tra cui. Alcuni di questi sistemi sono: Oracle, MySQL, Microsoft SQL Server, PostgreSQL e SQLite. In questo libro ci concentreremo su SQLite, perché molto comune e già integrato in Python. SQLite è progettato per essere *integrato* in altre applicazioni per fornire supporto nella gestione dei dati. Ad esempio anche il browser Firefox utilizza internamente il database SQLite in modo simile a molti altri prodotti,  
@@ -41,15 +41,15 @@ Per conoscere i vari tipi di dati supportati da SQLite potete consultare il segu
 
 Definire fin dall'inizio la struttura dei vostri dati può sembrare scomodo nei primi tempi, ma il vantaggio è un accesso veloce ai vostri dati anche quando il database conterrà una grande quantità di dati.  Il codice necessario per creare un database composto da una tabella denominata `Tracks` impostata su due colonne nel database è il seguente:
 
-\index{modulo sqlite3}
-\index{modulo!sqlite3}
+\index{sqlite3 module}
+\index{module!sqlite3}
 
 \VerbatimInput{../code3/db1.py}
 
-\index{funzione connect}
-\index{funzione!connect}
-\index{funzione cursor}
-\index{funzione!cursor}
+\index{connect function}
+\index{function!connect}
+\index{cursor function}
+\index{function!cursor}
 
 L'operazione `connect` effettua una "connessione" al database memorizzato nel file `music.sqlite3` nella cartella corrente. Se il file non esiste, verrà creato. Il motivo per cui si chiama "connessione" è che a volte il database è memorizzato su un "server di database" separato dalla macchina su cui stiamo eseguendo la nostra applicazione. Nei nostri semplici esempi il database sarà sempre un file locale nella stessa directory del codice Python che stiamo eseguendo.  Un *cursore* è come un handle di file che possiamo usare per eseguire operazioni sui dati memorizzati nel database. Richiamare il metodo `cursor()` è concettualmente molto simile a richiamare il metodo `open()` quando si tratta di un file di testo.
 
@@ -490,15 +490,15 @@ Glossario
 
 **Attributo**
 : Uno dei valori all'interno di una tupla. Più comunemente chiamato "colonna" o "campo".
-\index{attributo}
+\index{attribute}
 
 **Vincolo**
 : Quando diciamo al database di applicare una regola su un campo o una riga in una tabella. Un vincolo comune è quello di stabilire che non ci possono essere valori duplicati in un campo particolare (cioè, tutti i valori devono essere unici).
-\index{vincolo}
+\index{constraint}
 
 **Cursore**
 : Un cursore consente di eseguire comandi SQL in un database e recuperare i dati dal database. Un cursore è simile a un socket o un handle di file per connessioni di rete e file, rispettivamente.
-\index{cursore}
+\index{cursor}
 
 **Browser del database**
 : Un software che consente di connettersi direttamente a un database e manipolare il database direttamente senza scrivere un programma.
@@ -506,30 +506,30 @@ Glossario
 
 **Chiave esterna**
 : Una chiave numerica che punta alla chiave primaria di una riga in un'altra tabella. Le chiavi esterne stabiliscono relazioni tra righe memorizzate in tabelle diverse.
-\index{chiave esterna}
+\index{foreign key}
 
 **Indice**
 : Dati aggiuntivi che il software del database conserva come righe e inserisce in una tabella per rendere le ricerche molto veloci.
-\index{indice}
-
+\index{index}
+\index{}
 
 **Chiave logica**
 : Una chiave che il "mondo esterno" utilizza per cercare una particolare riga. Ad esempio in una tabella di account utente, l'indirizzo email di una persona potrebbe essere un buon candidato come chiave logica per i dati dell'utente.
-\index{chiave logica}
+\index{logical key}
 
 **Normalizzazione**
 : Progettazione di un modello di dati in modo che nessun dato sia replicato. Archiviamo ogni elemento di dati in un posto nel database e facciamo altrove riferimento ad essi utilizzando una chiave esterna.
-\index{normalizzazione}
-\index{normalizzazione database}
+\index{normalization}
+\index{database normalization}
 
 **Chiave primaria**
 : Una chiave numerica assegnata a ciascuna riga che viene utilizzata per fare riferimento a una riga in una tabella da un'altra tabella. Spesso il database è configurato per assegnare automaticamente le chiavi primarie quando vengono inserite le righe.
-\index{chiave primaria}
+\index{primary key}
 
 **Relazione**
 : Un'area all'interno di un database che contiene tuple e attributi. Più comunemente chiamata "tabella".
-\index{relazione}
+\index{relation}
 
 **Tupla**
 : Una singola voce in una tabella di database che è un insieme di attributi. Più comunemente chiamata "riga".
-\index{tupla}
+\index{tuple}

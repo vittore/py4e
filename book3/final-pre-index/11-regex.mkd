@@ -5,9 +5,9 @@ Espressioni regolari
 
 Finora abbiamo letto file, cercato modelli ed estratto porzioni di righe ritenute interessanti. Abbiamo usato metodi di stringa come `split` e `find`, o il frazionamento di elenchi e stringhe per estrarre parti delle righe.
 
-\index{espressioni regolari}
+\index{regular expressions}
 \index{regex}
-\index{modulo re}
+\index{re module}
 
 la funzione di ricerca ed estrazione è talmente popolare che è stata sviluppata per Python la libreria *espressoni regolari* che gestisce con grande eleganza molte di queste attività. La ragione per cui non abbiamo presentato prima le espressioni regolari nel libro è perché, sebbene siano molto potenti, sono un po' complicate e il padroneggiare la loro sintassi richiede del tempo.
 
@@ -30,7 +30,7 @@ Questo programma presenta un uso banale della funzione di ricerca:
 
 Il file viene aperto e viene letta ogni riga tramite un ciclo in cui viene utilizzata l'espressione regolare `search()` per visualizzare solo che contengono la stringa "From:". Questo programma non sfrutta il vero potere delle espressioni regolari: avremmo potuto usare altrettanto facilmente `line.find()` per ottenere lo stesso risultato.
 
-\index{stringa!trova}
+\index{string!find}
 
 La potenza delle espressioni regolari viene raggiunta quando utilizzi i caratteri speciali nella stringa di ricerca che ti consentono di controllare con più precisione quali righe corrispondono alla stringa di ricerca. L'aggiunta di questi caratteri speciali alla nostra espressione regolare ci consente di eseguire abbinamenti ed estrazioni sofisticate tramite la stesura di un codice molto ridotto.
 
@@ -43,14 +43,14 @@ Ad esempio, l'accento ^ viene utilizzato nelle espressioni regolari per trovare 
 
 Ora lavora solo le righe che *iniziano con* la stringa "From:". Questo è un esempio molto elementare che avremmo potuto riprodurre utilizzando con il metodo `startswith()` incluso nella libreria delle stringhe. Ma serve per introdurre il concetto secondo cui le espressioni regolari possono contenere caratteri speciali che ci danno più controllo su ciò che confronterà l'espressione regolare.
 
-\index{stringa!iniziacon}
+\index{string!startswith}
 
 Confronto di caratteri nelle espressioni regolari
 -----------------------------------------
 
 Hai a disposizione un certo numero di caratteri speciali che ti permettono di costruire espressioni regolari molto potenti. Il carattere speciale più comunemente usato è il punto (.), che corrisponde a un qualsiasi carattere.
 
-\index{carattere jolly}
+\index{wild card}
 \index{regex!wild card}
 
 Nell'esempio seguente, l'espressione regolare "F..m:" indica una qualsiasi stringa, come ad esempio "From:", "Fxxm:", "F12m:" o "F!@m:", data la presenza di due punti consecutivi (..).
@@ -83,7 +83,7 @@ Puoi pensare al carattere wildcard ".+" come all'estensione del controllo di tut
 
 È possibile far sì che l'asterisco o il segno più non siano così "avidi" aggiungendo un altro carattere. Fai riferimento alla documentazione dettagliata per informazioni su come disattivare questo avido comportamento.
 
-\index{avido}
+\index{greedy}
 
 Estrazione dei dati utilizzando le espressioni regolari
 -----------------------------------------
@@ -151,7 +151,7 @@ Ecco la nostra nuova espressione regolare:
 
 Sta diventando tutto un po' complicato e puoi iniziare a capire perché le espressioni regolari vanno considerate loro stesse un piccolo linguaggio. Per tradurre questa espressione regolare: cerchiamo sottostringhe che inizino con una *singola* lettera minuscola o maiuscola o un numero "[a-zA-Z0-9]", seguito da zero o più caratteri non vuoti ("\'S'\*"), da una chiocciola, da zero o più caratteri non vuoti ("\'S*"), da una lettera maiuscola o minuscola. Nota che siamo passati da "+" a "\*" per indicare zero o più caratteri non vuoti dato che "[a-zA-Z0-9]" è già considerato un carattere non vuoto. Ricorda che "\*" o "+" si applicano al singolo carattere immediatamente a sinistra del segno stesso.
 
-\index{regex!insiemi di caratteri (parentesi)}
+\index{regex!character sets(brackets)}
 
 Se usiamo questa espressione nel nostro programma, i nostri dati appariranno molto più puliti:
 
@@ -214,8 +214,8 @@ Ora dobbiamo risolvere il problema dell'estrazione dei numeri. Anche se sarebbe 
 
 Le parentesi sono considerate un altro carattere speciale nelle espressioni regolari. Se aggiungi le parentesi a un'espressione regolare, queste vengono ignorate durante le operazioni di ricerca delle stringhe. Se però utilizzi `findall()`, le parentesi indicano che non solo vuoi effettuare una ricerca, ma vuoi estrarre la porzione di riga che corrisponde all'espressione regolare.
 
-\index{regex!parentesi}
-\index{parentesi!espressioni regolari}
+\index{regex!parentheses}
+\index{parentheses!regular expression}
 
 Apportiamo ora la seguente modifica al nostro script:
 
@@ -423,8 +423,8 @@ Glossario
 
 **Corrispondenza avida**
 : La nozione per indicare che in un'espressione regolare i caratteri "+" e "\*" si espandono verso l'esterno per corrispondere alla stringa più grande possibile.
-\index{avido}
-\index{abbinamento avido}
+\index{greedy}
+\index{greedy matching}
 
 **Grep**
 : Comando disponibile nella maggior parte dei sistemi Unix che permette la ricerca nei file di testo di righe che soddisfino le espressioni regolari impostate dall'utente. Il nome del comando è l'acronimo di "Generalized Regular Expression Parser".
@@ -435,7 +435,7 @@ Glossario
 
 **Wild-card**
 : Un carattere speciale che indica qualsiasi carattere. Nelle espressioni regolari il carattere wild-card è il punto (.).
-\index{carattere jolly}
+\index{wild card}
 
 Esercizi
 ---------

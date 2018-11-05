@@ -6,7 +6,7 @@ Chiamate di funzione
 --------------
 
 
-\index{chiamata di una funzione}
+\index{function call}
 Quando si parla di programmazione, per *funzione* intendiamo una sequenza specifica di istruzioni a cui è stato attribuito un nome, che ha lo scopo di eseguire un'operazione o calcolo particolare. Una volta definita, è possibile "chiamare" una funzione per mezzo del suo nome.
 
 In precedenza abbiamo già visto un esempio di una *chiamata di funzione*:
@@ -20,11 +20,11 @@ In precedenza abbiamo già visto un esempio di una *chiamata di funzione*:
 in questo esempio il nome della funzione è `type` mentre il numero `32` tra parentesi è l'*argomento* della funzione. L'argomento può essere un valore o una variabile che stiamo passando alla funzione come input.
 In questo caso specifico il risultato della funzione `type` è il tipo di dato dell'argomento: <class 'int'>.
 
-\index{parentesi!argomento in}
+\index{parentheses!argument in}
 
 Nel gergo informatico si dice che una funzione "accetta" un argomento e "restituisce" un *valore di ritorno*.
-\index{argomento}
-\index{valore di ritorno}
+\index{argument}
+\index{return value}
 
 Funzioni integrate
 ------------------
@@ -56,11 +56,11 @@ Come vedremo nei prossimi capitoli queste funzioni non sono progettate per opera
 Funzioni di conversione dei tipi di dato
 -------------------------
 
-\index{conversione!tipo}
-\index{conversione tra tipi}
+\index{conversion!type}
+\index{type conversion}
 Altre funzioni integrate in Python ti permettono di convertire i valori da un tipo ad un altro: ad esempio la funzione `int` accetta qualsiasi valore e, qualora sia possibile, lo converte in un numero intero. In caso contrario si "lamenta" visualizzando un messaggio d'errore:
-\index{funzione int}
-\index{funzione!int}
+\index{int function}
+\index{function!int}
 
 
 ~~~~ {.python}
@@ -82,8 +82,8 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 
 `float` converte numeri interi e stringhe in numeri in virgola mobile:
-\index{funzione float}
-\index{funzione!float}
+\index{float function}
+\index{function!float}
 
 
 ~~~~ {.python}
@@ -95,8 +95,8 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 
 `str` converte l'argomento in una stringa:
-\index{funzione str}
-\index{funzione!str}
+\index{str function}
+\index{function!str}
 
 
 ~~~~ {.python}
@@ -110,10 +110,10 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 Funzioni matematiche
 --------------
 
-\index{funzione matematica}
-\index{funzione!math}
-\index{modulo}
-\index{oggetto modulo}
+\index{math function}
+\index{function, math}
+\index{module}
+\index{module object}
 Il modulo `math` di Python ti permette di eseguire la maggior parte delle più comuni funzioni matematiche.
 Essendo un modulo, va importato prima di poterlo utilizzare:
 
@@ -131,7 +131,7 @@ Questa istruzione crea un *oggetto modulo* chiamato math. Tramite il comando pri
 
 
 Per accedere a una delle funzioni gestite da questo modulo è necessario specificare il nome del modulo e della funzione desiderata separati da un punto. Questo particolare formato viene chiamato *notazione punto*.
-\index{notazione puntata}
+\index{dot notation}
 
 
 ~~~~ {.python}
@@ -144,12 +144,12 @@ Per accedere a una delle funzioni gestite da questo modulo è necessario specifi
 
 
 Nel primo esempio viene calcolato il logaritmo in base 10 del rapporto segnale/rumore. Il modulo math è dotato anche di una funzione chiamata `log` che calcola i logaritmi in base `e`.
-\index{funzione log}
-\index{funzione!log}
-\index{funzione sine}
-\index{radianti}
-\index{funzione trigonometrica}
-\index{funzione, trigonometrica}
+\index{log function}
+\index{function!log}
+\index{sine function}
+\index{radian}
+\index{trigonometric function}
+\index{function, trigonometric}
 
 Nel secondo esempio é stato calcolato il seno in `radianti`. Il nome della variabile ti dovrebbe suggerire che `sin` e le altre funzioni trigonometriche (`cos`, `tan`, ecc.) accettano un argomento in radianti.
 Per convertire i gradi in radianti, dovrai dividere il dato in ingresso per 360 e moltiplicarlo per $2\pi$:
@@ -164,11 +164,11 @@ Per convertire i gradi in radianti, dovrai dividere il dato in ingresso per 360 
 
 
 L'espressione `math.pi` richiama la variabile `pi` dal modulo math il cui valore è un'approssimazione di $\pi$ a circa 15 cifre.
-\index{pi greco}
+\index{pi}
 
 Se mastichi un po' di trigonometria, puoi controllare il risultato precedente confrontandolo con la radice quadrata di due fratto due:
-\index{funzione!sqrt}
-\index{funzione!sqrt}
+\index{sqrt function}
+\index{function!sqrt}
 
 
 ~~~~ {.python}
@@ -180,20 +180,20 @@ Se mastichi un po' di trigonometria, puoi controllare il risultato precedente co
 Numeri casuali
 --------------
 
-\index{numero, casuale}
-\index{numero, casuale}
-\index{deterministico}
+\index{random number}
+\index{number, random}
+\index{deterministic}
 \index{pseudorandom}
 Dato il medesimo input, la maggior parte dei programmi per computer genera sempre lo stesso output. Per tale motivo vengono detti *deterministici*. Il determinismo di solito è una cosa auspicabile poiché ci aspettiamo che lo stesso calcolo produca sempre lo medesimo risultato. Ci sono casi in cui, tuttavia, desideriamo che il computer sia imprevedibile come accade ad esempio nei giochi.
 
 Realizzare un programma veramente non deterministico non é così semplice come potrebbe sembrare a prima vista anche se esistono modi per farlo almeno sembrare tale. Uno di questi è usare *algoritmi* che generano numeri *pseudo-casuali*. I numeri pseudo-casuali non sono veramente casuali perché sono generati da un calcolo deterministico, ma osservando solo i numeri è quasi impossibile distinguerli da quelli casuali.
 
-\index{modulo random}
-\index{modulo!casuale}
+\index{random module}
+\index{module!random}
 
 Il modulo `random` fornisce funzioni che generano numeri pseudo-casuali (che chiameremo semplicemente "casuali" da qui in poi).
-\index{funzione random}
-\index{funzione!random}
+\index{random function}
+\index{function!random}
 
 La funzione `random` restituisce un numero decimale casuale compreso tra 0.0 e 1.0 (comprendendo 0.0 ma non 1.0). Ogni volta che evochi `random`, ottieni il numero successivo di una lunga serie. Prova a far girare questo ciclo:
 
@@ -227,8 +227,8 @@ Questo programma ti fornirà il seguente elenco di 10 numeri casuali compresi tr
 La funzione `random` è solo una delle molte funzioni che gestiscono i numeri casuali.
 
 `randint` accetta i parametri `low` e `high` e restituisce un intero compreso tra i due (inclusi) estremi.
-\index{funzione randint}
-\index{funzione!randint}
+\index{randint function}
+\index{function!randint}
 
 
 ~~~~ {.python}
@@ -240,8 +240,8 @@ La funzione `random` è solo una delle molte funzioni che gestiscono i numeri ca
 
 
 Tramite `choice` puoi scegliere un elemento da una sequenza casuale:
-\index{funzione!choice}
-\index{funzione!choice}
+\index{choice function}
+\index{function!choice}
 
 
 ~~~~ {.python}
@@ -261,9 +261,9 @@ Aggiungere nuove funzioni
 
 Anche se finora abbiamo solo usato le funzioni già presenti in Python, tieni a mente che è possibile aggiungerne di nuove.
 Tramite la *definizione di funzione* puoi specificare il nome di una nuova funzione composta da una sequenza di istruzioni. Una volta definita, puoi richiamarla e riutilizzarla a piacimento all'interno del tuo programma.
-\index{funzione}
-\index{definizione di una funzione}
-\index{definizione!funzione}
+\index{function}
+\index{function definition}
+\index{definition!function}
 
 Ecco un esempio:
 
@@ -276,19 +276,19 @@ def print_lyrics():
 
 `def` è la parola chiave che indica che il nome di questa funzione è `print_lyrics`. Fai attenzione che per i nomi delle funzioni valgono le stesse regole in vigore per i nomi delle variabili: sono consentiti lettere, numeri e alcuni segni di punteggiatura ma il primo carattere non può mai essere un numero. Inoltre, non puoi utilizzare una parola chiave come nome di una funzione, e evita di dare lo stesso nome ad una variabile e ad una funzione.
 
-\index{parola chiave def}
-\index{parola chiave!def}
-\index{argomento}
+\index{def keyword}
+\index{keyword!def}
+\index{argument}
 
 Le parentesi vuote dopo il nome indicano che questa funzione non accetta argomenti. Nei capitoli seguenti ti insegnerò a costruire delle funzioni che ricevono degli argomenti come input.
-\index{parentesi!vuoto}
-\index{intestazione}
+\index{parentheses!empty}
+\index{header}
 \index{body}
-\index{indentazione}
-\index{virgola}
+\index{indentation}
+\index{colon}
 
 Una funzione è composta da un *header*, la prima riga della funzione, ed un *corpo* composto dal resto delle istruzioni. L'header deve sempre terminare con due punti e il corpo, che deve essere indentato per convenzione di quattro spazi, può contenere un numero qualsiasi di istruzioni.
-\index{elisione}
+\index{ellipses}
 
 Se decidi di scrivere una definizione di funzione in modalità interattiva, l'interprete continuerà a visualizzare tre punti di sospensione (*...*) fino a quando non inserirai una riga vuota per indicare che hai completato il corpo:
 
@@ -312,8 +312,8 @@ La definizione di una funzione crea una variabile con lo stesso nome.
 
 
 Il valore di `print_lyrics` è un *oggetto funzione* di tipo "funzione".
-\index{oggetto di una funzione}
-\index{oggetto!funzione}
+\index{function object}
+\index{object!function}
 
 La sintassi per chiamare la nuova funzione è la stessa utilizzata per le funzioni integrate:
 
@@ -350,13 +350,13 @@ Ammetto che la canzone non faccia proprio così ma non è importante per ora.
 Definizioni e usi
 --------------------
 
-\index{definizione di una funzione}
+\index{function definition}
 se mettiamo insieme i frammenti di codice della sezione precedente, dovremmo ottenere il seguente script:
 
 \VerbatimInput{../code3/lyrics.py}
 
 Questo script contiene due definizioni di funzione, `print_lyrics` e `repeat_lyrics`, che daranno luogo inizialmente a degli oggetti funzione le cui istruzioni non generano alcun output finché non viene eseguita l'ultima riga dello script.
-\index{uso prima di def}
+\index{use before def}
 
 Come ormai avrai capito, è necessario creare una funzione prima di poterla eseguire. In altre parole, la definizione della funzione deve essere effettuata prima della prima chiamata.
 
@@ -367,7 +367,7 @@ Come ormai avrai capito, è necessario creare una funzione prima di poterla eseg
 Flusso di esecuzione
 -----------------
 
-\index{flusso di esecuzione}
+\index{flow of execution}
 Per garantire che una funzione venga definita prima del suo primo utilizzo, è necessario che tu conosca l'ordine in cui vengono eseguite le istruzioni, il così detto *flusso di esecuzione*.
 
 L'esecuzione, che inizia sempre dalla prima istruzione dello script, prevede che le istruzioni vengano eseguite una alla volta dall'alto verso il basso.
@@ -387,15 +387,15 @@ Qual è la morale di questa sordida storia? Quando leggi un programma non cercar
 Parametri e argomenti
 ------------------------
 
-\index{parametro}
-\index{parametri di una funzione}
-\index{argomento}
-\index{argomento di funzione}
+\index{parameter}
+\index{function parameter}
+\index{argument}
+\index{function argument}
 Alcune delle funzioni integrate che abbiamo visto richiedono degli argomenti: `math.sin` ad esempio ha bisogno di un numero come argomento. Altre funzioni richiedono più di un argomento: `math.pow` ne prende due, la base e l'esponente.
 
 All'interno della funzione, gli argomenti sono assegnati a variabili chiamate *parametri*.
 Ecco un esempio di una funzione definita dall'utente che riceve un argomento:
-\index{parentesi!parametri in}
+\index{parentheses!parameters in}
 
 
 ~~~~ {.python}
@@ -424,7 +424,7 @@ Spam
 
 
 Dato che le regole di composizione che si applicano alle funzioni integrate si applicano anche a quelle definite dall'utente, possiamo usare qualsiasi tipo di espressione come argomento per `print_twice`:
-\index{composizione}
+\index{composition}
 
 
 ~~~~ {.python}
@@ -438,7 +438,7 @@ Spam Spam Spam Spam
 
 
 L'argomento viene valutato prima che venga chiamata la funzione, quindi negli esempi precedenti le espressioni `Spam '* 4` e `math.cos (math.pi) `vengono valutate una sola volta.
-\index{argomento}
+\index{argument}
 Potete utilizzare inoltre una variabile come argomento:
 
 ~~~~ {.python}
@@ -454,10 +454,10 @@ Il nome della variabile che passiamo come argomento (`michael`) non ha nulla a c
 Funzioni produttive e funzioni vuote
 -------------------------------------
 
-\index{funzione fruttuosa}
-\index{funzione void}
-\index{funzione, fruttuosa}
-\index{funzione, void}
+\index{fruitful function}
+\index{void function}
+\index{function, fruitful}
+\index{function, void}
 Alcune delle funzioni che stiamo usando, come ad esempio le funzioni matematiche, restituiscono dei risultati; e, per mancanza di un nome migliore, vengono chiamate *funzioni produttive*. Altre funzioni, come `print_twice`, vengono chiamate *funzioni vuote* poiché eseguono un'azione ma non restituiscono alcun valore.
 
 Quando chiamate una funzione produttiva, quasi sempre avete bisogno di utilizzarne il risultato: ad esempio potreste assegnarlo a una variabile o usarlo come parte di un'espressione.
@@ -484,12 +484,12 @@ math.sqrt(5)
 
 
 Credo che questo script non sia molto utile: è vero che calcola la radice quadrata di 5 ma non ne visualizza il risultato nè lo memorizza in una variabile.
-\index{modalità interativa}
-\index{modalità script}
+\index{interactive mode}
+\index{script mode}
 
 Le funzioni vuote possono visualizzare qualcosa sullo schermo o avere qualche altro effetto, ma non hanno alcun valore di ritorno. Se tenti di assegnare il risultato a una variabile otterrai un valore speciale chiamato "None".
-\index{Valore speciale!None}
-\index{valore speciale!None}
+\index{None special value}
+\index{special value!None}
 
 
 ~~~~ {.python}
@@ -518,7 +518,7 @@ Quando questo script viene eseguito, l'istruzione `print` visualizza "8" perché
 Perché le funzioni?
 --------------
 
-\index{funzione, ragioni per una}
+\index{function, reasons for}
 Potrebbe non esserti chiaro il motivo per cui vale la pena di suddividere un programma in funzioni. I motivi sono diversi:
 
 - la creazione di una nuova funzione ti dà l'opportunità di dare un nome a un insieme di istruzioni, facilitandoti la lettura, la comprensione e il debug del tuo programma;
@@ -534,7 +534,7 @@ Debug
 \index{debugging}
 Nonostante il fatto che la maggior parte degli editor di testo sono in grado di riconoscere nativamente il codice Python, se usi un editor di testo per scrivere i tuoi script, potresti avere delle noie con spazi e tabulazioni. Il modo migliore per evitare questi problemi è utilizzare esclusivamente gli spazi evitando le tabulazioni.
 
-\index{spazio}
+\index{whitespace}
 
 Spesso il debug é reso più complicato dal fatto che le tabulazioni e spazi sono generalmente invisibili. Per mitigare questo problema  prova ad utilizzare un editor che gestisca automaticamente l'indentazione.
 
@@ -549,11 +549,11 @@ Glossario
 
 **Algoritmo**
 : Un processo generale destinato a risolvere una categoria di problemi.
-\index{algoritmo}
+\index{algorithm}
 
 **Argomento**
 : Il valore fornito a una funzione quando questa viene chiamata. Questo valore è assegnato al parametro corrispondente nella funzione.
-\index{argomento}
+\index{argument}
 
 **Corpo**
 : La sequenza di istruzioni contenute in una definizione di funzione.
@@ -561,56 +561,56 @@ Glossario
 
 **Composizione**
 : Utilizzo di un'espressione come parte di un'espressione più grande o di un'istruzione come parte di un'istruzione più ampia.
-\index{composizione}
+\index{composition}
 
 **Deterministico**
 : Pertinente a un programma che, dati gli stessi input, produce lo stesso risultato ogni volta che viene eseguito.
-\index{deterministico}
+\index{deterministic}
 
 **Notazione del punto**
 : La sintassi per chiamare una funzione gestita da un modulo specificando il nome del modulo seguito da un punto e dal nome della funzione stessa.
-\index{notazione puntata}
+\index{dot notation}
 
 **Flusso di esecuzione**
 : L'ordine in cui le istruzioni vengono eseguite durante l'esecuzione di un programma.
-\index{flusso di esecuzione}
+\index{flow of execution}
 
 **Funzione produttiva**
 : Una funzione che restituisce un valore.
-\index{funzione fruttuosa}
+\index{fruitful function}
 
 **Funzione**
 : Sequenza di istruzioni provvista di nome che svolge alcune operazioni utili. Le funzioni possono accettare o non accettare argomenti e possono o meno produrre un risultato.
-\index{funzione}
+\index{function}
 
 **Chiamata di funzione**
 : L'istruzione che esegue una funzione. È composta dal nome della funzione seguito da un elenco di argomenti.
-\index{chiamata di una funzione}
+\index{function call}
 
 **Definizione di funzione**
 : L'istruzione che da luogo ad una nuova funzione, specificandone il nome, i parametri e le istruzioni che esegue.
-\index{definizione di una funzione}
+\index{function definition}
 
 **Oggetto funzione**
 : Il valore creato dalla definizione di funzione. Il nome della funzione è una variabile che fa riferimento a un oggetto funzione.
-\index{definizione di una funzione}
+\index{function definition}
 
 **Header**
 : La prima riga di una definizione di funzione.
-\index{intestazione}
+\index{header}
 
 **Istruzione import**
 : Un'istruzione che legge un modulo e crea un oggetto modulo.
-\index{istruzione import}
-\index{istruzione!import}
+\index{import statement}
+\index{statement!import}
 
 **Oggetto modulo**
 : Il valore creato dall'istruzione `import` che fornisce accesso ai dati e al codice definiti in un modulo.
-\index{modulo}
+\index{module}
 
 **Parametro**
 : Un nome utilizzato all'interno di una funzione per fare riferimento al valore passato come argomento.
-\index{parametro}
+\index{parameter}
 
 **Pseudo-casuale**
 : Sequenza di numeri apparentemente casuali generati da un programma deterministico.
@@ -618,11 +618,11 @@ Glossario
 
 **Valore di ritorno**
 : Il risultato di una funzione. Se una chiamata di funzione viene utilizzata come espressione, il valore restituito è il valore dell'espressione.
-\index{valore di ritorno}
+\index{return value}
 
 **Funzione vuota**
 : Funzione che non restituisce alcun valore.
-\index{funzione void}
+\index{void function}
 
 Esercizi
 ---------

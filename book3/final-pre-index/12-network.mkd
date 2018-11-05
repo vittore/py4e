@@ -74,8 +74,8 @@ Dal momento che il protocollo più comunemente utilizzato è l'HTTP, Python è d
 Recupero di un'immagine tramite HTTP
 -----------------------------
 
-\index{urllib!immagine}
-\index{immagine!jpg}
+\index{urllib!image}
+\index{image!jpg}
 \index{jpg}
 
 Nell'esempio precedente abbiamo recuperato un semplice file di testo che conteneva dei "ritorni a capo" e abbiamo semplicemente visualizzato i dati sullo schermo durante la sua esecuzione. Possiamo usare un programma simile per recuperare un'immagine attraverso l'uso di HTTP. Invece di mostrare i dati sullo schermo mentre il programma viene eseguito, stavolta immagazziniamo i dati in una stringa, eliminiamo le intestazioni ed infine salviamo i dati dell'immagine in un file:
@@ -144,7 +144,7 @@ Ora, tranne che nella prima e l'ultima chiamata a `recv()`, abbiamo ricevuto 512
 
 Tra le richieste `send()` inviate dal server e le richieste `recv()` provenienti dalla nostra applicazione c'è un buffer. Se il programma è con il delay attivo, il server potrebbe riempire il buffer del socket ed essere costretto a sospendere l'invio di ulteriori dati fino a quando il nostro script inizia a svuotare il buffer. La sospensione di invio o ricezione di dati viene chiamato "controllo di flusso".
 
-\index{controllo di flusso}
+\index{flow control}
 
 Recupero di pagine Web con `urllib`
 ---------------------------------------------
@@ -177,7 +177,7 @@ Analisi dell'HTML e raccolta dati dal Web
 ---------------------------------
 
 \index{web!scraping}
-\index{parsing!HTML}
+\index{parsing HTML}
 
 Uno degli usi più comuni delle funzionalità di `urllib` è lo *scraping* dei contenuti presenti nel web. Con la parola *scraping* del Web ci riferiamo allo scrivere un programma che, fingendo di essere un browser Web, recuperi delle pagine, ne esamini i dati contenuti alla ricerca di precisi pattern.
 
@@ -209,15 +209,15 @@ href="http://.+?"
 
 La nostra espressione regolare va alla ricerca di stringhe che iniziano con "href="http://", seguito da uno o più caratteri (".+?") e da altre doppie virgolette. Il punto interrogativo aggiunto al ".+?" indica che il confronto deve essere fatto in un modo "non avido". Un confronto non avido cerca la stringa corrispondente *più piccola* possibile mentre un confronto avido cerca la stringa corrispondente *più grande* possibile.
 
-\index{avido}
-\index{non avido}
+\index{greedy}
+\index{non-greedy}
 
 Le parentesi aggiunte alla nostra espressione regolare indicano quale parte della stringa vorremmo estrarre.
 
 Potremmo scrivere il seguente script:
 
-\index{regex!parentesi}
-\index{parentesi!espressioni regolari}
+\index{regex!parentheses}
+\index{parentheses!regular expression}
 
 \VerbatimInput{../code3/urlregex.py}
 
@@ -313,7 +313,7 @@ Leggere file binari tramite urllib
 
 capiterà che tu voglia scaricare un file non di testo (o binario) come un'immagine o un video. Generalmente è meglio evitare di visualizzare i dati di questi file durante lo scaricamento, essendo meglio creare una copia locale tramite `urllib`.
 
-\index{file binario}
+\index{binary file}
 
 Lo schema consiste nell'aprire l'URL e tramite `read` scaricare l'intero contenuto del documento in una variabile stringa (`img`) e scrivere tali informazioni in un file locale come in questo esempio:
 
@@ -353,7 +353,7 @@ Glossario
 
 **Porta**
 : Un numero che indica in genere quale applicazione state contattando quando effettuate una connessione socket a un server. Ad esempio il traffico Web di solito utilizza la porta 80 mentre il traffico e-mail utilizza la 25.
-\index{porta}
+\index{port}
 
 **Scrape**
 : Indica il comportamento di un programma che fa finta di essere un browser web, recupera una pagina web e ne osserva il contenuto. Spesso i programmi seguono i collegamenti presenti in una pagina per trovare la pagina successiva in modo da poter scorrere all'interno di una rete di pagine o di un social network.

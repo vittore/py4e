@@ -50,7 +50,7 @@ L'obiettivo finale di tutti questi cambiamenti è quello di includere in un cors
 
 Gli studenti che troveranno questo libro interessante e che vogliano esplorare ulteriormente l'argomento, dovrebbero considerare il libro *Think Python* di Allen B. Downey. Date le molte sovrapposizioni tra i due libri, gli studenti saranno in grado di acquisire rapidamente alcune ulteriori competenze nelle ulteriori aree della tecnica di programmazione e del pensiero algoritmico che sono parte di *Think Python*. Inoltre, dato che i due libri hanno uno stile di scrittura simile, per loro sarà facile muoversi all'interno di *Think Python*.
 
-\index{Licenza Creative Commons}
+\index{Creative Commons License}
 \index{CC-BY-SA}
 \index{BY-SA}
 

@@ -437,7 +437,7 @@ Glossario
 
 **Central processing unit**
 : Chiamato anche "CPU" o "processore". È il cuore di qualsiasi computer ed è ciò che gestisce il codice che scriviamo.
-\index{Unità Centrale di Elaborazione}
+\index{central processing unit}
 \index{CPU}
 
 **Compilare**

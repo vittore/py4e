@@ -3,13 +3,13 @@ File
 ============
 
 \index{file}
-\index{tipo!file}
+\index{type!file}
 
 Persistenza
 -----------
 
-\index{persistenza}
-\index{memoria secondaria}
+\index{persistence}
+\index{secondary memory}
 
 Finora, abbiamo imparato come scrivere programmi e comunicare le nostre intenzioni all'*unità di elaborazione centrale* usando l'esecuzione condizionale, le funzioni e le iterazioni. Abbiamo anche imparato come creare e utilizzare strutture di dati nella *memoria principale*. La CPU e la memoria RAM sono i luoghi dove il nostro software lavora e funziona.
 È dove si forma tutto il "pensiero".  Ma se ricordate le nostre discussioni sull'architettura hardware, una volta che l'alimentazione viene tolta, qualsiasi cosa memorizzata nella CPU o nella memoria principale viene cancellata. Praticamente, i nostri programmi sono stati solo fugaci esercizi divertenti per imparare Python.
@@ -22,9 +22,9 @@ Ci concentreremo principalmente sulla lettura e la scrittura di file di testo si
 Aprire i file
 -------------
 
-\index{file!apertura}
-\index{funziona aperta}
-\index{funzione!open}
+\index{file!open}
+\index{open function}
+\index{function!open}
 
 Quando vogliamo leggere o scrivere un file (ad esempio sul disco rigido), dobbiamo prima *aprire* il file. Quando apri un file, chiedi al sistema operativo di trovare il file di cui hai fornito il nome e di assicurarsi che esista. Nell'esempio seguente, apriremo il file `mbox.txt`, che dovrebbe essere memorizzato nella stessa cartella da cui avvii Python.
 
@@ -34,7 +34,7 @@ Puoi scaricare questo file da [www.py4e.com/code3/mbox.txt](http://www.py4e.com/
     >>> print(fhand)
     <_io.TextIOWrapper name = 'mbox.txt' mode = 'r' encoding = 'cp1252'>
 
-\index{gestore file}
+\index{file handle}
 
 
 Se l'operazione `Open` ha successo, il sistema operativo ci restituisce un *file handle*. L’handle del file non rappresenta il dato reale contenuto nel file, ma piuttosto un “gestore” che possiamo usare per leggere i dati. Viene fornito un gestore (handle) che indica che il file richiesto esiste e si dispone delle autorizzazioni appropriate per leggere il file.
@@ -81,7 +81,7 @@ Questi file sono strutturati in un formato standard per file contenenti più mes
 Per suddividere il file in righe, c'è un carattere speciale che rappresenta la "fine della riga" chiamato carattere *newline*.
 
 
-\index{a capo}
+\index{newline}
 
 In Python, il carattere *newline* viene rappresentato con backslash-n (\\n) tra le costanti di stringa. Anche se sembra essere composto da due caratteri, è in realtà un singolo carattere. Prendi in considerazione il seguente listato. Il contenuto che stiamo inserendo nella variabile "stuff" nell'interprete, ci mostra che la stringa contiene i caratteri `\\n`. Quando però la stampiamo tramite il comando `print`, puoi notare che la stringa viene mostrata su due righe, spezzata nel punto dove è presente newline.
 
@@ -103,8 +103,8 @@ Nota che nel secondo caso la lunghezza della stringa `X\nY` è di *tre* caratter
 Lettura dei file
 -------------
 
-\index{file!lettura}
-\index{contatore}
+\index{file!reading}
+\index{counter}
 
 Mentre il *file handle* non contiene i dati per il file, è abbastanza semplice costruire un ciclo `for` per leggere e contare ciascuna delle righe in un file:
 
@@ -137,7 +137,7 @@ Ricerche in un file
 ------------------------
 
 Quando si cercano dei dati in un file è molto comune leggere un file ignorando la maggior parte delle righe analizzando solo quelle che soddisfano una particolare condizione. Possiamo combinare il modello per la lettura di un file con i metodi per le stringhe per costruire i primi semplici meccanismi di ricerca.
-\index{pattern filter}
+\index{filter pattern}
 \index{pattern!filter}
 
 Ad esempio, se volessimo leggere un file e stampare solo le righe che iniziano con il prefisso "From:", potremmo usare il metodo per le stringhe *startswith* per selezionare solo le righe con il prefisso desiderato:
@@ -255,16 +255,16 @@ Cosa succede se il nostro utente digita qualcosa che non è il nome di un file?
 
 Non ridere. Gli utenti faranno tutto quello che possono, di proposito o con intenzioni malevole, per violare i programmi. In effetti, un componente importante di qualsiasi team di sviluppo software è la persona o il gruppo chiamato *Quality Assurance* (o QA in breve) il cui compito è quello di fare le cose più folli possibili nel tentativo di violare il software che hanno creato.
 
-\index{Controllo Qualità}
+\index{Quality Assurance}
 \index{QA}
 
 Il team addetto al controllo qualità è responsabile della ricerca dei difetti nei programmi prima di consegnarli agli utenti finali che potrebbero acquistare il software o pagare il nostro stipendio per sviluppare software. Quindi, anche se non sembra, la squadra di controllo qualità è la migliore amica dello sviluppatore.
 
-\index{istruzione try}
-\index{istruzione!try}
-\index{funziona aperta}
-\index{funzione!open}
-\index{eccezione!IOError}
+\index{try statement}
+\index{statement!try}
+\index{open function}
+\index{function!open}
+\index{exception!IOError}
 \index{IOError}
 
 Tornando al nostro script, una volta individuato il difetto nel programma, possiamo sistemarlo elegantemente usando la struttura `try`/`except`: dobbiamo supporre che la chiamata `open` potrebbe fallire e aggiungere del codice come nell'esempio seguente:
@@ -284,7 +284,7 @@ La funzione `exit` termina immediatamente il programma. È una funzione che poss
     Immettere il nome del file: na na boo boo
     File cannot be opened: na na boo boo
 
-\index{Pythonico}
+\index{Pythonic}
 
 Proteggere la chiamata `open` è un buon esempio dell'uso corretto di `try` e `except` in un programma Python. Usiamo il termine "Pythonic" quando stiamo facendo qualcosa che rientri nella "filosofia di Python". Potremmo dire che l'esempio sopra è il modo Pythonic di aprire un file.
 
@@ -295,7 +295,7 @@ L'obiettivo di essere "più Pythonic" cattura l'idea che la programmazione sia i
 Scrivere file
 -------------
 
-\index{file!scrittura}
+\index{file!writing}
 Per scrivere all'interno di un file, devi aprirlo inserendo "w" come secondo parametro:
 
     >>> fout = open ('output.txt', 'w')
@@ -312,7 +312,7 @@ La modalità di scrittura predefinita per scrivere (e leggere) stringhe, è test
     >>> fout.write (line1)
     24
 
-\index{a capo}
+\index{newline}
 
 Di nuovo, l'oggetto file tiene traccia di dove si trova, quindi se chiami nuovamente `write`, i nuovi dati verranno aggiunti alla fine del file.
 
@@ -330,14 +330,14 @@ Quando hai finito di scrivere, devi chiudere il file per assicurarti che l'ultim
 Potremmo chiudere i file che apriamo anche per leggerli, ma possiamo essere un po' approssimativi se apriamo solo alcuni file dato che Python si assicura che tutti i file aperti vengano chiusi quando il programma termina . Quando scriviamo dei file, vogliamo chiudere esplicitamente i file in modo da non lasciare nulla al caso.
 
 
-\index{metodo close}
-\index{metodo!close}
+\index{close method}
+\index{method!close}
 
 Debug
 ---------
 
 \index{debugging}
-\index{spazio}
+\index{whitespace}
 
 Quando leggi e scrivi il contenuto di file, potresti incontrare dei problemi con gli spazi bianchi. Questi errori possono essere difficili da risolvere perché gli spazi, le schede e gli a capo sono normalmente invisibili:
 
@@ -346,9 +346,9 @@ Quando leggi e scrivi il contenuto di file, potresti incontrare dei problemi con
     1 2  3
      4
 
-\index{funzione repr}
-\index{funzione!repr}
-\index{rappresentazione stringa}
+\index{repr function}
+\index{function!repr}
+\index{string representation}
 
 In questi casi la funzione integrata `repr` può tornarti utile. Prende qualsiasi oggetto come argomento e restituisce lo stesso oggetto sotto forma di stringa. Per quanto riguarda le stringhe, i caratteri di spaziatura vengono rappresentati con sequenze di backslash:
 
@@ -359,7 +359,7 @@ Ciò può essere utile per il debug.
 
 Un altro problema che potresti incontrare è che sistemi diversi usano caratteri diversi per indicare la fine di una riga. Alcuni sistemi usano un carattere newline (`\\n`). Altri usano un carattere di ritorno (`\r`). Alcuni usano entrambi. Se si spostano file tra sistemi diversi, queste incoerenze potrebbero causare problemi.
 
-\index{carattere a capo}
+\index{end of line character}
 
 Esistono applicazioni per la conversione da un formato all'altro nella maggior parte dei sistemi operativi. Potete trovarle (e leggere ulteriori informazioni su questo problema) presso [wikipedia.org/wiki/Newline](wikipedia.org/wiki/Newline), oltre a ulteriori informazioni su questa questione. Niente ti vieta di svilupparne una tua!
 
@@ -372,20 +372,20 @@ Glossario
 
 **Newline**
 : Un carattere speciale ('\\n') utilizzato nei file e nelle stringhe per indicare la fine di una riga.
-\index{a capo}
+\index{newline}
 
 **Pythonic**
 : Una tecnica che che segue la "filosofia Python". "Usare try e except è il modo *Pythonic* di risolvere l'errore dovuto a file non trovato".
-\index{Pythonico}
+\index{Pythonic}
 
 **Controllo qualità**
 : Persona o team focalizzato sull'assicurazione della qualità complessiva di un software. Il controllo qualità è solitamente impegnato nella verifica e nell'identificazione dei problemi/bug di un prodotto prima che lo stesso venga rilasciato.
-\index{Controllo Qualità}
+\index{Quality Assurance}
 \index{QA}
 
 **File di testo**
 : Una sequenza di caratteri memorizzati nella memoria permanente (es. disco rigido).
-\index{file di testo}
+\index{text file}
 
 
 Esercizi

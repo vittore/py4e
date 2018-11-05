@@ -5,10 +5,10 @@ Esecuzione condizionale
 Espressioni booleane
 -------------------
 
-\index{espressione booleana}
-\index{expressione!booleana}
-\index{operatore logico}
-\index{operatore!logico}
+\index{boolean expression}
+\index{expression!boolean}
+\index{logical operator}
+\index{operator!logical}
 Un'espressione *booleana* è un'espressione che può assumere solo i valori vero o falso. Negli esempi seguenti l'operatore `==` viene utilizzato per la comparazione di due operandi e produrrà `True` nel caso siano uguali o `False` in caso contrario:
 
 ~~~~ {.python .trinket}
@@ -21,12 +21,12 @@ False
 
 
 `True` e `False` non sono considerati stringhe ma sono valori speciali appartenenti al tipo `bool`:
-\index{Valore speciale!True}
+\index{True special value}
 \index{False special value}
 \index{special value!True}
-\index{valore speciale!False}
-\index{tipo bool}
-\index{tipo!bool}
+\index{special value!False}
+\index{bool type}
+\index{type!bool}
 
 
 ~~~~ {.python}
@@ -51,24 +51,24 @@ L'operatore `==` è uno degli *operatori di comparazione*; gli altri sono:
 
 
 Anche se queste operazioni ti saranno probabilmente familiari, i simboli utilizzati da Python sono diversi da quelli matematici. Un errore comune è l'utilizzare un singolo segno di uguale (`=`) al posto di un doppio segno di uguale (`==`): Ricorda che `=` assegna un valore mentre `==` compara due valori. Al momento non esiste un operatore simile a `=<` o `=>`.
-\index{operatore di comparazione}
-\index{operatore!comparazione}
+\index{comparison operator}
+\index{operator!comparison}
 
 Operatori logici
 -----------------
 
-\index{operatore logico}
-\index{operatore!logico}
+\index{logical operator}
+\index{operator!logical}
 Esistono tre *operatori logici*: `and`, `or` e `not`. La semantica (significato) di questi operatori è simile al loro significato nella lingua inglese. Ad esempio:
 `x> 0 and x <10`
 è TRUE solo se `x` è maggiore di 0 *e* minore di 10.
 
-\index{operatore AND}
-\index{operatore OR}
-\index{operatore not}
-\index{operatore!and}
-\index{operatore!or}
-\index{operatore!not}
+\index{and operator}
+\index{or operator}
+\index{not operator}
+\index{operator!and}
+\index{operator!or}
+\index{operator!not}
 
 `n%2 == 0 or n%3 == 0` è TRUE se si verifica *una* delle condizioni: cioè se il numero è divisibile per 2 *o* 3. Infine, l'operatore `not` nega un'espressione booleana, quindi `not (x > y)` è true se ` x > y` è false; cioè, se `x` è minore o uguale a `y`. In pratica, gli operandi degli operatori logici dovrebbero essere espressioni booleane, anche Python non è molto rigoroso in merito.
 Qualsiasi numero diverso da zero viene interpretato come "true":
@@ -84,11 +84,11 @@ Seppure questa flessibilità possa tornare utile, ci sono alcuni dettagli che po
 Esecuzione condizionale
 ---------------------
 
-\index{istruzione condizionale}
-\index{istruzione!condizionale}
-\index{istruzione if}
-\index{istruzione!if}
-\index{esecuzione condizionale}
+\index{conditional statement}
+\index{statement!conditional}
+\index{if statement}
+\index{statement!if}
+\index{conditional executions}
 Per scrivere programmi utili, abbiamo quasi sempre bisogno di verificare le condizioni e modificare di conseguenza il comportamento del programma. Le *istruzioni condizionali* ci danno questa capacità. La forma più semplice è l'istruzione `if`:
 
 ~~~~ {.python}
@@ -102,13 +102,13 @@ L'espressione booleana dopo l'istruzione `if` è chiamata *condizione*. Al termi
 ![Logica If](height=1.5in@../images/if)
 
   Se la condizione logica è vera verrà eseguita l'istruzione indentata. Se la condizione logica è falsa, questa verrà saltata.
-\index{condizione}
-\index{istruzioni composte}
-\index{istruzione!composta}
+\index{condition}
+\index{compound statement}
+\index{statement!compound}
 
 Le istruzioni `if` hanno la stessa struttura delle definizioni di funzione o dei cicli `for`^[Impareremo a conoscere funzioni e cicli rispettivamente nel Capitolo 4 e 5.]. L'istruzione è composta da una riga di intestazione che termina con i due punti (:) seguita da un blocco indentato. Istruzioni come questa sono definite *composte* perché si estendono su più righe. Pur non essendoci alcun limite al numero di istruzioni che possono apparire nel blocco, deve esserne presente almeno una. Ad esempio, è utile avere un blocco senza istruzioni (sempre come segnaposto per codice non ancora scritto). In tal caso, puoi usare l'istruzione `pass`, che non produce alcun effetto.
-\index{istruzione pass}
-\index{istruzione!pass}
+\index{pass statement}
+\index{statement!pass}
 
 
 ~~~~ {.python}
@@ -148,9 +148,9 @@ Durante la scrittura e l'esecuzione di uno script non è necessaria una riga vuo
 Esecuzione alternativa
 ---------------------
 
-\index{esecuzione alternativa}
-\index{parola chiave else}
-\index{parola chiave!else}
+\index{alternative execution}
+\index{else keyword}
+\index{keyword!else}
 Una seconda forma dell'istruzione `if` è l'*esecuzione alternativa* in cui sono state previste due possibilità e la condizione determina quale debba essere eseguita. La sintassi ha questo aspetto:
 
 ~~~~ {.python}
@@ -166,13 +166,13 @@ Nell'operazione `x` diviso 2, se il resto è 0, sappiamo che `x` è pari e il pr
 ![Logica If-Then-Else](height=1.5in@../images/if-else)
 
 Poiché questa condizione deve necessariamente essere vera o falsa, verrà eseguita una delle alternative. Le alternative sono chiamate *branches* perché sono come rami nel flusso di esecuzione.
-\index{ramo}
+\index{branch}
 
 Condizioni concatenate
 --------------------
 
-\index{catene condizionali}
-\index{condizioni!catena}
+\index{chained conditional}
+\index{conditional!chained}
 A volte è necessario prevedere più di due possibilità e di conseguenza occorre inserire più di due branche. Un modo per esprimere un simile calcolo è utilizzare le condizioni *concatenate*:
 
 ~~~~ {.python}
@@ -190,8 +190,8 @@ else:
 ![Logica If-Then-ElseIf](height=2.0in@../images/elif)
 
 Non c'è limite al numero di istruzioni `elif`. Possono essere utilizzate svariate condizioni `else`, purché siano inserite alla fine.
-\index{parola chiave alif}
-\index{parola chiave!elif}
+\index{elif keyword}
+\index{keyword!elif}
 
 
 ~~~~ {.python}
@@ -209,8 +209,8 @@ Ogni condizione viene controllata in ordine. Se la prima condizione è falsa, ve
 Condizioni nidificate
 -------------------
 
-\index{condizione annidata}
-\index{condizioni!annidamento}
+\index{nested conditional}
+\index{conditional!nested}
 Una condizione può anche essere annidata all'interno di un'altra. Avremmo potuto scrivere l'esempio a tre branch anche in questo modo:
 
 ~~~~ {.python}
@@ -267,7 +267,7 @@ Quando l'interprete Python esegue queste istruzioni, verrà visualizzato un nuov
 Questo è uno script di esempio per convertire una temperatura da Fahrenheit a Celsius:
 \index{fahrenheit}
 \index{celsius}
-\index{conversione della temperatura}
+\index{temperature conversion}
 
 \VerbatimInput{../code3/fahren.py}
 
@@ -319,10 +319,10 @@ Gestire un'eccezione con un'istruzione `try` è definito "*catching* di un'eccez
 Valutazione di un cortocircuito di espressioni logiche
 -----------------------------------------------
 
-\index{corto circuito}
+\index{short circuit}
 Quando Python sta elaborando un'espressione logica come `x >= 2 and (x/y) > 2`, calcola l'espressione da sinistra a destra. A causa della definizione di `and`, se `x` è minore di 2, l'espressione `x >= 2` è `False` e quindi l'intera espressione è `False` indipendentemente dal fatto che `(x/y) > 2` restituisca `True` o `False`. Quando Python rileva che non c'è nulla da guadagnare valutando il resto di un'espressione logica, interrompe la valutazione senza eseguire i calcoli rimanenti. Questo caso viene chiamato "*cortocircuito* della valutazione".
 
-\index{pattern del guardiano}
+\index{guardian pattern}
 \index{pattern!guardian}
 Anche se ciò ti potrà sembrare una sottigliezza, il comportamento di cortocircuito porta a una tecnica intelligente chiamata *schema del guardiano*. Considera la seguente sequenza di codice:
 
@@ -377,7 +377,7 @@ Quando si verifica un errore Python visualizza un traceback contenente molte inf
 - dove si è verificato.
 
 Gli errori di sintassi sono solitamente facili da trovare, ma ci sono alcuni tranelli. Gli errori di spaziatura possono essere difficoltosi da correggere perché gli spazi e le tabulazioni sono normalmente invisibili e siamo abituati ad ignorarli.
-\index{spazio}
+\index{whitespace}
 
 
 ~~~~ {.python}
@@ -403,48 +403,48 @@ Glossario
 
 **Espressione booleana**
 : Espressione che può assumere il valore Vero o Falso.
-\index{espressione booleana}
-\index{expressione!booleana}
+\index{boolean expression}
+\index{expression!boolean}
 
 **Branch**
 : Una delle sequenze di istruzioni alternative di un'istruzione condizionale.
-\index{ramo}
+\index{branch}
 
 **Condizione concatenata**
 : Un'istruzione condizionale con una serie di branch alternativi.
-\index{catene condizionali}
-\index{condizioni!catena}
+\index{chained conditional}
+\index{conditional!chained}
 
 **Operatore di comparazione**
 : Operatore che permette di confrontare due operandi: `==`, `!=`, `>`, `<`, `>=` e `<=`.
 
 **Istruzione condizionale**
 : Una istruzione che controlla il flusso di esecuzione in base alle condizioni impostate dallo sviluppatore.
-\index{istruzione condizionale}
-\index{istruzione!condizionale}
+\index{conditional statement}
+\index{statement!conditional}
 
 **Condizione**
 : L'espressione booleana in un'istruzione condizionale che determina quale branch debba essere eseguito.
-\index{condizione}
+\index{condition}
 
 **Compound statement**
 : Un'istruzione composta da un'intestazione e che termina con due punti (:) ed un corpo rientrato rispetto all'intestazione.
-\index{istruzioni composte}
+\index{compound statement}
 
 **Schema del guardiano**
 : Espressione logica che, con comparazioni aggiuntive, sfruttare il comportamento definito *cortocircuito della valutazione*.
-\index{pattern del guardiano}
+\index{guardian pattern}
 \index{pattern!guardian}
 
 **Operatore logico**
 : Uno degli operatori che combina espressioni booleane: `and`, `or`, e `not`.
-\index{operatore logico}
-\index{operatore!logico}
+\index{logical operator}
+\index{operator!logical}
 
 **Condizionale nidificato**
 : Un'istruzione condizionale che appare in uno dei branch di un'altra istruzione condizionale.
-\index{condizione annidata}
-\index{condizioni!annidamento}
+\index{nested conditional}
+\index{conditional!nested}
 
 **Traceback**
 : Elenco delle funzioni in esecuzione che viene visualizzato quando si verifica un'eccezione.
@@ -452,7 +452,7 @@ Glossario
 
 **Cortocircuito**
 : Si verifica quando Python, a metà strada nel calcolo di un'espressione logica, interrompe il calcolo perché conosce il valore finale dell'espressione senza dover calcolare il resto delle operazioni.
-\index{corto circuito}
+\index{short circuit}
 
 Esercizi
 ---------

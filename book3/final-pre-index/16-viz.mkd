@@ -13,8 +13,8 @@ Ciascuna applicazione è contenuta in un file ZIP che potrai scaricare, estrarre
 
 ## Costruire una Google map partendo da dati geocodificati
 
-\\index{Google!mappa}
-\\index{Visualizzazione!mappa}
+\\index{Google!map}
+\\index{Visualization!map}
 
 In questo progetto, utilizziamo l'API di geocodifica di Google per gestire la posizione geografica di alcune università visualizzandole su una Google Map.
 
@@ -93,8 +93,8 @@ Per poter vedere le posizioni geografiche delle entità devi aprire _where.html_
 ## Visualizzare reti e interconnessioni
 
 \\index{Google!page rank}
-\\index{Visualizzazione!reti}
-\\index{Visualizzazione!rank della pagina}
+\\index{Visualization!networks}
+\\index{Visualization!page rank}
 
 Tramite questa applicazione sperimenteremo alcune funzioni tipiche di un motore di ricerca. Per prima cosa analizzeremo una piccola porzione del web e, tramite una versione semplificata dell'algoritmo di ranking delle pagine di Google, determineremo quali pagine siano maggiormente connesse. Infine visualizzeremo il rank delle singole pagine e la connessioni del nostro piccolo angolo di Rete. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per rappresentare visivamente l'output.
 
