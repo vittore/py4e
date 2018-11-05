@@ -1,4 +1,9 @@
-# Come visualizzare dati
+
+
+
+
+Come visualizzare dati
+==========================
 
 Finora abbiamo studiato il linguaggio Python per capirne l'utilizzo in internet o con i database per manipolare dati.
 
