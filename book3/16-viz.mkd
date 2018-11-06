@@ -13,8 +13,8 @@ Ciascuna applicazione è contenuta in un file ZIP che potrai scaricare, estrarre
 
 ## Costruire una Google map partendo da dati geocodificati
 
-\\index{Google!mappa}
-\\index{Visualizzazione!mappa}
+\index{Google!mappa}
+\index{Visualizzazione!mappa}
 
 In questo progetto, utilizziamo l'API di geocodifica di Google per gestire la posizione geografica di alcune università visualizzandole su una Google Map.
 
@@ -25,7 +25,7 @@ Per iniziare, scarica l'applicazione da:
 
 Il primo problema da risolvere è dato dal fatto che le richieste gratuite di geocodifica all'API di Google sono limitate a un determinato numero. Se dovessi controllare la posizione di molte entità, potresti essere obbligato ad interrompere e riavviare il processo di ricerca diverse volte. É meglio quindi suddividere il problema in due fasi.
 
-\\index{cache}
+\index{cache}
 
 Nella prima fase prendiamo il nostro input "survey" nel file _where.data_, ne leggiamo una riga alla volta e, dopo aver recuperato le relative informazioni geocodificate da Google, le archiviamo nel database _geodata.sqlite_. Prima di utilizzare l'API di geocodifica per ogni entità inserita dall'utente, eseguiremo un semplice controllo per verificare se siamo già in possesso dei dati relativi a quella particolare riga di input. In altre parole il database si comporta come se fosse una "cache" locale dei dati di geocodifica che ci servono in modo da evitare di chiedere a Google due o piu volte la stessa cosa.
 
@@ -92,9 +92,9 @@ Per poter vedere le posizioni geografiche delle entità devi aprire _where.html_
 
 ## Visualizzare reti e interconnessioni
 
-\\index{Google!page rank}
-\\index{Visualizzazione!reti}
-\\index{Visualizzazione!rank della pagina}
+\index{Google!page rank}
+\index{Visualizzazione!reti}
+\index{Visualizzazione!rank della pagina}
 
 Tramite questa applicazione sperimenteremo alcune funzioni tipiche di un motore di ricerca. Per prima cosa analizzeremo una piccola porzione del web e, tramite una versione semplificata dell'algoritmo di ranking delle pagine di Google, determineremo quali pagine siano maggiormente connesse. Infine visualizzeremo il rank delle singole pagine e la connessioni del nostro piccolo angolo di Rete. Utilizzeremo la libreria JavaScript D3 <http://d3js.org/> per rappresentare visivamente l'output.
 
