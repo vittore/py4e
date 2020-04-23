@@ -5,7 +5,6 @@ use \Tsugi\UI\Output;
 require_once "top.php";
 require_once "nav.php";
 ?>
-<div id="container">
 <h1>Python for Everybody</h1>
 <?php if ( isset($_SESSION['id']) ) { ?>
 <p>
@@ -19,10 +18,6 @@ links to the autograders in the class.  You can attempt the autograders and get 
 You can track your progress through the course using the <a href="assignments">Assignments</a>
 tool and when you complete a group of assignments, you can earn a <a href="badges">Badge</a>.
 You can download these badges and host them on your web site or refer the badge URLs on this site.</li>
-<li class="list-group-item">
-There is an
-<a href="https://disqus.com/home/channel/pythonforeverybody/" target="_blank">online disucssion forum</a>
-hosted by Disqus.</li>
 <li class="list-group-item">
 If you want to use these Creative Commons Licensed materials 
 in your own classes you can 
@@ -39,7 +34,10 @@ an IMS Learning Tools Interoperability® (LTI®)
 Hello and welcome to my site where you can work through my course materials related to
 my free <a href="book.php">Python for Everybody</a> text book.  You can take this course for a certificate
 as the 
-<a href="https://www.coursera.org/specializations/python" target="_blank">Python for Everybody Specialization</a> on Coursera.</p>
+<a href="https://www.coursera.org/specializations/python" target="_blank">Python for Everybody Specialization</a> on Coursera,
+<a href="https://www.edx.org/bio/charles-severance" target="_blank">Python for Everybody</a> (2 courses)  on edX, or
+<a href="https://www.futurelearn.com/courses/programming-for-everybody-python" target="_blank">Python for Everybody</a> (2 courses) on FutureLearn.
+</p>
 <p>
 You can use this web site many different ways:
 <ul class="list-group">
@@ -90,5 +88,4 @@ echo(Output::safe_var_dump($_SESSION));
 var_dump($USER);
 ?>
 -->
-</div>
 <?php $OUTPUT->footer();

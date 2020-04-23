@@ -51,7 +51,6 @@ program (the pay should be 96.25).  You should use <b>raw_input</b> to
 read a string and <b>float()</b> to convert the string to a number.
 Do not worry about error checking or bad user data.",
 "desired" => "Pay: 96.25",
-"desired2" => "96.25",
 "code" => '# This first line is provided for you
 
 hrs = raw_input("Enter Hours:")',
@@ -74,7 +73,7 @@ program (the pay should be 498.75).  You should use <b>raw_input</b> to
 read a string and <b>float()</b> to convert the string to a number.
 Do not worry about error checking the user input - assume the user types numbers properly.
 ",
-"desired" => "498.75",
+"desired" => "Pay 498.75",
 "desired2" => "Pay: 498.75",
 "code" => 'hrs = raw_input("Enter Hours:")
 h = float(hrs)',
@@ -114,7 +113,7 @@ For the test, enter a score of 0.85.
 "qtext" => "<b>4.6</b> Write a program to prompt the user for hours and rate per hour using raw_input
 to compute gross pay.  Award time-and-a-half for the hourly rate for all hours
 worked above 40 hours.
-Put the logic to do the computation of time-and-a-half in a function called <b>computepay()</b>
+Put the logic to do the computation of pay in a function called <b>computepay()</b>
 and use the function to do the computation.  The function should return a value.
 Use 45 hours and a rate of 10.50 per hour to test the
 program (the pay should be 498.75).
@@ -124,7 +123,7 @@ Do not worry about error checking the user input unless you want to -
 you can assume the user types numbers properly.  Do not name your variable
 sum or use the sum() function.
 ",
-"desired" => "498.75",
+"desired" => "Pay 498.75",
 "code" => 'def computepay(h,r):
     return 42.37
 
@@ -328,6 +327,7 @@ print lst
 "checks" => Array(
 "split" => "You should use split() to break each line into words.",
 "append" => "You should use append() to add the word to the list if it is not there.",
+"!extend" => "You should not use extend() in this assignment.",
 "open" => "You need to use open() to open the file.",
 "sort" => "You need to use sort() to sort the list before you print it out.",
 "!'yonder'" => "You should not put the output data in strings",
@@ -407,7 +407,7 @@ print "There were", count, "lines in the file with From as the first word"
 
 "9.4" => Array(
 "qtext" => "<b>9.4</b> Write a program to read through the <b>mbox-short.txt</b> and figure
-out who has the sent  the greatest number of mail messages.  The program looks
+out who has sent the greatest number of mail messages.  The program looks
 for 'From ' lines and takes the second
 word of those lines as the person who sent the mail.  The program creates a Python
 dictionary that maps the sender's mail address to a count of the number of times

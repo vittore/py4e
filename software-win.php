@@ -1,8 +1,8 @@
 <?php include("top.php"); ?>
 <?php include("nav.php"); ?>
 <h1>Installing Python 3 On Windows 10</h1>
-<p><b>Note:</b> Any reasonably recent version of Python is acceptible for this course.
-If you have a verison of Python 3.x on your computer already you should be able to use it for this class.
+<p><b>Note:</b> Any reasonably recent version of Python is acceptable for this course.
+If you have a version of Python 3.x on your computer already you should be able to use it for this class.
 </p>
 <p>Please download and install Python 3.x from:</p>
 <p><a href="http://www.python.org/download/" target="_blank">http://www.python.org/download/</a></p>
@@ -30,6 +30,7 @@ In each of these examples, your logged in account should be used instead of csev
     Windows Vista:          C:\Users\csev
     Windows 7:              C:\Users\csev
     Windows 10:             C:\Users\csev
+    Windows 10 OneDrive:    C:\Users\csev\OneDrive
 </pre>
 The command line prompt usually includes some clue as to 
 where you are in the folder structure on your hard drive.
@@ -45,7 +46,8 @@ Where can you go?
 <p>
 Generally the first thing you want to do when you open a command line 
 interface is to navigate to the right folder.  Say you wanted to run a 
-file from your desktop.   The command is <b>cd Desktop</b> to get into the 
+file from your desktop.   The command is <b>cd Desktop</b> (or <b>cd OneDrive\Desktop</b>) 
+to get into the 
 folder that is your Desktop.  You can use the <b>dir</b> command to see 
 which files are in the current directory and the 
 <b>cd ..</b> command to go "<b style="color:black;background-color:#a0ffff">up</b>" a directory
@@ -71,7 +73,7 @@ the most important is to set the Command History Buffer Size to be 999.
 <h1>Running Your Python Program in the Command Line</h1>
 <p>
 To run your program in the command line you type at the command line prompt.
-Windows knows that files wthat end with a ".py" suffix are Python programs.
+Windows knows that files that end with a ".py" suffix are Python programs.
 <pre>
     python firstprog.py
 </pre>

@@ -66,6 +66,16 @@ if ( $python3 ) {
 // Get any due date information
 $dueDate = SettingsForm::getDueDate();
 
+$menu = false;
+if ( $LAUNCH->link && $LAUNCH->user && $LAUNCH->user->instructor ) {
+    $menu = new \Tsugi\UI\MenuSet();
+    $menu->addLeft('Student Data', 'grades.php');
+    if ( $CFG->launchactivity ) {
+        $menu->addRight(__('Launches'), 'analytics');
+    }
+    $menu->addRight(__('Settings'), '#', /* push */ false, SettingsForm::attr());
+}
+
 $OUTPUT->header();
 
 // Defaults
@@ -321,7 +331,9 @@ function outf(text) {
         window.GLOBAL_TIMER = setTimeout("finalcheck();",1500);
 
         var desired = document.getElementById("desired");
+
         if ( desired == null ) return;
+
         var desired = desired.innerHTML;
         var desired2 = document.getElementById("desired2").innerHTML;
 
@@ -407,11 +419,13 @@ function outf(text) {
         try {
             var module = Sk.importMainWithBody("<stdin>", false, prog);
         } catch (e) {
+            $("#spinner").hide();
+            var f = e + ''; // Convert to a string.
+            if ( f.startsWith('SystemExit') ) return true;
             if ( window.GLOBAL_TIMER != false ) window.clearInterval(window.GLOBAL_TIMER);
             window.GLOBAL_TIMER = false;
             window.GLOBAL_ERROR = true;
             hideall();
-            $("#spinner").hide();
             $("#redo").show();
             alert(e);
         }
@@ -491,11 +505,12 @@ white-space: -pre-wrap; /* Opera 4 - 6 */
 white-space: -o-pre-wrap; /* Opera 7 */
 white-space: pre-wrap; /* CSS3 */
 word-wrap: break-word; /* IE 5.5+ */
+font-size: 14px;
 }
 </style>
 <?php
 $OUTPUT->bodyStart();
-$OUTPUT->topNav();
+$OUTPUT->topNav($menu);
 
 if ( $USER->instructor ) {
     SettingsForm::start();
@@ -566,6 +581,16 @@ if ( isset($LINK->title) ) {
         your score will not be changed.
         </p>
 <?php } ?>
+<?php
+    $identity = __("Logged in as: ").$USER->key;
+    if ( strlen($USER->email) > 0 ) {
+        $identity .= ' ' . htmlentities($USER->email);
+    }
+    if ( strlen($USER->displayname) > 0 ) {
+        $identity .= ' ' . htmlentities($USER->displayname);
+    }
+    echo("<p>".$identity."</p>")
+?>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -601,19 +626,6 @@ if ( $dueDate->message ) {
         echo('<button onclick="resetcode()" class="btn btn-default" type="button">Reset Code</button> ');
     }
     echo('<button onclick="$(\'#info\').modal();return false;" class="btn btn-default" type="button"><span class="glyphicon glyphicon-info-sign"></span></button>'."\n");
-    if ( $USER->instructor ) {
-        if ( $CFG->launchactivity ) {
-            echo('<a href="analytics" class="btn btn-default">Analytics</a> ');
-        }
-        SettingsForm::button();
-    }
-    if ( $USER->instructor ) {
-        if ( $EX === false ) {
-            echo(' <a href="grades.php" class="btn btn-default" target="_blank">View Student Code</a>'."\n");
-        } else {
-            echo(' <a href="grades.php" class="btn btn-default" target="_blank">View Grades</a>'."\n");
-        }
-    }
 ?>
 <img id="spinner" src="static/spinner.gif" style="vertical-align: middle;display: none">
 <span id="redo" style="color:red;display:none"> Please correct your code and re-run. </span>
@@ -665,13 +677,15 @@ Setting:
     echo('<a href="'.$editurl.'">'.$textval.'</a>');
 
     if ( $python3 ) {
-        $editurl = reconstruct_query('index.php',array("python3" => 0));
-        $textval = "Use Python 2";
+        // $editurl = reconstruct_query('index.php',array("python3" => 0));
+        // $textval = "Use Python 2";
     } else {
         $editurl = reconstruct_query('index.php',array("python3" => 1));
         $textval = "Use Python 3";
+        echo(' | <a href="'.$editurl.'">'.$textval.'</a>. ');
     }
-    echo(' | <a href="'.$editurl.'">'.$textval.'</a>. ');
+    echo(' ');
+
 ?>
 This software is based on <a href="http://skulpt.org/" target="_blank">Skulpt</a>
 and <a href="http://codemirror.net/" target="_blank">CodeMirror</a>.

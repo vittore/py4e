@@ -107,6 +107,10 @@
     {
         "title" : "Python for Everybody Specialization (Coursera)",
         "href" : "https://www.coursera.org/specializations/python"
+    },
+    {
+        "title" : "Python for Everybody - Getting Started (edX)",
+        "href" : "https://www.edx.org/course/programming-for-everybody-getting-started-with-python"
     }
 ],
 "modules": [
@@ -445,7 +449,7 @@
     "title": "Files",
     "anchor": "files",
     "icon" : "fa-database",
-    "description": "We learn how to open data files on your computer and read throught the files using Python.",
+    "description": "We learn how to open data files on your computer and read through the files using Python.",
     "slides": "lectures3/Pythonlearn-07-Files.pptx",
     "references" : [
         {
@@ -665,7 +669,7 @@
     "title": "Network Programming",
     "anchor": "network",
     "icon" : "fa-cloud",
-    "description": "We take a quick look at how data moves acros the network using th HyperText Transport Protocol (HTTP) and ow we write programs to read data scross the network.",
+    "description": "We take a quick look at how data moves across the network using the HyperText Transport Protocol (HTTP) and how we write programs to read data scross the network.",
     "slides": "lectures3/Pythonlearn-12-HTTP.pptx",
     "references" : [
         {
@@ -880,12 +884,19 @@
             "title" : "Objects Part 4",
             "youtube" : "EE9PaHPPm2w"
         }
+    ],
+    "lti" : [
+        {
+            "title" : "Quiz: Object-Oriented Programming",
+            "launch" : "mod/gift/?quiz=16-Python-Objects.txt",
+            "resource_link_id" : "py4e_16_oo_quiz"
+        }
     ]
 },
 {
     "title": "Databases",
     "chapter" : "15",
-    "anchor": "json",
+    "anchor": "database",
     "icon" : "fa-database",
     "description": "Databases give us very fast random access to large amounts of data. There is a lot of material in this chapter as we learn the Structured Query Language (SQL).",
     "slides": "lectures3/Pythonlearn-15-Databases.pptx",

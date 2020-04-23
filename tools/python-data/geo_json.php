@@ -11,49 +11,31 @@ $sanity = array(
   'json' => 'You should use the json library to parse the API data'
 );
 
+$api_url = dataUrl('json');
+
 // Compute the stuff for the output
 $code = 42;
-$MT = new Mersenne_Twister($code);
-$sample = $MT->shuffle($LOCATIONS);
+$sample = load_geo(42, $api_url);
 $sample_location = $sample[0];
+$sample_place = $sample[1];
+$sample_count = $sample[2];
+$sample_url = $sample[3];
 
 $code = $USER->id+$LINK->id+$CONTEXT->id;
-$MT = new Mersenne_Twister($code);
-$actual = $MT->shuffle($LOCATIONS);
+$actual = load_geo($code, $api_url);
 $actual_location = $actual[0];
-
-// Retrieve the data
-$api_url = dataUrl('geojson');
-$google_api = 'http://maps.googleapis.com/maps/api/geocode/json?address=University+of+Michigan';
-$sample_url = $api_url . '?address=' . urlencode($sample_location);
-$actual_url = $api_url . '?address=' . urlencode($actual_location);
-
-$sample_data = Net::doGet($sample_url);
-$sample_count = strlen($sample_data);
-$response = Net::getLastHttpResponse();
-$sample_json = json_decode($sample_data);
-if ( $response != 200 || $sample_json == null || ( !isset($sample_json->results[0])) ) {
-    error_log("DIE: Sample response=$response url=$sample_url json_error=".json_last_error_msg());
-    die("Sample response=$response url=$sample_url json_error=".json_last_error_msg());
-}
-// echo("<pre>\n");echo(LTI::jsonIndent(json_encode($sample_json)));echo("</pre>\n");
-$sample_place =  $sample_json->results[0]->place_id;
-
-$actual_data = Net::doGet($actual_url);
-$actual_count = strlen($actual_data);
-$response = Net::getLastHttpResponse();
-$actual_json = json_decode($actual_data);
-if ( $response != 200 || $actual_json == null || ( !isset($actual_json->results[0])) ) {
-    error_log("DIE: Actual response=$response url=$actual_url json_error=".json_last_error_msg());
-    die("Actual response=$response url=$actual_url json_error=".json_last_error_msg());
-}
-$actual_place =  $actual_json->results[0]->place_id;
-// echo("sample_place=$sample_place actual_place=$actual_place");
-
+$actual_place = $actual[1];
+$actual_count = $actual[2];
+$actual_url = $actual[3];
 
 $oldgrade = $RESULT->grade;
 if ( isset($_POST['place_id']) && isset($_POST['code']) ) {
-    $RESULT->setJsonKey('code', $_POST['code']);
+    $RESULT->setJsonKeys( array(
+        'code' => $_POST['code'],
+        'place_id' => $_POST['place_id'],
+        'actual_url' => $actual_url,
+        'actual_place' => $actual_place
+    ));
 
     if ( $_POST['place_id'] != $actual_place ) {
         $_SESSION['error'] = "Your place_id did not match";
@@ -105,28 +87,20 @@ of the Google Data:
 </pre>
 This API uses the same parameter (address) as the Google API.
 This API also has no rate limit so you can test as often as you like.
-If you visit the URL with no parameters, you get a list of all of the
-address values which can be used with this API.
+If you visit the URL with no parameters, you get "No address..." response.
 </p>
 <p>
-To call the API, you need to provide
+To call the API, you need to include a <b>key=</b> parameter and provide the
 address that you are requesting as the <b>address=</b> parameter that is
-properly URL encoded using the <b>urllib.urlencode()</b> fuction as shown in
+properly URL encoded using the <b>urllib.parse.urlencode()</b> function as shown in
 <a href="http://www.py4e.com/code3/geojson.py"
 target="_blank">http://www.py4e.com/code3/geojson.py</a>
 </p>
-<!--
 <p>
-Just for fun, you can also test your program with the real Google API:
-<pre>
-<a href="<?= $google_api ?>" target="_blank"><?= $google_api ?></a>
-</pre>
-Since Google's data is always changing, the data returned from the Google API
-could easily be different than from my local copy API.  And the Google
-API has rate limits.  But your code should work with the Google API
-with no modifications other than the base URL.
-</p>
--->
+Make sure to check that your code is using the API endpoint is as shown above.
+You will get <em>different</em> results from the <b>geojson</b> and <b>json</b>
+endpoints so make sure you are using the same end point as this autograder is using.
+<p>
 <?php httpsWarning($api_url); ?>
 <p><b>Test Data / Sample Execution</b></p>
 <p>

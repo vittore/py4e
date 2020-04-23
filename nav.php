@@ -9,9 +9,10 @@ $set->addLeft('Get Started', $R.'install');
 $set->addLeft('Lessons', $R.'lessons');
 if ( isset($_SESSION['id']) ) {
     $set->addLeft('Assignments', $R.'assignments');
+    // $set->addLeft('Discuss', $R.'group');
     // If both are set we go to discuss.php
-    if ( isset($CFG->disqushost) ) $set->addLeft('Discuss', $T.'discuss');
-    else if ( isset($CFG->disquschannel) ) $set->addLeft('Discuss', $CFG->disquschannel);
+    // if ( isset($CFG->disqushost) ) $set->addLeft('Discuss', $T.'discuss');
+    // else if ( isset($CFG->disquschannel) ) $set->addLeft('Discuss', $CFG->disquschannel);
 } else {
     $set->addLeft('Materials', $R.'materials');
 }
@@ -37,10 +38,8 @@ if ( isset($_SESSION['id']) ) {
     if ( isset($_COOKIE['adminmenu']) && $_COOKIE['adminmenu'] == "true" ) {
         $submenu->addLink('Administer', $T . 'admin/');
     }
-    if ( $CFG->DEVELOPER ) {
-        $submenu->addLink('Test LTI Tools', $T . 'dev');
-    }
     $submenu->addLink('Logout', $R.'logout');
+
     if ( isset($_SESSION['avatar']) ) {
         $set->addRight('<img src="'.$_SESSION['avatar'].'" style="height: 2em;"/>', $submenu);
         // htmlentities($_SESSION['displayname']), $submenu);
@@ -51,8 +50,12 @@ if ( isset($_SESSION['id']) ) {
     $set->addRight('Login', $R.'login');
 }
 
+$imenu = new \Tsugi\UI\Menu();
+
+$imenu->addLink('Instructor', 'http://www.dr-chuck.com');
+$imenu->addLink('Office Hours', 'http://www.dr-chuck.com/office/');
 $set->addRight('Book', $R . 'book');
-$set->addRight('Instructor', 'http://www.dr-chuck.com');
+$set->addRight('Instructor', $imenu);
 
 // Set the topNav for the session
 $OUTPUT->topNavSession($set);
