@@ -16,13 +16,10 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine on
-<<<<<<< HEAD
     RewriteRule ^ - [E=protossl]
     RewriteCond %{HTTPS} on
     RewriteRule ^ - [E=protossl:s]
     RewriteRule "(^|/)\." - [F]
-=======
->>>>>>> upstream/master
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} !=/favicon.ico
@@ -32,3 +29,4 @@
 <IfModule !mod_rewrite.c>
     FallbackResource koseu.php
 </IfModule>
+
