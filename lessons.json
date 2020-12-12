@@ -227,7 +227,7 @@
     }
 },
 {
-    "title": "Variabili, espressioni, e statement",
+    "title": "Variabili, espressioni ed Istruzioni",
     "anchor": "memory",
     "icon" : "fa-database",
     "description": "Impariamo come creare delle variabili ed utilizzarle per conservarci dati.",
@@ -240,19 +240,19 @@
     ],
     "videos" : [
         {
-            "title" : "Variabili, espressioni, e statement - Parte 1",
+            "title" : "Variabili, espressioni e Istruzioni - Parte 1",
             "youtube" : "7KHdV6FSpo8"
         },
         {
-            "title" : "Variabili, espressioni, e statement - Parte 2",
+            "title" : "Variabili, espressioni e Istruzioni - Parte 2",
             "youtube" : "kefrGMAglGs"
         },
         {
-            "title" : "Worked Exercise: 2.2",
+            "title" : "Esercizio Dimostrativo: 2.2",
             "youtube" : "_b-nVJrl02M"
         },
         {
-            "title" : "Worked Exercise: 2.3",
+            "title" : "Esercizio Dimostrativo: 2.3",
             "youtube" : "DVmspDooG2c"
         }
     ],
@@ -269,38 +269,38 @@
     }
 },
 {
-    "title": "Conditional Execution",
+    "title": "Esecuzione condizionale",
     "anchor": "logic",
     "icon" : "fa-diamond",
-    "description": "We look at how Python executes some statements and skips others.",
+    "description": "Analizziamo il modo in cui Python effettua alcune istruzioni e ne salti altre.",
     "slides": "lectures3/Pythonlearn-03-Conditional.pptx",
     "references" : [
         {
-            "title" : "Chapter 3: Conditionals",
+            "title" : "Capitolo 3: Conditionals",
             "href" : "https://www.py4e.com/html3/03-conditional"
         }
     ],
     "videos" : [
         {
-            "title" : "Conditional Execution - Part 1",
+            "title" : "Esecuzione condizionale - Parte 1",
             "youtube" : "2aA3VBdcl6A"
         },
         {
-            "title" : "Conditional Execution - Part 2",
+            "title" : "Esecuzione condizionale - Parte 2",
             "youtube" : "OczkNrHPBps"
         },
         {
-            "title" : "Worked Exercise 3.1",
+            "title" : "Esercizio Dimostrativo 3.1",
             "youtube" : "oUMQbZ4SBuM"
         },
         {
-            "title" : "Worked Exercise 3.2",
+            "title" : "Esercizio Dimostrativo 3.2",
             "youtube" : "-iUA4cCKRlM"
         }
     ],
     "lti" : [ 
     {
-        "title" : "Autograder: Exercise 3.1",
+        "title" : "Autograder: Esercizio 3.1",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_03_01",
         "custom" : [
@@ -311,7 +311,7 @@
         ]
     },
     {
-        "title" : "Autograder: Exercise 3.3",
+        "title" : "Autograder: Esercizio 3.3",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_03_03",
         "custom" : [
@@ -324,33 +324,33 @@
     ]
 },
 {
-    "title": "Functions",
+    "title": "Funzioni",
     "anchor": "functions",
     "icon" : "fa-files-o",
-    "description": "Take a brief look at how Python implements the 'store and use later' programming pattern.",
+    "description": "Osservate brevemente come Python implementa il modello di programmazione 'store and use later'.",
     "slides": "lectures3/Pythonlearn-04-Functions.pptx",
     "references" : [
         {
-            "title" : "Chapter 4: Functions",
+            "title" : "Capitolo 4: Functioni",
             "href" : "https://www.py4e.com/html3/04-functions"
         }
     ],
     "videos" : [
         {
-            "title" : "Functions - Part 1",
+            "title" : "Funzioni - Parte 1",
             "youtube" : "5Kzw-0-DQAk"
         },
         {
-            "title" : "Functions - Part 2",
+            "title" : "Funzioni - Parte 2",
             "youtube" : "AJVNYRqn8kM"
         },
         {
-            "title" : "Worked Exercise 4.6",
+            "title" : "Esercizio Dimostrativo 4.6",
             "youtube" : "l93PhBUJ_S0"
         }
     ],
     "lti" : {
-        "title" : "Autograder: Exercise 4.6",
+        "title" : "Autograder: Esercizio 4.6",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_04_06",
         "custom" : [
@@ -362,41 +362,41 @@
     }
 },
 {
-    "title": "Loops and Iterations",
+    "title": "Loop e Iterazioni",
     "anchor": "loops",
     "icon" : "fa-gears",
-    "description": "We look at how Python repeats statements using looping structures.",
+    "description": "Osserviamo come Python reitera le istruzioni utilizzando i loop.",
     "slides": "lectures3/Pythonlearn-05-Iterations.pptx",
     "references" : [
         {
-            "title" : "Chapter 5: Iterations",
+            "title" : "Capitolo 5: Iterazioni",
             "href" : "https://www.py4e.com/html3/05-iterations"
         }
     ],
     "videos" : [
         {
-            "title" : "Loops and Iteration - Part 1",
+            "title" : "Loop e Iterazioni - Parte 1",
             "youtube" : "FzpurxjwmsM"
         },
         {
-            "title" : "Loops and Iteration - Part 2",
+            "title" : "Loop e Iterazioni - Parte 2",
             "youtube" : "5QDrj5ogPYc"
         },
         {
-            "title" : "Loops and Iteration - Part 3",
+            "title" : "Loop e Iterazioni - Parte 3",
             "youtube" : "xsavQp8hd78"
         },
         {
-            "title" : "Loops and Iteration - Part 4",
+            "title" : "Loop e Iterazioni - Parte 4",
             "youtube" : "yjlMMwf9Y5I"
         },
         {
-            "title" : "Worked Exercise 5.1",
+            "title" : "Esercizio Dimostrativo 5.1",
             "youtube" : "R2GrfqRofZc"
         }
     ],
     "lti" : {
-        "title" : "Autograder: Exercise 5.2",
+        "title" : "Autograder: Esercizio 5.2",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_05_02",
         "custom" : [
@@ -408,33 +408,33 @@
     }
 },
 {
-    "title": "Strings",
+    "title": "Stringhe",
     "anchor": "strings",
     "icon" : "fa-file-text-o",
     "description": "We look at how Python stores and manipulates textual data using string variables and functions.",
     "slides": "lectures3/Pythonlearn-06-Strings.pptx",
     "references" : [
         {
-            "title" : "Chapter 6: Strings",
+            "title" : "Capitolo 6: Strings",
             "href" : "https://www.py4e.com/html3/06-strings"
         }
     ],
     "videos" : [
         {
-            "title" : "Strings Part 1",
+            "title" : "Stringhe - Parte 1",
             "youtube" : "dr98iM4app8"
         },
         {
-            "title" : "Strings Part 2",
+            "title" : "Stringhe - Parte 2",
             "youtube" : "bIFpJ-qZ3Cc"
         },
         {
-            "title" : "Worked Exercise 6.5",
+            "title" : "Esercizio Dimostrativo 6.5",
             "youtube" : "BGTxwsDI9KY"
         }
     ],
     "lti" : {
-        "title" : "Autograder: Exercise 6.5",
+        "title" : "Autograder: Esercizio 6.5",
         "resource_link_id": "pythonauto_06_05",
         "launch" : "tools/pythonauto/",
         "custom" : [
@@ -446,33 +446,33 @@
     }
 },
 {
-    "title": "Files",
+    "title": "File",
     "anchor": "files",
     "icon" : "fa-database",
     "description": "We learn how to open data files on your computer and read through the files using Python.",
     "slides": "lectures3/Pythonlearn-07-Files.pptx",
     "references" : [
         {
-            "title" : "Chapter 7: Files",
+            "title" : "Capitolo 7: File",
             "href" : "https://www.py4e.com/html3/07-files"
         }
     ],
     "videos" : [
         {
-            "title" : "Reading Files - Part 1",
+            "title" : "Aprire i file - Parte 1",
             "youtube" : "9KJ-XeQ6ZlI"
         },
         {
-            "title" : "Reading Files - Part 2",
+            "title" : "Aprire i file - Parte 2",
             "youtube" : "0t4rvnySKR4"
         },
         {
-            "title" : "Worked Exercise 7.1",
+            "title" : "Esercizio Dimostrativo 7.1",
             "youtube" : "MHZ4KnFZ7Y0"
         }
     ],
     "lti" : {
-        "title" : "Autograder: Exercise 7.2",
+        "title" : "Autograder: Esercizio 7.2",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_07_02",
         "custom" : [
@@ -484,38 +484,38 @@
     }
 },
 {
-    "title": "Lists",
+    "title": "Elenchi",
     "anchor": "lists",
     "icon" : "fa-list-ol",
     "description": "We look at Python's simplest data structure - the list.  Lists can store more than one item in a variable.",
     "slides": "lectures3/Pythonlearn-08-Lists.pptx",
     "references" : [
         {
-            "title" : "Chapter 8: Lists",
+            "title" : "Capitolo 8: Elenchi",
             "href" : "https://www.py4e.com/html3/08-lists"
         }
     ],
     "videos" : [
         {
-            "title" : "Lists - Part 1",
+            "title" : "Elenchi - Parte 1",
             "youtube" : "ljExWqnWQvo"
         },
         {
-            "title" : "Lists - Part 2",
+            "title" : "Elenchi - Parte 2",
             "youtube" : "bV1FQUBIApM"
         },
         {
-            "title" : "Lists - Part 3",
+            "title" : "Elenchi - Parte 3",
             "youtube" : "GxADdpo6EP4"
         },
         {
-            "title" : "Lists, Files, and the Guardian Pattern",
+            "title" : "Elenchi, File e Guardian Pattern",
             "youtube" : "WU6_0A9zYRA"
         }
     ],
     "lti" : [
     {
-        "title" : "Autograder: Exercise 8.4",
+        "title" : "Autograder: Esercizio 8.4",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_08_04",
         "custom" : [
@@ -526,7 +526,7 @@
         ]
     },
     {
-        "title" : "Autograder: Exercise 8.5",
+        "title" : "Autograder: Esercizio 8.5",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_08_05",
         "custom" : [
@@ -546,15 +546,15 @@
     "slides": "lectures3/Pythonlearn-09-Dictionaries.pptx",
     "videos" : [
         {
-            "title" : "Dictionaries - Part 1",
+            "title" : "Dictionaries - Parte 1",
             "youtube" : "yDDRMb-1cxI"
         },
         {
-            "title" : "Dictionaries - Part 2",
+            "title" : "Dictionaries - Parte 2",
             "youtube" : "LRSIuH94XM4"
         },
         {
-            "title" : "Dictionaries - Part 1",
+            "title" : "Dictionaries - Parte 1",
             "youtube" : "ZDjiFB1Ib84"
         },
         {
@@ -564,7 +564,7 @@
     ],
     "references" : [
         {
-            "title" : "Chapter 9: Dictionaries",
+            "title" : "Capitolo 9: Dictionaries",
             "href" : "https://www.py4e.com/html3/09-dictionaries"
         },
         {
@@ -573,7 +573,7 @@
         }
     ],
     "lti" : {
-        "title" : "Autograder: Exercise 9.4",
+        "title" : "Autograder: Esercizio 9.4",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_09_04",
         "custom" : [
@@ -592,18 +592,18 @@
     "slides": "lectures3/Pythonlearn-10-Tuples.pptx",
     "references" : [
         {
-            "title" : "Chapter 10: Tuples",
+            "title" : "Capitolo 10: Tuples",
             "href" : "https://www.py4e.com/html3/10-tuples"
         }
     ],
 
     "videos" : [
         {
-            "title" : "Tuples - Part 1",
+            "title" : "Tuples - Parte 1",
             "youtube" : "CaVhM65wD6g"
         },
         {
-            "title" : "Tuples - Part 2",
+            "title" : "Tuples - Parte 2",
             "youtube" : "FdUdA6o0Ij0"
         },
         {
@@ -612,7 +612,7 @@
         }
     ],
     "lti" : {
-        "title" : "Autograder: Exercise 10.2",
+        "title" : "Autograder: Esercizio 10.2",
         "launch" : "tools/pythonauto/",
         "resource_link_id": "pythonauto_10_02",
         "custom" : [
@@ -631,21 +631,21 @@
     "slides": "lectures3/Pythonlearn-11-Regex.pptx",
     "videos" : [
         {
-            "title" : "Regular Expressions - Part 1",
+            "title" : "Regular Expressions - Parte 1",
             "youtube" : "ovZsvN67Glc"
         },
         {
-            "title" : "Regular Expressions - Part 2",
+            "title" : "Regular Expressions - Parte 2",
             "youtube" : "fiar4QZZ7Xo"
         },
         {
-            "title" : "Regular Expressions - Part 3",
+            "title" : "Regular Expressions - Parte 3",
             "youtube" : "GiQdXo2Bvgc"
         }
     ],
     "references" : [
         {
-            "title" : "Chapter 11: Regular Expressions",
+            "title" : "Capitolo 11: Regular Expressions",
             "href" : "https://www.py4e.com/html3/11-regex"
         },
         {
@@ -673,22 +673,22 @@
     "slides": "lectures3/Pythonlearn-12-HTTP.pptx",
     "references" : [
         {
-            "title" : "Chapter 12: Networked Programs",
+            "title" : "Capitolo 12: Networked Programs",
             "href" : "https://www.py4e.com/html3/12-network"
         }
     ],
 
     "videos" : [
         {
-            "title" : "Network Programming - Part 1",
+            "title" : "Network Programming - Parte 1",
             "youtube" : "RsnaRPC52G0"
         },
         {
-            "title" : "Network Programming - Part 2",
+            "title" : "Network Programming - Parte 2",
             "youtube" : "Bvx7vY454xw"
         },
         {
-            "title" : "Network Programming - Part 3",
+            "title" : "Network Programming - Parte 3",
             "youtube" : "Lr9Vm-VghAk"
         },
         {
@@ -696,11 +696,11 @@
             "youtube" : "EqUyu8ZZYUE"
         },
         {
-            "title" : "Network Programming - Part 4",
+            "title" : "Network Programming - Parte 4",
             "youtube" : "-cmlmaVSONg"
         },
         {
-            "title" : "Network Programming - Part 5",
+            "title" : "Network Programming - Parte 5",
             "youtube" : "k1sUxGPpQOk"
         },
         {
@@ -708,7 +708,7 @@
             "youtube" : "jKaCKIdIoks"
         },
         {
-            "title" : "Network Programming - Part 6",
+            "title" : "Network Programming - Parte 6",
             "youtube" : "D7ZI8--qbBw"
         },
         {
@@ -760,7 +760,7 @@
     "slides": "lectures3/Pythonlearn-13-WebServices.pptx",
     "references" : [
         {
-            "title" : "Chapter 13: Python and Web Services",
+            "title" : "Capitolo 13: Python and Web Services",
             "href" : "https://www.py4e.com/html3/13-web"
         }
     ],
@@ -863,7 +863,7 @@
     "slides": "lectures3/Pythonlearn-14-Objects.pptx",
     "references" : [
         {
-            "title" : "Chapter 14: Python Objects",
+            "title" : "Capitolo 14: Python Objects",
             "href" : "https://www.py4e.com/html3/14-objects"
         }
     ],
@@ -902,11 +902,11 @@
     "slides": "lectures3/Pythonlearn-15-Databases.pptx",
     "videos" : [
         {
-            "title" : "Databases - Part 1",
+            "title" : "Databases - Parte 1",
             "youtube" : "3RMPveOMd0k"
         },
         {
-            "title" : "Databases - Single Table SQL - Part 2",
+            "title" : "Databases - Single Table SQL - Parte 2",
             "youtube" : "yRJE-nk20sM"
         },
         {
@@ -918,19 +918,19 @@
             "youtube" : "wQNjza1gb_g"
         },
         {
-            "title" : "Databases - Complex Models - Part 3",
+            "title" : "Databases - Complex Models - Parte 3",
             "youtube" : "rHjRpYUl5eg"
         },
         {
-            "title" : "Databases - Part 4",
+            "title" : "Databases - Parte 4",
             "youtube" : "PgE--P-ZWvU"
         },
         {
-            "title" : "Databases - Foreign Keys - Part 5",
+            "title" : "Databases - Foreign Keys - Parte 5",
             "youtube" : "GfuH_8uH16k"
         },
         {
-            "title" : "Databases - JOIN - Part 6",
+            "title" : "Databases - JOIN - Parte 6",
             "youtube" : "zMOSVrb82iU"
         },
         {
@@ -938,7 +938,7 @@
             "youtube" : "UGe7X_L-lHc"
         },
         {
-            "title" : "Databases - Many-to-Many - Part 7",
+            "title" : "Databases - Many-to-Many - Parte 7",
             "youtube" : "uq_Wf4nuXqE"
         },
         {
@@ -952,7 +952,7 @@
     ],
     "references" : [
         {
-            "title" : "Chapter 15: Python and Databases",
+            "title" : "Capitolo 15: Python e Database",
             "href" : "https://www.py4e.com/html3/15-database"
         },
         {
@@ -1015,13 +1015,13 @@
     "slides": "lectures3/Pythonlearn-16-Data-Viz.pptx",
     "references" : [
         {
-            "title" : "Chapter 16: Data Vizualization",
+            "title" : "Capitolo 16: Data Vizualization",
             "href" : "https://www.py4e.com/html3/16-viz"
         }
     ],
     "videos" : [
         {
-            "title" : "Visualization - Geodata - Part 1",
+            "title" : "Visualizzazione - Geodata - Parte 1",
             "youtube" : "gy6l4DTv1KU"
         },
         {
@@ -1029,7 +1029,7 @@
             "youtube" : "mt03Z2QjndQ"
         },
         {
-            "title" : "Visualization - Page Rank - Part 2",
+            "title" : "Visualization - Page Rank - Parte 2",
             "youtube" : "x2KMFkvDtI8"
         },
         {
