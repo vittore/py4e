@@ -411,7 +411,7 @@
     "title": "Stringhe",
     "anchor": "strings",
     "icon" : "fa-file-text-o",
-    "description": "We look at how Python stores and manipulates textual data using string variables and functions.",
+    "description": "Analizziamo come Python memorizza e manipola le stringe di testo utilizzando variabili e funzioni.",
     "slides": "lectures3/Pythonlearn-06-Strings.pptx",
     "references" : [
         {
@@ -449,7 +449,7 @@
     "title": "File",
     "anchor": "files",
     "icon" : "fa-database",
-    "description": "We learn how to open data files on your computer and read through the files using Python.",
+    "description": "Impariamo ad aprire file contenenti dati nel vostro computer e a leggerne il contenuto utilizzando Python.",
     "slides": "lectures3/Pythonlearn-07-Files.pptx",
     "references" : [
         {
@@ -487,7 +487,7 @@
     "title": "Elenchi",
     "anchor": "lists",
     "icon" : "fa-list-ol",
-    "description": "We look at Python's simplest data structure - the list.  Lists can store more than one item in a variable.",
+    "description": "Analizziamo la struttura dei dati più semplice di Python - l'Elenco. Gli elenchi possono memorizzare più di una voce in una variabile.",
     "slides": "lectures3/Pythonlearn-08-Lists.pptx",
     "references" : [
         {
@@ -539,36 +539,36 @@
     ]
 },
 {
-    "title": "Dictionaries",
+    "title": "Dizionari",
     "anchor": "dictionary",
     "icon" : "fa-key",
-    "description": "The dictionary data structures allows us to store multiple values in an object and look up the values by their key.",
+    "description": "La struttura dati del dizionario ci permette di memorizzare più valori in un oggetto e di effettuare ricerche sui valori sulla base della loro chiave.",
     "slides": "lectures3/Pythonlearn-09-Dictionaries.pptx",
     "videos" : [
         {
-            "title" : "Dictionaries - Parte 1",
+            "title" : "Dizionari - Parte 1",
             "youtube" : "yDDRMb-1cxI"
         },
         {
-            "title" : "Dictionaries - Parte 2",
+            "title" : "Dizionari - Parte 2",
             "youtube" : "LRSIuH94XM4"
         },
         {
-            "title" : "Dictionaries - Parte 1",
+            "title" : "Dizionari - Parte 1",
             "youtube" : "ZDjiFB1Ib84"
         },
         {
-            "title" : "Counting Word Frequency using a Dictionary",
+            "title" : "Verifichiamo la frequenza di una parola utilizzando un dizionario",
             "youtube" : "lLbyEYjU55A"
         }
     ],
     "references" : [
         {
-            "title" : "Capitolo 9: Dictionaries",
+            "title" : "Capitolo 9: Dizionari",
             "href" : "https://www.py4e.com/html3/09-dictionaries"
         },
         {
-            "title" : "Fun: Sesame Street - The Count",
+            "title" : "Divertiamoci con Sesame Street - The Count",
             "href" : "https://www.youtube.com/watch?v=EHJ9uYx5L58"
         }
     ],
@@ -585,29 +585,29 @@
     }
 },
 {
-    "title": "Tuples",
+    "title": "Tuple",
     "anchor": "tuples",
     "icon" : "fa-inbox",
-    "description": "The tuple is a Python data structure that is like a simple and efficient list.",
+    "description": "La tupla è una struttura di dati di Python simile agli elenchi ma più semplice ed efficiente.",
     "slides": "lectures3/Pythonlearn-10-Tuples.pptx",
     "references" : [
         {
-            "title" : "Capitolo 10: Tuples",
+            "title" : "Capitolo 10: Tuple",
             "href" : "https://www.py4e.com/html3/10-tuples"
         }
     ],
 
     "videos" : [
         {
-            "title" : "Tuples - Parte 1",
+            "title" : "Tuple - Parte 1",
             "youtube" : "CaVhM65wD6g"
         },
         {
-            "title" : "Tuples - Parte 2",
+            "title" : "Tuple - Parte 2",
             "youtube" : "FdUdA6o0Ij0"
         },
         {
-            "title" : "Sorting a Dictionary Using Tuples",
+            "title" : "Ordinare un dizionario usando le tuple",
             "youtube" : "hMJpet-gtc0"
         }
     ],
@@ -624,28 +624,28 @@
     }
 },
 {
-    "title": "Regular Expressions",
+    "title": "Espressioni Regolari",
     "anchor": "regex",
     "icon" : "fa-magic",
-    "description": "Regular Expressions allow us to search for patterns in strings and extract data from strings using the regular expression programming language.",
+    "description": "Le espressioni regolari ci permettono di cercare ed estrarre determinati pattern di dati nelle stringhe utilizzando uno specifico linguaggio.",
     "slides": "lectures3/Pythonlearn-11-Regex.pptx",
     "videos" : [
         {
-            "title" : "Regular Expressions - Parte 1",
+            "title" : "Espressioni Regolari - Parte 1",
             "youtube" : "ovZsvN67Glc"
         },
         {
-            "title" : "Regular Expressions - Parte 2",
+            "title" : "Espressioni Regolari - Parte 2",
             "youtube" : "fiar4QZZ7Xo"
         },
         {
-            "title" : "Regular Expressions - Parte 3",
+            "title" : "Espressioni Regolari - Parte 3",
             "youtube" : "GiQdXo2Bvgc"
         }
     ],
     "references" : [
         {
-            "title" : "Capitolo 11: Regular Expressions",
+            "title" : "Regular expressions",
             "href" : "https://www.py4e.com/html3/11-regex"
         },
         {
@@ -666,10 +666,10 @@
     }
 },
 {
-    "title": "Network Programming",
+    "title": "Programmi per Internet",
     "anchor": "network",
     "icon" : "fa-cloud",
-    "description": "We take a quick look at how data moves across the network using the HyperText Transport Protocol (HTTP) and how we write programs to read data scross the network.",
+    "description": "Diamo una veloce occhiata a come i dati si muovano in rete grazie all'HyperText Transport Protocol (HTTP) e a come scrivere dei programmi per leggerli.",
     "slides": "lectures3/Pythonlearn-12-HTTP.pptx",
     "references" : [
         {
@@ -680,11 +680,11 @@
 
     "videos" : [
         {
-            "title" : "Network Programming - Parte 1",
+            "title" : "Programmi per Internet - Parte 1",
             "youtube" : "RsnaRPC52G0"
         },
         {
-            "title" : "Network Programming - Parte 2",
+            "title" : "Programmi per Internet - Parte 2",
             "youtube" : "Bvx7vY454xw"
         },
         {
@@ -692,33 +692,33 @@
             "youtube" : "Lr9Vm-VghAk"
         },
         {
-            "title" : "Worked Example: Sockets",
+            "title" : "Esempio: Sockets",
             "youtube" : "EqUyu8ZZYUE"
         },
         {
-            "title" : "Network Programming - Parte 4",
+            "title" : "Programmi per Internet - Parte 4",
             "youtube" : "-cmlmaVSONg"
         },
         {
-            "title" : "Network Programming - Parte 5",
+            "title" : "Programmi per Internet - Parte 5",
             "youtube" : "k1sUxGPpQOk"
         },
         {
-            "title" : "Worked Example: Urllib",
+            "title" : "Esempio: Urllib",
             "youtube" : "jKaCKIdIoks"
         },
         {
-            "title" : "Network Programming - Parte 6",
+            "title" : "Programmi per Internet - Parte 6",
             "youtube" : "D7ZI8--qbBw"
         },
         {
-            "title" : "Worked Example: BeautifulSoup",
+            "title" : "Esempio: BeautifulSoup",
             "youtube" : "mhaHWiSPxxE"
         }
     ],
     "lti" : [
     {
-        "title" : "Autograder: Request-Response Cycle",
+        "title" : "Autograder: ciclo Request-Response",
         "launch" : "tools/python-data/",
         "resource_link_id": "pythondata_02_rrc",
         "custom" : [
@@ -729,7 +729,7 @@
         ]
     },
     {
-        "title" : "Autograder: Scraping HTML Data with BeautifulSoup",
+        "title" : "Autograder: Scraping dati HTML con BeautifulSoup",
         "launch" : "tools/python-data/",
         "resource_link_id": "pythondata_03_html",
         "custom" : [
@@ -740,7 +740,7 @@
         ]
     },
     {
-        "title" : "Autograder: Following Links with BeautifulSoup",
+        "title" : "Autograder: Leggere Links with BeautifulSoup",
         "launch" : "tools/python-data/",
         "resource_link_id": "pythondata_04_links",
         "custom" : [
@@ -753,10 +753,10 @@
     ]
 },
 {
-    "title": "Using Web Services",
+    "title": "Utilizzo di servizi Web",
     "anchor": "servces",
     "icon" : "fa-briefcase",
-    "description": "Web services allow a program to access data available in a different server.",
+    "description": "I servizi web consentono ad un programma di accedere a dati disponibili in un server esterno.",
     "slides": "lectures3/Pythonlearn-13-WebServices.pptx",
     "references" : [
         {
@@ -767,35 +767,35 @@
 
     "videos" : [
         {
-            "title" : "Web Services Part 1",
+            "title" : "Utilizzo di servizi Web - Parte 1",
             "youtube" : "7NEtEctD9Cw"
         },
         {
-            "title" : "Web Services - XML  (Part 2)",
+            "title" : "Utilizzo di servizi Web - XML - Part 2",
             "youtube" : "A8KcBx9153Y"
         },
         {
-            "title" : "Worked Example: XML",
+            "title" : "Esempio: XML",
             "youtube" : "7q8uUehNRK0"
         },
         {
-            "title" : "Web Services - XML Schema (Part 3)",
+            "title" : "Utilizzo di servizi Web - Schema XML - Parte 3",
             "youtube" : "0cA6W-4JPQ4"
         },
         {
-            "title" : "Web Services - JSON (Part 4)",
+            "title" : "Web Services - JSON - Parte 4",
             "youtube" : "J5DjteDzgoM"
         },
         {
-            "title" : "Worked Example: JSON",
+            "title" : "Esempio: JSON",
             "youtube" : "RGQfDirZ7_s"
         },
         {
-            "title" : "Discovering JSON - Douglas Crockford",
+            "title" : "Alla scoperta dei JSON - Douglas Crockford",
             "youtube" : "kc8BAR7SHJI"
         },
         {
-            "title" : "Web Services - SOA (Part 5)",
+            "title" : "Utilizzo di servizi Web - SOA - Parte 5",
             "youtube" : "SNeJcvBY-h4"
         },
         {
@@ -803,25 +803,25 @@
             "youtube" : "mj-kCFzF0ME"
         },
         {
-            "title" : "Web Services - GeoJSON (Part 6)",
+            "title" : "Utilizzo di servizi Web - GeoJSON - Parte 6",
             "youtube" : "QyHcOL3C7fQ"
         },
         {
-            "title" : "Worked Example: GeoJSON",
+            "title" : "Esempio: GeoJSON",
             "youtube" : "vjQZscHOaG4"
         },
         {
-            "title" : "Web Services - Twitter (Part 7)",
+            "title" : "Utilizzo di servizi Web - Twitter - Parte 7",
             "youtube" : "mrRo2xX39nw"
         },
         {
-            "title" : "Worked Example: Twitter",
+            "title" : "Esempio: Twitter",
             "youtube" : "zJzPyEPCbXs"
         }
     ],
     "lti" : [
     {
-        "title" : "Autograder: Extracting Data from XML",
+        "title" : "Autograder: Estrarre dati da un file XML",
         "resource_link_id": "pythondata_05_xml",
         "launch" : "tools/python-data/",
         "custom" : [
@@ -832,7 +832,7 @@
         ]
     },
     {
-        "title" : "Autograder: Extract Data from JSON",
+        "title" : "Autograder: Estrarre dati da un file JSON",
         "launch" : "tools/python-data/",
         "resource_link_id": "pythondata_06_json",
         "custom" : [
@@ -843,7 +843,7 @@
         ]
     },
     {
-        "title" : "Autograder: Using the GeoJSON API",
+        "title" : "Autograder: utilizzare le API GeoJSON",
         "launch" : "tools/python-data/",
         "resource_link_id": "pythondata_07_geo",
         "custom" : [
@@ -856,10 +856,10 @@
     ]
 },
 {
-    "title": "Object-Oriented Programming",
+    "title": "Programmazione ad Oggetti",
     "anchor": "Objects",
     "icon" : "fa-cubes",
-    "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
+    "description": "Diamo un veloce occhiata a come Python supporti il modello di programmazione Object-Oriented.",
     "slides": "lectures3/Pythonlearn-14-Objects.pptx",
     "references" : [
         {
@@ -869,84 +869,84 @@
     ],
     "videos" : [
         {
-            "title" : "Objects Part 1",
+            "title" : "Programmazione ad Oggetti - Parte 1",
             "youtube" : "u9xZE5t9Y30"
         },
         {
-            "title" : "Objects Part 2",
+            "title" : "Programmazione ad Oggetti - Parte 2",
             "youtube" : "b2vc5uzUfoE"
         },
         {
-            "title" : "Objects Part 3",
+            "title" : "Programmazione ad Oggetti - Parte 3",
             "youtube" : "bal0Fv6QE9w"
         },
         {
-            "title" : "Objects Part 4",
+            "title" : "Programmazione ad Oggetti - Parte 4",
             "youtube" : "EE9PaHPPm2w"
         }
     ],
     "lti" : [
         {
-            "title" : "Quiz: Object-Oriented Programming",
+            "title" : "Quiz: Programmazione ad Oggetti",
             "launch" : "mod/gift/?quiz=16-Python-Objects.txt",
             "resource_link_id" : "py4e_16_oo_quiz"
         }
     ]
 },
 {
-    "title": "Databases",
+    "title": "Database",
     "chapter" : "15",
     "anchor": "database",
     "icon" : "fa-database",
-    "description": "Databases give us very fast random access to large amounts of data. There is a lot of material in this chapter as we learn the Structured Query Language (SQL).",
+    "description": "I database ci consentono un accesso casuale molto rapido a grandi quantità di dati. In questo capitolo troverete molto materiale per studiare il linguaggio SQL (Structured Query Language).",
     "slides": "lectures3/Pythonlearn-15-Databases.pptx",
     "videos" : [
         {
-            "title" : "Databases - Parte 1",
+            "title" : "Database - Parte 1",
             "youtube" : "3RMPveOMd0k"
         },
         {
-            "title" : "Databases - Single Table SQL - Parte 2",
+            "title" : "Database - SQL con una tabella - Parte 2",
             "youtube" : "yRJE-nk20sM"
         },
         {
-            "title" : "Worked Example: Emaildb.py",
+            "title" : "Esempio: Emaildb.py",
             "youtube" : "MsZoGw4QEpU"
         },
         {
-            "title" : "Worked Example: Twspider.py",
+            "title" : "Esempio: Twspider.py",
             "youtube" : "wQNjza1gb_g"
         },
         {
-            "title" : "Databases - Complex Models - Parte 3",
+            "title" : "Database - Modelli complessi - Parte 3",
             "youtube" : "rHjRpYUl5eg"
         },
         {
-            "title" : "Databases - Parte 4",
+            "title" : "Database - Parte 4",
             "youtube" : "PgE--P-ZWvU"
         },
         {
-            "title" : "Databases - Foreign Keys - Parte 5",
+            "title" : "Database - Foreign Keys - Parte 5",
             "youtube" : "GfuH_8uH16k"
         },
         {
-            "title" : "Databases - JOIN - Parte 6",
+            "title" : "Database - JOIN - Parte 6",
             "youtube" : "zMOSVrb82iU"
         },
         {
-            "title" : "Worked Example: Tracks.py",
+            "title" : "Esempio: Tracks.py",
             "youtube" : "UGe7X_L-lHc"
         },
         {
-            "title" : "Databases - Many-to-Many - Parte 7",
+            "title" : "Database - Many-to-Many - Parte 7",
             "youtube" : "uq_Wf4nuXqE"
         },
         {
-            "title" : "Worked Example: Roster.py",
+            "title" : "Esempio: Roster.py",
             "youtube" : "CqzELd0R9zc"
         },
         {
-            "title" : "Worked Example: Twfriends.py",
+            "title" : "Esempio: Twfriends.py",
             "youtube" : "A_TpMJkSOcI"
         }
     ],
@@ -962,7 +962,7 @@
     ],
     "lti" : [
     {
-        "title" : "Autograder: Single Table SQL",
+        "title" : "Autograder: SQL con una tabella",
         "launch" : "tools/sql-intro/",
         "resource_link_id": "pythonsql_01_single",
         "custom" : [
@@ -973,7 +973,7 @@
         ]
     },
     {
-        "title" : "Autograder: Counting Email in a Database",
+        "title" : "Autograder: Contare le Email presenti in a Database",
         "launch" : "tools/sql-intro/",
         "resource_link_id": "pythonsql_02_email",
         "custom" : [
@@ -984,7 +984,7 @@
         ]
     },
     {
-        "title" : "Autograder: Multi-Table Database - Tracks",
+        "title" : "Autograder: Database con più tabelle - Tracks",
         "launch" : "tools/sql-intro/",
         "resource_link_id": "pythonsql_03_tracks",
         "custom" : [
@@ -995,7 +995,7 @@
         ]
     },
     {
-        "title" : "Autograder: Many Students in Many Courses",
+        "title" : "Autograder: Molti Studenti in molti Corsi",
         "launch" : "tools/sql-intro/",
         "resource_link_id": "pythonsql_04_many",
         "custom" : [
@@ -1008,10 +1008,10 @@
     ]
 },
 {
-    "title": "Data Visualization",
+    "title": "Visualizzazione dati",
     "anchor": "dataviz",
     "icon" : "fa-bar-chart-o",
-    "description": "In this section, we learn to scrape data from the network, store the data in a database and then read the data from the database to produce in in-browser visualization of the data.",
+    "description": "In questa sezione impareremo a raccogliere dati dalla rete, a memorizzarli in un database che utilizzeremo per visualizzarne il contenuto in un browser.",
     "slides": "lectures3/Pythonlearn-16-Data-Viz.pptx",
     "references" : [
         {
@@ -1021,43 +1021,43 @@
     ],
     "videos" : [
         {
-            "title" : "Visualizzazione - Geodata - Parte 1",
+            "title" : "Visualizzazione dati - Geodata - Parte 1",
             "youtube" : "gy6l4DTv1KU"
         },
         {
-            "title" : "Worked Example: Geodata",
+            "title" : "Esempio: Geodata",
             "youtube" : "mt03Z2QjndQ"
         },
         {
-            "title" : "Visualization - Page Rank - Parte 2",
+            "title" : "Visualizzazione dati - Page Rank - Parte 2",
             "youtube" : "x2KMFkvDtI8"
         },
         {
-            "title" : "Worked Example: Page Rank - Spidering",
+            "title" : "Esempio: Page Rank - Spidering",
             "youtube" : "SbtGozLk5Yk"
         },
         {
-            "title" : "Worked Example: Page Rank - Computation",
+            "title" : "Esempio: Page Rank - Computation",
             "youtube" : "9gtLOS87ZPs"
         },
         {
-            "title" : "Worked Example: Page Rank - Visualization",
+            "title" : "Esempio: Page Rank - Visualizzazione",
             "youtube" : "vM4kJNePwhI"
         },
         {
-            "title" : "Visualization - Gmane (Email) Part 3",
+            "title" : "Visualizzazione dati - Gmane (Email) - Parte 3",
             "youtube" : "vE0_PM2BOiU"
         },
         {
-            "title" : "Worked Example: Gmane - Spider",
+            "title" : "Esempio: Gmane - Spider",
             "youtube" : "NFS5MLKdNGw"
         },
         {
-            "title" : "Worked Example: Gmane - Model",
+            "title" : "Esempio: Gmane - Modello",
             "youtube" : "8GHtT7GqRKk"
         },
         {
-            "title" : "Worked Example: Gmane - Visualization",
+            "title" : "Esempio: Gmane - Visualizzazione",
             "youtube" : "AQtKm02FQq4"
         }
     ]
