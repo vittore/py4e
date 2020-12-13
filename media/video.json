@@ -1,11 +1,11 @@
 {
-"site_title" : "Python for Everybody (Video/PY4E)",
-"site_url" : "http://www.py4e.com",
+"site_title" : "Python per Tutti (Video/PY4E)",
+"site_url" : "http://it.py4e.com",
 "site_start_date" : "2016-10-01",
 "site_podcast_owner_name" : "Dr. Charles Russell Severance",
-"site_description" : "These are the video lectures to supplement the textbook 'Python for Everybody: Exploring Information' and its associated web site www.py4e.com",
+"site_description" : "Queste sono le lezioni video che integrano il libro di testo Python tutti Everybody: Esplorare le informazioni e il sito web collegato it.py4e.com",
 "site_podcast_explicit" : "no",
-"site_podcast_keywords" : "Python,Python3,PY4E,Intro,Introductory,Beginning,Data,Datamining,Programming",
+"site_podcast_keywords" : "Python,Python3,PY4E,Intro,introduzione,primelezioni,Data,Datamining,Programmazione",
 "site_podcast_image" : "https://py4emedia.sites.uofmhosting.net/cover-large-square.jpg",
 "site_podcast_url" : "https://py4emedia.sites.uofmhosting.net/media/video.xml",
 "site_podcast_copyright" : "Dr. Charles R. Severance, CC-BY-NC",
@@ -19,16 +19,16 @@
 
 "items" : {
 "01-Intro-A-2016-11-14-3400.mov" : {
-   "post_title" : "1.1 Why Program",
-   "post_excerpt" : "Explore the nature of programming and how programming a computer is different than using a computer.",
+   "post_title" : "1.1 Perché dovresti imparare a programmare?",
+   "post_excerpt" : "Scopriamo la complessità della programmazione e la differenza tra programmare un computer e utilizzare un computer.",
    "post_file" : "01-Intro-A-2016-11-14-3400.mov",
    "post_date" : "Mon, 14 Nov 2016 05:00:00 -0000",
    "post_duration" : 750,
    "post_explicit" : "no"
 },
 "01-Intro-B-2016-11-14-3400.mov" : {
-   "post_title" : "1.2 Hardware Architecture",
-   "post_excerpt" : "In this lecture we learn abut how the computer processes and stores programs.  We learn about the CPU, Memory, Storage and Input / Output devices are brought together to write a program.",
+   "post_title" : "1.2 Architettura hardware del computer",
+   "post_excerpt" : "In questa lezione impareremo come il computer elabori e memorizzi un programma. Impareremo inoltre come la CPU, la memoria, i dispositivi di memorizzazione e di input/output di un computer siano utili nell'utilizzo di un programma.",
    "post_file" : "01-Intro-B-2016-11-14-3400.mov",
    "post_date" : "Mon, 14 Nov 2016 05:00:00 -0000",
    "post_duration" : 735,
@@ -43,7 +43,7 @@
    "post_explicit" : "no"
 },
 "01-Intro-D-2016-11-14-3400.mov" : {
-   "post_title" : "1.4 What do we Say to Python?",
+   "post_title" : "1.4 Cosa diciamo a Python?",
    "post_excerpt" : "We look at the basics of the Python language and how we write code in Python to communicate sequential steps, conditional steps and repeated steps.",
    "post_file" : "01-Intro-D-2016-11-14-3400.mov",
    "post_date" : "Mon, 14 Nov 2016 05:00:00 -0000",
@@ -75,7 +75,7 @@
    "post_explicit" : "no"
 },
 "02-Expressions-B-2016-11-15-3400.mov" : {
-   "post_title" : "2.2 Expressions",
+   "post_title" : "2.2 Espressioni",
    "post_excerpt" : "We look at how we use various numerical and string operations to compute new information and store the new values in variables.",
    "post_file" : "02-Expressions-B-2016-11-15-3400.mov",
    "post_date" : "Wed, 16 Nov 2016 05:00:00 -0000",
@@ -83,7 +83,7 @@
    "post_explicit" : "no"
 },
 "02-02-EX.mp4" : {
-   "post_title" : "Code Walkthrough: Exercise 2.2",
+   "post_title" : "Codice passo passo: Esercizio 2.2",
    "post_excerpt" : "Code Walkthrough: Exercise 2.2",
    "post_file" : "02-02-EX.mp4",
    "post_date" : "Tue, 13 Sep 2016 04:00:00 -0000",
@@ -91,7 +91,7 @@
    "post_explicit" : "no"
 },
 "02-03-EX.mp4" : {
-   "post_title" : "Code Walkthrough: Exercise 2.3",
+   "post_title" : "Codice passo passo: Esercizio 2.3",
    "post_excerpt" : "Code Walkthrough: Exercise 2.3",
    "post_file" : "02-03-EX.mp4",
    "post_date" : "Tue, 13 Sep 2016 04:00:00 -0000",
@@ -115,7 +115,7 @@
    "post_explicit" : "no"
 },
 "03-01-EX.mp4" : {
-   "post_title" : "Code Walkthrough: Exercise 3.1",
+   "post_title" : "Codice passo passo: Esercizio 3.1",
    "post_excerpt" : "Code Walkthrough: Exercise 3.1",
    "post_file" : "03-01-EX.mp4",
    "post_date" : "Tue, 13 Sep 2016 04:00:00 -0000",
@@ -123,7 +123,7 @@
    "post_explicit" : "no"
 },
 "03-02-EX.mp4" : {
-   "post_title" : "Code Walkthrough: Exercise 3.2",
+   "post_title" : "Codice passo passo: Esercizio 3.2",
    "post_excerpt" : "Code Walkthrough: Exercise 3.2",
    "post_file" : "03-02-EX.mp4",
    "post_date" : "Tue, 13 Sep 2016 04:00:00 -0000",
@@ -131,7 +131,7 @@
    "post_explicit" : "no"
 },
 "04-Functions-A-2016-11-21-3400.mov" : {
-   "post_title" : "4.1 Using Pre-Defined Functions",
+   "post_title" : "4.1 Utilizzare le Funzioni Predefinite",
    "post_excerpt" : "We look at how code flows into and out of functions as well has how we pass information into functions and get results returned to us.",
    "post_file" : "04-Functions-A-2016-11-21-3400.mov",
    "post_date" : "Mon, 21 Nov 2016 05:00:00 -0000",
@@ -139,7 +139,7 @@
    "post_explicit" : "no"
 },
 "04-Functions-B-2016-11-21-3400.mov" : {
-   "post_title" : "4.2 Building our Own Functions",
+   "post_title" : "4.2 Scrivere le nostre funzioni",
    "post_excerpt" : "We look at how to build our own functions using parameters and arguments as well as how we return results to the code that is calling our functions.",
    "post_file" : "04-Functions-B-2016-11-21-3400.mov",
    "post_date" : "Mon, 21 Nov 2016 05:00:00 -0000",
@@ -147,7 +147,7 @@
    "post_explicit" : "no"
 },
 "04-06-EX.mp4" : {
-   "post_title" : "Code Walkthrough: Exercise 4.6",
+   "post_title" : "Codice passo passo: Esercizio 4.6",
    "post_excerpt" : "Code Walkthrough: Exercise 4.6",
    "post_file" : "04-06-EX.mp4",
    "post_date" : "Tue, 13 Sep 2016 04:00:00 -0000",
@@ -155,7 +155,7 @@
    "post_explicit" : "no"
 },
 "05-Iterations-A-2016-11-22-3400.mov" : {
-   "post_title" : "5.1 The Basics of Loops",
+   "post_title" : "5.1 Principi base dei Loop",
    "post_excerpt" : "We look at how we construct a loop so that it runs as long as we want it to run.  We learn about iteration variables and exiting loops with the 'break' and 'continue' statements.",
    "post_file" : "05-Iterations-A-2016-11-22-3400.mov",
    "post_date" : "Tue, 22 Nov 2016 05:00:00 -0000",
@@ -163,7 +163,7 @@
    "post_explicit" : "no"
 },
 "05-Iterations-B-2016-11-22-3400.mov" : {
-   "post_title" : "5.2 Definite Loops",
+   "post_title" : "5.2 Definire i Loop",
    "post_excerpt" : "We learn how to use the 'for' statement in Python to loop through a set of data.",
    "post_file" : "05-Iterations-B-2016-11-22-3400.mov",
    "post_date" : "Tue, 22 Nov 2016 05:00:00 -0000",
@@ -187,7 +187,7 @@
    "post_explicit" : "no"
 },
 "05-01-EX.mp4" : {
-   "post_title" : "Worked Exercise: Exercise 5.1",
+   "post_title" : "Esempio: Esercizio 5.1",
    "post_excerpt" : "Worked Exercise: Exercise 5.1",
    "post_file" : "05-01-EX.mp4",
    "post_date" : "Wed, 14 Sep 2016 04:00:00 -0000",
@@ -195,7 +195,7 @@
    "post_explicit" : "no"
 },
 "06-Strings-A-2016-11-28-3400.mov" : {
-   "post_title" : "6.1 Storing Text Data in Strings",
+   "post_title" : "6.1 Salvare dati in una Stringa",
    "post_excerpt" : "We learn how to create string variables and extract portions of the data as well as write simple loops to read through the characters in a string.",
    "post_file" : "06-Strings-A-2016-11-28-3400.mov",
    "post_date" : "Mon, 28 Nov 2016 05:00:00 -0000",
@@ -203,7 +203,7 @@
    "post_explicit" : "no"
 },
 "06-Strings-B-2016-11-28-3400.mov" : {
-   "post_title" : "6.2 String Operations",
+   "post_title" : "6.2 Operazioni sulle Stringhe",
    "post_excerpt" : "We learn how to extract substrings using slicing, and use the string library to perform common data extraction operations with strings.",
    "post_file" : "06-Strings-B-2016-11-28-3400.mov",
    "post_date" : "Mon, 28 Nov 2016 05:00:00 -0000",
@@ -211,7 +211,7 @@
    "post_explicit" : "no"
 },
 "06-05-EX.mp4" : {
-   "post_title" : "Worked Example: Exercise 6.5",
+   "post_title" : "Esempio: Esercizio6.5",
    "post_excerpt" : "Worked Example: Exercise 6.5",
    "post_file" : "06-05-EX.mp4",
    "post_date" : "Wed, 14 Sep 2016 04:00:00 -0000",
@@ -219,7 +219,7 @@
    "post_explicit" : "no"
 },
 "07-Files-A-2016-11-28-3400.mov" : {
-   "post_title" : "7.1 Reading Files",
+   "post_title" : "7.1 accedere ad un Files",
    "post_excerpt" : "We look at how text and lines are represented in files, how we open a file and write a loop to read through all the lines in the file.",
    "post_file" : "07-Files-A-2016-11-28-3400.mov",
    "post_date" : "Mon, 28 Nov 2016 05:00:00 -0000",
@@ -235,7 +235,7 @@
    "post_explicit" : "no"
 },
 "07-01-EX.mp4" : {
-   "post_title" : "Worked Example: Exercise 7.1",
+   "post_title" : "Esempio: Esercizio7.1",
    "post_excerpt" : "Worked Example: Exercise 7.1",
    "post_file" : "07-01-EX.mp4",
    "post_date" : "Wed, 14 Sep 2016 04:00:00 -0000",
